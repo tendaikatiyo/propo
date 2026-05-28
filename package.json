@@ -1,0 +1,17 @@
+{
+  "name": "easishop-prototype",
+  "version": "1.0.0",
+  "description": "Property intelligence prototype for Propertybook Zimbabwe",
+  "type": "module",
+  "scripts": {
+    "scrape": "node scraper/scrape.js",
+    "normalize": "node scraper/normalize.js",
+    "aggregate": "node scraper/aggregate.js",
+    "build": "npm run scrape && npm run normalize && npm run aggregate"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "@mendable/firecrawl-js": "^4.25.0",
+    "zod": "^4.4.3"
+  }
+}
