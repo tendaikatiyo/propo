@@ -16,7 +16,7 @@ USER_AGENT = (
     "Chrome/124.0.0.0 Safari/537.36"
 )
 REQUEST_DELAY = 2.0
-MAX_PAGES = 100
+MAX_PAGES = 400
 SAVE_EVERY_PAGE = True
 
 
