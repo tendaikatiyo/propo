@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "scrape": "node scraper/scrape.js",
+    "scrape:rentals": "python scraper/propertybook_rentals.py",
+    "scrape:sales": "python scraper/propertybook_sales.py",
     "normalize": "node scraper/normalize.js",
     "aggregate": "node scraper/aggregate.js",
     "build": "npm run scrape && npm run normalize && npm run aggregate"
