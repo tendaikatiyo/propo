@@ -12,6 +12,10 @@
     "analytics:cities": "python analytics/city_metrics.py",
     "analytics:rankings": "python analytics/rankings.py",
     "analytics:build": "npm run analytics:clean && npm run analytics:metrics && npm run analytics:cities && npm run analytics:rankings",
+    "scrape:all": "python -m scraper.scrape_all",
+    "pipeline:ingest": "python -m analytics.ingest",
+    "pipeline:daily": "python -m analytics.daily_metrics",
+    "pipeline:run": "python -m analytics.run_pipeline",
     "normalize": "node scraper/normalize.js",
     "aggregate": "node scraper/aggregate.js",
     "build": "npm run scrape && npm run normalize && npm run aggregate"

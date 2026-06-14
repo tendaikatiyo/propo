@@ -21,6 +21,11 @@ PROPERTY_TYPE_MAP = {
     "commercial": "commercial",
     "shop": "commercial",
     "office": "commercial",
+    "residential_land": "residential_land",
+    "residential land": "residential_land",
+    "residential stand": "residential_land",
+    "land": "residential_land",
+    "stand": "residential_land",
 }
 
 CITY_NORMALIZATION = {
@@ -73,10 +78,30 @@ def normalize_property_type(value: Any) -> str:
     if value is None:
         return "unknown"
     text = str(value).strip().lower()
+    if text in PROPERTY_TYPE_MAP:
+        return PROPERTY_TYPE_MAP[text]
     for token, normalized in PROPERTY_TYPE_MAP.items():
         if token in text:
             return normalized
     return "unknown"
+
+
+def optional_int(value: Any) -> Optional[int]:
+    if value is None:
+        return None
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return None
+
+
+def optional_float(value: Any) -> Optional[float]:
+    if value is None:
+        return None
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return None
 
 
 def parse_price(value: Any) -> Optional[int]:
@@ -101,57 +126,91 @@ def load_json(path: Path) -> List[Dict[str, Any]]:
         return json.load(fh)
 
 
-def clean_records(records: Iterable[Dict[str, Any]]) -> List[Dict[str, Any]]:
+def normalize_listing_record(
+    record: Dict[str, Any],
+    source: str,
+    listing_type: str,
+) -> Optional[Dict[str, Any]]:
+    listing_url = str(record.get("listing_url", "")).strip()
+    if not listing_url:
+        return None
+
+    city = normalize_city(record.get("city"))
+    suburb = normalize_suburb(record.get("suburb"))
+    price = parse_price(record.get("price"))
+
+    if not suburb or not city:
+        return None
+    if price is None or price <= 0:
+        return None
+
+    title = normalize_text(record.get("title"))
+    location = str(record.get("location", "")).strip()
+    location = re.sub(r"\s+", " ", location)
+    description = str(record.get("description", "")).strip()
+    description = re.sub(r"\s+", " ", description)
+    property_type = normalize_property_type(record.get("property_type") or title)
+    if property_type == "unknown" and listing_type == "sale":
+        property_type = normalize_property_type(title)
+
+    city = normalize_city(city)
+    suburb = normalize_suburb(suburb)
+    market_id = f"{slugify(city)}_{slugify(suburb)}"
+
+    return {
+        "listing_url": listing_url,
+        "source": source,
+        "listing_type": listing_type,
+        "market_id": market_id,
+        "city": city,
+        "suburb": suburb,
+        "title": title,
+        "price_raw": str(record.get("price_raw", "")).strip(),
+        "price": price,
+        "location": location,
+        "property_type": property_type,
+        "description": description,
+        "bedrooms": optional_int(record.get("bedrooms")),
+        "bathrooms": optional_int(record.get("bathrooms")),
+        "lounges": optional_int(record.get("lounges")),
+        "land_size": optional_float(record.get("land_size")),
+        "land_size_unit": str(record.get("land_size_unit") or "").strip() or None,
+        "agency_name": str(record.get("agency_name") or "").strip(),
+        "agency_logo": str(record.get("agency_logo") or "").strip(),
+    }
+
+
+def clean_records(
+    records: Iterable[Dict[str, Any]],
+    listing_type: str = "rent",
+    source: str = "propertybook",
+) -> List[Dict[str, Any]]:
     seen_urls = set()
     cleaned: List[Dict[str, Any]] = []
 
     for record in records:
-        listing_url = str(record.get("listing_url", "")).strip()
-        if not listing_url or listing_url in seen_urls:
+        normalized = normalize_listing_record(record, source, listing_type)
+        if not normalized or normalized["listing_url"] in seen_urls:
             continue
-
-        city = normalize_city(record.get("city"))
-        suburb = normalize_suburb(record.get("suburb"))
-        price = parse_price(record.get("price"))
-
-        if not listing_url:
-            continue
-        if not suburb:
-            continue
-        if not city:
-            continue
-        if price is None or price <= 0:
-            continue
-
-        title = normalize_text(record.get("title"))
-        location = str(record.get("location", "")).strip()
-        location = re.sub(r"\s+", " ", location)
-        description = str(record.get("description", "")).strip()
-        description = re.sub(r"\s+", " ", description)
-        property_type = normalize_property_type(record.get("property_type") or title)
-
-        city = normalize_city(city)
-        suburb = normalize_suburb(suburb)
-        market_id = f"{slugify(city)}_{slugify(suburb)}"
 
         cleaned.append(
             {
-                "market_id": market_id,
-                "city": city,
-                "suburb": suburb,
-                "title": title,
-                "listing_url": listing_url,
-                "price_raw": str(record.get("price_raw", "")).strip(),
-                "price": price,
-                "location": location,
-                "property_type": property_type,
-                "description": description,
-                "bedrooms": int(record.get("bedrooms") or 0),
-                "bathrooms": int(record.get("bathrooms") or 0),
-                "lounges": int(record.get("lounges") or 0),
+                "market_id": normalized["market_id"],
+                "city": normalized["city"],
+                "suburb": normalized["suburb"],
+                "title": normalized["title"],
+                "listing_url": normalized["listing_url"],
+                "price_raw": normalized["price_raw"],
+                "price": normalized["price"],
+                "location": normalized["location"],
+                "property_type": normalized["property_type"],
+                "description": normalized["description"],
+                "bedrooms": normalized["bedrooms"] or 0,
+                "bathrooms": normalized["bathrooms"] or 0,
+                "lounges": normalized["lounges"] or 0,
             }
         )
-        seen_urls.add(listing_url)
+        seen_urls.add(normalized["listing_url"])
 
     return cleaned
 
@@ -167,8 +226,8 @@ def main() -> None:
     sales = load_json(RAW_SALES_PATH)
     rentals = load_json(RAW_RENTS_PATH)
 
-    clean_sales = clean_records(sales)
-    clean_rentals = clean_records(rentals)
+    clean_sales = clean_records(sales, listing_type="sale")
+    clean_rentals = clean_records(rentals, listing_type="rent")
 
     save_json(clean_sales, CLEAN_SALES_PATH)
     save_json(clean_rentals, CLEAN_RENTS_PATH)
