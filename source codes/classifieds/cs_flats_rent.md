@@ -23,16 +23,16 @@
 
 
 
-    <title>Flats & Apartments For Sale In Zimbabwe &#124;  580 listings &#124; classifieds.co.zw</title>
+    <title>Flats & Apartments For Rent In Zimbabwe &#124;  323 listings &#124; classifieds.co.zw</title>
 
-<link rel="canonical" href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale" />
+<link rel="canonical" href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent" />
 
 
-    <link rel="next" href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?page=2" />
+    <link rel="next" href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent?page=2" />
 
 
             <meta name="description"
-            content="The most popular Zimbabwe Flats &amp;amp; Apartments for Sale classifieds by far. 500,000 visitors per month and over 30,000 adverts.'" />
+            content="The most popular Zimbabwe Flats &amp;amp; Apartments for Rent classifieds by far. 500,000 visitors per month and over 30,000 adverts.'" />
     
 <meta name="keywords" content="adverts, best, listing, advert, advertising">
 
@@ -40,7 +40,7 @@
     <meta property="og:title"
         content="Zimbabwe Classifieds.co.zw | Property, Cars, Electronics, Jobs, Dating" />
 
-<meta property="og:url" content="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale" />
+<meta property="og:url" content="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent" />
 
 
     <meta property="og:type" content="website" />
@@ -51,14 +51,14 @@
 
 
             <meta property="og:description"
-            content="The most popular Zimbabwe Flats &amp;amp; Apartments for Sale classifieds by far. 500,000 visitors per month and over 30,000 adverts.'" />
+            content="The most popular Zimbabwe Flats &amp;amp; Apartments for Rent classifieds by far. 500,000 visitors per month and over 30,000 adverts.'" />
     
 <meta name="twitter:site" content="@classifiedszw_" />
 
 
     <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:title" content="Flats &amp; Apartments For Sale In Zimbabwe" />
-                <meta name="twitter:description" content="The most popular Zimbabwe Flats &amp;amp; Apartments for Sale classifieds by far. 500,000 visitors per month and over 30,000 adverts.'" />
+            <meta name="twitter:title" content="Flats &amp; Apartments For Rent In Zimbabwe" />
+                <meta name="twitter:description" content="The most popular Zimbabwe Flats &amp;amp; Apartments for Rent classifieds by far. 500,000 visitors per month and over 30,000 adverts.'" />
         <meta name="twitter:image" content="https://www.classifieds.co.zw/build/themes/zimbabwe/img/classifieds_logo.png" />
 
 
@@ -66,8 +66,8 @@
         {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "Flats & Apartments for Sale for Sale in Zimbabwe",
-    "url": "https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale",
+    "name": "Flats & Apartments for Rent for Sale in Zimbabwe",
+    "url": "https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent",
     "isPartOf": {
         "@type": "WebSite",
         "name": "classifieds.co.zw",
@@ -85,458 +85,26 @@
             {
                 "@type": "ListItem",
                 "position": 2,
-                "name": "Flats & Apartments for Sale",
-                "item": "https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale"
+                "name": "Flats & Apartments for Rent",
+                "item": "https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent"
             }
         ]
     },
     "mainEntity": {
         "@type": "ItemList",
-        "name": "Flats & Apartments for Sale listings",
+        "name": "Flats & Apartments for Rent listings",
         "itemListOrder": "https://schema.org/ItemListOrderDescending",
         "numberOfItems": 12,
         "itemListElement": [
             {
                 "@type": "ListItem",
                 "position": 1,
-                "url": "https://www.classifieds.co.zw/listings/2417880",
+                "url": "https://www.classifieds.co.zw/listings/2321304",
                 "item": {
                     "@type": "Product",
-                    "name": "Highlands - Flat & Apartment",
-                    "url": "https://www.classifieds.co.zw/listings/2417880",
-                    "image": "https://www.classifieds.co.zw/storage/App/Models/Attachment/files/011/292/437/large/image-1.webp",
-                    "address": {
-                        "@type": "PostalAddress",
-                        "addressCountry": "Zimbabwe",
-                        "addressLocality": "highlands",
-                        "addressRegion": "harare"
-                    },
-                    "offers": {
-                        "@type": "Offer",
-                        "priceCurrency": "USD",
-                        "price": 650000,
-                        "availability": "https://schema.org/InStock",
-                        "url": "https://www.classifieds.co.zw/listings/2417880"
-                    },
-                    "numberOfBedrooms": 4,
-                    "numberOfBathroomsTotal": 5,
-                    "floorSize": {
-                        "@type": "QuantitativeValue",
-                        "value": 16000,
-                        "unitCode": "MTK"
-                    },
-                    "amenityFeature": [
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Carport",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Electric Fence",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Electric Gate",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Garden",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Water Tank",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Tiled",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Parking Bay",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Paved",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Borehole",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Swimming Pool",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Internet Connection",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Entertainment Area",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Good ZESA",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Solar System",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Main Road Frontage",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "24hr Security",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Air Conditioning",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Fitted Kitchen",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Main En Suite",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "CCTV Surveillance",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Access Control",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Intercom System",
-                            "value": "on"
-                        }
-                    ]
-                }
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "url": "https://www.classifieds.co.zw/listings/2410642",
-                "item": {
-                    "@type": "Product",
-                    "name": "Avenues - Flat & Apartment",
-                    "url": "https://www.classifieds.co.zw/listings/2410642",
-                    "image": "https://www.classifieds.co.zw/storage/App/Models/Attachment/files/011/243/305/large/image-1.webp",
-                    "address": {
-                        "@type": "PostalAddress",
-                        "addressCountry": "Zimbabwe",
-                        "addressLocality": "avenues",
-                        "addressRegion": "harare"
-                    },
-                    "offers": {
-                        "@type": "Offer",
-                        "priceCurrency": "USD",
-                        "price": 60000,
-                        "availability": "https://schema.org/InStock",
-                        "url": "https://www.classifieds.co.zw/listings/2410642"
-                    },
-                    "numberOfBedrooms": 1,
-                    "numberOfBathroomsTotal": 1,
-                    "amenityFeature": [
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Electric Gate",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Garden",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Water Tank",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Paved",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Borehole",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Internet Connection",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Good ZESA",
-                            "value": "on"
-                        }
-                    ]
-                }
-            },
-            {
-                "@type": "ListItem",
-                "position": 3,
-                "url": "https://www.classifieds.co.zw/listings/2404485",
-                "item": {
-                    "@type": "Product",
-                    "name": "Glaudina - Flat & Apartment",
-                    "url": "https://www.classifieds.co.zw/listings/2404485",
-                    "image": "https://www.classifieds.co.zw/storage/App/Models/Attachment/files/011/196/024/large/image-5.webp",
-                    "address": {
-                        "@type": "PostalAddress",
-                        "addressCountry": "Zimbabwe",
-                        "addressLocality": "glaudina",
-                        "addressRegion": "harare"
-                    },
-                    "offers": {
-                        "@type": "Offer",
-                        "priceCurrency": "USD",
-                        "price": 68519,
-                        "availability": "https://schema.org/InStock",
-                        "url": "https://www.classifieds.co.zw/listings/2404485"
-                    },
-                    "numberOfBedrooms": 2,
-                    "numberOfBathroomsTotal": 1,
-                    "floorSize": {
-                        "@type": "QuantitativeValue",
-                        "value": 200,
-                        "unitCode": "MTK"
-                    },
-                    "amenityFeature": [
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Carport",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Electric Fence",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Walled",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Water Tank",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Tiled",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Parking Bay",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Paved",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Borehole",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Internet Connection",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Garage",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Municipal Water",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Good ZESA",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Sewer System",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Solar System",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Clubhouse",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "24hr Security",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Fitted Kitchen",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Access Control",
-                            "value": "on"
-                        }
-                    ]
-                }
-            },
-            {
-                "@type": "ListItem",
-                "position": 4,
-                "url": "https://www.classifieds.co.zw/listings/2416547",
-                "item": {
-                    "@type": "Product",
-                    "name": "Newlands - Flat & Apartment",
-                    "url": "https://www.classifieds.co.zw/listings/2416547",
-                    "image": "https://www.classifieds.co.zw/storage/App/Models/Attachment/files/011/283/563/large/image-1.webp",
-                    "address": {
-                        "@type": "PostalAddress",
-                        "addressCountry": "Zimbabwe",
-                        "addressLocality": "newlands",
-                        "addressRegion": "harare"
-                    },
-                    "offers": {
-                        "@type": "Offer",
-                        "priceCurrency": "USD",
-                        "price": 140000,
-                        "availability": "https://schema.org/InStock",
-                        "url": "https://www.classifieds.co.zw/listings/2416547"
-                    },
-                    "numberOfBedrooms": 2,
-                    "numberOfBathroomsTotal": 2,
-                    "floorSize": {
-                        "@type": "QuantitativeValue",
-                        "value": 130,
-                        "unitCode": "MTK"
-                    },
-                    "amenityFeature": [
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Carport",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Electric Fence",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Electric Gate",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Garden",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Walled",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Water Tank",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Tiled",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Parking Bay",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Paved",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Borehole",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Sewer System",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "24hr Security",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Fitted Kitchen",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Main En Suite",
-                            "value": "on"
-                        }
-                    ]
-                }
-            },
-            {
-                "@type": "ListItem",
-                "position": 5,
-                "url": "https://www.classifieds.co.zw/listings/2312620",
-                "item": {
-                    "@type": "Product",
-                    "name": "Vainona - Flat & Apartment",
-                    "url": "https://www.classifieds.co.zw/listings/2312620",
-                    "image": "https://www.classifieds.co.zw/storage/App/Models/Attachment/files/011/168/438/large/image-1.webp",
+                    "name": "Vainona - Garden Flat",
+                    "url": "https://www.classifieds.co.zw/listings/2321304",
+                    "image": "https://www.classifieds.co.zw/storage/App/Models/Attachment/files/011/298/610/large/image-1.webp",
                     "address": {
                         "@type": "PostalAddress",
                         "addressCountry": "Zimbabwe",
@@ -546,391 +114,12 @@
                     "offers": {
                         "@type": "Offer",
                         "priceCurrency": "USD",
-                        "price": 170000,
+                        "price": 1600,
                         "availability": "https://schema.org/InStock",
-                        "url": "https://www.classifieds.co.zw/listings/2312620"
-                    },
-                    "numberOfBedrooms": 2
-                }
-            },
-            {
-                "@type": "ListItem",
-                "position": 6,
-                "url": "https://www.classifieds.co.zw/listings/2372726",
-                "item": {
-                    "@type": "Product",
-                    "name": "Bulawayo City Centre - Flat & Apartment",
-                    "url": "https://www.classifieds.co.zw/listings/2372726",
-                    "image": "https://www.classifieds.co.zw/storage/App/Models/Attachment/files/010/958/510/large/image-1.webp",
-                    "address": {
-                        "@type": "PostalAddress",
-                        "addressCountry": "Zimbabwe",
-                        "addressLocality": "bulawayo city centre",
-                        "addressRegion": "bulawayo"
-                    },
-                    "offers": {
-                        "@type": "Offer",
-                        "priceCurrency": "USD",
-                        "price": 650000,
-                        "availability": "https://schema.org/InStock",
-                        "url": "https://www.classifieds.co.zw/listings/2372726"
-                    },
-                    "numberOfBedrooms": 8,
-                    "numberOfBathroomsTotal": 6,
-                    "floorSize": {
-                        "@type": "QuantitativeValue",
-                        "value": 684,
-                        "unitCode": "MTK"
-                    },
-                    "amenityFeature": [
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Walled",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Parking Bay",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Municipal Water",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Good ZESA",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Sewer System",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Main Road Frontage",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Fitted Kitchen",
-                            "value": "on"
-                        }
-                    ]
-                }
-            },
-            {
-                "@type": "ListItem",
-                "position": 7,
-                "url": "https://www.classifieds.co.zw/listings/2411705",
-                "item": {
-                    "@type": "Product",
-                    "name": "Highlands - Garden Flat",
-                    "url": "https://www.classifieds.co.zw/listings/2411705",
-                    "image": "https://www.classifieds.co.zw/storage/App/Models/Attachment/files/011/251/679/large/image-1.webp",
-                    "address": {
-                        "@type": "PostalAddress",
-                        "addressCountry": "Zimbabwe",
-                        "addressLocality": "highlands",
-                        "addressRegion": "harare"
-                    },
-                    "offers": {
-                        "@type": "Offer",
-                        "priceCurrency": "USD",
-                        "price": 370000,
-                        "availability": "https://schema.org/InStock",
-                        "url": "https://www.classifieds.co.zw/listings/2411705"
-                    },
-                    "numberOfBedrooms": 4,
-                    "numberOfBathroomsTotal": 5,
-                    "floorSize": {
-                        "@type": "QuantitativeValue",
-                        "value": 250,
-                        "unitCode": "MTK"
-                    },
-                    "amenityFeature": [
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Electric Fence",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Electric Gate",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Garden",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Walled",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Water Tank",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Tiled",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Parking Bay",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Paved",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Borehole",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Swimming Pool",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Internet Connection",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Entertainment Area",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Double Storey",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Garage",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Solar System",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Fitness Center",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Clubhouse",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Main Road Frontage",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "24hr Security",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Fitted Kitchen",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Main En Suite",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Wooden Floor",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "CCTV Surveillance",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Access Control",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Intercom System",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Gym",
-                            "value": "on"
-                        }
-                    ]
-                }
-            },
-            {
-                "@type": "ListItem",
-                "position": 8,
-                "url": "https://www.classifieds.co.zw/listings/2375416",
-                "item": {
-                    "@type": "Product",
-                    "name": "Highlands - Flat & Apartment",
-                    "url": "https://www.classifieds.co.zw/listings/2375416",
-                    "image": "https://www.classifieds.co.zw/storage/App/Models/Attachment/files/010/944/680/large/image-1.webp",
-                    "address": {
-                        "@type": "PostalAddress",
-                        "addressCountry": "Zimbabwe",
-                        "addressLocality": "highlands",
-                        "addressRegion": "harare"
-                    },
-                    "offers": {
-                        "@type": "Offer",
-                        "priceCurrency": "USD",
-                        "price": 430000,
-                        "availability": "https://schema.org/InStock",
-                        "url": "https://www.classifieds.co.zw/listings/2375416"
-                    },
-                    "numberOfBedrooms": 5,
-                    "numberOfBathroomsTotal": 3,
-                    "amenityFeature": [
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Electric Fence",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Electric Gate",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Garden",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Walled",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Water Tank",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Tiled",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Paved",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Entertainment Area",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Garage",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Municipal Water",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Good ZESA",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Solar System",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "24hr Security",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Burglar Alarm",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Fitted Kitchen",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Main En Suite",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Access Control",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Wheelchair Accessibility",
-                            "value": "on"
-                        }
-                    ]
-                }
-            },
-            {
-                "@type": "ListItem",
-                "position": 9,
-                "url": "https://www.classifieds.co.zw/listings/2346088",
-                "item": {
-                    "@type": "Product",
-                    "name": "Greendale - Garden Flat",
-                    "url": "https://www.classifieds.co.zw/listings/2346088",
-                    "image": "https://www.classifieds.co.zw/storage/App/Models/Attachment/files/010/957/393/large/image-1.webp",
-                    "address": {
-                        "@type": "PostalAddress",
-                        "addressCountry": "Zimbabwe",
-                        "addressLocality": "greendale",
-                        "addressRegion": "harare"
-                    },
-                    "offers": {
-                        "@type": "Offer",
-                        "priceCurrency": "USD",
-                        "price": 220000,
-                        "availability": "https://schema.org/InStock",
-                        "url": "https://www.classifieds.co.zw/listings/2346088"
+                        "url": "https://www.classifieds.co.zw/listings/2321304"
                     },
                     "numberOfBedrooms": 3,
                     "numberOfBathroomsTotal": 2,
-                    "floorSize": {
-                        "@type": "QuantitativeValue",
-                        "value": 200,
-                        "unitCode": "MTK"
-                    },
                     "amenityFeature": [
                         {
                             "@type": "LocationFeatureSpecification",
@@ -939,32 +128,17 @@
                         },
                         {
                             "@type": "LocationFeatureSpecification",
-                            "name": "Garden",
+                            "name": "Electric Fence",
                             "value": "on"
                         },
                         {
                             "@type": "LocationFeatureSpecification",
-                            "name": "Walled",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Water Tank",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Tiled",
+                            "name": "Electric Gate",
                             "value": "on"
                         },
                         {
                             "@type": "LocationFeatureSpecification",
                             "name": "Parking Bay",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Paved",
                             "value": "on"
                         },
                         {
@@ -979,12 +153,12 @@
                         },
                         {
                             "@type": "LocationFeatureSpecification",
-                            "name": "Double Storey",
+                            "name": "Entertainment Area",
                             "value": "on"
                         },
                         {
                             "@type": "LocationFeatureSpecification",
-                            "name": "Garage",
+                            "name": "Double Storey",
                             "value": "on"
                         },
                         {
@@ -999,32 +173,7 @@
                         },
                         {
                             "@type": "LocationFeatureSpecification",
-                            "name": "Sewer System",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
                             "name": "Solar System",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Main Road Frontage",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "24hr Security",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Air Conditioning",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Burglar Alarm",
                             "value": "on"
                         },
                         {
@@ -1047,44 +196,29 @@
             },
             {
                 "@type": "ListItem",
-                "position": 10,
-                "url": "https://www.classifieds.co.zw/listings/2318314",
+                "position": 2,
+                "url": "https://www.classifieds.co.zw/listings/2415631",
                 "item": {
                     "@type": "Product",
-                    "name": "Waterfalls - Garden Flat",
-                    "url": "https://www.classifieds.co.zw/listings/2318314",
-                    "image": "https://www.classifieds.co.zw/storage/App/Models/Attachment/files/010/932/015/large/image-1.webp",
+                    "name": "Harare City Centre - Flat & Apartment",
+                    "url": "https://www.classifieds.co.zw/listings/2415631",
+                    "image": "https://www.classifieds.co.zw/storage/App/Models/Attachment/files/011/276/796/large/image-1.webp",
                     "address": {
                         "@type": "PostalAddress",
                         "addressCountry": "Zimbabwe",
-                        "addressLocality": "waterfalls",
+                        "addressLocality": "harare city centre",
                         "addressRegion": "harare"
                     },
                     "offers": {
                         "@type": "Offer",
                         "priceCurrency": "USD",
-                        "price": 95000,
+                        "price": 1350,
                         "availability": "https://schema.org/InStock",
-                        "url": "https://www.classifieds.co.zw/listings/2318314"
+                        "url": "https://www.classifieds.co.zw/listings/2415631"
                     },
-                    "numberOfBedrooms": 3,
-                    "numberOfBathroomsTotal": 2,
-                    "floorSize": {
-                        "@type": "QuantitativeValue",
-                        "value": 400,
-                        "unitCode": "MTK"
-                    },
+                    "numberOfBedrooms": 2,
+                    "numberOfBathroomsTotal": 1,
                     "amenityFeature": [
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Carport",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Garden",
-                            "value": "on"
-                        },
                         {
                             "@type": "LocationFeatureSpecification",
                             "name": "Walled",
@@ -1092,120 +226,7 @@
                         },
                         {
                             "@type": "LocationFeatureSpecification",
-                            "name": "Water Tank",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
                             "name": "Tiled",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Paved",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Borehole",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Entertainment Area",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Sewer System",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Burglar Alarm",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Fitted Kitchen",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Main En Suite",
-                            "value": "on"
-                        }
-                    ]
-                }
-            },
-            {
-                "@type": "ListItem",
-                "position": 11,
-                "url": "https://www.classifieds.co.zw/listings/2409413",
-                "item": {
-                    "@type": "Product",
-                    "name": "Monavale - Garden Flat",
-                    "url": "https://www.classifieds.co.zw/listings/2409413",
-                    "image": "https://www.classifieds.co.zw/storage/App/Models/Attachment/files/011/233/495/large/image-1.webp",
-                    "address": {
-                        "@type": "PostalAddress",
-                        "addressCountry": "Zimbabwe",
-                        "addressLocality": "monavale",
-                        "addressRegion": "harare"
-                    },
-                    "offers": {
-                        "@type": "Offer",
-                        "priceCurrency": "USD",
-                        "price": 210000,
-                        "availability": "https://schema.org/InStock",
-                        "url": "https://www.classifieds.co.zw/listings/2409413"
-                    },
-                    "numberOfBedrooms": 3,
-                    "numberOfBathroomsTotal": 2,
-                    "floorSize": {
-                        "@type": "QuantitativeValue",
-                        "value": 730,
-                        "unitCode": "MTK"
-                    },
-                    "amenityFeature": [
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Garden",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Water Tank",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Tiled",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Parking Bay",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Paved",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Borehole",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Entertainment Area",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Garage",
                             "value": "on"
                         },
                         {
@@ -1220,16 +241,6 @@
                         },
                         {
                             "@type": "LocationFeatureSpecification",
-                            "name": "Sewer System",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "24hr Security",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
                             "name": "Fitted Kitchen",
                             "value": "on"
                         },
@@ -1237,53 +248,43 @@
                             "@type": "LocationFeatureSpecification",
                             "name": "Main En Suite",
                             "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Access Control",
-                            "value": "on"
-                        },
-                        {
-                            "@type": "LocationFeatureSpecification",
-                            "name": "Intercom System",
-                            "value": "on"
                         }
                     ]
                 }
             },
             {
                 "@type": "ListItem",
-                "position": 12,
-                "url": "https://www.classifieds.co.zw/listings/2382277",
+                "position": 3,
+                "url": "https://www.classifieds.co.zw/listings/2411207",
                 "item": {
                     "@type": "Product",
-                    "name": "Meyrick Park - Garden Flat",
-                    "url": "https://www.classifieds.co.zw/listings/2382277",
-                    "image": "https://www.classifieds.co.zw/storage/App/Models/Attachment/files/010/956/477/large/image-1.webp",
+                    "name": "Greendale - Flat & Apartment",
+                    "url": "https://www.classifieds.co.zw/listings/2411207",
+                    "image": "https://www.classifieds.co.zw/storage/App/Models/Attachment/files/011/248/200/large/image-17.webp",
                     "address": {
                         "@type": "PostalAddress",
                         "addressCountry": "Zimbabwe",
-                        "addressLocality": "meyrick park",
+                        "addressLocality": "greendale",
                         "addressRegion": "harare"
                     },
                     "offers": {
                         "@type": "Offer",
                         "priceCurrency": "USD",
-                        "price": 2100000,
+                        "price": 1200,
                         "availability": "https://schema.org/InStock",
-                        "url": "https://www.classifieds.co.zw/listings/2382277"
+                        "url": "https://www.classifieds.co.zw/listings/2411207"
                     },
-                    "numberOfBedrooms": 36,
-                    "numberOfBathroomsTotal": 24,
+                    "numberOfBedrooms": 3,
+                    "numberOfBathroomsTotal": 2,
                     "floorSize": {
                         "@type": "QuantitativeValue",
-                        "value": 22257730,
+                        "value": 500,
                         "unitCode": "MTK"
                     },
                     "amenityFeature": [
                         {
                             "@type": "LocationFeatureSpecification",
-                            "name": "Electric Fence",
+                            "name": "Carport",
                             "value": "on"
                         },
                         {
@@ -1329,6 +330,798 @@
                         {
                             "@type": "LocationFeatureSpecification",
                             "name": "Good ZESA",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Solar System",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "24hr Security",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Fitted Kitchen",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Main En Suite",
+                            "value": "on"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 4,
+                "url": "https://www.classifieds.co.zw/listings/2388002",
+                "item": {
+                    "@type": "Product",
+                    "name": "Avondale West - Garden Flat",
+                    "url": "https://www.classifieds.co.zw/listings/2388002",
+                    "image": "https://www.classifieds.co.zw/storage/App/Models/Attachment/files/011/037/564/large/image-1.webp",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressCountry": "Zimbabwe",
+                        "addressLocality": "avondale west",
+                        "addressRegion": "harare"
+                    },
+                    "offers": {
+                        "@type": "Offer",
+                        "priceCurrency": "USD",
+                        "price": 1250,
+                        "availability": "https://schema.org/InStock",
+                        "url": "https://www.classifieds.co.zw/listings/2388002"
+                    },
+                    "numberOfBedrooms": 3,
+                    "numberOfBathroomsTotal": 2,
+                    "floorSize": {
+                        "@type": "QuantitativeValue",
+                        "value": 2560,
+                        "unitCode": "MTK"
+                    },
+                    "amenityFeature": [
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Electric Gate",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Walled",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Water Tank",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Tiled",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Parking Bay",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Paved",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Internet Connection",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Municipal Water",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Fitted Kitchen",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Main En Suite",
+                            "value": "on"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 5,
+                "url": "https://www.classifieds.co.zw/listings/2420862",
+                "item": {
+                    "@type": "Product",
+                    "name": "Greendale - Flat & Apartment",
+                    "url": "https://www.classifieds.co.zw/listings/2420862",
+                    "image": "https://www.classifieds.co.zw/storage/App/Models/Attachment/files/011/312/128/large/image-1.webp",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressCountry": "Zimbabwe",
+                        "addressLocality": "greendale",
+                        "addressRegion": "harare"
+                    },
+                    "offers": {
+                        "@type": "Offer",
+                        "priceCurrency": "USD",
+                        "price": 1250,
+                        "availability": "https://schema.org/InStock",
+                        "url": "https://www.classifieds.co.zw/listings/2420862"
+                    },
+                    "numberOfBedrooms": 3,
+                    "numberOfBathroomsTotal": 2,
+                    "floorSize": {
+                        "@type": "QuantitativeValue",
+                        "value": 500,
+                        "unitCode": "MTK"
+                    },
+                    "amenityFeature": [
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Walled",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Water Tank",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Tiled",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Parking Bay",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Paved",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Borehole",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Internet Connection",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Garage",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Solar System",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "24hr Security",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Fitted Kitchen",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Access Control",
+                            "value": "on"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 6,
+                "url": "https://www.classifieds.co.zw/listings/2409768",
+                "item": {
+                    "@type": "Product",
+                    "name": "Eastlea - Flat & Apartment",
+                    "url": "https://www.classifieds.co.zw/listings/2409768",
+                    "image": "https://www.classifieds.co.zw/storage/App/Models/Attachment/files/011/236/333/large/image-1.webp",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressCountry": "Zimbabwe",
+                        "addressLocality": "eastlea",
+                        "addressRegion": "harare"
+                    },
+                    "offers": {
+                        "@type": "Offer",
+                        "priceCurrency": "USD",
+                        "price": 700,
+                        "availability": "https://schema.org/InStock",
+                        "url": "https://www.classifieds.co.zw/listings/2409768"
+                    },
+                    "numberOfBedrooms": 2,
+                    "numberOfBathroomsTotal": 1,
+                    "floorSize": {
+                        "@type": "QuantitativeValue",
+                        "value": 2000,
+                        "unitCode": "MTK"
+                    },
+                    "amenityFeature": [
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Walled",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Water Tank",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Tiled",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Parking Bay",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Paved",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Borehole",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Internet Connection",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Municipal Water",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Good ZESA",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Sewer System",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Fitted Kitchen",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Access Control",
+                            "value": "on"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 7,
+                "url": "https://www.classifieds.co.zw/listings/2419764",
+                "item": {
+                    "@type": "Product",
+                    "name": "Borrowdale West - Flat & Apartment",
+                    "url": "https://www.classifieds.co.zw/listings/2419764",
+                    "image": "https://www.classifieds.co.zw/storage/App/Models/Attachment/files/011/304/907/large/image-1.webp",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressCountry": "Zimbabwe",
+                        "addressLocality": "borrowdale west",
+                        "addressRegion": "harare"
+                    },
+                    "offers": {
+                        "@type": "Offer",
+                        "priceCurrency": "USD",
+                        "price": 715,
+                        "availability": "https://schema.org/InStock",
+                        "url": "https://www.classifieds.co.zw/listings/2419764"
+                    },
+                    "numberOfBedrooms": 1,
+                    "numberOfBathroomsTotal": 1,
+                    "floorSize": {
+                        "@type": "QuantitativeValue",
+                        "value": 4400,
+                        "unitCode": "MTK"
+                    },
+                    "amenityFeature": [
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Electric Fence",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Electric Gate",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Walled",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Water Tank",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Tiled",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Parking Bay",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Paved",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Borehole",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Good ZESA",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Solar System",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "24hr Security",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Fitted Kitchen",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Access Control",
+                            "value": "on"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 8,
+                "url": "https://www.classifieds.co.zw/listings/2420900",
+                "item": {
+                    "@type": "Product",
+                    "name": "Borrowdale - Flat & Apartment",
+                    "url": "https://www.classifieds.co.zw/listings/2420900",
+                    "image": "https://www.classifieds.co.zw/storage/App/Models/Attachment/files/011/312/569/large/image-1.webp",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressCountry": "Zimbabwe",
+                        "addressLocality": "borrowdale",
+                        "addressRegion": "harare"
+                    },
+                    "offers": {
+                        "@type": "Offer",
+                        "priceCurrency": "USD",
+                        "price": 2500,
+                        "availability": "https://schema.org/InStock",
+                        "url": "https://www.classifieds.co.zw/listings/2420900"
+                    },
+                    "numberOfBedrooms": 3,
+                    "numberOfBathroomsTotal": 2,
+                    "floorSize": {
+                        "@type": "QuantitativeValue",
+                        "value": 150,
+                        "unitCode": "MTK"
+                    },
+                    "amenityFeature": [
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Garden",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Tiled",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Borehole",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Internet Connection",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Good ZESA",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Solar System",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Main En Suite",
+                            "value": "on"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 9,
+                "url": "https://www.classifieds.co.zw/listings/2414947",
+                "item": {
+                    "@type": "Product",
+                    "name": "Avondale West - Garden Flat",
+                    "url": "https://www.classifieds.co.zw/listings/2414947",
+                    "image": "https://www.classifieds.co.zw/storage/App/Models/Attachment/files/011/271/895/large/image-1.webp",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressCountry": "Zimbabwe",
+                        "addressLocality": "avondale west",
+                        "addressRegion": "harare"
+                    },
+                    "offers": {
+                        "@type": "Offer",
+                        "priceCurrency": "USD",
+                        "price": 750,
+                        "availability": "https://schema.org/InStock",
+                        "url": "https://www.classifieds.co.zw/listings/2414947"
+                    },
+                    "numberOfBedrooms": 2,
+                    "numberOfBathroomsTotal": 1,
+                    "floorSize": {
+                        "@type": "QuantitativeValue",
+                        "value": 250,
+                        "unitCode": "MTK"
+                    },
+                    "amenityFeature": [
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Garden",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Walled",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Water Tank",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Tiled",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Parking Bay",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Municipal Water",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Sewer System",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "24hr Security",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Fitted Kitchen",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Wooden Floor",
+                            "value": "on"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 10,
+                "url": "https://www.classifieds.co.zw/listings/2418902",
+                "item": {
+                    "@type": "Product",
+                    "name": "Vainona - Garden Flat",
+                    "url": "https://www.classifieds.co.zw/listings/2418902",
+                    "image": "https://www.classifieds.co.zw/storage/App/Models/Attachment/files/011/298/627/large/image-1.webp",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressCountry": "Zimbabwe",
+                        "addressLocality": "vainona",
+                        "addressRegion": "harare"
+                    },
+                    "offers": {
+                        "@type": "Offer",
+                        "priceCurrency": "USD",
+                        "price": 1500,
+                        "availability": "https://schema.org/InStock",
+                        "url": "https://www.classifieds.co.zw/listings/2418902"
+                    },
+                    "numberOfBedrooms": 3,
+                    "numberOfBathroomsTotal": 2,
+                    "amenityFeature": [
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Carport",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Electric Fence",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Electric Gate",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Walled",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Parking Bay",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Borehole",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Internet Connection",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Entertainment Area",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Double Storey",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Good ZESA",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Solar System",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "24hr Security",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Fitted Kitchen",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Fireplace",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Main En Suite",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "CCTV Surveillance",
+                            "value": "on"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 11,
+                "url": "https://www.classifieds.co.zw/listings/2421620",
+                "item": {
+                    "@type": "Product",
+                    "name": "Hogerty Hill - Flat & Apartment",
+                    "url": "https://www.classifieds.co.zw/listings/2421620",
+                    "image": "https://www.classifieds.co.zw/storage/App/Models/Attachment/files/011/318/027/large/image-1.webp",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressCountry": "Zimbabwe",
+                        "addressLocality": "hogerty hill",
+                        "addressRegion": "harare"
+                    },
+                    "offers": {
+                        "@type": "Offer",
+                        "priceCurrency": "USD",
+                        "price": 1500,
+                        "availability": "https://schema.org/InStock",
+                        "url": "https://www.classifieds.co.zw/listings/2421620"
+                    },
+                    "numberOfBedrooms": 3,
+                    "numberOfBathroomsTotal": 2,
+                    "floorSize": {
+                        "@type": "QuantitativeValue",
+                        "value": 2000,
+                        "unitCode": "MTK"
+                    },
+                    "amenityFeature": [
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Borehole",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Swimming Pool",
+                            "value": "on"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 12,
+                "url": "https://www.classifieds.co.zw/listings/2421581",
+                "item": {
+                    "@type": "Product",
+                    "name": "Marlborough - Flat & Apartment",
+                    "url": "https://www.classifieds.co.zw/listings/2421581",
+                    "image": "https://www.classifieds.co.zw/storage/App/Models/Attachment/files/011/317/347/large/image-1.webp",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressCountry": "Zimbabwe",
+                        "addressLocality": "marlborough",
+                        "addressRegion": "harare"
+                    },
+                    "offers": {
+                        "@type": "Offer",
+                        "priceCurrency": "USD",
+                        "price": 1250,
+                        "availability": "https://schema.org/InStock",
+                        "url": "https://www.classifieds.co.zw/listings/2421581"
+                    },
+                    "numberOfBedrooms": 4,
+                    "numberOfBathroomsTotal": 2,
+                    "floorSize": {
+                        "@type": "QuantitativeValue",
+                        "value": 4000,
+                        "unitCode": "MTK"
+                    },
+                    "amenityFeature": [
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Electric Gate",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Garden",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Walled",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Water Tank",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Tiled",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Parking Bay",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Paved",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Borehole",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Municipal Water",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Good ZESA",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Sewer System",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Solar System",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "Main Road Frontage",
+                            "value": "on"
+                        },
+                        {
+                            "@type": "LocationFeatureSpecification",
+                            "name": "24hr Security",
                             "value": "on"
                         },
                         {
@@ -1378,11 +1171,11 @@
 <meta name="msapplication-TileImage" content="https://www.classifieds.co.zw/build/themes/zimbabwe/img/icons/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
 
-<script src="https://www.classifieds.co.zw/js/jquery.js" type="881c9a3a08acc01de60cbf08-text/javascript"></script>
+<script src="https://www.classifieds.co.zw/js/jquery.js" type="245619828e9ab26f08ed8c97-text/javascript"></script>
 
     <link rel="stylesheet" href="/css/TopBar.css?id=2d035c8c4fd56b9a934f">
 
-<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="881c9a3a08acc01de60cbf08-|49"></script><link href="/css/desktop.css?id=1e6df4aec861503e7bc7" rel="preload" as="style"
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="245619828e9ab26f08ed8c97-|49"></script><link href="/css/desktop.css?id=1e6df4aec861503e7bc7" rel="preload" as="style"
     onload="this.onload=null;this.rel='stylesheet'">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 
@@ -1497,7 +1290,7 @@
             
             <span class="breadcrumb-separator"><i class="fa fa-chevron-right"></i></span>
                     
-                                <h1 class="page-header">Flats & Apartments for Sale in Zimbabwe</h1>
+                                <h1 class="page-header">Flats & Apartments for Rent in Zimbabwe</h1>
                 </div>
             
                 <div class="alerts">
@@ -1510,61 +1303,52 @@
                                                                 <div class="sub-category-container col-xs-6 col-sm-4 col-md-4 col-lg-5ths filter">
                             <div class="sub-category">
                                 <a
-                                    href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/harare-north">
+                                    href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent/harare-north">
                                                                             Harare North
-                                                                        <span class="count">(167) </span>
+                                                                        <span class="count">(132) </span>
                                 </a>
                             </div>
                         </div>
                                             <div class="sub-category-container col-xs-6 col-sm-4 col-md-4 col-lg-5ths filter">
                             <div class="sub-category">
                                 <a
-                                    href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/harare-west">
+                                    href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent/harare-west">
                                                                             Harare West
-                                                                        <span class="count">(159) </span>
+                                                                        <span class="count">(75) </span>
                                 </a>
                             </div>
                         </div>
                                             <div class="sub-category-container col-xs-6 col-sm-4 col-md-4 col-lg-5ths filter">
                             <div class="sub-category">
                                 <a
-                                    href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/harare-cbd">
+                                    href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent/harare-cbd">
                                                                             Harare City Centre
-                                                                        <span class="count">(94) </span>
+                                                                        <span class="count">(55) </span>
                                 </a>
                             </div>
                         </div>
                                             <div class="sub-category-container col-xs-6 col-sm-4 col-md-4 col-lg-5ths filter">
                             <div class="sub-category">
                                 <a
-                                    href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/harare-east">
+                                    href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent/harare-east">
                                                                             Harare East
-                                                                        <span class="count">(62) </span>
+                                                                        <span class="count">(35) </span>
                                 </a>
                             </div>
                         </div>
                                             <div class="sub-category-container col-xs-6 col-sm-4 col-md-4 col-lg-5ths filter">
                             <div class="sub-category">
                                 <a
-                                    href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/harare-south">
+                                    href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent/harare-south">
                                                                             Harare South
-                                                                        <span class="count">(42) </span>
+                                                                        <span class="count">(13) </span>
                                 </a>
                             </div>
                         </div>
                                             <div class="sub-category-container col-xs-6 col-sm-4 col-md-4 col-lg-5ths filter">
                             <div class="sub-category">
                                 <a
-                                    href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/mashonaland-east">
-                                                                            Mashonaland East
-                                                                        <span class="count">(8) </span>
-                                </a>
-                            </div>
-                        </div>
-                                            <div class="sub-category-container col-xs-6 col-sm-4 col-md-4 col-lg-5ths filter">
-                            <div class="sub-category">
-                                <a
-                                    href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/harare-high-density">
+                                    href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent/harare-high-density">
                                                                             Harare High Density
                                                                         <span class="count">(6) </span>
                                 </a>
@@ -1573,26 +1357,8 @@
                                             <div class="sub-category-container col-xs-6 col-sm-4 col-md-4 col-lg-5ths filter">
                             <div class="sub-category">
                                 <a
-                                    href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/matabeleland-north">
-                                                                            Matabeleland North
-                                                                        <span class="count">(6) </span>
-                                </a>
-                            </div>
-                        </div>
-                                            <div class="sub-category-container col-xs-6 col-sm-4 col-md-4 col-lg-5ths filter">
-                            <div class="sub-category">
-                                <a
-                                    href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/bulawayo-east">
-                                                                            Bulawayo East
-                                                                        <span class="count">(5) </span>
-                                </a>
-                            </div>
-                        </div>
-                                            <div class="sub-category-container col-xs-6 col-sm-4 col-md-4 col-lg-5ths filter">
-                            <div class="sub-category">
-                                <a
-                                    href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/mashonaland-west">
-                                                                            Mashonaland West
+                                    href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent/mashonaland-east">
+                                                                            Mashonaland East
                                                                         <span class="count">(4) </span>
                                 </a>
                             </div>
@@ -1600,26 +1366,17 @@
                                             <div class="sub-category-container col-xs-6 col-sm-4 col-md-4 col-lg-5ths filter">
                             <div class="sub-category">
                                 <a
-                                    href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/midlands-province">
-                                                                            Midlands
-                                                                        <span class="count">(3) </span>
-                                </a>
-                            </div>
-                        </div>
-                                            <div class="sub-category-container col-xs-6 col-sm-4 col-md-4 col-lg-5ths filter">
-                            <div class="sub-category">
-                                <a
-                                    href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/manicaland">
+                                    href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent/manicaland">
                                                                             Manicaland
-                                                                        <span class="count">(2) </span>
+                                                                        <span class="count">(1) </span>
                                 </a>
                             </div>
                         </div>
                                             <div class="sub-category-container col-xs-6 col-sm-4 col-md-4 col-lg-5ths filter">
                             <div class="sub-category">
                                 <a
-                                    href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/masvingo-province">
-                                                                            Masvingo Province
+                                    href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent/midlands-province">
+                                                                            Midlands
                                                                         <span class="count">(1) </span>
                                 </a>
                             </div>
@@ -1628,13 +1385,13 @@
                         
         <div class="clearfix columns ">
         <div class="filters">
-            <form method="GET" action="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale" accept-charset="UTF-8">
+            <form method="GET" action="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent" accept-charset="UTF-8">
             <input id="order" name="order" type="hidden" value="default">
             <input name="which" type="hidden" value="">
 
             <h4 class="clearfix filter-title">
                 <div class="pull-right">
-                    <input type="button" value="RESET" class="btn btn-link" onclick="if (!window.__cfRLUnblockHandlers) return false; location='https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale'" data-cf-modified-881c9a3a08acc01de60cbf08-="" />
+                    <input type="button" value="RESET" class="btn btn-link" onclick="if (!window.__cfRLUnblockHandlers) return false; location='https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent'" data-cf-modified-245619828e9ab26f08ed8c97-="" />
                 </div>
                 Refine Search
             </h4>
@@ -1692,12 +1449,12 @@
             <ul style="margin-left: 0px" class="list-unstyled">
             <li>
                                                                     <a href="https://www.classifieds.co.zw/zimbabwe-property" rel="nofollow">Property</a>
-                                            <span class="pull-right badge">580</span>
+                                            <span class="pull-right badge">323</span>
 
                 <ul style="margin-left: 6px" class="list-unstyled">
             <li>
-                    <strong>Flats &amp; Apartments for Sale</strong>
-                            <span class="pull-right badge">580</span>
+                    <strong>Flats &amp; Apartments for Rent</strong>
+                            <span class="pull-right badge">323</span>
 
             </li>
     </ul>
@@ -1723,16 +1480,16 @@
                                                 
                             <ul style="margin-left: 6px" class="list-unstyled">
                                                                                             <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/harare" class="route0" rel="nofollow">Harare</a>
+                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent/harare" class="route0" rel="nofollow">Harare</a>
                                                 <span class="pull-right">
-                                                        <span class="badge">530</span>
+                                                        <span class="badge">316</span>
                         </span>
 
                                                     <ul style="margin-left: 12px" class="list-unstyled">
                                                                                             <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/harare-north" class="route0" rel="nofollow">Harare North</a>
+                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent/harare-north" class="route0" rel="nofollow">Harare North</a>
                                                 <span class="pull-right">
-                                                        <span class="badge">167</span>
+                                                        <span class="badge">132</span>
                         </span>
 
                                                     <ul style="margin-left: 18px" class="list-unstyled">
@@ -1741,9 +1498,9 @@
     </ul>
                                             </li>
                                                                                                 <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/harare-west" class="route0" rel="nofollow">Harare West</a>
+                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent/harare-west" class="route0" rel="nofollow">Harare West</a>
                                                 <span class="pull-right">
-                                                        <span class="badge">159</span>
+                                                        <span class="badge">75</span>
                         </span>
 
                                                     <ul style="margin-left: 18px" class="list-unstyled">
@@ -1752,9 +1509,9 @@
     </ul>
                                             </li>
                                                                                                 <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/harare-cbd" class="route0" rel="nofollow">Harare Cbd</a>
+                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent/harare-cbd" class="route0" rel="nofollow">Harare Cbd</a>
                                                 <span class="pull-right">
-                                                        <span class="badge">94</span>
+                                                        <span class="badge">55</span>
                         </span>
 
                                                     <ul style="margin-left: 18px" class="list-unstyled">
@@ -1763,9 +1520,9 @@
     </ul>
                                             </li>
                                                                                                 <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/harare-east" class="route0" rel="nofollow">Harare East</a>
+                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent/harare-east" class="route0" rel="nofollow">Harare East</a>
                                                 <span class="pull-right">
-                                                        <span class="badge">62</span>
+                                                        <span class="badge">35</span>
                         </span>
 
                                                     <ul style="margin-left: 18px" class="list-unstyled">
@@ -1774,9 +1531,9 @@
     </ul>
                                             </li>
                                                                                                 <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/harare-south" class="route0" rel="nofollow">Harare South</a>
+                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent/harare-south" class="route0" rel="nofollow">Harare South</a>
                                                 <span class="pull-right">
-                                                        <span class="badge">42</span>
+                                                        <span class="badge">13</span>
                         </span>
 
                                                     <ul style="margin-left: 18px" class="list-unstyled">
@@ -1785,7 +1542,7 @@
     </ul>
                                             </li>
                                                                                                 <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/harare-high-density" class="route0" rel="nofollow">Harare High Density</a>
+                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent/harare-high-density" class="route0" rel="nofollow">Harare High Density</a>
                                                 <span class="pull-right">
                                                         <span class="badge">6</span>
                         </span>
@@ -1798,47 +1555,14 @@
                                         </ul>
                                             </li>
                                                                                                 <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/bulawayo" class="route0" rel="nofollow">Bulawayo</a>
+                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent/mashonaland-east" class="route0" rel="nofollow">Mashonaland East</a>
                                                 <span class="pull-right">
-                                                        <span class="badge">26</span>
+                                                        <span class="badge">4</span>
                         </span>
 
                                                     <ul style="margin-left: 12px" class="list-unstyled">
                                                                                             <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/bulawayo-cbd-industrial" class="route0" rel="nofollow">Bulawayo Cbd Industrial</a>
-                                                <span class="pull-right">
-                                                        <span class="badge">9</span>
-                        </span>
-
-                                                    <ul style="margin-left: 18px" class="list-unstyled">
-            <ul class="suburbs list-unstyled">
-                    </ul>
-    </ul>
-                                            </li>
-                                                                                                <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/bulawayo-south" class="route0" rel="nofollow">Bulawayo South</a>
-                                                <span class="pull-right">
-                                                        <span class="badge">8</span>
-                        </span>
-
-                                                    <ul style="margin-left: 18px" class="list-unstyled">
-            <ul class="suburbs list-unstyled">
-                    </ul>
-    </ul>
-                                            </li>
-                                                                                                <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/bulawayo-east" class="route0" rel="nofollow">Bulawayo East</a>
-                                                <span class="pull-right">
-                                                        <span class="badge">5</span>
-                        </span>
-
-                                                    <ul style="margin-left: 18px" class="list-unstyled">
-            <ul class="suburbs list-unstyled">
-                    </ul>
-    </ul>
-                                            </li>
-                                                                                                <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/bulawayo-north" class="route0" rel="nofollow">Bulawayo North</a>
+                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent/ruwa" class="route0" rel="nofollow">Ruwa</a>
                                                 <span class="pull-right">
                                                         <span class="badge">4</span>
                         </span>
@@ -1851,36 +1575,14 @@
                                         </ul>
                                             </li>
                                                                                                 <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/mashonaland-east" class="route0" rel="nofollow">Mashonaland East</a>
+                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent/bulawayo" class="route0" rel="nofollow">Bulawayo</a>
                                                 <span class="pull-right">
-                                                        <span class="badge">8</span>
+                                                        <span class="badge">1</span>
                         </span>
 
                                                     <ul style="margin-left: 12px" class="list-unstyled">
                                                                                             <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/ruwa" class="route0" rel="nofollow">Ruwa</a>
-                                                <span class="pull-right">
-                                                        <span class="badge">4</span>
-                        </span>
-
-                                                    <ul style="margin-left: 18px" class="list-unstyled">
-            <ul class="suburbs list-unstyled">
-                    </ul>
-    </ul>
-                                            </li>
-                                                                                                <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/marondera" class="route0" rel="nofollow">Marondera</a>
-                                                <span class="pull-right">
-                                                        <span class="badge">3</span>
-                        </span>
-
-                                                    <ul style="margin-left: 18px" class="list-unstyled">
-            <ul class="suburbs list-unstyled">
-                    </ul>
-    </ul>
-                                            </li>
-                                                                                                <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/chitungwiza" class="route0" rel="nofollow">Chitungwiza</a>
+                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent/bulawayo-cbd-industrial" class="route0" rel="nofollow">Bulawayo Cbd Industrial</a>
                                                 <span class="pull-right">
                                                         <span class="badge">1</span>
                         </span>
@@ -1893,56 +1595,14 @@
                                         </ul>
                                             </li>
                                                                                                 <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/matabeleland-north" class="route0" rel="nofollow">Matabeleland North</a>
-                                                <span class="pull-right">
-                                                        <span class="badge">6</span>
-                        </span>
-
-                                                    <ul style="margin-left: 12px" class="list-unstyled">
-                                                                                            <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/victoria-falls" class="route0" rel="nofollow">Victoria Falls</a>
-                                                <span class="pull-right">
-                                                        <span class="badge">6</span>
-                        </span>
-
-                                                    <ul style="margin-left: 18px" class="list-unstyled">
-            <ul class="suburbs list-unstyled">
-                    </ul>
-    </ul>
-                                            </li>
-                                        </ul>
-                                            </li>
-                                                                                                <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/mashonaland-west" class="route0" rel="nofollow">Mashonaland West</a>
-                                                <span class="pull-right">
-                                                        <span class="badge">4</span>
-                        </span>
-
-                                                    <ul style="margin-left: 12px" class="list-unstyled">
-                                                                                            <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/norton" class="route0" rel="nofollow">Norton</a>
-                                                <span class="pull-right">
-                                                        <span class="badge">2</span>
-                        </span>
-
-                                                    <ul style="margin-left: 18px" class="list-unstyled">
-            <ul class="suburbs list-unstyled">
-                    </ul>
-    </ul>
-                                            </li>
-                                                                                                <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/chegutu" class="route0" rel="nofollow">Chegutu</a>
+                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent/manicaland" class="route0" rel="nofollow">Manicaland</a>
                                                 <span class="pull-right">
                                                         <span class="badge">1</span>
                         </span>
 
-                                                    <ul style="margin-left: 18px" class="list-unstyled">
-            <ul class="suburbs list-unstyled">
-                    </ul>
-    </ul>
-                                            </li>
-                                                                                                <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/chinhoyi" class="route0" rel="nofollow">Chinhoyi</a>
+                                                    <ul style="margin-left: 12px" class="list-unstyled">
+                                                                                            <li>
+                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent/mutare" class="route0" rel="nofollow">Mutare</a>
                                                 <span class="pull-right">
                                                         <span class="badge">1</span>
                         </span>
@@ -1955,54 +1615,14 @@
                                         </ul>
                                             </li>
                                                                                                 <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/midlands-province" class="route0" rel="nofollow">Midlands Province</a>
-                                                <span class="pull-right">
-                                                        <span class="badge">3</span>
-                        </span>
-
-                                                    <ul style="margin-left: 12px" class="list-unstyled">
-                                                                                            <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/gweru" class="route0" rel="nofollow">Gweru</a>
-                                                <span class="pull-right">
-                                                        <span class="badge">3</span>
-                        </span>
-
-                                                    <ul style="margin-left: 18px" class="list-unstyled">
-            <ul class="suburbs list-unstyled">
-                    </ul>
-    </ul>
-                                            </li>
-                                        </ul>
-                                            </li>
-                                                                                                <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/manicaland" class="route0" rel="nofollow">Manicaland</a>
-                                                <span class="pull-right">
-                                                        <span class="badge">2</span>
-                        </span>
-
-                                                    <ul style="margin-left: 12px" class="list-unstyled">
-                                                                                            <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/mutare" class="route0" rel="nofollow">Mutare</a>
-                                                <span class="pull-right">
-                                                        <span class="badge">2</span>
-                        </span>
-
-                                                    <ul style="margin-left: 18px" class="list-unstyled">
-            <ul class="suburbs list-unstyled">
-                    </ul>
-    </ul>
-                                            </li>
-                                        </ul>
-                                            </li>
-                                                                                                <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/masvingo-province" class="route0" rel="nofollow">Masvingo Province</a>
+                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent/midlands-province" class="route0" rel="nofollow">Midlands Province</a>
                                                 <span class="pull-right">
                                                         <span class="badge">1</span>
                         </span>
 
                                                     <ul style="margin-left: 12px" class="list-unstyled">
                                                                                             <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/chiredzi" class="route0" rel="nofollow">Chiredzi</a>
+                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent/gweru" class="route0" rel="nofollow">Gweru</a>
                                                 <span class="pull-right">
                                                         <span class="badge">1</span>
                         </span>
@@ -2042,53 +1662,26 @@
                     <div class="panel-body">
                         <ul class="list-unstyled">
                 <li >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bedrooms=3" rel="nofollow" class="filter select">3</a> <span class="pull-right badge">210</span>
+            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent?bedrooms=3" rel="nofollow" class="filter select">3</a> <span class="pull-right badge">143</span>
         </li>
                     <li >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bedrooms=2" rel="nofollow" class="filter select">2</a> <span class="pull-right badge">206</span>
+            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent?bedrooms=2" rel="nofollow" class="filter select">2</a> <span class="pull-right badge">126</span>
         </li>
                     <li >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bedrooms=4" rel="nofollow" class="filter select">4</a> <span class="pull-right badge">94</span>
+            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent?bedrooms=1" rel="nofollow" class="filter select">1</a> <span class="pull-right badge">30</span>
         </li>
                     <li >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bedrooms=1" rel="nofollow" class="filter select">1</a> <span class="pull-right badge">42</span>
+            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent?bedrooms=4" rel="nofollow" class="filter select">4</a> <span class="pull-right badge">18</span>
         </li>
                     <li >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bedrooms=5" rel="nofollow" class="filter select">5</a> <span class="pull-right badge">9</span>
+            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent?bedrooms=5" rel="nofollow" class="filter select">5</a> <span class="pull-right badge">2</span>
         </li>
                     <li >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bedrooms=6" rel="nofollow" class="filter select">6</a> <span class="pull-right badge">4</span>
-        </li>
-                    <li >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bedrooms=16" rel="nofollow" class="filter select">16</a> <span class="pull-right badge">2</span>
-        </li>
-                    <li  class="hidden" >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bedrooms=30" rel="nofollow" class="filter select">30</a> <span class="pull-right badge">2</span>
-        </li>
-                    <li  class="hidden" >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bedrooms=36" rel="nofollow" class="filter select">36</a> <span class="pull-right badge">2</span>
-        </li>
-                    <li  class="hidden" >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bedrooms=8" rel="nofollow" class="filter select">8</a> <span class="pull-right badge">1</span>
-        </li>
-                    <li  class="hidden" >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bedrooms=10" rel="nofollow" class="filter select">10</a> <span class="pull-right badge">1</span>
-        </li>
-                    <li  class="hidden" >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bedrooms=12" rel="nofollow" class="filter select">12</a> <span class="pull-right badge">1</span>
-        </li>
-                    <li  class="hidden" >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bedrooms=24" rel="nofollow" class="filter select">24</a> <span class="pull-right badge">1</span>
-        </li>
-                    <li  class="hidden" >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bedrooms=29" rel="nofollow" class="filter select">29</a> <span class="pull-right badge">1</span>
-        </li>
-                    <li  class="hidden" >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bedrooms=250000" rel="nofollow" class="filter select">250000</a> <span class="pull-right badge">1</span>
+            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent?bedrooms=18" rel="nofollow" class="filter select">18</a> <span class="pull-right badge">1</span>
         </li>
             </ul>
 
-    <button type="button" class="btn-show-more btn btn-link btn-block">Show More</button>
+    <button type="button" class="btn btn-link btn-block" onclick="if (!window.__cfRLUnblockHandlers) return false; location='https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent'" data-cf-modified-245619828e9ab26f08ed8c97-="">Show All</button>
                     </div>
                 </div>
             </div>
@@ -2105,53 +1698,29 @@
                     <div class="panel-body">
                         <ul class="list-unstyled">
                 <li >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bathrooms=2" rel="nofollow" class="filter select">2</a> <span class="pull-right badge">222</span>
+            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent?bathrooms=1" rel="nofollow" class="filter select">1</a> <span class="pull-right badge">136</span>
         </li>
                     <li >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bathrooms=1" rel="nofollow" class="filter select">1</a> <span class="pull-right badge">185</span>
+            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent?bathrooms=2" rel="nofollow" class="filter select">2</a> <span class="pull-right badge">122</span>
         </li>
                     <li >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bathrooms=3" rel="nofollow" class="filter select">3</a> <span class="pull-right badge">72</span>
+            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent?bathrooms=3" rel="nofollow" class="filter select">3</a> <span class="pull-right badge">26</span>
         </li>
                     <li >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bathrooms=4" rel="nofollow" class="filter select">4</a> <span class="pull-right badge">22</span>
+            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent?bathrooms=5" rel="nofollow" class="filter select">5</a> <span class="pull-right badge">2</span>
         </li>
                     <li >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bathrooms=5" rel="nofollow" class="filter select">5</a> <span class="pull-right badge">5</span>
+            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent?bathrooms=4" rel="nofollow" class="filter select">4</a> <span class="pull-right badge">1</span>
         </li>
                     <li >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bathrooms=6" rel="nofollow" class="filter select">6</a> <span class="pull-right badge">4</span>
+            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent?bathrooms=12" rel="nofollow" class="filter select">12</a> <span class="pull-right badge">1</span>
         </li>
                     <li >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bathrooms=8" rel="nofollow" class="filter select">8</a> <span class="pull-right badge">1</span>
-        </li>
-                    <li  class="hidden" >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bathrooms=10" rel="nofollow" class="filter select">10</a> <span class="pull-right badge">1</span>
-        </li>
-                    <li  class="hidden" >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bathrooms=12" rel="nofollow" class="filter select">12</a> <span class="pull-right badge">1</span>
-        </li>
-                    <li  class="hidden" >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bathrooms=15" rel="nofollow" class="filter select">15</a> <span class="pull-right badge">1</span>
-        </li>
-                    <li  class="hidden" >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bathrooms=16" rel="nofollow" class="filter select">16</a> <span class="pull-right badge">1</span>
-        </li>
-                    <li  class="hidden" >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bathrooms=17" rel="nofollow" class="filter select">17</a> <span class="pull-right badge">1</span>
-        </li>
-                    <li  class="hidden" >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bathrooms=18" rel="nofollow" class="filter select">18</a> <span class="pull-right badge">1</span>
-        </li>
-                    <li  class="hidden" >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bathrooms=24" rel="nofollow" class="filter select">24</a> <span class="pull-right badge">1</span>
-        </li>
-                    <li  class="hidden" >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bathrooms=30" rel="nofollow" class="filter select">30</a> <span class="pull-right badge">1</span>
+            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent?bathrooms=15" rel="nofollow" class="filter select">15</a> <span class="pull-right badge">1</span>
         </li>
             </ul>
 
-    <button type="button" class="btn-show-more btn btn-link btn-block">Show More</button>
+    <button type="button" class="btn btn-link btn-block" onclick="if (!window.__cfRLUnblockHandlers) return false; location='https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent'" data-cf-modified-245619828e9ab26f08ed8c97-="">Show All</button>
                     </div>
                 </div>
             </div>
@@ -2178,7 +1747,49 @@
                     </div>
                 </div>
             </div>
-                                    </div>
+                            
+                    <div class="panel panel-default panel-filter">
+                <div class="panel-heading" role="tab" id="label-staff-quarters">
+                    <h4 class="panel-title">
+                        <a class=&quot;collapsed&quot; role="button" data-toggle="collapse" href="#filter-staff-quarters" aria-expanded="false" aria-controls="filter-staff-quarters">
+                            Staff Quarters
+                        </a>
+                    </h4>
+                </div>
+                <div id="filter-staff-quarters" class="panel-collapse collapse " role="tabpanel" aria-labelledby="label-staff-quarters">
+                    <div class="panel-body">
+                        <ul class="list-unstyled">
+                <li >
+            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent?staff-quarters=on" rel="nofollow" class="filter select">on</a> <span class="pull-right badge">2</span>
+        </li>
+            </ul>
+
+    <button type="button" class="btn btn-link btn-block" onclick="if (!window.__cfRLUnblockHandlers) return false; location='https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent'" data-cf-modified-245619828e9ab26f08ed8c97-="">Show All</button>
+                    </div>
+                </div>
+            </div>
+                    
+                    <div class="panel panel-default panel-filter">
+                <div class="panel-heading" role="tab" id="label-garages">
+                    <h4 class="panel-title">
+                        <a class=&quot;collapsed&quot; role="button" data-toggle="collapse" href="#filter-garages" aria-expanded="false" aria-controls="filter-garages">
+                            Garages
+                        </a>
+                    </h4>
+                </div>
+                <div id="filter-garages" class="panel-collapse collapse " role="tabpanel" aria-labelledby="label-garages">
+                    <div class="panel-body">
+                        <ul class="list-unstyled">
+                <li >
+            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent?garages=4" rel="nofollow" class="filter select">4</a> <span class="pull-right badge">1</span>
+        </li>
+            </ul>
+
+    <button type="button" class="btn btn-link btn-block" onclick="if (!window.__cfRLUnblockHandlers) return false; location='https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent'" data-cf-modified-245619828e9ab26f08ed8c97-="">Show All</button>
+                    </div>
+                </div>
+            </div>
+            </div>
 
 
 
@@ -2224,24 +1835,13 @@
         <li><a href="https://www.classifieds.co.zw/directory/renovation-and-premise-improvement" title="Premise Improvement" target="blank">Premise Improvement</a></li>
     </ul> 
 </div>
-<style type="text/css"> #related-categories ul li { margin-bottom: .6em; }</style><script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="881c9a3a08acc01de60cbf08-|49" defer></script></body></html>
+<style type="text/css"> #related-categories ul li { margin-bottom: .6em; }</style><script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="245619828e9ab26f08ed8c97-|49" defer></script></body></html>
                 </div>
             
             <div class="swiper bannerAd" style="height: 250px; width: 250px !important;">
             <div class="swiper-wrapper" >
                 
                                      
-                        <a href="https://www.webdev.co.zw/vps-server-hosting/" target="_blank" class="swiper-slide"
-                            data-client="WebDev"
-                            data-category="all" 
-                            data-appear="classifieds.co.zw" 
-                            data-url="https://www.webdev.co.zw/vps-server-hosting/"
-                            data-position="search_right"
-                            data-device="mobile"
-                        >
-                            <img src="https://www.classifieds.co.zw/storage/public/banners/XVIVaE2NkbRmILolcRL00G4td9zqQooO46WllUA0.jpg" alt="Webdev Cloud Server Hosting Search Page Right" srcset="" loading="lazy">
-                        </a>
-                                                         
                         <a href="https://www.webdev.co.zw/hosting/" target="_blank" class="swiper-slide"
                             data-client="WebDev"
                             data-category="all" 
@@ -2251,50 +1851,6 @@
                             data-device="mobile"
                         >
                             <img src="https://www.classifieds.co.zw/storage/public/banners/XivW1kaQNzhHOQ45lE2hFI8HvqIn1f6FuXiUO4A7.jpg" alt="WebDev Shared Hosting Search Page Right" srcset="" loading="lazy">
-                        </a>
-                                                         
-                        <a href="https://www.webdev.co.zw/shopping-carts/" target="_blank" class="swiper-slide"
-                            data-client="WebDev"
-                            data-category="all" 
-                            data-appear="classifieds.co.zw" 
-                            data-url="https://www.webdev.co.zw/shopping-carts/"
-                            data-position="search_right"
-                            data-device="mobile"
-                        >
-                            <img src="https://www.classifieds.co.zw/storage/public/banners/Xi6rC6J0vjVxNp1qePvqlmaYgR3hQ5ZM1mdCmRHt.jpg" alt="Webdev Catalogue Cart Search Page Right" srcset="" loading="lazy">
-                        </a>
-                                                         
-                        <a href="https://www.webdev.co.zw/domain-registration/" target="_blank" class="swiper-slide"
-                            data-client="WebDev"
-                            data-category="all" 
-                            data-appear="classifieds.co.zw" 
-                            data-url="https://www.webdev.co.zw/domain-registration/"
-                            data-position="search_right"
-                            data-device="mobile"
-                        >
-                            <img src="https://www.classifieds.co.zw/storage/public/banners/gfHA5CddQKyUTSveaxrdys6TavjJFRdVOrgxGJak.jpg" alt="Webdev Domain Registration Search Page Right" srcset="" loading="lazy">
-                        </a>
-                                                         
-                        <a href="https://www.webdev.co.zw/sitebuilder/" target="_blank" class="swiper-slide"
-                            data-client="WebDev"
-                            data-category="all" 
-                            data-appear="classifieds.co.zw" 
-                            data-url="https://www.webdev.co.zw/sitebuilder/"
-                            data-position="search_right"
-                            data-device="mobile"
-                        >
-                            <img src="https://www.classifieds.co.zw/storage/public/banners/88ODdmy9VJAkObFPp8eeocJUvjv05X0bxeFN6tLL.jpg" alt="Webdev Sitebuilder Search Page Right" srcset="" loading="lazy">
-                        </a>
-                                                         
-                        <a href="https://www.topup.co.zw/pay/zesa-prepaid-electricity-token" target="_blank" class="swiper-slide"
-                            data-client="Paynow"
-                            data-category="all" 
-                            data-appear="classifieds.co.zw" 
-                            data-url="https://www.topup.co.zw/pay/zesa-prepaid-electricity-token"
-                            data-position="search_right"
-                            data-device="mobile"
-                        >
-                            <img src="https://www.classifieds.co.zw/storage/public/banners/FRlUDi6UaWoGAKZlm7oe0efAOnx0LiuGzbvx4pRr.png" alt="Paynow Topup Search Page Right" srcset="" loading="lazy">
                         </a>
                                                          
                         <a href="https://www.property.co.zw/" target="_blank" class="swiper-slide"
@@ -2318,13 +1874,68 @@
                         >
                             <img src="https://www.classifieds.co.zw/storage/public/banners/gNLLlu4xKFdss7p3ztzjowLMCCbqEDjRTUm89U6K.jpg" alt="Webdev Email Hosting Search Page Right" srcset="" loading="lazy">
                         </a>
+                                                         
+                        <a href="https://www.webdev.co.zw/domain-registration/" target="_blank" class="swiper-slide"
+                            data-client="WebDev"
+                            data-category="all" 
+                            data-appear="classifieds.co.zw" 
+                            data-url="https://www.webdev.co.zw/domain-registration/"
+                            data-position="search_right"
+                            data-device="mobile"
+                        >
+                            <img src="https://www.classifieds.co.zw/storage/public/banners/gfHA5CddQKyUTSveaxrdys6TavjJFRdVOrgxGJak.jpg" alt="Webdev Domain Registration Search Page Right" srcset="" loading="lazy">
+                        </a>
+                                                         
+                        <a href="https://www.topup.co.zw/pay/zesa-prepaid-electricity-token" target="_blank" class="swiper-slide"
+                            data-client="Paynow"
+                            data-category="all" 
+                            data-appear="classifieds.co.zw" 
+                            data-url="https://www.topup.co.zw/pay/zesa-prepaid-electricity-token"
+                            data-position="search_right"
+                            data-device="mobile"
+                        >
+                            <img src="https://www.classifieds.co.zw/storage/public/banners/FRlUDi6UaWoGAKZlm7oe0efAOnx0LiuGzbvx4pRr.png" alt="Paynow Topup Search Page Right" srcset="" loading="lazy">
+                        </a>
+                                                         
+                        <a href="https://www.webdev.co.zw/sitebuilder/" target="_blank" class="swiper-slide"
+                            data-client="WebDev"
+                            data-category="all" 
+                            data-appear="classifieds.co.zw" 
+                            data-url="https://www.webdev.co.zw/sitebuilder/"
+                            data-position="search_right"
+                            data-device="mobile"
+                        >
+                            <img src="https://www.classifieds.co.zw/storage/public/banners/88ODdmy9VJAkObFPp8eeocJUvjv05X0bxeFN6tLL.jpg" alt="Webdev Sitebuilder Search Page Right" srcset="" loading="lazy">
+                        </a>
+                                                         
+                        <a href="https://www.webdev.co.zw/shopping-carts/" target="_blank" class="swiper-slide"
+                            data-client="WebDev"
+                            data-category="all" 
+                            data-appear="classifieds.co.zw" 
+                            data-url="https://www.webdev.co.zw/shopping-carts/"
+                            data-position="search_right"
+                            data-device="mobile"
+                        >
+                            <img src="https://www.classifieds.co.zw/storage/public/banners/Xi6rC6J0vjVxNp1qePvqlmaYgR3hQ5ZM1mdCmRHt.jpg" alt="Webdev Catalogue Cart Search Page Right" srcset="" loading="lazy">
+                        </a>
+                                                         
+                        <a href="https://www.webdev.co.zw/vps-server-hosting/" target="_blank" class="swiper-slide"
+                            data-client="WebDev"
+                            data-category="all" 
+                            data-appear="classifieds.co.zw" 
+                            data-url="https://www.webdev.co.zw/vps-server-hosting/"
+                            data-position="search_right"
+                            data-device="mobile"
+                        >
+                            <img src="https://www.classifieds.co.zw/storage/public/banners/XVIVaE2NkbRmILolcRL00G4td9zqQooO46WllUA0.jpg" alt="Webdev Cloud Server Hosting Search Page Right" srcset="" loading="lazy">
+                        </a>
                                             </div>
     </div>
 
 <!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js" type="881c9a3a08acc01de60cbf08-text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js" type="245619828e9ab26f08ed8c97-text/javascript"></script>
 
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
+<script type="245619828e9ab26f08ed8c97-text/javascript">
     if ($('.bannerAd').hasClass('swiper')) {
         var swiper = new Swiper(".bannerAd", {
             loop: true,
@@ -2361,13 +1972,13 @@
         <div class="main">
                             <div class="pull-right">
                     <span class="stats">1 - 20 of
-                        580</span>
+                        323</span>
 
                                         <a class="btn btn-advert"  disabled="disabled"                         href="#" rel="nofollow">
                         <i class="fa fa-chevron-left"></i>
                     </a>
 
-                                        <a class="btn btn-advert"                         href="/zimbabwe-flats-apartments-for-sale?page=2" rel="nofollow">
+                                        <a class="btn btn-advert"                         href="/zimbabwe-flats-apartments-for-rent?page=2" rel="nofollow">
                         <i class="fa fa-chevron-right"></i>
                     </a>
                 </div>
@@ -2375,17 +1986,17 @@
 
                             <ul class="nav nav-tabs nav-adverts">
                                         <li role="presentation"  class="active" >
-                        <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale">All Ads</a></li>
+                        <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent">All Ads</a></li>
                                                                                                                                                                 <li role="presentation" >
-                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?which=business">Business</a>
+                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent?which=business">Business</a>
                                 </li>
                                 <li role="presentation" >
-                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?which=individual">Individual</a>
+                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent?which=individual">Individual</a>
                                 </li>
                                                                                                                         </ul>
             
 
-            <div class="clearfix search" data-id="2028940728">
+            <div class="clearfix search" data-id="2028950094">
                 <select id="select-order" class="form-control pull-right" style="width: auto" disabled="disabled">
                     <option value="default">Default Order</option>
                                             <option value="newest"
@@ -2415,8 +2026,8 @@
                     </button>
                 
 
-                                    <a type="button" class="btn btn-primary" id="raq" data-category="Flats &amp; Apartments for Sale"
-                        href="https://www.classifieds.co.zw/request-a-quote/218"
+                                    <a type="button" class="btn btn-primary" id="raq" data-category="Flats &amp; Apartments for Rent"
+                        href="https://www.classifieds.co.zw/request-a-quote/220"
                         style="position: relative;">
                         <i class="fa fa-file-text"></i>
                         request a quote
@@ -2427,9 +2038,9 @@
 
 
             <!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js" type="881c9a3a08acc01de60cbf08-text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js" type="245619828e9ab26f08ed8c97-text/javascript"></script>
 
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
+<script type="245619828e9ab26f08ed8c97-text/javascript">
     if ($('.bannerAd').hasClass('swiper')) {
         var swiper = new Swiper(".bannerAd", {
             loop: true,
@@ -2443,9 +2054,9 @@
 </script>
             <div class="listings">
 
-                                                                                <div id="listing-2417880"
+                                                                                <div id="listing-2321304"
     class="listing panel panel-default panel-listing border-priority--gold border-status--online"
-    data-id="2417880" data-type="advert" data-view="category"     data-category="{&quot;leaf&quot;:218,&quot;parent&quot;:16,&quot;level_1&quot;:16,&quot;level_1_ident&quot;:&quot;property\/Property&quot;,&quot;level_2&quot;:218,&quot;level_2_ident&quot;:&quot;flats-apartments-for-sale\/Flats &amp; Apartments for Sale&quot;,&quot;payable&quot;:false,&quot;points&quot;:&quot;0&quot;,&quot;price&quot;:0,&quot;title&quot;:&quot;Houses for Sale&quot;,&quot;usd_price&quot;:&quot;0&quot;}"     data-currency="{&quot;id&quot;:1,&quot;title&quot;:&quot;USD (international transactions)&quot;,&quot;iso&quot;:&quot;USD&quot;,&quot;symbol&quot;:&quot;$&quot;,&quot;prefix&quot;:&quot;USD&quot;,&quot;enabled&quot;:1,&quot;created_at&quot;:&quot;2015-12-04 19:01:40&quot;,&quot;updated_at&quot;:&quot;2020-06-25 14:17:18&quot;,&quot;display_format&quot;:&quot;#,###,###&quot;,&quot;rate&quot;:&quot;1.00&quot;,&quot;default&quot;:1}" style="position: relative;">
+    data-id="2321304" data-type="advert" data-view="category"     data-category="{&quot;leaf&quot;:220,&quot;parent&quot;:16,&quot;level_1&quot;:16,&quot;level_1_ident&quot;:&quot;property\/Property&quot;,&quot;level_2&quot;:220,&quot;level_2_ident&quot;:&quot;flats-apartments-for-rent\/Flats &amp; Apartments for Rent&quot;,&quot;payable&quot;:false,&quot;points&quot;:&quot;0&quot;,&quot;price&quot;:0,&quot;title&quot;:&quot;Houses for Sale&quot;,&quot;usd_price&quot;:&quot;0&quot;}"     data-currency="{&quot;id&quot;:1,&quot;title&quot;:&quot;USD (international transactions)&quot;,&quot;iso&quot;:&quot;USD&quot;,&quot;symbol&quot;:&quot;$&quot;,&quot;prefix&quot;:&quot;USD&quot;,&quot;enabled&quot;:1,&quot;created_at&quot;:&quot;2015-12-04 19:01:40&quot;,&quot;updated_at&quot;:&quot;2020-06-25 14:17:18&quot;,&quot;display_format&quot;:&quot;#,###,###&quot;,&quot;rate&quot;:&quot;1.00&quot;,&quot;default&quot;:1}" style="position: relative;">
 
         <div class="panel-body">
 
@@ -2455,37 +2066,37 @@
         
                                                 <div class="gallery">
     
-    <div id="gallery-2417880" class="carousel slide" data-ride="carousel" data-images="[&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-flat-apartment-2417880\&quot; aria-label=\&quot;Highlands - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/292\/437\/medium\/image-1.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-flat-apartment-2417880\&quot; aria-label=\&quot;Highlands - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/292\/438\/medium\/image-2.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-flat-apartment-2417880\&quot; aria-label=\&quot;Highlands - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/292\/439\/medium\/image-3.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-flat-apartment-2417880\&quot; aria-label=\&quot;Highlands - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/292\/440\/medium\/image-4.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-flat-apartment-2417880\&quot; aria-label=\&quot;Highlands - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/292\/441\/medium\/image-5.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-flat-apartment-2417880\&quot; aria-label=\&quot;Highlands - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/292\/442\/medium\/image-6.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-flat-apartment-2417880\&quot; aria-label=\&quot;Highlands - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/292\/443\/medium\/image-7.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;div class='descrip' &gt;Ref.: AEGP247666\r\nBrand-new opportunity in Highlands, Harare North \u2014 a modern low-density apartment development on a generous 16,000 m\u00b2 stand with 800 m\u00b2 of built floor area. This cluster of four-bedroom, five-bathroom units is pictured at plaster stage: crisp white external render, aluminium-framed windows fitted, and solid boundary walls already in place. The images show neat service corridors, private rear yards with red-earth grading ready for landscaping, and robust column features that promise contemporary lines and high ceilings.\n\nDesigned for comfort and convenience, each apartment offers spacious living areas, en-suite bathrooms, and flexible room l&amp;hellip;&lt;\/div&gt;&quot;]">
+    <div id="gallery-2321304" class="carousel slide" data-ride="carousel" data-images="[&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-garden-flat-2321304\&quot; aria-label=\&quot;Vainona - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/298\/610\/medium\/image-1.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-garden-flat-2321304\&quot; aria-label=\&quot;Vainona - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/298\/611\/medium\/image-2.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-garden-flat-2321304\&quot; aria-label=\&quot;Vainona - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/298\/612\/medium\/image-3.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-garden-flat-2321304\&quot; aria-label=\&quot;Vainona - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/298\/613\/medium\/image-4.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-garden-flat-2321304\&quot; aria-label=\&quot;Vainona - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/298\/614\/medium\/image-5.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-garden-flat-2321304\&quot; aria-label=\&quot;Vainona - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/298\/615\/medium\/image-6.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-garden-flat-2321304\&quot; aria-label=\&quot;Vainona - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/298\/616\/medium\/image-7.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-garden-flat-2321304\&quot; aria-label=\&quot;Vainona - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/298\/617\/medium\/image-8.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-garden-flat-2321304\&quot; aria-label=\&quot;Vainona - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/298\/618\/medium\/image-9.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-garden-flat-2321304\&quot; aria-label=\&quot;Vainona - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/298\/619\/medium\/image-10.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-garden-flat-2321304\&quot; aria-label=\&quot;Vainona - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/298\/620\/medium\/image-11.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-garden-flat-2321304\&quot; aria-label=\&quot;Vainona - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/298\/621\/medium\/image-12.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-garden-flat-2321304\&quot; aria-label=\&quot;Vainona - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/298\/622\/medium\/image-13.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-garden-flat-2321304\&quot; aria-label=\&quot;Vainona - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/298\/623\/medium\/image-14.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-garden-flat-2321304\&quot; aria-label=\&quot;Vainona - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/298\/624\/medium\/image-15.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-garden-flat-2321304\&quot; aria-label=\&quot;Vainona - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/298\/625\/medium\/image-16.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-garden-flat-2321304\&quot; aria-label=\&quot;Vainona - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/298\/626\/medium\/image-17.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;div class='descrip' &gt;Ref.: KNP211358\r\nCorner Unit available in the newly completed Jacaranda Heights complex, located a stone\u00b4s through away from Sam Levy\u00b4s Village. (2 slightly different Units available) \n\n3 bedroom, 2 bathrooms Upstairs. Guest toilet downstairs. Open plan kitchen with scullery attached, equipped with Gas stove\/oven, washing machine and fridge. Lounge and dining area open up onto a covered veranda. Gas fireplace in living room and Gas geyser. Modern and state of the art finishes. High speed Internet connection and DSTV. Covered Veranda and small privat garden. 2 parking bays designated for the Unit. Communal braai\/entertainment area on rooftop. \n\nUtility costs: \n&amp;hellip;&lt;\/div&gt;&quot;]">
                             <div class="carousel-inner " role="listbox">
                 <div class="carousel-item active" data-index="0">
 
-                            <a class="image" rel="" href="https://www.classifieds.co.zw/listings/highlands-flat-apartment-2417880" aria-label="Highlands - Flat & Apartment"><img src="/storage/App/Models/Attachment/files/011/292/437/medium/image-1.webp" class="img-responsive center-block img-max-width " alt="Highlands - Flat & Apartment"  loading="lazy"/></a>
+                            <a class="image" rel="" href="https://www.classifieds.co.zw/listings/vainona-garden-flat-2321304" aria-label="Vainona - Garden Flat"><img src="/storage/App/Models/Attachment/files/011/298/610/medium/image-1.webp" class="img-responsive center-block img-max-width " alt="Vainona - Garden Flat"  loading="lazy"/></a>
             
         </div>
     </div>
 
     <a class="carousel-control left carousel-control-prev"
-        href="#gallery-2417880" role="button" data-slide="prev" style="z-index:10">
+        href="#gallery-2321304" role="button" data-slide="prev" style="z-index:10">
         <span class="glyphicon carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">&laquo; Previous</span>
     </a>
 
     <a class="carousel-control right carousel-control-next"
-        href="#gallery-2417880" role="button" data-slide="next" style="z-index:10">
+        href="#gallery-2321304" role="button" data-slide="next" style="z-index:10">
         <span class="glyphicon carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next &raquo;</span>
     </a>
 </div>
 </div>
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
-    var _ytdVideoIndex = "7";
+<script type="245619828e9ab26f08ed8c97-text/javascript">
+    var _ytdVideoIndex = "17";
 </script>
                             </div>
 
                             <div class="details col-md-7 col-sm-7 col-xs-8">
                                 <h5 class="listing-title">
-                        <a href="https://www.classifieds.co.zw/listings/highlands-flat-apartment-2417880 ">
-                            Highlands - Flat & Apartment</a>
+                        <a href="https://www.classifieds.co.zw/listings/vainona-garden-flat-2321304 ">
+                            Vainona - Garden Flat</a>
 
                                             </h5>
 
@@ -2494,12 +2105,12 @@
 
                                                     <div class="amount">
                                                         <div class=" pull-left usd-price-tooltip">
-                                                                                                                                                                                        $650,000
+                                                                                                                                                                                        $1,600
                                                                                                                                                                                 </div>
                                                         <div class=" pull-right local-price local-price-tooltip">
 
                                                             <span
-                                                                class="flavour"></span>
+                                                                class="flavour"> per month</span>
                                                         </div>
 
                                                     </div>
@@ -2515,9 +2126,8 @@
                         <div class="properties pull-left col-md-10">
                             
                                 <ul class="list-unstyled">
-                                                                                                                        <li class="property">4 bedrooms</li>
-                                                                                    <li class="property">5 bathrooms</li>
-                                                                                    <li class="property">16000 m&sup2;</li>
+                                                                                                                        <li class="property">3 bedrooms</li>
+                                                                                    <li class="property">2 bathrooms</li>
                                                                                                                                                         <li class="property">harare north</li>
                                     
                                     
@@ -2528,24 +2138,24 @@
 
                     <div class="line-clamp-3">
                                                 <p>
-                            Ref.: AEGP247666
-Brand-new opportunity in Highlan...
+                            Ref.: KNP211358
+Corner Unit available in the newl...
                         </p>
                     </div>
 
                     <div class="seller-info">
                                                                                                                                                                                                 <div class='store-logo pull-left'>
                                                                 <a style="position: absolute;left:0;bottom:8px;"
-                                                                    href="https://www.classifieds.co.zw/aeg-properties"><img src="https://www.classifieds.co.zw/storage/App/Models/Attachment/files/009/598/526/thumb/AEG LOGO.webp" class="img-responsive" loading="lazy" alt="AEG Properties Logo"><span
-                                                                        class="pull-right">AEG Properties</span></a>
+                                                                    href="https://www.classifieds.co.zw/kennan-properties"><img src="https://www.classifieds.co.zw/storage/App/Models/Attachment/files/008/869/642/thumb/kennan org logo.webp" class="img-responsive" loading="lazy" alt="Kennan Properties Logo"><span
+                                                                        class="pull-right">Kennan Properties</span></a>
                                                             </div>
                                                                                                                                                             <div class="btn-toolbar-buyer btn-toolbar pull-right" role="toolbar">
     <noscript>
                                     <div style="display: inline-block;">
-                <button type="button" id="whatsapp-advert-2417880" style="visibility: hidden"
-        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2417880"
-        data-intent="whatsapp" data-href="https://rply.link/l/N8R3Qs64Cw" data-type="advert" data-id="2417880"
-        data-category="218" data-category-name="Flats &amp; Apartments for Sale"
+                <button type="button" id="whatsapp-advert-2321304" style="visibility: hidden"
+        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2321304"
+        data-intent="whatsapp" data-href="https://rply.link/l/I7i00kdmsL" data-type="advert" data-id="2321304"
+        data-category="220" data-category-name="Flats &amp; Apartments for Rent"
         title="WhatsApp the Advertiser">
                     <img src="https://www.classifieds.co.zw/logos/whatsapp.png" width="20px" />
             </button>
@@ -2559,25 +2169,25 @@ Brand-new opportunity in Highlan...
                     </noscript>
     <div class="clearfix btn-group" style="display: flex" role="group">
                                     <div style="display: inline-block;">
-                <button type="button" id="whatsapp-advert-2417880" style="visibility: hidden"
-        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2417880"
-        data-intent="whatsapp" data-href="https://rply.link/l/N8R3Qs64Cw" data-type="advert" data-id="2417880"
-        data-category="218" data-category-name="Flats &amp; Apartments for Sale"
+                <button type="button" id="whatsapp-advert-2321304" style="visibility: hidden"
+        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2321304"
+        data-intent="whatsapp" data-href="https://rply.link/l/I7i00kdmsL" data-type="advert" data-id="2321304"
+        data-category="220" data-category-name="Flats &amp; Apartments for Rent"
         title="WhatsApp the Advertiser">
                     <i class="fa fa-whatsapp"></i>
             </button>
-     </div>                                             <button type="button" id="contact-advert-2417880"
+     </div>                                             <button type="button" id="contact-advert-2321304"
                     class="btn-modal btn btn-advert call record-interest" data-target="#login-options-modal"
-                    data-intent="call" data-type="advert" data-id="2417880"
-                    data-category="218" data-category-name="Flats &amp; Apartments for Sale"
+                    data-intent="call" data-type="advert" data-id="2321304"
+                    data-category="220" data-category-name="Flats &amp; Apartments for Rent"
                     title="Call the Advertiser">
                                             <i class="fa fa-phone"></i>
                                     </button>
                                             
-                <button type="button" id="email-advert-2417880"
+                <button type="button" id="email-advert-2321304"
                     class="btn-modal btn btn-advert email record-interest" data-target="#contact-seller"
-                    data-intent="email" data-type="advert" data-id="2417880"
-                    data-category="218" data-category-name="Flats &amp; Apartments for Sale"
+                    data-intent="email" data-type="advert" data-id="2321304"
+                    data-category="220" data-category-name="Flats &amp; Apartments for Rent"
                     title="Email the Advertiser">
                     <i class="fa fa-envelope"></i>
                 </button>
@@ -2585,7 +2195,7 @@ Brand-new opportunity in Highlan...
                                                 </div>
 </div>
 
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
+<script type="245619828e9ab26f08ed8c97-text/javascript">
     function rememberAction(action, advert) {
         localStorage.setItem('modal-action', JSON.stringify({ action, advert }))
     }
@@ -2595,10 +2205,10 @@ Brand-new opportunity in Highlan...
         </div>
 
 
-        <div class="alerts-2417880">
-        </div>                                                                                            <div id="listing-2410642"
+        <div class="alerts-2321304">
+        </div>                                                                                            <div id="listing-2415631"
     class="listing panel panel-default panel-listing border-priority--gold border-status--online"
-    data-id="2410642" data-type="advert" data-view="category"     data-category="{&quot;leaf&quot;:218,&quot;parent&quot;:16,&quot;level_1&quot;:16,&quot;level_1_ident&quot;:&quot;property\/Property&quot;,&quot;level_2&quot;:218,&quot;level_2_ident&quot;:&quot;flats-apartments-for-sale\/Flats &amp; Apartments for Sale&quot;,&quot;payable&quot;:false,&quot;points&quot;:&quot;0&quot;,&quot;price&quot;:0,&quot;title&quot;:&quot;Houses for Sale&quot;,&quot;usd_price&quot;:&quot;0&quot;}"     data-currency="{&quot;id&quot;:1,&quot;title&quot;:&quot;USD (international transactions)&quot;,&quot;iso&quot;:&quot;USD&quot;,&quot;symbol&quot;:&quot;$&quot;,&quot;prefix&quot;:&quot;USD&quot;,&quot;enabled&quot;:1,&quot;created_at&quot;:&quot;2015-12-04 19:01:40&quot;,&quot;updated_at&quot;:&quot;2020-06-25 14:17:18&quot;,&quot;display_format&quot;:&quot;#,###,###&quot;,&quot;rate&quot;:&quot;1.00&quot;,&quot;default&quot;:1}" style="position: relative;">
+    data-id="2415631" data-type="advert" data-view="category"     data-category="{&quot;leaf&quot;:220,&quot;parent&quot;:16,&quot;level_1&quot;:16,&quot;level_1_ident&quot;:&quot;property\/Property&quot;,&quot;level_2&quot;:220,&quot;level_2_ident&quot;:&quot;flats-apartments-for-rent\/Flats &amp; Apartments for Rent&quot;,&quot;payable&quot;:false,&quot;points&quot;:&quot;0&quot;,&quot;price&quot;:0,&quot;title&quot;:&quot;Houses for Sale&quot;,&quot;usd_price&quot;:&quot;0&quot;}"     data-currency="{&quot;id&quot;:1,&quot;title&quot;:&quot;USD (international transactions)&quot;,&quot;iso&quot;:&quot;USD&quot;,&quot;symbol&quot;:&quot;$&quot;,&quot;prefix&quot;:&quot;USD&quot;,&quot;enabled&quot;:1,&quot;created_at&quot;:&quot;2015-12-04 19:01:40&quot;,&quot;updated_at&quot;:&quot;2020-06-25 14:17:18&quot;,&quot;display_format&quot;:&quot;#,###,###&quot;,&quot;rate&quot;:&quot;1.00&quot;,&quot;default&quot;:1}" style="position: relative;">
 
         <div class="panel-body">
 
@@ -2608,37 +2218,37 @@ Brand-new opportunity in Highlan...
         
                                                 <div class="gallery">
     
-    <div id="gallery-2410642" class="carousel slide" data-ride="carousel" data-images="[&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2410642\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/243\/305\/medium\/image-1.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2410642\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/243\/306\/medium\/image-2.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2410642\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/243\/307\/medium\/image-3.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2410642\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/243\/308\/medium\/image-4.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2410642\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/243\/309\/medium\/image-5.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2410642\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/243\/310\/medium\/image-6.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2410642\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/243\/311\/medium\/image-7.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2410642\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/243\/312\/medium\/image-8.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2410642\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/243\/313\/medium\/image-9.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2410642\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/243\/314\/medium\/image-10.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2410642\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/243\/315\/medium\/image-11.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;div class='descrip' &gt;Ref.: SEF245098\r\nA well maintained 1 bed-room flat in the Avenues. Spacious bedroom, open-plan lounge, and kitchen. A perfect blend of comfort, style, and convenience ideal for modern city living or investment.\n\nProperty Features:\n1 bedroom\nSpacious lounge\nFunctional kitchen\nBathroom and toilet\nBorehole\nSecure and convenient location\n\nOwnership: Share Transfer\n\nAsking Price: $60,000\n\nPerfect opportunity to own a property in a prime location close to amenities, CBD, and major institutions.\n\nCall to view this opportunity.&lt;\/div&gt;&quot;]">
+    <div id="gallery-2415631" class="carousel slide" data-ride="carousel" data-images="[&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/harare-city-centre-flat-apartment-2415631\&quot; aria-label=\&quot;Harare City Centre - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/276\/796\/medium\/image-1.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Harare City Centre - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/harare-city-centre-flat-apartment-2415631\&quot; aria-label=\&quot;Harare City Centre - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/276\/797\/medium\/image-2.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Harare City Centre - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/harare-city-centre-flat-apartment-2415631\&quot; aria-label=\&quot;Harare City Centre - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/276\/798\/medium\/image-3.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Harare City Centre - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/harare-city-centre-flat-apartment-2415631\&quot; aria-label=\&quot;Harare City Centre - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/276\/799\/medium\/image-4.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Harare City Centre - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/harare-city-centre-flat-apartment-2415631\&quot; aria-label=\&quot;Harare City Centre - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/276\/800\/medium\/image-5.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Harare City Centre - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/harare-city-centre-flat-apartment-2415631\&quot; aria-label=\&quot;Harare City Centre - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/276\/801\/medium\/image-6.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Harare City Centre - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/harare-city-centre-flat-apartment-2415631\&quot; aria-label=\&quot;Harare City Centre - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/276\/802\/medium\/image-7.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Harare City Centre - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/harare-city-centre-flat-apartment-2415631\&quot; aria-label=\&quot;Harare City Centre - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/276\/803\/medium\/image-8.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Harare City Centre - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/harare-city-centre-flat-apartment-2415631\&quot; aria-label=\&quot;Harare City Centre - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/276\/804\/medium\/image-9.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Harare City Centre - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/harare-city-centre-flat-apartment-2415631\&quot; aria-label=\&quot;Harare City Centre - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/276\/805\/medium\/image-10.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Harare City Centre - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/harare-city-centre-flat-apartment-2415631\&quot; aria-label=\&quot;Harare City Centre - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/276\/806\/medium\/image-11.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Harare City Centre - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/harare-city-centre-flat-apartment-2415631\&quot; aria-label=\&quot;Harare City Centre - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/276\/807\/medium\/image-12.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Harare City Centre - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/harare-city-centre-flat-apartment-2415631\&quot; aria-label=\&quot;Harare City Centre - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/276\/808\/medium\/image-13.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Harare City Centre - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/harare-city-centre-flat-apartment-2415631\&quot; aria-label=\&quot;Harare City Centre - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/276\/809\/medium\/image-14.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Harare City Centre - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;div class='descrip' &gt;Ref.: AUR246795\r\n? 2 Bed Duplex\n? Modern fitted kitchen\n? Fitted wardrobes\n? Fully tiled\n? Shower + bathtub\n? Secure complex\n\n?? USD 1350 (levy included)\n\nClean, modern, spacious \u2014 right in a prime location.\n\nPerfect for professionals, a small family, or anyone wanting comfort + convenience in the city.\n\n?? DM for viewing arrangements.&lt;\/div&gt;&quot;]">
                             <div class="carousel-inner " role="listbox">
                 <div class="carousel-item active" data-index="0">
 
-                            <a class="image" rel="" href="https://www.classifieds.co.zw/listings/avenues-flat-apartment-2410642" aria-label="Avenues - Flat & Apartment"><img src="/storage/App/Models/Attachment/files/011/243/305/medium/image-1.webp" class="img-responsive center-block img-max-width " alt="Avenues - Flat & Apartment"  loading="lazy"/></a>
+                            <a class="image" rel="" href="https://www.classifieds.co.zw/listings/harare-city-centre-flat-apartment-2415631" aria-label="Harare City Centre - Flat & Apartment"><img src="/storage/App/Models/Attachment/files/011/276/796/medium/image-1.webp" class="img-responsive center-block img-max-width " alt="Harare City Centre - Flat & Apartment"  loading="lazy"/></a>
             
         </div>
     </div>
 
     <a class="carousel-control left carousel-control-prev"
-        href="#gallery-2410642" role="button" data-slide="prev" style="z-index:10">
+        href="#gallery-2415631" role="button" data-slide="prev" style="z-index:10">
         <span class="glyphicon carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">&laquo; Previous</span>
     </a>
 
     <a class="carousel-control right carousel-control-next"
-        href="#gallery-2410642" role="button" data-slide="next" style="z-index:10">
+        href="#gallery-2415631" role="button" data-slide="next" style="z-index:10">
         <span class="glyphicon carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next &raquo;</span>
     </a>
 </div>
 </div>
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
-    var _ytdVideoIndex = "11";
+<script type="245619828e9ab26f08ed8c97-text/javascript">
+    var _ytdVideoIndex = "14";
 </script>
                             </div>
 
                             <div class="details col-md-7 col-sm-7 col-xs-8">
                                 <h5 class="listing-title">
-                        <a href="https://www.classifieds.co.zw/listings/avenues-flat-apartment-2410642 ">
-                            Avenues - Flat & Apartment</a>
+                        <a href="https://www.classifieds.co.zw/listings/harare-city-centre-flat-apartment-2415631 ">
+                            Harare City Centre - Flat & Apartment</a>
 
                                             </h5>
 
@@ -2647,12 +2257,798 @@ Brand-new opportunity in Highlan...
 
                                                     <div class="amount">
                                                         <div class=" pull-left usd-price-tooltip">
-                                                                                                                                                                                        $60,000
+                                                                                                                                                                                        $1,350
                                                                                                                                                                                 </div>
                                                         <div class=" pull-right local-price local-price-tooltip">
 
                                                             <span
-                                                                class="flavour"></span>
+                                                                class="flavour"> per month</span>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                                <div class="pull-right col-md-2 favourite-right">
+                                                                                                                                                                                            <button type="button" class="favourite btn-advert btn " data-exists="false"
+                                                            title="Favourite the Advert"><i class="fa fa-heart-o"></i>
+                                                        </button>
+                                                                                                        </div>
+
+                        
+                        <div class="properties pull-left col-md-10">
+                            
+                                <ul class="list-unstyled">
+                                                                                                                        <li class="property">2 bedrooms</li>
+                                                                                    <li class="property">1 bathrooms</li>
+                                                                                                                                                        <li class="property">harare cbd</li>
+                                    
+                                    
+                                </ul>
+
+                                                    </div>
+                    </div>
+
+                    <div class="line-clamp-3">
+                                                <p>
+                            Ref.: AUR246795
+? 2 Bed Duplex
+? Modern fitted ki...
+                        </p>
+                    </div>
+
+                    <div class="seller-info">
+                                                                                                                                                                                                <div class='store-logo pull-left'>
+                                                                <a style="position: absolute;left:0;bottom:8px;"
+                                                                    href="https://www.classifieds.co.zw/aurora-properties"><img src="https://www.classifieds.co.zw/storage/App/Models/Attachment/files/008/870/326/thumb/logo148269_628.webp" class="img-responsive" loading="lazy" alt="Aurora Properties Logo"><span
+                                                                        class="pull-right">Aurora Properties</span></a>
+                                                            </div>
+                                                                                                                                                            <div class="btn-toolbar-buyer btn-toolbar pull-right" role="toolbar">
+    <noscript>
+                                    <div style="display: inline-block;">
+                <button type="button" id="whatsapp-advert-2415631" style="visibility: hidden"
+        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2415631"
+        data-intent="whatsapp" data-href="https://rply.link/l/bEP09lxg4R" data-type="advert" data-id="2415631"
+        data-category="220" data-category-name="Flats &amp; Apartments for Rent"
+        title="WhatsApp the Advertiser">
+                    <img src="https://www.classifieds.co.zw/logos/whatsapp.png" width="20px" />
+            </button>
+     </div>                                         <a rel="nofollow" class="btn pull-left" style="margin-left:0px;" href="#"
+                title="Call the Advertiser">
+                                    <i class="fa fa-phone"></i>
+                            </a>
+                            <a rel="nofollow" class="btn pull-left" style="margin-left:0px;" href="#"><i
+                    class="fa fa-envelope"></i>
+            </a>
+                    </noscript>
+    <div class="clearfix btn-group" style="display: flex" role="group">
+                                    <div style="display: inline-block;">
+                <button type="button" id="whatsapp-advert-2415631" style="visibility: hidden"
+        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2415631"
+        data-intent="whatsapp" data-href="https://rply.link/l/bEP09lxg4R" data-type="advert" data-id="2415631"
+        data-category="220" data-category-name="Flats &amp; Apartments for Rent"
+        title="WhatsApp the Advertiser">
+                    <i class="fa fa-whatsapp"></i>
+            </button>
+     </div>                                             <button type="button" id="contact-advert-2415631"
+                    class="btn-modal btn btn-advert call record-interest" data-target="#login-options-modal"
+                    data-intent="call" data-type="advert" data-id="2415631"
+                    data-category="220" data-category-name="Flats &amp; Apartments for Rent"
+                    title="Call the Advertiser">
+                                            <i class="fa fa-phone"></i>
+                                    </button>
+                                            
+                <button type="button" id="email-advert-2415631"
+                    class="btn-modal btn btn-advert email record-interest" data-target="#contact-seller"
+                    data-intent="email" data-type="advert" data-id="2415631"
+                    data-category="220" data-category-name="Flats &amp; Apartments for Rent"
+                    title="Email the Advertiser">
+                    <i class="fa fa-envelope"></i>
+                </button>
+                
+                                                </div>
+</div>
+
+<script type="245619828e9ab26f08ed8c97-text/javascript">
+    function rememberAction(action, advert) {
+        localStorage.setItem('modal-action', JSON.stringify({ action, advert }))
+    }
+</script>                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="alerts-2415631">
+        </div>                                                                                            <div id="listing-2411207"
+    class="listing panel panel-default panel-listing border-priority--gold border-status--online"
+    data-id="2411207" data-type="advert" data-view="category"     data-category="{&quot;leaf&quot;:220,&quot;parent&quot;:16,&quot;level_1&quot;:16,&quot;level_1_ident&quot;:&quot;property\/Property&quot;,&quot;level_2&quot;:220,&quot;level_2_ident&quot;:&quot;flats-apartments-for-rent\/Flats &amp; Apartments for Rent&quot;,&quot;payable&quot;:false,&quot;points&quot;:&quot;0&quot;,&quot;price&quot;:0,&quot;title&quot;:&quot;Houses for Sale&quot;,&quot;usd_price&quot;:&quot;0&quot;}"     data-currency="{&quot;id&quot;:1,&quot;title&quot;:&quot;USD (international transactions)&quot;,&quot;iso&quot;:&quot;USD&quot;,&quot;symbol&quot;:&quot;$&quot;,&quot;prefix&quot;:&quot;USD&quot;,&quot;enabled&quot;:1,&quot;created_at&quot;:&quot;2015-12-04 19:01:40&quot;,&quot;updated_at&quot;:&quot;2020-06-25 14:17:18&quot;,&quot;display_format&quot;:&quot;#,###,###&quot;,&quot;rate&quot;:&quot;1.00&quot;,&quot;default&quot;:1}" style="position: relative;">
+
+        <div class="panel-body">
+
+
+
+                    <div class="pull-left image col-md-5 col-sm-5 col-xs-4">
+        
+                                                <div class="gallery">
+    
+    <div id="gallery-2411207" class="carousel slide" data-ride="carousel" data-images="[&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2411207\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/248\/200\/medium\/image-17.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2411207\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/248\/184\/medium\/image-1.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2411207\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/248\/185\/medium\/image-2.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2411207\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/248\/186\/medium\/image-3.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2411207\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/248\/187\/medium\/image-4.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2411207\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/248\/188\/medium\/image-5.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2411207\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/248\/189\/medium\/image-6.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2411207\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/248\/190\/medium\/image-7.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2411207\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/248\/191\/medium\/image-8.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2411207\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/248\/192\/medium\/image-9.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2411207\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/248\/193\/medium\/image-10.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2411207\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/248\/194\/medium\/image-11.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2411207\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/248\/195\/medium\/image-12.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2411207\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/248\/196\/medium\/image-13.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2411207\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/248\/197\/medium\/image-14.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2411207\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/248\/198\/medium\/image-15.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2411207\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/248\/199\/medium\/image-16.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;div class='descrip' &gt;Ref.: KHA245371\r\n??Greendale Rossal Cluster Property To let\n??Rent: $1200\n??Deposit: $1200 (refundable) 1\n\nOne of the most secured gated communities with high-value infrastructures, security 24\/7, and very close to GREENDALE Shopping Center. The property offers the following:\n??3 stunning bedrooms, main bedroom with an en-suite and a washing basin with BICs\n??Open plan lounge and kitchen. Kitchen with Fine linen cupboards and granite tops and double basin sink. Fitted kitchen with 4 gas stove\n??Spacious lounge with sliding entrance Door \n??A reliable communal borehole with a 2,000-litre water storage tank. Plus a 3KV solar system \n??The property is walled with a&amp;hellip;&lt;\/div&gt;&quot;]">
+                            <div class="carousel-inner " role="listbox">
+                <div class="carousel-item active" data-index="0">
+
+                            <a class="image" rel="" href="https://www.classifieds.co.zw/listings/greendale-flat-apartment-2411207" aria-label="Greendale - Flat & Apartment"><img src="/storage/App/Models/Attachment/files/011/248/200/medium/image-17.webp" class="img-responsive center-block img-max-width " alt="Greendale - Flat & Apartment"  loading="lazy"/></a>
+            
+        </div>
+    </div>
+
+    <a class="carousel-control left carousel-control-prev"
+        href="#gallery-2411207" role="button" data-slide="prev" style="z-index:10">
+        <span class="glyphicon carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">&laquo; Previous</span>
+    </a>
+
+    <a class="carousel-control right carousel-control-next"
+        href="#gallery-2411207" role="button" data-slide="next" style="z-index:10">
+        <span class="glyphicon carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next &raquo;</span>
+    </a>
+</div>
+</div>
+<script type="245619828e9ab26f08ed8c97-text/javascript">
+    var _ytdVideoIndex = "17";
+</script>
+                            </div>
+
+                            <div class="details col-md-7 col-sm-7 col-xs-8">
+                                <h5 class="listing-title">
+                        <a href="https://www.classifieds.co.zw/listings/greendale-flat-apartment-2411207 ">
+                            Greendale - Flat & Apartment</a>
+
+                                            </h5>
+
+                    <div class="row">
+                                                                        <div class="pull-left price">
+
+                                                    <div class="amount">
+                                                        <div class=" pull-left usd-price-tooltip">
+                                                                                                                                                                                        $1,200
+                                                                                                                                                                                </div>
+                                                        <div class=" pull-right local-price local-price-tooltip">
+
+                                                            <span
+                                                                class="flavour"> per month</span>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                                <div class="pull-right col-md-2 favourite-right">
+                                                                                                                                                                                            <button type="button" class="favourite btn-advert btn " data-exists="false"
+                                                            title="Favourite the Advert"><i class="fa fa-heart-o"></i>
+                                                        </button>
+                                                                                                        </div>
+
+                        
+                        <div class="properties pull-left col-md-10">
+                            
+                                <ul class="list-unstyled">
+                                                                                                                        <li class="property">3 bedrooms</li>
+                                                                                    <li class="property">2 bathrooms</li>
+                                                                                    <li class="property">500 m&sup2;</li>
+                                                                                                                                                        <li class="property">harare east</li>
+                                    
+                                    
+                                </ul>
+
+                                                    </div>
+                    </div>
+
+                    <div class="line-clamp-3">
+                                                <p>
+                            Ref.: KHA245371
+??Greendale Rossal Cluster Proper...
+                        </p>
+                    </div>
+
+                    <div class="seller-info">
+                                                                                                                                                                                                <div class='store-logo pull-left'>
+                                                                <a style="position: absolute;left:0;bottom:8px;"
+                                                                    href="https://www.classifieds.co.zw/khalida-realty"><img src="https://www.classifieds.co.zw/storage/App/Models/Attachment/files/008/871/072/thumb/khalida.webp" class="img-responsive" loading="lazy" alt="Khalida Realty Logo"><span
+                                                                        class="pull-right">Khalida Realty</span></a>
+                                                            </div>
+                                                                                                                                                            <div class="btn-toolbar-buyer btn-toolbar pull-right" role="toolbar">
+    <noscript>
+                                    <div style="display: inline-block;">
+                <button type="button" id="whatsapp-advert-2411207" style="visibility: hidden"
+        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2411207"
+        data-intent="whatsapp" data-href="https://rply.link/l/EbyGbXgaUg" data-type="advert" data-id="2411207"
+        data-category="220" data-category-name="Flats &amp; Apartments for Rent"
+        title="WhatsApp the Advertiser">
+                    <img src="https://www.classifieds.co.zw/logos/whatsapp.png" width="20px" />
+            </button>
+     </div>                                         <a rel="nofollow" class="btn pull-left" style="margin-left:0px;" href="#"
+                title="Call the Advertiser">
+                                    <i class="fa fa-phone"></i>
+                            </a>
+                            <a rel="nofollow" class="btn pull-left" style="margin-left:0px;" href="#"><i
+                    class="fa fa-envelope"></i>
+            </a>
+                    </noscript>
+    <div class="clearfix btn-group" style="display: flex" role="group">
+                                    <div style="display: inline-block;">
+                <button type="button" id="whatsapp-advert-2411207" style="visibility: hidden"
+        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2411207"
+        data-intent="whatsapp" data-href="https://rply.link/l/EbyGbXgaUg" data-type="advert" data-id="2411207"
+        data-category="220" data-category-name="Flats &amp; Apartments for Rent"
+        title="WhatsApp the Advertiser">
+                    <i class="fa fa-whatsapp"></i>
+            </button>
+     </div>                                             <button type="button" id="contact-advert-2411207"
+                    class="btn-modal btn btn-advert call record-interest" data-target="#login-options-modal"
+                    data-intent="call" data-type="advert" data-id="2411207"
+                    data-category="220" data-category-name="Flats &amp; Apartments for Rent"
+                    title="Call the Advertiser">
+                                            <i class="fa fa-phone"></i>
+                                    </button>
+                                            
+                <button type="button" id="email-advert-2411207"
+                    class="btn-modal btn btn-advert email record-interest" data-target="#contact-seller"
+                    data-intent="email" data-type="advert" data-id="2411207"
+                    data-category="220" data-category-name="Flats &amp; Apartments for Rent"
+                    title="Email the Advertiser">
+                    <i class="fa fa-envelope"></i>
+                </button>
+                
+                                                </div>
+</div>
+
+<script type="245619828e9ab26f08ed8c97-text/javascript">
+    function rememberAction(action, advert) {
+        localStorage.setItem('modal-action', JSON.stringify({ action, advert }))
+    }
+</script>                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="alerts-2411207">
+        </div>                                                                                            <div id="listing-2388002"
+    class="listing panel panel-default panel-listing border-priority--gold border-status--online"
+    data-id="2388002" data-type="advert" data-view="category"     data-category="{&quot;leaf&quot;:220,&quot;parent&quot;:16,&quot;level_1&quot;:16,&quot;level_1_ident&quot;:&quot;property\/Property&quot;,&quot;level_2&quot;:220,&quot;level_2_ident&quot;:&quot;flats-apartments-for-rent\/Flats &amp; Apartments for Rent&quot;,&quot;payable&quot;:false,&quot;points&quot;:&quot;0&quot;,&quot;price&quot;:0,&quot;title&quot;:&quot;Houses for Sale&quot;,&quot;usd_price&quot;:&quot;0&quot;}"     data-currency="{&quot;id&quot;:1,&quot;title&quot;:&quot;USD (international transactions)&quot;,&quot;iso&quot;:&quot;USD&quot;,&quot;symbol&quot;:&quot;$&quot;,&quot;prefix&quot;:&quot;USD&quot;,&quot;enabled&quot;:1,&quot;created_at&quot;:&quot;2015-12-04 19:01:40&quot;,&quot;updated_at&quot;:&quot;2020-06-25 14:17:18&quot;,&quot;display_format&quot;:&quot;#,###,###&quot;,&quot;rate&quot;:&quot;1.00&quot;,&quot;default&quot;:1}" style="position: relative;">
+
+        <div class="panel-body">
+
+
+
+                    <div class="pull-left image col-md-5 col-sm-5 col-xs-4">
+        
+                                                <div class="gallery">
+    
+    <div id="gallery-2388002" class="carousel slide" data-ride="carousel" data-images="[&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avondale-west-garden-flat-2388002\&quot; aria-label=\&quot;Avondale West - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/037\/564\/medium\/image-1.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avondale West - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avondale-west-garden-flat-2388002\&quot; aria-label=\&quot;Avondale West - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/037\/565\/medium\/image-2.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avondale West - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avondale-west-garden-flat-2388002\&quot; aria-label=\&quot;Avondale West - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/037\/566\/medium\/image-3.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avondale West - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avondale-west-garden-flat-2388002\&quot; aria-label=\&quot;Avondale West - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/037\/567\/medium\/image-4.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avondale West - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avondale-west-garden-flat-2388002\&quot; aria-label=\&quot;Avondale West - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/037\/568\/medium\/image-5.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avondale West - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avondale-west-garden-flat-2388002\&quot; aria-label=\&quot;Avondale West - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/037\/569\/medium\/image-6.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avondale West - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avondale-west-garden-flat-2388002\&quot; aria-label=\&quot;Avondale West - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/037\/570\/medium\/image-7.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avondale West - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avondale-west-garden-flat-2388002\&quot; aria-label=\&quot;Avondale West - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/037\/571\/medium\/image-8.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avondale West - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avondale-west-garden-flat-2388002\&quot; aria-label=\&quot;Avondale West - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/037\/572\/medium\/image-9.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avondale West - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avondale-west-garden-flat-2388002\&quot; aria-label=\&quot;Avondale West - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/037\/573\/medium\/image-10.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avondale West - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avondale-west-garden-flat-2388002\&quot; aria-label=\&quot;Avondale West - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/037\/574\/medium\/image-11.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avondale West - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avondale-west-garden-flat-2388002\&quot; aria-label=\&quot;Avondale West - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/037\/575\/medium\/image-12.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avondale West - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avondale-west-garden-flat-2388002\&quot; aria-label=\&quot;Avondale West - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/037\/576\/medium\/image-13.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avondale West - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avondale-west-garden-flat-2388002\&quot; aria-label=\&quot;Avondale West - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/037\/577\/medium\/image-14.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avondale West - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;div class='descrip' &gt;Ref.: PRL236176\r\nAvailable Immediately | Unfurnished | Rental Price exclusive of $100 Levies &amp; COH\n \n 3 Bedroom, 2 Bathroom Modern Apartment, open plan living with a fitted kitchen! \n \n This unit has 3 allocated parking spaces and comprises of 3 bedrooms, 2 bathrooms (Main ensuite) open plan kitchen with both Gas and electric stoves and living area opening onto a garden or balcony. \n \n There are 12 Units altogether divided into 3 blocks of 4. \n \n This unit comes equipped with a 5kva Solar System and a 200ah Lithium battery. \n \n The complex is fully walled with an entrance and exit electric gate borehole and tanked water reticulation designed to cater for all uni&amp;hellip;&lt;\/div&gt;&quot;]">
+                            <div class="carousel-inner " role="listbox">
+                <div class="carousel-item active" data-index="0">
+
+                            <a class="image" rel="" href="https://www.classifieds.co.zw/listings/avondale-west-garden-flat-2388002" aria-label="Avondale West - Garden Flat"><img src="/storage/App/Models/Attachment/files/011/037/564/medium/image-1.webp" class="img-responsive center-block img-max-width " alt="Avondale West - Garden Flat"  loading="lazy"/></a>
+            
+        </div>
+    </div>
+
+    <a class="carousel-control left carousel-control-prev"
+        href="#gallery-2388002" role="button" data-slide="prev" style="z-index:10">
+        <span class="glyphicon carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">&laquo; Previous</span>
+    </a>
+
+    <a class="carousel-control right carousel-control-next"
+        href="#gallery-2388002" role="button" data-slide="next" style="z-index:10">
+        <span class="glyphicon carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next &raquo;</span>
+    </a>
+</div>
+</div>
+<script type="245619828e9ab26f08ed8c97-text/javascript">
+    var _ytdVideoIndex = "14";
+</script>
+                            </div>
+
+                            <div class="details col-md-7 col-sm-7 col-xs-8">
+                                <h5 class="listing-title">
+                        <a href="https://www.classifieds.co.zw/listings/avondale-west-garden-flat-2388002 ">
+                            Avondale West - Garden Flat</a>
+
+                                            </h5>
+
+                    <div class="row">
+                                                                        <div class="pull-left price">
+
+                                                    <div class="amount">
+                                                        <div class=" pull-left usd-price-tooltip">
+                                                                                                                                                                                        $1,250
+                                                                                                                                                                                </div>
+                                                        <div class=" pull-right local-price local-price-tooltip">
+
+                                                            <span
+                                                                class="flavour"> per month</span>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                                <div class="pull-right col-md-2 favourite-right">
+                                                                                                                                                                                            <button type="button" class="favourite btn-advert btn " data-exists="false"
+                                                            title="Favourite the Advert"><i class="fa fa-heart-o"></i>
+                                                        </button>
+                                                                                                        </div>
+
+                        
+                        <div class="properties pull-left col-md-10">
+                            
+                                <ul class="list-unstyled">
+                                                                                                                        <li class="property">3 bedrooms</li>
+                                                                                    <li class="property">2 bathrooms</li>
+                                                                                    <li class="property">2560 m&sup2;</li>
+                                                                                                                                                        <li class="property">harare west</li>
+                                    
+                                    
+                                </ul>
+
+                                                    </div>
+                    </div>
+
+                    <div class="line-clamp-3">
+                                                <p>
+                            Ref.: PRL236176
+Available Immediately | Unfurnish...
+                        </p>
+                    </div>
+
+                    <div class="seller-info">
+                                                                                                                                                                                                <div class='store-logo pull-left'>
+                                                                <a style="position: absolute;left:0;bottom:8px;"
+                                                                    href="https://www.classifieds.co.zw/property-link"><img src="https://www.classifieds.co.zw/storage/App/Models/Attachment/files/000/690/070/thumb/property link.gif" class="img-responsive" loading="lazy" alt="Property Link Logo"><span
+                                                                        class="pull-right">Property Link</span></a>
+                                                            </div>
+                                                                                                                                                            <div class="btn-toolbar-buyer btn-toolbar pull-right" role="toolbar">
+    <noscript>
+                                    <div style="display: inline-block;">
+                <button type="button" id="whatsapp-advert-2388002" style="visibility: hidden"
+        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2388002"
+        data-intent="whatsapp" data-href="https://rply.link/l/OzlGG0SzCu" data-type="advert" data-id="2388002"
+        data-category="220" data-category-name="Flats &amp; Apartments for Rent"
+        title="WhatsApp the Advertiser">
+                    <img src="https://www.classifieds.co.zw/logos/whatsapp.png" width="20px" />
+            </button>
+     </div>                                         <a rel="nofollow" class="btn pull-left" style="margin-left:0px;" href="#"
+                title="Call the Advertiser">
+                                    <i class="fa fa-phone"></i>
+                            </a>
+                            <a rel="nofollow" class="btn pull-left" style="margin-left:0px;" href="#"><i
+                    class="fa fa-envelope"></i>
+            </a>
+                    </noscript>
+    <div class="clearfix btn-group" style="display: flex" role="group">
+                                    <div style="display: inline-block;">
+                <button type="button" id="whatsapp-advert-2388002" style="visibility: hidden"
+        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2388002"
+        data-intent="whatsapp" data-href="https://rply.link/l/OzlGG0SzCu" data-type="advert" data-id="2388002"
+        data-category="220" data-category-name="Flats &amp; Apartments for Rent"
+        title="WhatsApp the Advertiser">
+                    <i class="fa fa-whatsapp"></i>
+            </button>
+     </div>                                             <button type="button" id="contact-advert-2388002"
+                    class="btn-modal btn btn-advert call record-interest" data-target="#login-options-modal"
+                    data-intent="call" data-type="advert" data-id="2388002"
+                    data-category="220" data-category-name="Flats &amp; Apartments for Rent"
+                    title="Call the Advertiser">
+                                            <i class="fa fa-phone"></i>
+                                    </button>
+                                            
+                <button type="button" id="email-advert-2388002"
+                    class="btn-modal btn btn-advert email record-interest" data-target="#contact-seller"
+                    data-intent="email" data-type="advert" data-id="2388002"
+                    data-category="220" data-category-name="Flats &amp; Apartments for Rent"
+                    title="Email the Advertiser">
+                    <i class="fa fa-envelope"></i>
+                </button>
+                
+                                                </div>
+</div>
+
+<script type="245619828e9ab26f08ed8c97-text/javascript">
+    function rememberAction(action, advert) {
+        localStorage.setItem('modal-action', JSON.stringify({ action, advert }))
+    }
+</script>                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="alerts-2388002">
+        </div>                                                                                            <div id="listing-2420862"
+    class="listing panel panel-default panel-listing border-priority--gold border-status--online"
+    data-id="2420862" data-type="advert" data-view="category"     data-category="{&quot;leaf&quot;:220,&quot;parent&quot;:16,&quot;level_1&quot;:16,&quot;level_1_ident&quot;:&quot;property\/Property&quot;,&quot;level_2&quot;:220,&quot;level_2_ident&quot;:&quot;flats-apartments-for-rent\/Flats &amp; Apartments for Rent&quot;,&quot;payable&quot;:false,&quot;points&quot;:&quot;0&quot;,&quot;price&quot;:0,&quot;title&quot;:&quot;Houses for Sale&quot;,&quot;usd_price&quot;:&quot;0&quot;}"     data-currency="{&quot;id&quot;:1,&quot;title&quot;:&quot;USD (international transactions)&quot;,&quot;iso&quot;:&quot;USD&quot;,&quot;symbol&quot;:&quot;$&quot;,&quot;prefix&quot;:&quot;USD&quot;,&quot;enabled&quot;:1,&quot;created_at&quot;:&quot;2015-12-04 19:01:40&quot;,&quot;updated_at&quot;:&quot;2020-06-25 14:17:18&quot;,&quot;display_format&quot;:&quot;#,###,###&quot;,&quot;rate&quot;:&quot;1.00&quot;,&quot;default&quot;:1}" style="position: relative;">
+
+        <div class="panel-body">
+
+
+
+                    <div class="pull-left image col-md-5 col-sm-5 col-xs-4">
+        
+                                                <div class="gallery">
+    
+    <div id="gallery-2420862" class="carousel slide" data-ride="carousel" data-images="[&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2420862\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/312\/128\/medium\/image-1.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2420862\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/312\/129\/medium\/image-2.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2420862\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/312\/130\/medium\/image-3.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2420862\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/312\/131\/medium\/image-4.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2420862\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/312\/132\/medium\/image-5.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2420862\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/312\/133\/medium\/image-6.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2420862\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/312\/134\/medium\/image-7.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2420862\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/312\/135\/medium\/image-8.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2420862\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/312\/136\/medium\/image-9.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2420862\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/312\/137\/medium\/image-10.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2420862\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/312\/138\/medium\/image-11.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2420862\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/312\/139\/medium\/image-12.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2420862\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/312\/140\/medium\/image-13.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2420862\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/312\/141\/medium\/image-14.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2420862\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/312\/142\/medium\/image-15.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2420862\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/312\/143\/medium\/image-16.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2420862\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/312\/144\/medium\/image-17.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;div class='descrip' &gt;Ref.: GLRE248776\r\nPrime 3-bedroom, 2-bath flat for rent in sought-after Greendale, Harare East \u2014 a bright, well-proportioned 250 m\u00b2 living space set on a generous 500 m\u00b2 plot. This comfortable apartment offers spacious living and dining areas that flow easily for family living and entertaining, three good-sized bedrooms with ample storage, and two modern bathrooms. The kitchen is practical and well-appointed, with room for appliances and everyday convenience. Reliable borehole water supply ensures peace of mind and continuity. Enjoy a private, secure compound with off-street parking, low-maintenance gardens and mature trees that frame the property. Ideally p&amp;hellip;&lt;\/div&gt;&quot;]">
+                            <div class="carousel-inner " role="listbox">
+                <div class="carousel-item active" data-index="0">
+
+                            <a class="image" rel="" href="https://www.classifieds.co.zw/listings/greendale-flat-apartment-2420862" aria-label="Greendale - Flat & Apartment"><img src="/storage/App/Models/Attachment/files/011/312/128/medium/image-1.webp" class="img-responsive center-block img-max-width " alt="Greendale - Flat & Apartment"  loading="lazy"/></a>
+            
+        </div>
+    </div>
+
+    <a class="carousel-control left carousel-control-prev"
+        href="#gallery-2420862" role="button" data-slide="prev" style="z-index:10">
+        <span class="glyphicon carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">&laquo; Previous</span>
+    </a>
+
+    <a class="carousel-control right carousel-control-next"
+        href="#gallery-2420862" role="button" data-slide="next" style="z-index:10">
+        <span class="glyphicon carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next &raquo;</span>
+    </a>
+</div>
+</div>
+<script type="245619828e9ab26f08ed8c97-text/javascript">
+    var _ytdVideoIndex = "17";
+</script>
+                            </div>
+
+                            <div class="details col-md-7 col-sm-7 col-xs-8">
+                                <h5 class="listing-title">
+                        <a href="https://www.classifieds.co.zw/listings/greendale-flat-apartment-2420862 ">
+                            Greendale - Flat & Apartment</a>
+
+                                            </h5>
+
+                    <div class="row">
+                                                                        <div class="pull-left price">
+
+                                                    <div class="amount">
+                                                        <div class=" pull-left usd-price-tooltip">
+                                                                                                                                                                                        $1,250
+                                                                                                                                                                                </div>
+                                                        <div class=" pull-right local-price local-price-tooltip">
+
+                                                            <span
+                                                                class="flavour"> per month</span>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                                <div class="pull-right col-md-2 favourite-right">
+                                                                                                                                                                                            <button type="button" class="favourite btn-advert btn " data-exists="false"
+                                                            title="Favourite the Advert"><i class="fa fa-heart-o"></i>
+                                                        </button>
+                                                                                                        </div>
+
+                        
+                        <div class="properties pull-left col-md-10">
+                            
+                                <ul class="list-unstyled">
+                                                                                                                        <li class="property">3 bedrooms</li>
+                                                                                    <li class="property">2 bathrooms</li>
+                                                                                    <li class="property">500 m&sup2;</li>
+                                                                                                                                                        <li class="property">harare east</li>
+                                    
+                                    
+                                </ul>
+
+                                                    </div>
+                    </div>
+
+                    <div class="line-clamp-3">
+                                                <p>
+                            Ref.: GLRE248776
+Prime 3-bedroom, 2-bath flat for...
+                        </p>
+                    </div>
+
+                    <div class="seller-info">
+                                                <div class="btn-toolbar-buyer btn-toolbar pull-right" role="toolbar">
+    <noscript>
+                                    <div style="display: inline-block;">
+                <button type="button" id="whatsapp-advert-2420862" style="visibility: hidden"
+        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2420862"
+        data-intent="whatsapp" data-href="https://rply.link/l/ZtC0ls9Cyj" data-type="advert" data-id="2420862"
+        data-category="220" data-category-name="Flats &amp; Apartments for Rent"
+        title="WhatsApp the Advertiser">
+                    <img src="https://www.classifieds.co.zw/logos/whatsapp.png" width="20px" />
+            </button>
+     </div>                                         <a rel="nofollow" class="btn pull-left" style="margin-left:0px;" href="#"
+                title="Call the Advertiser">
+                                    <i class="fa fa-phone"></i>
+                            </a>
+                            <a rel="nofollow" class="btn pull-left" style="margin-left:0px;" href="#"><i
+                    class="fa fa-envelope"></i>
+            </a>
+                    </noscript>
+    <div class="clearfix btn-group" style="display: flex" role="group">
+                                    <div style="display: inline-block;">
+                <button type="button" id="whatsapp-advert-2420862" style="visibility: hidden"
+        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2420862"
+        data-intent="whatsapp" data-href="https://rply.link/l/ZtC0ls9Cyj" data-type="advert" data-id="2420862"
+        data-category="220" data-category-name="Flats &amp; Apartments for Rent"
+        title="WhatsApp the Advertiser">
+                    <i class="fa fa-whatsapp"></i>
+            </button>
+     </div>                                             <button type="button" id="contact-advert-2420862"
+                    class="btn-modal btn btn-advert call record-interest" data-target="#login-options-modal"
+                    data-intent="call" data-type="advert" data-id="2420862"
+                    data-category="220" data-category-name="Flats &amp; Apartments for Rent"
+                    title="Call the Advertiser">
+                                            <i class="fa fa-phone"></i>
+                                    </button>
+                                            
+                <button type="button" id="email-advert-2420862"
+                    class="btn-modal btn btn-advert email record-interest" data-target="#contact-seller"
+                    data-intent="email" data-type="advert" data-id="2420862"
+                    data-category="220" data-category-name="Flats &amp; Apartments for Rent"
+                    title="Email the Advertiser">
+                    <i class="fa fa-envelope"></i>
+                </button>
+                
+                                                </div>
+</div>
+
+<script type="245619828e9ab26f08ed8c97-text/javascript">
+    function rememberAction(action, advert) {
+        localStorage.setItem('modal-action', JSON.stringify({ action, advert }))
+    }
+</script>                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="alerts-2420862">
+        </div>                                                                                                            <div class="bannerAd" style="height: 90px; width: 728px !important; border: 1px solid #ddd; overflow: hidden;" >
+                <a href="https://www.cars.co.zw/" target="_blank" style="display: block; height: 100%;" 
+                 data-client="Cars.co.zw"
+                 data-category="all" 
+                 data-appear="classifieds.co.zw" 
+                 data-url="https://www.cars.co.zw/"
+                 data-device="desktop"
+                 >
+                    <img src="https://www.classifieds.co.zw/storage/public/banners/z16OGEwu2J7LahW9ldwakZaQohP4GD1NNUNSzJNS.jpg" alt="" srcset="" loading="lazy">
+                </a>  
+            </div>
+     
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js" type="245619828e9ab26f08ed8c97-text/javascript"></script>
+
+<script type="245619828e9ab26f08ed8c97-text/javascript">
+    if ($('.bannerAd').hasClass('swiper')) {
+        var swiper = new Swiper(".bannerAd", {
+            loop: true,
+            slidesPerView: 'auto',
+            autoplay: {
+                delay: 6000,
+                disableOnInteraction: false,
+            }
+        });
+    }
+</script>                                                                                                <div id="listing-2409768"
+    class="listing panel panel-default panel-listing border-priority--gold border-status--online"
+    data-id="2409768" data-type="advert" data-view="category"     data-category="{&quot;leaf&quot;:220,&quot;parent&quot;:16,&quot;level_1&quot;:16,&quot;level_1_ident&quot;:&quot;property\/Property&quot;,&quot;level_2&quot;:220,&quot;level_2_ident&quot;:&quot;flats-apartments-for-rent\/Flats &amp; Apartments for Rent&quot;,&quot;payable&quot;:false,&quot;points&quot;:&quot;0&quot;,&quot;price&quot;:0,&quot;title&quot;:&quot;Houses for Sale&quot;,&quot;usd_price&quot;:&quot;0&quot;}"     data-currency="{&quot;id&quot;:1,&quot;title&quot;:&quot;USD (international transactions)&quot;,&quot;iso&quot;:&quot;USD&quot;,&quot;symbol&quot;:&quot;$&quot;,&quot;prefix&quot;:&quot;USD&quot;,&quot;enabled&quot;:1,&quot;created_at&quot;:&quot;2015-12-04 19:01:40&quot;,&quot;updated_at&quot;:&quot;2020-06-25 14:17:18&quot;,&quot;display_format&quot;:&quot;#,###,###&quot;,&quot;rate&quot;:&quot;1.00&quot;,&quot;default&quot;:1}" style="position: relative;">
+
+        <div class="panel-body">
+
+
+
+                    <div class="pull-left image col-md-5 col-sm-5 col-xs-4">
+        
+                                                <div class="gallery">
+    
+    <div id="gallery-2409768" class="carousel slide" data-ride="carousel" data-images="[&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/eastlea-flat-apartment-2409768\&quot; aria-label=\&quot;Eastlea - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/236\/333\/medium\/image-1.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Eastlea - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/eastlea-flat-apartment-2409768\&quot; aria-label=\&quot;Eastlea - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/236\/334\/medium\/image-2.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Eastlea - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/eastlea-flat-apartment-2409768\&quot; aria-label=\&quot;Eastlea - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/236\/335\/medium\/image-3.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Eastlea - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/eastlea-flat-apartment-2409768\&quot; aria-label=\&quot;Eastlea - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/236\/336\/medium\/image-4.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Eastlea - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/eastlea-flat-apartment-2409768\&quot; aria-label=\&quot;Eastlea - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/236\/337\/medium\/image-5.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Eastlea - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/eastlea-flat-apartment-2409768\&quot; aria-label=\&quot;Eastlea - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/236\/338\/medium\/image-6.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Eastlea - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/eastlea-flat-apartment-2409768\&quot; aria-label=\&quot;Eastlea - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/236\/339\/medium\/image-7.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Eastlea - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/eastlea-flat-apartment-2409768\&quot; aria-label=\&quot;Eastlea - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/236\/340\/medium\/image-8.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Eastlea - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/eastlea-flat-apartment-2409768\&quot; aria-label=\&quot;Eastlea - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/236\/341\/medium\/image-9.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Eastlea - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/eastlea-flat-apartment-2409768\&quot; aria-label=\&quot;Eastlea - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/236\/342\/medium\/image-10.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Eastlea - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/eastlea-flat-apartment-2409768\&quot; aria-label=\&quot;Eastlea - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/236\/343\/medium\/image-11.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Eastlea - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;div class='descrip' &gt;Ref.: CHAS244678\r\nExperience elevated living in this freshly painted, second-floor apartment. Perfectly positioned right behind Clyde Shopping Centre, this home offers the ultimate convenience for those who value being close to the action while enjoying a quiet sanctuary.\n\nThe property consists of two well-sized bedrooms with built-in cupboards (BICs), a functional kitchenette, and an intimate dining area. A spacious, sun-drenched lounge that flows seamlessly onto a private balconyperfect for morning coffee or evening relaxation. Refreshing shower and toilet suite. Consistent water supply via a dedicated borehole and backup water tank.\n\nLocated within a secure c&amp;hellip;&lt;\/div&gt;&quot;]">
+                            <div class="carousel-inner " role="listbox">
+                <div class="carousel-item active" data-index="0">
+
+                            <a class="image" rel="" href="https://www.classifieds.co.zw/listings/eastlea-flat-apartment-2409768" aria-label="Eastlea - Flat & Apartment"><img src="/storage/App/Models/Attachment/files/011/236/333/medium/image-1.webp" class="img-responsive center-block img-max-width " alt="Eastlea - Flat & Apartment"  loading="lazy"/></a>
+            
+        </div>
+    </div>
+
+    <a class="carousel-control left carousel-control-prev"
+        href="#gallery-2409768" role="button" data-slide="prev" style="z-index:10">
+        <span class="glyphicon carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">&laquo; Previous</span>
+    </a>
+
+    <a class="carousel-control right carousel-control-next"
+        href="#gallery-2409768" role="button" data-slide="next" style="z-index:10">
+        <span class="glyphicon carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next &raquo;</span>
+    </a>
+</div>
+</div>
+<script type="245619828e9ab26f08ed8c97-text/javascript">
+    var _ytdVideoIndex = "11";
+</script>
+                            </div>
+
+                            <div class="details col-md-7 col-sm-7 col-xs-8">
+                                <h5 class="listing-title">
+                        <a href="https://www.classifieds.co.zw/listings/eastlea-flat-apartment-2409768 ">
+                            Eastlea - Flat & Apartment</a>
+
+                                            </h5>
+
+                    <div class="row">
+                                                                        <div class="pull-left price">
+
+                                                    <div class="amount">
+                                                        <div class=" pull-left usd-price-tooltip">
+                                                                                                                                                                                        $700
+                                                                                                                                                                                </div>
+                                                        <div class=" pull-right local-price local-price-tooltip">
+
+                                                            <span
+                                                                class="flavour"> per month</span>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                                <div class="pull-right col-md-2 favourite-right">
+                                                                                                                                                                                            <button type="button" class="favourite btn-advert btn " data-exists="false"
+                                                            title="Favourite the Advert"><i class="fa fa-heart-o"></i>
+                                                        </button>
+                                                                                                        </div>
+
+                        
+                        <div class="properties pull-left col-md-10">
+                            
+                                <ul class="list-unstyled">
+                                                                                                                        <li class="property">2 bedrooms</li>
+                                                                                    <li class="property">1 bathrooms</li>
+                                                                                    <li class="property">2000 m&sup2;</li>
+                                                                                                                                                        <li class="property">harare east</li>
+                                    
+                                    
+                                </ul>
+
+                                                    </div>
+                    </div>
+
+                    <div class="line-clamp-3">
+                                                <p>
+                            Ref.: CHAS244678
+Experience elevated living in th...
+                        </p>
+                    </div>
+
+                    <div class="seller-info">
+                                                                                                                                                                                                <div class='store-logo pull-left'>
+                                                                <a style="position: absolute;left:0;bottom:8px;"
+                                                                    href="https://www.classifieds.co.zw/chas-everitt"><img src="https://www.classifieds.co.zw/storage/App/Models/Attachment/files/010/498/993/thumb/CHAS.webp" class="img-responsive" loading="lazy" alt="CHAS EVERITT Logo"><span
+                                                                        class="pull-right">CHAS EVERITT</span></a>
+                                                            </div>
+                                                                                                                                                            <div class="btn-toolbar-buyer btn-toolbar pull-right" role="toolbar">
+    <noscript>
+                                    <div style="display: inline-block;">
+                <button type="button" id="whatsapp-advert-2409768" style="visibility: hidden"
+        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2409768"
+        data-intent="whatsapp" data-href="https://rply.link/l/QqF2bWVBG8" data-type="advert" data-id="2409768"
+        data-category="220" data-category-name="Flats &amp; Apartments for Rent"
+        title="WhatsApp the Advertiser">
+                    <img src="https://www.classifieds.co.zw/logos/whatsapp.png" width="20px" />
+            </button>
+     </div>                                         <a rel="nofollow" class="btn pull-left" style="margin-left:0px;" href="#"
+                title="Call the Advertiser">
+                                    <i class="fa fa-phone"></i>
+                            </a>
+                            <a rel="nofollow" class="btn pull-left" style="margin-left:0px;" href="#"><i
+                    class="fa fa-envelope"></i>
+            </a>
+                    </noscript>
+    <div class="clearfix btn-group" style="display: flex" role="group">
+                                    <div style="display: inline-block;">
+                <button type="button" id="whatsapp-advert-2409768" style="visibility: hidden"
+        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2409768"
+        data-intent="whatsapp" data-href="https://rply.link/l/QqF2bWVBG8" data-type="advert" data-id="2409768"
+        data-category="220" data-category-name="Flats &amp; Apartments for Rent"
+        title="WhatsApp the Advertiser">
+                    <i class="fa fa-whatsapp"></i>
+            </button>
+     </div>                                             <button type="button" id="contact-advert-2409768"
+                    class="btn-modal btn btn-advert call record-interest" data-target="#login-options-modal"
+                    data-intent="call" data-type="advert" data-id="2409768"
+                    data-category="220" data-category-name="Flats &amp; Apartments for Rent"
+                    title="Call the Advertiser">
+                                            <i class="fa fa-phone"></i>
+                                    </button>
+                                            
+                <button type="button" id="email-advert-2409768"
+                    class="btn-modal btn btn-advert email record-interest" data-target="#contact-seller"
+                    data-intent="email" data-type="advert" data-id="2409768"
+                    data-category="220" data-category-name="Flats &amp; Apartments for Rent"
+                    title="Email the Advertiser">
+                    <i class="fa fa-envelope"></i>
+                </button>
+                
+                                                </div>
+</div>
+
+<script type="245619828e9ab26f08ed8c97-text/javascript">
+    function rememberAction(action, advert) {
+        localStorage.setItem('modal-action', JSON.stringify({ action, advert }))
+    }
+</script>                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="alerts-2409768">
+        </div>                                                                                            <div id="listing-2419764"
+    class="listing panel panel-default panel-listing border-priority--gold border-status--online"
+    data-id="2419764" data-type="advert" data-view="category"     data-category="{&quot;leaf&quot;:220,&quot;parent&quot;:16,&quot;level_1&quot;:16,&quot;level_1_ident&quot;:&quot;property\/Property&quot;,&quot;level_2&quot;:220,&quot;level_2_ident&quot;:&quot;flats-apartments-for-rent\/Flats &amp; Apartments for Rent&quot;,&quot;payable&quot;:false,&quot;points&quot;:&quot;0&quot;,&quot;price&quot;:0,&quot;title&quot;:&quot;Houses for Sale&quot;,&quot;usd_price&quot;:&quot;0&quot;}"     data-currency="{&quot;id&quot;:1,&quot;title&quot;:&quot;USD (international transactions)&quot;,&quot;iso&quot;:&quot;USD&quot;,&quot;symbol&quot;:&quot;$&quot;,&quot;prefix&quot;:&quot;USD&quot;,&quot;enabled&quot;:1,&quot;created_at&quot;:&quot;2015-12-04 19:01:40&quot;,&quot;updated_at&quot;:&quot;2020-06-25 14:17:18&quot;,&quot;display_format&quot;:&quot;#,###,###&quot;,&quot;rate&quot;:&quot;1.00&quot;,&quot;default&quot;:1}" style="position: relative;">
+
+        <div class="panel-body">
+
+
+
+                    <div class="pull-left image col-md-5 col-sm-5 col-xs-4">
+        
+                                                <div class="gallery">
+    
+    <div id="gallery-2419764" class="carousel slide" data-ride="carousel" data-images="[&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/borrowdale-west-flat-apartment-2419764\&quot; aria-label=\&quot;Borrowdale West - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/304\/907\/medium\/image-1.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Borrowdale West - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/borrowdale-west-flat-apartment-2419764\&quot; aria-label=\&quot;Borrowdale West - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/304\/908\/medium\/image-2.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Borrowdale West - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/borrowdale-west-flat-apartment-2419764\&quot; aria-label=\&quot;Borrowdale West - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/304\/909\/medium\/image-3.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Borrowdale West - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/borrowdale-west-flat-apartment-2419764\&quot; aria-label=\&quot;Borrowdale West - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/304\/910\/medium\/image-4.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Borrowdale West - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/borrowdale-west-flat-apartment-2419764\&quot; aria-label=\&quot;Borrowdale West - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/304\/911\/medium\/image-5.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Borrowdale West - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/borrowdale-west-flat-apartment-2419764\&quot; aria-label=\&quot;Borrowdale West - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/304\/912\/medium\/image-6.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Borrowdale West - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/borrowdale-west-flat-apartment-2419764\&quot; aria-label=\&quot;Borrowdale West - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/304\/913\/medium\/image-7.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Borrowdale West - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/borrowdale-west-flat-apartment-2419764\&quot; aria-label=\&quot;Borrowdale West - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/304\/914\/medium\/image-8.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Borrowdale West - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/borrowdale-west-flat-apartment-2419764\&quot; aria-label=\&quot;Borrowdale West - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/304\/915\/medium\/image-9.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Borrowdale West - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/borrowdale-west-flat-apartment-2419764\&quot; aria-label=\&quot;Borrowdale West - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/304\/916\/medium\/image-10.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Borrowdale West - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/borrowdale-west-flat-apartment-2419764\&quot; aria-label=\&quot;Borrowdale West - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/304\/917\/medium\/image-11.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Borrowdale West - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/borrowdale-west-flat-apartment-2419764\&quot; aria-label=\&quot;Borrowdale West - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/304\/918\/medium\/image-12.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Borrowdale West - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;div class='descrip' &gt;Ref.: KNP248375\r\nLovely, modern 1 bedroom flat to rent in Millennium Heights! Downstairs offers an open-plan lounge and kitchen area, fitted with a four-plate gas stove and oven, gas usage is individually metered for convenience. The lounge opens onto a private balcony. The bathroom offers a modern shower, toilet, and washbasin.\n\nResidents benefit from a borehole water supply and a 3KVA solar backup system, providing added reliability for both water and electricity. The complex also offers a range of shared facilities, including padel courts, communal entertainment areas, and lift access.\n\nExcellent security- 24-hour access control. The monthly rental is USD$715&amp;hellip;&lt;\/div&gt;&quot;]">
+                            <div class="carousel-inner " role="listbox">
+                <div class="carousel-item active" data-index="0">
+
+                            <a class="image" rel="" href="https://www.classifieds.co.zw/listings/borrowdale-west-flat-apartment-2419764" aria-label="Borrowdale West - Flat & Apartment"><img src="/storage/App/Models/Attachment/files/011/304/907/medium/image-1.webp" class="img-responsive center-block img-max-width " alt="Borrowdale West - Flat & Apartment"  loading="lazy"/></a>
+            
+        </div>
+    </div>
+
+    <a class="carousel-control left carousel-control-prev"
+        href="#gallery-2419764" role="button" data-slide="prev" style="z-index:10">
+        <span class="glyphicon carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">&laquo; Previous</span>
+    </a>
+
+    <a class="carousel-control right carousel-control-next"
+        href="#gallery-2419764" role="button" data-slide="next" style="z-index:10">
+        <span class="glyphicon carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next &raquo;</span>
+    </a>
+</div>
+</div>
+<script type="245619828e9ab26f08ed8c97-text/javascript">
+    var _ytdVideoIndex = "12";
+</script>
+                            </div>
+
+                            <div class="details col-md-7 col-sm-7 col-xs-8">
+                                <h5 class="listing-title">
+                        <a href="https://www.classifieds.co.zw/listings/borrowdale-west-flat-apartment-2419764 ">
+                            Borrowdale West - Flat & Apartment</a>
+
+                                            </h5>
+
+                    <div class="row">
+                                                                        <div class="pull-left price">
+
+                                                    <div class="amount">
+                                                        <div class=" pull-left usd-price-tooltip">
+                                                                                                                                                                                        $715
+                                                                                                                                                                                </div>
+                                                        <div class=" pull-right local-price local-price-tooltip">
+
+                                                            <span
+                                                                class="flavour"> per month</span>
                                                         </div>
 
                                                     </div>
@@ -2670,7 +3066,8 @@ Brand-new opportunity in Highlan...
                                 <ul class="list-unstyled">
                                                                                                                         <li class="property">1 bedrooms</li>
                                                                                     <li class="property">1 bathrooms</li>
-                                                                                                                                                        <li class="property">harare cbd</li>
+                                                                                    <li class="property">4400 m&sup2;</li>
+                                                                                                                                                        <li class="property">harare north</li>
                                     
                                     
                                 </ul>
@@ -2680,24 +3077,24 @@ Brand-new opportunity in Highlan...
 
                     <div class="line-clamp-3">
                                                 <p>
-                            Ref.: SEF245098
-A well maintained 1 bed-room flat...
+                            Ref.: KNP248375
+Lovely, modern 1 bedroom flat to...
                         </p>
                     </div>
 
                     <div class="seller-info">
                                                                                                                                                                                                 <div class='store-logo pull-left'>
                                                                 <a style="position: absolute;left:0;bottom:8px;"
-                                                                    href="https://www.classifieds.co.zw/seeff"><img src="https://www.classifieds.co.zw/storage/App/Models/Attachment/files/001/803/145/thumb/seeff.gif" class="img-responsive" loading="lazy" alt="Seeff Zimbabwe Logo"><span
-                                                                        class="pull-right">Seeff Zimbabwe</span></a>
+                                                                    href="https://www.classifieds.co.zw/kennan-properties"><img src="https://www.classifieds.co.zw/storage/App/Models/Attachment/files/008/869/642/thumb/kennan org logo.webp" class="img-responsive" loading="lazy" alt="Kennan Properties Logo"><span
+                                                                        class="pull-right">Kennan Properties</span></a>
                                                             </div>
                                                                                                                                                             <div class="btn-toolbar-buyer btn-toolbar pull-right" role="toolbar">
     <noscript>
                                     <div style="display: inline-block;">
-                <button type="button" id="whatsapp-advert-2410642" style="visibility: hidden"
-        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2410642"
-        data-intent="whatsapp" data-href="https://rply.link/l/6MWJDQmQ4U" data-type="advert" data-id="2410642"
-        data-category="218" data-category-name="Flats &amp; Apartments for Sale"
+                <button type="button" id="whatsapp-advert-2419764" style="visibility: hidden"
+        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2419764"
+        data-intent="whatsapp" data-href="https://rply.link/l/Su1ZybvpgP" data-type="advert" data-id="2419764"
+        data-category="220" data-category-name="Flats &amp; Apartments for Rent"
         title="WhatsApp the Advertiser">
                     <img src="https://www.classifieds.co.zw/logos/whatsapp.png" width="20px" />
             </button>
@@ -2711,25 +3108,25 @@ A well maintained 1 bed-room flat...
                     </noscript>
     <div class="clearfix btn-group" style="display: flex" role="group">
                                     <div style="display: inline-block;">
-                <button type="button" id="whatsapp-advert-2410642" style="visibility: hidden"
-        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2410642"
-        data-intent="whatsapp" data-href="https://rply.link/l/6MWJDQmQ4U" data-type="advert" data-id="2410642"
-        data-category="218" data-category-name="Flats &amp; Apartments for Sale"
+                <button type="button" id="whatsapp-advert-2419764" style="visibility: hidden"
+        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2419764"
+        data-intent="whatsapp" data-href="https://rply.link/l/Su1ZybvpgP" data-type="advert" data-id="2419764"
+        data-category="220" data-category-name="Flats &amp; Apartments for Rent"
         title="WhatsApp the Advertiser">
                     <i class="fa fa-whatsapp"></i>
             </button>
-     </div>                                             <button type="button" id="contact-advert-2410642"
+     </div>                                             <button type="button" id="contact-advert-2419764"
                     class="btn-modal btn btn-advert call record-interest" data-target="#login-options-modal"
-                    data-intent="call" data-type="advert" data-id="2410642"
-                    data-category="218" data-category-name="Flats &amp; Apartments for Sale"
+                    data-intent="call" data-type="advert" data-id="2419764"
+                    data-category="220" data-category-name="Flats &amp; Apartments for Rent"
                     title="Call the Advertiser">
                                             <i class="fa fa-phone"></i>
                                     </button>
                                             
-                <button type="button" id="email-advert-2410642"
+                <button type="button" id="email-advert-2419764"
                     class="btn-modal btn btn-advert email record-interest" data-target="#contact-seller"
-                    data-intent="email" data-type="advert" data-id="2410642"
-                    data-category="218" data-category-name="Flats &amp; Apartments for Sale"
+                    data-intent="email" data-type="advert" data-id="2419764"
+                    data-category="220" data-category-name="Flats &amp; Apartments for Rent"
                     title="Email the Advertiser">
                     <i class="fa fa-envelope"></i>
                 </button>
@@ -2737,7 +3134,7 @@ A well maintained 1 bed-room flat...
                                                 </div>
 </div>
 
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
+<script type="245619828e9ab26f08ed8c97-text/javascript">
     function rememberAction(action, advert) {
         localStorage.setItem('modal-action', JSON.stringify({ action, advert }))
     }
@@ -2747,10 +3144,10 @@ A well maintained 1 bed-room flat...
         </div>
 
 
-        <div class="alerts-2410642">
-        </div>                                                                                            <div id="listing-2404485"
+        <div class="alerts-2419764">
+        </div>                                                                                            <div id="listing-2420900"
     class="listing panel panel-default panel-listing border-priority--gold border-status--online"
-    data-id="2404485" data-type="advert" data-view="category"     data-category="{&quot;leaf&quot;:218,&quot;parent&quot;:16,&quot;level_1&quot;:16,&quot;level_1_ident&quot;:&quot;property\/Property&quot;,&quot;level_2&quot;:218,&quot;level_2_ident&quot;:&quot;flats-apartments-for-sale\/Flats &amp; Apartments for Sale&quot;,&quot;payable&quot;:false,&quot;points&quot;:&quot;0&quot;,&quot;price&quot;:0,&quot;title&quot;:&quot;Houses for Sale&quot;,&quot;usd_price&quot;:&quot;0&quot;}"     data-currency="{&quot;id&quot;:1,&quot;title&quot;:&quot;USD (international transactions)&quot;,&quot;iso&quot;:&quot;USD&quot;,&quot;symbol&quot;:&quot;$&quot;,&quot;prefix&quot;:&quot;USD&quot;,&quot;enabled&quot;:1,&quot;created_at&quot;:&quot;2015-12-04 19:01:40&quot;,&quot;updated_at&quot;:&quot;2020-06-25 14:17:18&quot;,&quot;display_format&quot;:&quot;#,###,###&quot;,&quot;rate&quot;:&quot;1.00&quot;,&quot;default&quot;:1}" style="position: relative;">
+    data-id="2420900" data-type="advert" data-view="category"     data-category="{&quot;leaf&quot;:220,&quot;parent&quot;:16,&quot;level_1&quot;:16,&quot;level_1_ident&quot;:&quot;property\/Property&quot;,&quot;level_2&quot;:220,&quot;level_2_ident&quot;:&quot;flats-apartments-for-rent\/Flats &amp; Apartments for Rent&quot;,&quot;payable&quot;:false,&quot;points&quot;:&quot;0&quot;,&quot;price&quot;:0,&quot;title&quot;:&quot;Houses for Sale&quot;,&quot;usd_price&quot;:&quot;0&quot;}"     data-currency="{&quot;id&quot;:1,&quot;title&quot;:&quot;USD (international transactions)&quot;,&quot;iso&quot;:&quot;USD&quot;,&quot;symbol&quot;:&quot;$&quot;,&quot;prefix&quot;:&quot;USD&quot;,&quot;enabled&quot;:1,&quot;created_at&quot;:&quot;2015-12-04 19:01:40&quot;,&quot;updated_at&quot;:&quot;2020-06-25 14:17:18&quot;,&quot;display_format&quot;:&quot;#,###,###&quot;,&quot;rate&quot;:&quot;1.00&quot;,&quot;default&quot;:1}" style="position: relative;">
 
         <div class="panel-body">
 
@@ -2760,37 +3157,37 @@ A well maintained 1 bed-room flat...
         
                                                 <div class="gallery">
     
-    <div id="gallery-2404485" class="carousel slide" data-ride="carousel" data-images="[&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/glaudina-flat-apartment-2404485\&quot; aria-label=\&quot;Glaudina - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/196\/024\/medium\/image-5.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Glaudina - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/glaudina-flat-apartment-2404485\&quot; aria-label=\&quot;Glaudina - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/196\/021\/medium\/image-2.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Glaudina - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/glaudina-flat-apartment-2404485\&quot; aria-label=\&quot;Glaudina - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/196\/020\/medium\/image-1.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Glaudina - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/glaudina-flat-apartment-2404485\&quot; aria-label=\&quot;Glaudina - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/196\/022\/medium\/image-3.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Glaudina - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/glaudina-flat-apartment-2404485\&quot; aria-label=\&quot;Glaudina - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/196\/023\/medium\/image-4.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Glaudina - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/glaudina-flat-apartment-2404485\&quot; aria-label=\&quot;Glaudina - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/196\/025\/medium\/image-6.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Glaudina - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/glaudina-flat-apartment-2404485\&quot; aria-label=\&quot;Glaudina - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/196\/026\/medium\/image-7.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Glaudina - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;div class='descrip' &gt;Ref.: RVL242764\r\nDiscover a smart 2-bedroom, 1-bath apartment in Glaudina, Harare West \u2014 a compact 68 m\u00b2 unit sitting on a 200 m\u00b2 plot within a newly developed brick apartment complex. The development, visible in the photos, features sturdy red-brick low-rise buildings, communal parking and clear open views over green fields, giving a calm suburban feel while remaining close to town. Images show a well-laid estate under phased construction with a crane on site and a community borehole installed to ensure reliable water supply \u2014 a major plus in this area. Satellite dishes and parked cars in the photos point to good connectivity and practical on-site living.&amp;hellip;&lt;\/div&gt;&quot;]">
+    <div id="gallery-2420900" class="carousel slide" data-ride="carousel" data-images="[&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/borrowdale-flat-apartment-2420900\&quot; aria-label=\&quot;Borrowdale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/312\/569\/medium\/image-1.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Borrowdale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/borrowdale-flat-apartment-2420900\&quot; aria-label=\&quot;Borrowdale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/312\/570\/medium\/image-2.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Borrowdale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/borrowdale-flat-apartment-2420900\&quot; aria-label=\&quot;Borrowdale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/312\/571\/medium\/image-3.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Borrowdale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/borrowdale-flat-apartment-2420900\&quot; aria-label=\&quot;Borrowdale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/312\/572\/medium\/image-4.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Borrowdale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/borrowdale-flat-apartment-2420900\&quot; aria-label=\&quot;Borrowdale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/312\/573\/medium\/image-5.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Borrowdale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/borrowdale-flat-apartment-2420900\&quot; aria-label=\&quot;Borrowdale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/312\/574\/medium\/image-6.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Borrowdale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/borrowdale-flat-apartment-2420900\&quot; aria-label=\&quot;Borrowdale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/312\/575\/medium\/image-7.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Borrowdale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/borrowdale-flat-apartment-2420900\&quot; aria-label=\&quot;Borrowdale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/312\/576\/medium\/image-8.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Borrowdale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/borrowdale-flat-apartment-2420900\&quot; aria-label=\&quot;Borrowdale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/312\/577\/medium\/image-9.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Borrowdale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/borrowdale-flat-apartment-2420900\&quot; aria-label=\&quot;Borrowdale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/312\/578\/medium\/image-10.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Borrowdale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/borrowdale-flat-apartment-2420900\&quot; aria-label=\&quot;Borrowdale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/312\/579\/medium\/image-11.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Borrowdale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/borrowdale-flat-apartment-2420900\&quot; aria-label=\&quot;Borrowdale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/312\/580\/medium\/image-12.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Borrowdale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/borrowdale-flat-apartment-2420900\&quot; aria-label=\&quot;Borrowdale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/312\/581\/medium\/image-13.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Borrowdale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/borrowdale-flat-apartment-2420900\&quot; aria-label=\&quot;Borrowdale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/312\/582\/medium\/image-14.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Borrowdale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/borrowdale-flat-apartment-2420900\&quot; aria-label=\&quot;Borrowdale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/312\/583\/medium\/image-15.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Borrowdale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/borrowdale-flat-apartment-2420900\&quot; aria-label=\&quot;Borrowdale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/312\/584\/medium\/image-16.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Borrowdale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/borrowdale-flat-apartment-2420900\&quot; aria-label=\&quot;Borrowdale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/312\/585\/medium\/image-17.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Borrowdale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/borrowdale-flat-apartment-2420900\&quot; aria-label=\&quot;Borrowdale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/312\/586\/medium\/image-18.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Borrowdale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/borrowdale-flat-apartment-2420900\&quot; aria-label=\&quot;Borrowdale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/312\/587\/medium\/image-19.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Borrowdale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/borrowdale-flat-apartment-2420900\&quot; aria-label=\&quot;Borrowdale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/312\/588\/medium\/image-20.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Borrowdale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;div class='descrip' &gt;Ref.: HOS248802\r\nExperience modern living in this beautifully maintained 3-bedroom townhouse situated in a secure and sought-after Borrowdale complex. The home features a spacious main en-suite bedroom, two additional bedrooms, and a full family bathroom.\n\nDesigned for comfort and convenience, the property offers a fully equipped kitchen with a gas stove, washing machine, borehole water, solar geyser, and a reliable 5kVA solar system. The inviting enclosed patio with a braai area overlooks a lush private garden, creating the perfect setting for relaxation or entertaining.\n\nAdditional benefits include WiFi, Netflix and YouTube access, secure surroundings, and clo&amp;hellip;&lt;\/div&gt;&quot;]">
                             <div class="carousel-inner " role="listbox">
                 <div class="carousel-item active" data-index="0">
 
-                            <a class="image" rel="" href="https://www.classifieds.co.zw/listings/glaudina-flat-apartment-2404485" aria-label="Glaudina - Flat & Apartment"><img src="/storage/App/Models/Attachment/files/011/196/024/medium/image-5.webp" class="img-responsive center-block img-max-width " alt="Glaudina - Flat & Apartment"  loading="lazy"/></a>
+                            <a class="image" rel="" href="https://www.classifieds.co.zw/listings/borrowdale-flat-apartment-2420900" aria-label="Borrowdale - Flat & Apartment"><img src="/storage/App/Models/Attachment/files/011/312/569/medium/image-1.webp" class="img-responsive center-block img-max-width " alt="Borrowdale - Flat & Apartment"  loading="lazy"/></a>
             
         </div>
     </div>
 
     <a class="carousel-control left carousel-control-prev"
-        href="#gallery-2404485" role="button" data-slide="prev" style="z-index:10">
+        href="#gallery-2420900" role="button" data-slide="prev" style="z-index:10">
         <span class="glyphicon carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">&laquo; Previous</span>
     </a>
 
     <a class="carousel-control right carousel-control-next"
-        href="#gallery-2404485" role="button" data-slide="next" style="z-index:10">
+        href="#gallery-2420900" role="button" data-slide="next" style="z-index:10">
         <span class="glyphicon carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next &raquo;</span>
     </a>
 </div>
 </div>
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
-    var _ytdVideoIndex = "7";
+<script type="245619828e9ab26f08ed8c97-text/javascript">
+    var _ytdVideoIndex = "20";
 </script>
                             </div>
 
                             <div class="details col-md-7 col-sm-7 col-xs-8">
                                 <h5 class="listing-title">
-                        <a href="https://www.classifieds.co.zw/listings/glaudina-flat-apartment-2404485 ">
-                            Glaudina - Flat & Apartment</a>
+                        <a href="https://www.classifieds.co.zw/listings/borrowdale-flat-apartment-2420900 ">
+                            Borrowdale - Flat & Apartment</a>
 
                                             </h5>
 
@@ -2799,12 +3196,165 @@ A well maintained 1 bed-room flat...
 
                                                     <div class="amount">
                                                         <div class=" pull-left usd-price-tooltip">
-                                                                                                                                                                                        $68,519
+                                                                                                                                                                                        $2,500
                                                                                                                                                                                 </div>
                                                         <div class=" pull-right local-price local-price-tooltip">
 
                                                             <span
-                                                                class="flavour"></span>
+                                                                class="flavour"> per month</span>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                                <div class="pull-right col-md-2 favourite-right">
+                                                                                                                                                                                            <button type="button" class="favourite btn-advert btn " data-exists="false"
+                                                            title="Favourite the Advert"><i class="fa fa-heart-o"></i>
+                                                        </button>
+                                                                                                        </div>
+
+                        
+                        <div class="properties pull-left col-md-10">
+                            
+                                <ul class="list-unstyled">
+                                                                                                                        <li class="property">3 bedrooms</li>
+                                                                                    <li class="property">2 bathrooms</li>
+                                                                                    <li class="property">150 m&sup2;</li>
+                                                                                                                                                        <li class="property">harare north</li>
+                                    
+                                    
+                                </ul>
+
+                                                    </div>
+                    </div>
+
+                    <div class="line-clamp-3">
+                                                <p>
+                            Ref.: HOS248802
+Experience modern living in this...
+                        </p>
+                    </div>
+
+                    <div class="seller-info">
+                                                                                                                                                                                                <div class='store-logo pull-left'>
+                                                                <a style="position: absolute;left:0;bottom:8px;"
+                                                                    href="https://www.classifieds.co.zw/house-of-stone-properties"><img src="https://www.classifieds.co.zw/storage/App/Models/Attachment/files/008/871/064/thumb/propcloud logo.webp" class="img-responsive" loading="lazy" alt="House of Stone Properties Logo"><span
+                                                                        class="pull-right">House of Stone Properties</span></a>
+                                                            </div>
+                                                                                                                                                            <div class="btn-toolbar-buyer btn-toolbar pull-right" role="toolbar">
+    <noscript>
+                                    <div style="display: inline-block;">
+                <button type="button" id="whatsapp-advert-2420900" style="visibility: hidden"
+        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2420900"
+        data-intent="whatsapp" data-href="https://rply.link/l/rT5rBuKjX4" data-type="advert" data-id="2420900"
+        data-category="220" data-category-name="Flats &amp; Apartments for Rent"
+        title="WhatsApp the Advertiser">
+                    <img src="https://www.classifieds.co.zw/logos/whatsapp.png" width="20px" />
+            </button>
+     </div>                                         <a rel="nofollow" class="btn pull-left" style="margin-left:0px;" href="#"
+                title="Call the Advertiser">
+                                    <i class="fa fa-phone"></i>
+                            </a>
+                            <a rel="nofollow" class="btn pull-left" style="margin-left:0px;" href="#"><i
+                    class="fa fa-envelope"></i>
+            </a>
+                    </noscript>
+    <div class="clearfix btn-group" style="display: flex" role="group">
+                                    <div style="display: inline-block;">
+                <button type="button" id="whatsapp-advert-2420900" style="visibility: hidden"
+        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2420900"
+        data-intent="whatsapp" data-href="https://rply.link/l/rT5rBuKjX4" data-type="advert" data-id="2420900"
+        data-category="220" data-category-name="Flats &amp; Apartments for Rent"
+        title="WhatsApp the Advertiser">
+                    <i class="fa fa-whatsapp"></i>
+            </button>
+     </div>                                             <button type="button" id="contact-advert-2420900"
+                    class="btn-modal btn btn-advert call record-interest" data-target="#login-options-modal"
+                    data-intent="call" data-type="advert" data-id="2420900"
+                    data-category="220" data-category-name="Flats &amp; Apartments for Rent"
+                    title="Call the Advertiser">
+                                            <i class="fa fa-phone"></i>
+                                    </button>
+                                            
+                <button type="button" id="email-advert-2420900"
+                    class="btn-modal btn btn-advert email record-interest" data-target="#contact-seller"
+                    data-intent="email" data-type="advert" data-id="2420900"
+                    data-category="220" data-category-name="Flats &amp; Apartments for Rent"
+                    title="Email the Advertiser">
+                    <i class="fa fa-envelope"></i>
+                </button>
+                
+                                                </div>
+</div>
+
+<script type="245619828e9ab26f08ed8c97-text/javascript">
+    function rememberAction(action, advert) {
+        localStorage.setItem('modal-action', JSON.stringify({ action, advert }))
+    }
+</script>                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="alerts-2420900">
+        </div>                                                                                            <div id="listing-2414947"
+    class="listing panel panel-default panel-listing border-priority--gold border-status--online"
+    data-id="2414947" data-type="advert" data-view="category"     data-category="{&quot;leaf&quot;:220,&quot;parent&quot;:16,&quot;level_1&quot;:16,&quot;level_1_ident&quot;:&quot;property\/Property&quot;,&quot;level_2&quot;:220,&quot;level_2_ident&quot;:&quot;flats-apartments-for-rent\/Flats &amp; Apartments for Rent&quot;,&quot;payable&quot;:false,&quot;points&quot;:&quot;0&quot;,&quot;price&quot;:0,&quot;title&quot;:&quot;Houses for Sale&quot;,&quot;usd_price&quot;:&quot;0&quot;}"     data-currency="{&quot;id&quot;:1,&quot;title&quot;:&quot;USD (international transactions)&quot;,&quot;iso&quot;:&quot;USD&quot;,&quot;symbol&quot;:&quot;$&quot;,&quot;prefix&quot;:&quot;USD&quot;,&quot;enabled&quot;:1,&quot;created_at&quot;:&quot;2015-12-04 19:01:40&quot;,&quot;updated_at&quot;:&quot;2020-06-25 14:17:18&quot;,&quot;display_format&quot;:&quot;#,###,###&quot;,&quot;rate&quot;:&quot;1.00&quot;,&quot;default&quot;:1}" style="position: relative;">
+
+        <div class="panel-body">
+
+
+
+                    <div class="pull-left image col-md-5 col-sm-5 col-xs-4">
+        
+                                                <div class="gallery">
+    
+    <div id="gallery-2414947" class="carousel slide" data-ride="carousel" data-images="[&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avondale-west-garden-flat-2414947\&quot; aria-label=\&quot;Avondale West - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/271\/895\/medium\/image-1.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avondale West - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avondale-west-garden-flat-2414947\&quot; aria-label=\&quot;Avondale West - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/271\/896\/medium\/image-2.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avondale West - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avondale-west-garden-flat-2414947\&quot; aria-label=\&quot;Avondale West - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/271\/897\/medium\/image-3.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avondale West - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avondale-west-garden-flat-2414947\&quot; aria-label=\&quot;Avondale West - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/271\/898\/medium\/image-4.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avondale West - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avondale-west-garden-flat-2414947\&quot; aria-label=\&quot;Avondale West - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/271\/899\/medium\/image-5.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avondale West - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avondale-west-garden-flat-2414947\&quot; aria-label=\&quot;Avondale West - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/271\/900\/medium\/image-6.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avondale West - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avondale-west-garden-flat-2414947\&quot; aria-label=\&quot;Avondale West - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/271\/901\/medium\/image-7.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avondale West - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avondale-west-garden-flat-2414947\&quot; aria-label=\&quot;Avondale West - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/271\/902\/medium\/image-8.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avondale West - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avondale-west-garden-flat-2414947\&quot; aria-label=\&quot;Avondale West - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/271\/903\/medium\/image-9.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avondale West - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avondale-west-garden-flat-2414947\&quot; aria-label=\&quot;Avondale West - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/271\/904\/medium\/image-10.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avondale West - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avondale-west-garden-flat-2414947\&quot; aria-label=\&quot;Avondale West - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/271\/905\/medium\/image-11.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avondale West - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avondale-west-garden-flat-2414947\&quot; aria-label=\&quot;Avondale West - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/271\/906\/medium\/image-12.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avondale West - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;div class='descrip' &gt;Ref.: JSPP246539\r\nSunny two-bedroom garden flat in Avondale West \u2014 neatly presented and ready to move into. As pictured, the flat sits on a fully walled (aerial shot shows the secure perimeter and parking bay) and offers comfortable living space. The living room features original parquet flooring and an open feel to the kitchen (photo shows the pass-through counter), while the fitted kitchen comes with tiled floors, light timber cupboards, granite-style countertops, built-in oven and hob and a practical single-bowl sink \u2014 ideal for everyday cooking. A single bathroom services two well-proportioned bedrooms with good natural light and security grills on the w&amp;hellip;&lt;\/div&gt;&quot;]">
+                            <div class="carousel-inner " role="listbox">
+                <div class="carousel-item active" data-index="0">
+
+                            <a class="image" rel="" href="https://www.classifieds.co.zw/listings/avondale-west-garden-flat-2414947" aria-label="Avondale West - Garden Flat"><img src="/storage/App/Models/Attachment/files/011/271/895/medium/image-1.webp" class="img-responsive center-block img-max-width " alt="Avondale West - Garden Flat"  loading="lazy"/></a>
+            
+        </div>
+    </div>
+
+    <a class="carousel-control left carousel-control-prev"
+        href="#gallery-2414947" role="button" data-slide="prev" style="z-index:10">
+        <span class="glyphicon carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">&laquo; Previous</span>
+    </a>
+
+    <a class="carousel-control right carousel-control-next"
+        href="#gallery-2414947" role="button" data-slide="next" style="z-index:10">
+        <span class="glyphicon carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next &raquo;</span>
+    </a>
+</div>
+</div>
+<script type="245619828e9ab26f08ed8c97-text/javascript">
+    var _ytdVideoIndex = "12";
+</script>
+                            </div>
+
+                            <div class="details col-md-7 col-sm-7 col-xs-8">
+                                <h5 class="listing-title">
+                        <a href="https://www.classifieds.co.zw/listings/avondale-west-garden-flat-2414947 ">
+                            Avondale West - Garden Flat</a>
+
+                                            </h5>
+
+                    <div class="row">
+                                                                        <div class="pull-left price">
+
+                                                    <div class="amount">
+                                                        <div class=" pull-left usd-price-tooltip">
+                                                                                                                                                                                        $750
+                                                                                                                                                                                </div>
+                                                        <div class=" pull-right local-price local-price-tooltip">
+
+                                                            <span
+                                                                class="flavour"> per month</span>
                                                         </div>
 
                                                     </div>
@@ -2822,7 +3372,7 @@ A well maintained 1 bed-room flat...
                                 <ul class="list-unstyled">
                                                                                                                         <li class="property">2 bedrooms</li>
                                                                                     <li class="property">1 bathrooms</li>
-                                                                                    <li class="property">200 m&sup2;</li>
+                                                                                    <li class="property">250 m&sup2;</li>
                                                                                                                                                         <li class="property">harare west</li>
                                     
                                     
@@ -2833,24 +3383,24 @@ A well maintained 1 bed-room flat...
 
                     <div class="line-clamp-3">
                                                 <p>
-                            Ref.: RVL242764
-Discover a smart 2-bedroom, 1-bat...
+                            Ref.: JSPP246539
+Sunny two-bedroom garden flat in...
                         </p>
                     </div>
 
                     <div class="seller-info">
                                                                                                                                                                                                 <div class='store-logo pull-left'>
                                                                 <a style="position: absolute;left:0;bottom:8px;"
-                                                                    href="https://www.classifieds.co.zw/realtor-ville"><img src="https://www.classifieds.co.zw/storage/App/Models/Attachment/files/008/871/148/thumb/realtor 150x70.webp" class="img-responsive" loading="lazy" alt="Realtor Ville Logo"><span
-                                                                        class="pull-right">Realtor Ville</span></a>
+                                                                    href="https://www.classifieds.co.zw/just-property"><img src="https://www.classifieds.co.zw/storage/App/Models/Attachment/files/010/285/683/thumb/just.webp" class="img-responsive" loading="lazy" alt="Just Property Logo"><span
+                                                                        class="pull-right">Just Property</span></a>
                                                             </div>
                                                                                                                                                             <div class="btn-toolbar-buyer btn-toolbar pull-right" role="toolbar">
     <noscript>
                                     <div style="display: inline-block;">
-                <button type="button" id="whatsapp-advert-2404485" style="visibility: hidden"
-        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2404485"
-        data-intent="whatsapp" data-href="https://rply.link/l/e4PqutMO4o" data-type="advert" data-id="2404485"
-        data-category="218" data-category-name="Flats &amp; Apartments for Sale"
+                <button type="button" id="whatsapp-advert-2414947" style="visibility: hidden"
+        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2414947"
+        data-intent="whatsapp" data-href="https://rply.link/l/WjvxUSlfDQ" data-type="advert" data-id="2414947"
+        data-category="220" data-category-name="Flats &amp; Apartments for Rent"
         title="WhatsApp the Advertiser">
                     <img src="https://www.classifieds.co.zw/logos/whatsapp.png" width="20px" />
             </button>
@@ -2864,25 +3414,25 @@ Discover a smart 2-bedroom, 1-bat...
                     </noscript>
     <div class="clearfix btn-group" style="display: flex" role="group">
                                     <div style="display: inline-block;">
-                <button type="button" id="whatsapp-advert-2404485" style="visibility: hidden"
-        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2404485"
-        data-intent="whatsapp" data-href="https://rply.link/l/e4PqutMO4o" data-type="advert" data-id="2404485"
-        data-category="218" data-category-name="Flats &amp; Apartments for Sale"
+                <button type="button" id="whatsapp-advert-2414947" style="visibility: hidden"
+        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2414947"
+        data-intent="whatsapp" data-href="https://rply.link/l/WjvxUSlfDQ" data-type="advert" data-id="2414947"
+        data-category="220" data-category-name="Flats &amp; Apartments for Rent"
         title="WhatsApp the Advertiser">
                     <i class="fa fa-whatsapp"></i>
             </button>
-     </div>                                             <button type="button" id="contact-advert-2404485"
+     </div>                                             <button type="button" id="contact-advert-2414947"
                     class="btn-modal btn btn-advert call record-interest" data-target="#login-options-modal"
-                    data-intent="call" data-type="advert" data-id="2404485"
-                    data-category="218" data-category-name="Flats &amp; Apartments for Sale"
+                    data-intent="call" data-type="advert" data-id="2414947"
+                    data-category="220" data-category-name="Flats &amp; Apartments for Rent"
                     title="Call the Advertiser">
                                             <i class="fa fa-phone"></i>
                                     </button>
                                             
-                <button type="button" id="email-advert-2404485"
+                <button type="button" id="email-advert-2414947"
                     class="btn-modal btn btn-advert email record-interest" data-target="#contact-seller"
-                    data-intent="email" data-type="advert" data-id="2404485"
-                    data-category="218" data-category-name="Flats &amp; Apartments for Sale"
+                    data-intent="email" data-type="advert" data-id="2414947"
+                    data-category="220" data-category-name="Flats &amp; Apartments for Rent"
                     title="Email the Advertiser">
                     <i class="fa fa-envelope"></i>
                 </button>
@@ -2890,7 +3440,7 @@ Discover a smart 2-bedroom, 1-bat...
                                                 </div>
 </div>
 
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
+<script type="245619828e9ab26f08ed8c97-text/javascript">
     function rememberAction(action, advert) {
         localStorage.setItem('modal-action', JSON.stringify({ action, advert }))
     }
@@ -2900,10 +3450,10 @@ Discover a smart 2-bedroom, 1-bat...
         </div>
 
 
-        <div class="alerts-2404485">
-        </div>                                                                                            <div id="listing-2416547"
+        <div class="alerts-2414947">
+        </div>                                                                                            <div id="listing-2418902"
     class="listing panel panel-default panel-listing border-priority--gold border-status--online"
-    data-id="2416547" data-type="advert" data-view="category"     data-category="{&quot;leaf&quot;:218,&quot;parent&quot;:16,&quot;level_1&quot;:16,&quot;level_1_ident&quot;:&quot;property\/Property&quot;,&quot;level_2&quot;:218,&quot;level_2_ident&quot;:&quot;flats-apartments-for-sale\/Flats &amp; Apartments for Sale&quot;,&quot;payable&quot;:false,&quot;points&quot;:&quot;0&quot;,&quot;price&quot;:0,&quot;title&quot;:&quot;Houses for Sale&quot;,&quot;usd_price&quot;:&quot;0&quot;}"     data-currency="{&quot;id&quot;:1,&quot;title&quot;:&quot;USD (international transactions)&quot;,&quot;iso&quot;:&quot;USD&quot;,&quot;symbol&quot;:&quot;$&quot;,&quot;prefix&quot;:&quot;USD&quot;,&quot;enabled&quot;:1,&quot;created_at&quot;:&quot;2015-12-04 19:01:40&quot;,&quot;updated_at&quot;:&quot;2020-06-25 14:17:18&quot;,&quot;display_format&quot;:&quot;#,###,###&quot;,&quot;rate&quot;:&quot;1.00&quot;,&quot;default&quot;:1}" style="position: relative;">
+    data-id="2418902" data-type="advert" data-view="category"     data-category="{&quot;leaf&quot;:220,&quot;parent&quot;:16,&quot;level_1&quot;:16,&quot;level_1_ident&quot;:&quot;property\/Property&quot;,&quot;level_2&quot;:220,&quot;level_2_ident&quot;:&quot;flats-apartments-for-rent\/Flats &amp; Apartments for Rent&quot;,&quot;payable&quot;:false,&quot;points&quot;:&quot;0&quot;,&quot;price&quot;:0,&quot;title&quot;:&quot;Houses for Sale&quot;,&quot;usd_price&quot;:&quot;0&quot;}"     data-currency="{&quot;id&quot;:1,&quot;title&quot;:&quot;USD (international transactions)&quot;,&quot;iso&quot;:&quot;USD&quot;,&quot;symbol&quot;:&quot;$&quot;,&quot;prefix&quot;:&quot;USD&quot;,&quot;enabled&quot;:1,&quot;created_at&quot;:&quot;2015-12-04 19:01:40&quot;,&quot;updated_at&quot;:&quot;2020-06-25 14:17:18&quot;,&quot;display_format&quot;:&quot;#,###,###&quot;,&quot;rate&quot;:&quot;1.00&quot;,&quot;default&quot;:1}" style="position: relative;">
 
         <div class="panel-body">
 
@@ -2913,536 +3463,37 @@ Discover a smart 2-bedroom, 1-bat...
         
                                                 <div class="gallery">
     
-    <div id="gallery-2416547" class="carousel slide" data-ride="carousel" data-images="[&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/newlands-flat-apartment-2416547\&quot; aria-label=\&quot;Newlands - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/283\/563\/medium\/image-1.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Newlands - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/newlands-flat-apartment-2416547\&quot; aria-label=\&quot;Newlands - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/283\/564\/medium\/image-2.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Newlands - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/newlands-flat-apartment-2416547\&quot; aria-label=\&quot;Newlands - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/283\/565\/medium\/image-3.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Newlands - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/newlands-flat-apartment-2416547\&quot; aria-label=\&quot;Newlands - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/283\/566\/medium\/image-4.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Newlands - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/newlands-flat-apartment-2416547\&quot; aria-label=\&quot;Newlands - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/283\/567\/medium\/image-5.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Newlands - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/newlands-flat-apartment-2416547\&quot; aria-label=\&quot;Newlands - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/283\/568\/medium\/image-6.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Newlands - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/newlands-flat-apartment-2416547\&quot; aria-label=\&quot;Newlands - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/283\/569\/medium\/image-7.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Newlands - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/newlands-flat-apartment-2416547\&quot; aria-label=\&quot;Newlands - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/283\/570\/medium\/image-8.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Newlands - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/newlands-flat-apartment-2416547\&quot; aria-label=\&quot;Newlands - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/283\/571\/medium\/image-9.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Newlands - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/newlands-flat-apartment-2416547\&quot; aria-label=\&quot;Newlands - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/283\/572\/medium\/image-10.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Newlands - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/newlands-flat-apartment-2416547\&quot; aria-label=\&quot;Newlands - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/283\/573\/medium\/image-11.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Newlands - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/newlands-flat-apartment-2416547\&quot; aria-label=\&quot;Newlands - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/283\/574\/medium\/image-12.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Newlands - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;div class='descrip' &gt;Ref.: HLX247166\r\nExperience refined living in Newlands with this newly built 2-bedroom apartment, thoughtfully designed for modern comfort and effortless elegance. Boasting premium finishes throughout, the apartment features a sophisticated open-plan layout, a sleek contemporary kitchen, spacious bedrooms with ample built-in cabinetry, and stylish bathrooms finished to an exceptional standard.\n\nSet within a secure and exclusive development, this property offers the perfect balance of luxury, convenience, and long-term value. With strong rental demand, excellent security, and proximity to shopping centres, business hubs, and major amenities, the apartment present&amp;hellip;&lt;\/div&gt;&quot;]">
+    <div id="gallery-2418902" class="carousel slide" data-ride="carousel" data-images="[&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-garden-flat-2418902\&quot; aria-label=\&quot;Vainona - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/298\/627\/medium\/image-1.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-garden-flat-2418902\&quot; aria-label=\&quot;Vainona - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/298\/628\/medium\/image-2.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-garden-flat-2418902\&quot; aria-label=\&quot;Vainona - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/298\/629\/medium\/image-3.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-garden-flat-2418902\&quot; aria-label=\&quot;Vainona - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/298\/630\/medium\/image-4.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-garden-flat-2418902\&quot; aria-label=\&quot;Vainona - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/298\/631\/medium\/image-5.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-garden-flat-2418902\&quot; aria-label=\&quot;Vainona - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/298\/632\/medium\/image-6.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-garden-flat-2418902\&quot; aria-label=\&quot;Vainona - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/298\/633\/medium\/image-7.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-garden-flat-2418902\&quot; aria-label=\&quot;Vainona - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/298\/634\/medium\/image-8.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-garden-flat-2418902\&quot; aria-label=\&quot;Vainona - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/298\/635\/medium\/image-9.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-garden-flat-2418902\&quot; aria-label=\&quot;Vainona - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/298\/636\/medium\/image-10.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-garden-flat-2418902\&quot; aria-label=\&quot;Vainona - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/298\/637\/medium\/image-11.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-garden-flat-2418902\&quot; aria-label=\&quot;Vainona - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/298\/638\/medium\/image-12.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-garden-flat-2418902\&quot; aria-label=\&quot;Vainona - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/298\/639\/medium\/image-13.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-garden-flat-2418902\&quot; aria-label=\&quot;Vainona - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/298\/640\/medium\/image-14.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-garden-flat-2418902\&quot; aria-label=\&quot;Vainona - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/298\/641\/medium\/image-15.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-garden-flat-2418902\&quot; aria-label=\&quot;Vainona - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/298\/642\/medium\/image-16.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-garden-flat-2418902\&quot; aria-label=\&quot;Vainona - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/298\/643\/medium\/image-17.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;div class='descrip' &gt;Ref.: KNP247987\r\nCorner Unit available in the newly completed Jacaranda Heights complex, located a stone\u00b4s through away from Sam Levy\u00b4s Village. (2 slightly different Units available) \n\n3 bedroom, 2 bathrooms Upstairs. Guest toilet downstairs. Open plan kitchen with scullery attached, equipped with Gas stove\/oven, washing machine and fridge. Lounge and dining area open up onto a covered veranda. Gas fireplace in living room and Gas geyser. Modern and state of the art finishes. High speed Internet connection and DSTV. Covered Veranda and small private garden. 2 parking bays designated for the Unit. Communal braai\/entertainment area on rooftop. \n\nUtility costs: &amp;hellip;&lt;\/div&gt;&quot;]">
                             <div class="carousel-inner " role="listbox">
                 <div class="carousel-item active" data-index="0">
 
-                            <a class="image" rel="" href="https://www.classifieds.co.zw/listings/newlands-flat-apartment-2416547" aria-label="Newlands - Flat & Apartment"><img src="/storage/App/Models/Attachment/files/011/283/563/medium/image-1.webp" class="img-responsive center-block img-max-width " alt="Newlands - Flat & Apartment"  loading="lazy"/></a>
+                            <a class="image" rel="" href="https://www.classifieds.co.zw/listings/vainona-garden-flat-2418902" aria-label="Vainona - Garden Flat"><img src="/storage/App/Models/Attachment/files/011/298/627/medium/image-1.webp" class="img-responsive center-block img-max-width " alt="Vainona - Garden Flat"  loading="lazy"/></a>
             
         </div>
     </div>
 
     <a class="carousel-control left carousel-control-prev"
-        href="#gallery-2416547" role="button" data-slide="prev" style="z-index:10">
+        href="#gallery-2418902" role="button" data-slide="prev" style="z-index:10">
         <span class="glyphicon carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">&laquo; Previous</span>
     </a>
 
     <a class="carousel-control right carousel-control-next"
-        href="#gallery-2416547" role="button" data-slide="next" style="z-index:10">
+        href="#gallery-2418902" role="button" data-slide="next" style="z-index:10">
         <span class="glyphicon carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next &raquo;</span>
     </a>
 </div>
 </div>
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
-    var _ytdVideoIndex = "12";
-</script>
-                            </div>
-
-                            <div class="details col-md-7 col-sm-7 col-xs-8">
-                                <h5 class="listing-title">
-                        <a href="https://www.classifieds.co.zw/listings/newlands-flat-apartment-2416547 ">
-                            Newlands - Flat & Apartment</a>
-
-                                            </h5>
-
-                    <div class="row">
-                                                                        <div class="pull-left price">
-
-                                                    <div class="amount">
-                                                        <div class=" pull-left usd-price-tooltip">
-                                                                                                                                                                                        $140,000
-                                                                                                                                                                                </div>
-                                                        <div class=" pull-right local-price local-price-tooltip">
-
-                                                            <span
-                                                                class="flavour"></span>
-                                                        </div>
-
-                                                    </div>
-
-                                                </div>
-                                                <div class="pull-right col-md-2 favourite-right">
-                                                                                                                                                                                            <button type="button" class="favourite btn-advert btn " data-exists="false"
-                                                            title="Favourite the Advert"><i class="fa fa-heart-o"></i>
-                                                        </button>
-                                                                                                        </div>
-
-                        
-                        <div class="properties pull-left col-md-10">
-                            
-                                <ul class="list-unstyled">
-                                                                                                                        <li class="property">2 bedrooms</li>
-                                                                                    <li class="property">2 bathrooms</li>
-                                                                                    <li class="property">130 m&sup2;</li>
-                                                                                                                                                        <li class="property">harare north</li>
-                                    
-                                    
-                                </ul>
-
-                                                    </div>
-                    </div>
-
-                    <div class="line-clamp-3">
-                                                <p>
-                            Ref.: HLX247166
-Experience refined living in Newl...
-                        </p>
-                    </div>
-
-                    <div class="seller-info">
-                                                                                                                                                                                                <div class='store-logo pull-left'>
-                                                                <a style="position: absolute;left:0;bottom:8px;"
-                                                                    href="https://www.classifieds.co.zw/homelux"><img src="https://www.classifieds.co.zw/storage/App/Models/Attachment/files/008/869/707/thumb/logo20877_988.webp" class="img-responsive" loading="lazy" alt="Homelux Real Estate Logo"><span
-                                                                        class="pull-right">Homelux Real Estate</span></a>
-                                                            </div>
-                                                                                                                                                            <div class="btn-toolbar-buyer btn-toolbar pull-right" role="toolbar">
-    <noscript>
-                                    <div style="display: inline-block;">
-                <button type="button" id="whatsapp-advert-2416547" style="visibility: hidden"
-        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2416547"
-        data-intent="whatsapp" data-href="https://rply.link/l/5J0Q6Ra1FC" data-type="advert" data-id="2416547"
-        data-category="218" data-category-name="Flats &amp; Apartments for Sale"
-        title="WhatsApp the Advertiser">
-                    <img src="https://www.classifieds.co.zw/logos/whatsapp.png" width="20px" />
-            </button>
-     </div>                                         <a rel="nofollow" class="btn pull-left" style="margin-left:0px;" href="#"
-                title="Call the Advertiser">
-                                    <i class="fa fa-phone"></i>
-                            </a>
-                            <a rel="nofollow" class="btn pull-left" style="margin-left:0px;" href="#"><i
-                    class="fa fa-envelope"></i>
-            </a>
-                    </noscript>
-    <div class="clearfix btn-group" style="display: flex" role="group">
-                                    <div style="display: inline-block;">
-                <button type="button" id="whatsapp-advert-2416547" style="visibility: hidden"
-        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2416547"
-        data-intent="whatsapp" data-href="https://rply.link/l/5J0Q6Ra1FC" data-type="advert" data-id="2416547"
-        data-category="218" data-category-name="Flats &amp; Apartments for Sale"
-        title="WhatsApp the Advertiser">
-                    <i class="fa fa-whatsapp"></i>
-            </button>
-     </div>                                             <button type="button" id="contact-advert-2416547"
-                    class="btn-modal btn btn-advert call record-interest" data-target="#login-options-modal"
-                    data-intent="call" data-type="advert" data-id="2416547"
-                    data-category="218" data-category-name="Flats &amp; Apartments for Sale"
-                    title="Call the Advertiser">
-                                            <i class="fa fa-phone"></i>
-                                    </button>
-                                            
-                <button type="button" id="email-advert-2416547"
-                    class="btn-modal btn btn-advert email record-interest" data-target="#contact-seller"
-                    data-intent="email" data-type="advert" data-id="2416547"
-                    data-category="218" data-category-name="Flats &amp; Apartments for Sale"
-                    title="Email the Advertiser">
-                    <i class="fa fa-envelope"></i>
-                </button>
-                
-                                                </div>
-</div>
-
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
-    function rememberAction(action, advert) {
-        localStorage.setItem('modal-action', JSON.stringify({ action, advert }))
-    }
-</script>                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="alerts-2416547">
-        </div>                                                                                            <div id="listing-2312620"
-    class="listing panel panel-default panel-listing border-priority--gold border-status--online"
-    data-id="2312620" data-type="advert" data-view="category"     data-category="{&quot;leaf&quot;:218,&quot;parent&quot;:16,&quot;level_1&quot;:16,&quot;level_1_ident&quot;:&quot;property\/Property&quot;,&quot;level_2&quot;:218,&quot;level_2_ident&quot;:&quot;flats-apartments-for-sale\/Flats &amp; Apartments for Sale&quot;,&quot;payable&quot;:false,&quot;points&quot;:&quot;0&quot;,&quot;price&quot;:0,&quot;title&quot;:&quot;Houses for Sale&quot;,&quot;usd_price&quot;:&quot;0&quot;}"     data-currency="{&quot;id&quot;:1,&quot;title&quot;:&quot;USD (international transactions)&quot;,&quot;iso&quot;:&quot;USD&quot;,&quot;symbol&quot;:&quot;$&quot;,&quot;prefix&quot;:&quot;USD&quot;,&quot;enabled&quot;:1,&quot;created_at&quot;:&quot;2015-12-04 19:01:40&quot;,&quot;updated_at&quot;:&quot;2020-06-25 14:17:18&quot;,&quot;display_format&quot;:&quot;#,###,###&quot;,&quot;rate&quot;:&quot;1.00&quot;,&quot;default&quot;:1}" style="position: relative;">
-
-        <div class="panel-body">
-
-
-
-                    <div class="pull-left image col-md-5 col-sm-5 col-xs-4">
-        
-                                                <div class="gallery">
-    
-    <div id="gallery-2312620" class="carousel slide" data-ride="carousel" data-images="[&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-flat-apartment-2312620\&quot; aria-label=\&quot;Vainona - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/168\/438\/medium\/image-1.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-flat-apartment-2312620\&quot; aria-label=\&quot;Vainona - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/168\/439\/medium\/image-2.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-flat-apartment-2312620\&quot; aria-label=\&quot;Vainona - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/168\/440\/medium\/image-3.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-flat-apartment-2312620\&quot; aria-label=\&quot;Vainona - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/168\/441\/medium\/image-4.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-flat-apartment-2312620\&quot; aria-label=\&quot;Vainona - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/168\/442\/medium\/image-5.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-flat-apartment-2312620\&quot; aria-label=\&quot;Vainona - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/168\/443\/medium\/image-6.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-flat-apartment-2312620\&quot; aria-label=\&quot;Vainona - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/168\/444\/medium\/image-7.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-flat-apartment-2312620\&quot; aria-label=\&quot;Vainona - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/168\/445\/medium\/image-8.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-flat-apartment-2312620\&quot; aria-label=\&quot;Vainona - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/168\/446\/medium\/image-9.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-flat-apartment-2312620\&quot; aria-label=\&quot;Vainona - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/168\/447\/medium\/image-10.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-flat-apartment-2312620\&quot; aria-label=\&quot;Vainona - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/168\/448\/medium\/image-11.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-flat-apartment-2312620\&quot; aria-label=\&quot;Vainona - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/168\/449\/medium\/image-12.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-flat-apartment-2312620\&quot; aria-label=\&quot;Vainona - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/168\/450\/medium\/image-13.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-flat-apartment-2312620\&quot; aria-label=\&quot;Vainona - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/168\/451\/medium\/image-14.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-flat-apartment-2312620\&quot; aria-label=\&quot;Vainona - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/168\/452\/medium\/image-15.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-flat-apartment-2312620\&quot; aria-label=\&quot;Vainona - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/168\/453\/medium\/image-16.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-flat-apartment-2312620\&quot; aria-label=\&quot;Vainona - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/168\/454\/medium\/image-17.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-flat-apartment-2312620\&quot; aria-label=\&quot;Vainona - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/168\/455\/medium\/image-18.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-flat-apartment-2312620\&quot; aria-label=\&quot;Vainona - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/168\/456\/medium\/image-19.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-flat-apartment-2312620\&quot; aria-label=\&quot;Vainona - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/168\/457\/medium\/image-20.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-flat-apartment-2312620\&quot; aria-label=\&quot;Vainona - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/168\/458\/medium\/image-21.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-flat-apartment-2312620\&quot; aria-label=\&quot;Vainona - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/168\/459\/medium\/image-22.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-flat-apartment-2312620\&quot; aria-label=\&quot;Vainona - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/168\/460\/medium\/image-23.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-flat-apartment-2312620\&quot; aria-label=\&quot;Vainona - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/168\/461\/medium\/image-24.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-flat-apartment-2312620\&quot; aria-label=\&quot;Vainona - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/168\/462\/medium\/image-25.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-flat-apartment-2312620\&quot; aria-label=\&quot;Vainona - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/168\/463\/medium\/image-26.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-flat-apartment-2312620\&quot; aria-label=\&quot;Vainona - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/168\/464\/medium\/image-27.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-flat-apartment-2312620\&quot; aria-label=\&quot;Vainona - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/168\/465\/medium\/image-28.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-flat-apartment-2312620\&quot; aria-label=\&quot;Vainona - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/168\/466\/medium\/image-29.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-flat-apartment-2312620\&quot; aria-label=\&quot;Vainona - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/168\/467\/medium\/image-30.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-flat-apartment-2312620\&quot; aria-label=\&quot;Vainona - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/168\/468\/medium\/image-31.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-flat-apartment-2312620\&quot; aria-label=\&quot;Vainona - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/168\/469\/medium\/image-32.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-flat-apartment-2312620\&quot; aria-label=\&quot;Vainona - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/168\/470\/medium\/image-33.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-flat-apartment-2312620\&quot; aria-label=\&quot;Vainona - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/168\/471\/medium\/image-34.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/vainona-flat-apartment-2312620\&quot; aria-label=\&quot;Vainona - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/168\/472\/medium\/image-35.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Vainona - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;div class='descrip' &gt;Ref.: SEF207631\r\nDiscover contemporary living in one of Harare's most sought-after neighborhoods with this stunning 2-bedroom flat situated in Vainona. Spanning a generous 150 m\u00b2, this thoughtfully designed residence offers a perfect blend of comfort and style. \n\nStep inside to find a bright, open-plan living area featuring elegant finishes and abundant natural light, ideal for entertaining or unwinding after a long day. The modern kitchen is equipped with sleek cabinetry and high-quality appliances, making cooking a joy. Each bedroom boasts ample space, perfect for restful nights, while the contemporary bathroom adds a touch of luxury to your daily routine.\n\nO&amp;hellip;&lt;\/div&gt;&quot;]">
-                            <div class="carousel-inner " role="listbox">
-                <div class="carousel-item active" data-index="0">
-
-                            <a class="image" rel="" href="https://www.classifieds.co.zw/listings/vainona-flat-apartment-2312620" aria-label="Vainona - Flat & Apartment"><img src="/storage/App/Models/Attachment/files/011/168/438/medium/image-1.webp" class="img-responsive center-block img-max-width " alt="Vainona - Flat & Apartment"  loading="lazy"/></a>
-            
-        </div>
-    </div>
-
-    <a class="carousel-control left carousel-control-prev"
-        href="#gallery-2312620" role="button" data-slide="prev" style="z-index:10">
-        <span class="glyphicon carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">&laquo; Previous</span>
-    </a>
-
-    <a class="carousel-control right carousel-control-next"
-        href="#gallery-2312620" role="button" data-slide="next" style="z-index:10">
-        <span class="glyphicon carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next &raquo;</span>
-    </a>
-</div>
-</div>
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
-    var _ytdVideoIndex = "35";
-</script>
-                            </div>
-
-                            <div class="details col-md-7 col-sm-7 col-xs-8">
-                                <h5 class="listing-title">
-                        <a href="https://www.classifieds.co.zw/listings/vainona-flat-apartment-2312620 ">
-                            Vainona - Flat & Apartment</a>
-
-                                            </h5>
-
-                    <div class="row">
-                                                                        <div class="pull-left price">
-
-                                                    <div class="amount">
-                                                        <div class=" pull-left usd-price-tooltip">
-                                                                                                                                                                                        $170,000
-                                                                                                                                                                                </div>
-                                                        <div class=" pull-right local-price local-price-tooltip">
-
-                                                            <span
-                                                                class="flavour"></span>
-                                                        </div>
-
-                                                    </div>
-
-                                                </div>
-                                                <div class="pull-right col-md-2 favourite-right">
-                                                                                                                                                                                            <button type="button" class="favourite btn-advert btn " data-exists="false"
-                                                            title="Favourite the Advert"><i class="fa fa-heart-o"></i>
-                                                        </button>
-                                                                                                        </div>
-
-                        
-                        <div class="properties pull-left col-md-10">
-                            
-                                <ul class="list-unstyled">
-                                                                                                                        <li class="property">2 bedrooms</li>
-                                                                                                                                                        <li class="property">harare north</li>
-                                    
-                                    
-                                </ul>
-
-                                                    </div>
-                    </div>
-
-                    <div class="line-clamp-3">
-                                                <p>
-                            Ref.: SEF207631
-Discover contemporary living in o...
-                        </p>
-                    </div>
-
-                    <div class="seller-info">
-                                                                                                                                                                                                <div class='store-logo pull-left'>
-                                                                <a style="position: absolute;left:0;bottom:8px;"
-                                                                    href="https://www.classifieds.co.zw/seeff"><img src="https://www.classifieds.co.zw/storage/App/Models/Attachment/files/001/803/145/thumb/seeff.gif" class="img-responsive" loading="lazy" alt="Seeff Zimbabwe Logo"><span
-                                                                        class="pull-right">Seeff Zimbabwe</span></a>
-                                                            </div>
-                                                                                                                                                            <div class="btn-toolbar-buyer btn-toolbar pull-right" role="toolbar">
-    <noscript>
-                                    <div style="display: inline-block;">
-                <button type="button" id="whatsapp-advert-2312620" style="visibility: hidden"
-        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2312620"
-        data-intent="whatsapp" data-href="https://rply.link/l/xDxhGmzWmr" data-type="advert" data-id="2312620"
-        data-category="218" data-category-name="Flats &amp; Apartments for Sale"
-        title="WhatsApp the Advertiser">
-                    <img src="https://www.classifieds.co.zw/logos/whatsapp.png" width="20px" />
-            </button>
-     </div>                                         <a rel="nofollow" class="btn pull-left" style="margin-left:0px;" href="#"
-                title="Call the Advertiser">
-                                    <i class="fa fa-phone"></i>
-                            </a>
-                            <a rel="nofollow" class="btn pull-left" style="margin-left:0px;" href="#"><i
-                    class="fa fa-envelope"></i>
-            </a>
-                    </noscript>
-    <div class="clearfix btn-group" style="display: flex" role="group">
-                                    <div style="display: inline-block;">
-                <button type="button" id="whatsapp-advert-2312620" style="visibility: hidden"
-        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2312620"
-        data-intent="whatsapp" data-href="https://rply.link/l/xDxhGmzWmr" data-type="advert" data-id="2312620"
-        data-category="218" data-category-name="Flats &amp; Apartments for Sale"
-        title="WhatsApp the Advertiser">
-                    <i class="fa fa-whatsapp"></i>
-            </button>
-     </div>                                             <button type="button" id="contact-advert-2312620"
-                    class="btn-modal btn btn-advert call record-interest" data-target="#login-options-modal"
-                    data-intent="call" data-type="advert" data-id="2312620"
-                    data-category="218" data-category-name="Flats &amp; Apartments for Sale"
-                    title="Call the Advertiser">
-                                            <i class="fa fa-phone"></i>
-                                    </button>
-                                            
-                <button type="button" id="email-advert-2312620"
-                    class="btn-modal btn btn-advert email record-interest" data-target="#contact-seller"
-                    data-intent="email" data-type="advert" data-id="2312620"
-                    data-category="218" data-category-name="Flats &amp; Apartments for Sale"
-                    title="Email the Advertiser">
-                    <i class="fa fa-envelope"></i>
-                </button>
-                
-                                                </div>
-</div>
-
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
-    function rememberAction(action, advert) {
-        localStorage.setItem('modal-action', JSON.stringify({ action, advert }))
-    }
-</script>                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="alerts-2312620">
-        </div>                                                                                                            <div class="swiper bannerAd" style="height: 90px; width: 728px !important;">
-            <div class="swiper-wrapper" >
-                
-                                     
-                        <a href="https://www.cars.co.zw/" target="_blank" class="swiper-slide"
-                            data-client="Cars.co.zw"
-                            data-category="all" 
-                            data-appear="classifieds.co.zw" 
-                            data-url="https://www.cars.co.zw/"
-                            data-position="five"
-                            data-device="desktop"
-                        >
-                            <img src="https://www.classifieds.co.zw/storage/public/banners/z16OGEwu2J7LahW9ldwakZaQohP4GD1NNUNSzJNS.jpg" alt="Cars.co.zw All Categories 5th" srcset="" loading="lazy">
-                        </a>
-                                                         
-                        <a href="https://www.property.co.zw/development-projects" target="_blank" class="swiper-slide"
-                            data-client="PRZW"
-                            data-category="218" 
-                            data-appear="classifieds.co.zw" 
-                            data-url="https://www.property.co.zw/development-projects"
-                            data-position="five"
-                            data-device="desktop"
-                        >
-                            <img src="https://www.classifieds.co.zw/storage/public/banners/w30lgGpT7kgfl0kalIDBhgxdZL0aD2A8M4GcOm8m.jpg" alt="PRZW Projects Flats &amp; Apartments For Sale Search 5th" srcset="" loading="lazy">
-                        </a>
-                                            </div>
-    </div>
-
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js" type="881c9a3a08acc01de60cbf08-text/javascript"></script>
-
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
-    if ($('.bannerAd').hasClass('swiper')) {
-        var swiper = new Swiper(".bannerAd", {
-            loop: true,
-            slidesPerView: 'auto',
-            autoplay: {
-                delay: 6000,
-                disableOnInteraction: false,
-            }
-        });
-    }
-</script>                                                                                                <div id="listing-2372726"
-    class="listing panel panel-default panel-listing border-priority--gold border-status--online"
-    data-id="2372726" data-type="advert" data-view="category"     data-category="{&quot;leaf&quot;:218,&quot;parent&quot;:16,&quot;level_1&quot;:16,&quot;level_1_ident&quot;:&quot;property\/Property&quot;,&quot;level_2&quot;:218,&quot;level_2_ident&quot;:&quot;flats-apartments-for-sale\/Flats &amp; Apartments for Sale&quot;,&quot;payable&quot;:false,&quot;points&quot;:&quot;0&quot;,&quot;price&quot;:0,&quot;title&quot;:&quot;Houses for Sale&quot;,&quot;usd_price&quot;:&quot;0&quot;}"     data-currency="{&quot;id&quot;:1,&quot;title&quot;:&quot;USD (international transactions)&quot;,&quot;iso&quot;:&quot;USD&quot;,&quot;symbol&quot;:&quot;$&quot;,&quot;prefix&quot;:&quot;USD&quot;,&quot;enabled&quot;:1,&quot;created_at&quot;:&quot;2015-12-04 19:01:40&quot;,&quot;updated_at&quot;:&quot;2020-06-25 14:17:18&quot;,&quot;display_format&quot;:&quot;#,###,###&quot;,&quot;rate&quot;:&quot;1.00&quot;,&quot;default&quot;:1}" style="position: relative;">
-
-        <div class="panel-body">
-
-
-
-                    <div class="pull-left image col-md-5 col-sm-5 col-xs-4">
-        
-                                                <div class="gallery">
-    
-    <div id="gallery-2372726" class="carousel slide" data-ride="carousel" data-images="[&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/bulawayo-city-centre-flat-apartment-2372726\&quot; aria-label=\&quot;Bulawayo City Centre - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/958\/510\/medium\/image-1.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Bulawayo City Centre - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/bulawayo-city-centre-flat-apartment-2372726\&quot; aria-label=\&quot;Bulawayo City Centre - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/958\/511\/medium\/image-2.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Bulawayo City Centre - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/bulawayo-city-centre-flat-apartment-2372726\&quot; aria-label=\&quot;Bulawayo City Centre - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/958\/512\/medium\/image-3.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Bulawayo City Centre - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/bulawayo-city-centre-flat-apartment-2372726\&quot; aria-label=\&quot;Bulawayo City Centre - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/958\/513\/medium\/image-4.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Bulawayo City Centre - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/bulawayo-city-centre-flat-apartment-2372726\&quot; aria-label=\&quot;Bulawayo City Centre - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/958\/514\/medium\/image-5.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Bulawayo City Centre - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/bulawayo-city-centre-flat-apartment-2372726\&quot; aria-label=\&quot;Bulawayo City Centre - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/958\/515\/medium\/image-6.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Bulawayo City Centre - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/bulawayo-city-centre-flat-apartment-2372726\&quot; aria-label=\&quot;Bulawayo City Centre - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/958\/516\/medium\/image-7.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Bulawayo City Centre - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/bulawayo-city-centre-flat-apartment-2372726\&quot; aria-label=\&quot;Bulawayo City Centre - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/958\/517\/medium\/image-8.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Bulawayo City Centre - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/bulawayo-city-centre-flat-apartment-2372726\&quot; aria-label=\&quot;Bulawayo City Centre - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/958\/518\/medium\/image-9.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Bulawayo City Centre - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/bulawayo-city-centre-flat-apartment-2372726\&quot; aria-label=\&quot;Bulawayo City Centre - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/958\/519\/medium\/image-10.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Bulawayo City Centre - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;div class='descrip' &gt;Ref.: JPC231445\r\nMixed-Use block of flats. An exceptional opportunity to acquire a solid income- generating property in Bulawayo Central Business District.\nPositioned along a busy street with high foot traffic, this three-storey block combines commercial, office and residential tenants - offering excellent rental diversity and stability.\nLand size 684 square meters\n6 x 2 bedroom flats, each with enclosed veranda, lounge, kitchen and bathroom\nEach unit has individual electricity and water meters\nBack yard with ample parking\nAn attractive, mixed use asset offering steady returns and excellent visibility, with the option to proceed with sectional title.&lt;\/div&gt;&quot;]">
-                            <div class="carousel-inner " role="listbox">
-                <div class="carousel-item active" data-index="0">
-
-                            <a class="image" rel="" href="https://www.classifieds.co.zw/listings/bulawayo-city-centre-flat-apartment-2372726" aria-label="Bulawayo City Centre - Flat & Apartment"><img src="/storage/App/Models/Attachment/files/010/958/510/medium/image-1.webp" class="img-responsive center-block img-max-width " alt="Bulawayo City Centre - Flat & Apartment"  loading="lazy"/></a>
-            
-        </div>
-    </div>
-
-    <a class="carousel-control left carousel-control-prev"
-        href="#gallery-2372726" role="button" data-slide="prev" style="z-index:10">
-        <span class="glyphicon carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">&laquo; Previous</span>
-    </a>
-
-    <a class="carousel-control right carousel-control-next"
-        href="#gallery-2372726" role="button" data-slide="next" style="z-index:10">
-        <span class="glyphicon carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next &raquo;</span>
-    </a>
-</div>
-</div>
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
-    var _ytdVideoIndex = "10";
-</script>
-                            </div>
-
-                            <div class="details col-md-7 col-sm-7 col-xs-8">
-                                <h5 class="listing-title">
-                        <a href="https://www.classifieds.co.zw/listings/bulawayo-city-centre-flat-apartment-2372726 ">
-                            Bulawayo City Centre - Flat & Apartment</a>
-
-                                            </h5>
-
-                    <div class="row">
-                                                                        <div class="pull-left price">
-
-                                                    <div class="amount">
-                                                        <div class=" pull-left usd-price-tooltip">
-                                                                                                                                                                                        $650,000
-                                                                                                                                                                                </div>
-                                                        <div class=" pull-right local-price local-price-tooltip">
-
-                                                            <span
-                                                                class="flavour"></span>
-                                                        </div>
-
-                                                    </div>
-
-                                                </div>
-                                                <div class="pull-right col-md-2 favourite-right">
-                                                                                                                                                                                            <button type="button" class="favourite btn-advert btn " data-exists="false"
-                                                            title="Favourite the Advert"><i class="fa fa-heart-o"></i>
-                                                        </button>
-                                                                                                        </div>
-
-                        
-                        <div class="properties pull-left col-md-10">
-                            
-                                <ul class="list-unstyled">
-                                                                                                                        <li class="property">8 bedrooms</li>
-                                                                                    <li class="property">6 bathrooms</li>
-                                                                                    <li class="property">684 m&sup2;</li>
-                                                                                                                                                        <li class="property">bulawayo cbd industrial</li>
-                                    
-                                    
-                                </ul>
-
-                                                    </div>
-                    </div>
-
-                    <div class="line-clamp-3">
-                                                <p>
-                            Ref.: JPC231445
-Mixed-Use block of flats. An exce...
-                        </p>
-                    </div>
-
-                    <div class="seller-info">
-                                                                                                                                                                                                <div class='store-logo pull-left'>
-                                                                <a style="position: absolute;left:0;bottom:8px;"
-                                                                    href="https://www.classifieds.co.zw/john-pococks-co"><img src="https://www.classifieds.co.zw/storage/App/Models/Attachment/files/008/869/659/thumb/Pocock Logo {new}.webp" class="img-responsive" loading="lazy" alt="John Pocock &amp; Co Logo"><span
-                                                                        class="pull-right">John Pocock &amp; Co</span></a>
-                                                            </div>
-                                                                                                                                                            <div class="btn-toolbar-buyer btn-toolbar pull-right" role="toolbar">
-    <noscript>
-                                    <div style="display: inline-block;">
-                <button type="button" id="whatsapp-advert-2372726" style="visibility: hidden"
-        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2372726"
-        data-intent="whatsapp" data-href="https://rply.link/l/tAs9FeyRIw" data-type="advert" data-id="2372726"
-        data-category="218" data-category-name="Flats &amp; Apartments for Sale"
-        title="WhatsApp the Advertiser">
-                    <img src="https://www.classifieds.co.zw/logos/whatsapp.png" width="20px" />
-            </button>
-     </div>                                         <a rel="nofollow" class="btn pull-left" style="margin-left:0px;" href="#"
-                title="Call the Advertiser">
-                                    <i class="fa fa-phone"></i>
-                            </a>
-                            <a rel="nofollow" class="btn pull-left" style="margin-left:0px;" href="#"><i
-                    class="fa fa-envelope"></i>
-            </a>
-                    </noscript>
-    <div class="clearfix btn-group" style="display: flex" role="group">
-                                    <div style="display: inline-block;">
-                <button type="button" id="whatsapp-advert-2372726" style="visibility: hidden"
-        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2372726"
-        data-intent="whatsapp" data-href="https://rply.link/l/tAs9FeyRIw" data-type="advert" data-id="2372726"
-        data-category="218" data-category-name="Flats &amp; Apartments for Sale"
-        title="WhatsApp the Advertiser">
-                    <i class="fa fa-whatsapp"></i>
-            </button>
-     </div>                                             <button type="button" id="contact-advert-2372726"
-                    class="btn-modal btn btn-advert call record-interest" data-target="#login-options-modal"
-                    data-intent="call" data-type="advert" data-id="2372726"
-                    data-category="218" data-category-name="Flats &amp; Apartments for Sale"
-                    title="Call the Advertiser">
-                                            <i class="fa fa-phone"></i>
-                                    </button>
-                                            
-                <button type="button" id="email-advert-2372726"
-                    class="btn-modal btn btn-advert email record-interest" data-target="#contact-seller"
-                    data-intent="email" data-type="advert" data-id="2372726"
-                    data-category="218" data-category-name="Flats &amp; Apartments for Sale"
-                    title="Email the Advertiser">
-                    <i class="fa fa-envelope"></i>
-                </button>
-                
-                                                </div>
-</div>
-
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
-    function rememberAction(action, advert) {
-        localStorage.setItem('modal-action', JSON.stringify({ action, advert }))
-    }
-</script>                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="alerts-2372726">
-        </div>                                                                                            <div id="listing-2411705"
-    class="listing panel panel-default panel-listing border-priority--gold border-status--online"
-    data-id="2411705" data-type="advert" data-view="category"     data-category="{&quot;leaf&quot;:218,&quot;parent&quot;:16,&quot;level_1&quot;:16,&quot;level_1_ident&quot;:&quot;property\/Property&quot;,&quot;level_2&quot;:218,&quot;level_2_ident&quot;:&quot;flats-apartments-for-sale\/Flats &amp; Apartments for Sale&quot;,&quot;payable&quot;:false,&quot;points&quot;:&quot;0&quot;,&quot;price&quot;:0,&quot;title&quot;:&quot;Houses for Sale&quot;,&quot;usd_price&quot;:&quot;0&quot;}"     data-currency="{&quot;id&quot;:1,&quot;title&quot;:&quot;USD (international transactions)&quot;,&quot;iso&quot;:&quot;USD&quot;,&quot;symbol&quot;:&quot;$&quot;,&quot;prefix&quot;:&quot;USD&quot;,&quot;enabled&quot;:1,&quot;created_at&quot;:&quot;2015-12-04 19:01:40&quot;,&quot;updated_at&quot;:&quot;2020-06-25 14:17:18&quot;,&quot;display_format&quot;:&quot;#,###,###&quot;,&quot;rate&quot;:&quot;1.00&quot;,&quot;default&quot;:1}" style="position: relative;">
-
-        <div class="panel-body">
-
-
-
-                    <div class="pull-left image col-md-5 col-sm-5 col-xs-4">
-        
-                                                <div class="gallery">
-    
-    <div id="gallery-2411705" class="carousel slide" data-ride="carousel" data-images="[&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-garden-flat-2411705\&quot; aria-label=\&quot;Highlands - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/251\/679\/medium\/image-1.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-garden-flat-2411705\&quot; aria-label=\&quot;Highlands - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/251\/680\/medium\/image-2.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-garden-flat-2411705\&quot; aria-label=\&quot;Highlands - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/251\/681\/medium\/image-3.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-garden-flat-2411705\&quot; aria-label=\&quot;Highlands - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/251\/682\/medium\/image-4.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-garden-flat-2411705\&quot; aria-label=\&quot;Highlands - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/251\/683\/medium\/image-5.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-garden-flat-2411705\&quot; aria-label=\&quot;Highlands - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/251\/684\/medium\/image-6.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-garden-flat-2411705\&quot; aria-label=\&quot;Highlands - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/251\/685\/medium\/image-7.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-garden-flat-2411705\&quot; aria-label=\&quot;Highlands - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/251\/686\/medium\/image-8.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-garden-flat-2411705\&quot; aria-label=\&quot;Highlands - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/251\/687\/medium\/image-9.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-garden-flat-2411705\&quot; aria-label=\&quot;Highlands - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/251\/688\/medium\/image-10.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-garden-flat-2411705\&quot; aria-label=\&quot;Highlands - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/251\/689\/medium\/image-11.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-garden-flat-2411705\&quot; aria-label=\&quot;Highlands - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/251\/690\/medium\/image-12.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-garden-flat-2411705\&quot; aria-label=\&quot;Highlands - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/251\/691\/medium\/image-13.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-garden-flat-2411705\&quot; aria-label=\&quot;Highlands - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/251\/692\/medium\/image-14.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-garden-flat-2411705\&quot; aria-label=\&quot;Highlands - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/251\/693\/medium\/image-15.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-garden-flat-2411705\&quot; aria-label=\&quot;Highlands - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/251\/694\/medium\/image-16.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-garden-flat-2411705\&quot; aria-label=\&quot;Highlands - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/251\/695\/medium\/image-17.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;div class='descrip' &gt;Ref.: PGP245585\r\nWe are pleased to present an exclusive offering of duplex apartments along Arcturus Road, Highlands. Each unit comprises:\n\n\u2022\t4 bedrooms on the upper floor, each with an en-suite bathroom and spacious built-in cupboards. 3 of the bedrooms feature private balconies.\n\u2022\tGround-floor layout with an open-plan lounge, dining area, a modern fitted kitchen, a guest loo and a shoe and jacket cabinet.\n\u2022\tParking for two to three vehicles, depending on the unit.\n\u2022\t24-hour security with full CCTV coverage.\n\nThe complex consists of 14 units and includes a fully equipped clubhouse for the exclusive use of residents. Amenities comprise:\n\n\u2022\tGym\n\u2022\tCoff&amp;hellip;&lt;\/div&gt;&quot;]">
-                            <div class="carousel-inner " role="listbox">
-                <div class="carousel-item active" data-index="0">
-
-                            <a class="image" rel="" href="https://www.classifieds.co.zw/listings/highlands-garden-flat-2411705" aria-label="Highlands - Garden Flat"><img src="/storage/App/Models/Attachment/files/011/251/679/medium/image-1.webp" class="img-responsive center-block img-max-width " alt="Highlands - Garden Flat"  loading="lazy"/></a>
-            
-        </div>
-    </div>
-
-    <a class="carousel-control left carousel-control-prev"
-        href="#gallery-2411705" role="button" data-slide="prev" style="z-index:10">
-        <span class="glyphicon carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">&laquo; Previous</span>
-    </a>
-
-    <a class="carousel-control right carousel-control-next"
-        href="#gallery-2411705" role="button" data-slide="next" style="z-index:10">
-        <span class="glyphicon carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next &raquo;</span>
-    </a>
-</div>
-</div>
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
+<script type="245619828e9ab26f08ed8c97-text/javascript">
     var _ytdVideoIndex = "17";
 </script>
                             </div>
 
                             <div class="details col-md-7 col-sm-7 col-xs-8">
                                 <h5 class="listing-title">
-                        <a href="https://www.classifieds.co.zw/listings/highlands-garden-flat-2411705 ">
-                            Highlands - Garden Flat</a>
+                        <a href="https://www.classifieds.co.zw/listings/vainona-garden-flat-2418902 ">
+                            Vainona - Garden Flat</a>
 
                                             </h5>
 
@@ -3451,318 +3502,12 @@ Mixed-Use block of flats. An exce...
 
                                                     <div class="amount">
                                                         <div class=" pull-left usd-price-tooltip">
-                                                                                                                                                                                        $370,000
+                                                                                                                                                                                        $1,500
                                                                                                                                                                                 </div>
                                                         <div class=" pull-right local-price local-price-tooltip">
 
                                                             <span
-                                                                class="flavour"></span>
-                                                        </div>
-
-                                                    </div>
-
-                                                </div>
-                                                <div class="pull-right col-md-2 favourite-right">
-                                                                                                                                                                                            <button type="button" class="favourite btn-advert btn " data-exists="false"
-                                                            title="Favourite the Advert"><i class="fa fa-heart-o"></i>
-                                                        </button>
-                                                                                                        </div>
-
-                        
-                        <div class="properties pull-left col-md-10">
-                            
-                                <ul class="list-unstyled">
-                                                                                                                        <li class="property">4 bedrooms</li>
-                                                                                    <li class="property">5 bathrooms</li>
-                                                                                    <li class="property">250 m&sup2;</li>
-                                                                                                                                                        <li class="property">harare north</li>
-                                    
-                                    
-                                </ul>
-
-                                                    </div>
-                    </div>
-
-                    <div class="line-clamp-3">
-                                                <p>
-                            Ref.: PGP245585
-We are pleased to present an excl...
-                        </p>
-                    </div>
-
-                    <div class="seller-info">
-                                                                                                                                                                                                <div class='store-logo pull-left'>
-                                                                <a style="position: absolute;left:0;bottom:8px;"
-                                                                    href="https://www.classifieds.co.zw/pamgolding"><img src="https://www.classifieds.co.zw/storage/App/Models/Attachment/files/008/869/641/thumb/pam golding new.webp" class="img-responsive" loading="lazy" alt="Pam Golding Properties Logo"><span
-                                                                        class="pull-right">Pam Golding Properties</span></a>
-                                                            </div>
-                                                                                                                                                            <div class="btn-toolbar-buyer btn-toolbar pull-right" role="toolbar">
-    <noscript>
-                                    <div style="display: inline-block;">
-                <button type="button" id="whatsapp-advert-2411705" style="visibility: hidden"
-        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2411705"
-        data-intent="whatsapp" data-href="https://rply.link/l/bB48ELjDFq" data-type="advert" data-id="2411705"
-        data-category="218" data-category-name="Flats &amp; Apartments for Sale"
-        title="WhatsApp the Advertiser">
-                    <img src="https://www.classifieds.co.zw/logos/whatsapp.png" width="20px" />
-            </button>
-     </div>                                         <a rel="nofollow" class="btn pull-left" style="margin-left:0px;" href="#"
-                title="Call the Advertiser">
-                                    <i class="fa fa-phone"></i>
-                            </a>
-                            <a rel="nofollow" class="btn pull-left" style="margin-left:0px;" href="#"><i
-                    class="fa fa-envelope"></i>
-            </a>
-                    </noscript>
-    <div class="clearfix btn-group" style="display: flex" role="group">
-                                    <div style="display: inline-block;">
-                <button type="button" id="whatsapp-advert-2411705" style="visibility: hidden"
-        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2411705"
-        data-intent="whatsapp" data-href="https://rply.link/l/bB48ELjDFq" data-type="advert" data-id="2411705"
-        data-category="218" data-category-name="Flats &amp; Apartments for Sale"
-        title="WhatsApp the Advertiser">
-                    <i class="fa fa-whatsapp"></i>
-            </button>
-     </div>                                             <button type="button" id="contact-advert-2411705"
-                    class="btn-modal btn btn-advert call record-interest" data-target="#login-options-modal"
-                    data-intent="call" data-type="advert" data-id="2411705"
-                    data-category="218" data-category-name="Flats &amp; Apartments for Sale"
-                    title="Call the Advertiser">
-                                            <i class="fa fa-phone"></i>
-                                    </button>
-                                            
-                <button type="button" id="email-advert-2411705"
-                    class="btn-modal btn btn-advert email record-interest" data-target="#contact-seller"
-                    data-intent="email" data-type="advert" data-id="2411705"
-                    data-category="218" data-category-name="Flats &amp; Apartments for Sale"
-                    title="Email the Advertiser">
-                    <i class="fa fa-envelope"></i>
-                </button>
-                
-                                                </div>
-</div>
-
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
-    function rememberAction(action, advert) {
-        localStorage.setItem('modal-action', JSON.stringify({ action, advert }))
-    }
-</script>                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="alerts-2411705">
-        </div>                                                                                            <div id="listing-2375416"
-    class="listing panel panel-default panel-listing border-priority--gold border-status--online"
-    data-id="2375416" data-type="advert" data-view="category"     data-category="{&quot;leaf&quot;:218,&quot;parent&quot;:16,&quot;level_1&quot;:16,&quot;level_1_ident&quot;:&quot;property\/Property&quot;,&quot;level_2&quot;:218,&quot;level_2_ident&quot;:&quot;flats-apartments-for-sale\/Flats &amp; Apartments for Sale&quot;,&quot;payable&quot;:false,&quot;points&quot;:&quot;0&quot;,&quot;price&quot;:0,&quot;title&quot;:&quot;Houses for Sale&quot;,&quot;usd_price&quot;:&quot;0&quot;}"     data-currency="{&quot;id&quot;:1,&quot;title&quot;:&quot;USD (international transactions)&quot;,&quot;iso&quot;:&quot;USD&quot;,&quot;symbol&quot;:&quot;$&quot;,&quot;prefix&quot;:&quot;USD&quot;,&quot;enabled&quot;:1,&quot;created_at&quot;:&quot;2015-12-04 19:01:40&quot;,&quot;updated_at&quot;:&quot;2020-06-25 14:17:18&quot;,&quot;display_format&quot;:&quot;#,###,###&quot;,&quot;rate&quot;:&quot;1.00&quot;,&quot;default&quot;:1}" style="position: relative;">
-
-        <div class="panel-body">
-
-
-
-                    <div class="pull-left image col-md-5 col-sm-5 col-xs-4">
-        
-                                                <div class="gallery">
-    
-    <div id="gallery-2375416" class="carousel slide" data-ride="carousel" data-images="[&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-flat-apartment-2375416\&quot; aria-label=\&quot;Highlands - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/944\/680\/medium\/image-1.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-flat-apartment-2375416\&quot; aria-label=\&quot;Highlands - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/944\/681\/medium\/image-2.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-flat-apartment-2375416\&quot; aria-label=\&quot;Highlands - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/944\/682\/medium\/image-3.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-flat-apartment-2375416\&quot; aria-label=\&quot;Highlands - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/944\/683\/medium\/image-4.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-flat-apartment-2375416\&quot; aria-label=\&quot;Highlands - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/944\/684\/medium\/image-5.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-flat-apartment-2375416\&quot; aria-label=\&quot;Highlands - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/944\/685\/medium\/image-6.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-flat-apartment-2375416\&quot; aria-label=\&quot;Highlands - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/944\/686\/medium\/image-7.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-flat-apartment-2375416\&quot; aria-label=\&quot;Highlands - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/944\/687\/medium\/image-8.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-flat-apartment-2375416\&quot; aria-label=\&quot;Highlands - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/944\/688\/medium\/image-9.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-flat-apartment-2375416\&quot; aria-label=\&quot;Highlands - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/944\/689\/medium\/image-10.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-flat-apartment-2375416\&quot; aria-label=\&quot;Highlands - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/944\/690\/medium\/image-11.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-flat-apartment-2375416\&quot; aria-label=\&quot;Highlands - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/944\/691\/medium\/image-12.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-flat-apartment-2375416\&quot; aria-label=\&quot;Highlands - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/944\/692\/medium\/image-13.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-flat-apartment-2375416\&quot; aria-label=\&quot;Highlands - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/944\/693\/medium\/image-14.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-flat-apartment-2375416\&quot; aria-label=\&quot;Highlands - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/944\/694\/medium\/image-15.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-flat-apartment-2375416\&quot; aria-label=\&quot;Highlands - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/944\/696\/medium\/image-16.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-flat-apartment-2375416\&quot; aria-label=\&quot;Highlands - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/944\/697\/medium\/image-17.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-flat-apartment-2375416\&quot; aria-label=\&quot;Highlands - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/944\/698\/medium\/image-18.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-flat-apartment-2375416\&quot; aria-label=\&quot;Highlands - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/944\/699\/medium\/image-19.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;div class='descrip' &gt;Ref.: GAT232418\r\nLuxury Has a New Address!\nDiscover premium living in the sought-after, well-established suburb of Highlands, Harare. These exclusive properties on Corfu Road offer unmatched elegance and convenience for modern families and discerning buyers.\n\n5 Luxury Apartments \u2013 Selling Off Plan\n5 Bedrooms per unit | 3 Bathrooms (main en-suite)\nOpen-plan lounge and dining area\nModern kitchen with premium finishes\nPrivate backyard for serene outdoor living\nIdeal for professionals and families seeking elegance\n\n\nPrime Location Advantages\n4 minutes (1.2 km) to Highland Park Shopping Centre\n8 minutes (4.5 km) to Village Walk\n8 minutes (4.1 km) to Bistro Veldemee&amp;hellip;&lt;\/div&gt;&quot;]">
-                            <div class="carousel-inner " role="listbox">
-                <div class="carousel-item active" data-index="0">
-
-                            <a class="image" rel="" href="https://www.classifieds.co.zw/listings/highlands-flat-apartment-2375416" aria-label="Highlands - Flat & Apartment"><img src="/storage/App/Models/Attachment/files/010/944/680/medium/image-1.webp" class="img-responsive center-block img-max-width " alt="Highlands - Flat & Apartment"  loading="lazy"/></a>
-            
-        </div>
-    </div>
-
-    <a class="carousel-control left carousel-control-prev"
-        href="#gallery-2375416" role="button" data-slide="prev" style="z-index:10">
-        <span class="glyphicon carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">&laquo; Previous</span>
-    </a>
-
-    <a class="carousel-control right carousel-control-next"
-        href="#gallery-2375416" role="button" data-slide="next" style="z-index:10">
-        <span class="glyphicon carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next &raquo;</span>
-    </a>
-</div>
-</div>
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
-    var _ytdVideoIndex = "19";
-</script>
-                            </div>
-
-                            <div class="details col-md-7 col-sm-7 col-xs-8">
-                                <h5 class="listing-title">
-                        <a href="https://www.classifieds.co.zw/listings/highlands-flat-apartment-2375416 ">
-                            Highlands - Flat & Apartment</a>
-
-                                            </h5>
-
-                    <div class="row">
-                                                                        <div class="pull-left price">
-
-                                                    <div class="amount">
-                                                        <div class=" pull-left usd-price-tooltip">
-                                                                                                                                                                                        $430,000
-                                                                                                                                                                                </div>
-                                                        <div class=" pull-right local-price local-price-tooltip">
-
-                                                            <span
-                                                                class="flavour"></span>
-                                                        </div>
-
-                                                    </div>
-
-                                                </div>
-                                                <div class="pull-right col-md-2 favourite-right">
-                                                                                                                                                                                            <button type="button" class="favourite btn-advert btn " data-exists="false"
-                                                            title="Favourite the Advert"><i class="fa fa-heart-o"></i>
-                                                        </button>
-                                                                                                        </div>
-
-                        
-                        <div class="properties pull-left col-md-10">
-                            
-                                <ul class="list-unstyled">
-                                                                                                                        <li class="property">5 bedrooms</li>
-                                                                                    <li class="property">3 bathrooms</li>
-                                                                                                                                                        <li class="property">harare north</li>
-                                    
-                                    
-                                </ul>
-
-                                                    </div>
-                    </div>
-
-                    <div class="line-clamp-3">
-                                                <p>
-                            Ref.: GAT232418
-Luxury Has a New Address!
-Discove...
-                        </p>
-                    </div>
-
-                    <div class="seller-info">
-                                                                                                                                                                                                <div class='store-logo pull-left'>
-                                                                <a style="position: absolute;left:0;bottom:8px;"
-                                                                    href="https://www.classifieds.co.zw/guestandtanner"><img src="https://www.classifieds.co.zw/storage/App/Models/Attachment/files/009/295/237/thumb/guest-and-tanner-real-estate_1611125377[3744].webp" class="img-responsive" loading="lazy" alt="Guest and Tanner Logo"><span
-                                                                        class="pull-right">Guest and Tanner</span></a>
-                                                            </div>
-                                                                                                                                                            <div class="btn-toolbar-buyer btn-toolbar pull-right" role="toolbar">
-    <noscript>
-                                    <div style="display: inline-block;">
-                <button type="button" id="whatsapp-advert-2375416" style="visibility: hidden"
-        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2375416"
-        data-intent="whatsapp" data-href="https://rply.link/l/XuLkPMIMNx" data-type="advert" data-id="2375416"
-        data-category="218" data-category-name="Flats &amp; Apartments for Sale"
-        title="WhatsApp the Advertiser">
-                    <img src="https://www.classifieds.co.zw/logos/whatsapp.png" width="20px" />
-            </button>
-     </div>                                         <a rel="nofollow" class="btn pull-left" style="margin-left:0px;" href="#"
-                title="Call the Advertiser">
-                                    <i class="fa fa-phone"></i>
-                            </a>
-                            <a rel="nofollow" class="btn pull-left" style="margin-left:0px;" href="#"><i
-                    class="fa fa-envelope"></i>
-            </a>
-                    </noscript>
-    <div class="clearfix btn-group" style="display: flex" role="group">
-                                    <div style="display: inline-block;">
-                <button type="button" id="whatsapp-advert-2375416" style="visibility: hidden"
-        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2375416"
-        data-intent="whatsapp" data-href="https://rply.link/l/XuLkPMIMNx" data-type="advert" data-id="2375416"
-        data-category="218" data-category-name="Flats &amp; Apartments for Sale"
-        title="WhatsApp the Advertiser">
-                    <i class="fa fa-whatsapp"></i>
-            </button>
-     </div>                                             <button type="button" id="contact-advert-2375416"
-                    class="btn-modal btn btn-advert call record-interest" data-target="#login-options-modal"
-                    data-intent="call" data-type="advert" data-id="2375416"
-                    data-category="218" data-category-name="Flats &amp; Apartments for Sale"
-                    title="Call the Advertiser">
-                                            <i class="fa fa-phone"></i>
-                                    </button>
-                                            
-                <button type="button" id="email-advert-2375416"
-                    class="btn-modal btn btn-advert email record-interest" data-target="#contact-seller"
-                    data-intent="email" data-type="advert" data-id="2375416"
-                    data-category="218" data-category-name="Flats &amp; Apartments for Sale"
-                    title="Email the Advertiser">
-                    <i class="fa fa-envelope"></i>
-                </button>
-                
-                                                </div>
-</div>
-
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
-    function rememberAction(action, advert) {
-        localStorage.setItem('modal-action', JSON.stringify({ action, advert }))
-    }
-</script>                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="alerts-2375416">
-        </div>                                                                                            <div id="listing-2346088"
-    class="listing panel panel-default panel-listing border-priority--gold border-status--online"
-    data-id="2346088" data-type="advert" data-view="category"     data-category="{&quot;leaf&quot;:218,&quot;parent&quot;:16,&quot;level_1&quot;:16,&quot;level_1_ident&quot;:&quot;property\/Property&quot;,&quot;level_2&quot;:218,&quot;level_2_ident&quot;:&quot;flats-apartments-for-sale\/Flats &amp; Apartments for Sale&quot;,&quot;payable&quot;:false,&quot;points&quot;:&quot;0&quot;,&quot;price&quot;:0,&quot;title&quot;:&quot;Houses for Sale&quot;,&quot;usd_price&quot;:&quot;0&quot;}"     data-currency="{&quot;id&quot;:1,&quot;title&quot;:&quot;USD (international transactions)&quot;,&quot;iso&quot;:&quot;USD&quot;,&quot;symbol&quot;:&quot;$&quot;,&quot;prefix&quot;:&quot;USD&quot;,&quot;enabled&quot;:1,&quot;created_at&quot;:&quot;2015-12-04 19:01:40&quot;,&quot;updated_at&quot;:&quot;2020-06-25 14:17:18&quot;,&quot;display_format&quot;:&quot;#,###,###&quot;,&quot;rate&quot;:&quot;1.00&quot;,&quot;default&quot;:1}" style="position: relative;">
-
-        <div class="panel-body">
-
-
-
-                    <div class="pull-left image col-md-5 col-sm-5 col-xs-4">
-        
-                                                <div class="gallery">
-    
-    <div id="gallery-2346088" class="carousel slide" data-ride="carousel" data-images="[&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-garden-flat-2346088\&quot; aria-label=\&quot;Greendale - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/957\/393\/medium\/image-1.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-garden-flat-2346088\&quot; aria-label=\&quot;Greendale - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/957\/394\/medium\/image-2.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-garden-flat-2346088\&quot; aria-label=\&quot;Greendale - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/957\/395\/medium\/image-3.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-garden-flat-2346088\&quot; aria-label=\&quot;Greendale - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/957\/396\/medium\/image-4.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-garden-flat-2346088\&quot; aria-label=\&quot;Greendale - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/957\/397\/medium\/image-5.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-garden-flat-2346088\&quot; aria-label=\&quot;Greendale - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/957\/398\/medium\/image-6.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-garden-flat-2346088\&quot; aria-label=\&quot;Greendale - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/957\/399\/medium\/image-7.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-garden-flat-2346088\&quot; aria-label=\&quot;Greendale - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/957\/400\/medium\/image-8.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-garden-flat-2346088\&quot; aria-label=\&quot;Greendale - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/957\/401\/medium\/image-9.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-garden-flat-2346088\&quot; aria-label=\&quot;Greendale - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/957\/402\/medium\/image-10.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-garden-flat-2346088\&quot; aria-label=\&quot;Greendale - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/957\/403\/medium\/image-11.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-garden-flat-2346088\&quot; aria-label=\&quot;Greendale - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/957\/404\/medium\/image-12.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-garden-flat-2346088\&quot; aria-label=\&quot;Greendale - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/957\/405\/medium\/image-13.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-garden-flat-2346088\&quot; aria-label=\&quot;Greendale - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/957\/406\/medium\/image-14.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-garden-flat-2346088\&quot; aria-label=\&quot;Greendale - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/957\/407\/medium\/image-15.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-garden-flat-2346088\&quot; aria-label=\&quot;Greendale - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/957\/408\/medium\/image-16.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;div class='descrip' &gt;Ref.: RVL220570\r\nDiscover the ultimate urban retreat in this charming 3-bedroom garden flat located in the serene neighborhood of Greendale, Harare East. Spanning a generous 200 m\u00b2, this beautifully designed home combines comfort and practicality, offering an inviting living space with two modern bathrooms. Ideal for families or those seeking ample space, the open-plan layout seamlessly connects the living and dining areas, creating a warm and welcoming atmosphere.\n\nEnjoy the luxury of a borehole, ensuring a reliable water supply year-round, while the lush garden invites relaxation and outdoor entertaining. Situated in a peaceful enclave, you\u2019ll benefit from &amp;hellip;&lt;\/div&gt;&quot;]">
-                            <div class="carousel-inner " role="listbox">
-                <div class="carousel-item active" data-index="0">
-
-                            <a class="image" rel="" href="https://www.classifieds.co.zw/listings/greendale-garden-flat-2346088" aria-label="Greendale - Garden Flat"><img src="/storage/App/Models/Attachment/files/010/957/393/medium/image-1.webp" class="img-responsive center-block img-max-width " alt="Greendale - Garden Flat"  loading="lazy"/></a>
-            
-        </div>
-    </div>
-
-    <a class="carousel-control left carousel-control-prev"
-        href="#gallery-2346088" role="button" data-slide="prev" style="z-index:10">
-        <span class="glyphicon carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">&laquo; Previous</span>
-    </a>
-
-    <a class="carousel-control right carousel-control-next"
-        href="#gallery-2346088" role="button" data-slide="next" style="z-index:10">
-        <span class="glyphicon carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next &raquo;</span>
-    </a>
-</div>
-</div>
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
-    var _ytdVideoIndex = "16";
-</script>
-                            </div>
-
-                            <div class="details col-md-7 col-sm-7 col-xs-8">
-                                <h5 class="listing-title">
-                        <a href="https://www.classifieds.co.zw/listings/greendale-garden-flat-2346088 ">
-                            Greendale - Garden Flat</a>
-
-                                            </h5>
-
-                    <div class="row">
-                                                                        <div class="pull-left price">
-
-                                                    <div class="amount">
-                                                        <div class=" pull-left usd-price-tooltip">
-                                                                                                                                                                                        $220,000
-                                                                                                                                                                                </div>
-                                                        <div class=" pull-right local-price local-price-tooltip">
-
-                                                            <span
-                                                                class="flavour"></span>
+                                                                class="flavour"> per month</span>
                                                         </div>
 
                                                     </div>
@@ -3780,8 +3525,7 @@ Discove...
                                 <ul class="list-unstyled">
                                                                                                                         <li class="property">3 bedrooms</li>
                                                                                     <li class="property">2 bathrooms</li>
-                                                                                    <li class="property">200 m&sup2;</li>
-                                                                                                                                                        <li class="property">harare east</li>
+                                                                                                                                                        <li class="property">harare north</li>
                                     
                                     
                                 </ul>
@@ -3791,24 +3535,24 @@ Discove...
 
                     <div class="line-clamp-3">
                                                 <p>
-                            Ref.: RVL220570
-Discover the ultimate urban retre...
+                            Ref.: KNP247987
+Corner Unit available in the newl...
                         </p>
                     </div>
 
                     <div class="seller-info">
                                                                                                                                                                                                 <div class='store-logo pull-left'>
                                                                 <a style="position: absolute;left:0;bottom:8px;"
-                                                                    href="https://www.classifieds.co.zw/realtor-ville"><img src="https://www.classifieds.co.zw/storage/App/Models/Attachment/files/008/871/148/thumb/realtor 150x70.webp" class="img-responsive" loading="lazy" alt="Realtor Ville Logo"><span
-                                                                        class="pull-right">Realtor Ville</span></a>
+                                                                    href="https://www.classifieds.co.zw/kennan-properties"><img src="https://www.classifieds.co.zw/storage/App/Models/Attachment/files/008/869/642/thumb/kennan org logo.webp" class="img-responsive" loading="lazy" alt="Kennan Properties Logo"><span
+                                                                        class="pull-right">Kennan Properties</span></a>
                                                             </div>
                                                                                                                                                             <div class="btn-toolbar-buyer btn-toolbar pull-right" role="toolbar">
     <noscript>
                                     <div style="display: inline-block;">
-                <button type="button" id="whatsapp-advert-2346088" style="visibility: hidden"
-        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2346088"
-        data-intent="whatsapp" data-href="https://rply.link/l/2lJEUc9sOU" data-type="advert" data-id="2346088"
-        data-category="218" data-category-name="Flats &amp; Apartments for Sale"
+                <button type="button" id="whatsapp-advert-2418902" style="visibility: hidden"
+        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2418902"
+        data-intent="whatsapp" data-href="https://rply.link/l/6OaRzRUwjl" data-type="advert" data-id="2418902"
+        data-category="220" data-category-name="Flats &amp; Apartments for Rent"
         title="WhatsApp the Advertiser">
                     <img src="https://www.classifieds.co.zw/logos/whatsapp.png" width="20px" />
             </button>
@@ -3822,25 +3566,25 @@ Discover the ultimate urban retre...
                     </noscript>
     <div class="clearfix btn-group" style="display: flex" role="group">
                                     <div style="display: inline-block;">
-                <button type="button" id="whatsapp-advert-2346088" style="visibility: hidden"
-        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2346088"
-        data-intent="whatsapp" data-href="https://rply.link/l/2lJEUc9sOU" data-type="advert" data-id="2346088"
-        data-category="218" data-category-name="Flats &amp; Apartments for Sale"
+                <button type="button" id="whatsapp-advert-2418902" style="visibility: hidden"
+        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2418902"
+        data-intent="whatsapp" data-href="https://rply.link/l/6OaRzRUwjl" data-type="advert" data-id="2418902"
+        data-category="220" data-category-name="Flats &amp; Apartments for Rent"
         title="WhatsApp the Advertiser">
                     <i class="fa fa-whatsapp"></i>
             </button>
-     </div>                                             <button type="button" id="contact-advert-2346088"
+     </div>                                             <button type="button" id="contact-advert-2418902"
                     class="btn-modal btn btn-advert call record-interest" data-target="#login-options-modal"
-                    data-intent="call" data-type="advert" data-id="2346088"
-                    data-category="218" data-category-name="Flats &amp; Apartments for Sale"
+                    data-intent="call" data-type="advert" data-id="2418902"
+                    data-category="220" data-category-name="Flats &amp; Apartments for Rent"
                     title="Call the Advertiser">
                                             <i class="fa fa-phone"></i>
                                     </button>
                                             
-                <button type="button" id="email-advert-2346088"
+                <button type="button" id="email-advert-2418902"
                     class="btn-modal btn btn-advert email record-interest" data-target="#contact-seller"
-                    data-intent="email" data-type="advert" data-id="2346088"
-                    data-category="218" data-category-name="Flats &amp; Apartments for Sale"
+                    data-intent="email" data-type="advert" data-id="2418902"
+                    data-category="220" data-category-name="Flats &amp; Apartments for Rent"
                     title="Email the Advertiser">
                     <i class="fa fa-envelope"></i>
                 </button>
@@ -3848,7 +3592,7 @@ Discover the ultimate urban retre...
                                                 </div>
 </div>
 
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
+<script type="245619828e9ab26f08ed8c97-text/javascript">
     function rememberAction(action, advert) {
         localStorage.setItem('modal-action', JSON.stringify({ action, advert }))
     }
@@ -3858,164 +3602,11 @@ Discover the ultimate urban retre...
         </div>
 
 
-        <div class="alerts-2346088">
-        </div>                                                                                            <div id="listing-2318314"
-    class="listing panel panel-default panel-listing border-priority--gold border-status--online"
-    data-id="2318314" data-type="advert" data-view="category"     data-category="{&quot;leaf&quot;:218,&quot;parent&quot;:16,&quot;level_1&quot;:16,&quot;level_1_ident&quot;:&quot;property\/Property&quot;,&quot;level_2&quot;:218,&quot;level_2_ident&quot;:&quot;flats-apartments-for-sale\/Flats &amp; Apartments for Sale&quot;,&quot;payable&quot;:false,&quot;points&quot;:&quot;0&quot;,&quot;price&quot;:0,&quot;title&quot;:&quot;Houses for Sale&quot;,&quot;usd_price&quot;:&quot;0&quot;}"     data-currency="{&quot;id&quot;:1,&quot;title&quot;:&quot;USD (international transactions)&quot;,&quot;iso&quot;:&quot;USD&quot;,&quot;symbol&quot;:&quot;$&quot;,&quot;prefix&quot;:&quot;USD&quot;,&quot;enabled&quot;:1,&quot;created_at&quot;:&quot;2015-12-04 19:01:40&quot;,&quot;updated_at&quot;:&quot;2020-06-25 14:17:18&quot;,&quot;display_format&quot;:&quot;#,###,###&quot;,&quot;rate&quot;:&quot;1.00&quot;,&quot;default&quot;:1}" style="position: relative;">
-
-        <div class="panel-body">
-
-
-
-                    <div class="pull-left image col-md-5 col-sm-5 col-xs-4">
-        
-                                                <div class="gallery">
-    
-    <div id="gallery-2318314" class="carousel slide" data-ride="carousel" data-images="[&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/waterfalls-garden-flat-2318314\&quot; aria-label=\&quot;Waterfalls - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/932\/015\/medium\/image-1.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Waterfalls - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/waterfalls-garden-flat-2318314\&quot; aria-label=\&quot;Waterfalls - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/932\/016\/medium\/image-2.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Waterfalls - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/waterfalls-garden-flat-2318314\&quot; aria-label=\&quot;Waterfalls - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/932\/017\/medium\/image-3.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Waterfalls - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/waterfalls-garden-flat-2318314\&quot; aria-label=\&quot;Waterfalls - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/932\/018\/medium\/image-4.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Waterfalls - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/waterfalls-garden-flat-2318314\&quot; aria-label=\&quot;Waterfalls - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/932\/019\/medium\/image-5.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Waterfalls - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/waterfalls-garden-flat-2318314\&quot; aria-label=\&quot;Waterfalls - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/932\/020\/medium\/image-6.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Waterfalls - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/waterfalls-garden-flat-2318314\&quot; aria-label=\&quot;Waterfalls - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/932\/021\/medium\/image-7.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Waterfalls - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/waterfalls-garden-flat-2318314\&quot; aria-label=\&quot;Waterfalls - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/932\/022\/medium\/image-8.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Waterfalls - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/waterfalls-garden-flat-2318314\&quot; aria-label=\&quot;Waterfalls - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/932\/023\/medium\/image-9.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Waterfalls - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/waterfalls-garden-flat-2318314\&quot; aria-label=\&quot;Waterfalls - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/932\/024\/medium\/image-10.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Waterfalls - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/waterfalls-garden-flat-2318314\&quot; aria-label=\&quot;Waterfalls - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/932\/025\/medium\/image-11.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Waterfalls - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/waterfalls-garden-flat-2318314\&quot; aria-label=\&quot;Waterfalls - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/932\/026\/medium\/image-12.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Waterfalls - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;div class='descrip' &gt;Ref.: PGP210276\r\nNestled in a secure gated complex is this neat family home which comprises 3 bedrooms main bedroom with full en-suite bathroom, family bathroom, fitted kitchen, combined lounge and dinning, enclosed verandah, 5000l water tank. The complex boasts of a secure playground and common entertainment area. The entire complex is serviced by communal boreholes and security is onsite. Title deeds available\nDo not miss this fantastic investment opportunity!&lt;\/div&gt;&quot;]">
-                            <div class="carousel-inner " role="listbox">
-                <div class="carousel-item active" data-index="0">
-
-                            <a class="image" rel="" href="https://www.classifieds.co.zw/listings/waterfalls-garden-flat-2318314" aria-label="Waterfalls - Garden Flat"><img src="/storage/App/Models/Attachment/files/010/932/015/medium/image-1.webp" class="img-responsive center-block img-max-width " alt="Waterfalls - Garden Flat"  loading="lazy"/></a>
-            
-        </div>
-    </div>
-
-    <a class="carousel-control left carousel-control-prev"
-        href="#gallery-2318314" role="button" data-slide="prev" style="z-index:10">
-        <span class="glyphicon carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">&laquo; Previous</span>
-    </a>
-
-    <a class="carousel-control right carousel-control-next"
-        href="#gallery-2318314" role="button" data-slide="next" style="z-index:10">
-        <span class="glyphicon carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next &raquo;</span>
-    </a>
-</div>
-</div>
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
-    var _ytdVideoIndex = "12";
-</script>
-                            </div>
-
-                            <div class="details col-md-7 col-sm-7 col-xs-8">
-                                <h5 class="listing-title">
-                        <a href="https://www.classifieds.co.zw/listings/waterfalls-garden-flat-2318314 ">
-                            Waterfalls - Garden Flat</a>
-
-                                            </h5>
-
-                    <div class="row">
-                                                                        <div class="pull-left price">
-
-                                                    <div class="amount">
-                                                        <div class=" pull-left usd-price-tooltip">
-                                                                                                                                                                                        $95,000
-                                                                                                                                                                                </div>
-                                                        <div class=" pull-right local-price local-price-tooltip">
-
-                                                            <span
-                                                                class="flavour"></span>
-                                                        </div>
-
-                                                    </div>
-
-                                                </div>
-                                                <div class="pull-right col-md-2 favourite-right">
-                                                                                                                                                                                            <button type="button" class="favourite btn-advert btn " data-exists="false"
-                                                            title="Favourite the Advert"><i class="fa fa-heart-o"></i>
-                                                        </button>
-                                                                                                        </div>
-
-                        
-                        <div class="properties pull-left col-md-10">
-                            
-                                <ul class="list-unstyled">
-                                                                                                                        <li class="property">3 bedrooms</li>
-                                                                                    <li class="property">2 bathrooms</li>
-                                                                                    <li class="property">400 m&sup2;</li>
-                                                                                                                                                        <li class="property">harare south</li>
-                                    
-                                    
-                                </ul>
-
-                                                    </div>
-                    </div>
-
-                    <div class="line-clamp-3">
-                                                <p>
-                            Ref.: PGP210276
-Nestled in a secure gated complex...
-                        </p>
-                    </div>
-
-                    <div class="seller-info">
-                                                                                                                                                                                                <div class='store-logo pull-left'>
-                                                                <a style="position: absolute;left:0;bottom:8px;"
-                                                                    href="https://www.classifieds.co.zw/pamgolding"><img src="https://www.classifieds.co.zw/storage/App/Models/Attachment/files/008/869/641/thumb/pam golding new.webp" class="img-responsive" loading="lazy" alt="Pam Golding Properties Logo"><span
-                                                                        class="pull-right">Pam Golding Properties</span></a>
-                                                            </div>
-                                                                                                                                                            <div class="btn-toolbar-buyer btn-toolbar pull-right" role="toolbar">
-    <noscript>
-                                    <div style="display: inline-block;">
-                <button type="button" id="whatsapp-advert-2318314" style="visibility: hidden"
-        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2318314"
-        data-intent="whatsapp" data-href="https://rply.link/l/tzjH8HHkCL" data-type="advert" data-id="2318314"
-        data-category="218" data-category-name="Flats &amp; Apartments for Sale"
-        title="WhatsApp the Advertiser">
-                    <img src="https://www.classifieds.co.zw/logos/whatsapp.png" width="20px" />
-            </button>
-     </div>                                         <a rel="nofollow" class="btn pull-left" style="margin-left:0px;" href="#"
-                title="Call the Advertiser">
-                                    <i class="fa fa-phone"></i>
-                            </a>
-                            <a rel="nofollow" class="btn pull-left" style="margin-left:0px;" href="#"><i
-                    class="fa fa-envelope"></i>
-            </a>
-                    </noscript>
-    <div class="clearfix btn-group" style="display: flex" role="group">
-                                    <div style="display: inline-block;">
-                <button type="button" id="whatsapp-advert-2318314" style="visibility: hidden"
-        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2318314"
-        data-intent="whatsapp" data-href="https://rply.link/l/tzjH8HHkCL" data-type="advert" data-id="2318314"
-        data-category="218" data-category-name="Flats &amp; Apartments for Sale"
-        title="WhatsApp the Advertiser">
-                    <i class="fa fa-whatsapp"></i>
-            </button>
-     </div>                                             <button type="button" id="contact-advert-2318314"
-                    class="btn-modal btn btn-advert call record-interest" data-target="#login-options-modal"
-                    data-intent="call" data-type="advert" data-id="2318314"
-                    data-category="218" data-category-name="Flats &amp; Apartments for Sale"
-                    title="Call the Advertiser">
-                                            <i class="fa fa-phone"></i>
-                                    </button>
-                                            
-                <button type="button" id="email-advert-2318314"
-                    class="btn-modal btn btn-advert email record-interest" data-target="#contact-seller"
-                    data-intent="email" data-type="advert" data-id="2318314"
-                    data-category="218" data-category-name="Flats &amp; Apartments for Sale"
-                    title="Email the Advertiser">
-                    <i class="fa fa-envelope"></i>
-                </button>
-                
-                                                </div>
-</div>
-
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
-    function rememberAction(action, advert) {
-        localStorage.setItem('modal-action', JSON.stringify({ action, advert }))
-    }
-</script>                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="alerts-2318314">
+        <div class="alerts-2418902">
         </div>                                                                                                            <!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js" type="881c9a3a08acc01de60cbf08-text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js" type="245619828e9ab26f08ed8c97-text/javascript"></script>
 
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
+<script type="245619828e9ab26f08ed8c97-text/javascript">
     if ($('.bannerAd').hasClass('swiper')) {
         var swiper = new Swiper(".bannerAd", {
             loop: true,
@@ -4026,9 +3617,9 @@ Nestled in a secure gated complex...
             }
         });
     }
-</script>                                                                                                <div id="listing-2409413"
+</script>                                                                                                <div id="listing-2421620"
     class="listing panel panel-default panel-listing border-priority--gold border-status--online"
-    data-id="2409413" data-type="advert" data-view="category"     data-category="{&quot;leaf&quot;:218,&quot;parent&quot;:16,&quot;level_1&quot;:16,&quot;level_1_ident&quot;:&quot;property\/Property&quot;,&quot;level_2&quot;:218,&quot;level_2_ident&quot;:&quot;flats-apartments-for-sale\/Flats &amp; Apartments for Sale&quot;,&quot;payable&quot;:false,&quot;points&quot;:&quot;0&quot;,&quot;price&quot;:0,&quot;title&quot;:&quot;Houses for Sale&quot;,&quot;usd_price&quot;:&quot;0&quot;}"     data-currency="{&quot;id&quot;:1,&quot;title&quot;:&quot;USD (international transactions)&quot;,&quot;iso&quot;:&quot;USD&quot;,&quot;symbol&quot;:&quot;$&quot;,&quot;prefix&quot;:&quot;USD&quot;,&quot;enabled&quot;:1,&quot;created_at&quot;:&quot;2015-12-04 19:01:40&quot;,&quot;updated_at&quot;:&quot;2020-06-25 14:17:18&quot;,&quot;display_format&quot;:&quot;#,###,###&quot;,&quot;rate&quot;:&quot;1.00&quot;,&quot;default&quot;:1}" style="position: relative;">
+    data-id="2421620" data-type="advert" data-view="category"     data-category="{&quot;leaf&quot;:220,&quot;parent&quot;:16,&quot;level_1&quot;:16,&quot;level_1_ident&quot;:&quot;property\/Property&quot;,&quot;level_2&quot;:220,&quot;level_2_ident&quot;:&quot;flats-apartments-for-rent\/Flats &amp; Apartments for Rent&quot;,&quot;payable&quot;:false,&quot;points&quot;:&quot;0&quot;,&quot;price&quot;:0,&quot;title&quot;:&quot;Houses for Sale&quot;,&quot;usd_price&quot;:&quot;0&quot;}"     data-currency="{&quot;id&quot;:1,&quot;title&quot;:&quot;USD (international transactions)&quot;,&quot;iso&quot;:&quot;USD&quot;,&quot;symbol&quot;:&quot;$&quot;,&quot;prefix&quot;:&quot;USD&quot;,&quot;enabled&quot;:1,&quot;created_at&quot;:&quot;2015-12-04 19:01:40&quot;,&quot;updated_at&quot;:&quot;2020-06-25 14:17:18&quot;,&quot;display_format&quot;:&quot;#,###,###&quot;,&quot;rate&quot;:&quot;1.00&quot;,&quot;default&quot;:1}" style="position: relative;">
 
         <div class="panel-body">
 
@@ -4038,37 +3629,37 @@ Nestled in a secure gated complex...
         
                                                 <div class="gallery">
     
-    <div id="gallery-2409413" class="carousel slide" data-ride="carousel" data-images="[&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/monavale-garden-flat-2409413\&quot; aria-label=\&quot;Monavale - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/233\/495\/medium\/image-1.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Monavale - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/monavale-garden-flat-2409413\&quot; aria-label=\&quot;Monavale - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/233\/496\/medium\/image-2.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Monavale - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/monavale-garden-flat-2409413\&quot; aria-label=\&quot;Monavale - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/233\/497\/medium\/image-3.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Monavale - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/monavale-garden-flat-2409413\&quot; aria-label=\&quot;Monavale - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/233\/498\/medium\/image-4.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Monavale - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/monavale-garden-flat-2409413\&quot; aria-label=\&quot;Monavale - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/233\/499\/medium\/image-5.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Monavale - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/monavale-garden-flat-2409413\&quot; aria-label=\&quot;Monavale - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/233\/500\/medium\/image-6.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Monavale - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/monavale-garden-flat-2409413\&quot; aria-label=\&quot;Monavale - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/233\/501\/medium\/image-7.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Monavale - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/monavale-garden-flat-2409413\&quot; aria-label=\&quot;Monavale - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/233\/502\/medium\/image-8.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Monavale - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/monavale-garden-flat-2409413\&quot; aria-label=\&quot;Monavale - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/233\/503\/medium\/image-9.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Monavale - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/monavale-garden-flat-2409413\&quot; aria-label=\&quot;Monavale - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/233\/504\/medium\/image-10.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Monavale - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/monavale-garden-flat-2409413\&quot; aria-label=\&quot;Monavale - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/233\/505\/medium\/image-11.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Monavale - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/monavale-garden-flat-2409413\&quot; aria-label=\&quot;Monavale - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/233\/506\/medium\/image-12.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Monavale - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/monavale-garden-flat-2409413\&quot; aria-label=\&quot;Monavale - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/233\/507\/medium\/image-13.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Monavale - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/monavale-garden-flat-2409413\&quot; aria-label=\&quot;Monavale - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/233\/508\/medium\/image-14.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Monavale - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/monavale-garden-flat-2409413\&quot; aria-label=\&quot;Monavale - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/233\/509\/medium\/image-15.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Monavale - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/monavale-garden-flat-2409413\&quot; aria-label=\&quot;Monavale - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/233\/510\/medium\/image-16.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Monavale - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/monavale-garden-flat-2409413\&quot; aria-label=\&quot;Monavale - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/233\/511\/medium\/image-17.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Monavale - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/monavale-garden-flat-2409413\&quot; aria-label=\&quot;Monavale - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/233\/512\/medium\/image-18.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Monavale - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;div class='descrip' &gt;Ref.: RWS244511\r\nLocated in a secure and well-maintained gated community of 24 units, this neat and spacious garden flat offers comfort, convenience, and peace of mind\u2014ideal for families or investment buyers.\n\n?? Property Features:\n\t\u2022\t3 bedrooms with built-in cupboards\n\t\u2022\tMain bedroom with ensuite\n\t\u2022\tOpen plan lounge and dining area\n\t\u2022\tFitted kitchen with electric cooker\n\t\u2022\tSeparate bathroom (bathtub, shower &amp; toilet)\n\t\u2022\tLinen cupboard for extra storage\n\t\u2022\tAutomated lock-up garage\n\t\u2022\tPrivate veranda\n\n?? Outside &amp; Extras:\n\t\u2022\tWell-kept private garden\n\t\u2022\t5000-litre water tank\n\t\u2022\tDedicated laundry area\n\t\u2022\tCommunal entertainment area (gazebo&amp;hellip;&lt;\/div&gt;&quot;]">
+    <div id="gallery-2421620" class="carousel slide" data-ride="carousel" data-images="[&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/hogerty-hill-flat-apartment-2421620\&quot; aria-label=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/318\/027\/medium\/image-1.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/hogerty-hill-flat-apartment-2421620\&quot; aria-label=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/318\/028\/medium\/image-2.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/hogerty-hill-flat-apartment-2421620\&quot; aria-label=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/317\/582\/medium\/image-10.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/hogerty-hill-flat-apartment-2421620\&quot; aria-label=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/317\/574\/medium\/image-2.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/hogerty-hill-flat-apartment-2421620\&quot; aria-label=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/317\/578\/medium\/image-6.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/hogerty-hill-flat-apartment-2421620\&quot; aria-label=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/317\/581\/medium\/image-9.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/hogerty-hill-flat-apartment-2421620\&quot; aria-label=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/317\/584\/medium\/image-12.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/hogerty-hill-flat-apartment-2421620\&quot; aria-label=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/317\/575\/medium\/image-3.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/hogerty-hill-flat-apartment-2421620\&quot; aria-label=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/317\/585\/medium\/image-13.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/hogerty-hill-flat-apartment-2421620\&quot; aria-label=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/317\/577\/medium\/image-5.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/hogerty-hill-flat-apartment-2421620\&quot; aria-label=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/317\/580\/medium\/image-8.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/hogerty-hill-flat-apartment-2421620\&quot; aria-label=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/317\/586\/medium\/image-14.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/hogerty-hill-flat-apartment-2421620\&quot; aria-label=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/317\/573\/medium\/image-1.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/hogerty-hill-flat-apartment-2421620\&quot; aria-label=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/317\/576\/medium\/image-4.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/hogerty-hill-flat-apartment-2421620\&quot; aria-label=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/318\/029\/medium\/image-15.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/hogerty-hill-flat-apartment-2421620\&quot; aria-label=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/317\/583\/medium\/image-11.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/hogerty-hill-flat-apartment-2421620\&quot; aria-label=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/318\/030\/medium\/image-17.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;div class='descrip' &gt;Ref.: CHAS249103\r\nDiscover modern luxury in this brand-new cluster home in the sought-after Hogerty Hill area of Harare. Set within an exclusive development of just 7 units, this stylish townhouse offers 3 spacious bedrooms, 3 contemporary bathrooms, and the privacy of fully walled individual units.\n\nThe open-plan lounge and dining area flow seamlessly into a fitted kitchen featuring both gas and electric hobs. A versatile loft adds extra living or workspace options.\n\nOutside, enjoy a beautifully landscaped garden, sparkling swimming pool, entertainment area with a fire pit, and a pool house perfect for hosting family and friends. Additional features include 2 c&amp;hellip;&lt;\/div&gt;&quot;]">
                             <div class="carousel-inner " role="listbox">
                 <div class="carousel-item active" data-index="0">
 
-                            <a class="image" rel="" href="https://www.classifieds.co.zw/listings/monavale-garden-flat-2409413" aria-label="Monavale - Garden Flat"><img src="/storage/App/Models/Attachment/files/011/233/495/medium/image-1.webp" class="img-responsive center-block img-max-width " alt="Monavale - Garden Flat"  loading="lazy"/></a>
+                            <a class="image" rel="" href="https://www.classifieds.co.zw/listings/hogerty-hill-flat-apartment-2421620" aria-label="Hogerty Hill - Flat & Apartment"><img src="/storage/App/Models/Attachment/files/011/318/027/medium/image-1.webp" class="img-responsive center-block img-max-width " alt="Hogerty Hill - Flat & Apartment"  loading="lazy"/></a>
             
         </div>
     </div>
 
     <a class="carousel-control left carousel-control-prev"
-        href="#gallery-2409413" role="button" data-slide="prev" style="z-index:10">
+        href="#gallery-2421620" role="button" data-slide="prev" style="z-index:10">
         <span class="glyphicon carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">&laquo; Previous</span>
     </a>
 
     <a class="carousel-control right carousel-control-next"
-        href="#gallery-2409413" role="button" data-slide="next" style="z-index:10">
+        href="#gallery-2421620" role="button" data-slide="next" style="z-index:10">
         <span class="glyphicon carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next &raquo;</span>
     </a>
 </div>
 </div>
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
-    var _ytdVideoIndex = "18";
+<script type="245619828e9ab26f08ed8c97-text/javascript">
+    var _ytdVideoIndex = "17";
 </script>
                             </div>
 
                             <div class="details col-md-7 col-sm-7 col-xs-8">
                                 <h5 class="listing-title">
-                        <a href="https://www.classifieds.co.zw/listings/monavale-garden-flat-2409413 ">
-                            Monavale - Garden Flat</a>
+                        <a href="https://www.classifieds.co.zw/listings/hogerty-hill-flat-apartment-2421620 ">
+                            Hogerty Hill - Flat & Apartment</a>
 
                                             </h5>
 
@@ -4077,12 +3668,12 @@ Nestled in a secure gated complex...
 
                                                     <div class="amount">
                                                         <div class=" pull-left usd-price-tooltip">
-                                                                                                                                                                                        $210,000
+                                                                                                                                                                                        $1,500
                                                                                                                                                                                 </div>
                                                         <div class=" pull-right local-price local-price-tooltip">
 
                                                             <span
-                                                                class="flavour"></span>
+                                                                class="flavour"> per month</span>
                                                         </div>
 
                                                     </div>
@@ -4100,8 +3691,8 @@ Nestled in a secure gated complex...
                                 <ul class="list-unstyled">
                                                                                                                         <li class="property">3 bedrooms</li>
                                                                                     <li class="property">2 bathrooms</li>
-                                                                                    <li class="property">730 m&sup2;</li>
-                                                                                                                                                        <li class="property">harare west</li>
+                                                                                    <li class="property">2000 m&sup2;</li>
+                                                                                                                                                        <li class="property">harare north</li>
                                     
                                     
                                 </ul>
@@ -4111,24 +3702,24 @@ Nestled in a secure gated complex...
 
                     <div class="line-clamp-3">
                                                 <p>
-                            Ref.: RWS244511
-Located in a secure and well-main...
+                            Ref.: CHAS249103
+Discover modern luxury in this b...
                         </p>
                     </div>
 
                     <div class="seller-info">
                                                                                                                                                                                                 <div class='store-logo pull-left'>
                                                                 <a style="position: absolute;left:0;bottom:8px;"
-                                                                    href="https://www.classifieds.co.zw/rawson-properties"><img src="https://www.classifieds.co.zw/storage/App/Models/Attachment/files/008/869/652/thumb/rawson new.webp" class="img-responsive" loading="lazy" alt="Rawson Properties-Harare Logo"><span
-                                                                        class="pull-right">Rawson Properties-Harare</span></a>
+                                                                    href="https://www.classifieds.co.zw/chas-everitt"><img src="https://www.classifieds.co.zw/storage/App/Models/Attachment/files/010/498/993/thumb/CHAS.webp" class="img-responsive" loading="lazy" alt="CHAS EVERITT Logo"><span
+                                                                        class="pull-right">CHAS EVERITT</span></a>
                                                             </div>
                                                                                                                                                             <div class="btn-toolbar-buyer btn-toolbar pull-right" role="toolbar">
     <noscript>
                                     <div style="display: inline-block;">
-                <button type="button" id="whatsapp-advert-2409413" style="visibility: hidden"
-        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2409413"
-        data-intent="whatsapp" data-href="https://rply.link/l/tH8lfnfgdG" data-type="advert" data-id="2409413"
-        data-category="218" data-category-name="Flats &amp; Apartments for Sale"
+                <button type="button" id="whatsapp-advert-2421620" style="visibility: hidden"
+        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2421620"
+        data-intent="whatsapp" data-href="https://rply.link/l/j679m5CPHH" data-type="advert" data-id="2421620"
+        data-category="220" data-category-name="Flats &amp; Apartments for Rent"
         title="WhatsApp the Advertiser">
                     <img src="https://www.classifieds.co.zw/logos/whatsapp.png" width="20px" />
             </button>
@@ -4142,25 +3733,25 @@ Located in a secure and well-main...
                     </noscript>
     <div class="clearfix btn-group" style="display: flex" role="group">
                                     <div style="display: inline-block;">
-                <button type="button" id="whatsapp-advert-2409413" style="visibility: hidden"
-        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2409413"
-        data-intent="whatsapp" data-href="https://rply.link/l/tH8lfnfgdG" data-type="advert" data-id="2409413"
-        data-category="218" data-category-name="Flats &amp; Apartments for Sale"
+                <button type="button" id="whatsapp-advert-2421620" style="visibility: hidden"
+        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2421620"
+        data-intent="whatsapp" data-href="https://rply.link/l/j679m5CPHH" data-type="advert" data-id="2421620"
+        data-category="220" data-category-name="Flats &amp; Apartments for Rent"
         title="WhatsApp the Advertiser">
                     <i class="fa fa-whatsapp"></i>
             </button>
-     </div>                                             <button type="button" id="contact-advert-2409413"
+     </div>                                             <button type="button" id="contact-advert-2421620"
                     class="btn-modal btn btn-advert call record-interest" data-target="#login-options-modal"
-                    data-intent="call" data-type="advert" data-id="2409413"
-                    data-category="218" data-category-name="Flats &amp; Apartments for Sale"
+                    data-intent="call" data-type="advert" data-id="2421620"
+                    data-category="220" data-category-name="Flats &amp; Apartments for Rent"
                     title="Call the Advertiser">
                                             <i class="fa fa-phone"></i>
                                     </button>
                                             
-                <button type="button" id="email-advert-2409413"
+                <button type="button" id="email-advert-2421620"
                     class="btn-modal btn btn-advert email record-interest" data-target="#contact-seller"
-                    data-intent="email" data-type="advert" data-id="2409413"
-                    data-category="218" data-category-name="Flats &amp; Apartments for Sale"
+                    data-intent="email" data-type="advert" data-id="2421620"
+                    data-category="220" data-category-name="Flats &amp; Apartments for Rent"
                     title="Email the Advertiser">
                     <i class="fa fa-envelope"></i>
                 </button>
@@ -4168,7 +3759,7 @@ Located in a secure and well-main...
                                                 </div>
 </div>
 
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
+<script type="245619828e9ab26f08ed8c97-text/javascript">
     function rememberAction(action, advert) {
         localStorage.setItem('modal-action', JSON.stringify({ action, advert }))
     }
@@ -4178,10 +3769,10 @@ Located in a secure and well-main...
         </div>
 
 
-        <div class="alerts-2409413">
-        </div>                                                                                            <div id="listing-2382277"
+        <div class="alerts-2421620">
+        </div>                                                                                            <div id="listing-2421581"
     class="listing panel panel-default panel-listing border-priority--gold border-status--online"
-    data-id="2382277" data-type="advert" data-view="category"     data-category="{&quot;leaf&quot;:218,&quot;parent&quot;:16,&quot;level_1&quot;:16,&quot;level_1_ident&quot;:&quot;property\/Property&quot;,&quot;level_2&quot;:218,&quot;level_2_ident&quot;:&quot;flats-apartments-for-sale\/Flats &amp; Apartments for Sale&quot;,&quot;payable&quot;:false,&quot;points&quot;:&quot;0&quot;,&quot;price&quot;:0,&quot;title&quot;:&quot;Houses for Sale&quot;,&quot;usd_price&quot;:&quot;0&quot;}"     data-currency="{&quot;id&quot;:1,&quot;title&quot;:&quot;USD (international transactions)&quot;,&quot;iso&quot;:&quot;USD&quot;,&quot;symbol&quot;:&quot;$&quot;,&quot;prefix&quot;:&quot;USD&quot;,&quot;enabled&quot;:1,&quot;created_at&quot;:&quot;2015-12-04 19:01:40&quot;,&quot;updated_at&quot;:&quot;2020-06-25 14:17:18&quot;,&quot;display_format&quot;:&quot;#,###,###&quot;,&quot;rate&quot;:&quot;1.00&quot;,&quot;default&quot;:1}" style="position: relative;">
+    data-id="2421581" data-type="advert" data-view="category"     data-category="{&quot;leaf&quot;:220,&quot;parent&quot;:16,&quot;level_1&quot;:16,&quot;level_1_ident&quot;:&quot;property\/Property&quot;,&quot;level_2&quot;:220,&quot;level_2_ident&quot;:&quot;flats-apartments-for-rent\/Flats &amp; Apartments for Rent&quot;,&quot;payable&quot;:false,&quot;points&quot;:&quot;0&quot;,&quot;price&quot;:0,&quot;title&quot;:&quot;Houses for Sale&quot;,&quot;usd_price&quot;:&quot;0&quot;}"     data-currency="{&quot;id&quot;:1,&quot;title&quot;:&quot;USD (international transactions)&quot;,&quot;iso&quot;:&quot;USD&quot;,&quot;symbol&quot;:&quot;$&quot;,&quot;prefix&quot;:&quot;USD&quot;,&quot;enabled&quot;:1,&quot;created_at&quot;:&quot;2015-12-04 19:01:40&quot;,&quot;updated_at&quot;:&quot;2020-06-25 14:17:18&quot;,&quot;display_format&quot;:&quot;#,###,###&quot;,&quot;rate&quot;:&quot;1.00&quot;,&quot;default&quot;:1}" style="position: relative;">
 
         <div class="panel-body">
 
@@ -4191,37 +3782,37 @@ Located in a secure and well-main...
         
                                                 <div class="gallery">
     
-    <div id="gallery-2382277" class="carousel slide" data-ride="carousel" data-images="[&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/meyrick-park-garden-flat-2382277\&quot; aria-label=\&quot;Meyrick Park - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/956\/477\/medium\/image-1.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Meyrick Park - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/meyrick-park-garden-flat-2382277\&quot; aria-label=\&quot;Meyrick Park - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/956\/478\/medium\/image-2.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Meyrick Park - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/meyrick-park-garden-flat-2382277\&quot; aria-label=\&quot;Meyrick Park - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/956\/479\/medium\/image-3.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Meyrick Park - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/meyrick-park-garden-flat-2382277\&quot; aria-label=\&quot;Meyrick Park - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/956\/480\/medium\/image-4.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Meyrick Park - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/meyrick-park-garden-flat-2382277\&quot; aria-label=\&quot;Meyrick Park - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/956\/481\/medium\/image-5.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Meyrick Park - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/meyrick-park-garden-flat-2382277\&quot; aria-label=\&quot;Meyrick Park - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/956\/482\/medium\/image-6.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Meyrick Park - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/meyrick-park-garden-flat-2382277\&quot; aria-label=\&quot;Meyrick Park - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/956\/483\/medium\/image-7.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Meyrick Park - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/meyrick-park-garden-flat-2382277\&quot; aria-label=\&quot;Meyrick Park - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/956\/484\/medium\/image-8.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Meyrick Park - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/meyrick-park-garden-flat-2382277\&quot; aria-label=\&quot;Meyrick Park - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/956\/485\/medium\/image-9.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Meyrick Park - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/meyrick-park-garden-flat-2382277\&quot; aria-label=\&quot;Meyrick Park - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/956\/486\/medium\/image-10.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Meyrick Park - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/meyrick-park-garden-flat-2382277\&quot; aria-label=\&quot;Meyrick Park - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/956\/487\/medium\/image-11.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Meyrick Park - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/meyrick-park-garden-flat-2382277\&quot; aria-label=\&quot;Meyrick Park - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/956\/488\/medium\/image-12.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Meyrick Park - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/meyrick-park-garden-flat-2382277\&quot; aria-label=\&quot;Meyrick Park - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/956\/489\/medium\/image-13.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Meyrick Park - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/meyrick-park-garden-flat-2382277\&quot; aria-label=\&quot;Meyrick Park - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/956\/490\/medium\/image-14.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Meyrick Park - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/meyrick-park-garden-flat-2382277\&quot; aria-label=\&quot;Meyrick Park - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/956\/491\/medium\/image-15.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Meyrick Park - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/meyrick-park-garden-flat-2382277\&quot; aria-label=\&quot;Meyrick Park - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/956\/492\/medium\/image-16.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Meyrick Park - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;div class='descrip' &gt;Ref.: KEY233496\r\nFor sale is a comprehensive residential development in Meyrick Park comprising of a total of 18 meticulously designed garden flats, strategically located in a prime suburban area close to the CBD. Structured across 6 distinct residential blocks with-\n1.\t6x Three-Bedroom Units\no\tMain en-suite facilities\no\tShared bathroom \no\tSeparate toilet \no\tOpen-plan living and dining spaces\no\tModern fitted kitchen\n2.\t6x Two-Bedroom Units\no\tSingle comprehensive bathroom\no\tSeparate toilet\no\tOpen plan living and dining areas\no\tModern fitted kitchen design\n3.\t6x One-Bedroom Units\no\tComprehensive bathroom\no\tOpen-plan living configuration\no\tFitted kitchen functional&amp;hellip;&lt;\/div&gt;&quot;]">
+    <div id="gallery-2421581" class="carousel slide" data-ride="carousel" data-images="[&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/marlborough-flat-apartment-2421581\&quot; aria-label=\&quot;Marlborough - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/317\/347\/medium\/image-1.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Marlborough - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/marlborough-flat-apartment-2421581\&quot; aria-label=\&quot;Marlborough - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/317\/348\/medium\/image-2.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Marlborough - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/marlborough-flat-apartment-2421581\&quot; aria-label=\&quot;Marlborough - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/317\/349\/medium\/image-3.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Marlborough - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/marlborough-flat-apartment-2421581\&quot; aria-label=\&quot;Marlborough - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/317\/350\/medium\/image-4.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Marlborough - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/marlborough-flat-apartment-2421581\&quot; aria-label=\&quot;Marlborough - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/317\/351\/medium\/image-5.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Marlborough - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/marlborough-flat-apartment-2421581\&quot; aria-label=\&quot;Marlborough - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/317\/352\/medium\/image-6.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Marlborough - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/marlborough-flat-apartment-2421581\&quot; aria-label=\&quot;Marlborough - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/317\/353\/medium\/image-7.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Marlborough - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/marlborough-flat-apartment-2421581\&quot; aria-label=\&quot;Marlborough - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/317\/354\/medium\/image-8.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Marlborough - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/marlborough-flat-apartment-2421581\&quot; aria-label=\&quot;Marlborough - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/317\/355\/medium\/image-9.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Marlborough - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;div class='descrip' &gt;Ref.: CHAS249086\r\n\nTO LET: Newly Built Cluster Unit in Marlborough\n\nAvailable to let is a newly built cluster unit in a complex of 6 units situated in the quiet and sought-after suburb of Marlborough.\n\nThe accommodation comprises a modern fitted kitchen with granite countertops, an open-plan dining and lounge area, a spacious main bedroom with an en-suite bathroom, and three additional well-proportioned bedrooms, all fitted with built-in cupboards. The property also offers two additional bathrooms, one of which can conveniently serve as a guest bathroom.\n\nFurther features include a passageway and a private garden, providing a comfortable and secure living enviro&amp;hellip;&lt;\/div&gt;&quot;]">
                             <div class="carousel-inner " role="listbox">
                 <div class="carousel-item active" data-index="0">
 
-                            <a class="image" rel="" href="https://www.classifieds.co.zw/listings/meyrick-park-garden-flat-2382277" aria-label="Meyrick Park - Garden Flat"><img src="/storage/App/Models/Attachment/files/010/956/477/medium/image-1.webp" class="img-responsive center-block img-max-width " alt="Meyrick Park - Garden Flat"  loading="lazy"/></a>
+                            <a class="image" rel="" href="https://www.classifieds.co.zw/listings/marlborough-flat-apartment-2421581" aria-label="Marlborough - Flat & Apartment"><img src="/storage/App/Models/Attachment/files/011/317/347/medium/image-1.webp" class="img-responsive center-block img-max-width " alt="Marlborough - Flat & Apartment"  loading="lazy"/></a>
             
         </div>
     </div>
 
     <a class="carousel-control left carousel-control-prev"
-        href="#gallery-2382277" role="button" data-slide="prev" style="z-index:10">
+        href="#gallery-2421581" role="button" data-slide="prev" style="z-index:10">
         <span class="glyphicon carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">&laquo; Previous</span>
     </a>
 
     <a class="carousel-control right carousel-control-next"
-        href="#gallery-2382277" role="button" data-slide="next" style="z-index:10">
+        href="#gallery-2421581" role="button" data-slide="next" style="z-index:10">
         <span class="glyphicon carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next &raquo;</span>
     </a>
 </div>
 </div>
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
-    var _ytdVideoIndex = "16";
+<script type="245619828e9ab26f08ed8c97-text/javascript">
+    var _ytdVideoIndex = "9";
 </script>
                             </div>
 
                             <div class="details col-md-7 col-sm-7 col-xs-8">
                                 <h5 class="listing-title">
-                        <a href="https://www.classifieds.co.zw/listings/meyrick-park-garden-flat-2382277 ">
-                            Meyrick Park - Garden Flat</a>
+                        <a href="https://www.classifieds.co.zw/listings/marlborough-flat-apartment-2421581 ">
+                            Marlborough - Flat & Apartment</a>
 
                                             </h5>
 
@@ -4230,165 +3821,12 @@ Located in a secure and well-main...
 
                                                     <div class="amount">
                                                         <div class=" pull-left usd-price-tooltip">
-                                                                                                                                                                                        $2,100,000
+                                                                                                                                                                                        $1,250
                                                                                                                                                                                 </div>
                                                         <div class=" pull-right local-price local-price-tooltip">
 
                                                             <span
-                                                                class="flavour"></span>
-                                                        </div>
-
-                                                    </div>
-
-                                                </div>
-                                                <div class="pull-right col-md-2 favourite-right">
-                                                                                                                                                                                            <button type="button" class="favourite btn-advert btn " data-exists="false"
-                                                            title="Favourite the Advert"><i class="fa fa-heart-o"></i>
-                                                        </button>
-                                                                                                        </div>
-
-                        
-                        <div class="properties pull-left col-md-10">
-                            
-                                <ul class="list-unstyled">
-                                                                                                                        <li class="property">36 bedrooms</li>
-                                                                                    <li class="property">24 bathrooms</li>
-                                                                                    <li class="property">22257730 m&sup2;</li>
-                                                                                                                                                        <li class="property">harare west</li>
-                                    
-                                    
-                                </ul>
-
-                                                    </div>
-                    </div>
-
-                    <div class="line-clamp-3">
-                                                <p>
-                            Ref.: KEY233496
-For sale is a comprehensive resid...
-                        </p>
-                    </div>
-
-                    <div class="seller-info">
-                                                                                                                                                                                                <div class='store-logo pull-left'>
-                                                                <a style="position: absolute;left:0;bottom:8px;"
-                                                                    href="https://www.classifieds.co.zw/keystone-real-estate"><img src="https://www.classifieds.co.zw/storage/App/Models/Attachment/files/009/481/011/thumb/Keystone.webp" class="img-responsive" loading="lazy" alt="Keystone Real Estate Logo"><span
-                                                                        class="pull-right">Keystone Real Estate</span></a>
-                                                            </div>
-                                                                                                                                                            <div class="btn-toolbar-buyer btn-toolbar pull-right" role="toolbar">
-    <noscript>
-                                    <div style="display: inline-block;">
-                <button type="button" id="whatsapp-advert-2382277" style="visibility: hidden"
-        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2382277"
-        data-intent="whatsapp" data-href="https://rply.link/l/BSuxcvAWx7" data-type="advert" data-id="2382277"
-        data-category="218" data-category-name="Flats &amp; Apartments for Sale"
-        title="WhatsApp the Advertiser">
-                    <img src="https://www.classifieds.co.zw/logos/whatsapp.png" width="20px" />
-            </button>
-     </div>                                         <a rel="nofollow" class="btn pull-left" style="margin-left:0px;" href="#"
-                title="Call the Advertiser">
-                                    <i class="fa fa-phone"></i>
-                            </a>
-                            <a rel="nofollow" class="btn pull-left" style="margin-left:0px;" href="#"><i
-                    class="fa fa-envelope"></i>
-            </a>
-                    </noscript>
-    <div class="clearfix btn-group" style="display: flex" role="group">
-                                    <div style="display: inline-block;">
-                <button type="button" id="whatsapp-advert-2382277" style="visibility: hidden"
-        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2382277"
-        data-intent="whatsapp" data-href="https://rply.link/l/BSuxcvAWx7" data-type="advert" data-id="2382277"
-        data-category="218" data-category-name="Flats &amp; Apartments for Sale"
-        title="WhatsApp the Advertiser">
-                    <i class="fa fa-whatsapp"></i>
-            </button>
-     </div>                                             <button type="button" id="contact-advert-2382277"
-                    class="btn-modal btn btn-advert call record-interest" data-target="#login-options-modal"
-                    data-intent="call" data-type="advert" data-id="2382277"
-                    data-category="218" data-category-name="Flats &amp; Apartments for Sale"
-                    title="Call the Advertiser">
-                                            <i class="fa fa-phone"></i>
-                                    </button>
-                                            
-                <button type="button" id="email-advert-2382277"
-                    class="btn-modal btn btn-advert email record-interest" data-target="#contact-seller"
-                    data-intent="email" data-type="advert" data-id="2382277"
-                    data-category="218" data-category-name="Flats &amp; Apartments for Sale"
-                    title="Email the Advertiser">
-                    <i class="fa fa-envelope"></i>
-                </button>
-                
-                                                </div>
-</div>
-
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
-    function rememberAction(action, advert) {
-        localStorage.setItem('modal-action', JSON.stringify({ action, advert }))
-    }
-</script>                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="alerts-2382277">
-        </div>                                                                                            <div id="listing-2414389"
-    class="listing panel panel-default panel-listing border-priority--gold border-status--online"
-    data-id="2414389" data-type="advert" data-view="category"     data-category="{&quot;leaf&quot;:218,&quot;parent&quot;:16,&quot;level_1&quot;:16,&quot;level_1_ident&quot;:&quot;property\/Property&quot;,&quot;level_2&quot;:218,&quot;level_2_ident&quot;:&quot;flats-apartments-for-sale\/Flats &amp; Apartments for Sale&quot;,&quot;payable&quot;:false,&quot;points&quot;:&quot;0&quot;,&quot;price&quot;:0,&quot;title&quot;:&quot;Houses for Sale&quot;,&quot;usd_price&quot;:&quot;0&quot;}"     data-currency="{&quot;id&quot;:1,&quot;title&quot;:&quot;USD (international transactions)&quot;,&quot;iso&quot;:&quot;USD&quot;,&quot;symbol&quot;:&quot;$&quot;,&quot;prefix&quot;:&quot;USD&quot;,&quot;enabled&quot;:1,&quot;created_at&quot;:&quot;2015-12-04 19:01:40&quot;,&quot;updated_at&quot;:&quot;2020-06-25 14:17:18&quot;,&quot;display_format&quot;:&quot;#,###,###&quot;,&quot;rate&quot;:&quot;1.00&quot;,&quot;default&quot;:1}" style="position: relative;">
-
-        <div class="panel-body">
-
-
-
-                    <div class="pull-left image col-md-5 col-sm-5 col-xs-4">
-        
-                                                <div class="gallery">
-    
-    <div id="gallery-2414389" class="carousel slide" data-ride="carousel" data-images="[&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avondale-west-garden-flat-2414389\&quot; aria-label=\&quot;Avondale West - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/268\/061\/medium\/image-1.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avondale West - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avondale-west-garden-flat-2414389\&quot; aria-label=\&quot;Avondale West - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/268\/062\/medium\/image-2.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avondale West - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avondale-west-garden-flat-2414389\&quot; aria-label=\&quot;Avondale West - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/268\/063\/medium\/image-3.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avondale West - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avondale-west-garden-flat-2414389\&quot; aria-label=\&quot;Avondale West - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/268\/064\/medium\/image-4.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avondale West - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avondale-west-garden-flat-2414389\&quot; aria-label=\&quot;Avondale West - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/268\/065\/medium\/image-5.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avondale West - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avondale-west-garden-flat-2414389\&quot; aria-label=\&quot;Avondale West - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/268\/066\/medium\/image-6.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avondale West - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avondale-west-garden-flat-2414389\&quot; aria-label=\&quot;Avondale West - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/268\/067\/medium\/image-7.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avondale West - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avondale-west-garden-flat-2414389\&quot; aria-label=\&quot;Avondale West - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/268\/068\/medium\/image-8.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avondale West - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avondale-west-garden-flat-2414389\&quot; aria-label=\&quot;Avondale West - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/268\/069\/medium\/image-9.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avondale West - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avondale-west-garden-flat-2414389\&quot; aria-label=\&quot;Avondale West - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/268\/070\/medium\/image-10.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avondale West - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avondale-west-garden-flat-2414389\&quot; aria-label=\&quot;Avondale West - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/268\/071\/medium\/image-11.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avondale West - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avondale-west-garden-flat-2414389\&quot; aria-label=\&quot;Avondale West - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/268\/072\/medium\/image-12.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avondale West - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avondale-west-garden-flat-2414389\&quot; aria-label=\&quot;Avondale West - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/268\/074\/medium\/image-14.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avondale West - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avondale-west-garden-flat-2414389\&quot; aria-label=\&quot;Avondale West - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/268\/075\/medium\/image-15.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avondale West - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avondale-west-garden-flat-2414389\&quot; aria-label=\&quot;Avondale West - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/319\/952\/medium\/image-15.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avondale West - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avondale-west-garden-flat-2414389\&quot; aria-label=\&quot;Avondale West - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/319\/953\/medium\/image-16.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avondale West - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avondale-west-garden-flat-2414389\&quot; aria-label=\&quot;Avondale West - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/319\/954\/medium\/image-17.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avondale West - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avondale-west-garden-flat-2414389\&quot; aria-label=\&quot;Avondale West - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/319\/955\/medium\/image-18.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avondale West - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avondale-west-garden-flat-2414389\&quot; aria-label=\&quot;Avondale West - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/319\/956\/medium\/image-19.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avondale West - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avondale-west-garden-flat-2414389\&quot; aria-label=\&quot;Avondale West - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/319\/957\/medium\/image-20.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avondale West - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;div class='descrip' &gt;Ref.: LIZ246325\r\nNeat 4 bedrooms, main en-suite, guest toilet, modern fitted kitchen, \nCommunity pool, Boardroom, Coffee shop, Gym, Kids play area, Bar and braai area for residents.&lt;\/div&gt;&quot;]">
-                            <div class="carousel-inner " role="listbox">
-                <div class="carousel-item active" data-index="0">
-
-                            <a class="image" rel="" href="https://www.classifieds.co.zw/listings/avondale-west-garden-flat-2414389" aria-label="Avondale West - Garden Flat"><img src="/storage/App/Models/Attachment/files/011/268/061/medium/image-1.webp" class="img-responsive center-block img-max-width " alt="Avondale West - Garden Flat"  loading="lazy"/></a>
-            
-        </div>
-    </div>
-
-    <a class="carousel-control left carousel-control-prev"
-        href="#gallery-2414389" role="button" data-slide="prev" style="z-index:10">
-        <span class="glyphicon carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">&laquo; Previous</span>
-    </a>
-
-    <a class="carousel-control right carousel-control-next"
-        href="#gallery-2414389" role="button" data-slide="next" style="z-index:10">
-        <span class="glyphicon carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next &raquo;</span>
-    </a>
-</div>
-</div>
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
-    var _ytdVideoIndex = "20";
-</script>
-                            </div>
-
-                            <div class="details col-md-7 col-sm-7 col-xs-8">
-                                <h5 class="listing-title">
-                        <a href="https://www.classifieds.co.zw/listings/avondale-west-garden-flat-2414389 ">
-                            Avondale West - Garden Flat</a>
-
-                                            </h5>
-
-                    <div class="row">
-                                                                        <div class="pull-left price">
-
-                                                    <div class="amount">
-                                                        <div class=" pull-left usd-price-tooltip">
-                                                                                                                                                                                        $350,000
-                                                                                                                                                                                </div>
-                                                        <div class=" pull-right local-price local-price-tooltip">
-
-                                                            <span
-                                                                class="flavour"></span>
+                                                                class="flavour"> per month</span>
                                                         </div>
 
                                                     </div>
@@ -4406,6 +3844,7 @@ For sale is a comprehensive resid...
                                 <ul class="list-unstyled">
                                                                                                                         <li class="property">4 bedrooms</li>
                                                                                     <li class="property">2 bathrooms</li>
+                                                                                    <li class="property">4000 m&sup2;</li>
                                                                                                                                                         <li class="property">harare west</li>
                                     
                                     
@@ -4416,24 +3855,25 @@ For sale is a comprehensive resid...
 
                     <div class="line-clamp-3">
                                                 <p>
-                            Ref.: LIZ246325
-Neat 4 bedrooms, main en-suite, g...
+                            Ref.: CHAS249086
+
+TO LET: Newly Built Cluster Uni...
                         </p>
                     </div>
 
                     <div class="seller-info">
                                                                                                                                                                                                 <div class='store-logo pull-left'>
                                                                 <a style="position: absolute;left:0;bottom:8px;"
-                                                                    href="https://www.classifieds.co.zw/lizhibowa"><img src="https://www.classifieds.co.zw/storage/App/Models/Attachment/files/008/869/759/thumb/lizhibowa_25707_Store_logo.webp" class="img-responsive" loading="lazy" alt="Lizhibowa Real Estate Logo"><span
-                                                                        class="pull-right">Lizhibowa Real Estate</span></a>
+                                                                    href="https://www.classifieds.co.zw/chas-everitt"><img src="https://www.classifieds.co.zw/storage/App/Models/Attachment/files/010/498/993/thumb/CHAS.webp" class="img-responsive" loading="lazy" alt="CHAS EVERITT Logo"><span
+                                                                        class="pull-right">CHAS EVERITT</span></a>
                                                             </div>
                                                                                                                                                             <div class="btn-toolbar-buyer btn-toolbar pull-right" role="toolbar">
     <noscript>
                                     <div style="display: inline-block;">
-                <button type="button" id="whatsapp-advert-2414389" style="visibility: hidden"
-        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2414389"
-        data-intent="whatsapp" data-href="https://rply.link/l/VLOx92WZxa" data-type="advert" data-id="2414389"
-        data-category="218" data-category-name="Flats &amp; Apartments for Sale"
+                <button type="button" id="whatsapp-advert-2421581" style="visibility: hidden"
+        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2421581"
+        data-intent="whatsapp" data-href="https://rply.link/l/jrhf66c9NH" data-type="advert" data-id="2421581"
+        data-category="220" data-category-name="Flats &amp; Apartments for Rent"
         title="WhatsApp the Advertiser">
                     <img src="https://www.classifieds.co.zw/logos/whatsapp.png" width="20px" />
             </button>
@@ -4447,25 +3887,25 @@ Neat 4 bedrooms, main en-suite, g...
                     </noscript>
     <div class="clearfix btn-group" style="display: flex" role="group">
                                     <div style="display: inline-block;">
-                <button type="button" id="whatsapp-advert-2414389" style="visibility: hidden"
-        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2414389"
-        data-intent="whatsapp" data-href="https://rply.link/l/VLOx92WZxa" data-type="advert" data-id="2414389"
-        data-category="218" data-category-name="Flats &amp; Apartments for Sale"
+                <button type="button" id="whatsapp-advert-2421581" style="visibility: hidden"
+        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2421581"
+        data-intent="whatsapp" data-href="https://rply.link/l/jrhf66c9NH" data-type="advert" data-id="2421581"
+        data-category="220" data-category-name="Flats &amp; Apartments for Rent"
         title="WhatsApp the Advertiser">
                     <i class="fa fa-whatsapp"></i>
             </button>
-     </div>                                             <button type="button" id="contact-advert-2414389"
+     </div>                                             <button type="button" id="contact-advert-2421581"
                     class="btn-modal btn btn-advert call record-interest" data-target="#login-options-modal"
-                    data-intent="call" data-type="advert" data-id="2414389"
-                    data-category="218" data-category-name="Flats &amp; Apartments for Sale"
+                    data-intent="call" data-type="advert" data-id="2421581"
+                    data-category="220" data-category-name="Flats &amp; Apartments for Rent"
                     title="Call the Advertiser">
                                             <i class="fa fa-phone"></i>
                                     </button>
                                             
-                <button type="button" id="email-advert-2414389"
+                <button type="button" id="email-advert-2421581"
                     class="btn-modal btn btn-advert email record-interest" data-target="#contact-seller"
-                    data-intent="email" data-type="advert" data-id="2414389"
-                    data-category="218" data-category-name="Flats &amp; Apartments for Sale"
+                    data-intent="email" data-type="advert" data-id="2421581"
+                    data-category="220" data-category-name="Flats &amp; Apartments for Rent"
                     title="Email the Advertiser">
                     <i class="fa fa-envelope"></i>
                 </button>
@@ -4473,7 +3913,7 @@ Neat 4 bedrooms, main en-suite, g...
                                                 </div>
 </div>
 
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
+<script type="245619828e9ab26f08ed8c97-text/javascript">
     function rememberAction(action, advert) {
         localStorage.setItem('modal-action', JSON.stringify({ action, advert }))
     }
@@ -4483,10 +3923,10 @@ Neat 4 bedrooms, main en-suite, g...
         </div>
 
 
-        <div class="alerts-2414389">
-        </div>                                                                                            <div id="listing-2382042"
+        <div class="alerts-2421581">
+        </div>                                                                                            <div id="listing-2415207"
     class="listing panel panel-default panel-listing border-priority--gold border-status--online"
-    data-id="2382042" data-type="advert" data-view="category"     data-category="{&quot;leaf&quot;:218,&quot;parent&quot;:16,&quot;level_1&quot;:16,&quot;level_1_ident&quot;:&quot;property\/Property&quot;,&quot;level_2&quot;:218,&quot;level_2_ident&quot;:&quot;flats-apartments-for-sale\/Flats &amp; Apartments for Sale&quot;,&quot;payable&quot;:false,&quot;points&quot;:&quot;0&quot;,&quot;price&quot;:0,&quot;title&quot;:&quot;Houses for Sale&quot;,&quot;usd_price&quot;:&quot;0&quot;}"     data-currency="{&quot;id&quot;:1,&quot;title&quot;:&quot;USD (international transactions)&quot;,&quot;iso&quot;:&quot;USD&quot;,&quot;symbol&quot;:&quot;$&quot;,&quot;prefix&quot;:&quot;USD&quot;,&quot;enabled&quot;:1,&quot;created_at&quot;:&quot;2015-12-04 19:01:40&quot;,&quot;updated_at&quot;:&quot;2020-06-25 14:17:18&quot;,&quot;display_format&quot;:&quot;#,###,###&quot;,&quot;rate&quot;:&quot;1.00&quot;,&quot;default&quot;:1}" style="position: relative;">
+    data-id="2415207" data-type="advert" data-view="category"     data-category="{&quot;leaf&quot;:220,&quot;parent&quot;:16,&quot;level_1&quot;:16,&quot;level_1_ident&quot;:&quot;property\/Property&quot;,&quot;level_2&quot;:220,&quot;level_2_ident&quot;:&quot;flats-apartments-for-rent\/Flats &amp; Apartments for Rent&quot;,&quot;payable&quot;:false,&quot;points&quot;:&quot;0&quot;,&quot;price&quot;:0,&quot;title&quot;:&quot;Houses for Sale&quot;,&quot;usd_price&quot;:&quot;0&quot;}"     data-currency="{&quot;id&quot;:1,&quot;title&quot;:&quot;USD (international transactions)&quot;,&quot;iso&quot;:&quot;USD&quot;,&quot;symbol&quot;:&quot;$&quot;,&quot;prefix&quot;:&quot;USD&quot;,&quot;enabled&quot;:1,&quot;created_at&quot;:&quot;2015-12-04 19:01:40&quot;,&quot;updated_at&quot;:&quot;2020-06-25 14:17:18&quot;,&quot;display_format&quot;:&quot;#,###,###&quot;,&quot;rate&quot;:&quot;1.00&quot;,&quot;default&quot;:1}" style="position: relative;">
 
         <div class="panel-body">
 
@@ -4496,37 +3936,37 @@ Neat 4 bedrooms, main en-suite, g...
         
                                                 <div class="gallery">
     
-    <div id="gallery-2382042" class="carousel slide" data-ride="carousel" data-images="[&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/hume-park-garden-flat-2382042\&quot; aria-label=\&quot;Hume Park - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/951\/034\/medium\/image-1.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Hume Park - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/hume-park-garden-flat-2382042\&quot; aria-label=\&quot;Hume Park - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/951\/035\/medium\/image-2.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Hume Park - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/hume-park-garden-flat-2382042\&quot; aria-label=\&quot;Hume Park - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/951\/036\/medium\/image-3.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Hume Park - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/hume-park-garden-flat-2382042\&quot; aria-label=\&quot;Hume Park - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/951\/037\/medium\/image-4.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Hume Park - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/hume-park-garden-flat-2382042\&quot; aria-label=\&quot;Hume Park - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/951\/038\/medium\/image-5.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Hume Park - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/hume-park-garden-flat-2382042\&quot; aria-label=\&quot;Hume Park - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/951\/039\/medium\/image-6.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Hume Park - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/hume-park-garden-flat-2382042\&quot; aria-label=\&quot;Hume Park - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/951\/040\/medium\/image-7.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Hume Park - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/hume-park-garden-flat-2382042\&quot; aria-label=\&quot;Hume Park - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/951\/041\/medium\/image-8.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Hume Park - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/hume-park-garden-flat-2382042\&quot; aria-label=\&quot;Hume Park - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/951\/042\/medium\/image-9.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Hume Park - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/hume-park-garden-flat-2382042\&quot; aria-label=\&quot;Hume Park - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/951\/043\/medium\/image-10.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Hume Park - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/hume-park-garden-flat-2382042\&quot; aria-label=\&quot;Hume Park - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/951\/044\/medium\/image-11.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Hume Park - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;div class='descrip' &gt;Ref.: PGP233086\r\n\nSituated in a well-maintained complex in Hume Park with 24\/7 security, these charming garden flats offer comfort, convenience, and peace of mind. Buyers have a choice of two units to purchase, each featuring a spacious lounge and dining area, fitted kitchen, main bedroom with ensuite bathroom, plus an additional bathroom and separate toilet.\nThe complex is fully walled and gated, serviced by a borehole, and includes a carport for each unit. A perfect lock-up-and-go option in a prime, secure location.&lt;\/div&gt;&quot;]">
+    <div id="gallery-2415207" class="carousel slide" data-ride="carousel" data-images="[&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2415207\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/273\/312\/medium\/image-1.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2415207\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/273\/313\/medium\/image-2.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2415207\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/273\/314\/medium\/image-3.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2415207\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/273\/315\/medium\/image-4.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2415207\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/273\/316\/medium\/image-5.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2415207\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/273\/317\/medium\/image-6.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2415207\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/273\/318\/medium\/image-7.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2415207\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/273\/319\/medium\/image-8.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2415207\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/273\/320\/medium\/image-9.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;div class='descrip' &gt;Ref.: SBY246617\r\nModern and spacious 3-bedroom duplex flat situated in the heart of the Avenues area, offering comfortable urban living in a neat, quiet, and highly secure complex. This well-maintained home features generous living spaces, fitted kitchen, built-in cupboards, and ample natural lighting throughout. The property is ideal for families or professionals seeking convenience, security, and easy access to the CBD, schools, shopping centres, and other essential amenities. The complex boasts excellent security, a clean environment, and secure parking, providing peace of mind and a pleasant lifestyle experience.\n\nRental : $1200.00 exclusive&lt;\/div&gt;&quot;]">
                             <div class="carousel-inner " role="listbox">
                 <div class="carousel-item active" data-index="0">
 
-                            <a class="image" rel="" href="https://www.classifieds.co.zw/listings/hume-park-garden-flat-2382042" aria-label="Hume Park - Garden Flat"><img src="/storage/App/Models/Attachment/files/010/951/034/medium/image-1.webp" class="img-responsive center-block img-max-width " alt="Hume Park - Garden Flat"  loading="lazy"/></a>
+                            <a class="image" rel="" href="https://www.classifieds.co.zw/listings/avenues-flat-apartment-2415207" aria-label="Avenues - Flat & Apartment"><img src="/storage/App/Models/Attachment/files/011/273/312/medium/image-1.webp" class="img-responsive center-block img-max-width " alt="Avenues - Flat & Apartment"  loading="lazy"/></a>
             
         </div>
     </div>
 
     <a class="carousel-control left carousel-control-prev"
-        href="#gallery-2382042" role="button" data-slide="prev" style="z-index:10">
+        href="#gallery-2415207" role="button" data-slide="prev" style="z-index:10">
         <span class="glyphicon carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">&laquo; Previous</span>
     </a>
 
     <a class="carousel-control right carousel-control-next"
-        href="#gallery-2382042" role="button" data-slide="next" style="z-index:10">
+        href="#gallery-2415207" role="button" data-slide="next" style="z-index:10">
         <span class="glyphicon carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next &raquo;</span>
     </a>
 </div>
 </div>
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
-    var _ytdVideoIndex = "11";
+<script type="245619828e9ab26f08ed8c97-text/javascript">
+    var _ytdVideoIndex = "9";
 </script>
                             </div>
 
                             <div class="details col-md-7 col-sm-7 col-xs-8">
                                 <h5 class="listing-title">
-                        <a href="https://www.classifieds.co.zw/listings/hume-park-garden-flat-2382042 ">
-                            Hume Park - Garden Flat</a>
+                        <a href="https://www.classifieds.co.zw/listings/avenues-flat-apartment-2415207 ">
+                            Avenues - Flat & Apartment</a>
 
                                             </h5>
 
@@ -4535,12 +3975,164 @@ Neat 4 bedrooms, main en-suite, g...
 
                                                     <div class="amount">
                                                         <div class=" pull-left usd-price-tooltip">
-                                                                                                                                                                                        $98,000
+                                                                                                                                                                                        $1,200
                                                                                                                                                                                 </div>
                                                         <div class=" pull-right local-price local-price-tooltip">
 
                                                             <span
-                                                                class="flavour"></span>
+                                                                class="flavour"> per month</span>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                                <div class="pull-right col-md-2 favourite-right">
+                                                                                                                                                                                            <button type="button" class="favourite btn-advert btn " data-exists="false"
+                                                            title="Favourite the Advert"><i class="fa fa-heart-o"></i>
+                                                        </button>
+                                                                                                        </div>
+
+                        
+                        <div class="properties pull-left col-md-10">
+                            
+                                <ul class="list-unstyled">
+                                                                                                                        <li class="property">3 bedrooms</li>
+                                                                                    <li class="property">2 bathrooms</li>
+                                                                                                                                                        <li class="property">harare cbd</li>
+                                    
+                                    
+                                </ul>
+
+                                                    </div>
+                    </div>
+
+                    <div class="line-clamp-3">
+                                                <p>
+                            Ref.: SBY246617
+Modern and spacious 3-bedroom dup...
+                        </p>
+                    </div>
+
+                    <div class="seller-info">
+                                                                                                                                                                                                <div class='store-logo pull-left'>
+                                                                <a style="position: absolute;left:0;bottom:8px;"
+                                                                    href="https://www.classifieds.co.zw/southbay"><img src="https://www.classifieds.co.zw/storage/App/Models/Attachment/files/000/134/592/thumb/logo_528.gif" class="img-responsive" loading="lazy" alt="Southbay Real Estate Logo"><span
+                                                                        class="pull-right">Southbay Real Estate</span></a>
+                                                            </div>
+                                                                                                                                                            <div class="btn-toolbar-buyer btn-toolbar pull-right" role="toolbar">
+    <noscript>
+                                    <div style="display: inline-block;">
+                <button type="button" id="whatsapp-advert-2415207" style="visibility: hidden"
+        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2415207"
+        data-intent="whatsapp" data-href="https://rply.link/l/ivaWOip8Z8" data-type="advert" data-id="2415207"
+        data-category="220" data-category-name="Flats &amp; Apartments for Rent"
+        title="WhatsApp the Advertiser">
+                    <img src="https://www.classifieds.co.zw/logos/whatsapp.png" width="20px" />
+            </button>
+     </div>                                         <a rel="nofollow" class="btn pull-left" style="margin-left:0px;" href="#"
+                title="Call the Advertiser">
+                                    <i class="fa fa-phone"></i>
+                            </a>
+                            <a rel="nofollow" class="btn pull-left" style="margin-left:0px;" href="#"><i
+                    class="fa fa-envelope"></i>
+            </a>
+                    </noscript>
+    <div class="clearfix btn-group" style="display: flex" role="group">
+                                    <div style="display: inline-block;">
+                <button type="button" id="whatsapp-advert-2415207" style="visibility: hidden"
+        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2415207"
+        data-intent="whatsapp" data-href="https://rply.link/l/ivaWOip8Z8" data-type="advert" data-id="2415207"
+        data-category="220" data-category-name="Flats &amp; Apartments for Rent"
+        title="WhatsApp the Advertiser">
+                    <i class="fa fa-whatsapp"></i>
+            </button>
+     </div>                                             <button type="button" id="contact-advert-2415207"
+                    class="btn-modal btn btn-advert call record-interest" data-target="#login-options-modal"
+                    data-intent="call" data-type="advert" data-id="2415207"
+                    data-category="220" data-category-name="Flats &amp; Apartments for Rent"
+                    title="Call the Advertiser">
+                                            <i class="fa fa-phone"></i>
+                                    </button>
+                                            
+                <button type="button" id="email-advert-2415207"
+                    class="btn-modal btn btn-advert email record-interest" data-target="#contact-seller"
+                    data-intent="email" data-type="advert" data-id="2415207"
+                    data-category="220" data-category-name="Flats &amp; Apartments for Rent"
+                    title="Email the Advertiser">
+                    <i class="fa fa-envelope"></i>
+                </button>
+                
+                                                </div>
+</div>
+
+<script type="245619828e9ab26f08ed8c97-text/javascript">
+    function rememberAction(action, advert) {
+        localStorage.setItem('modal-action', JSON.stringify({ action, advert }))
+    }
+</script>                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="alerts-2415207">
+        </div>                                                                                            <div id="listing-2420310"
+    class="listing panel panel-default panel-listing border-priority--gold border-status--online"
+    data-id="2420310" data-type="advert" data-view="category"     data-category="{&quot;leaf&quot;:220,&quot;parent&quot;:16,&quot;level_1&quot;:16,&quot;level_1_ident&quot;:&quot;property\/Property&quot;,&quot;level_2&quot;:220,&quot;level_2_ident&quot;:&quot;flats-apartments-for-rent\/Flats &amp; Apartments for Rent&quot;,&quot;payable&quot;:false,&quot;points&quot;:&quot;0&quot;,&quot;price&quot;:0,&quot;title&quot;:&quot;Houses for Sale&quot;,&quot;usd_price&quot;:&quot;0&quot;}"     data-currency="{&quot;id&quot;:1,&quot;title&quot;:&quot;USD (international transactions)&quot;,&quot;iso&quot;:&quot;USD&quot;,&quot;symbol&quot;:&quot;$&quot;,&quot;prefix&quot;:&quot;USD&quot;,&quot;enabled&quot;:1,&quot;created_at&quot;:&quot;2015-12-04 19:01:40&quot;,&quot;updated_at&quot;:&quot;2020-06-25 14:17:18&quot;,&quot;display_format&quot;:&quot;#,###,###&quot;,&quot;rate&quot;:&quot;1.00&quot;,&quot;default&quot;:1}" style="position: relative;">
+
+        <div class="panel-body">
+
+
+
+                    <div class="pull-left image col-md-5 col-sm-5 col-xs-4">
+        
+                                                <div class="gallery">
+    
+    <div id="gallery-2420310" class="carousel slide" data-ride="carousel" data-images="[&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/aspindale-park-flat-apartment-2420310\&quot; aria-label=\&quot;Aspindale Park - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/309\/122\/medium\/image-1.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Aspindale Park - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/aspindale-park-flat-apartment-2420310\&quot; aria-label=\&quot;Aspindale Park - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/309\/123\/medium\/image-2.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Aspindale Park - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/aspindale-park-flat-apartment-2420310\&quot; aria-label=\&quot;Aspindale Park - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/309\/124\/medium\/image-3.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Aspindale Park - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/aspindale-park-flat-apartment-2420310\&quot; aria-label=\&quot;Aspindale Park - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/309\/125\/medium\/image-4.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Aspindale Park - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/aspindale-park-flat-apartment-2420310\&quot; aria-label=\&quot;Aspindale Park - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/309\/126\/medium\/image-5.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Aspindale Park - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/aspindale-park-flat-apartment-2420310\&quot; aria-label=\&quot;Aspindale Park - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/309\/127\/medium\/image-6.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Aspindale Park - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/aspindale-park-flat-apartment-2420310\&quot; aria-label=\&quot;Aspindale Park - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/309\/128\/medium\/image-7.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Aspindale Park - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/aspindale-park-flat-apartment-2420310\&quot; aria-label=\&quot;Aspindale Park - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/309\/129\/medium\/image-8.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Aspindale Park - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;div class='descrip' &gt;Ref.: CHAS248619\r\n2-bedroom fully furnished flat in Aspire Heights, Aspindale that is on the third floor. Enjoy comfort &amp; convenience with:\n\n- Furnished including washing machine &amp; gas stove\n- Hot water via gas geyser\n-Spacious lounge\n- Borehole water\n- Secure complex in gated community\n- Solar system&lt;\/div&gt;&quot;]">
+                            <div class="carousel-inner " role="listbox">
+                <div class="carousel-item active" data-index="0">
+
+                            <a class="image" rel="" href="https://www.classifieds.co.zw/listings/aspindale-park-flat-apartment-2420310" aria-label="Aspindale Park - Flat & Apartment"><img src="/storage/App/Models/Attachment/files/011/309/122/medium/image-1.webp" class="img-responsive center-block img-max-width " alt="Aspindale Park - Flat & Apartment"  loading="lazy"/></a>
+            
+        </div>
+    </div>
+
+    <a class="carousel-control left carousel-control-prev"
+        href="#gallery-2420310" role="button" data-slide="prev" style="z-index:10">
+        <span class="glyphicon carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">&laquo; Previous</span>
+    </a>
+
+    <a class="carousel-control right carousel-control-next"
+        href="#gallery-2420310" role="button" data-slide="next" style="z-index:10">
+        <span class="glyphicon carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next &raquo;</span>
+    </a>
+</div>
+</div>
+<script type="245619828e9ab26f08ed8c97-text/javascript">
+    var _ytdVideoIndex = "8";
+</script>
+                            </div>
+
+                            <div class="details col-md-7 col-sm-7 col-xs-8">
+                                <h5 class="listing-title">
+                        <a href="https://www.classifieds.co.zw/listings/aspindale-park-flat-apartment-2420310 ">
+                            Aspindale Park - Flat & Apartment</a>
+
+                                            </h5>
+
+                    <div class="row">
+                                                                        <div class="pull-left price">
+
+                                                    <div class="amount">
+                                                        <div class=" pull-left usd-price-tooltip">
+                                                                                                                                                                                        $600
+                                                                                                                                                                                </div>
+                                                        <div class=" pull-right local-price local-price-tooltip">
+
+                                                            <span
+                                                                class="flavour"> per month</span>
                                                         </div>
 
                                                     </div>
@@ -4557,8 +4149,7 @@ Neat 4 bedrooms, main en-suite, g...
                             
                                 <ul class="list-unstyled">
                                                                                                                         <li class="property">2 bedrooms</li>
-                                                                                    <li class="property">2 bathrooms</li>
-                                                                                                                                                        <li class="property">bulawayo east</li>
+                                                                                                                                                        <li class="property">harare west</li>
                                     
                                     
                                 </ul>
@@ -4568,25 +4159,24 @@ Neat 4 bedrooms, main en-suite, g...
 
                     <div class="line-clamp-3">
                                                 <p>
-                            Ref.: PGP233086
-
-Situated in a well-maintained co...
+                            Ref.: CHAS248619
+2-bedroom fully furnished flat i...
                         </p>
                     </div>
 
                     <div class="seller-info">
                                                                                                                                                                                                 <div class='store-logo pull-left'>
                                                                 <a style="position: absolute;left:0;bottom:8px;"
-                                                                    href="https://www.classifieds.co.zw/pamgolding"><img src="https://www.classifieds.co.zw/storage/App/Models/Attachment/files/008/869/641/thumb/pam golding new.webp" class="img-responsive" loading="lazy" alt="Pam Golding Properties Logo"><span
-                                                                        class="pull-right">Pam Golding Properties</span></a>
+                                                                    href="https://www.classifieds.co.zw/chas-everitt"><img src="https://www.classifieds.co.zw/storage/App/Models/Attachment/files/010/498/993/thumb/CHAS.webp" class="img-responsive" loading="lazy" alt="CHAS EVERITT Logo"><span
+                                                                        class="pull-right">CHAS EVERITT</span></a>
                                                             </div>
                                                                                                                                                             <div class="btn-toolbar-buyer btn-toolbar pull-right" role="toolbar">
     <noscript>
                                     <div style="display: inline-block;">
-                <button type="button" id="whatsapp-advert-2382042" style="visibility: hidden"
-        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2382042"
-        data-intent="whatsapp" data-href="https://rply.link/l/0TPVAWTEv2" data-type="advert" data-id="2382042"
-        data-category="218" data-category-name="Flats &amp; Apartments for Sale"
+                <button type="button" id="whatsapp-advert-2420310" style="visibility: hidden"
+        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2420310"
+        data-intent="whatsapp" data-href="https://rply.link/l/8ZCJRA624H" data-type="advert" data-id="2420310"
+        data-category="220" data-category-name="Flats &amp; Apartments for Rent"
         title="WhatsApp the Advertiser">
                     <img src="https://www.classifieds.co.zw/logos/whatsapp.png" width="20px" />
             </button>
@@ -4600,25 +4190,25 @@ Situated in a well-maintained co...
                     </noscript>
     <div class="clearfix btn-group" style="display: flex" role="group">
                                     <div style="display: inline-block;">
-                <button type="button" id="whatsapp-advert-2382042" style="visibility: hidden"
-        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2382042"
-        data-intent="whatsapp" data-href="https://rply.link/l/0TPVAWTEv2" data-type="advert" data-id="2382042"
-        data-category="218" data-category-name="Flats &amp; Apartments for Sale"
+                <button type="button" id="whatsapp-advert-2420310" style="visibility: hidden"
+        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2420310"
+        data-intent="whatsapp" data-href="https://rply.link/l/8ZCJRA624H" data-type="advert" data-id="2420310"
+        data-category="220" data-category-name="Flats &amp; Apartments for Rent"
         title="WhatsApp the Advertiser">
                     <i class="fa fa-whatsapp"></i>
             </button>
-     </div>                                             <button type="button" id="contact-advert-2382042"
+     </div>                                             <button type="button" id="contact-advert-2420310"
                     class="btn-modal btn btn-advert call record-interest" data-target="#login-options-modal"
-                    data-intent="call" data-type="advert" data-id="2382042"
-                    data-category="218" data-category-name="Flats &amp; Apartments for Sale"
+                    data-intent="call" data-type="advert" data-id="2420310"
+                    data-category="220" data-category-name="Flats &amp; Apartments for Rent"
                     title="Call the Advertiser">
                                             <i class="fa fa-phone"></i>
                                     </button>
                                             
-                <button type="button" id="email-advert-2382042"
+                <button type="button" id="email-advert-2420310"
                     class="btn-modal btn btn-advert email record-interest" data-target="#contact-seller"
-                    data-intent="email" data-type="advert" data-id="2382042"
-                    data-category="218" data-category-name="Flats &amp; Apartments for Sale"
+                    data-intent="email" data-type="advert" data-id="2420310"
+                    data-category="220" data-category-name="Flats &amp; Apartments for Rent"
                     title="Email the Advertiser">
                     <i class="fa fa-envelope"></i>
                 </button>
@@ -4626,7 +4216,7 @@ Situated in a well-maintained co...
                                                 </div>
 </div>
 
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
+<script type="245619828e9ab26f08ed8c97-text/javascript">
     function rememberAction(action, advert) {
         localStorage.setItem('modal-action', JSON.stringify({ action, advert }))
     }
@@ -4636,10 +4226,10 @@ Situated in a well-maintained co...
         </div>
 
 
-        <div class="alerts-2382042">
-        </div>                                                                                            <div id="listing-2374650"
+        <div class="alerts-2420310">
+        </div>                                                                                            <div id="listing-2403278"
     class="listing panel panel-default panel-listing border-priority--gold border-status--online"
-    data-id="2374650" data-type="advert" data-view="category"     data-category="{&quot;leaf&quot;:218,&quot;parent&quot;:16,&quot;level_1&quot;:16,&quot;level_1_ident&quot;:&quot;property\/Property&quot;,&quot;level_2&quot;:218,&quot;level_2_ident&quot;:&quot;flats-apartments-for-sale\/Flats &amp; Apartments for Sale&quot;,&quot;payable&quot;:false,&quot;points&quot;:&quot;0&quot;,&quot;price&quot;:0,&quot;title&quot;:&quot;Houses for Sale&quot;,&quot;usd_price&quot;:&quot;0&quot;}"     data-currency="{&quot;id&quot;:1,&quot;title&quot;:&quot;USD (international transactions)&quot;,&quot;iso&quot;:&quot;USD&quot;,&quot;symbol&quot;:&quot;$&quot;,&quot;prefix&quot;:&quot;USD&quot;,&quot;enabled&quot;:1,&quot;created_at&quot;:&quot;2015-12-04 19:01:40&quot;,&quot;updated_at&quot;:&quot;2020-06-25 14:17:18&quot;,&quot;display_format&quot;:&quot;#,###,###&quot;,&quot;rate&quot;:&quot;1.00&quot;,&quot;default&quot;:1}" style="position: relative;">
+    data-id="2403278" data-type="advert" data-view="category"     data-category="{&quot;leaf&quot;:220,&quot;parent&quot;:16,&quot;level_1&quot;:16,&quot;level_1_ident&quot;:&quot;property\/Property&quot;,&quot;level_2&quot;:220,&quot;level_2_ident&quot;:&quot;flats-apartments-for-rent\/Flats &amp; Apartments for Rent&quot;,&quot;payable&quot;:false,&quot;points&quot;:&quot;0&quot;,&quot;price&quot;:0,&quot;title&quot;:&quot;Houses for Sale&quot;,&quot;usd_price&quot;:&quot;0&quot;}"     data-currency="{&quot;id&quot;:1,&quot;title&quot;:&quot;USD (international transactions)&quot;,&quot;iso&quot;:&quot;USD&quot;,&quot;symbol&quot;:&quot;$&quot;,&quot;prefix&quot;:&quot;USD&quot;,&quot;enabled&quot;:1,&quot;created_at&quot;:&quot;2015-12-04 19:01:40&quot;,&quot;updated_at&quot;:&quot;2020-06-25 14:17:18&quot;,&quot;display_format&quot;:&quot;#,###,###&quot;,&quot;rate&quot;:&quot;1.00&quot;,&quot;default&quot;:1}" style="position: relative;">
 
         <div class="panel-body">
 
@@ -4649,37 +4239,37 @@ Situated in a well-maintained co...
         
                                                 <div class="gallery">
     
-    <div id="gallery-2374650" class="carousel slide" data-ride="carousel" data-images="[&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2374650\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/965\/384\/medium\/image-3.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2374650\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/187\/620\/medium\/image-1.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2374650\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/187\/621\/medium\/image-2.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2374650\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/187\/622\/medium\/image-3.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2374650\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/187\/623\/medium\/image-4.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2374650\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/187\/624\/medium\/image-5.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2374650\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/187\/625\/medium\/image-6.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2374650\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/187\/626\/medium\/image-7.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2374650\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/005\/611\/medium\/image-1.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2374650\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/965\/386\/medium\/image-5.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2374650\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/965\/383\/medium\/image-2.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2374650\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/965\/385\/medium\/image-4.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2374650\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/187\/627\/medium\/image-13.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2374650\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/010\/965\/382\/medium\/image-1.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/greendale-flat-apartment-2374650\&quot; aria-label=\&quot;Greendale - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/187\/628\/medium\/image-15.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Greendale - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;div class='descrip' &gt;Ref.: CAC232130\r\nLifestyle Starter Duplex Greendale . \nComprising of of 2 beds all en-suite Open plan kitchen with combined lounge and dining. Guest bathroom . Borehole water , carport and sewer and council water. Zesa in place . A stone away from Food lovers \nFLEXIBLE TERMS \nDeposit 40%&lt;\/div&gt;&quot;]">
+    <div id="gallery-2403278" class="carousel slide" data-ride="carousel" data-images="[&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/glaudina-flat-apartment-2403278\&quot; aria-label=\&quot;Glaudina - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/187\/536\/medium\/image-1.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Glaudina - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/glaudina-flat-apartment-2403278\&quot; aria-label=\&quot;Glaudina - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/187\/540\/medium\/image-5.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Glaudina - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/glaudina-flat-apartment-2403278\&quot; aria-label=\&quot;Glaudina - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/187\/543\/medium\/image-8.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Glaudina - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/glaudina-flat-apartment-2403278\&quot; aria-label=\&quot;Glaudina - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/234\/206\/medium\/image-4.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Glaudina - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/glaudina-flat-apartment-2403278\&quot; aria-label=\&quot;Glaudina - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/234\/207\/medium\/image-5.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Glaudina - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/glaudina-flat-apartment-2403278\&quot; aria-label=\&quot;Glaudina - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/234\/208\/medium\/image-6.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Glaudina - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/glaudina-flat-apartment-2403278\&quot; aria-label=\&quot;Glaudina - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/234\/209\/medium\/image-7.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Glaudina - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/glaudina-flat-apartment-2403278\&quot; aria-label=\&quot;Glaudina - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/234\/210\/medium\/image-8.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Glaudina - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;div class='descrip' &gt;Ref.: GKEY242293\r\nThese exclusive units offer a perfect blend of style and comfort, boasting 2 well-sized bedrooms with built-in wardrobes, flawless open plan lounge-state of the art modern fitted kitchen, bathroom. The units also comprise of 5KVA battery bank system providing reliable power source during outages, back up storage water tanks and 24\/7 security.&lt;\/div&gt;&quot;]">
                             <div class="carousel-inner " role="listbox">
                 <div class="carousel-item active" data-index="0">
 
-                            <a class="image" rel="" href="https://www.classifieds.co.zw/listings/greendale-flat-apartment-2374650" aria-label="Greendale - Flat & Apartment"><img src="/storage/App/Models/Attachment/files/010/965/384/medium/image-3.webp" class="img-responsive center-block img-max-width " alt="Greendale - Flat & Apartment"  loading="lazy"/></a>
+                            <a class="image" rel="" href="https://www.classifieds.co.zw/listings/glaudina-flat-apartment-2403278" aria-label="Glaudina - Flat & Apartment"><img src="/storage/App/Models/Attachment/files/011/187/536/medium/image-1.webp" class="img-responsive center-block img-max-width " alt="Glaudina - Flat & Apartment"  loading="lazy"/></a>
             
         </div>
     </div>
 
     <a class="carousel-control left carousel-control-prev"
-        href="#gallery-2374650" role="button" data-slide="prev" style="z-index:10">
+        href="#gallery-2403278" role="button" data-slide="prev" style="z-index:10">
         <span class="glyphicon carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">&laquo; Previous</span>
     </a>
 
     <a class="carousel-control right carousel-control-next"
-        href="#gallery-2374650" role="button" data-slide="next" style="z-index:10">
+        href="#gallery-2403278" role="button" data-slide="next" style="z-index:10">
         <span class="glyphicon carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next &raquo;</span>
     </a>
 </div>
 </div>
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
-    var _ytdVideoIndex = "15";
+<script type="245619828e9ab26f08ed8c97-text/javascript">
+    var _ytdVideoIndex = "8";
 </script>
                             </div>
 
                             <div class="details col-md-7 col-sm-7 col-xs-8">
                                 <h5 class="listing-title">
-                        <a href="https://www.classifieds.co.zw/listings/greendale-flat-apartment-2374650 ">
-                            Greendale - Flat & Apartment</a>
+                        <a href="https://www.classifieds.co.zw/listings/glaudina-flat-apartment-2403278 ">
+                            Glaudina - Flat & Apartment</a>
 
                                             </h5>
 
@@ -4688,12 +4278,12 @@ Situated in a well-maintained co...
 
                                                     <div class="amount">
                                                         <div class=" pull-left usd-price-tooltip">
-                                                                                                                                                                                        $120,000
+                                                                                                                                                                                        $550
                                                                                                                                                                                 </div>
                                                         <div class=" pull-right local-price local-price-tooltip">
 
                                                             <span
-                                                                class="flavour"></span>
+                                                                class="flavour"> per month</span>
                                                         </div>
 
                                                     </div>
@@ -4710,9 +4300,8 @@ Situated in a well-maintained co...
                             
                                 <ul class="list-unstyled">
                                                                                                                         <li class="property">2 bedrooms</li>
-                                                                                    <li class="property">2 bathrooms</li>
-                                                                                    <li class="property">140 m&sup2;</li>
-                                                                                                                                                        <li class="property">harare east</li>
+                                                                                    <li class="property">1 bathrooms</li>
+                                                                                                                                                        <li class="property">harare west</li>
                                     
                                     
                                 </ul>
@@ -4722,24 +4311,24 @@ Situated in a well-maintained co...
 
                     <div class="line-clamp-3">
                                                 <p>
-                            Ref.: CAC232130
-Lifestyle Starter Duplex Greendal...
+                            Ref.: GKEY242293
+These exclusive units offer a pe...
                         </p>
                     </div>
 
                     <div class="seller-info">
                                                                                                                                                                                                 <div class='store-logo pull-left'>
                                                                 <a style="position: absolute;left:0;bottom:8px;"
-                                                                    href="https://www.classifieds.co.zw/carson-carson-real-estate"><img src="https://www.classifieds.co.zw/storage/App/Models/Attachment/files/009/910/832/thumb/Carson.webp" class="img-responsive" loading="lazy" alt="Carson &amp; Carson Real Estate Logo"><span
-                                                                        class="pull-right">Carson &amp; Carson Real Estate</span></a>
+                                                                    href="https://www.classifieds.co.zw/green-keys-realtors"><img src="https://www.classifieds.co.zw/storage/App/Models/Attachment/files/011/106/543/thumb/Screenshot 2026-01-29 102332.webp" class="img-responsive" loading="lazy" alt="Green Keys Realtors Logo"><span
+                                                                        class="pull-right">Green Keys Realtors</span></a>
                                                             </div>
                                                                                                                                                             <div class="btn-toolbar-buyer btn-toolbar pull-right" role="toolbar">
     <noscript>
                                     <div style="display: inline-block;">
-                <button type="button" id="whatsapp-advert-2374650" style="visibility: hidden"
-        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2374650"
-        data-intent="whatsapp" data-href="https://rply.link/l/7Ncx5egBVa" data-type="advert" data-id="2374650"
-        data-category="218" data-category-name="Flats &amp; Apartments for Sale"
+                <button type="button" id="whatsapp-advert-2403278" style="visibility: hidden"
+        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2403278"
+        data-intent="whatsapp" data-href="https://rply.link/l/KeADGThpyY" data-type="advert" data-id="2403278"
+        data-category="220" data-category-name="Flats &amp; Apartments for Rent"
         title="WhatsApp the Advertiser">
                     <img src="https://www.classifieds.co.zw/logos/whatsapp.png" width="20px" />
             </button>
@@ -4753,25 +4342,25 @@ Lifestyle Starter Duplex Greendal...
                     </noscript>
     <div class="clearfix btn-group" style="display: flex" role="group">
                                     <div style="display: inline-block;">
-                <button type="button" id="whatsapp-advert-2374650" style="visibility: hidden"
-        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2374650"
-        data-intent="whatsapp" data-href="https://rply.link/l/7Ncx5egBVa" data-type="advert" data-id="2374650"
-        data-category="218" data-category-name="Flats &amp; Apartments for Sale"
+                <button type="button" id="whatsapp-advert-2403278" style="visibility: hidden"
+        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2403278"
+        data-intent="whatsapp" data-href="https://rply.link/l/KeADGThpyY" data-type="advert" data-id="2403278"
+        data-category="220" data-category-name="Flats &amp; Apartments for Rent"
         title="WhatsApp the Advertiser">
                     <i class="fa fa-whatsapp"></i>
             </button>
-     </div>                                             <button type="button" id="contact-advert-2374650"
+     </div>                                             <button type="button" id="contact-advert-2403278"
                     class="btn-modal btn btn-advert call record-interest" data-target="#login-options-modal"
-                    data-intent="call" data-type="advert" data-id="2374650"
-                    data-category="218" data-category-name="Flats &amp; Apartments for Sale"
+                    data-intent="call" data-type="advert" data-id="2403278"
+                    data-category="220" data-category-name="Flats &amp; Apartments for Rent"
                     title="Call the Advertiser">
                                             <i class="fa fa-phone"></i>
                                     </button>
                                             
-                <button type="button" id="email-advert-2374650"
+                <button type="button" id="email-advert-2403278"
                     class="btn-modal btn btn-advert email record-interest" data-target="#contact-seller"
-                    data-intent="email" data-type="advert" data-id="2374650"
-                    data-category="218" data-category-name="Flats &amp; Apartments for Sale"
+                    data-intent="email" data-type="advert" data-id="2403278"
+                    data-category="220" data-category-name="Flats &amp; Apartments for Rent"
                     title="Email the Advertiser">
                     <i class="fa fa-envelope"></i>
                 </button>
@@ -4779,7 +4368,7 @@ Lifestyle Starter Duplex Greendal...
                                                 </div>
 </div>
 
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
+<script type="245619828e9ab26f08ed8c97-text/javascript">
     function rememberAction(action, advert) {
         localStorage.setItem('modal-action', JSON.stringify({ action, advert }))
     }
@@ -4789,7 +4378,7 @@ Lifestyle Starter Duplex Greendal...
         </div>
 
 
-        <div class="alerts-2374650">
+        <div class="alerts-2403278">
         </div>                                                                                                                                                <div class="row">
                                         <div>
                                             <div class="snippet content-middle">
@@ -4805,15 +4394,16 @@ Lifestyle Starter Duplex Greendal...
                       aria-hidden="true"> </i> 
                     Property Facebook Page &nbsp &nbsp
                 </a>
+                
         </div>
     </div>
 </div>
                                             </div>
                                         </div>
                                     </div>
-                                                                                                                                <div id="listing-2421088"
+                                                                                                                                <div id="listing-2421317"
     class="listing panel panel-default panel-listing border-priority--gold border-status--online"
-    data-id="2421088" data-type="advert" data-view="category"     data-category="{&quot;leaf&quot;:218,&quot;parent&quot;:16,&quot;level_1&quot;:16,&quot;level_1_ident&quot;:&quot;property\/Property&quot;,&quot;level_2&quot;:218,&quot;level_2_ident&quot;:&quot;flats-apartments-for-sale\/Flats &amp; Apartments for Sale&quot;,&quot;payable&quot;:false,&quot;points&quot;:&quot;0&quot;,&quot;price&quot;:0,&quot;title&quot;:&quot;Houses for Sale&quot;,&quot;usd_price&quot;:&quot;0&quot;}"     data-currency="{&quot;id&quot;:1,&quot;title&quot;:&quot;USD (international transactions)&quot;,&quot;iso&quot;:&quot;USD&quot;,&quot;symbol&quot;:&quot;$&quot;,&quot;prefix&quot;:&quot;USD&quot;,&quot;enabled&quot;:1,&quot;created_at&quot;:&quot;2015-12-04 19:01:40&quot;,&quot;updated_at&quot;:&quot;2020-06-25 14:17:18&quot;,&quot;display_format&quot;:&quot;#,###,###&quot;,&quot;rate&quot;:&quot;1.00&quot;,&quot;default&quot;:1}" style="position: relative;">
+    data-id="2421317" data-type="advert" data-view="category"     data-category="{&quot;leaf&quot;:220,&quot;parent&quot;:16,&quot;level_1&quot;:16,&quot;level_1_ident&quot;:&quot;property\/Property&quot;,&quot;level_2&quot;:220,&quot;level_2_ident&quot;:&quot;flats-apartments-for-rent\/Flats &amp; Apartments for Rent&quot;,&quot;payable&quot;:false,&quot;points&quot;:&quot;0&quot;,&quot;price&quot;:0,&quot;title&quot;:&quot;Houses for Sale&quot;,&quot;usd_price&quot;:&quot;0&quot;}"     data-currency="{&quot;id&quot;:1,&quot;title&quot;:&quot;USD (international transactions)&quot;,&quot;iso&quot;:&quot;USD&quot;,&quot;symbol&quot;:&quot;$&quot;,&quot;prefix&quot;:&quot;USD&quot;,&quot;enabled&quot;:1,&quot;created_at&quot;:&quot;2015-12-04 19:01:40&quot;,&quot;updated_at&quot;:&quot;2020-06-25 14:17:18&quot;,&quot;display_format&quot;:&quot;#,###,###&quot;,&quot;rate&quot;:&quot;1.00&quot;,&quot;default&quot;:1}" style="position: relative;">
 
         <div class="panel-body">
 
@@ -4823,37 +4413,37 @@ Lifestyle Starter Duplex Greendal...
         
                                                 <div class="gallery">
     
-    <div id="gallery-2421088" class="carousel slide" data-ride="carousel" data-images="[&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/aspindale-park-flat-apartment-2421088\&quot; aria-label=\&quot;Aspindale Park - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/314\/125\/medium\/image-1.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Aspindale Park - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/aspindale-park-flat-apartment-2421088\&quot; aria-label=\&quot;Aspindale Park - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/314\/126\/medium\/image-2.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Aspindale Park - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/aspindale-park-flat-apartment-2421088\&quot; aria-label=\&quot;Aspindale Park - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/314\/127\/medium\/image-3.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Aspindale Park - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/aspindale-park-flat-apartment-2421088\&quot; aria-label=\&quot;Aspindale Park - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/314\/128\/medium\/image-4.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Aspindale Park - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/aspindale-park-flat-apartment-2421088\&quot; aria-label=\&quot;Aspindale Park - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/314\/129\/medium\/image-5.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Aspindale Park - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/aspindale-park-flat-apartment-2421088\&quot; aria-label=\&quot;Aspindale Park - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/314\/130\/medium\/image-6.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Aspindale Park - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/aspindale-park-flat-apartment-2421088\&quot; aria-label=\&quot;Aspindale Park - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/314\/131\/medium\/image-7.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Aspindale Park - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;div class='descrip' &gt;Ref.: CAML248888\r\n\nA very neat and modern flat for sale on 3rd floor comprising of:\n- 2 bedrooms with built in wardrobes\n- Open plan modern fitted kitchen with stove and washing machine\n- Lounge \n- Combined toilet and bath\n- Balcony\n- Ready for Title deeds\n- Gated community with tight security 24\/7&lt;\/div&gt;&quot;]">
+    <div id="gallery-2421317" class="carousel slide" data-ride="carousel" data-images="[&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2421317\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/315\/467\/medium\/image-1.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2421317\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/315\/468\/medium\/image-2.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2421317\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/315\/469\/medium\/image-3.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2421317\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/315\/470\/medium\/image-4.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2421317\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/315\/471\/medium\/image-5.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2421317\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/315\/472\/medium\/image-6.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2421317\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/315\/473\/medium\/image-7.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2421317\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/315\/474\/medium\/image-8.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2421317\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/315\/475\/medium\/image-9.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2421317\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/315\/476\/medium\/image-10.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2421317\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/315\/477\/medium\/image-11.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2421317\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/315\/478\/medium\/image-12.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;div class='descrip' &gt;Ref.: CLRP248974\r\nThe location of this gem in the upper Avenues means you could be in the North, South, East or West of the City within minutes. A stones throw from State House on Baines Ave between 8th and 9th streets, means constant electricity supply, beautiful treed avenues, quiet and safe environment. \n This unique renovated 2-bedroom flat is situated on the 3rd floor of an extremely well-kept block with a working lift. 24-hour security, borehole water, garden, secure parking. \n The photos of the interior speak for themselves. \n We are looking for a professional tenant of sober habits who is wanting a long-term lease (no less than one year). \n Rent is $850 &amp;hellip;&lt;\/div&gt;&quot;]">
                             <div class="carousel-inner " role="listbox">
                 <div class="carousel-item active" data-index="0">
 
-                            <a class="image" rel="" href="https://www.classifieds.co.zw/listings/aspindale-park-flat-apartment-2421088" aria-label="Aspindale Park - Flat & Apartment"><img src="/storage/App/Models/Attachment/files/011/314/125/medium/image-1.webp" class="img-responsive center-block img-max-width " alt="Aspindale Park - Flat & Apartment"  loading="lazy"/></a>
+                            <a class="image" rel="" href="https://www.classifieds.co.zw/listings/avenues-flat-apartment-2421317" aria-label="Avenues - Flat & Apartment"><img src="/storage/App/Models/Attachment/files/011/315/467/medium/image-1.webp" class="img-responsive center-block img-max-width " alt="Avenues - Flat & Apartment"  loading="lazy"/></a>
             
         </div>
     </div>
 
     <a class="carousel-control left carousel-control-prev"
-        href="#gallery-2421088" role="button" data-slide="prev" style="z-index:10">
+        href="#gallery-2421317" role="button" data-slide="prev" style="z-index:10">
         <span class="glyphicon carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">&laquo; Previous</span>
     </a>
 
     <a class="carousel-control right carousel-control-next"
-        href="#gallery-2421088" role="button" data-slide="next" style="z-index:10">
+        href="#gallery-2421317" role="button" data-slide="next" style="z-index:10">
         <span class="glyphicon carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next &raquo;</span>
     </a>
 </div>
 </div>
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
-    var _ytdVideoIndex = "7";
+<script type="245619828e9ab26f08ed8c97-text/javascript">
+    var _ytdVideoIndex = "12";
 </script>
                             </div>
 
                             <div class="details col-md-7 col-sm-7 col-xs-8">
                                 <h5 class="listing-title">
-                        <a href="https://www.classifieds.co.zw/listings/aspindale-park-flat-apartment-2421088 ">
-                            Aspindale Park - Flat & Apartment</a>
+                        <a href="https://www.classifieds.co.zw/listings/avenues-flat-apartment-2421317 ">
+                            Avenues - Flat & Apartment</a>
 
                                             </h5>
 
@@ -4862,12 +4452,12 @@ Lifestyle Starter Duplex Greendal...
 
                                                     <div class="amount">
                                                         <div class=" pull-left usd-price-tooltip">
-                                                                                                                                                                                        $60,000
+                                                                                                                                                                                        $850
                                                                                                                                                                                 </div>
                                                         <div class=" pull-right local-price local-price-tooltip">
 
                                                             <span
-                                                                class="flavour"></span>
+                                                                class="flavour"> per month</span>
                                                         </div>
 
                                                     </div>
@@ -4885,7 +4475,7 @@ Lifestyle Starter Duplex Greendal...
                                 <ul class="list-unstyled">
                                                                                                                         <li class="property">2 bedrooms</li>
                                                                                     <li class="property">1 bathrooms</li>
-                                                                                                                                                        <li class="property">harare west</li>
+                                                                                                                                                        <li class="property">harare cbd</li>
                                     
                                     
                                 </ul>
@@ -4895,25 +4485,24 @@ Lifestyle Starter Duplex Greendal...
 
                     <div class="line-clamp-3">
                                                 <p>
-                            Ref.: CAML248888
-
-A very neat and modern flat for...
+                            Ref.: CLRP248974
+The location of this gem in the...
                         </p>
                     </div>
 
                     <div class="seller-info">
                                                                                                                                                                                                 <div class='store-logo pull-left'>
                                                                 <a style="position: absolute;left:0;bottom:8px;"
-                                                                    href="https://www.classifieds.co.zw/camitel-prop"><img src="https://www.classifieds.co.zw/storage/App/Models/Attachment/files/011/230/860/thumb/WhatsApp Image 2026-04-09 at 16.webp" class="img-responsive" loading="lazy" alt="Camitel Prop Logo"><span
-                                                                        class="pull-right">Camitel Prop</span></a>
+                                                                    href="https://www.classifieds.co.zw/clark-properties"><img src="https://www.classifieds.co.zw/storage/App/Models/Attachment/files/009/256/001/thumb/clark logo.webp" class="img-responsive" loading="lazy" alt="Clark Properties Logo"><span
+                                                                        class="pull-right">Clark Properties</span></a>
                                                             </div>
                                                                                                                                                             <div class="btn-toolbar-buyer btn-toolbar pull-right" role="toolbar">
     <noscript>
                                     <div style="display: inline-block;">
-                <button type="button" id="whatsapp-advert-2421088" style="visibility: hidden"
-        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2421088"
-        data-intent="whatsapp" data-href="https://rply.link/l/JoaLjiQuBX" data-type="advert" data-id="2421088"
-        data-category="218" data-category-name="Flats &amp; Apartments for Sale"
+                <button type="button" id="whatsapp-advert-2421317" style="visibility: hidden"
+        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2421317"
+        data-intent="whatsapp" data-href="https://rply.link/l/JHvgGEt0HT" data-type="advert" data-id="2421317"
+        data-category="220" data-category-name="Flats &amp; Apartments for Rent"
         title="WhatsApp the Advertiser">
                     <img src="https://www.classifieds.co.zw/logos/whatsapp.png" width="20px" />
             </button>
@@ -4927,25 +4516,25 @@ A very neat and modern flat for...
                     </noscript>
     <div class="clearfix btn-group" style="display: flex" role="group">
                                     <div style="display: inline-block;">
-                <button type="button" id="whatsapp-advert-2421088" style="visibility: hidden"
-        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2421088"
-        data-intent="whatsapp" data-href="https://rply.link/l/JoaLjiQuBX" data-type="advert" data-id="2421088"
-        data-category="218" data-category-name="Flats &amp; Apartments for Sale"
+                <button type="button" id="whatsapp-advert-2421317" style="visibility: hidden"
+        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2421317"
+        data-intent="whatsapp" data-href="https://rply.link/l/JHvgGEt0HT" data-type="advert" data-id="2421317"
+        data-category="220" data-category-name="Flats &amp; Apartments for Rent"
         title="WhatsApp the Advertiser">
                     <i class="fa fa-whatsapp"></i>
             </button>
-     </div>                                             <button type="button" id="contact-advert-2421088"
+     </div>                                             <button type="button" id="contact-advert-2421317"
                     class="btn-modal btn btn-advert call record-interest" data-target="#login-options-modal"
-                    data-intent="call" data-type="advert" data-id="2421088"
-                    data-category="218" data-category-name="Flats &amp; Apartments for Sale"
+                    data-intent="call" data-type="advert" data-id="2421317"
+                    data-category="220" data-category-name="Flats &amp; Apartments for Rent"
                     title="Call the Advertiser">
                                             <i class="fa fa-phone"></i>
                                     </button>
                                             
-                <button type="button" id="email-advert-2421088"
+                <button type="button" id="email-advert-2421317"
                     class="btn-modal btn btn-advert email record-interest" data-target="#contact-seller"
-                    data-intent="email" data-type="advert" data-id="2421088"
-                    data-category="218" data-category-name="Flats &amp; Apartments for Sale"
+                    data-intent="email" data-type="advert" data-id="2421317"
+                    data-category="220" data-category-name="Flats &amp; Apartments for Rent"
                     title="Email the Advertiser">
                     <i class="fa fa-envelope"></i>
                 </button>
@@ -4953,7 +4542,7 @@ A very neat and modern flat for...
                                                 </div>
 </div>
 
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
+<script type="245619828e9ab26f08ed8c97-text/javascript">
     function rememberAction(action, advert) {
         localStorage.setItem('modal-action', JSON.stringify({ action, advert }))
     }
@@ -4963,10 +4552,10 @@ A very neat and modern flat for...
         </div>
 
 
-        <div class="alerts-2421088">
-        </div>                                                                                            <div id="listing-2415491"
+        <div class="alerts-2421317">
+        </div>                                                                                            <div id="listing-2420945"
     class="listing panel panel-default panel-listing border-priority--gold border-status--online"
-    data-id="2415491" data-type="advert" data-view="category"     data-category="{&quot;leaf&quot;:218,&quot;parent&quot;:16,&quot;level_1&quot;:16,&quot;level_1_ident&quot;:&quot;property\/Property&quot;,&quot;level_2&quot;:218,&quot;level_2_ident&quot;:&quot;flats-apartments-for-sale\/Flats &amp; Apartments for Sale&quot;,&quot;payable&quot;:false,&quot;points&quot;:&quot;0&quot;,&quot;price&quot;:0,&quot;title&quot;:&quot;Houses for Sale&quot;,&quot;usd_price&quot;:&quot;0&quot;}"     data-currency="{&quot;id&quot;:1,&quot;title&quot;:&quot;USD (international transactions)&quot;,&quot;iso&quot;:&quot;USD&quot;,&quot;symbol&quot;:&quot;$&quot;,&quot;prefix&quot;:&quot;USD&quot;,&quot;enabled&quot;:1,&quot;created_at&quot;:&quot;2015-12-04 19:01:40&quot;,&quot;updated_at&quot;:&quot;2020-06-25 14:17:18&quot;,&quot;display_format&quot;:&quot;#,###,###&quot;,&quot;rate&quot;:&quot;1.00&quot;,&quot;default&quot;:1}" style="position: relative;">
+    data-id="2420945" data-type="advert" data-view="category"     data-category="{&quot;leaf&quot;:220,&quot;parent&quot;:16,&quot;level_1&quot;:16,&quot;level_1_ident&quot;:&quot;property\/Property&quot;,&quot;level_2&quot;:220,&quot;level_2_ident&quot;:&quot;flats-apartments-for-rent\/Flats &amp; Apartments for Rent&quot;,&quot;payable&quot;:false,&quot;points&quot;:&quot;0&quot;,&quot;price&quot;:0,&quot;title&quot;:&quot;Houses for Sale&quot;,&quot;usd_price&quot;:&quot;0&quot;}"     data-currency="{&quot;id&quot;:1,&quot;title&quot;:&quot;USD (international transactions)&quot;,&quot;iso&quot;:&quot;USD&quot;,&quot;symbol&quot;:&quot;$&quot;,&quot;prefix&quot;:&quot;USD&quot;,&quot;enabled&quot;:1,&quot;created_at&quot;:&quot;2015-12-04 19:01:40&quot;,&quot;updated_at&quot;:&quot;2020-06-25 14:17:18&quot;,&quot;display_format&quot;:&quot;#,###,###&quot;,&quot;rate&quot;:&quot;1.00&quot;,&quot;default&quot;:1}" style="position: relative;">
 
         <div class="panel-body">
 
@@ -4976,37 +4565,37 @@ A very neat and modern flat for...
         
                                                 <div class="gallery">
     
-    <div id="gallery-2415491" class="carousel slide" data-ride="carousel" data-images="[&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/tynwald-flat-apartment-2415491\&quot; aria-label=\&quot;Tynwald - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/275\/495\/medium\/image-1.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Tynwald - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/tynwald-flat-apartment-2415491\&quot; aria-label=\&quot;Tynwald - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/275\/496\/medium\/image-2.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Tynwald - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/tynwald-flat-apartment-2415491\&quot; aria-label=\&quot;Tynwald - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/275\/497\/medium\/image-3.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Tynwald - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/tynwald-flat-apartment-2415491\&quot; aria-label=\&quot;Tynwald - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/275\/498\/medium\/image-4.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Tynwald - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/tynwald-flat-apartment-2415491\&quot; aria-label=\&quot;Tynwald - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/275\/499\/medium\/image-5.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Tynwald - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/tynwald-flat-apartment-2415491\&quot; aria-label=\&quot;Tynwald - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/275\/500\/medium\/image-6.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Tynwald - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/tynwald-flat-apartment-2415491\&quot; aria-label=\&quot;Tynwald - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/275\/501\/medium\/image-7.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Tynwald - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/tynwald-flat-apartment-2415491\&quot; aria-label=\&quot;Tynwald - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/275\/502\/medium\/image-8.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Tynwald - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/tynwald-flat-apartment-2415491\&quot; aria-label=\&quot;Tynwald - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/275\/503\/medium\/image-9.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Tynwald - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/tynwald-flat-apartment-2415491\&quot; aria-label=\&quot;Tynwald - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/275\/504\/medium\/image-10.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Tynwald - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/tynwald-flat-apartment-2415491\&quot; aria-label=\&quot;Tynwald - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/275\/505\/medium\/image-11.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Tynwald - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/tynwald-flat-apartment-2415491\&quot; aria-label=\&quot;Tynwald - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/275\/506\/medium\/image-12.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Tynwald - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/tynwald-flat-apartment-2415491\&quot; aria-label=\&quot;Tynwald - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/275\/507\/medium\/image-13.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Tynwald - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/tynwald-flat-apartment-2415491\&quot; aria-label=\&quot;Tynwald - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/275\/508\/medium\/image-14.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Tynwald - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/tynwald-flat-apartment-2415491\&quot; aria-label=\&quot;Tynwald - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/275\/509\/medium\/image-15.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Tynwald - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/tynwald-flat-apartment-2415491\&quot; aria-label=\&quot;Tynwald - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/275\/510\/medium\/image-16.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Tynwald - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/tynwald-flat-apartment-2415491\&quot; aria-label=\&quot;Tynwald - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/275\/511\/medium\/image-17.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Tynwald - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/tynwald-flat-apartment-2415491\&quot; aria-label=\&quot;Tynwald - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/275\/512\/medium\/image-18.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Tynwald - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/tynwald-flat-apartment-2415491\&quot; aria-label=\&quot;Tynwald - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/275\/513\/medium\/image-19.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Tynwald - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/tynwald-flat-apartment-2415491\&quot; aria-label=\&quot;Tynwald - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/275\/514\/medium\/image-20.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Tynwald - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;div class='descrip' &gt;Ref.: TSK246728\r\nAvailable is a solid and spacious 2 beds garden flat in a secure complex of 20 units. \nOpen plan spacious lounge, dinning and modern fitted kitchen. \nBathroom comes with shower, tab and toilet.\nPlenty of parking space, 24\/7 security, no water challenges. 10 mins walk from the new Madokero Mall. Deed.&lt;\/div&gt;&quot;]">
+    <div id="gallery-2420945" class="carousel slide" data-ride="carousel" data-images="[&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/ruwa-flat-apartment-2420945\&quot; aria-label=\&quot;Ruwa - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/313\/151\/medium\/image-1.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Ruwa - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/ruwa-flat-apartment-2420945\&quot; aria-label=\&quot;Ruwa - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/313\/152\/medium\/image-2.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Ruwa - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/ruwa-flat-apartment-2420945\&quot; aria-label=\&quot;Ruwa - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/313\/153\/medium\/image-3.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Ruwa - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/ruwa-flat-apartment-2420945\&quot; aria-label=\&quot;Ruwa - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/313\/154\/medium\/image-4.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Ruwa - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/ruwa-flat-apartment-2420945\&quot; aria-label=\&quot;Ruwa - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/313\/155\/medium\/image-5.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Ruwa - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/ruwa-flat-apartment-2420945\&quot; aria-label=\&quot;Ruwa - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/313\/156\/medium\/image-6.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Ruwa - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/ruwa-flat-apartment-2420945\&quot; aria-label=\&quot;Ruwa - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/313\/157\/medium\/image-7.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Ruwa - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/ruwa-flat-apartment-2420945\&quot; aria-label=\&quot;Ruwa - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/313\/158\/medium\/image-8.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Ruwa - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/ruwa-flat-apartment-2420945\&quot; aria-label=\&quot;Ruwa - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/313\/159\/medium\/image-9.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Ruwa - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/ruwa-flat-apartment-2420945\&quot; aria-label=\&quot;Ruwa - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/313\/160\/medium\/image-10.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Ruwa - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/ruwa-flat-apartment-2420945\&quot; aria-label=\&quot;Ruwa - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/313\/161\/medium\/image-11.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Ruwa - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;div class='descrip' &gt;Ref.: CHRE248824\r\nRUWA MAVAMBO FLAT TO LET \u2013 $400 USD\n?? Rent: $400 USD\n?? Deposit: $400 USD\nVacant now\n? Features:\n3 Bedrooms (all with BIC)\nKitchen\nLounge\nCombined bathroom &amp; toilet\nCouncil bills included\n?? Located in Ruwa Mavambo\n?? Contact: Nokhue\n \n#RuwaRentals #HouseToLet #ZimbabweRealEstate #RentalProperty #MavamboLiving See les&lt;\/div&gt;&quot;]">
                             <div class="carousel-inner " role="listbox">
                 <div class="carousel-item active" data-index="0">
 
-                            <a class="image" rel="" href="https://www.classifieds.co.zw/listings/tynwald-flat-apartment-2415491" aria-label="Tynwald - Flat & Apartment"><img src="/storage/App/Models/Attachment/files/011/275/495/medium/image-1.webp" class="img-responsive center-block img-max-width " alt="Tynwald - Flat & Apartment"  loading="lazy"/></a>
+                            <a class="image" rel="" href="https://www.classifieds.co.zw/listings/ruwa-flat-apartment-2420945" aria-label="Ruwa - Flat & Apartment"><img src="/storage/App/Models/Attachment/files/011/313/151/medium/image-1.webp" class="img-responsive center-block img-max-width " alt="Ruwa - Flat & Apartment"  loading="lazy"/></a>
             
         </div>
     </div>
 
     <a class="carousel-control left carousel-control-prev"
-        href="#gallery-2415491" role="button" data-slide="prev" style="z-index:10">
+        href="#gallery-2420945" role="button" data-slide="prev" style="z-index:10">
         <span class="glyphicon carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">&laquo; Previous</span>
     </a>
 
     <a class="carousel-control right carousel-control-next"
-        href="#gallery-2415491" role="button" data-slide="next" style="z-index:10">
+        href="#gallery-2420945" role="button" data-slide="next" style="z-index:10">
         <span class="glyphicon carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next &raquo;</span>
     </a>
 </div>
 </div>
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
-    var _ytdVideoIndex = "20";
+<script type="245619828e9ab26f08ed8c97-text/javascript">
+    var _ytdVideoIndex = "11";
 </script>
                             </div>
 
                             <div class="details col-md-7 col-sm-7 col-xs-8">
                                 <h5 class="listing-title">
-                        <a href="https://www.classifieds.co.zw/listings/tynwald-flat-apartment-2415491 ">
-                            Tynwald - Flat & Apartment</a>
+                        <a href="https://www.classifieds.co.zw/listings/ruwa-flat-apartment-2420945 ">
+                            Ruwa - Flat & Apartment</a>
 
                                             </h5>
 
@@ -5015,12 +4604,12 @@ A very neat and modern flat for...
 
                                                     <div class="amount">
                                                         <div class=" pull-left usd-price-tooltip">
-                                                                                                                                                                                        $64,000
+                                                                                                                                                                                        $400
                                                                                                                                                                                 </div>
                                                         <div class=" pull-right local-price local-price-tooltip">
 
                                                             <span
-                                                                class="flavour"></span>
+                                                                class="flavour"> per month</span>
                                                         </div>
 
                                                     </div>
@@ -5036,8 +4625,10 @@ A very neat and modern flat for...
                         <div class="properties pull-left col-md-10">
                             
                                 <ul class="list-unstyled">
-                                                                                                                        <li class="property">2 bedrooms</li>
-                                                                                                                                                        <li class="property">harare west</li>
+                                                                                                                        <li class="property">3 bedrooms</li>
+                                                                                    <li class="property">1 bathrooms</li>
+                                                                                    <li class="property">1500 m&sup2;</li>
+                                                                                                                                                        <li class="property">ruwa</li>
                                     
                                     
                                 </ul>
@@ -5047,24 +4638,24 @@ A very neat and modern flat for...
 
                     <div class="line-clamp-3">
                                                 <p>
-                            Ref.: TSK246728
-Available is a solid and spacious...
+                            Ref.: CHRE248824
+RUWA MAVAMBO FLAT TO LET – $400...
                         </p>
                     </div>
 
                     <div class="seller-info">
                                                                                                                                                                                                 <div class='store-logo pull-left'>
                                                                 <a style="position: absolute;left:0;bottom:8px;"
-                                                                    href="https://www.classifieds.co.zw/three-skys-properties"><img src="https://www.classifieds.co.zw/storage/App/Models/Attachment/files/008/870/328/thumb/Three Skys b card.webp" class="img-responsive" loading="lazy" alt="Three Sky Real Estate Logo"><span
-                                                                        class="pull-right">Three Sky Real Estate</span></a>
+                                                                    href="https://www.classifieds.co.zw/compact-homes-real-estate-agency-pvt-ltd"><img src="https://www.classifieds.co.zw/storage/App/Models/Attachment/files/008/871/528/thumb/compact 150 x 70.webp" class="img-responsive" loading="lazy" alt="Compact Homes Real Estate Agency Pvt Ltd Logo"><span
+                                                                        class="pull-right">Compact Homes Real Estate Agency Pvt Ltd</span></a>
                                                             </div>
                                                                                                                                                             <div class="btn-toolbar-buyer btn-toolbar pull-right" role="toolbar">
     <noscript>
                                     <div style="display: inline-block;">
-                <button type="button" id="whatsapp-advert-2415491" style="visibility: hidden"
-        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2415491"
-        data-intent="whatsapp" data-href="https://rply.link/l/i0D2vMbZvU" data-type="advert" data-id="2415491"
-        data-category="218" data-category-name="Flats &amp; Apartments for Sale"
+                <button type="button" id="whatsapp-advert-2420945" style="visibility: hidden"
+        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2420945"
+        data-intent="whatsapp" data-href="https://rply.link/l/cU4QkqKKuw" data-type="advert" data-id="2420945"
+        data-category="220" data-category-name="Flats &amp; Apartments for Rent"
         title="WhatsApp the Advertiser">
                     <img src="https://www.classifieds.co.zw/logos/whatsapp.png" width="20px" />
             </button>
@@ -5078,25 +4669,25 @@ Available is a solid and spacious...
                     </noscript>
     <div class="clearfix btn-group" style="display: flex" role="group">
                                     <div style="display: inline-block;">
-                <button type="button" id="whatsapp-advert-2415491" style="visibility: hidden"
-        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2415491"
-        data-intent="whatsapp" data-href="https://rply.link/l/i0D2vMbZvU" data-type="advert" data-id="2415491"
-        data-category="218" data-category-name="Flats &amp; Apartments for Sale"
+                <button type="button" id="whatsapp-advert-2420945" style="visibility: hidden"
+        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2420945"
+        data-intent="whatsapp" data-href="https://rply.link/l/cU4QkqKKuw" data-type="advert" data-id="2420945"
+        data-category="220" data-category-name="Flats &amp; Apartments for Rent"
         title="WhatsApp the Advertiser">
                     <i class="fa fa-whatsapp"></i>
             </button>
-     </div>                                             <button type="button" id="contact-advert-2415491"
+     </div>                                             <button type="button" id="contact-advert-2420945"
                     class="btn-modal btn btn-advert call record-interest" data-target="#login-options-modal"
-                    data-intent="call" data-type="advert" data-id="2415491"
-                    data-category="218" data-category-name="Flats &amp; Apartments for Sale"
+                    data-intent="call" data-type="advert" data-id="2420945"
+                    data-category="220" data-category-name="Flats &amp; Apartments for Rent"
                     title="Call the Advertiser">
                                             <i class="fa fa-phone"></i>
                                     </button>
                                             
-                <button type="button" id="email-advert-2415491"
+                <button type="button" id="email-advert-2420945"
                     class="btn-modal btn btn-advert email record-interest" data-target="#contact-seller"
-                    data-intent="email" data-type="advert" data-id="2415491"
-                    data-category="218" data-category-name="Flats &amp; Apartments for Sale"
+                    data-intent="email" data-type="advert" data-id="2420945"
+                    data-category="220" data-category-name="Flats &amp; Apartments for Rent"
                     title="Email the Advertiser">
                     <i class="fa fa-envelope"></i>
                 </button>
@@ -5104,7 +4695,7 @@ Available is a solid and spacious...
                                                 </div>
 </div>
 
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
+<script type="245619828e9ab26f08ed8c97-text/javascript">
     function rememberAction(action, advert) {
         localStorage.setItem('modal-action', JSON.stringify({ action, advert }))
     }
@@ -5114,10 +4705,10 @@ Available is a solid and spacious...
         </div>
 
 
-        <div class="alerts-2415491">
-        </div>                                                                                            <div id="listing-2416655"
+        <div class="alerts-2420945">
+        </div>                                                                                            <div id="listing-2415318"
     class="listing panel panel-default panel-listing border-priority--gold border-status--online"
-    data-id="2416655" data-type="advert" data-view="category"     data-category="{&quot;leaf&quot;:218,&quot;parent&quot;:16,&quot;level_1&quot;:16,&quot;level_1_ident&quot;:&quot;property\/Property&quot;,&quot;level_2&quot;:218,&quot;level_2_ident&quot;:&quot;flats-apartments-for-sale\/Flats &amp; Apartments for Sale&quot;,&quot;payable&quot;:false,&quot;points&quot;:&quot;0&quot;,&quot;price&quot;:0,&quot;title&quot;:&quot;Houses for Sale&quot;,&quot;usd_price&quot;:&quot;0&quot;}"     data-currency="{&quot;id&quot;:1,&quot;title&quot;:&quot;USD (international transactions)&quot;,&quot;iso&quot;:&quot;USD&quot;,&quot;symbol&quot;:&quot;$&quot;,&quot;prefix&quot;:&quot;USD&quot;,&quot;enabled&quot;:1,&quot;created_at&quot;:&quot;2015-12-04 19:01:40&quot;,&quot;updated_at&quot;:&quot;2020-06-25 14:17:18&quot;,&quot;display_format&quot;:&quot;#,###,###&quot;,&quot;rate&quot;:&quot;1.00&quot;,&quot;default&quot;:1}" style="position: relative;">
+    data-id="2415318" data-type="advert" data-view="category"     data-category="{&quot;leaf&quot;:220,&quot;parent&quot;:16,&quot;level_1&quot;:16,&quot;level_1_ident&quot;:&quot;property\/Property&quot;,&quot;level_2&quot;:220,&quot;level_2_ident&quot;:&quot;flats-apartments-for-rent\/Flats &amp; Apartments for Rent&quot;,&quot;payable&quot;:false,&quot;points&quot;:&quot;0&quot;,&quot;price&quot;:0,&quot;title&quot;:&quot;Houses for Sale&quot;,&quot;usd_price&quot;:&quot;0&quot;}"     data-currency="{&quot;id&quot;:1,&quot;title&quot;:&quot;USD (international transactions)&quot;,&quot;iso&quot;:&quot;USD&quot;,&quot;symbol&quot;:&quot;$&quot;,&quot;prefix&quot;:&quot;USD&quot;,&quot;enabled&quot;:1,&quot;created_at&quot;:&quot;2015-12-04 19:01:40&quot;,&quot;updated_at&quot;:&quot;2020-06-25 14:17:18&quot;,&quot;display_format&quot;:&quot;#,###,###&quot;,&quot;rate&quot;:&quot;1.00&quot;,&quot;default&quot;:1}" style="position: relative;">
 
         <div class="panel-body">
 
@@ -5127,37 +4718,37 @@ Available is a solid and spacious...
         
                                                 <div class="gallery">
     
-    <div id="gallery-2416655" class="carousel slide" data-ride="carousel" data-images="[&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/marlborough-flat-apartment-2416655\&quot; aria-label=\&quot;Marlborough - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/291\/067\/medium\/image-1.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Marlborough - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/marlborough-flat-apartment-2416655\&quot; aria-label=\&quot;Marlborough - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/291\/068\/medium\/image-2.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Marlborough - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/marlborough-flat-apartment-2416655\&quot; aria-label=\&quot;Marlborough - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/291\/069\/medium\/image-3.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Marlborough - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/marlborough-flat-apartment-2416655\&quot; aria-label=\&quot;Marlborough - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/291\/070\/medium\/image-4.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Marlborough - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/marlborough-flat-apartment-2416655\&quot; aria-label=\&quot;Marlborough - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/291\/071\/medium\/image-5.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Marlborough - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/marlborough-flat-apartment-2416655\&quot; aria-label=\&quot;Marlborough - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/291\/072\/medium\/image-6.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Marlborough - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/marlborough-flat-apartment-2416655\&quot; aria-label=\&quot;Marlborough - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/291\/073\/medium\/image-7.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Marlborough - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/marlborough-flat-apartment-2416655\&quot; aria-label=\&quot;Marlborough - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/291\/074\/medium\/image-8.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Marlborough - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/marlborough-flat-apartment-2416655\&quot; aria-label=\&quot;Marlborough - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/291\/075\/medium\/image-9.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Marlborough - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/marlborough-flat-apartment-2416655\&quot; aria-label=\&quot;Marlborough - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/291\/076\/medium\/image-10.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Marlborough - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/marlborough-flat-apartment-2416655\&quot; aria-label=\&quot;Marlborough - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/291\/077\/medium\/image-11.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Marlborough - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/marlborough-flat-apartment-2416655\&quot; aria-label=\&quot;Marlborough - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/291\/078\/medium\/image-12.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Marlborough - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/marlborough-flat-apartment-2416655\&quot; aria-label=\&quot;Marlborough - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/291\/079\/medium\/image-13.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Marlborough - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/marlborough-flat-apartment-2416655\&quot; aria-label=\&quot;Marlborough - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/291\/080\/medium\/image-14.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Marlborough - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/marlborough-flat-apartment-2416655\&quot; aria-label=\&quot;Marlborough - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/291\/081\/medium\/image-15.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Marlborough - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/marlborough-flat-apartment-2416655\&quot; aria-label=\&quot;Marlborough - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/291\/082\/medium\/image-16.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Marlborough - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/marlborough-flat-apartment-2416655\&quot; aria-label=\&quot;Marlborough - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/291\/083\/medium\/image-17.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Marlborough - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/marlborough-flat-apartment-2416655\&quot; aria-label=\&quot;Marlborough - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/291\/084\/medium\/image-18.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Marlborough - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/marlborough-flat-apartment-2416655\&quot; aria-label=\&quot;Marlborough - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/291\/085\/medium\/image-19.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Marlborough - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;div class='descrip' &gt;Ref.: SYR247192\r\nFOR SALE | Luxury Smart Homes in Marlborough, Harare\nAn exceptional investment opportunity to own one of 8 exclusive smart homes currently under construction, strategically located along Harare Drive in Marlborough \u2014 one of Harare\u2019s most sought-after residential addresses.\nThese modern 4-bedroom duplex flats are thoughtfully designed for contemporary family living, featuring 3 spacious ensuite bedrooms, offering both privacy and comfort.\nProperty Features:\n\u2022 4-bedroom duplex design\n\u2022 3 bedrooms with ensuites\n\u2022 Spacious open-plan lounge and modern kitchen\n\u2022 5kVA solar backup system for uninterrupted power supply\n\u2022 Prolific borehole &amp;hellip;&lt;\/div&gt;&quot;]">
+    <div id="gallery-2415318" class="carousel slide" data-ride="carousel" data-images="[&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-garden-flat-2415318\&quot; aria-label=\&quot;Highlands - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/290\/259\/medium\/image-1.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-garden-flat-2415318\&quot; aria-label=\&quot;Highlands - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/290\/260\/medium\/image-2.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-garden-flat-2415318\&quot; aria-label=\&quot;Highlands - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/290\/261\/medium\/image-3.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-garden-flat-2415318\&quot; aria-label=\&quot;Highlands - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/290\/262\/medium\/image-4.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-garden-flat-2415318\&quot; aria-label=\&quot;Highlands - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/290\/263\/medium\/image-5.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-garden-flat-2415318\&quot; aria-label=\&quot;Highlands - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/290\/264\/medium\/image-6.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-garden-flat-2415318\&quot; aria-label=\&quot;Highlands - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/290\/265\/medium\/image-7.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-garden-flat-2415318\&quot; aria-label=\&quot;Highlands - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/290\/266\/medium\/image-8.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-garden-flat-2415318\&quot; aria-label=\&quot;Highlands - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/290\/267\/medium\/image-9.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-garden-flat-2415318\&quot; aria-label=\&quot;Highlands - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/290\/268\/medium\/image-10.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-garden-flat-2415318\&quot; aria-label=\&quot;Highlands - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/290\/269\/medium\/image-11.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-garden-flat-2415318\&quot; aria-label=\&quot;Highlands - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/290\/270\/medium\/image-12.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-garden-flat-2415318\&quot; aria-label=\&quot;Highlands - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/290\/271\/medium\/image-13.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-garden-flat-2415318\&quot; aria-label=\&quot;Highlands - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/290\/272\/medium\/image-14.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-garden-flat-2415318\&quot; aria-label=\&quot;Highlands - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/290\/273\/medium\/image-15.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-garden-flat-2415318\&quot; aria-label=\&quot;Highlands - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/290\/274\/medium\/image-16.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-garden-flat-2415318\&quot; aria-label=\&quot;Highlands - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/290\/275\/medium\/image-17.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-garden-flat-2415318\&quot; aria-label=\&quot;Highlands - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/290\/276\/medium\/image-18.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/highlands-garden-flat-2415318\&quot; aria-label=\&quot;Highlands - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/290\/277\/medium\/image-19.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Highlands - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;div class='descrip' &gt;Ref.: HTNP246665\r\nCharming fully furnished 3-bedroom, 2-bath garden flat in Highlands, Harare North . Bright, neutrally painted bedrooms feature quality double beds, built-in wardrobes with mirrored doors and bedside tables, offering immediate move-in comfort. The family bathroom is light-filled with a full bathtub and practical fittings, while tiled floors and tasteful curtains give the apartment a clean, modern feel.\n\nStep outside to your private garden with a covered patio and outdoor seating \u2014 perfect for morning coffee or small alfresco gatherings. Residents also enjoy access to a communal swimming pool for relaxation and exercise, and a reliable borehole&amp;hellip;&lt;\/div&gt;&quot;]">
                             <div class="carousel-inner " role="listbox">
                 <div class="carousel-item active" data-index="0">
 
-                            <a class="image" rel="" href="https://www.classifieds.co.zw/listings/marlborough-flat-apartment-2416655" aria-label="Marlborough - Flat & Apartment"><img src="/storage/App/Models/Attachment/files/011/291/067/medium/image-1.webp" class="img-responsive center-block img-max-width " alt="Marlborough - Flat & Apartment"  loading="lazy"/></a>
+                            <a class="image" rel="" href="https://www.classifieds.co.zw/listings/highlands-garden-flat-2415318" aria-label="Highlands - Garden Flat"><img src="/storage/App/Models/Attachment/files/011/290/259/medium/image-1.webp" class="img-responsive center-block img-max-width " alt="Highlands - Garden Flat"  loading="lazy"/></a>
             
         </div>
     </div>
 
     <a class="carousel-control left carousel-control-prev"
-        href="#gallery-2416655" role="button" data-slide="prev" style="z-index:10">
+        href="#gallery-2415318" role="button" data-slide="prev" style="z-index:10">
         <span class="glyphicon carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">&laquo; Previous</span>
     </a>
 
     <a class="carousel-control right carousel-control-next"
-        href="#gallery-2416655" role="button" data-slide="next" style="z-index:10">
+        href="#gallery-2415318" role="button" data-slide="next" style="z-index:10">
         <span class="glyphicon carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next &raquo;</span>
     </a>
 </div>
 </div>
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
+<script type="245619828e9ab26f08ed8c97-text/javascript">
     var _ytdVideoIndex = "19";
 </script>
                             </div>
 
                             <div class="details col-md-7 col-sm-7 col-xs-8">
                                 <h5 class="listing-title">
-                        <a href="https://www.classifieds.co.zw/listings/marlborough-flat-apartment-2416655 ">
-                            Marlborough - Flat & Apartment</a>
+                        <a href="https://www.classifieds.co.zw/listings/highlands-garden-flat-2415318 ">
+                            Highlands - Garden Flat</a>
 
                                             </h5>
 
@@ -5166,12 +4757,12 @@ Available is a solid and spacious...
 
                                                     <div class="amount">
                                                         <div class=" pull-left usd-price-tooltip">
-                                                                                                                                                                                        $245,000
+                                                                                                                                                                                        $1,500
                                                                                                                                                                                 </div>
                                                         <div class=" pull-right local-price local-price-tooltip">
 
                                                             <span
-                                                                class="flavour"></span>
+                                                                class="flavour"> per month</span>
                                                         </div>
 
                                                     </div>
@@ -5187,162 +4778,9 @@ Available is a solid and spacious...
                         <div class="properties pull-left col-md-10">
                             
                                 <ul class="list-unstyled">
-                                                                                                                        <li class="property">4 bedrooms</li>
-                                                                                    <li class="property">3 bathrooms</li>
-                                                                                    <li class="property">400 m&sup2;</li>
-                                                                                                                                                        <li class="property">harare west</li>
-                                    
-                                    
-                                </ul>
-
-                                                    </div>
-                    </div>
-
-                    <div class="line-clamp-3">
-                                                <p>
-                            Ref.: SYR247192
-FOR SALE | Luxury Smart Homes in...
-                        </p>
-                    </div>
-
-                    <div class="seller-info">
-                                                                                                                                                                                                <div class='store-logo pull-left'>
-                                                                <a style="position: absolute;left:0;bottom:8px;"
-                                                                    href="https://www.classifieds.co.zw/sky-ryan-properties"><img src="https://www.classifieds.co.zw/storage/App/Models/Attachment/files/008/871/124/thumb/skyryan.webp" class="img-responsive" loading="lazy" alt="Sky Ryan Properties Logo"><span
-                                                                        class="pull-right">Sky Ryan Properties</span></a>
-                                                            </div>
-                                                                                                                                                            <div class="btn-toolbar-buyer btn-toolbar pull-right" role="toolbar">
-    <noscript>
-                                    <div style="display: inline-block;">
-                <button type="button" id="whatsapp-advert-2416655" style="visibility: hidden"
-        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2416655"
-        data-intent="whatsapp" data-href="https://rply.link/l/DGd8NSUobi" data-type="advert" data-id="2416655"
-        data-category="218" data-category-name="Flats &amp; Apartments for Sale"
-        title="WhatsApp the Advertiser">
-                    <img src="https://www.classifieds.co.zw/logos/whatsapp.png" width="20px" />
-            </button>
-     </div>                                         <a rel="nofollow" class="btn pull-left" style="margin-left:0px;" href="#"
-                title="Call the Advertiser">
-                                    <i class="fa fa-phone"></i>
-                            </a>
-                            <a rel="nofollow" class="btn pull-left" style="margin-left:0px;" href="#"><i
-                    class="fa fa-envelope"></i>
-            </a>
-                    </noscript>
-    <div class="clearfix btn-group" style="display: flex" role="group">
-                                    <div style="display: inline-block;">
-                <button type="button" id="whatsapp-advert-2416655" style="visibility: hidden"
-        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2416655"
-        data-intent="whatsapp" data-href="https://rply.link/l/DGd8NSUobi" data-type="advert" data-id="2416655"
-        data-category="218" data-category-name="Flats &amp; Apartments for Sale"
-        title="WhatsApp the Advertiser">
-                    <i class="fa fa-whatsapp"></i>
-            </button>
-     </div>                                             <button type="button" id="contact-advert-2416655"
-                    class="btn-modal btn btn-advert call record-interest" data-target="#login-options-modal"
-                    data-intent="call" data-type="advert" data-id="2416655"
-                    data-category="218" data-category-name="Flats &amp; Apartments for Sale"
-                    title="Call the Advertiser">
-                                            <i class="fa fa-phone"></i>
-                                    </button>
-                                            
-                <button type="button" id="email-advert-2416655"
-                    class="btn-modal btn btn-advert email record-interest" data-target="#contact-seller"
-                    data-intent="email" data-type="advert" data-id="2416655"
-                    data-category="218" data-category-name="Flats &amp; Apartments for Sale"
-                    title="Email the Advertiser">
-                    <i class="fa fa-envelope"></i>
-                </button>
-                
-                                                </div>
-</div>
-
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
-    function rememberAction(action, advert) {
-        localStorage.setItem('modal-action', JSON.stringify({ action, advert }))
-    }
-</script>                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="alerts-2416655">
-        </div>                                                                                            <div id="listing-2421938"
-    class="listing panel panel-default panel-listing border-priority--gold border-status--online"
-    data-id="2421938" data-type="advert" data-view="category"     data-category="{&quot;leaf&quot;:218,&quot;parent&quot;:16,&quot;level_1&quot;:16,&quot;level_1_ident&quot;:&quot;property\/Property&quot;,&quot;level_2&quot;:218,&quot;level_2_ident&quot;:&quot;flats-apartments-for-sale\/Flats &amp; Apartments for Sale&quot;,&quot;payable&quot;:false,&quot;points&quot;:&quot;0&quot;,&quot;price&quot;:0,&quot;title&quot;:&quot;Houses for Sale&quot;,&quot;usd_price&quot;:&quot;0&quot;}"     data-currency="{&quot;id&quot;:1,&quot;title&quot;:&quot;USD (international transactions)&quot;,&quot;iso&quot;:&quot;USD&quot;,&quot;symbol&quot;:&quot;$&quot;,&quot;prefix&quot;:&quot;USD&quot;,&quot;enabled&quot;:1,&quot;created_at&quot;:&quot;2015-12-04 19:01:40&quot;,&quot;updated_at&quot;:&quot;2020-06-25 14:17:18&quot;,&quot;display_format&quot;:&quot;#,###,###&quot;,&quot;rate&quot;:&quot;1.00&quot;,&quot;default&quot;:1}" style="position: relative;">
-
-        <div class="panel-body">
-
-
-
-                    <div class="pull-left image col-md-5 col-sm-5 col-xs-4">
-        
-                                                <div class="gallery">
-    
-    <div id="gallery-2421938" class="carousel slide" data-ride="carousel" data-images="[&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/the-grange-flat-apartment-2421938\&quot; aria-label=\&quot;The Grange - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/319\/355\/medium\/image-1.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;The Grange - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/the-grange-flat-apartment-2421938\&quot; aria-label=\&quot;The Grange - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/319\/356\/medium\/image-2.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;The Grange - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/the-grange-flat-apartment-2421938\&quot; aria-label=\&quot;The Grange - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/319\/357\/medium\/image-3.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;The Grange - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/the-grange-flat-apartment-2421938\&quot; aria-label=\&quot;The Grange - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/319\/358\/medium\/image-4.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;The Grange - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/the-grange-flat-apartment-2421938\&quot; aria-label=\&quot;The Grange - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/319\/359\/medium\/image-5.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;The Grange - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/the-grange-flat-apartment-2421938\&quot; aria-label=\&quot;The Grange - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/319\/360\/medium\/image-6.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;The Grange - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/the-grange-flat-apartment-2421938\&quot; aria-label=\&quot;The Grange - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/319\/361\/medium\/image-7.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;The Grange - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/the-grange-flat-apartment-2421938\&quot; aria-label=\&quot;The Grange - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/319\/362\/medium\/image-8.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;The Grange - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/the-grange-flat-apartment-2421938\&quot; aria-label=\&quot;The Grange - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/319\/363\/medium\/image-9.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;The Grange - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/the-grange-flat-apartment-2421938\&quot; aria-label=\&quot;The Grange - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/319\/364\/medium\/image-10.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;The Grange - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/the-grange-flat-apartment-2421938\&quot; aria-label=\&quot;The Grange - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/319\/365\/medium\/image-11.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;The Grange - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/the-grange-flat-apartment-2421938\&quot; aria-label=\&quot;The Grange - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/319\/366\/medium\/image-12.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;The Grange - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/the-grange-flat-apartment-2421938\&quot; aria-label=\&quot;The Grange - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/319\/367\/medium\/image-13.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;The Grange - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/the-grange-flat-apartment-2421938\&quot; aria-label=\&quot;The Grange - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/319\/368\/medium\/image-14.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;The Grange - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/the-grange-flat-apartment-2421938\&quot; aria-label=\&quot;The Grange - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/319\/369\/medium\/image-15.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;The Grange - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/the-grange-flat-apartment-2421938\&quot; aria-label=\&quot;The Grange - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/319\/370\/medium\/image-16.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;The Grange - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;div class='descrip' &gt;Ref.: VEPR249192\r\nContemporary 2-bedroom, 2-bath apartment in the sought-after Grange enclave of Harare North \u2014 100 m\u00b2 of smartly designed living on a 115 m\u00b2 stand. Set in a secure, gated pocket development (see welcoming entrance and sign), this two-storey unit features crisp white gabled facades and dark pitched roofs that give the estate a fresh, modern village feel. Images show landscaped, tree-lined communal courtyards with ample visitor and private parking bays and a guarded entry for peace of mind.\n\nThe layout provides comfortable everyday living: upstairs sleeping quarters with two bathrooms and generous natural light through large windows; downstair&amp;hellip;&lt;\/div&gt;&quot;]">
-                            <div class="carousel-inner " role="listbox">
-                <div class="carousel-item active" data-index="0">
-
-                            <a class="image" rel="" href="https://www.classifieds.co.zw/listings/the-grange-flat-apartment-2421938" aria-label="The Grange - Flat & Apartment"><img src="/storage/App/Models/Attachment/files/011/319/355/medium/image-1.webp" class="img-responsive center-block img-max-width " alt="The Grange - Flat & Apartment"  loading="lazy"/></a>
-            
-        </div>
-    </div>
-
-    <a class="carousel-control left carousel-control-prev"
-        href="#gallery-2421938" role="button" data-slide="prev" style="z-index:10">
-        <span class="glyphicon carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">&laquo; Previous</span>
-    </a>
-
-    <a class="carousel-control right carousel-control-next"
-        href="#gallery-2421938" role="button" data-slide="next" style="z-index:10">
-        <span class="glyphicon carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next &raquo;</span>
-    </a>
-</div>
-</div>
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
-    var _ytdVideoIndex = "16";
-</script>
-                            </div>
-
-                            <div class="details col-md-7 col-sm-7 col-xs-8">
-                                <h5 class="listing-title">
-                        <a href="https://www.classifieds.co.zw/listings/the-grange-flat-apartment-2421938 ">
-                            The Grange - Flat & Apartment</a>
-
-                                            </h5>
-
-                    <div class="row">
-                                                                        <div class="pull-left price">
-
-                                                    <div class="amount">
-                                                        <div class=" pull-left usd-price-tooltip">
-                                                                                                                                                                                        $205,000
-                                                                                                                                                                                </div>
-                                                        <div class=" pull-right local-price local-price-tooltip">
-
-                                                            <span
-                                                                class="flavour"></span>
-                                                        </div>
-
-                                                    </div>
-
-                                                </div>
-                                                <div class="pull-right col-md-2 favourite-right">
-                                                                                                                                                                                            <button type="button" class="favourite btn-advert btn " data-exists="false"
-                                                            title="Favourite the Advert"><i class="fa fa-heart-o"></i>
-                                                        </button>
-                                                                                                        </div>
-
-                        
-                        <div class="properties pull-left col-md-10">
-                            
-                                <ul class="list-unstyled">
-                                                                                                                        <li class="property">2 bedrooms</li>
+                                                                                                                        <li class="property">3 bedrooms</li>
                                                                                     <li class="property">2 bathrooms</li>
-                                                                                    <li class="property">115 m&sup2;</li>
+                                                                                    <li class="property">140 m&sup2;</li>
                                                                                                                                                         <li class="property">harare north</li>
                                     
                                     
@@ -5353,24 +4791,51 @@ FOR SALE | Luxury Smart Homes in...
 
                     <div class="line-clamp-3">
                                                 <p>
-                            Ref.: VEPR249192
-Contemporary 2-bedroom, 2-bath a...
+                            Ref.: HTNP246665
+Charming fully furnished 3-bedro...
                         </p>
                     </div>
 
                     <div class="seller-info">
                                                 <div class="btn-toolbar-buyer btn-toolbar pull-right" role="toolbar">
     <noscript>
-                                                        <a rel="nofollow" class="btn pull-left" style="margin-left:0px;" href="#"><i
+                                    <div style="display: inline-block;">
+                <button type="button" id="whatsapp-advert-2415318" style="visibility: hidden"
+        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2415318"
+        data-intent="whatsapp" data-href="https://rply.link/l/reNpkZfZ5O" data-type="advert" data-id="2415318"
+        data-category="220" data-category-name="Flats &amp; Apartments for Rent"
+        title="WhatsApp the Advertiser">
+                    <img src="https://www.classifieds.co.zw/logos/whatsapp.png" width="20px" />
+            </button>
+     </div>                                         <a rel="nofollow" class="btn pull-left" style="margin-left:0px;" href="#"
+                title="Call the Advertiser">
+                                    <i class="fa fa-phone"></i>
+                            </a>
+                            <a rel="nofollow" class="btn pull-left" style="margin-left:0px;" href="#"><i
                     class="fa fa-envelope"></i>
             </a>
                     </noscript>
     <div class="clearfix btn-group" style="display: flex" role="group">
-                                                    
-                <button type="button" id="email-advert-2421938"
+                                    <div style="display: inline-block;">
+                <button type="button" id="whatsapp-advert-2415318" style="visibility: hidden"
+        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2415318"
+        data-intent="whatsapp" data-href="https://rply.link/l/reNpkZfZ5O" data-type="advert" data-id="2415318"
+        data-category="220" data-category-name="Flats &amp; Apartments for Rent"
+        title="WhatsApp the Advertiser">
+                    <i class="fa fa-whatsapp"></i>
+            </button>
+     </div>                                             <button type="button" id="contact-advert-2415318"
+                    class="btn-modal btn btn-advert call record-interest" data-target="#login-options-modal"
+                    data-intent="call" data-type="advert" data-id="2415318"
+                    data-category="220" data-category-name="Flats &amp; Apartments for Rent"
+                    title="Call the Advertiser">
+                                            <i class="fa fa-phone"></i>
+                                    </button>
+                                            
+                <button type="button" id="email-advert-2415318"
                     class="btn-modal btn btn-advert email record-interest" data-target="#contact-seller"
-                    data-intent="email" data-type="advert" data-id="2421938"
-                    data-category="218" data-category-name="Flats &amp; Apartments for Sale"
+                    data-intent="email" data-type="advert" data-id="2415318"
+                    data-category="220" data-category-name="Flats &amp; Apartments for Rent"
                     title="Email the Advertiser">
                     <i class="fa fa-envelope"></i>
                 </button>
@@ -5378,7 +4843,7 @@ Contemporary 2-bedroom, 2-bath a...
                                                 </div>
 </div>
 
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
+<script type="245619828e9ab26f08ed8c97-text/javascript">
     function rememberAction(action, advert) {
         localStorage.setItem('modal-action', JSON.stringify({ action, advert }))
     }
@@ -5388,10 +4853,10 @@ Contemporary 2-bedroom, 2-bath a...
         </div>
 
 
-        <div class="alerts-2421938">
-        </div>                                                                                            <div id="listing-2419432"
+        <div class="alerts-2415318">
+        </div>                                                                                            <div id="listing-2420983"
     class="listing panel panel-default panel-listing border-priority--gold border-status--online"
-    data-id="2419432" data-type="advert" data-view="category"     data-category="{&quot;leaf&quot;:218,&quot;parent&quot;:16,&quot;level_1&quot;:16,&quot;level_1_ident&quot;:&quot;property\/Property&quot;,&quot;level_2&quot;:218,&quot;level_2_ident&quot;:&quot;flats-apartments-for-sale\/Flats &amp; Apartments for Sale&quot;,&quot;payable&quot;:false,&quot;points&quot;:&quot;0&quot;,&quot;price&quot;:0,&quot;title&quot;:&quot;Houses for Sale&quot;,&quot;usd_price&quot;:&quot;0&quot;}"     data-currency="{&quot;id&quot;:1,&quot;title&quot;:&quot;USD (international transactions)&quot;,&quot;iso&quot;:&quot;USD&quot;,&quot;symbol&quot;:&quot;$&quot;,&quot;prefix&quot;:&quot;USD&quot;,&quot;enabled&quot;:1,&quot;created_at&quot;:&quot;2015-12-04 19:01:40&quot;,&quot;updated_at&quot;:&quot;2020-06-25 14:17:18&quot;,&quot;display_format&quot;:&quot;#,###,###&quot;,&quot;rate&quot;:&quot;1.00&quot;,&quot;default&quot;:1}" style="position: relative;">
+    data-id="2420983" data-type="advert" data-view="category"     data-category="{&quot;leaf&quot;:220,&quot;parent&quot;:16,&quot;level_1&quot;:16,&quot;level_1_ident&quot;:&quot;property\/Property&quot;,&quot;level_2&quot;:220,&quot;level_2_ident&quot;:&quot;flats-apartments-for-rent\/Flats &amp; Apartments for Rent&quot;,&quot;payable&quot;:false,&quot;points&quot;:&quot;0&quot;,&quot;price&quot;:0,&quot;title&quot;:&quot;Houses for Sale&quot;,&quot;usd_price&quot;:&quot;0&quot;}"     data-currency="{&quot;id&quot;:1,&quot;title&quot;:&quot;USD (international transactions)&quot;,&quot;iso&quot;:&quot;USD&quot;,&quot;symbol&quot;:&quot;$&quot;,&quot;prefix&quot;:&quot;USD&quot;,&quot;enabled&quot;:1,&quot;created_at&quot;:&quot;2015-12-04 19:01:40&quot;,&quot;updated_at&quot;:&quot;2020-06-25 14:17:18&quot;,&quot;display_format&quot;:&quot;#,###,###&quot;,&quot;rate&quot;:&quot;1.00&quot;,&quot;default&quot;:1}" style="position: relative;">
 
         <div class="panel-body">
 
@@ -5401,37 +4866,37 @@ Contemporary 2-bedroom, 2-bath a...
         
                                                 <div class="gallery">
     
-    <div id="gallery-2419432" class="carousel slide" data-ride="carousel" data-images="[&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2419432\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/302\/415\/medium\/image-1.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2419432\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/302\/416\/medium\/image-2.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2419432\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/302\/417\/medium\/image-3.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2419432\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/302\/418\/medium\/image-4.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2419432\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/302\/419\/medium\/image-5.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2419432\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/302\/420\/medium\/image-6.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2419432\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/302\/421\/medium\/image-7.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2419432\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/302\/422\/medium\/image-8.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2419432\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/302\/423\/medium\/image-9.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2419432\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/302\/424\/medium\/image-10.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2419432\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/302\/425\/medium\/image-11.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2419432\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/302\/426\/medium\/image-12.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2419432\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/302\/427\/medium\/image-13.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2419432\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/302\/428\/medium\/image-14.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/avenues-flat-apartment-2419432\&quot; aria-label=\&quot;Avenues - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/302\/429\/medium\/image-15.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Avenues - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;div class='descrip' &gt;Ref.: MAC248241\r\n1-Bedroom Flat, Trecarrel Court, Avenues\nAsking Price: USD $45,000\nFull Title Deeds\n\n1. Location\n - Situated in Trecarrel Court, Avenues, Harare\n - Centrally located, close to amenities (shops, schools, transport)\n\n2. Property Details\n - 1 bedroom flat on the second floor\n - Recently renovated\n - Full title deeds available\n\n3. Occupancy\n - Currently occupied by a tenant\n\n4. Features &amp; Benefits\n - Convenient location in a residential area\n - Close to city amenities and transport\n\nFor more information and viewings, kindly contact Aaron.&lt;\/div&gt;&quot;]">
+    <div id="gallery-2420983" class="carousel slide" data-ride="carousel" data-images="[&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/hogerty-hill-flat-apartment-2420983\&quot; aria-label=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/313\/525\/medium\/image-1.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/hogerty-hill-flat-apartment-2420983\&quot; aria-label=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/313\/526\/medium\/image-2.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/hogerty-hill-flat-apartment-2420983\&quot; aria-label=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/313\/527\/medium\/image-3.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/hogerty-hill-flat-apartment-2420983\&quot; aria-label=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/313\/528\/medium\/image-4.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/hogerty-hill-flat-apartment-2420983\&quot; aria-label=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/313\/529\/medium\/image-5.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/hogerty-hill-flat-apartment-2420983\&quot; aria-label=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/313\/530\/medium\/image-6.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/hogerty-hill-flat-apartment-2420983\&quot; aria-label=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/313\/531\/medium\/image-7.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/hogerty-hill-flat-apartment-2420983\&quot; aria-label=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/313\/532\/medium\/image-8.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/hogerty-hill-flat-apartment-2420983\&quot; aria-label=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/313\/533\/medium\/image-9.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/hogerty-hill-flat-apartment-2420983\&quot; aria-label=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/313\/534\/medium\/image-10.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/hogerty-hill-flat-apartment-2420983\&quot; aria-label=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/313\/535\/medium\/image-11.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/hogerty-hill-flat-apartment-2420983\&quot; aria-label=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/313\/536\/medium\/image-12.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Hogerty Hill - Flat &amp; Apartment\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;div class='descrip' &gt;Ref.: AALP248854\r\nBright, modern 3-bedroom, 2-baths townhouse for rent in desirable Hogerty Hill, Harare North \u2014 200 m\u00b2 of comfortable living. Light-filled rooms with large windows and attractive timber-look flooring create a warm, airy feel (see photos). Bedrooms feature built-in wardrobes and the main en suite offers luxurious finishes: tiled walls, a freestanding claw-foot bath and a separate shower for a spa-like experience. The fitted kitchen is practical and neat, while high, sloped ceilings add character and space. Secure, walled compound with electric gate ensures peace of mind and private access. Freshly painted, tiled bathrooms and quality fixtures &amp;hellip;&lt;\/div&gt;&quot;]">
                             <div class="carousel-inner " role="listbox">
                 <div class="carousel-item active" data-index="0">
 
-                            <a class="image" rel="" href="https://www.classifieds.co.zw/listings/avenues-flat-apartment-2419432" aria-label="Avenues - Flat & Apartment"><img src="/storage/App/Models/Attachment/files/011/302/415/medium/image-1.webp" class="img-responsive center-block img-max-width " alt="Avenues - Flat & Apartment"  loading="lazy"/></a>
+                            <a class="image" rel="" href="https://www.classifieds.co.zw/listings/hogerty-hill-flat-apartment-2420983" aria-label="Hogerty Hill - Flat & Apartment"><img src="/storage/App/Models/Attachment/files/011/313/525/medium/image-1.webp" class="img-responsive center-block img-max-width " alt="Hogerty Hill - Flat & Apartment"  loading="lazy"/></a>
             
         </div>
     </div>
 
     <a class="carousel-control left carousel-control-prev"
-        href="#gallery-2419432" role="button" data-slide="prev" style="z-index:10">
+        href="#gallery-2420983" role="button" data-slide="prev" style="z-index:10">
         <span class="glyphicon carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">&laquo; Previous</span>
     </a>
 
     <a class="carousel-control right carousel-control-next"
-        href="#gallery-2419432" role="button" data-slide="next" style="z-index:10">
+        href="#gallery-2420983" role="button" data-slide="next" style="z-index:10">
         <span class="glyphicon carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next &raquo;</span>
     </a>
 </div>
 </div>
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
-    var _ytdVideoIndex = "15";
+<script type="245619828e9ab26f08ed8c97-text/javascript">
+    var _ytdVideoIndex = "12";
 </script>
                             </div>
 
                             <div class="details col-md-7 col-sm-7 col-xs-8">
                                 <h5 class="listing-title">
-                        <a href="https://www.classifieds.co.zw/listings/avenues-flat-apartment-2419432 ">
-                            Avenues - Flat & Apartment</a>
+                        <a href="https://www.classifieds.co.zw/listings/hogerty-hill-flat-apartment-2420983 ">
+                            Hogerty Hill - Flat & Apartment</a>
 
                                             </h5>
 
@@ -5440,12 +4905,164 @@ Contemporary 2-bedroom, 2-bath a...
 
                                                     <div class="amount">
                                                         <div class=" pull-left usd-price-tooltip">
-                                                                                                                                                                                        $45,000
+                                                                                                                                                                                        $1,500
                                                                                                                                                                                 </div>
                                                         <div class=" pull-right local-price local-price-tooltip">
 
                                                             <span
-                                                                class="flavour"></span>
+                                                                class="flavour"> per month</span>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                                <div class="pull-right col-md-2 favourite-right">
+                                                                                                                                                                                            <button type="button" class="favourite btn-advert btn " data-exists="false"
+                                                            title="Favourite the Advert"><i class="fa fa-heart-o"></i>
+                                                        </button>
+                                                                                                        </div>
+
+                        
+                        <div class="properties pull-left col-md-10">
+                            
+                                <ul class="list-unstyled">
+                                                                                                                        <li class="property">3 bedrooms</li>
+                                                                                    <li class="property">2 bathrooms</li>
+                                                                                                                                                        <li class="property">harare north</li>
+                                    
+                                    
+                                </ul>
+
+                                                    </div>
+                    </div>
+
+                    <div class="line-clamp-3">
+                                                <p>
+                            Ref.: AALP248854
+Bright, modern 3-bedroom, 2-bath...
+                        </p>
+                    </div>
+
+                    <div class="seller-info">
+                                                                                                                                                                                                <div class='store-logo pull-left'>
+                                                                <a style="position: absolute;left:0;bottom:8px;"
+                                                                    href="https://www.classifieds.co.zw/alliance-properties"><img src="https://www.classifieds.co.zw/storage/App/Models/Attachment/files/011/005/637/thumb/175px x 50px ALLIANCE PROPERTIES LOGO 02 (1).webp" class="img-responsive" loading="lazy" alt="Alliance Properties Logo"><span
+                                                                        class="pull-right">Alliance Properties</span></a>
+                                                            </div>
+                                                                                                                                                            <div class="btn-toolbar-buyer btn-toolbar pull-right" role="toolbar">
+    <noscript>
+                                    <div style="display: inline-block;">
+                <button type="button" id="whatsapp-advert-2420983" style="visibility: hidden"
+        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2420983"
+        data-intent="whatsapp" data-href="https://rply.link/l/Ng37lmr1xP" data-type="advert" data-id="2420983"
+        data-category="220" data-category-name="Flats &amp; Apartments for Rent"
+        title="WhatsApp the Advertiser">
+                    <img src="https://www.classifieds.co.zw/logos/whatsapp.png" width="20px" />
+            </button>
+     </div>                                         <a rel="nofollow" class="btn pull-left" style="margin-left:0px;" href="#"
+                title="Call the Advertiser">
+                                    <i class="fa fa-phone"></i>
+                            </a>
+                            <a rel="nofollow" class="btn pull-left" style="margin-left:0px;" href="#"><i
+                    class="fa fa-envelope"></i>
+            </a>
+                    </noscript>
+    <div class="clearfix btn-group" style="display: flex" role="group">
+                                    <div style="display: inline-block;">
+                <button type="button" id="whatsapp-advert-2420983" style="visibility: hidden"
+        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2420983"
+        data-intent="whatsapp" data-href="https://rply.link/l/Ng37lmr1xP" data-type="advert" data-id="2420983"
+        data-category="220" data-category-name="Flats &amp; Apartments for Rent"
+        title="WhatsApp the Advertiser">
+                    <i class="fa fa-whatsapp"></i>
+            </button>
+     </div>                                             <button type="button" id="contact-advert-2420983"
+                    class="btn-modal btn btn-advert call record-interest" data-target="#login-options-modal"
+                    data-intent="call" data-type="advert" data-id="2420983"
+                    data-category="220" data-category-name="Flats &amp; Apartments for Rent"
+                    title="Call the Advertiser">
+                                            <i class="fa fa-phone"></i>
+                                    </button>
+                                            
+                <button type="button" id="email-advert-2420983"
+                    class="btn-modal btn btn-advert email record-interest" data-target="#contact-seller"
+                    data-intent="email" data-type="advert" data-id="2420983"
+                    data-category="220" data-category-name="Flats &amp; Apartments for Rent"
+                    title="Email the Advertiser">
+                    <i class="fa fa-envelope"></i>
+                </button>
+                
+                                                </div>
+</div>
+
+<script type="245619828e9ab26f08ed8c97-text/javascript">
+    function rememberAction(action, advert) {
+        localStorage.setItem('modal-action', JSON.stringify({ action, advert }))
+    }
+</script>                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="alerts-2420983">
+        </div>                                                                                            <div id="listing-2339323"
+    class="listing panel panel-default panel-listing border-priority--gold border-status--online"
+    data-id="2339323" data-type="advert" data-view="category"     data-category="{&quot;leaf&quot;:220,&quot;parent&quot;:16,&quot;level_1&quot;:16,&quot;level_1_ident&quot;:&quot;property\/Property&quot;,&quot;level_2&quot;:220,&quot;level_2_ident&quot;:&quot;flats-apartments-for-rent\/Flats &amp; Apartments for Rent&quot;,&quot;payable&quot;:false,&quot;points&quot;:&quot;0&quot;,&quot;price&quot;:0,&quot;title&quot;:&quot;Houses for Sale&quot;,&quot;usd_price&quot;:&quot;0&quot;}"     data-currency="{&quot;id&quot;:1,&quot;title&quot;:&quot;USD (international transactions)&quot;,&quot;iso&quot;:&quot;USD&quot;,&quot;symbol&quot;:&quot;$&quot;,&quot;prefix&quot;:&quot;USD&quot;,&quot;enabled&quot;:1,&quot;created_at&quot;:&quot;2015-12-04 19:01:40&quot;,&quot;updated_at&quot;:&quot;2020-06-25 14:17:18&quot;,&quot;display_format&quot;:&quot;#,###,###&quot;,&quot;rate&quot;:&quot;1.00&quot;,&quot;default&quot;:1}" style="position: relative;">
+
+        <div class="panel-body">
+
+
+
+                    <div class="pull-left image col-md-5 col-sm-5 col-xs-4">
+        
+                                                <div class="gallery">
+    
+    <div id="gallery-2339323" class="carousel slide" data-ride="carousel" data-images="[&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/tynwald-garden-flat-2339323\&quot; aria-label=\&quot;Tynwald - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/263\/295\/medium\/image-1.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Tynwald - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/tynwald-garden-flat-2339323\&quot; aria-label=\&quot;Tynwald - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/263\/296\/medium\/image-2.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Tynwald - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/tynwald-garden-flat-2339323\&quot; aria-label=\&quot;Tynwald - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/263\/297\/medium\/image-3.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Tynwald - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/tynwald-garden-flat-2339323\&quot; aria-label=\&quot;Tynwald - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/263\/298\/medium\/image-4.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Tynwald - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/tynwald-garden-flat-2339323\&quot; aria-label=\&quot;Tynwald - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/263\/299\/medium\/image-5.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Tynwald - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/tynwald-garden-flat-2339323\&quot; aria-label=\&quot;Tynwald - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/263\/300\/medium\/image-6.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Tynwald - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/tynwald-garden-flat-2339323\&quot; aria-label=\&quot;Tynwald - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/263\/301\/medium\/image-7.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Tynwald - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;a class=\&quot;image\&quot; rel=\&quot;\&quot; href=\&quot;https:\/\/www.classifieds.co.zw\/listings\/tynwald-garden-flat-2339323\&quot; aria-label=\&quot;Tynwald - Garden Flat\&quot;&gt;&lt;img src=\&quot;\/storage\/App\/Models\/Attachment\/files\/011\/263\/302\/medium\/image-8.webp\&quot; class=\&quot;img-responsive center-block img-max-width \&quot; alt=\&quot;Tynwald - Garden Flat\&quot;  loading=\&quot;lazy\&quot;\/&gt;&lt;\/a&gt;&quot;,&quot;&lt;div class='descrip' &gt;Ref.: RVL218030\r\nBright, secure garden flat for rent in Tynwald, Harare West ideal for a single professional or couple. As seen in the photos, the exterior is freshly painted with a covered veranda and secure double gates leading to off-street parking. The light-filled open lounge flows into a fitted kitchen with ample cupboards and counters, tiled floors and contemporary ceiling finishes. The one bedroom features built-in wardrobes and large, barred windows for safety and ventilation. The flat includes two bathrooms (main shower\/bath and a guest WC), both neatly tiled and functional. A private low-maintenance yard\/courtyard surrounds the unit and the property b&amp;hellip;&lt;\/div&gt;&quot;]">
+                            <div class="carousel-inner " role="listbox">
+                <div class="carousel-item active" data-index="0">
+
+                            <a class="image" rel="" href="https://www.classifieds.co.zw/listings/tynwald-garden-flat-2339323" aria-label="Tynwald - Garden Flat"><img src="/storage/App/Models/Attachment/files/011/263/295/medium/image-1.webp" class="img-responsive center-block img-max-width " alt="Tynwald - Garden Flat"  loading="lazy"/></a>
+            
+        </div>
+    </div>
+
+    <a class="carousel-control left carousel-control-prev"
+        href="#gallery-2339323" role="button" data-slide="prev" style="z-index:10">
+        <span class="glyphicon carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">&laquo; Previous</span>
+    </a>
+
+    <a class="carousel-control right carousel-control-next"
+        href="#gallery-2339323" role="button" data-slide="next" style="z-index:10">
+        <span class="glyphicon carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next &raquo;</span>
+    </a>
+</div>
+</div>
+<script type="245619828e9ab26f08ed8c97-text/javascript">
+    var _ytdVideoIndex = "8";
+</script>
+                            </div>
+
+                            <div class="details col-md-7 col-sm-7 col-xs-8">
+                                <h5 class="listing-title">
+                        <a href="https://www.classifieds.co.zw/listings/tynwald-garden-flat-2339323 ">
+                            Tynwald - Garden Flat</a>
+
+                                            </h5>
+
+                    <div class="row">
+                                                                        <div class="pull-left price">
+
+                                                    <div class="amount">
+                                                        <div class=" pull-left usd-price-tooltip">
+                                                                                                                                                                                        $410
+                                                                                                                                                                                </div>
+                                                        <div class=" pull-right local-price local-price-tooltip">
+
+                                                            <span
+                                                                class="flavour"> per month</span>
                                                         </div>
 
                                                     </div>
@@ -5463,8 +5080,8 @@ Contemporary 2-bedroom, 2-bath a...
                                 <ul class="list-unstyled">
                                                                                                                         <li class="property">1 bedrooms</li>
                                                                                     <li class="property">1 bathrooms</li>
-                                                                                    <li class="property">220 m&sup2;</li>
-                                                                                                                                                        <li class="property">harare cbd</li>
+                                                                                    <li class="property">300 m&sup2;</li>
+                                                                                                                                                        <li class="property">harare west</li>
                                     
                                     
                                 </ul>
@@ -5474,24 +5091,24 @@ Contemporary 2-bedroom, 2-bath a...
 
                     <div class="line-clamp-3">
                                                 <p>
-                            Ref.: MAC248241
-1-Bedroom Flat, Trecarrel Court,...
+                            Ref.: RVL218030
+Bright, secure garden flat for re...
                         </p>
                     </div>
 
                     <div class="seller-info">
                                                                                                                                                                                                 <div class='store-logo pull-left'>
                                                                 <a style="position: absolute;left:0;bottom:8px;"
-                                                                    href="https://www.classifieds.co.zw/mac-homes-real-estate"><img src="https://www.classifieds.co.zw/storage/App/Models/Attachment/files/011/295/410/thumb/Screenshot 2026-05-26 100918.webp" class="img-responsive" loading="lazy" alt="Mac Homes Real Estate Logo"><span
-                                                                        class="pull-right">Mac Homes Real Estate</span></a>
+                                                                    href="https://www.classifieds.co.zw/realtor-ville"><img src="https://www.classifieds.co.zw/storage/App/Models/Attachment/files/008/871/148/thumb/realtor 150x70.webp" class="img-responsive" loading="lazy" alt="Realtor Ville Logo"><span
+                                                                        class="pull-right">Realtor Ville</span></a>
                                                             </div>
                                                                                                                                                             <div class="btn-toolbar-buyer btn-toolbar pull-right" role="toolbar">
     <noscript>
                                     <div style="display: inline-block;">
-                <button type="button" id="whatsapp-advert-2419432" style="visibility: hidden"
-        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2419432"
-        data-intent="whatsapp" data-href="https://rply.link/l/WEHKyWAN1H" data-type="advert" data-id="2419432"
-        data-category="218" data-category-name="Flats &amp; Apartments for Sale"
+                <button type="button" id="whatsapp-advert-2339323" style="visibility: hidden"
+        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2339323"
+        data-intent="whatsapp" data-href="https://rply.link/l/CNju8q3uUa" data-type="advert" data-id="2339323"
+        data-category="220" data-category-name="Flats &amp; Apartments for Rent"
         title="WhatsApp the Advertiser">
                     <img src="https://www.classifieds.co.zw/logos/whatsapp.png" width="20px" />
             </button>
@@ -5505,25 +5122,25 @@ Contemporary 2-bedroom, 2-bath a...
                     </noscript>
     <div class="clearfix btn-group" style="display: flex" role="group">
                                     <div style="display: inline-block;">
-                <button type="button" id="whatsapp-advert-2419432" style="visibility: hidden"
-        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2419432"
-        data-intent="whatsapp" data-href="https://rply.link/l/WEHKyWAN1H" data-type="advert" data-id="2419432"
-        data-category="218" data-category-name="Flats &amp; Apartments for Sale"
+                <button type="button" id="whatsapp-advert-2339323" style="visibility: hidden"
+        class="btn-modal btn btn-advert buyer-bar__whatsapp record-interest" data-id="2339323"
+        data-intent="whatsapp" data-href="https://rply.link/l/CNju8q3uUa" data-type="advert" data-id="2339323"
+        data-category="220" data-category-name="Flats &amp; Apartments for Rent"
         title="WhatsApp the Advertiser">
                     <i class="fa fa-whatsapp"></i>
             </button>
-     </div>                                             <button type="button" id="contact-advert-2419432"
+     </div>                                             <button type="button" id="contact-advert-2339323"
                     class="btn-modal btn btn-advert call record-interest" data-target="#login-options-modal"
-                    data-intent="call" data-type="advert" data-id="2419432"
-                    data-category="218" data-category-name="Flats &amp; Apartments for Sale"
+                    data-intent="call" data-type="advert" data-id="2339323"
+                    data-category="220" data-category-name="Flats &amp; Apartments for Rent"
                     title="Call the Advertiser">
                                             <i class="fa fa-phone"></i>
                                     </button>
                                             
-                <button type="button" id="email-advert-2419432"
+                <button type="button" id="email-advert-2339323"
                     class="btn-modal btn btn-advert email record-interest" data-target="#contact-seller"
-                    data-intent="email" data-type="advert" data-id="2419432"
-                    data-category="218" data-category-name="Flats &amp; Apartments for Sale"
+                    data-intent="email" data-type="advert" data-id="2339323"
+                    data-category="220" data-category-name="Flats &amp; Apartments for Rent"
                     title="Email the Advertiser">
                     <i class="fa fa-envelope"></i>
                 </button>
@@ -5531,7 +5148,7 @@ Contemporary 2-bedroom, 2-bath a...
                                                 </div>
 </div>
 
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
+<script type="245619828e9ab26f08ed8c97-text/javascript">
     function rememberAction(action, advert) {
         localStorage.setItem('modal-action', JSON.stringify({ action, advert }))
     }
@@ -5541,10 +5158,10 @@ Contemporary 2-bedroom, 2-bath a...
         </div>
 
 
-        <div class="alerts-2419432">
+        <div class="alerts-2339323">
         </div>                                                                                                </div>
 
-            <div class="clearfix search" data-id="2028940728" style="margin-bottom: 10px">
+            <div class="clearfix search" data-id="2028950094" style="margin-bottom: 10px">
                                     <button type="button" class="btn btn-primary btn-save-search pull-right"
                         data-logged-in="false"
                         >
@@ -5555,43 +5172,43 @@ Contemporary 2-bedroom, 2-bath a...
             <div class="footer-nav">
             <ul class="pagination">
             <li class="page-item  disabled">
-                <a class="page-link" href="/zimbabwe-flats-apartments-for-sale?page=1" rel="nofollow">First</a>
+                <a class="page-link" href="/zimbabwe-flats-apartments-for-rent?page=1" rel="nofollow">First</a>
             </li>
                                                                 <li class="page-item  active">
-                        <a class="page-link" href="/zimbabwe-flats-apartments-for-sale?page=1" rel="nofollow">1</a>
+                        <a class="page-link" href="/zimbabwe-flats-apartments-for-rent?page=1" rel="nofollow">1</a>
                     </li>
                                                                                 <li class="page-item ">
-                        <a class="page-link" href="/zimbabwe-flats-apartments-for-sale?page=2" rel="nofollow">2</a>
+                        <a class="page-link" href="/zimbabwe-flats-apartments-for-rent?page=2" rel="nofollow">2</a>
                     </li>
                                                                                 <li class="page-item ">
-                        <a class="page-link" href="/zimbabwe-flats-apartments-for-sale?page=3" rel="nofollow">3</a>
+                        <a class="page-link" href="/zimbabwe-flats-apartments-for-rent?page=3" rel="nofollow">3</a>
                     </li>
                                                                                 <li class="page-item ">
-                        <a class="page-link" href="/zimbabwe-flats-apartments-for-sale?page=4" rel="nofollow">4</a>
+                        <a class="page-link" href="/zimbabwe-flats-apartments-for-rent?page=4" rel="nofollow">4</a>
                     </li>
                                                                                 <li class="page-item ">
-                        <a class="page-link" href="/zimbabwe-flats-apartments-for-sale?page=5" rel="nofollow">5</a>
+                        <a class="page-link" href="/zimbabwe-flats-apartments-for-rent?page=5" rel="nofollow">5</a>
                     </li>
                                                                                 <li class="page-item ">
-                        <a class="page-link" href="/zimbabwe-flats-apartments-for-sale?page=6" rel="nofollow">6</a>
+                        <a class="page-link" href="/zimbabwe-flats-apartments-for-rent?page=6" rel="nofollow">6</a>
                     </li>
                                                                                 <li class="page-item ">
-                        <a class="page-link" href="/zimbabwe-flats-apartments-for-sale?page=7" rel="nofollow">7</a>
+                        <a class="page-link" href="/zimbabwe-flats-apartments-for-rent?page=7" rel="nofollow">7</a>
                     </li>
                                                                                 <li class="page-item ">
-                        <a class="page-link" href="/zimbabwe-flats-apartments-for-sale?page=8" rel="nofollow">8</a>
+                        <a class="page-link" href="/zimbabwe-flats-apartments-for-rent?page=8" rel="nofollow">8</a>
                     </li>
                                                                                 <li class="page-item ">
-                        <a class="page-link" href="/zimbabwe-flats-apartments-for-sale?page=9" rel="nofollow">9</a>
+                        <a class="page-link" href="/zimbabwe-flats-apartments-for-rent?page=9" rel="nofollow">9</a>
                     </li>
                                                                                 <li class="page-item ">
-                        <a class="page-link" href="/zimbabwe-flats-apartments-for-sale?page=10" rel="nofollow">10</a>
+                        <a class="page-link" href="/zimbabwe-flats-apartments-for-rent?page=10" rel="nofollow">10</a>
                     </li>
                                                                                 <li class="page-item ">
-                        <a class="page-link" href="/zimbabwe-flats-apartments-for-sale?page=11" rel="nofollow">11</a>
+                        <a class="page-link" href="/zimbabwe-flats-apartments-for-rent?page=11" rel="nofollow">11</a>
                     </li>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="page-item ">
-                <a class="page-link" href="/zimbabwe-flats-apartments-for-sale?page=29" rel="nofollow">Last</a>
+                                                                                                                                                                                                                                                                                                                <li class="page-item ">
+                <a class="page-link" href="/zimbabwe-flats-apartments-for-rent?page=17" rel="nofollow">Last</a>
             </li>
         </ul>
     
@@ -5644,7 +5261,7 @@ id
                 </div>
                 <div class="form contact_form" style="display: none;">
                         <h5 class="title"></h5>
-                     <input id="advert_id" name="advert_id" type="hidden" value="2419432">
+                     <input id="advert_id" name="advert_id" type="hidden" value="2339323">
 <input id="email_lead" name="email_lead" type="hidden" value="0">
 <input id="lead_type" name="lead_type" type="hidden" value="">
 <input id="identifier" name="identifier" type="hidden" value="">
@@ -6140,7 +5757,7 @@ id
         </div>
 
         <div class="form-group modal-text-area">
-            <textarea id="email" class="form-control" rows="5" required name="message" cols="50">I&#039;m interested in your  ref#2419432|Avenues - Flat &amp; Apa. Please contact me on  </textarea>
+            <textarea id="email" class="form-control" rows="5" required name="message" cols="50">I&#039;m interested in your  ref#2339323|Tynwald - Garden Fla. Please contact me on  </textarea>
         </div>
         
         <div class="form-group how-to-contact">
@@ -6211,13 +5828,13 @@ id
 <div id="report-advert" class="modal fade" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form method="POST" action="https://www.classifieds.co.zw/listings/avenues-flat-apartment-2419432/report" accept-charset="UTF-8" novalidation="novalidation"><input name="_token" type="hidden" value="VNfXesVny42PBctSXpv18EvgyrNHqxMIpFOyyMTU">
+            <form method="POST" action="https://www.classifieds.co.zw/listings/tynwald-garden-flat-2339323/report" accept-charset="UTF-8" novalidation="novalidation"><input name="_token" type="hidden" value="VNfXesVny42PBctSXpv18EvgyrNHqxMIpFOyyMTU">
             <div class="modal-header">
                 <h4 class="modal-title ">Report an advert</h4>
             </div>
 
             <div class="modal-body">
-                <input name="advert_id" type="hidden" value="2419432">
+                <input name="advert_id" type="hidden" value="2339323">
 
 <div class="row">
     <div class="form-group">
@@ -6623,14 +6240,14 @@ id
         <div id="filters" class="modal fade" role="dialog" aria-labelledby="">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <form method="GET" action="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale" accept-charset="UTF-8">
+                    <form method="GET" action="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent" accept-charset="UTF-8">
                     <input id="order" name="order" type="hidden" value="default">
                     <input name="which" type="hidden" value="">
 
                     <div class="modal-header">
                         <h4 class="clearfix modal-title">
                             <div class="pull-right">
-                                <input type="button" value="RESET" class="btn btn-link" onclick="if (!window.__cfRLUnblockHandlers) return false; location='https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale'" data-cf-modified-881c9a3a08acc01de60cbf08-="" />
+                                <input type="button" value="RESET" class="btn btn-link" onclick="if (!window.__cfRLUnblockHandlers) return false; location='https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent'" data-cf-modified-245619828e9ab26f08ed8c97-="" />
                                 <button style="margin-left:40px;" type="button" class="close" data-dismiss="modal"
                                     aria-label="Close"><span aria-hidden="true">&times;</span></button>
                             </div>
@@ -6690,12 +6307,12 @@ id
             <ul style="margin-left: 0px" class="list-unstyled">
             <li>
                                                                     <a href="https://www.classifieds.co.zw/zimbabwe-property" rel="nofollow">Property</a>
-                                            <span class="pull-right badge">580</span>
+                                            <span class="pull-right badge">323</span>
 
                 <ul style="margin-left: 6px" class="list-unstyled">
             <li>
-                    <strong>Flats &amp; Apartments for Sale</strong>
-                            <span class="pull-right badge">580</span>
+                    <strong>Flats &amp; Apartments for Rent</strong>
+                            <span class="pull-right badge">323</span>
 
             </li>
     </ul>
@@ -6721,16 +6338,16 @@ id
                                                 
                             <ul style="margin-left: 6px" class="list-unstyled">
                                                                                             <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/harare" class="route0" rel="nofollow">Harare</a>
+                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent/harare" class="route0" rel="nofollow">Harare</a>
                                                 <span class="pull-right">
-                                                        <span class="badge">530</span>
+                                                        <span class="badge">316</span>
                         </span>
 
                                                     <ul style="margin-left: 12px" class="list-unstyled">
                                                                                             <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/harare-north" class="route0" rel="nofollow">Harare North</a>
+                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent/harare-north" class="route0" rel="nofollow">Harare North</a>
                                                 <span class="pull-right">
-                                                        <span class="badge">167</span>
+                                                        <span class="badge">132</span>
                         </span>
 
                                                     <ul style="margin-left: 18px" class="list-unstyled">
@@ -6739,9 +6356,9 @@ id
     </ul>
                                             </li>
                                                                                                 <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/harare-west" class="route0" rel="nofollow">Harare West</a>
+                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent/harare-west" class="route0" rel="nofollow">Harare West</a>
                                                 <span class="pull-right">
-                                                        <span class="badge">159</span>
+                                                        <span class="badge">75</span>
                         </span>
 
                                                     <ul style="margin-left: 18px" class="list-unstyled">
@@ -6750,9 +6367,9 @@ id
     </ul>
                                             </li>
                                                                                                 <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/harare-cbd" class="route0" rel="nofollow">Harare Cbd</a>
+                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent/harare-cbd" class="route0" rel="nofollow">Harare Cbd</a>
                                                 <span class="pull-right">
-                                                        <span class="badge">94</span>
+                                                        <span class="badge">55</span>
                         </span>
 
                                                     <ul style="margin-left: 18px" class="list-unstyled">
@@ -6761,9 +6378,9 @@ id
     </ul>
                                             </li>
                                                                                                 <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/harare-east" class="route0" rel="nofollow">Harare East</a>
+                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent/harare-east" class="route0" rel="nofollow">Harare East</a>
                                                 <span class="pull-right">
-                                                        <span class="badge">62</span>
+                                                        <span class="badge">35</span>
                         </span>
 
                                                     <ul style="margin-left: 18px" class="list-unstyled">
@@ -6772,9 +6389,9 @@ id
     </ul>
                                             </li>
                                                                                                 <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/harare-south" class="route0" rel="nofollow">Harare South</a>
+                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent/harare-south" class="route0" rel="nofollow">Harare South</a>
                                                 <span class="pull-right">
-                                                        <span class="badge">42</span>
+                                                        <span class="badge">13</span>
                         </span>
 
                                                     <ul style="margin-left: 18px" class="list-unstyled">
@@ -6783,7 +6400,7 @@ id
     </ul>
                                             </li>
                                                                                                 <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/harare-high-density" class="route0" rel="nofollow">Harare High Density</a>
+                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent/harare-high-density" class="route0" rel="nofollow">Harare High Density</a>
                                                 <span class="pull-right">
                                                         <span class="badge">6</span>
                         </span>
@@ -6796,47 +6413,14 @@ id
                                         </ul>
                                             </li>
                                                                                                 <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/bulawayo" class="route0" rel="nofollow">Bulawayo</a>
+                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent/mashonaland-east" class="route0" rel="nofollow">Mashonaland East</a>
                                                 <span class="pull-right">
-                                                        <span class="badge">26</span>
+                                                        <span class="badge">4</span>
                         </span>
 
                                                     <ul style="margin-left: 12px" class="list-unstyled">
                                                                                             <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/bulawayo-cbd-industrial" class="route0" rel="nofollow">Bulawayo Cbd Industrial</a>
-                                                <span class="pull-right">
-                                                        <span class="badge">9</span>
-                        </span>
-
-                                                    <ul style="margin-left: 18px" class="list-unstyled">
-            <ul class="suburbs list-unstyled">
-                    </ul>
-    </ul>
-                                            </li>
-                                                                                                <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/bulawayo-south" class="route0" rel="nofollow">Bulawayo South</a>
-                                                <span class="pull-right">
-                                                        <span class="badge">8</span>
-                        </span>
-
-                                                    <ul style="margin-left: 18px" class="list-unstyled">
-            <ul class="suburbs list-unstyled">
-                    </ul>
-    </ul>
-                                            </li>
-                                                                                                <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/bulawayo-east" class="route0" rel="nofollow">Bulawayo East</a>
-                                                <span class="pull-right">
-                                                        <span class="badge">5</span>
-                        </span>
-
-                                                    <ul style="margin-left: 18px" class="list-unstyled">
-            <ul class="suburbs list-unstyled">
-                    </ul>
-    </ul>
-                                            </li>
-                                                                                                <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/bulawayo-north" class="route0" rel="nofollow">Bulawayo North</a>
+                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent/ruwa" class="route0" rel="nofollow">Ruwa</a>
                                                 <span class="pull-right">
                                                         <span class="badge">4</span>
                         </span>
@@ -6849,36 +6433,14 @@ id
                                         </ul>
                                             </li>
                                                                                                 <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/mashonaland-east" class="route0" rel="nofollow">Mashonaland East</a>
+                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent/bulawayo" class="route0" rel="nofollow">Bulawayo</a>
                                                 <span class="pull-right">
-                                                        <span class="badge">8</span>
+                                                        <span class="badge">1</span>
                         </span>
 
                                                     <ul style="margin-left: 12px" class="list-unstyled">
                                                                                             <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/ruwa" class="route0" rel="nofollow">Ruwa</a>
-                                                <span class="pull-right">
-                                                        <span class="badge">4</span>
-                        </span>
-
-                                                    <ul style="margin-left: 18px" class="list-unstyled">
-            <ul class="suburbs list-unstyled">
-                    </ul>
-    </ul>
-                                            </li>
-                                                                                                <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/marondera" class="route0" rel="nofollow">Marondera</a>
-                                                <span class="pull-right">
-                                                        <span class="badge">3</span>
-                        </span>
-
-                                                    <ul style="margin-left: 18px" class="list-unstyled">
-            <ul class="suburbs list-unstyled">
-                    </ul>
-    </ul>
-                                            </li>
-                                                                                                <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/chitungwiza" class="route0" rel="nofollow">Chitungwiza</a>
+                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent/bulawayo-cbd-industrial" class="route0" rel="nofollow">Bulawayo Cbd Industrial</a>
                                                 <span class="pull-right">
                                                         <span class="badge">1</span>
                         </span>
@@ -6891,56 +6453,14 @@ id
                                         </ul>
                                             </li>
                                                                                                 <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/matabeleland-north" class="route0" rel="nofollow">Matabeleland North</a>
-                                                <span class="pull-right">
-                                                        <span class="badge">6</span>
-                        </span>
-
-                                                    <ul style="margin-left: 12px" class="list-unstyled">
-                                                                                            <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/victoria-falls" class="route0" rel="nofollow">Victoria Falls</a>
-                                                <span class="pull-right">
-                                                        <span class="badge">6</span>
-                        </span>
-
-                                                    <ul style="margin-left: 18px" class="list-unstyled">
-            <ul class="suburbs list-unstyled">
-                    </ul>
-    </ul>
-                                            </li>
-                                        </ul>
-                                            </li>
-                                                                                                <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/mashonaland-west" class="route0" rel="nofollow">Mashonaland West</a>
-                                                <span class="pull-right">
-                                                        <span class="badge">4</span>
-                        </span>
-
-                                                    <ul style="margin-left: 12px" class="list-unstyled">
-                                                                                            <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/norton" class="route0" rel="nofollow">Norton</a>
-                                                <span class="pull-right">
-                                                        <span class="badge">2</span>
-                        </span>
-
-                                                    <ul style="margin-left: 18px" class="list-unstyled">
-            <ul class="suburbs list-unstyled">
-                    </ul>
-    </ul>
-                                            </li>
-                                                                                                <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/chegutu" class="route0" rel="nofollow">Chegutu</a>
+                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent/manicaland" class="route0" rel="nofollow">Manicaland</a>
                                                 <span class="pull-right">
                                                         <span class="badge">1</span>
                         </span>
 
-                                                    <ul style="margin-left: 18px" class="list-unstyled">
-            <ul class="suburbs list-unstyled">
-                    </ul>
-    </ul>
-                                            </li>
-                                                                                                <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/chinhoyi" class="route0" rel="nofollow">Chinhoyi</a>
+                                                    <ul style="margin-left: 12px" class="list-unstyled">
+                                                                                            <li>
+                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent/mutare" class="route0" rel="nofollow">Mutare</a>
                                                 <span class="pull-right">
                                                         <span class="badge">1</span>
                         </span>
@@ -6953,54 +6473,14 @@ id
                                         </ul>
                                             </li>
                                                                                                 <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/midlands-province" class="route0" rel="nofollow">Midlands Province</a>
-                                                <span class="pull-right">
-                                                        <span class="badge">3</span>
-                        </span>
-
-                                                    <ul style="margin-left: 12px" class="list-unstyled">
-                                                                                            <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/gweru" class="route0" rel="nofollow">Gweru</a>
-                                                <span class="pull-right">
-                                                        <span class="badge">3</span>
-                        </span>
-
-                                                    <ul style="margin-left: 18px" class="list-unstyled">
-            <ul class="suburbs list-unstyled">
-                    </ul>
-    </ul>
-                                            </li>
-                                        </ul>
-                                            </li>
-                                                                                                <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/manicaland" class="route0" rel="nofollow">Manicaland</a>
-                                                <span class="pull-right">
-                                                        <span class="badge">2</span>
-                        </span>
-
-                                                    <ul style="margin-left: 12px" class="list-unstyled">
-                                                                                            <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/mutare" class="route0" rel="nofollow">Mutare</a>
-                                                <span class="pull-right">
-                                                        <span class="badge">2</span>
-                        </span>
-
-                                                    <ul style="margin-left: 18px" class="list-unstyled">
-            <ul class="suburbs list-unstyled">
-                    </ul>
-    </ul>
-                                            </li>
-                                        </ul>
-                                            </li>
-                                                                                                <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/masvingo-province" class="route0" rel="nofollow">Masvingo Province</a>
+                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent/midlands-province" class="route0" rel="nofollow">Midlands Province</a>
                                                 <span class="pull-right">
                                                         <span class="badge">1</span>
                         </span>
 
                                                     <ul style="margin-left: 12px" class="list-unstyled">
                                                                                             <li>
-                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale/chiredzi" class="route0" rel="nofollow">Chiredzi</a>
+                                                    <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent/gweru" class="route0" rel="nofollow">Gweru</a>
                                                 <span class="pull-right">
                                                         <span class="badge">1</span>
                         </span>
@@ -7040,53 +6520,26 @@ id
                     <div class="panel-body">
                         <ul class="list-unstyled">
                 <li >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bedrooms=3" rel="nofollow" class="filter select">3</a> <span class="pull-right badge">210</span>
+            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent?bedrooms=3" rel="nofollow" class="filter select">3</a> <span class="pull-right badge">143</span>
         </li>
                     <li >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bedrooms=2" rel="nofollow" class="filter select">2</a> <span class="pull-right badge">206</span>
+            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent?bedrooms=2" rel="nofollow" class="filter select">2</a> <span class="pull-right badge">126</span>
         </li>
                     <li >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bedrooms=4" rel="nofollow" class="filter select">4</a> <span class="pull-right badge">94</span>
+            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent?bedrooms=1" rel="nofollow" class="filter select">1</a> <span class="pull-right badge">30</span>
         </li>
                     <li >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bedrooms=1" rel="nofollow" class="filter select">1</a> <span class="pull-right badge">42</span>
+            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent?bedrooms=4" rel="nofollow" class="filter select">4</a> <span class="pull-right badge">18</span>
         </li>
                     <li >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bedrooms=5" rel="nofollow" class="filter select">5</a> <span class="pull-right badge">9</span>
+            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent?bedrooms=5" rel="nofollow" class="filter select">5</a> <span class="pull-right badge">2</span>
         </li>
                     <li >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bedrooms=6" rel="nofollow" class="filter select">6</a> <span class="pull-right badge">4</span>
-        </li>
-                    <li >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bedrooms=16" rel="nofollow" class="filter select">16</a> <span class="pull-right badge">2</span>
-        </li>
-                    <li  class="hidden" >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bedrooms=30" rel="nofollow" class="filter select">30</a> <span class="pull-right badge">2</span>
-        </li>
-                    <li  class="hidden" >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bedrooms=36" rel="nofollow" class="filter select">36</a> <span class="pull-right badge">2</span>
-        </li>
-                    <li  class="hidden" >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bedrooms=8" rel="nofollow" class="filter select">8</a> <span class="pull-right badge">1</span>
-        </li>
-                    <li  class="hidden" >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bedrooms=10" rel="nofollow" class="filter select">10</a> <span class="pull-right badge">1</span>
-        </li>
-                    <li  class="hidden" >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bedrooms=12" rel="nofollow" class="filter select">12</a> <span class="pull-right badge">1</span>
-        </li>
-                    <li  class="hidden" >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bedrooms=24" rel="nofollow" class="filter select">24</a> <span class="pull-right badge">1</span>
-        </li>
-                    <li  class="hidden" >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bedrooms=29" rel="nofollow" class="filter select">29</a> <span class="pull-right badge">1</span>
-        </li>
-                    <li  class="hidden" >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bedrooms=250000" rel="nofollow" class="filter select">250000</a> <span class="pull-right badge">1</span>
+            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent?bedrooms=18" rel="nofollow" class="filter select">18</a> <span class="pull-right badge">1</span>
         </li>
             </ul>
 
-    <button type="button" class="btn-show-more btn btn-link btn-block">Show More</button>
+    <button type="button" class="btn btn-link btn-block" onclick="if (!window.__cfRLUnblockHandlers) return false; location='https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent'" data-cf-modified-245619828e9ab26f08ed8c97-="">Show All</button>
                     </div>
                 </div>
             </div>
@@ -7103,53 +6556,29 @@ id
                     <div class="panel-body">
                         <ul class="list-unstyled">
                 <li >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bathrooms=2" rel="nofollow" class="filter select">2</a> <span class="pull-right badge">222</span>
+            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent?bathrooms=1" rel="nofollow" class="filter select">1</a> <span class="pull-right badge">136</span>
         </li>
                     <li >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bathrooms=1" rel="nofollow" class="filter select">1</a> <span class="pull-right badge">185</span>
+            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent?bathrooms=2" rel="nofollow" class="filter select">2</a> <span class="pull-right badge">122</span>
         </li>
                     <li >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bathrooms=3" rel="nofollow" class="filter select">3</a> <span class="pull-right badge">72</span>
+            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent?bathrooms=3" rel="nofollow" class="filter select">3</a> <span class="pull-right badge">26</span>
         </li>
                     <li >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bathrooms=4" rel="nofollow" class="filter select">4</a> <span class="pull-right badge">22</span>
+            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent?bathrooms=5" rel="nofollow" class="filter select">5</a> <span class="pull-right badge">2</span>
         </li>
                     <li >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bathrooms=5" rel="nofollow" class="filter select">5</a> <span class="pull-right badge">5</span>
+            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent?bathrooms=4" rel="nofollow" class="filter select">4</a> <span class="pull-right badge">1</span>
         </li>
                     <li >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bathrooms=6" rel="nofollow" class="filter select">6</a> <span class="pull-right badge">4</span>
+            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent?bathrooms=12" rel="nofollow" class="filter select">12</a> <span class="pull-right badge">1</span>
         </li>
                     <li >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bathrooms=8" rel="nofollow" class="filter select">8</a> <span class="pull-right badge">1</span>
-        </li>
-                    <li  class="hidden" >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bathrooms=10" rel="nofollow" class="filter select">10</a> <span class="pull-right badge">1</span>
-        </li>
-                    <li  class="hidden" >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bathrooms=12" rel="nofollow" class="filter select">12</a> <span class="pull-right badge">1</span>
-        </li>
-                    <li  class="hidden" >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bathrooms=15" rel="nofollow" class="filter select">15</a> <span class="pull-right badge">1</span>
-        </li>
-                    <li  class="hidden" >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bathrooms=16" rel="nofollow" class="filter select">16</a> <span class="pull-right badge">1</span>
-        </li>
-                    <li  class="hidden" >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bathrooms=17" rel="nofollow" class="filter select">17</a> <span class="pull-right badge">1</span>
-        </li>
-                    <li  class="hidden" >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bathrooms=18" rel="nofollow" class="filter select">18</a> <span class="pull-right badge">1</span>
-        </li>
-                    <li  class="hidden" >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bathrooms=24" rel="nofollow" class="filter select">24</a> <span class="pull-right badge">1</span>
-        </li>
-                    <li  class="hidden" >
-            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale?bathrooms=30" rel="nofollow" class="filter select">30</a> <span class="pull-right badge">1</span>
+            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent?bathrooms=15" rel="nofollow" class="filter select">15</a> <span class="pull-right badge">1</span>
         </li>
             </ul>
 
-    <button type="button" class="btn-show-more btn btn-link btn-block">Show More</button>
+    <button type="button" class="btn btn-link btn-block" onclick="if (!window.__cfRLUnblockHandlers) return false; location='https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent'" data-cf-modified-245619828e9ab26f08ed8c97-="">Show All</button>
                     </div>
                 </div>
             </div>
@@ -7176,7 +6605,49 @@ id
                     </div>
                 </div>
             </div>
-                                    </div>
+                            
+                    <div class="panel panel-default panel-filter">
+                <div class="panel-heading" role="tab" id="label-staff-quarters">
+                    <h4 class="panel-title">
+                        <a class=&quot;collapsed&quot; role="button" data-toggle="collapse" href="#filter-staff-quarters" aria-expanded="false" aria-controls="filter-staff-quarters">
+                            Staff Quarters
+                        </a>
+                    </h4>
+                </div>
+                <div id="filter-staff-quarters" class="panel-collapse collapse " role="tabpanel" aria-labelledby="label-staff-quarters">
+                    <div class="panel-body">
+                        <ul class="list-unstyled">
+                <li >
+            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent?staff-quarters=on" rel="nofollow" class="filter select">on</a> <span class="pull-right badge">2</span>
+        </li>
+            </ul>
+
+    <button type="button" class="btn btn-link btn-block" onclick="if (!window.__cfRLUnblockHandlers) return false; location='https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent'" data-cf-modified-245619828e9ab26f08ed8c97-="">Show All</button>
+                    </div>
+                </div>
+            </div>
+                    
+                    <div class="panel panel-default panel-filter">
+                <div class="panel-heading" role="tab" id="label-garages">
+                    <h4 class="panel-title">
+                        <a class=&quot;collapsed&quot; role="button" data-toggle="collapse" href="#filter-garages" aria-expanded="false" aria-controls="filter-garages">
+                            Garages
+                        </a>
+                    </h4>
+                </div>
+                <div id="filter-garages" class="panel-collapse collapse " role="tabpanel" aria-labelledby="label-garages">
+                    <div class="panel-body">
+                        <ul class="list-unstyled">
+                <li >
+            <a href="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent?garages=4" rel="nofollow" class="filter select">4</a> <span class="pull-right badge">1</span>
+        </li>
+            </ul>
+
+    <button type="button" class="btn btn-link btn-block" onclick="if (!window.__cfRLUnblockHandlers) return false; location='https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent'" data-cf-modified-245619828e9ab26f08ed8c97-="">Show All</button>
+                    </div>
+                </div>
+            </div>
+            </div>
 
 
 
@@ -7333,7 +6804,7 @@ id
                             </div>
 
                             <form method="POST" action="https://www.classifieds.co.zw/registration/quick" accept-charset="UTF-8"><input name="_token" type="hidden" value="VNfXesVny42PBctSXpv18EvgyrNHqxMIpFOyyMTU">
-                            <input name="intended" type="hidden" value="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale">
+                            <input name="intended" type="hidden" value="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent">
                             <div class="form-group">
     <label for="register-name">Name</label>
     <input class="form-control" required id="register-name" name="name" type="text" value="">
@@ -7534,7 +7005,7 @@ id
                         </div>
                     </div>
                     <input id="loginModalReturnUrlInput" type="hidden" name="return_url"
-                        value="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale">
+                        value="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent">
                     <div class="forgot-password link">
                         <a href="https://www.classifieds.co.zw/password/email">Forgot Your Password</a>
                     </div>
@@ -8534,7 +8005,7 @@ id
                                 type="text" value="">
                         </div>
                     </div>
-                    <input type="hidden" name="return_url" value="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-sale">
+                    <input type="hidden" name="return_url" value="https://www.classifieds.co.zw/zimbabwe-flats-apartments-for-rent">
 
 
                     <div class="form-group form-group-name">
@@ -8567,7 +8038,7 @@ id
             </div>
 </div>
 <!-- Load Facebook SDK for JavaScript -->
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
+<script type="245619828e9ab26f08ed8c97-text/javascript">
   window.fbAsyncInit = function() {
     FB.init({
       appId            : '2876281375784280',
@@ -8577,9 +8048,9 @@ id
     });
   };
 </script>
-<script crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js" defer type="881c9a3a08acc01de60cbf08-text/javascript"></script>
-    <script defer src="https://www.classifieds.co.zw/js/facebook_login.js?id=92c90ab84a2ed2b14ff9" type="881c9a3a08acc01de60cbf08-text/javascript"></script>
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
+<script crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js" defer type="245619828e9ab26f08ed8c97-text/javascript"></script>
+    <script defer src="https://www.classifieds.co.zw/js/facebook_login.js?id=92c90ab84a2ed2b14ff9" type="245619828e9ab26f08ed8c97-text/javascript"></script>
+<script type="245619828e9ab26f08ed8c97-text/javascript">
             dataLayer = [{"pageCategory":16}];
         </script>
     
@@ -8590,7 +8061,7 @@ id
         </iframe>
     </noscript>
 
-    <script type="881c9a3a08acc01de60cbf08-text/javascript">
+    <script type="245619828e9ab26f08ed8c97-text/javascript">
         (function(w, d, s, l, i) {
             w[l] = w[l] || [];
             w[l].push({
@@ -8610,10 +8081,10 @@ id
 
 
 
-<script src="/js/site.js?id=7c49ae43cecb05ef40c8" type="881c9a3a08acc01de60cbf08-text/javascript"></script>
-<script src="/js/record-interest.js?id=1f18d2321c680090fb9e" type="881c9a3a08acc01de60cbf08-text/javascript"></script>
+<script src="/js/site.js?id=7c49ae43cecb05ef40c8" type="245619828e9ab26f08ed8c97-text/javascript"></script>
+<script src="/js/record-interest.js?id=1f18d2321c680090fb9e" type="245619828e9ab26f08ed8c97-text/javascript"></script>
 
-<script type="881c9a3a08acc01de60cbf08-text/javascript">
+<script type="245619828e9ab26f08ed8c97-text/javascript">
 
     var userIdentifier = "";
 
@@ -8656,15 +8127,15 @@ id
     var sentry_dsn = "https:\/\/4809fe0c11a74a0aa4bd93836b9b9f07@o1046090.ingest.us.sentry.io\/6021854";
 </script>
 
-<script src="https://browser.sentry-cdn.com/7.120.4/bundle.min.js" crossorigin="anonymous" type="881c9a3a08acc01de60cbf08-text/javascript"></script>
-<script src="/js/theme.js?id=d41d8cd98f00b204e980" type="881c9a3a08acc01de60cbf08-text/javascript"></script>
+<script src="https://browser.sentry-cdn.com/7.120.4/bundle.min.js" crossorigin="anonymous" type="245619828e9ab26f08ed8c97-text/javascript"></script>
+<script src="/js/theme.js?id=d41d8cd98f00b204e980" type="245619828e9ab26f08ed8c97-text/javascript"></script>
 
 
-    <script src="https://www.classifieds.co.zw/js/listing_show.js" type="881c9a3a08acc01de60cbf08-text/javascript"></script>
-    <script src="https://www.classifieds.co.zw/js/listing.js" type="881c9a3a08acc01de60cbf08-text/javascript"></script>
-    <script src="https://www.classifieds.co.zw/js/search.js" type="881c9a3a08acc01de60cbf08-text/javascript"></script>
+    <script src="https://www.classifieds.co.zw/js/listing_show.js" type="245619828e9ab26f08ed8c97-text/javascript"></script>
+    <script src="https://www.classifieds.co.zw/js/listing.js" type="245619828e9ab26f08ed8c97-text/javascript"></script>
+    <script src="https://www.classifieds.co.zw/js/search.js" type="245619828e9ab26f08ed8c97-text/javascript"></script>
 
-    <script type="881c9a3a08acc01de60cbf08-text/javascript">
+    <script type="245619828e9ab26f08ed8c97-text/javascript">
         var filtersLimit = 7;
         var searchesUrl = "";
         var savedSearchesUrl = "?app_domain=classifieds.co.zw";
@@ -8691,7 +8162,7 @@ id
         });
     </script>
 
-<script src="/js/custom-select.js?id=faac7b862d4f25512ab8" type="881c9a3a08acc01de60cbf08-text/javascript"></script>
+<script src="/js/custom-select.js?id=faac7b862d4f25512ab8" type="245619828e9ab26f08ed8c97-text/javascript"></script>
 </body>
 
 </html>
