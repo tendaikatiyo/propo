@@ -1,7 +1,7 @@
 {
-  "name": "easishop-prototype",
+  "name": "propo",
   "version": "1.0.0",
-  "description": "Property intelligence prototype for Propertybook Zimbabwe",
+  "description": "Property intelligence prototype for Zimbabwe",
   "type": "module",
   "scripts": {
     "scrape": "node scraper/scrape.js",
