@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
-BASE_URL = "https://www.propertybook.co.zw/land/for-sale"
+BASE_URL = "https://www.propertybook.co.zw/residential-stands/for-sale"
 OUTPUT_PATH = Path(__file__).resolve().parents[1] / "data" / "land_for_sale.json"
 USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
@@ -48,19 +48,6 @@ def fetch_page(session: requests.Session, page: int) -> str:
     return response.text
 
 
-def parse_int(raw_value: Optional[str]) -> Optional[int]:
-    if raw_value is None:
-        return None
-
-    numeric = re.sub(r"[^0-9.]+", "", str(raw_value))
-    if not numeric:
-        return None
-    try:
-        return int(float(numeric))
-    except ValueError:
-        return None
-
-
 def parse_price(raw_price: str) -> Optional[int]:
     if not raw_price:
         return None
@@ -92,44 +79,91 @@ def parse_land_size_and_unit(raw_text: Optional[str]) -> (Optional[float], Optio
     if not raw_text:
         return None, None
 
-    text = str(raw_text).strip().lower().replace(" ", "")
-    match = re.search(r"([0-9]+(?:[.,][0-9]+)?)\s*(sqm|m2|m²|ha|hectare|acre|acres)", text, flags=re.IGNORECASE)
-    if match:
-        size = parse_float(match.group(1))
-        unit = match.group(2).lower()
-        if unit == "m2" or unit == "m²":
-            unit = "sqm"
-        if unit == "acres":
-            unit = "acre"
-        return size, unit
+    text = str(raw_text).strip().lower()
+    compact = re.sub(r"\s+", "", text)
 
-    match = re.search(r"([0-9]+(?:[.,][0-9]+)?)(sqm|m2|m²|ha|hectare|acre|acres)", text, flags=re.IGNORECASE)
-    if match:
-        size = parse_float(match.group(1))
-        unit = match.group(2).lower()
-        if unit == "m2" or unit == "m²":
-            unit = "sqm"
-        if unit == "acres":
-            unit = "acre"
-        return size, unit
+    unit_map = {
+        "m2": "sqm",
+        "m²": "sqm",
+        "sq.m": "sqm",
+        "sqm": "sqm",
+        "acres": "acre",
+        "ac": "acre",
+        "acre": "acre",
+        "hectares": "ha",
+        "hectare": "ha",
+        "ha": "ha",
+    }
+
+    patterns = [
+        r"([0-9]+(?:[.,][0-9]+)?)\s*(?:sq\.?\s*m|square\s*met(?:re|er)s?)",
+        r"([0-9]+(?:[.,][0-9]+)?)-?(sqm|m2|m²|ha|hectare|hectares|acre|acres|ac)\b",
+        r"([0-9]+(?:[.,][0-9]+)?)(sqm|m2|m²|ha|hectare|hectares|acre|acres|ac)\b",
+        r"([0-9]+(?:[.,][0-9]+)?)m2\b",
+        r"([0-9]+(?:[.,][0-9]+)?)m²\b",
+        r"([0-9]+(?:[.,][0-9]+)?)\s*m\s+stand\b",
+        r"([0-9]+(?:[.,][0-9]+)?)\s*m\s+residential\b",
+    ]
+
+    for pattern in patterns:
+        match = re.search(pattern, text, flags=re.IGNORECASE)
+        if match:
+            size = parse_float(match.group(1))
+            unit = unit_map.get(match.group(2).lower(), "sqm") if match.lastindex and match.lastindex >= 2 else "sqm"
+            if size:
+                return size, unit
+
+    for pattern in (
+        r"^([0-9]+(?:[.,][0-9]+)?)-?(sqm|m2|m²|ha|hectare|hectares|acre|acres|ac)$",
+        r"^([0-9]+(?:[.,][0-9]+)?)(sqm|m2|m²|ha|hectare|hectares|acre|acres|ac)$",
+    ):
+        match = re.match(pattern, compact, flags=re.IGNORECASE)
+        if match:
+            size = parse_float(match.group(1))
+            unit = unit_map.get(match.group(2).lower(), "sqm")
+            if size:
+                return size, unit
 
     return None, None
 
 
+def extract_land_size_from_fields(listing_url: str, title: str, description: str) -> (Optional[float], Optional[str]):
+    slug = listing_url.rstrip("/").split("/")[-1]
+    for part in slug.split("-"):
+        if re.match(r"^[0-9]", part):
+            size, unit = parse_land_size_and_unit(part)
+            if size:
+                return size, unit
+
+    for text in (description, title):
+        size, unit = parse_land_size_and_unit(text)
+        if size:
+            return size, unit
+
+    return None, None
+
+
+def extract_land_size(listing_url: str, title: str, description: str, listing) -> (Optional[float], Optional[str]):
+    search_roots = [listing]
+    search_roots.extend(listing.find_parents("div", limit=8))
+
+    for root in search_roots:
+        for span in root.select("span.icon, span.inner-icon-item, span"):
+            if span.find("i", class_=lambda cls: cls and "property-size" in cls):
+                size, unit = parse_land_size_and_unit(span.get_text(" ", strip=True))
+                if size:
+                    return size, unit
+
+    return extract_land_size_from_fields(listing_url, title, description)
+
+
+def is_residential_land(title: str) -> bool:
+    return "residential stand" in title.lower()
+
+
 def parse_property_type(title: str) -> str:
-    normalized = title.lower()
-    if "cottage" in normalized or "garden flat" in normalized:
-        return "cottage"
-    if "townhouse" in normalized or "cluster" in normalized:
-        return "townhouse"
-    if "flat" in normalized or "apartment" in normalized:
-        return "flat"
-    if "house" in normalized:
-        return "house"
-    if "room" in normalized:
-        return "room"
-    if "farm" in normalized or "plot" in normalized or "stand" in normalized:
-        return "land"
+    if is_residential_land(title):
+        return "residential_land"
     return "unknown"
 
 
@@ -141,20 +175,12 @@ def parse_location(location: str) -> Dict[str, str]:
     }
 
 
-def extract_feature(listing, icon_class: str) -> Optional[int]:
-    for span in listing.select("span"):
-        icon = span.find("i", class_=icon_class)
-        if icon:
-            return parse_int(span.get_text())
-    return None
-
-
 def parse_listing(listing) -> Optional[Dict]:
     title_node = listing.select_one("div.listingTitle") or listing.select_one("div.standard.listingTitle")
     if not title_node:
         return None
 
-    title = title_node.get_text(" ", strip=True)
+    title = re.sub(r"\s+", " ", title_node.get_text(" ", strip=True)).strip()
     listing_url = ""
     if title_node.name == "a" and title_node.has_attr("href"):
         listing_url = title_node["href"].strip()
@@ -189,21 +215,7 @@ def parse_listing(listing) -> Optional[Dict]:
     description_node = listing.select_one("p.text-justify") or listing.select_one("p")
     description = description_node.get_text(" ", strip=True) if description_node else ""
 
-    bedrooms = extract_feature(listing, "fa-bed") or 0
-    bathrooms = extract_feature(listing, "fa-bath") or 0
-    lounges = extract_feature(listing, "fa-couch") or 0
-
-    size_node = None
-    for span in listing.select("span.icon, span"):  # property-size marker appears inside a span
-        if span.find("i", class_=lambda cls: cls and "property-size" in cls):
-            size_node = span
-            break
-
-    size_text = size_node.get_text(" ", strip=True) if size_node else ""
-    land_size, land_size_unit = parse_land_size_and_unit(size_text)
-
-    if not land_size and title:
-        land_size, land_size_unit = parse_land_size_and_unit(title)
+    land_size, land_size_unit = extract_land_size(listing_url, title, description, listing)
 
     agency_img = listing.select_one("img[alt][src]")
     if not agency_img:
@@ -227,9 +239,6 @@ def parse_listing(listing) -> Optional[Dict]:
         "city": location_parts["city"],
         "property_type": parse_property_type(title),
         "description": description,
-        "bedrooms": bedrooms,
-        "bathrooms": bathrooms,
-        "lounges": lounges,
         "land_size": land_size,
         "land_size_unit": land_size_unit,
         "agency_name": agency_name,
@@ -254,6 +263,8 @@ def scrape_page(session: requests.Session, page: int, seen_urls: set) -> List[Di
         parsed = parse_listing(container)
         if not parsed or not parsed["listing_url"]:
             continue
+        if not is_residential_land(parsed["title"]):
+            continue
         if parsed["listing_url"] in seen_urls:
             continue
         seen_urls.add(parsed["listing_url"])
@@ -266,7 +277,7 @@ def save_json(listings: List[Dict]) -> None:
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     with OUTPUT_PATH.open("w", encoding="utf-8") as outfile:
         json.dump(listings, outfile, indent=2, ensure_ascii=False)
-    print(f"Saved {len(listings)} land listings to {OUTPUT_PATH}")
+    print(f"Saved {len(listings)} residential land listings to {OUTPUT_PATH}")
 
 
 def main() -> None:
@@ -291,6 +302,8 @@ def main() -> None:
         for container in containers:
             parsed = parse_listing(container)
             if not parsed or not parsed["listing_url"]:
+                continue
+            if not is_residential_land(parsed["title"]):
                 continue
             if parsed["listing_url"] in seen_urls:
                 continue
@@ -317,7 +330,7 @@ def main() -> None:
     if collected:
         save_json(collected)
     else:
-        print("No land listings were collected.")
+        print("No residential land listings were collected.")
 
 
 if __name__ == "__main__":
