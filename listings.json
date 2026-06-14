@@ -1,66 +1,626 @@
 [
   {
-    "id": "wre8238",
-    "title": "House to Rent in Manresa",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-manresa-harare-wre8238",
-    "price_raw": "USD 800/pm",
-    "location": "Manresa, Harare East, Harare"
+    "id": "4-bedroom-mount-pleasant-harare-aps6032",
+    "title": "House to Rent in Mount Pleasant",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-mount-pleasant-harare-aps6032",
+    "price_raw": "USD 4,200/pm",
+    "location": "Mount Pleasant, Harare North, Harare"
   },
   {
-    "id": "fac9124207",
-    "title": "House to Rent in Borrowdale Brooke",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-borrowdale-brooke-harare-fac9124207",
-    "price_raw": "USD 2,500/pm",
-    "location": "Borrowdale Brooke, Harare North, Harare"
+    "id": "3-bedroom-hillside-harare-gzr224535",
+    "title": "House to Rent in Hillside",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-hillside-harare-gzr224535",
+    "price_raw": "USD 3,000/pm",
+    "location": "Hillside, Harare South, Harare"
   },
   {
-    "id": "fac9124216",
-    "title": "House to Rent in Carrick Creagh Estate",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-carrick-creagh-estate-harare-fac9124216",
-    "price_raw": "USD 2,000/pm",
-    "location": "Carrick Creagh Estate, Harare North, Harare"
+    "id": "3-bedroom-belvedere-harare-psp574657",
+    "title": "House to Rent in Belvedere",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-belvedere-harare-psp574657",
+    "price_raw": "USD 1,000/pm",
+    "location": "Belvedere, Harare West, Harare"
   },
   {
-    "id": "leg2102",
+    "id": "4-bedroom-springvale-ruwa-sef335603",
+    "title": "House to Rent in Springvale",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-springvale-ruwa-sef335603",
+    "price_raw": "USD 600/pm",
+    "location": "Springvale, Ruwa"
+  },
+  {
+    "id": "2-bedroom-kuwadzana-harare-owd0039",
+    "title": "House to Rent in Kuwadzana",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/2-bedroom-kuwadzana-harare-owd0039",
+    "price_raw": "USD 300/pm",
+    "location": "Kuwadzana, Harare High Density, Harare"
+  },
+  {
+    "id": "5-bedroom-belvedere-harare-leg2141",
+    "title": "House to Rent in Belvedere",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/5-bedroom-belvedere-harare-leg2141",
+    "price_raw": "USD 1,500/pm",
+    "location": "Belvedere, Harare West, Harare"
+  },
+  {
+    "id": "4-bedroom-waterfalls-harare-rpt103252",
+    "title": "House to Rent in Waterfalls",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-waterfalls-harare-rpt103252",
+    "price_raw": "USD 650/pm",
+    "location": "Waterfalls, Harare South, Harare"
+  },
+  {
+    "id": "5-bedroom-house-arlington-harare-pgp13985",
+    "title": "House to Rent in Arlington",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/5-bedroom-house-arlington-harare-pgp13985",
+    "price_raw": "USD 1,400/pm",
+    "location": "Arlington, Harare South, Harare"
+  },
+  {
+    "id": "4-bedroom-house-mabvazuva-estates-ruwa-car22353",
+    "title": "House to Rent in Mabvazuva Estates",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-mabvazuva-estates-ruwa-car22353",
+    "price_raw": "USD 750/pm",
+    "location": "Mabvazuva Estates, Ruwa"
+  },
+  {
+    "id": "4-bedroom-house-borrowdale-harare-cei0897",
+    "title": "House to Rent in Borrowdale",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-borrowdale-harare-cei0897",
+    "price_raw": "USD 3,500/pm",
+    "location": "Borrowdale, Harare North, Harare"
+  },
+  {
+    "id": "4-bedroom-house-matsheumhlope-bulawayo-mre0289",
+    "title": "House to Rent in Matsheumhlope",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-matsheumhlope-bulawayo-mre0289",
+    "price_raw": "USD 600/pm",
+    "location": "Matsheumhlope, Bulawayo East, Bulawayo"
+  },
+  {
+    "id": "3-bedroom-house-ruwa-rr1564",
+    "title": "House to Rent in Ruwa",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-ruwa-rr1564",
+    "price_raw": "USD 600/pm",
+    "location": "Ruwa"
+  },
+  {
+    "id": "3-bedroom-house-chisipite-harare-rr1563",
     "title": "House to Rent in Chisipite",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-chisipite-harare-leg2102",
-    "price_raw": "USD 1,200/pm",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-chisipite-harare-rr1563",
+    "price_raw": "USD 2,500/pm",
     "location": "Chisipite, Harare North, Harare"
   },
   {
-    "id": "sef335651",
-    "title": "House to Rent in Goodhope",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/6-bedroom-goodhope-harare-sef335651",
+    "id": "3-bedroom-house-bradfield-bulawayo-sbre1235",
+    "title": "House to Rent in Bradfield",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-bradfield-bulawayo-sbre1235",
+    "price_raw": "USD 1,600/pm",
+    "location": "Bradfield, Bulawayo South, Bulawayo"
+  },
+  {
+    "id": "gat169718",
+    "title": "House to Rent in Hatfield",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-hatfield-harare-gat169718",
+    "price_raw": "USD 680/pm",
+    "location": "Hatfield, Harare South, Harare"
+  },
+  {
+    "id": "lcre0080",
+    "title": "House to Rent in Mandara",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-mandara-harare-lcre0080",
+    "price_raw": "USD 1,700/pm",
+    "location": "Mandara, Harare East, Harare"
+  },
+  {
+    "id": "fac9124221",
+    "title": "House to Rent in Greendale",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-greendale-harare-fac9124221",
+    "price_raw": "USD 2,000/pm",
+    "location": "Greendale, Harare East, Harare"
+  },
+  {
+    "id": "psp574674",
+    "title": "House to Rent in Rockview",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-rockview-harare-psp574674",
+    "price_raw": "USD 550/pm",
+    "location": "Rockview, Harare East, Harare"
+  },
+  {
+    "id": "cp2037",
+    "title": "House to Rent in Highlands",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/5-bedroom-house-highlands-harare-cp2037",
+    "price_raw": "USD 2,800/pm",
+    "location": "Highlands, Harare North, Harare"
+  },
+  {
+    "id": "rr1558",
+    "title": "House to Rent in Chisipite",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-chisipite-harare-rr1558",
+    "price_raw": "USD 1,600/pm",
+    "location": "Chisipite, Harare North, Harare"
+  },
+  {
+    "id": "rpt103252",
+    "title": "House to Rent in Waterfalls",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-waterfalls-harare-rpt103252",
+    "price_raw": "USD 650/pm",
+    "location": "Waterfalls, Harare South, Harare"
+  },
+  {
+    "id": "kha0170",
+    "title": "House to Rent in Mainway Meadows",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-mainway-meadows-harare-kha0170",
+    "price_raw": "USD 700/pm",
+    "location": "Mainway Meadows, Harare South, Harare"
+  },
+  {
+    "id": "rmpl0195",
+    "title": "House to Rent in Cranborne",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-cranborne-harare-rmpl0195",
+    "price_raw": "USD 1,000/pm",
+    "location": "Cranborne, Harare South, Harare"
+  },
+  {
+    "id": "prl1815",
+    "title": "House to Rent in Highlands",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/2-bedroom-house-highlands-harare-prl1815",
+    "price_raw": "USD 1,600/pm",
+    "location": "Highlands, Harare North, Harare"
+  },
+  {
+    "id": "sef335672",
+    "title": "House to Rent in Mount Pleasant Heights",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-mount-pleasant-heights-harare-sef335672",
+    "price_raw": "USD 850/pm",
+    "location": "Mount Pleasant Heights, Harare North, Harare"
+  },
+  {
+    "id": "leg2183",
+    "title": "House to Rent in Marimba Park",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-marimba-park-harare-leg2183",
+    "price_raw": "USD 650/pm",
+    "location": "Marimba Park, Harare High Density, Harare"
+  },
+  {
+    "id": "pz0207",
+    "title": "House to Rent in The Grange",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/house-the-grange-harare-pz0207",
+    "price_raw": "USD 2,500/pm",
+    "location": "The Grange, Harare North, Harare"
+  },
+  {
+    "id": "mkn0105",
+    "title": "House to Rent in Alexandra Park",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-alexandra-park-harare-mkn0105",
+    "price_raw": "USD 2,500/pm",
+    "location": "Alexandra Park, Harare North, Harare"
+  },
+  {
+    "id": "leg2182",
+    "title": "House to Rent in Greendale",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-greendale-harare-leg2182",
+    "price_raw": "USD 1,000/pm",
+    "location": "Greendale, Harare East, Harare"
+  },
+  {
+    "id": "knp190804",
+    "title": "House to Rent in Greendale North",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-greendale-north-harare-knp190804",
     "price_raw": "USD 1,800/pm",
-    "location": "Goodhope, Harare West, Harare"
+    "location": "Greendale North, Harare North, Harare"
   },
   {
-    "id": "kha0157",
-    "title": "House to Rent in Southview Park",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-southview-park-harare-kha0157",
-    "price_raw": "USD 500/pm",
-    "location": "Southview Park, Harare South, Harare"
+    "id": "ap0238",
+    "title": "House to Rent in Mandara",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/5-bedroom-house-mandara-harare-ap0238",
+    "price_raw": "USD 2,000/pm",
+    "location": "Mandara, Harare East, Harare"
   },
   {
-    "id": "kha0156",
+    "id": "prpr0128",
+    "title": "House to Rent in Tynwald",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-tynwald-harare-prpr0128",
+    "price_raw": "USD 1,500/pm",
+    "location": "Tynwald, Harare West, Harare"
+  },
+  {
+    "id": "4-bedroom-marlborough-harare-bnp1225",
+    "title": "House to Rent in Marlborough",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-marlborough-harare-bnp1225",
+    "price_raw": "USD 650/pm",
+    "location": "Marlborough, Harare West, Harare"
+  },
+  {
+    "id": "5-bedroom-mount-pleasant-heights-harare-tbr0437",
+    "title": "House to Rent in Mount Pleasant Heights",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/5-bedroom-mount-pleasant-heights-harare-tbr0437",
+    "price_raw": "USD 1,800/pm",
+    "location": "Mount Pleasant Heights, Harare North, Harare"
+  },
+  {
+    "id": "4-bedroom-glen-lorne-harare-psp574668",
+    "title": "House to Rent in Glen Lorne",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-glen-lorne-harare-psp574668",
+    "price_raw": "USD 2,500/pm",
+    "location": "Glen Lorne, Harare North, Harare"
+  },
+  {
+    "id": "5-bedroom-ballantyne-park-harare-rhe0181",
+    "title": "House to Rent in Ballantyne Park",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/5-bedroom-ballantyne-park-harare-rhe0181",
+    "price_raw": "USD 3,200/pm",
+    "location": "Ballantyne Park, Harare North, Harare"
+  },
+  {
+    "id": "3-bedroom-mainway-meadows-harare-kha0170",
+    "title": "House to Rent in Mainway Meadows",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-mainway-meadows-harare-kha0170",
+    "price_raw": "USD 700/pm",
+    "location": "Mainway Meadows, Harare South, Harare"
+  },
+  {
+    "id": "4-bedroom-house-glen-lorne-harare-ta0845",
+    "title": "House to Rent in Glen Lorne",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-glen-lorne-harare-ta0845",
+    "price_raw": "USD 1,830/pm",
+    "location": "Glen Lorne, Harare North, Harare"
+  },
+  {
+    "id": "4-bedroom-house-belvedere-harare-leg2179",
+    "title": "House to Rent in Belvedere",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-belvedere-harare-leg2179",
+    "price_raw": "USD 1,000/pm",
+    "location": "Belvedere, Harare West, Harare"
+  },
+  {
+    "id": "3-bedroom-house-borrowdale-brooke-harare-knp190801",
+    "title": "House to Rent in Borrowdale Brooke",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-borrowdale-brooke-harare-knp190801",
+    "price_raw": "USD 2,000/pm",
+    "location": "Borrowdale Brooke, Harare North, Harare"
+  },
+  {
+    "id": "4-bedroom-house-highlands-harare-prl1814",
+    "title": "House to Rent in Highlands",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-highlands-harare-prl1814",
+    "price_raw": "USD 2,000/pm",
+    "location": "Highlands, Harare North, Harare"
+  },
+  {
+    "id": "4-bedroom-house-madokero-estates-harare-bnp1230",
     "title": "House to Rent in Madokero Estates",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-madokero-estates-harare-kha0156",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-madokero-estates-harare-bnp1230",
     "price_raw": "USD 800/pm",
     "location": "Madokero Estates, Harare West, Harare"
   },
   {
-    "id": "tbr0449",
+    "id": "3-bedroom-house-greendale-harare-car22349",
+    "title": "House to Rent in Greendale",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-greendale-harare-car22349",
+    "price_raw": "USD 700/pm",
+    "location": "Greendale, Harare East, Harare"
+  },
+  {
+    "id": "5-bedroom-house-the-grange-harare-car22346",
+    "title": "House to Rent in The Grange",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/5-bedroom-house-the-grange-harare-car22346",
+    "price_raw": "USD 2,200/pm",
+    "location": "The Grange, Harare North, Harare"
+  },
+  {
+    "id": "3-bedroom-house-msasa-park-harare-gre0715",
+    "title": "House to Rent in Msasa Park",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-msasa-park-harare-gre0715",
+    "price_raw": "USD 400/pm",
+    "location": "Msasa Park, Harare South, Harare"
+  },
+  {
+    "id": "3-bedroom-house-ashdown-park-harare-oas10127",
+    "title": "House to Rent in Ashdown Park",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-ashdown-park-harare-oas10127",
+    "price_raw": "USD 650/pm",
+    "location": "Ashdown Park, Harare West, Harare"
+  },
+  {
+    "id": "9-bedroom-house-greystone-park-harare-ark2234",
+    "title": "House to Rent in Greystone Park",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/9-bedroom-house-greystone-park-harare-ark2234",
+    "price_raw": "USD 4,000/pm",
+    "location": "Greystone Park, Harare North, Harare"
+  },
+  {
+    "id": "3-bedroom-house-paddonhurst-bulawayo-red0391",
+    "title": "House to Rent in Paddonhurst",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-paddonhurst-bulawayo-red0391",
+    "price_raw": "USD 620/pm",
+    "location": "Paddonhurst, Bulawayo North, Bulawayo"
+  },
+  {
+    "id": "5-bedroom-house-hillside-harare-cm0282",
+    "title": "House to Rent in Hillside",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/5-bedroom-house-hillside-harare-cm0282",
+    "price_raw": "USD 2,400/pm",
+    "location": "Hillside, Harare South, Harare"
+  },
+  {
+    "id": "3-bedroom-house-chitungwiza-pcor0061",
+    "title": "House to Rent in Chitungwiza",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-chitungwiza-pcor0061",
+    "price_raw": "USD 300/pm",
+    "location": "Chitungwiza"
+  },
+  {
+    "id": "pgp13902",
+    "title": "House to Rent in Upper Hillside",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-upper-hillside-harare-pgp13902",
+    "price_raw": "USD 800/pm",
+    "location": "Upper Hillside, Harare East, Harare"
+  },
+  {
+    "id": "fac1060",
+    "title": "House to Rent in Borrowdale",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/6-bedroom-borrowdale-harare-fac1060",
+    "price_raw": "USD 3,600/pm",
+    "location": "Borrowdale, Harare North, Harare"
+  },
+  {
+    "id": "knp190801",
+    "title": "House to Rent in Borrowdale Brooke",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-borrowdale-brooke-harare-knp190801",
+    "price_raw": "USD 2,000/pm",
+    "location": "Borrowdale Brooke, Harare North, Harare"
+  },
+  {
+    "id": "rr1558",
+    "title": "House to Rent in Chisipite",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-chisipite-harare-rr1558",
+    "price_raw": "USD 1,600/pm",
+    "location": "Chisipite, Harare North, Harare"
+  },
+  {
+    "id": "rr1544",
+    "title": "House to Rent in Helensvale",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-helensvale-harare-rr1544",
+    "price_raw": "USD 3,000/pm",
+    "location": "Helensvale, Harare North, Harare"
+  },
+  {
+    "id": "fac1048",
+    "title": "House to Rent in Vainona",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/2-bedroom-house-vainona-harare-fac1048",
+    "price_raw": "USD 750/pm",
+    "location": "Vainona, Harare North, Harare"
+  },
+  {
+    "id": "pzp0641",
+    "title": "House to Rent in Westgate",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-westgate-harare-pzp0641",
+    "price_raw": "USD 900/pm",
+    "location": "Westgate, Harare West, Harare"
+  },
+  {
+    "id": "lcre0108",
+    "title": "House to Rent in Adelaide Park",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/2-bedroom-house-adelaide-park-harare-lcre0108",
+    "price_raw": "USD 350/pm",
+    "location": "Adelaide Park, Harare High Density, Harare"
+  },
+  {
+    "id": "fac1057",
+    "title": "House to Rent in Mandara",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-mandara-harare-fac1057",
+    "price_raw": "USD 2,500/pm",
+    "location": "Mandara, Harare East, Harare"
+  },
+  {
+    "id": "wbp0294",
+    "title": "House to Rent in Tynwald",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-tynwald-harare-wbp0294",
+    "price_raw": "USD 500/pm",
+    "location": "Tynwald, Harare West, Harare"
+  },
+  {
+    "id": "car22342",
+    "title": "House to Rent in Westgate",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-westgate-harare-car22342",
+    "price_raw": "USD 1,300/pm",
+    "location": "Westgate, Harare West, Harare"
+  },
+  {
+    "id": "car22341",
+    "title": "House to Rent in Borrowdale",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-borrowdale-harare-car22341",
+    "price_raw": "USD 1,550/pm",
+    "location": "Borrowdale, Harare North, Harare"
+  },
+  {
+    "id": "sm430064",
+    "title": "House to Rent in Waterfalls",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-waterfalls-harare-sm430064",
+    "price_raw": "USD 500/pm",
+    "location": "Waterfalls, Harare South, Harare"
+  },
+  {
+    "id": "leg2166",
+    "title": "House to Rent in Bluff Hill",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-bluff-hill-harare-leg2166",
+    "price_raw": "USD 800/pm",
+    "location": "Bluff Hill, Harare West, Harare"
+  },
+  {
+    "id": "leg2165",
+    "title": "House to Rent in Granary Park",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/5-bedroom-house-granary-park-harare-leg2165",
+    "price_raw": "USD 330/pm",
+    "location": "Granary Park, Harare High Density, Harare"
+  },
+  {
+    "id": "fpc0284",
     "title": "House to Rent in Emerald Hill",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/6-bedroom-house-emerald-hill-harare-tbr0449",
-    "price_raw": "USD 2,999/pm",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-emerald-hill-harare-fpc0284",
+    "price_raw": "USD 1,000/pm",
     "location": "Emerald Hill, Harare West, Harare"
+  },
+  {
+    "id": "kf12166",
+    "title": "House to Rent in Bluff Hill",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-bluff-hill-harare-kf12166",
+    "price_raw": "USD 1,100/pm",
+    "location": "Bluff Hill, Harare West, Harare"
+  },
+  {
+    "id": "pbsa0235",
+    "title": "House to Rent in Westlea Mutare",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/2-bedroom-house-westlea-mutare-pbsa0235",
+    "price_raw": "USD 350/pm",
+    "location": "Westlea Mutare, Mutare"
+  },
+  {
+    "id": "gkr0065",
+    "title": "House to Rent in Belvedere",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-belvedere-harare-gkr0065",
+    "price_raw": "USD 800/pm",
+    "location": "Belvedere, Harare West, Harare"
+  },
+  {
+    "id": "pgp13711",
+    "title": "House to Rent in Greystone Park",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/8-bedroom-greystone-park-harare-pgp13711",
+    "price_raw": "USD 7,500/pm",
+    "location": "Greystone Park, Harare North, Harare"
+  },
+  {
+    "id": "cei0814",
+    "title": "House to Rent in Chisipite",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-chisipite-harare-cei0814",
+    "price_raw": "USD 2,000/pm",
+    "location": "Chisipite, Harare North, Harare"
+  },
+  {
+    "id": "rhe0181",
+    "title": "House to Rent in Ballantyne Park",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/5-bedroom-house-ballantyne-park-harare-rhe0181",
+    "price_raw": "USD 3,200/pm",
+    "location": "Ballantyne Park, Harare North, Harare"
+  },
+  {
+    "id": "psp574682",
+    "title": "House to Rent in Mount Pleasant",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-mount-pleasant-harare-psp574682",
+    "price_raw": "USD 4,200/pm",
+    "location": "Mount Pleasant, Harare North, Harare"
+  },
+  {
+    "id": "rhe0179",
+    "title": "House to Rent in Greendale North",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-greendale-north-harare-rhe0179",
+    "price_raw": "USD 1,500/pm",
+    "location": "Greendale North, Harare North, Harare"
+  },
+  {
+    "id": "fac1045",
+    "title": "House to Rent in Greendale",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-greendale-harare-fac1045",
+    "price_raw": "USD 1,600/pm",
+    "location": "Greendale, Harare East, Harare"
+  },
+  {
+    "id": "pgp13941",
+    "title": "House to Rent in Ashdown Park",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-ashdown-park-harare-pgp13941",
+    "price_raw": "USD 700/pm",
+    "location": "Ashdown Park, Harare West, Harare"
+  },
+  {
+    "id": "car22336",
+    "title": "House to Rent in Belgravia",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-belgravia-harare-car22336",
+    "price_raw": "USD 3,000/pm",
+    "location": "Belgravia, Harare North, Harare"
+  },
+  {
+    "id": "car22334",
+    "title": "House to Rent in Greystone Park",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/7-bedroom-house-greystone-park-harare-car22334",
+    "price_raw": "USD 4,500/pm",
+    "location": "Greystone Park, Harare North, Harare"
+  },
+  {
+    "id": "fac1041",
+    "title": "House to Rent in Greendale",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-greendale-harare-fac1041",
+    "price_raw": "USD 2,000/pm",
+    "location": "Greendale, Harare East, Harare"
+  },
+  {
+    "id": "leg2154",
+    "title": "House to Rent in Tynwald",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-tynwald-harare-leg2154",
+    "price_raw": "USD 600/pm",
+    "location": "Tynwald, Harare West, Harare"
+  },
+  {
+    "id": "hoe588319",
+    "title": "House to Rent in Arlington",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-arlington-harare-hoe588319",
+    "price_raw": "USD 1,500/pm",
+    "location": "Arlington, Harare South, Harare"
+  },
+  {
+    "id": "pwd7031",
+    "title": "House to Rent in Arlington",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-arlington-harare-pwd7031",
+    "price_raw": "USD 1,500/pm",
+    "location": "Arlington, Harare South, Harare"
+  },
+  {
+    "id": "mm0070",
+    "title": "House to Rent in Rockview",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-rockview-harare-mm0070",
+    "price_raw": "USD 750/pm",
+    "location": "Rockview, Harare East, Harare"
+  },
+  {
+    "id": "pma0083",
+    "title": "House to Rent in Norton",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-norton-pma0083",
+    "price_raw": "USD 1,800/pm",
+    "location": "Norton"
   },
   {
     "id": "fac1029",
     "title": "House to Rent in Emerald Hill",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-emerald-hill-harare-fac1029",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-emerald-hill-harare-fac1029",
     "price_raw": "USD 2,000/pm",
     "location": "Emerald Hill, Harare West, Harare"
+  },
+  {
+    "id": "fac1038",
+    "title": "House to Rent in Gletwin Park",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-gletwin-park-harare-fac1038",
+    "price_raw": "USD 3,500/pm",
+    "location": "Gletwin Park, Harare North, Harare"
+  },
+  {
+    "id": "dr0005",
+    "title": "House to Rent in Newlands",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-newlands-harare-dr0005",
+    "price_raw": "USD 2,500/pm",
+    "location": "Newlands, Harare North, Harare"
+  },
+  {
+    "id": "dr0004",
+    "title": "House to Rent in Eastlea",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-eastlea-harare-dr0004",
+    "price_raw": "USD 1,500/pm",
+    "location": "Eastlea, Harare East, Harare"
+  },
+  {
+    "id": "prcl11299",
+    "title": "House to Rent in Bloomingdale",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-bloomingdale-harare-prcl11299",
+    "price_raw": "USD 700/pm",
+    "location": "Bloomingdale, Harare West, Harare"
   },
   {
     "id": "pgp13927",
@@ -70,60 +630,18 @@
     "location": "Tynwald, Harare West, Harare"
   },
   {
-    "id": "leg2153",
-    "title": "House to Rent in Bluff Hill",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-bluff-hill-harare-leg2153",
-    "price_raw": "USD 1,000/pm",
-    "location": "Bluff Hill, Harare West, Harare"
-  },
-  {
-    "id": "smr637308",
-    "title": "House to Rent in Milton Park",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-milton-park-harare-smr637308",
-    "price_raw": "USD 2,000/pm",
-    "location": "Milton Park, Harare West, Harare"
-  },
-  {
-    "id": "cp1997",
-    "title": "House to Rent in Marlborough",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-marlborough-harare-cp1997",
-    "price_raw": "USD 1,600/pm",
-    "location": "Marlborough, Harare West, Harare"
+    "id": "kha0157",
+    "title": "House to Rent in Southview Park",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-southview-park-harare-kha0157",
+    "price_raw": "USD 500/pm",
+    "location": "Southview Park, Harare South, Harare"
   },
   {
     "id": "ks0023",
     "title": "House to Rent in Budiriro",
     "url": "https://www.propertybook.co.zw/listings/to-rent/2-bedroom-house-budiriro-harare-ks0023",
-    "price_raw": "USD 250/pm",
+    "price_raw": "USD 200/pm",
     "location": "Budiriro, Harare High Density, Harare"
-  },
-  {
-    "id": "leg2150",
-    "title": "House to Rent in Waterfalls",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-waterfalls-harare-leg2150",
-    "price_raw": "USD 500/pm",
-    "location": "Waterfalls, Harare South, Harare"
-  },
-  {
-    "id": "tz0069",
-    "title": "House to Rent in Bluff Hill",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-bluff-hill-harare-tz0069",
-    "price_raw": "USD 950/pm",
-    "location": "Bluff Hill, Harare West, Harare"
-  },
-  {
-    "id": "hap3043",
-    "title": "House to Rent in Arlington",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-arlington-harare-hap3043",
-    "price_raw": "USD 700/pm",
-    "location": "Arlington, Harare South, Harare"
-  },
-  {
-    "id": "cei0852",
-    "title": "House to Rent in Mabelreign",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-mabelreign-harare-cei0852",
-    "price_raw": "USD 620/pm",
-    "location": "Mabelreign, Harare West, Harare"
   },
   {
     "id": "hap3040",
@@ -140,53 +658,18 @@
     "location": "Glen Lorne, Harare North, Harare"
   },
   {
-    "id": "cei0661",
-    "title": "House to Rent in Vainona",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-vainona-harare-cei0661",
-    "price_raw": "USD 3,000/pm",
-    "location": "Vainona, Harare North, Harare"
+    "id": "gat169688",
+    "title": "House to Rent in Paddonhurst",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-paddonhurst-bulawayo-gat169688",
+    "price_raw": "USD 550/pm",
+    "location": "Paddonhurst, Bulawayo North, Bulawayo"
   },
   {
-    "id": "pgp13711",
-    "title": "House to Rent in Greystone Park",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/8-bedroom-greystone-park-harare-pgp13711",
-    "price_raw": "USD 7,500/pm",
-    "location": "Greystone Park, Harare North, Harare"
-  },
-  {
-    "id": "ark2223",
-    "title": "House to Rent in Eastlea",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-eastlea-harare-ark2223",
-    "price_raw": "USD 2,500/pm",
-    "location": "Eastlea, Harare East, Harare"
-  },
-  {
-    "id": "rod190237",
-    "title": "House to Rent in Greendale",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-greendale-harare-rod190237",
-    "price_raw": "USD 1,850/pm",
-    "location": "Greendale, Harare East, Harare"
-  },
-  {
-    "id": "pgp13902",
-    "title": "House to Rent in Upper Hillside",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-upper-hillside-harare-pgp13902",
+    "id": "reh15806",
+    "title": "House to Rent in Waterfalls",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/5-bedroom-waterfalls-harare-reh15806",
     "price_raw": "USD 800/pm",
-    "location": "Upper Hillside, Harare East, Harare"
-  },
-  {
-    "id": "cei0843",
-    "title": "House to Rent in Pumula South",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/2-bedroom-house-pumula-south-bulawayo-cei0843",
-    "price_raw": "USD 250/pm",
-    "location": "Pumula South, Bulawayo High-Density, Bulawayo"
-  },
-  {
-    "id": "sef335651",
-    "title": "House to Rent in Goodhope",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/6-bedroom-house-goodhope-harare-sef335651",
-    "price_raw": "USD 1,800/pm",
-    "location": "Goodhope, Harare West, Harare"
+    "location": "Waterfalls, Harare South, Harare"
   },
   {
     "id": "leg2141",
@@ -196,25 +679,11 @@
     "location": "Belvedere, Harare West, Harare"
   },
   {
-    "id": "fpc0282",
-    "title": "House to Rent in Braeside",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-braeside-harare-fpc0282",
-    "price_raw": "USD 750/pm",
-    "location": "Braeside, Harare South, Harare"
-  },
-  {
-    "id": "pgp13919",
-    "title": "House to Rent in Glen Lorne",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-glen-lorne-harare-pgp13919",
-    "price_raw": "USD 2,000/pm",
-    "location": "Glen Lorne, Harare North, Harare"
-  },
-  {
-    "id": "pgp13918",
-    "title": "House to Rent in Bluff Hill",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-bluff-hill-harare-pgp13918",
-    "price_raw": "USD 2,200/pm",
-    "location": "Bluff Hill, Harare West, Harare"
+    "id": "psp574674",
+    "title": "House to Rent in Rockview",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-rockview-harare-psp574674",
+    "price_raw": "USD 550/pm",
+    "location": "Rockview, Harare East, Harare"
   },
   {
     "id": "car22329",
@@ -231,39 +700,18 @@
     "location": "Mount Pleasant, Harare North, Harare"
   },
   {
-    "id": "mtx0319",
-    "title": "House to Rent in Tynwald",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-tynwald-harare-mtx0319",
-    "price_raw": "USD 850/pm",
-    "location": "Tynwald, Harare West, Harare"
+    "id": "hm0030",
+    "title": "House to Rent in Ruwa",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-ruwa-hm0030",
+    "price_raw": "USD 600/pm",
+    "location": "Ruwa"
   },
   {
-    "id": "rmpl0189",
-    "title": "House to Rent in Eastlea",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-eastlea-harare-rmpl0189",
-    "price_raw": "USD 2,000/pm",
-    "location": "Eastlea, Harare East, Harare"
-  },
-  {
-    "id": "rr1509",
-    "title": "House to Rent in Gunhill",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/5-bedroom-house-gunhill-harare-rr1509",
-    "price_raw": "USD 4,500/pm",
-    "location": "Gunhill, Harare North, Harare"
-  },
-  {
-    "id": "crep0011",
-    "title": "House to Rent in Marlborough",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-marlborough-harare-crep0011",
-    "price_raw": "USD 1,500/pm",
-    "location": "Marlborough, Harare West, Harare"
-  },
-  {
-    "id": "sef335650",
-    "title": "House to Rent in Goodhope",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/6-bedroom-house-goodhope-harare-sef335650",
-    "price_raw": "USD 1,800/pm",
-    "location": "Goodhope, Harare West, Harare"
+    "id": "dre0344",
+    "title": "House to Rent in Gletwin Park",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/house-gletwin-park-harare-dre0344",
+    "price_raw": "USD 4,000/pm",
+    "location": "Gletwin Park, Harare North, Harare"
   },
   {
     "id": "sbre1217",
@@ -280,585 +728,494 @@
     "location": "Borrowdale Brooke, Harare North, Harare"
   },
   {
-    "id": "pgp13828",
-    "title": "3 Bedroom House to Rent in Marlborough",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-marlborough-harare-pgp13828",
-    "price_raw": "USD 1,500/pm",
-    "location": "Marlborough, Harare West, Harare"
-  },
-  {
-    "id": "pgp13867",
-    "title": "4 Bedroom House to Rent in Vainona",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-vainona-harare-pgp13867",
-    "price_raw": "USD 2,000/pm",
+    "id": "pgp13644",
+    "title": "House to Rent in Vainona",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-vainona-harare-pgp13644",
+    "price_raw": "USD 3,000/pm",
     "location": "Vainona, Harare North, Harare"
   },
   {
-    "id": "cei0814",
-    "title": "4 Bedroom House to Rent in Chisipite",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-chisipite-harare-cei0814",
-    "price_raw": "USD 2,300/pm",
-    "location": "Chisipite, Harare North, Harare"
-  },
-  {
-    "id": "reh15806",
-    "title": "5 Bedroom House to Rent in Waterfalls",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/5-bedroom-waterfalls-harare-reh15806",
-    "price_raw": "USD 800/pm",
-    "location": "Waterfalls, Harare South, Harare"
-  },
-  {
-    "id": "fac1029",
-    "title": "4 Bedroom House to Rent in Emerald Hill",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-emerald-hill-harare-fac1029",
-    "price_raw": "USD 2,000/pm",
-    "location": "Emerald Hill, Harare West, Harare"
-  },
-  {
-    "id": "lcre0100",
-    "title": "3 Bedroom House to Rent in Mount Pleasant",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-mount-pleasant-harare-lcre0100",
-    "price_raw": "USD 1,600/pm",
-    "location": "Mount Pleasant, Harare North, Harare"
-  },
-  {
-    "id": "pgp13902",
-    "title": "3 Bedroom House to Rent in Upper Hillside",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-upper-hillside-harare-pgp13902",
-    "price_raw": "USD 800/pm",
-    "location": "Upper Hillside, Harare East, Harare"
-  },
-  {
-    "id": "psp574674",
-    "title": "4 Bedroom House to Rent in Rockview",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-rockview-harare-psp574674",
-    "price_raw": "USD 600/pm",
-    "location": "Rockview, Harare East, Harare"
-  },
-  {
-    "id": "rr1506",
-    "title": "4 Bedroom House to Rent in Zimre Park",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-zimre-park-harare-rr1506",
-    "price_raw": "USD 650/pm",
-    "location": "Zimre Park, Harare East, Harare"
-  },
-  {
-    "id": "car22320",
-    "title": "5 Bedroom House to Rent in Borrowdale Brooke",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/5-bedroom-house-borrowdale-brooke-harare-car22320",
-    "price_raw": "USD 3,000/pm",
-    "location": "Borrowdale Brooke, Harare North, Harare"
-  },
-  {
-    "id": "fpc0280",
-    "title": "8 Bedroom House to Rent in Glen Lorne",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/8-bedroom-house-glen-lorne-harare-fpc0280",
-    "price_raw": "USD 3,000/pm",
-    "location": "Glen Lorne, Harare North, Harare"
-  },
-  {
-    "id": "tbr0446",
-    "title": "7 Bedroom House to Rent in Colne Valley",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/7-bedroom-house-colne-valley-harare-tbr0446",
-    "price_raw": "USD 4,000/pm",
-    "location": "Colne Valley, Harare North, Harare"
-  },
-  {
-    "id": "hm0030",
-    "title": "4 Bedroom House to Rent in Ruwa",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-ruwa-hm0030",
-    "price_raw": "USD 600/pm",
-    "location": "Ruwa"
-  },
-  {
-    "id": "sbre1216",
-    "title": "2 Bedroom House to Rent in Emakhandeni",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/2-bedroom-house-emakhandeni-bulawayo-sbre1216",
-    "price_raw": "USD 130/pm",
-    "location": "Emakhandeni, Bulawayo High-Density, Bulawayo"
-  },
-  {
-    "id": "oas10120",
-    "title": "3 Bedroom House to Rent in Southerton",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-southerton-harare-oas10120",
-    "price_raw": "USD 500/pm",
-    "location": "Southerton, Harare South, Harare"
-  },
-  {
-    "id": "4-bedroom-greendale-north-harare-rr1427",
-    "title": "4 Bedroom House to Rent in Greendale North",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-greendale-north-harare-rr1427",
-    "price_raw": "USD 1,850/pm",
-    "location": "Greendale North, Harare North, Harare"
-  },
-  {
-    "id": "3-bedroom-paddonhurst-bulawayo-gat169688",
-    "title": "3 Bedroom House to Rent in Paddonhurst",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-paddonhurst-bulawayo-gat169688",
-    "price_raw": "USD 550/pm",
-    "location": "Paddonhurst, Bulawayo North, Bulawayo"
-  },
-  {
-    "id": "6-bedroom-house-mount-pleasant-harare-psp574671",
-    "title": "6 Bedroom House to Rent in Mount Pleasant",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/6-bedroom-house-mount-pleasant-harare-psp574671",
-    "price_raw": "USD 3,500/pm",
-    "location": "Mount Pleasant, Harare North, Harare"
-  },
-  {
-    "id": "4-bedroom-house-chisipite-harare-cei0814",
-    "title": "4 Bedroom House to Rent in Chisipite",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-chisipite-harare-cei0814",
-    "price_raw": "USD 2,300/pm",
-    "location": "Chisipite, Harare North, Harare"
-  },
-  {
-    "id": "3-bedroom-house-borrowdale-harare-cei0812",
-    "title": "3 Bedroom House to Rent in Borrowdale",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-borrowdale-harare-cei0812",
-    "price_raw": "USD 2,000/pm",
-    "location": "Borrowdale, Harare North, Harare"
-  },
-  {
-    "id": "5-bedroom-house-borrowdale-brooke-harare-psp574670",
-    "title": "5 Bedroom House to Rent in Borrowdale Brooke",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/5-bedroom-house-borrowdale-brooke-harare-psp574670",
-    "price_raw": "POA",
-    "location": "Borrowdale Brooke, Harare North, Harare"
-  },
-  {
-    "id": "3-bedroom-house-waterfalls-harare-nr0017",
-    "title": "3 Bedroom House to Rent in Waterfalls",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-waterfalls-harare-nr0017",
-    "price_raw": "USD 660/pm",
-    "location": "Waterfalls, Harare South, Harare"
-  },
-  {
-    "id": "4-bedroom-house-belvedere-harare-tz0067",
-    "title": "4 Bedroom House to Rent in Belvedere",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-belvedere-harare-tz0067",
-    "price_raw": "USD 1,400/pm",
-    "location": "Belvedere, Harare West, Harare"
-  },
-  {
-    "id": "4-bedroom-house-glen-lorne-harare-law20459",
-    "title": "4 Bedroom House to Rent in Glen Lorne",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-glen-lorne-harare-law20459",
-    "price_raw": "USD 3,950/pm",
-    "location": "Glen Lorne, Harare North, Harare"
-  },
-  {
-    "id": "4-bedroom-house-bloomingdale-harare-rmpl0186",
-    "title": "4 Bedroom House to Rent in Bloomingdale",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-bloomingdale-harare-rmpl0186",
-    "price_raw": "USD 800/pm",
-    "location": "Bloomingdale, Harare West, Harare"
-  },
-  {
-    "id": "3-bedroom-house-alexandra-park-harare-rr1501",
-    "title": "3 Bedroom House to Rent in Alexandra Park",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-alexandra-park-harare-rr1501",
-    "price_raw": "USD 2,000/pm",
-    "location": "Alexandra Park, Harare North, Harare"
-  },
-  {
-    "id": "house-kuwadzana-harare-bn0019",
-    "title": "House to Rent in Kuwadzana",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/house-kuwadzana-harare-bn0019",
-    "price_raw": "USD 410/pm",
-    "location": "Kuwadzana, Harare High Density, Harare"
-  },
-  {
-    "id": "3-bedroom-house-cranborne-harare-fpc0278",
-    "title": "3 Bedroom House to Rent in Cranborne",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-cranborne-harare-fpc0278",
-    "price_raw": "USD 800/pm",
-    "location": "Cranborne, Harare South, Harare"
-  },
-  {
-    "id": "3-bedroom-house-msasa-park-harare-deri0114",
-    "title": "3 Bedroom House to Rent in Msasa Park",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-msasa-park-harare-deri0114",
-    "price_raw": "USD 400/pm",
-    "location": "Msasa Park, Harare South, Harare"
-  },
-  {
-    "id": "4-bedroom-house-arlington-harare-cm0270",
-    "title": "4 Bedroom House to Rent in Arlington",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-arlington-harare-cm0270",
-    "price_raw": "USD 1,000/pm",
-    "location": "Arlington, Harare South, Harare"
-  },
-  {
-    "id": "4-bedroom-house-colne-valley-harare-hos0287",
-    "title": "4 Bedroom House to Rent in Colne Valley",
-    "url": "https://www.propertybook.co.zw/listings/to/rent/4-bedroom-house-colne-valley-harare-hos0287",
-    "price_raw": "USD 2,700/pm",
-    "location": "Colne Valley, Harare North, Harare"
-  },
-  {
-    "id": "4-bedroom-house-alexandra-park-harare-ta0836",
-    "title": "4 Bedroom House to Rent in Alexandra Park",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-alexandra-park-harare-ta0836",
-    "price_raw": "USD 2,000/pm",
-    "location": "Alexandra Park, Harare North, Harare"
-  },
-  {
-    "id": "3-bedroom-mandara-harare-lcre0080",
-    "title": "House to Rent in Mandara",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-mandara-harare-lcre0080",
-    "price_raw": "USD 1,700/pm",
-    "location": "Mandara, Harare East, Harare"
-  },
-  {
-    "id": "2-bedroom-pumula-south-bulawayo-cei0843",
-    "title": "House to Rent in Pumula South",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/2-bedroom-pumula-south-bulawayo-cei0843",
-    "price_raw": "USD 250/pm",
-    "location": "Pumula South, Bulawayo High-Density, Bulawayo"
-  },
-  {
-    "id": "6-bedroom-emerald-hill-harare-tbr0449",
-    "title": "House to Rent in Emerald Hill",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/6-bedroom-emerald-hill-harare-tbr0449",
-    "price_raw": "USD 2,999/pm",
-    "location": "Emerald Hill, Harare West, Harare"
-  },
-  {
-    "id": "3-bedroom-house-goodhope-harare-leg2131",
-    "title": "House to Rent in Goodhope",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-goodhope-harare-leg2131",
-    "price_raw": "USD 1,000/pm",
-    "location": "Goodhope, Harare West, Harare"
-  },
-  {
-    "id": "4-bedroom-house-westgate-harare-sef335645",
-    "title": "House to Rent in Westgate",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-westgate-harare-sef335645",
-    "price_raw": "USD 1,000/pm",
-    "location": "Westgate, Harare West, Harare"
-  },
-  {
-    "id": "3-bedroom-house-waterfalls-harare-ire0080",
-    "title": "House to Rent in Waterfalls",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-waterfalls-harare-ire0080",
-    "price_raw": "USD 700/pm",
-    "location": "Waterfalls, Harare South, Harare"
-  },
-  {
-    "id": "2-bedroom-house-kuwadzana-harare-owd0039",
-    "title": "House to Rent in Kuwadzana",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/2-bedroom-house-kuwadzana-harare-owd0039",
-    "price_raw": "USD 300/pm",
-    "location": "Kuwadzana, Harare High Density, Harare"
-  },
-  {
-    "id": "3-bedroom-house-mabvuku-harare-fpc0277",
-    "title": "House to Rent in Mabvuku",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-mabvuku-harare-fpc0277",
-    "price_raw": "USD 400/pm",
-    "location": "Mabvuku, Harare High Density, Harare"
-  },
-  {
-    "id": "4-bedroom-house-northwood-harare-owd0038",
-    "title": "House to Rent in Northwood",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-northwood-harare-owd0038",
-    "price_raw": "USD 2,100/pm",
-    "location": "Northwood, Harare North, Harare"
-  },
-  {
-    "id": "3-bedroom-house-southview-park-harare-sef335637",
-    "title": "House to Rent in Southview Park",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-southview-park-harare-sef335637",
-    "price_raw": "USD 450/pm",
-    "location": "Southview Park, Harare South, Harare"
-  },
-  {
-    "id": "4-bedroom-house-madokero-estates-harare-kha0154",
-    "title": "House to Rent in Madokero Estates",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-madokero-estates-harare-kha0154",
-    "price_raw": "USD 800/pm",
-    "location": "Madokero Estates, Harare West, Harare"
-  },
-  {
-    "id": "3-bedroom-house-avonlea-harare-kha0152",
-    "title": "House to Rent in Avonlea",
-    "url": "https://www.propertybook.co.zw/listings/to/rent/3-bedroom-house-avonlea-harare-kha0152",
-    "price_raw": "USD 1,000/pm",
-    "location": "Avonlea, Harare West, Harare"
-  },
-  {
-    "id": "4-bedroom-house-mount-pleasant-harare-aps6032",
-    "title": "House to Rent in Mount Pleasant",
-    "url": "https://www.propertybook.co.zw/listings/to/rent/4-bedroom-house-mount-pleasant-harare-aps6032",
-    "price_raw": "USD 4,200/pm",
-    "location": "Mount Pleasant, Harare North, Harare"
-  },
-  {
-    "id": "10-bedroom-house-matsheumhlope-bulawayo-mre0287",
-    "title": "House to Rent in Matsheumhlope",
-    "url": "https://www.propertybook.co.zw/listings/to/rent/10-bedroom-house-matsheumhlope-bulawayo-mre0287",
-    "price_raw": "USD 2,500/pm",
-    "location": "Matsheumhlope, Bulawayo East, Bulawayo"
-  },
-  {
-    "id": "3-bedroom-house-marlborough-harare-brer0485",
-    "title": "House to Rent in Marlborough",
-    "url": "https://www.propertybook.co.zw/listings/to/rent/3-bedroom-house-marlborough-harare-brer0485",
-    "price_raw": "USD 1,100/pm",
-    "location": "Marlborough, Harare West, Harare"
-  },
-  {
-    "id": "3-bedroom-house-carrick-creagh-estate-harare-reh15805",
-    "title": "House to Rent in Carrick Creagh Estate",
-    "url": "https://www.propertybook.co.zw/listings/to/rent/3-bedroom-house-carrick-creagh-estate-harare-reh15805",
-    "price_raw": "USD 2,200/pm",
-    "location": "Carrick Creagh Estate, Harare North, Harare"
-  },
-  {
-    "id": "4-bedroom-house-mount-pleasant-harare-cei0806",
-    "title": "House to Rent in Mount Pleasant",
-    "url": "https://www.propertybook.co.zw/listings/to/rent/4-bedroom-house-mount-pleasant-harare-cei0806",
-    "price_raw": "USD 1,700/pm",
-    "location": "Mount Pleasant, Harare North, Harare"
-  },
-  {
-    "id": "4-bedroom-house-mount-pleasant-harare-cei0805",
-    "title": "House to Rent in Mount Pleasant",
-    "url": "https://www.propertybook.co.zw/listings/to/rent/4-bedroom-house-mount-pleasant-harare-cei0805",
-    "price_raw": "USD 2,500/pm",
-    "location": "Mount Pleasant, Harare North, Harare"
-  },
-  {
-    "id": "4-bedroom-greendale-harare-rr1461",
-    "title": "House to Rent in Greendale",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-greendale-harare-rr1461",
-    "price_raw": "USD 1,300/pm",
-    "location": "Greendale, Harare East, Harare"
-  },
-  {
-    "id": "4-bedroom-glen-lorne-harare-psp574668",
-    "title": "House to Rent in Glen Lorne",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-glen-lorne-harare-psp574668",
-    "price_raw": "USD 2,500/pm",
-    "location": "Glen Lorne, Harare North, Harare"
-  },
-  {
-    "id": "3-bedroom-house-aspindale-park-harare-rhe0172",
-    "title": "House to Rent in Aspindale Park",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-aspindale-park-harare-rhe0172",
-    "price_raw": "USD 650/pm",
-    "location": "Aspindale Park, Harare West, Harare"
-  },
-  {
-    "id": "3-bedroom-house-madokero-estates-harare-hos0284",
-    "title": "House to Rent in Madokero Estates",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-madokero-estates-harare-hos0284",
-    "price_raw": "USD 800/pm",
-    "location": "Madokero Estates, Harare West, Harare"
-  },
-  {
-    "id": "4-bedroom-house-chisipite-harare-tmr0129",
-    "title": "House to Rent in Chisipite",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-chisipite-harare-tmr0129",
-    "price_raw": "USD 3,500/pm",
-    "location": "Chisipite, Harare North, Harare"
-  },
-  {
-    "id": "4-bedroom-house-greystone-park-harare-vmm0111",
-    "title": "House to Rent in Greystone Park",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-greystone-park-harare-vmm0111",
-    "price_raw": "USD 2,300/pm",
-    "location": "Greystone Park, Harare North, Harare"
-  },
-  {
-    "id": "4-bedroom-house-westgate-harare-leg2123",
-    "title": "House to Rent in Westgate",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-westgate-harare-leg2123",
-    "price_raw": "USD 950/pm",
-    "location": "Westgate, Harare West, Harare"
-  },
-  {
-    "id": "3-bedroom-house-quinnington-harare-pgp13875",
-    "title": "House to Rent in Quinnington",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-quinnington-harare-pgp13875",
-    "price_raw": "USD 1,900/pm",
-    "location": "Quinnington, Harare North, Harare"
-  },
-  {
-    "id": "3-bedroom-house-chisipite-harare-dre0339",
-    "title": "House to Rent in Chisipite",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-chisipite-harare-dre0339",
-    "price_raw": "USD 2,500/pm",
-    "location": "Chisipite, Harare North, Harare"
-  },
-  {
-    "id": "4-bedroom-house-waterfalls-harare-fac1022",
-    "title": "House to Rent in Waterfalls",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-waterfalls-harare-fac1022",
-    "price_raw": "USD 800/pm",
-    "location": "Waterfalls, Harare South, Harare"
-  },
-  {
-    "id": "4-bedroom-house-hillside-harare-knp190776",
-    "title": "House to Rent in Hillside",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-hillside-harare-knp190776",
-    "price_raw": "USD 1,500/pm",
-    "location": "Hillside, Harare South, Harare"
-  },
-  {
-    "id": "5-bedroom-house-mount-pleasant-heights-harare-cpd0012",
-    "title": "House to Rent in Mount Pleasant Heights",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/5-bedroom-house-mount-pleasant-heights-harare-cpd0012",
-    "price_raw": "USD 1,800/pm",
-    "location": "Mount Pleasant Heights, Harare North, Harare"
-  },
-  {
-    "id": "2-bedroom-house-glen-lorne-harare-cpd0011",
-    "title": "House to Rent in Glen Lorne",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/2-bedroom-house-glen-lorne-harare-cpd0011",
-    "price_raw": "USD 400/pm",
-    "location": "Glen Lorne, Harare North, Harare"
-  },
-  {
-    "id": "4-bedroom-house-mabvazuva-estates-ruwa-cm0266",
-    "title": "House to Rent in Mabvazuva Estates",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-mabvazuva-estates-ruwa-cm0266",
-    "price_raw": "USD 1,000/pm",
-    "location": "Mabvazuva Estates, Ruwa"
-  },
-  {
-    "id": "house-mainway-meadows-harare-cei0803",
-    "title": "House to Rent in Mainway Meadows",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/house-mainway-meadows-harare-cei0803",
-    "price_raw": "USD 920/pm",
-    "location": "Mainway Meadows, Harare South, Harare"
-  },
-  {
-    "id": "3-bedroom-house-belvedere-harare-cei0801",
-    "title": "House to Rent in Belvedere",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-belvedere-harare-cei0801",
-    "price_raw": "USD 2,300/pm",
-    "location": "Belvedere, Harare West, Harare"
-  },
-  {
-    "id": "4-bedroom-house-zimre-park-harare-apc0016",
-    "title": "House to Rent in Zimre Park",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-zimre-park-harare-apc0016",
-    "price_raw": "USD 800/pm",
-    "location": "Zimre Park, Harare East, Harare"
-  },
-  {
-    "id": "8-bedroom-greystone-park-harare-fac9124192",
+    "id": "fac9124192",
     "title": "House to Rent in Greystone Park",
     "url": "https://www.propertybook.co.zw/listings/to-rent/8-bedroom-greystone-park-harare-fac9124192",
     "price_raw": "USD 7,500/pm",
     "location": "Greystone Park, Harare North, Harare"
   },
   {
-    "id": "3-bedroom-dandaro-harare-rr1436",
-    "title": "House to Rent in Dandaro",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-dandaro-harare-rr1436",
-    "price_raw": "USD 1,500/pm",
-    "location": "Dandaro, Harare North, Harare"
+    "id": "fac9124207",
+    "title": "House to Rent in Borrowdale Brooke",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-borrowdale-brooke-harare-fac9124207",
+    "price_raw": "USD 2,500/pm",
+    "location": "Borrowdale Brooke, Harare North, Harare"
   },
   {
-    "id": "3-bedroom-belvedere-harare-psp574657",
+    "id": "leg2179",
     "title": "House to Rent in Belvedere",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-belvedere-harare-psp574657",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-belvedere-harare-leg2179",
     "price_raw": "USD 1,000/pm",
     "location": "Belvedere, Harare West, Harare"
   },
   {
-    "id": "4-bedroom-rockview-harare-psp574674",
-    "title": "House to Rent in Rockview",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-rockview-harare-psp574674",
-    "price_raw": "USD 600/pm",
-    "location": "Rockview, Harare East, Harare"
+    "id": "psp574671",
+    "title": "House to Rent in Mount Pleasant",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/6-bedroom-house-mount-pleasant-harare-psp574671",
+    "price_raw": "USD 3,500/pm",
+    "location": "Mount Pleasant, Harare North, Harare"
   },
   {
-    "id": "4-bedroom-house-vainona-harare-pgp13867",
-    "title": "House to Rent in Vainona",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-vainona-harare-pgp13867",
+    "id": "cei0824",
+    "title": "House to Rent in Goodhope",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/8-bedroom-house-goodhope-harare-cei0824",
     "price_raw": "USD 2,000/pm",
-    "location": "Vainona, Harare North, Harare"
+    "location": "Goodhope, Harare West, Harare"
   },
   {
-    "id": "5-bedroom-house-mount-pleasant-heights-harare-tbr0437",
-    "title": "House to Rent in Mount Pleasant Heights",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/5-bedroom-house-mount-pleasant-heights-harare-tbr0437",
-    "price_raw": "USD 1,800/pm",
-    "location": "Mount Pleasant Heights, Harare North, Harare"
+    "id": "cei0814",
+    "title": "House to Rent in Chisipite",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-chisipite-harare-cei0814",
+    "price_raw": "USD 2,000/pm",
+    "location": "Chisipite, Harare North, Harare"
   },
   {
-    "id": "6-bedroom-house-glen-lorne-harare-fac1015",
+    "id": "cei0812",
+    "title": "House to Rent in Borrowdale",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-borrowdale-harare-cei0812",
+    "price_raw": "USD 2,000/pm",
+    "location": "Borrowdale, Harare North, Harare"
+  },
+  {
+    "id": "psp574670",
+    "title": "House to Rent in Borrowdale Brooke",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/5-bedroom-house-borrowdale-brooke-harare-psp574670",
+    "price_raw": "POA",
+    "location": "Borrowdale Brooke, Harare North, Harare"
+  },
+  {
+    "id": "aps6033",
+    "title": "House to Rent in Glen Lorne",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-glen-lorne-harare-aps6033",
+    "price_raw": "USD 2,500/pm",
+    "location": "Glen Lorne, Harare North, Harare"
+  },
+  {
+    "id": "cei0820",
+    "title": "House to Rent in Mount Pleasant",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-mount-pleasant-harare-cei0820",
+    "price_raw": "USD 4,200/pm",
+    "location": "Mount Pleasant, Harare North, Harare"
+  },
+  {
+    "id": "law20459",
+    "title": "House to Rent in Glen Lorne",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-glen-lorne-harare-law20459",
+    "price_raw": "USD 3,950/pm",
+    "location": "Glen Lorne, Harare North, Harare"
+  },
+  {
+    "id": "rr1501",
+    "title": "House to Rent in Alexandra Park",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-alexandra-park-harare-rr1501",
+    "price_raw": "USD 2,000/pm",
+    "location": "Alexandra Park, Harare North, Harare"
+  },
+  {
+    "id": "fpc0278",
+    "title": "House to Rent in Cranborne",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-cranborne-harare-fpc0278",
+    "price_raw": "USD 800/pm",
+    "location": "Cranborne, Harare South, Harare"
+  },
+  {
+    "id": "hos0287",
+    "title": "House to Rent in Colne Valley",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-colne-valley-harare-hos0287",
+    "price_raw": "USD 2,700/pm",
+    "location": "Colne Valley, Harare North, Harare"
+  },
+  {
+    "id": "leg2059",
+    "title": "House to Rent in Arlington",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-arlington-harare-leg2059",
+    "price_raw": "USD 1,200/pm",
+    "location": "Arlington, Harare South, Harare"
+  },
+  {
+    "id": "ta0845",
+    "title": "House to Rent in Glen Lorne",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-glen-lorne-harare-ta0845",
+    "price_raw": "USD 1,830/pm",
+    "location": "Glen Lorne, Harare North, Harare"
+  },
+  {
+    "id": "owd0039",
+    "title": "House to Rent in Kuwadzana",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/2-bedroom-house-kuwadzana-harare-owd0039",
+    "price_raw": "USD 300/pm",
+    "location": "Kuwadzana, Harare High Density, Harare"
+  },
+  {
+    "id": "aps6032",
+    "title": "House to Rent in Mount Pleasant",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-mount-pleasant-harare-aps6032",
+    "price_raw": "USD 4,200/pm",
+    "location": "Mount Pleasant, Harare North, Harare"
+  },
+  {
+    "id": "psp574668",
+    "title": "House to Rent in Glen Lorne",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-glen-lorne-harare-psp574668",
+    "price_raw": "USD 2,500/pm",
+    "location": "Glen Lorne, Harare North, Harare"
+  },
+  {
+    "id": "fpc0277",
+    "title": "House to Rent in Mabvuku",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-mabvuku-harare-fpc0277",
+    "price_raw": "USD 350/pm",
+    "location": "Mabvuku, Harare High Density, Harare"
+  },
+  {
+    "id": "leg2126",
+    "title": "House to Rent in Zimre Park",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-zimre-park-harare-leg2126",
+    "price_raw": "USD 700/pm",
+    "location": "Zimre Park, Harare East, Harare"
+  },
+  {
+    "id": "owd0038",
+    "title": "House to Rent in Northwood",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-northwood-harare-owd0038",
+    "price_raw": "USD 2,100/pm",
+    "location": "Northwood, Harare North, Harare"
+  },
+  {
+    "id": "hos0284",
+    "title": "House to Rent in Madokero Estates",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-madokero-estates-harare-hos0284",
+    "price_raw": "USD 800/pm",
+    "location": "Madokero Estates, Harare West, Harare"
+  },
+  {
+    "id": "tmr0129",
+    "title": "House to Rent in Chisipite",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-chisipite-harare-tmr0129",
+    "price_raw": "USD 3,500/pm",
+    "location": "Chisipite, Harare North, Harare"
+  },
+  {
+    "id": "vmm0111",
+    "title": "House to Rent in Greystone Park",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-greystone-park-harare-vmm0111",
+    "price_raw": "USD 2,300/pm",
+    "location": "Greystone Park, Harare North, Harare"
+  },
+  {
+    "id": "leg2123",
+    "title": "House to Rent in Westgate",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-westgate-harare-leg2123",
+    "price_raw": "USD 950/pm",
+    "location": "Westgate, Harare West, Harare"
+  },
+  {
+    "id": "brer0485",
+    "title": "House to Rent in Marlborough",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-marlborough-harare-brer0485",
+    "price_raw": "USD 1,100/pm",
+    "location": "Marlborough, Harare West, Harare"
+  },
+  {
+    "id": "reh15805",
+    "title": "House to Rent in Carrick Creagh Estate",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-carrick-creagh-estate-harare-reh15805",
+    "price_raw": "USD 2,200/pm",
+    "location": "Carrick Creagh Estate, Harare North, Harare"
+  },
+  {
+    "id": "cei0806",
+    "title": "House to Rent in Mount Pleasant",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-mount-pleasant-harare-cei0806",
+    "price_raw": "USD 1,700/pm",
+    "location": "Mount Pleasant, Harare North, Harare"
+  },
+  {
+    "id": "cei0805",
+    "title": "House to Rent in Mount Pleasant",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-mount-pleasant-harare-cei0805",
+    "price_raw": "USD 2,500/pm",
+    "location": "Mount Pleasant, Harare North, Harare"
+  },
+  {
+    "id": "cei0801",
+    "title": "House to Rent in Belvedere",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-belvedere-harare-cei0801",
+    "price_raw": "USD 2,300/pm",
+    "location": "Belvedere, Harare West, Harare"
+  },
+  {
+    "id": "pgp13985",
+    "title": "House to Rent in Arlington",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/5-bedroom-arlington-harare-pgp13985",
+    "price_raw": "USD 1,400/pm",
+    "location": "Arlington, Harare South, Harare"
+  },
+  {
+    "id": "fac1015",
     "title": "House to Rent in Glen Lorne",
     "url": "https://www.propertybook.co.zw/listings/to-rent/6-bedroom-house-glen-lorne-harare-fac1015",
     "price_raw": "USD 4,500/pm",
     "location": "Glen Lorne, Harare North, Harare"
   },
   {
-    "id": "8-bedroom-house-glen-lorne-harare-tbr0438",
+    "id": "dre0339",
+    "title": "House to Rent in Chisipite",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-chisipite-harare-dre0339",
+    "price_raw": "USD 2,500/pm",
+    "location": "Chisipite, Harare North, Harare"
+  },
+  {
+    "id": "fac1022",
+    "title": "House to Rent in Waterfalls",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-waterfalls-harare-fac1022",
+    "price_raw": "USD 800/pm",
+    "location": "Waterfalls, Harare South, Harare"
+  },
+  {
+    "id": "cpd0012",
+    "title": "House to Rent in Mount Pleasant Heights",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/5-bedroom-house-mount-pleasant-heights-harare-cpd0012",
+    "price_raw": "USD 1,800/pm",
+    "location": "Mount Pleasant Heights, Harare North, Harare"
+  },
+  {
+    "id": "cpd0011",
+    "title": "House to Rent in Glen Lorne",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/2-bedroom-house-glen-lorne-harare-cpd0011",
+    "price_raw": "USD 400/pm",
+    "location": "Glen Lorne, Harare North, Harare"
+  },
+  {
+    "id": "rhe0172",
+    "title": "House to Rent in Aspindale Park",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-aspindale-park-harare-rhe0172",
+    "price_raw": "USD 650/pm",
+    "location": "Aspindale Park, Harare West, Harare"
+  },
+  {
+    "id": "tbr0438",
     "title": "House to Rent in Glen Lorne",
     "url": "https://www.propertybook.co.zw/listings/to-rent/8-bedroom-house-glen-lorne-harare-tbr0438",
     "price_raw": "USD 3,500/pm",
     "location": "Glen Lorne, Harare North, Harare"
   },
   {
-    "id": "4-bedroom-house-helensvale-harare-leg2114",
+    "id": "leg2114",
     "title": "House to Rent in Helensvale",
     "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-helensvale-harare-leg2114",
     "price_raw": "USD 3,000/pm",
     "location": "Helensvale, Harare North, Harare"
   },
   {
-    "id": "3-bedroom-house-alexandra-park-harare-pgp13849",
-    "title": "House to Rent in Alexandra Park",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-alexandra-park-harare-pgp13849",
-    "price_raw": "USD 1,800/pm",
-    "location": "Alexandra Park, Harare North, Harare"
+    "id": "sef335626",
+    "title": "House to Rent in Glen Lorne",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-glen-lorne-harare-sef335626",
+    "price_raw": "USD 3,500/pm",
+    "location": "Glen Lorne, Harare North, Harare"
   },
   {
-    "id": "4-bedroom-house-norton-cer2123718",
-    "title": "House to Rent in Norton",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-norton-cer2123718",
-    "price_raw": "USD 1,100/pm",
-    "location": "Norton"
-  },
-  {
-    "id": "3-bedroom-house-glen-norah-harare-rr1482",
+    "id": "rr1482",
     "title": "House to Rent in Glen Norah",
     "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-glen-norah-harare-rr1482",
     "price_raw": "USD 450/pm",
     "location": "Glen Norah, Harare High Density, Harare"
   },
   {
-    "id": "3-bedroom-house-msasa-park-harare-apc0013",
+    "id": "apc0013",
     "title": "House to Rent in Msasa Park",
     "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-msasa-park-harare-apc0013",
-    "price_raw": "USD 600/pm",
+    "price_raw": "USD 550/pm",
     "location": "Msasa Park, Harare South, Harare"
   },
   {
-    "id": "2-bedroom-house-budiriro-harare-prpr0119",
+    "id": "cei0791",
+    "title": "House to Rent in Alexandra Park",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-alexandra-park-harare-cei0791",
+    "price_raw": "USD 2,000/pm",
+    "location": "Alexandra Park, Harare North, Harare"
+  },
+  {
+    "id": "sbre1208",
+    "title": "House to Rent in Ilanda",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-ilanda-bulawayo-sbre1208",
+    "price_raw": "USD 900/pm",
+    "location": "Ilanda, Bulawayo East, Bulawayo"
+  },
+  {
+    "id": "prpr0119",
     "title": "House to Rent in Budiriro",
     "url": "https://www.propertybook.co.zw/listings/to-rent/2-bedroom-house-budiriro-harare-prpr0119",
     "price_raw": "USD 250/pm",
     "location": "Budiriro, Harare High Density, Harare"
   },
   {
-    "id": "3-bedroom-borrowdale-harare-lcre0083",
+    "id": "fac1048",
+    "title": "House to Rent in Vainona",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/2-bedroom-vainona-harare-fac1048",
+    "price_raw": "USD 750/pm",
+    "location": "Vainona, Harare North, Harare"
+  },
+  {
+    "id": "gat169688",
+    "title": "House to Rent in Paddonhurst",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-paddonhurst-bulawayo-gat169688",
+    "price_raw": "USD 550/pm",
+    "location": "Paddonhurst, Bulawayo North, Bulawayo"
+  },
+  {
+    "id": "pgp13828",
+    "title": "House to Rent in Marlborough",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-marlborough-harare-pgp13828",
+    "price_raw": "USD 1,500/pm",
+    "location": "Marlborough, Harare West, Harare"
+  },
+  {
+    "id": "pwd7025",
+    "title": "House to Rent in Rainham",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-rainham-harare-pwd7025",
+    "price_raw": "USD 600/pm",
+    "location": "Rainham, Harare West, Harare"
+  },
+  {
+    "id": "brer0482",
+    "title": "House to Rent in Marlborough",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-marlborough-harare-brer0482",
+    "price_raw": "USD 1,200/pm",
+    "location": "Marlborough, Harare West, Harare"
+  },
+  {
+    "id": "fpc0274",
+    "title": "House to Rent in Marimba Park",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-marimba-park-harare-fpc0274",
+    "price_raw": "USD 600/pm",
+    "location": "Marimba Park, Harare High Density, Harare"
+  },
+  {
+    "id": "pgp13834",
     "title": "House to Rent in Borrowdale",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-borrowdale-harare-lcre0083",
-    "price_raw": "USD 1,700/pm",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-borrowdale-harare-pgp13834",
+    "price_raw": "USD 2,800/pm",
     "location": "Borrowdale, Harare North, Harare"
   },
   {
-    "id": "6-bedroom-glen-lorne-harare-fac1015",
+    "id": "leg2097",
+    "title": "House to Rent in Hatfield",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/2-bedroom-house-hatfield-harare-leg2097",
+    "price_raw": "USD 500/pm",
+    "location": "Hatfield, Harare South, Harare"
+  },
+  {
+    "id": "leg2096",
+    "title": "House to Rent in Marlborough",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/5-bedroom-house-marlborough-harare-leg2096",
+    "price_raw": "USD 1,800/pm",
+    "location": "Marlborough, Harare West, Harare"
+  },
+  {
+    "id": "car22315",
+    "title": "House to Rent in Zimre Park",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-zimre-park-harare-car22315",
+    "price_raw": "USD 650/pm",
+    "location": "Zimre Park, Harare East, Harare"
+  },
+  {
+    "id": "smr637297",
+    "title": "House to Rent in Milton Park",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-milton-park-harare-smr637297",
+    "price_raw": "USD 2,500/pm",
+    "location": "Milton Park, Harare West, Harare"
+  },
+  {
+    "id": "aps6027",
+    "title": "House to Rent in Greystone Park",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-greystone-park-harare-aps6027",
+    "price_raw": "USD 1,200/pm",
+    "location": "Greystone Park, Harare North, Harare"
+  },
+  {
+    "id": "en0007",
+    "title": "House to Rent in Hatfield",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-hatfield-harare-en0007",
+    "price_raw": "USD 750/pm",
+    "location": "Hatfield, Harare South, Harare"
+  },
+  {
+    "id": "oas10115",
+    "title": "House to Rent in Ruwa",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-ruwa-oas10115",
+    "price_raw": "USD 550/pm",
+    "location": "Ruwa"
+  },
+  {
+    "id": "ta0833",
+    "title": "House to Rent in Umwinsidale",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-umwinsidale-harare-ta0833",
+    "price_raw": "USD 3,500/pm",
+    "location": "Umwinsidale, Harare North, Harare"
+  },
+  {
+    "id": "chr0113",
+    "title": "House to Rent in Damofalls",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-damofalls-chr0113",
+    "price_raw": "USD 300/pm",
+    "location": "Damofalls"
+  },
+  {
+    "id": "pgp13828",
+    "title": "House to Rent in Marlborough",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-marlborough-harare-pgp13828",
+    "price_raw": "USD 1,500/pm",
+    "location": "Marlborough, Harare West, Harare"
+  },
+  {
+    "id": "fac1015",
     "title": "House to Rent in Glen Lorne",
     "url": "https://www.propertybook.co.zw/listings/to-rent/6-bedroom-glen-lorne-harare-fac1015",
     "price_raw": "USD 4,500/pm",
     "location": "Glen Lorne, Harare North, Harare"
+  },
+  {
+    "id": "psp574682",
+    "title": "House to Rent in Mount Pleasant",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-mount-pleasant-harare-psp574682",
+    "price_raw": "USD 4,200/pm",
+    "location": "Mount Pleasant, Harare North, Harare"
+  },
+  {
+    "id": "rr1461",
+    "title": "House to Rent in Greendale",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-greendale-harare-rr1461",
+    "price_raw": "USD 1,300/pm",
+    "location": "Greendale, Harare East, Harare"
+  },
+  {
+    "id": "dre0328",
+    "title": "House to Rent in Rolf Valley",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/7-bedroom-house-rolf-valley-harare-dre0328",
+    "price_raw": "USD 6,000/pm",
+    "location": "Rolf Valley, Harare North, Harare"
+  },
+  {
+    "id": "sef335603",
+    "title": "House to Rent in Springvale",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-springvale-ruwa-sef335603",
+    "price_raw": "USD 600/pm",
+    "location": "Springvale, Ruwa"
+  },
+  {
+    "id": "brer0466",
+    "title": "House to Rent in Budiriro",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-budiriro-harare-brer0466",
+    "price_raw": "USD 250/pm",
+    "location": "Budiriro, Harare High Density, Harare"
   },
   {
     "id": "5-bedroom-borrowdale-brooke-harare-psp574670",
@@ -868,858 +1225,382 @@
     "location": "Borrowdale Brooke, Harare North, Harare"
   },
   {
-    "id": "6-bedroom-mount-pleasant-harare-psp574671",
-    "title": "House to Rent in Mount Pleasant",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/6-bedroom-mount-pleasant-harare-psp574671",
-    "price_raw": "USD 3,500/pm",
-    "location": "Mount Pleasant, Harare North, Harare"
-  },
-  {
-    "id": "3-bedroom-house-paddonhurst-bulawayo-gat169688",
-    "title": "House to Rent in Paddonhurst",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-paddonhurst-bulawayo-gat169688",
-    "price_raw": "USD 550/pm",
-    "location": "Paddonhurst, Bulawayo North, Bulawayo"
-  },
-  {
-    "id": "3-bedroom-house-chisipite-harare-leg2102",
-    "title": "House to Rent in Chisipite",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-chisipite-harare-leg2102",
-    "price_raw": "USD 1,200/pm",
-    "location": "Chisipite, Harare North, Harare"
-  },
-  {
-    "id": "3-bedroom-house-marlborough-harare-pgp13828",
-    "title": "House to Rent in Marlborough",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-marlborough-harare-pgp13828",
-    "price_raw": "USD 1,500/pm",
-    "location": "Marlborough, Harare West, Harare"
-  },
-  {
-    "id": "3-bedroom-house-marimba-park-harare-fpc0274",
-    "title": "House to Rent in Marimba Park",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-marimba-park-harare-fpc0274",
-    "price_raw": "USD 700/pm",
-    "location": "Marimba Park, Harare High Density, Harare"
-  },
-  {
-    "id": "4-bedroom-house-mount-pleasant-harare-stbp11200",
-    "title": "House to Rent in Mount Pleasant",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-mount-pleasant-harare-stbp11200",
-    "price_raw": "USD 1,300/pm",
-    "location": "Mount Pleasant, Harare North, Harare"
-  },
-  {
-    "id": "4-bedroom-house-westgate-harare-cei0770",
-    "title": "House to Rent in Westgate",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-westgate-harare-cei0770",
-    "price_raw": "USD 850/pm",
-    "location": "Westgate, Harare West, Harare"
-  },
-  {
-    "id": "3-bedroom-house-borrowdale-harare-pgp13834",
-    "title": "House to Rent in Borrowdale",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-borrowdale-harare-pgp13834",
-    "price_raw": "USD 2,800/pm",
-    "location": "Borrowdale, Harare North, Harare"
-  },
-  {
-    "id": "5-bedroom-house-mount-pleasant-harare-tt0065",
-    "title": "House to Rent in Mount Pleasant",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/5-bedroom-house-mount-pleasant-harare-tt0065",
-    "price_raw": "USD 1,200/pm",
-    "location": "Mount Pleasant, Harare North, Harare"
-  },
-  {
-    "id": "house-eastlea-harare-car22316",
-    "title": "House to Rent in Eastlea",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/house-eastlea-harare-car22316",
+    "id": "4-bedroom-house-carrick-creagh-estate-harare-fac9124216",
+    "title": "House to Rent in Carrick Creagh Estate",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-carrick-creagh-estate-harare-fac9124216",
     "price_raw": "USD 2,000/pm",
-    "location": "Eastlea, Harare East, Harare"
+    "location": "Carrick Creagh Estate, Harare North, Harare"
   },
   {
-    "id": "4-bedroom-house-ruwa-oas10115",
-    "title": "House to Rent in Ruwa",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-ruwa-oas10115",
-    "price_raw": "USD 550/pm",
-    "location": "Ruwa"
-  },
-  {
-    "id": "3-bedroom-house-umwinsidale-harare-ta0833",
-    "title": "House to Rent in Umwinsidale",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-umwinsidale-harare-ta0833",
-    "price_raw": "USD 3,500/pm",
-    "location": "Umwinsidale, Harare North, Harare"
-  },
-  {
-    "id": "3-bedroom-house-suburbs-bulawayo-red0379",
-    "title": "House to Rent in Suburbs",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-suburbs-bulawayo-red0379",
-    "price_raw": "USD 2,000/pm",
-    "location": "Suburbs, Bulawayo East, Bulawayo"
-  },
-  {
-    "id": "3-bedroom-house-damofalls-chr0113",
-    "title": "House to Rent in Damofalls",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-damofalls-chr0113",
-    "price_raw": "USD 300/pm",
-    "location": "Damofalls"
-  },
-  {
-    "id": "2-bedroom-house-glen-norah-harare-bbp0368",
-    "title": "House to Rent in Glen Norah",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/2-bedroom-house-glen-norah-harare-bbp0368",
-    "price_raw": "USD 275/pm",
-    "location": "Glen Norah, Harare High Density, Harare"
-  },
-  {
-    "id": "4-bedroom-house-greendale-harare-rr1461",
-    "title": "4 Bedroom House to Rent in Greendale",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-greendale-harare-rr1461",
-    "price_raw": "USD 1,300/pm",
-    "location": "Greendale, Harare East, Harare"
-  },
-  {
-    "id": "2-bedroom-house-hatfield-harare-leg2097",
-    "title": "2 Bedroom House to Rent in Hatfield",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/2-bedroom-house-hatfield-harare-leg2097",
-    "price_raw": "USD 500/pm",
-    "location": "Hatfield, Harare South, Harare"
-  },
-  {
-    "id": "5-bedroom-house-marlborough-harare-leg2096",
-    "title": "5 Bedroom House to Rent in Marlborough",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/5-bedroom-house-marlborough-harare-leg2096",
-    "price_raw": "USD 1,800/pm",
-    "location": "Marlborough, Harare West, Harare"
-  },
-  {
-    "id": "4-bedroom-house-zimre-park-harare-car22315",
-    "title": "4 Bedroom House to Rent in Zimre Park",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-zimre-park-harare-car22315",
-    "price_raw": "USD 650/pm",
-    "location": "Zimre Park, Harare East, Harare"
-  },
-  {
-    "id": "4-bedroom-house-milton-park-harare-smr637297",
-    "title": "4 Bedroom House to Rent in Milton Park",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-milton-park-harare-smr637297",
-    "price_raw": "USD 2,500/pm",
-    "location": "Milton Park, Harare West, Harare"
-  },
-  {
-    "id": "3-bedroom-house-bluff-hill-harare-pzp0614",
-    "title": "3 Bedroom House to Rent in Bluff Hill",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-bluff-hill-harare-pzp0614",
-    "price_raw": "USD 1,000/pm",
-    "location": "Bluff Hill, Harare West, Harare"
-  },
-  {
-    "id": "2-bedroom-house-chitungwiza-prcl11278",
-    "title": "2 Bedroom House to Rent in Chitungwiza",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/2-bedroom-house-chitungwiza-prcl11278",
-    "price_raw": "USD 160/pm",
-    "location": "Chitungwiza"
-  },
-  {
-    "id": "3-bedroom-house-greendale-harare-rr1464",
-    "title": "3 Bedroom House to Rent in Greendale",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-greendale-harare-rr1464",
-    "price_raw": "USD 1,100/pm",
-    "location": "Greendale, Harare East, Harare"
-  },
-  {
-    "id": "5-bedroom-house-chadcombe-harare-dre0332",
-    "title": "5 Bedroom House to Rent in Chadcombe",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/5-bedroom-house-chadcombe-harare-dre0332",
-    "price_raw": "USD 2,500/pm",
-    "location": "Chadcombe, Harare South, Harare"
-  },
-  {
-    "id": "4-bedroom-house-alexandra-park-harare-knp190760",
-    "title": "4 Bedroom House to Rent in Alexandra Park",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-alexandra-park-harare-knp190760",
-    "price_raw": "USD 2,000/pm",
-    "location": "Alexandra Park, Harare North, Harare"
-  },
-  {
-    "id": "5-bedroom-house-southview-park-harare-deri0105",
-    "title": "5 Bedroom House to Rent in Southview Park",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/5-bedroom-house-southview-park-harare-deri0105",
-    "price_raw": "USD 500/pm",
-    "location": "Southview Park, Harare South, Harare"
-  },
-  {
-    "id": "6-bedroom-house-avondale-west-harare-srp0069",
-    "title": "6 Bedroom House to Rent in Avondale West",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/6-bedroom-house-avondale-west-harare-srp0069",
-    "price_raw": "USD 2,800/pm",
-    "location": "Avondale West, Harare West, Harare"
-  },
-  {
-    "id": "3-bedroom-house-northend-bulawayo-cei0757",
-    "title": "3 Bedroom House to Rent in Northend",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-northend-bulawayo-cei0757",
-    "price_raw": "USD 500/pm",
-    "location": "Northend, Bulawayo North, Bulawayo"
-  },
-  {
-    "id": "3-bedroom-house-braeside-harare-gra0213",
-    "title": "3 Bedroom House to Rent in Braeside",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-braeside-harare-gra0213",
-    "price_raw": "USD 1,100/pm",
-    "location": "Braeside, Harare South, Harare"
-  },
-  {
-    "id": "4-bedroom-house-shawasha-hills-harare-vnt0193",
-    "title": "4 Bedroom House to Rent in Shawasha Hills",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-shawasha-hills-harare-vnt0193",
-    "price_raw": "USD 3,600/pm",
-    "location": "Shawasha Hills, Harare North, Harare"
-  },
-  {
-    "id": "4-bedroom-mount-pleasant-harare-aps6002",
-    "title": "House to Rent in Mount Pleasant",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-mount-pleasant-harare-aps6002",
-    "price_raw": "USD 3,000/pm",
-    "location": "Mount Pleasant, Harare North, Harare"
-  },
-  {
-    "id": "7-bedroom-rolf-valley-harare-dre0328",
-    "title": "House to Rent in Rolf Valley",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/7-bedroom-rolf-valley-harare-dre0328",
-    "price_raw": "USD 6,000/pm",
-    "location": "Rolf Valley, Harare North, Harare"
-  },
-  {
-    "id": "3-bedroom-house-cotswold-hills-harare-rc0297",
-    "title": "House to Rent in Cotswold Hills",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-cotswold-hills-harare-rc0297",
-    "price_raw": "USD 800/pm",
-    "location": "Cotswold Hills, Harare West, Harare"
-  },
-  {
-    "id": "3-bedroom-house-greendale-harare-rod190237",
-    "title": "House to Rent in Greendale",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-greendale-harare-rod190237",
-    "price_raw": "USD 1,850/pm",
-    "location": "Greendale, Harare East, Harare"
-  },
-  {
-    "id": "4-bedroom-house-springvale-ruwa-sef335603",
-    "title": "House to Rent in Springvale",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-springvale-ruwa-sef335603",
-    "price_raw": "USD 600/pm",
-    "location": "Springvale, Ruwa"
-  },
-  {
-    "id": "3-bedroom-house-highlands-harare-rod190238",
-    "title": "House to Rent in Highlands",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-highlands-harare-rod190238",
-    "price_raw": "USD 1,600/pm",
-    "location": "Highlands, Harare North, Harare"
-  },
-  {
-    "id": "8-bedroom-house-glen-lorne-harare-pzp0610",
-    "title": "House to Rent in Glen Lorne",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/8-bedroom-house-glen-lorne-harare-pzp0610",
-    "price_raw": "USD 3,500/pm",
-    "location": "Glen Lorne, Harare North, Harare"
-  },
-  {
-    "id": "4-bedroom-house-borrowdale-brooke-harare-cb0007",
-    "title": "House to Rent in Borrowdale Brooke",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-borrowdale-brooke-harare-cb0007",
-    "price_raw": "USD 1,900/pm",
-    "location": "Borrowdale Brooke, Harare North, Harare"
-  },
-  {
-    "id": "house-dandaro-harare-hdr1234650",
-    "title": "House to Rent in Dandaro",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/house-dandaro-harare-hdr1234650",
-    "price_raw": "USD 1,500/pm",
-    "location": "Dandaro, Harare North, Harare"
-  },
-  {
-    "id": "3-bedroom-house-monavale-harare-flo0043",
-    "title": "House to Rent in Monavale",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-monavale-harare-flo0043",
-    "price_raw": "USD 900/pm",
-    "location": "Monavale, Harare West, Harare"
-  },
-  {
-    "id": "3-bedroom-house-haig-park-harare-gat190065",
-    "title": "House to Rent in Haig Park",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-haig-park-harare-gat190065",
-    "price_raw": "USD 750/pm",
-    "location": "Haig Park, Harare West, Harare"
-  },
-  {
-    "id": "6-bedroom-house-emerald-hill-harare-cei0750",
-    "title": "House to Rent in Emerald Hill",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/6-bedroom-house-emerald-hill-harare-cei0750",
-    "price_raw": "USD 1,500/pm",
-    "location": "Emerald Hill, Harare West, Harare"
-  },
-  {
-    "id": "4-bedroom-house-gunhill-harare-rr1451",
-    "title": "House to Rent in Gunhill",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-gunhill-harare-rr1451",
-    "price_raw": "USD 2,700/pm",
-    "location": "Gunhill, Harare North, Harare"
-  },
-  {
-    "id": "4-bedroom-house-budiriro-harare-brer0466",
-    "title": "House to Rent in Budiriro",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-budiriro-harare-brer0466",
-    "price_raw": "USD 250/pm",
-    "location": "Budiriro, Harare High Density, Harare"
-  },
-  {
-    "id": "6-bedroom-house-goodhope-harare-bb5455",
-    "title": "House to Rent in Goodhope",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/6-bedroom-house-goodhope-harare-bb5455",
-    "price_raw": "USD 1,400/pm",
-    "location": "Goodhope, Harare West, Harare"
-  },
-  {
-    "id": "3-bedroom-house-hillside-byo-bulawayo-red0369",
-    "title": "House to Rent in Hillside Byo",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-hillside-byo-bulawayo-red0369",
-    "price_raw": "USD 800/pm",
-    "location": "Hillside Byo, Bulawayo South, Bulawayo"
-  },
-  {
-    "id": "pgp13644",
-    "title": "House to Rent in Vainona",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-vainona-harare-pgp13644",
-    "price_raw": "USD 3,000/pm",
-    "location": "Vainona, Harare North, Harare"
-  },
-  {
-    "id": "ark2223",
+    "id": "3-bedroom-house-eastlea-harare-ark2223",
     "title": "House to Rent in Eastlea",
     "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-eastlea-harare-ark2223",
     "price_raw": "USD 2,500/pm",
     "location": "Eastlea, Harare East, Harare"
   },
   {
-    "id": "lcre0083",
-    "title": "House to Rent in Borrowdale",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-borrowdale-harare-lcre0083",
-    "price_raw": "USD 1,700/pm",
-    "location": "Borrowdale, Harare North, Harare"
-  },
-  {
-    "id": "psp574657",
-    "title": "House to Rent in Belvedere",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-belvedere-harare-psp574657",
-    "price_raw": "USD 1,000/pm",
-    "location": "Belvedere, Harare West, Harare"
-  },
-  {
-    "id": "rr1436",
-    "title": "House to Rent in Dandaro",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-dandaro-harare-rr1436",
-    "price_raw": "USD 1,500/pm",
-    "location": "Dandaro, Harare North, Harare"
-  },
-  {
-    "id": "sef335600",
-    "title": "House to Rent in Arlington",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-arlington-harare-sef335600",
-    "price_raw": "USD 1,650/pm",
-    "location": "Arlington, Harare South, Harare"
-  },
-  {
-    "id": "apc0008",
-    "title": "House to Rent in Zimre Park",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-zimre-park-harare-apc0008",
-    "price_raw": "USD 600/pm",
-    "location": "Zimre Park, Harare East, Harare"
-  },
-  {
-    "id": "pbsa0223",
-    "title": "House to Rent in Weirmouth",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-weirmouth-mutare-pbsa0223",
-    "price_raw": "USD 350/pm",
-    "location": "Weirmouth, Mutare"
-  },
-  {
-    "id": "hap2982",
-    "title": "House to Rent in Borrowdale Brooke",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-borrowdale-brooke-harare-hap2982",
-    "price_raw": "USD 2,300/pm",
-    "location": "Borrowdale Brooke, Harare North, Harare"
-  },
-  {
-    "id": "prpr0111",
-    "title": "House to Rent in Mount Pleasant Heights",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/5-bedroom-house-mount-pleasant-heights-harare-prpr0111",
-    "price_raw": "USD 1,800/pm",
-    "location": "Mount Pleasant Heights, Harare North, Harare"
-  },
-  {
-    "id": "bp0107",
-    "title": "House to Rent in Mahatshula",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-mahatshula-bulawayo-bp0107",
-    "price_raw": "USD 300/pm",
-    "location": "Mahatshula, Bulawayo North, Bulawayo"
-  },
-  {
-    "id": "pgp13611",
-    "title": "3 Bedroom House to Rent in Eastlea",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-eastlea-harare-pgp13611",
-    "price_raw": "USD 2,500/pm",
-    "location": "Eastlea, Harare East, Harare"
-  },
-  {
-    "id": "fac9124221",
-    "title": "3 Bedroom House to Rent in Greendale",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-greendale-harare-fac9124221",
-    "price_raw": "USD 2,000/pm",
-    "location": "Greendale, Harare East, Harare"
-  },
-  {
-    "id": "rr1427",
-    "title": "4 Bedroom House to Rent in Greendale North",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-greendale-north-harare-rr1427",
-    "price_raw": "USD 1,850/pm",
-    "location": "Greendale North, Harare North, Harare"
-  },
-  {
-    "id": "fac9124216",
-    "title": "4 Bedroom House to Rent in Carrick Creagh Estate",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-carrick-creagh-estate-harare-fac9124216",
-    "price_raw": "USD 2,000/pm",
-    "location": "Carrick Creagh Estate, Harare North, Harare"
-  },
-  {
     "id": "lcre0080",
-    "title": "3 Bedroom House to Rent in Mandara",
+    "title": "House to Rent in Mandara",
     "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-mandara-harare-lcre0080",
     "price_raw": "USD 1,700/pm",
     "location": "Mandara, Harare East, Harare"
   },
   {
-    "id": "prcl11268",
-    "title": "3 Bedroom House to Rent in Waterfalls",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-waterfalls-harare-prcl11268",
-    "price_raw": "USD 300/pm",
-    "location": "Waterfalls, Harare South, Harare"
-  },
-  {
-    "id": "ks0017",
-    "title": "3 Bedroom House to Rent in Mainway Meadows",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-mainway-meadows-harare-ks0017",
-    "price_raw": "USD 800/pm",
-    "location": "Mainway Meadows, Harare South, Harare"
-  },
-  {
-    "id": "5-bedroom-mount-pleasant-heights-harare-tbr0437",
-    "title": "House to Rent in Mount Pleasant Heights",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/5-bedroom-mount-pleasant-heights-harare-tbr0437",
-    "price_raw": "USD 1,800/pm",
-    "location": "Mount Pleasant Heights, Harare North, Harare"
-  },
-  {
-    "id": "8-bedroom-house-greystone-park-harare-pgp13711",
-    "title": "House to Rent in Greystone Park",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/8-bedroom-house-greystone-park-harare-pgp13711",
-    "price_raw": "USD 7,500/pm",
-    "location": "Greystone Park, Harare North, Harare"
-  },
-  {
-    "id": "4-bedroom-house-borrowdale-brooke-harare-fac9124207",
-    "title": "House to Rent in Borrowdale Brooke",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-borrowdale-brooke-harare-fac9124207",
-    "price_raw": "USD 2,500/pm",
-    "location": "Borrowdale Brooke, Harare North, Harare"
-  },
-  {
-    "id": "6-bedroom-house-glen-lorne-harare-pgp13718",
-    "title": "House to Rent in Glen Lorne",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/6-bedroom-house-glen-lorne-harare-pgp13718",
-    "price_raw": "USD 4,000/pm",
-    "location": "Glen Lorne, Harare North, Harare"
-  },
-  {
-    "id": "3-bedroom-house-westgate-harare-cei0692",
-    "title": "House to Rent in Westgate",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-westgate-harare-cei0692",
-    "price_raw": "USD 1,350/pm",
-    "location": "Westgate, Harare West, Harare"
-  },
-  {
-    "id": "house-harare-city-centre-harare-kha0126",
+    "id": "harare-kha0126",
     "title": "House to Rent in Harare City Centre",
     "url": "https://www.propertybook.co.zw/listings/to-rent/house-harare-city-centre-harare-kha0126",
     "price_raw": "USD 400/pm",
     "location": "Harare City Centre, Harare CBD, Harare"
   },
   {
-    "id": "4-bedroom-house-tynwald-harare-car22290",
+    "id": "car22290",
     "title": "House to Rent in Tynwald",
     "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-tynwald-harare-car22290",
     "price_raw": "USD 550/pm",
     "location": "Tynwald, Harare West, Harare"
   },
   {
-    "id": "house-glen-forest-harare-dn0018",
+    "id": "sbre1180",
+    "title": "House to Rent in Hillside Byo",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-hillside-byo-bulawayo-sbre1180",
+    "price_raw": "USD 1,000/pm",
+    "location": "Hillside Byo, Bulawayo South, Bulawayo"
+  },
+  {
+    "id": "sbre1179",
+    "title": "House to Rent in Famona",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-famona-bulawayo-sbre1179",
+    "price_raw": "USD 1,200/pm",
+    "location": "Famona, Bulawayo South, Bulawayo"
+  },
+  {
+    "id": "ark2214",
+    "title": "House to Rent in Arlington",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-arlington-harare-ark2214",
+    "price_raw": "USD 1,200/pm",
+    "location": "Arlington, Harare South, Harare"
+  },
+  {
+    "id": "kgs0001",
+    "title": "House to Rent in Mandara",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-mandara-harare-kgs0001",
+    "price_raw": "USD 800/pm",
+    "location": "Mandara, Harare East, Harare"
+  },
+  {
+    "id": "pgp13711",
+    "title": "House to Rent in Greystone Park",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/8-bedroom-house-greystone-park-harare-pgp13711",
+    "price_raw": "USD 7,500/pm",
+    "location": "Greystone Park, Harare North, Harare"
+  },
+  {
+    "id": "fac9124207",
+    "title": "House to Rent in Borrowdale Brooke",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-borrowdale-brooke-harare-fac9124207",
+    "price_raw": "USD 2,500/pm",
+    "location": "Borrowdale Brooke, Harare North, Harare"
+  },
+  {
+    "id": "rmx0467",
+    "title": "House to Rent in Westgate",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-westgate-harare-rmx0467",
+    "price_raw": "USD 2,500/pm",
+    "location": "Westgate, Harare West, Harare"
+  },
+  {
+    "id": "aw0007",
+    "title": "House to Rent in Christon Bank",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-christon-bank-aw0007",
+    "price_raw": "USD 2,200/pm",
+    "location": "Christon Bank"
+  },
+  {
+    "id": "mt0120",
+    "title": "House to Rent in Mount Pleasant",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-mount-pleasant-harare-mt0120",
+    "price_raw": "USD 1,600/pm",
+    "location": "Mount Pleasant, Harare North, Harare"
+  },
+  {
+    "id": "rr1544",
+    "title": "House to Rent in Helensvale",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-helensvale-harare-rr1544",
+    "price_raw": "USD 3,000/pm",
+    "location": "Helensvale, Harare North, Harare"
+  },
+  {
+    "id": "gkr0065",
+    "title": "House to Rent in Belvedere",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-belvedere-harare-gkr0065",
+    "price_raw": "USD 800/pm",
+    "location": "Belvedere, Harare West, Harare"
+  },
+  {
+    "id": "gat169718",
+    "title": "House to Rent in Hatfield",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-hatfield-harare-gat169718",
+    "price_raw": "USD 680/pm",
+    "location": "Hatfield, Harare South, Harare"
+  },
+  {
+    "id": "leg2059",
+    "title": "House to Rent in Arlington",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-arlington-harare-leg2059",
+    "price_raw": "USD 1,200/pm",
+    "location": "Arlington, Harare South, Harare"
+  },
+  {
+    "id": "dn0018",
     "title": "House to Rent in Glen Forest",
     "url": "https://www.propertybook.co.zw/listings/to-rent/house-glen-forest-harare-dn0018",
     "price_raw": "POA",
     "location": "Glen Forest, Harare North, Harare"
   },
   {
-    "id": "4-bedroom-house-avondale-the-ridge-harare-meh0040",
+    "id": "meh0040",
     "title": "House to Rent in Avondale - The Ridge",
     "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-avondale-the-ridge-harare-meh0040",
     "price_raw": "USD 3,000/pm",
     "location": "Avondale - The Ridge, Harare West, Harare"
   },
   {
-    "id": "2-bedroom-house-mufakose-harare-hoe588310",
+    "id": "hoe588310",
     "title": "House to Rent in Mufakose",
     "url": "https://www.propertybook.co.zw/listings/to-rent/2-bedroom-house-mufakose-harare-hoe588310",
     "price_raw": "USD 250/pm",
     "location": "Mufakose, Harare High Density, Harare"
   },
   {
-    "id": "6-bedroom-house-mount-pleasant-heights-harare-rr1393",
+    "id": "rr1393",
     "title": "House to Rent in Mount Pleasant Heights",
     "url": "https://www.propertybook.co.zw/listings/to-rent/6-bedroom-house-mount-pleasant-heights-harare-rr1393",
     "price_raw": "USD 1,500/pm",
     "location": "Mount Pleasant Heights, Harare North, Harare"
   },
   {
-    "id": "4-bedroom-house-borrowdale-brooke-harare-pgp13692",
+    "id": "pgp13692",
     "title": "House to Rent in Borrowdale Brooke",
     "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-borrowdale-brooke-harare-pgp13692",
     "price_raw": "USD 3,500/pm",
     "location": "Borrowdale Brooke, Harare North, Harare"
   },
   {
-    "id": "3-bedroom-house-mandara-harare-car22280",
+    "id": "car22280",
     "title": "House to Rent in Mandara",
     "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-mandara-harare-car22280",
     "price_raw": "USD 1,100/pm",
     "location": "Mandara, Harare East, Harare"
   },
   {
-    "id": "gat169718",
-    "title": "3 Bedroom House in Hatfield",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-hatfield-harare-gat169718",
-    "price_raw": "USD 680/pm",
-    "location": "Hatfield, Harare South, Harare"
-  },
-  {
     "id": "gat189985",
-    "title": "3 Bedroom House in Waterfalls",
+    "title": "House to Rent in Waterfalls",
     "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-waterfalls-harare-gat189985",
     "price_raw": "USD 700/pm",
     "location": "Waterfalls, Harare South, Harare"
   },
   {
     "id": "gat189984",
-    "title": "5 Bedroom House in Windsor Park",
+    "title": "House to Rent in Windsor Park",
     "url": "https://www.propertybook.co.zw/listings/to-rent/5-bedroom-house-winsor-park-ruwa-gat189984",
     "price_raw": "USD 650/pm",
     "location": "Windsor Park, Ruwa"
   },
   {
-    "id": "gat189983",
-    "title": "3 Bedroom House in Highlands",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-highlands-harare-gat189983",
-    "price_raw": "USD 2,500/pm",
-    "location": "Highlands, Harare North, Harare"
-  },
-  {
     "id": "gat169712",
-    "title": "1 Bedroom House in Borrowdale",
+    "title": "House to Rent in Borrowdale",
     "url": "https://www.propertybook.co.zw/listings/to-rent/1-bedroom-house-borrowdale-harare-gat169712",
-    "price_raw": "USD 800/pm",
+    "price_raw": "USD 700/pm",
     "location": "Borrowdale, Harare North, Harare"
   },
   {
     "id": "mtc0006",
-    "title": "4 Bedroom House in Mutare CBD",
+    "title": "House to Rent in Mutare CBD",
     "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-mutare-cbd-mutare-mtc0006",
     "price_raw": "USD 2,000/pm",
     "location": "Mutare CBD, Mutare"
   },
   {
     "id": "pwd7013",
-    "title": "4 Bedroom House in Westlea",
+    "title": "House to Rent in Westlea",
     "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-westlea-hre-harare-pwd7013",
     "price_raw": "USD 800/pm",
     "location": "Westlea, Harare West, Harare"
   },
   {
-    "id": "gat169715",
-    "title": "5 Bedroom House in Goodhope",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/5-bedroom-house-goodhope-harare-gat169715",
-    "price_raw": "USD 1,900/pm",
-    "location": "Goodhope, Harare West, Harare"
-  },
-  {
-    "id": "jo0013",
-    "title": "5 Bedroom House in Glen Lorne",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/5-bedroom-house-glen-lorne-harare-jo0013",
-    "price_raw": "USD 3,500/pm",
-    "location": "Glen Lorne, Harare North, Harare"
-  },
-  {
-    "id": "lk0052",
-    "title": "6 Bedroom House in Manresa",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/6-bedroom-house-manresa-harare-lk0052",
-    "price_raw": "USD 1,000/pm",
-    "location": "Manresa, Harare East, Harare"
-  },
-  {
-    "id": "psp574647",
-    "title": "5 Bedroom House in Mount Pleasant Heights",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/5-bedroom-house-mount-pleasant-heights-harare-psp574647",
-    "price_raw": "USD 2,500/pm",
+    "id": "chr0104",
+    "title": "House to Rent in Mount Pleasant Heights",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/5-bedroom-house-mount-pleasant-heights-harare-chr0104",
+    "price_raw": "USD 3,300/pm",
     "location": "Mount Pleasant Heights, Harare North, Harare"
   },
   {
-    "id": "alex0161",
-    "title": "4 Bedroom House in Helensvale",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-helensvale-harare-alex0161",
-    "price_raw": "USD 2,500/pm",
-    "location": "Helensvale, Harare North, Harare"
-  },
-  {
-    "id": "prcl11259",
-    "title": "4 Bedroom House in Marondera",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-marondera-prcl11259",
-    "price_raw": "USD 650/pm",
-    "location": "Marondera"
-  },
-  {
-    "id": "smr637289",
-    "title": "3 Bedroom House in Milton Park",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-milton-park-harare-smr637289",
-    "price_raw": "USD 2,200/pm",
-    "location": "Milton Park, Harare West, Harare"
+    "id": "8-bedroom-goodhope-harare-cei0824",
+    "title": "House to Rent in Goodhope",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/8-bedroom-goodhope-harare-cei0824",
+    "price_raw": "USD 2,000/pm",
+    "location": "Goodhope, Harare West, Harare"
   },
   {
     "id": "8-bedroom-house-greystone-park-harare-fac9124192",
-    "title": "8 Bedroom House to Rent in Greystone Park",
+    "title": "House to Rent in Greystone Park",
     "url": "https://www.propertybook.co.zw/listings/to-rent/8-bedroom-house-greystone-park-harare-fac9124192",
     "price_raw": "USD 7,500/pm",
     "location": "Greystone Park, Harare North, Harare"
   },
   {
     "id": "3-bedroom-house-vainona-harare-pgp13644",
-    "title": "3 Bedroom House to Rent in Vainona",
+    "title": "House to Rent in Vainona",
     "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-vainona-harare-pgp13644",
     "price_raw": "USD 3,000/pm",
     "location": "Vainona, Harare North, Harare"
   },
   {
-    "id": "5-bedroom-house-mount-pleasant-heights-harare-ark2207",
-    "title": "5 Bedroom House to Rent in Mount Pleasant Heights",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/5-bedroom-house-mount-pleasant-heights-harare-ark2207",
-    "price_raw": "USD 3,300/pm",
-    "location": "Mount Pleasant Heights, Harare North, Harare"
-  },
-  {
-    "id": "4-bedroom-house-highlands-harare-lk0050",
-    "title": "7 Bedroom House to Rent in Highlands",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/7-bedroom-house-highlands-harare-lk0050",
-    "price_raw": "USD 4,000/pm",
-    "location": "Highlands, Harare North, Harare"
-  },
-  {
-    "id": "4-bedroom-house-vainona-harare-cei0661",
-    "title": "4 Bedroom House to Rent in Vainona",
+    "id": "3-bedroom-house-vainona-harare-cei0661",
+    "title": "House to Rent in Vainona",
     "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-vainona-harare-cei0661",
     "price_raw": "USD 3,000/pm",
     "location": "Vainona, Harare North, Harare"
   },
   {
-    "id": "rhe0172",
-    "title": "3 Bedroom House in Aspindale Park",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-aspindale-park-harare-rhe0172",
-    "price_raw": "USD 650/pm",
-    "location": "Aspindale Park, Harare West, Harare"
+    "id": "4-bedroom-house-manresa-harare-wre8238",
+    "title": "House to Rent in Manresa",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-manresa-harare-wre8238",
+    "price_raw": "USD 800/pm",
+    "location": "Manresa, Harare East, Harare"
   },
   {
-    "id": "cei0650",
-    "title": "3 Bedroom House in Suburbs",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-suburbs-bulawayo-cei0650",
-    "price_raw": "USD 1,500/pm",
-    "location": "Suburbs, Bulawayo East, Bulawayo"
+    "id": "5-bedroom-house-goodhope-harare-gat169715",
+    "title": "House to Rent in Goodhope",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/5-bedroom-house-goodhope-harare-gat169715",
+    "price_raw": "USD 1,900/pm",
+    "location": "Goodhope, Harare West, Harare"
   },
   {
-    "id": "cei0633",
-    "title": "4 Bedroom House in Four Winds",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-four-winds-bulawayo-cei0633",
-    "price_raw": "USD 1,500/pm",
-    "location": "Four Winds, Bulawayo South, Bulawayo"
-  },
-  {
-    "id": "fac9124180",
-    "title": "5 Bedroom House in Borrowdale West",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/5-bedroom-house-borrowdale-west-harare-fac9124180",
+    "id": "4-bedroom-house-helensvale-harare-alex0161",
+    "title": "House to Rent in Helensvale",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-helensvale-harare-alex0161",
     "price_raw": "USD 2,500/pm",
-    "location": "Borrowdale West, Harare North, Harare"
+    "location": "Helensvale, Harare North, Harare"
   },
   {
-    "id": "pgp13611",
-    "title": "3 Bedroom House in Eastlea",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-eastlea-harare-pgp13611",
-    "price_raw": "USD 2,500/pm",
-    "location": "Eastlea, Harare East, Harare"
+    "id": "5-bedroom-house-mount-pleasant-heights-harare-ark2207",
+    "title": "House to Rent in Mount Pleasant Heights",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/5-bedroom-house-mount-pleasant-heights-harare-ark2207",
+    "price_raw": "USD 3,300/pm",
+    "location": "Mount Pleasant Heights, Harare North, Harare"
   },
   {
-    "id": "aps6002",
-    "title": "4 Bedroom House in Mount Pleasant",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-mount-pleasant-harare-aps6002",
-    "price_raw": "USD 3,000/pm",
-    "location": "Mount Pleasant, Harare North, Harare"
+    "id": "4-bedroom-house-vainona-harare-cei0674",
+    "title": "House to Rent in Vainona",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-vainona-harare-cei0674",
+    "price_raw": "USD 2,000/pm",
+    "location": "Vainona, Harare North, Harare"
   },
   {
-    "id": "gat165108",
-    "title": "3 Bedroom House in Waterfalls",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-waterfalls-harare-gat165108",
-    "price_raw": "USD 500/pm",
-    "location": "Waterfalls, Harare South, Harare"
+    "id": "3-bedroom-house-marlborough-harare-gat169681",
+    "title": "House to Rent in Marlborough",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-marlborough-harare-gat169681",
+    "price_raw": "USD 700/pm",
+    "location": "Marlborough, Harare West, Harare"
   },
   {
-    "id": "ipp0165",
-    "title": "4 Bedroom House in Glen Lorne",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-glen-lorne-harare-ipp0165",
-    "price_raw": "USD 2,500/pm",
-    "location": "Glen Lorne, Harare North, Harare"
+    "id": "3-bedroom-house-arlington-harare-pgp13654",
+    "title": "House to Rent in Arlington",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-arlington-harare-pgp13654",
+    "price_raw": "USD 1,200/pm",
+    "location": "Arlington, Harare South, Harare"
   },
   {
-    "id": "pgp13616",
-    "title": "4 Bedroom House in Greendale",
+    "id": "3-bedroom-house-chisipite-harare-fac9124191",
+    "title": "House to Rent in Chisipite",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-chisipite-harare-fac9124191",
+    "price_raw": "USD 2,000/pm",
+    "location": "Chisipite, Harare North, Harare"
+  },
+  {
+    "id": "4-bedroom-house-goodhope-harare-pwd7012",
+    "title": "House to Rent in Goodhope",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-goodhope-harare-pwd7012",
+    "price_raw": "USD 900/pm",
+    "location": "Goodhope, Harare West, Harare"
+  },
+  {
+    "id": "8-bedroom-house-greystone-park-harare-bfre0111",
+    "title": "House to Rent in Greystone Park",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/8-bedroom-house-greystone-park-harare-bfre0111",
+    "price_raw": "USD 8,500/pm",
+    "location": "Greystone Park, Harare North, Harare"
+  },
+  {
+    "id": "4-bedroom-house-greendale-harare-pgp13616",
+    "title": "House to Rent in Greendale",
     "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-greendale-harare-pgp13616",
     "price_raw": "USD 1,850/pm",
     "location": "Greendale, Harare East, Harare"
   },
   {
-    "id": "fc0025",
-    "title": "3 Bedroom House in Borrowdale",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-borrowdale-harare-fc0025",
-    "price_raw": "USD 1,650/pm",
-    "location": "Borrowdale, Harare North, Harare"
+    "id": "4-bedroom-house-marondera-prcl11259",
+    "title": "House to Rent in Marondera",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-marondera-prcl11259",
+    "price_raw": "USD 650/pm",
+    "location": "Marondera"
   },
   {
-    "id": "tbr0327",
-    "title": "4 Bedroom House in Mount Pleasant",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-mount-pleasant-harare-tbr0327",
-    "price_raw": "USD 3,000/pm",
-    "location": "Mount Pleasant, Harare North, Harare"
-  },
-  {
-    "id": "ts0059",
-    "title": "4 Bedroom House in Gletwin Park",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-gletwin-park-harare-ts0059",
-    "price_raw": "USD 3,500/pm",
-    "location": "Gletwin Park, Harare North, Harare"
-  },
-  {
-    "id": "gzr224535",
-    "title": "3 Bedroom House in Hillside",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-hillside-harare-gzr224535",
-    "price_raw": "USD 3,000/pm",
-    "location": "Hillside, Harare South, Harare"
-  },
-  {
-    "id": "rr1347",
-    "title": "7 Bedroom House in Glen Lorne",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/7-bedroom-house-glen-lorne-harare-rr1347",
-    "price_raw": "USD 2,800/pm",
-    "location": "Glen Lorne, Harare North, Harare"
-  },
-  {
-    "id": "prcl11247",
-    "title": "3 Bedroom House in Lenana Park",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-lenana-park-harare-prcl11247",
-    "price_raw": "USD 600/pm",
-    "location": "Lenana Park, Harare West, Harare"
-  },
-  {
-    "id": "home0065",
-    "title": "House in Fairview",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/house-fairview-harare-home0065",
-    "price_raw": "USD 450/pm",
-    "location": "Fairview, Harare West, Harare"
-  },
-  {
-    "id": "4-bedroom-house-mandara-harare-rod190227",
+    "id": "4-bedroom-mandara-harare-rod190227",
     "title": "House to Rent in Mandara",
     "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-mandara-harare-rod190227",
     "price_raw": "USD 1,400/pm",
     "location": "Mandara, Harare East, Harare"
   },
   {
-    "id": "4-bedroom-house-norton-bfre0106",
-    "title": "House to Rent in Norton",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-norton-bfre0106",
-    "price_raw": "USD 300/pm",
-    "location": "Norton"
+    "id": "3-bedroom-house-borrowdale-harare-fc0025",
+    "title": "House to Rent in Borrowdale",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-borrowdale-harare-fc0025",
+    "price_raw": "USD 1,650/pm",
+    "location": "Borrowdale, Harare North, Harare"
   },
   {
-    "id": "2-bedroom-house-avondale-harare-fac9124152",
-    "title": "House to Rent in Avondale",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/2-bedroom-house-avondale-harare-fac9124152",
+    "id": "4-bedroom-house-gletwin-park-harare-ts0059",
+    "title": "House to Rent in Gletwin Park",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-gletwin-park-harare-ts0059",
+    "price_raw": "USD 3,300/pm",
+    "location": "Gletwin Park, Harare North, Harare"
+  },
+  {
+    "id": "3-bedroom-house-hillside-harare-gzr224535",
+    "title": "House to Rent in Hillside",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-hillside-harare-gzr224535",
+    "price_raw": "USD 3,000/pm",
+    "location": "Hillside, Harare South, Harare"
+  },
+  {
+    "id": "3-bedroom-house-milton-park-harare-cei0584",
+    "title": "House to Rent in Milton Park",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-milton-park-harare-cei0584",
+    "price_raw": "USD 2,000/pm",
+    "location": "Milton Park, Harare West, Harare"
+  },
+  {
+    "id": "4-bedroom-greendale-harare-rr1461",
+    "title": "House to Rent in Greendale",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-greendale-harare-rr1461",
+    "price_raw": "USD 1,300/pm",
+    "location": "Greendale, Harare East, Harare"
+  },
+  {
+    "id": "5-bedroom-house-amby-harare-pgp13474",
+    "title": "House to Rent in Amby",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/5-bedroom-house-amby-harare-pgp13474",
     "price_raw": "USD 1,100/pm",
-    "location": "Avondale, Harare North, Harare"
+    "location": "Amby, Harare East, Harare"
   },
   {
-    "id": "5-bedroom-house-southerton-harare-bar0170",
-    "title": "House to Rent in Southerton",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/5-bedroom-house-southerton-harare-bar0170",
+    "id": "4-bedroom-house-ruwa-fac9124123",
+    "title": "House to Rent in Ruwa",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-ruwa-fac9124123",
     "price_raw": "USD 800/pm",
-    "location": "Southerton, Harare South, Harare"
-  },
-  {
-    "id": "house-belvedere-harare-bfre0090",
-    "title": "House to Rent in Belvedere",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/house-belvedere-harare-bfre0090",
-    "price_raw": "USD 100/pm",
-    "location": "Belvedere, Harare West, Harare"
-  },
-  {
-    "id": "5-bedroom-house-gunhill-harare-meh0039",
-    "title": "House to Rent in Gunhill",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/5-bedroom-house-gunhill-harare-meh0039",
-    "price_raw": "USD 2,700/pm",
-    "location": "Gunhill, Harare North, Harare"
-  },
-  {
-    "id": "4-bedroom-house-philadelphia-harare-sef335531",
-    "title": "House to Rent in Philadelphia",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-philadelphia-harare-sef335531",
-    "price_raw": "USD 2,500/pm",
-    "location": "Philadelphia, Harare North, Harare"
-  },
-  {
-    "id": "4-bedroom-house-philadelphia-harare-sef335530",
-    "title": "House to Rent in Philadelphia",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-philadelphia-harare-sef335530",
-    "price_raw": "USD 3,500/pm",
-    "location": "Philadelphia, Harare North, Harare"
-  },
-  {
-    "id": "3-bedroom-house-newlands-harare-sz0004",
-    "title": "House to Rent in Newlands",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-newlands-harare-sz0004",
-    "price_raw": "USD 1,800/pm",
-    "location": "Newlands, Harare North, Harare"
-  },
-  {
-    "id": "3-bedroom-house-waterfalls-harare-mac189991",
-    "title": "House to Rent in Waterfalls",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-waterfalls-harare-mac189991",
-    "price_raw": "USD 1,000/pm",
-    "location": "Waterfalls, Harare South, Harare"
+    "location": "Ruwa"
   },
   {
     "id": "3-bedroom-house-mount-pleasant-heights-harare-prcl11211",
@@ -1743,239 +1624,176 @@
     "location": "Kambanji, Harare North, Harare"
   },
   {
-    "id": "4-bedroom-house-budiriro-harare-pmm0001",
-    "title": "House to Rent in Budiriro",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-budiriro-harare-pmm0001",
-    "price_raw": "USD 360/pm",
-    "location": "Budiriro, Harare High Density, Harare"
-  },
-  {
-    "id": "4-bedroom-house-mount-pleasant-heights-harare-jm0062",
-    "title": "House to Rent in Mount Pleasant Heights",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-mount-pleasant-heights-harare-jm0062",
-    "price_raw": "USD 1,700/pm",
-    "location": "Mount Pleasant Heights, Harare North, Harare"
-  },
-  {
-    "id": "pgp13481",
-    "title": "3 Bedroom House to Rent in Shawasha Hills",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-shawasha-hills-harare-pgp13481",
-    "price_raw": "USD 1,600/pm",
-    "location": "Shawasha Hills, Harare North, Harare"
-  },
-  {
-    "id": "pgp13474",
-    "title": "5 Bedroom House to Rent in Amby",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/5-bedroom-house-amby-harare-pgp13474",
-    "price_raw": "USD 1,100/pm",
-    "location": "Amby, Harare East, Harare"
-  },
-  {
-    "id": "fac9124123",
-    "title": "4 Bedroom House to Rent in Ruwa",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-ruwa-fac9124123",
-    "price_raw": "USD 800/pm",
-    "location": "Ruwa"
-  },
-  {
-    "id": "sbre1137",
-    "title": "3 Bedroom House to Rent in Pumula South",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-pumula-south-bulawayo-sbre1137",
-    "price_raw": "USD 300/pm",
-    "location": "Pumula South, Bulawayo High-Density, Bulawayo"
-  },
-  {
-    "id": "hos0253",
-    "title": "3 Bedroom House to Rent in Shawasha Hills",
+    "id": "3-bedroom-house-shawasha-hills-harare-hos0253",
+    "title": "House to Rent in Shawasha Hills",
     "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-shawasha-hills-harare-hos0253",
     "price_raw": "USD 1,500/pm",
     "location": "Shawasha Hills, Harare North, Harare"
   },
   {
-    "id": "od0006",
+    "id": "4-bedroom-house-greystone-park-harare-od0006",
     "title": "House to Rent in Greystone Park",
     "url": "https://www.propertybook.co.zw/listings/to-rent/house-greystone-park-harare-od0006",
     "price_raw": "USD 1,750/pm",
     "location": "Greystone Park, Harare North, Harare"
   },
   {
-    "id": "sef335479",
-    "title": "4 Bedroom House to Rent in Cowdray Park",
+    "id": "4-bedroom-house-cowdray-park-bulawayo-sef335479",
+    "title": "House to Rent in Cowdray Park",
     "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-cowdray-park-bulawayo-sef335479",
     "price_raw": "USD 350/pm",
     "location": "Cowdray Park, Bulawayo High-Density, Bulawayo"
   },
   {
-    "id": "rc0264",
-    "title": "4 Bedroom House to Rent in Mount Pleasant",
+    "id": "4-bedroom-house-mount-pleasant-harare-rc0264",
+    "title": "House to Rent in Mount Pleasant",
     "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-mount-pleasant-harare-rc0264",
     "price_raw": "USD 2,500/pm",
     "location": "Mount Pleasant, Harare North, Harare"
   },
   {
-    "id": "bnp1204",
-    "title": "2 Bedroom House to Rent in Mufakose",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/2-bedroom-house-mufakose-harare-bnp1204",
-    "price_raw": "USD 220/pm",
-    "location": "Mufakose, Harare High Density, Harare"
+    "id": "3-bedroom-house-milton-park-harare-smr637282",
+    "title": "House to Rent in Milton Park",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-milton-park-harare-smr637282",
+    "price_raw": "USD 1,800/pm",
+    "location": "Milton Park, Harare West, Harare"
   },
   {
-    "id": "vmm0079",
-    "title": "4 Bedroom House to Rent in Manresa",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-manresa-harare-vmm0079",
-    "price_raw": "USD 1,200/pm",
-    "location": "Manresa, Harare East, Harare"
-  },
-  {
-    "id": "prcl11206",
-    "title": "4 Bedroom House to Rent in Chitungwiza",
+    "id": "4-bedroom-house-chitungwiza-prcl11206",
+    "title": "House to Rent in Chitungwiza",
     "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-chitungwiza-prcl11206",
     "price_raw": "USD 400/pm",
     "location": "Chitungwiza"
   },
   {
-    "id": "prcl11198",
-    "title": "4 Bedroom House to Rent in Budiriro",
+    "id": "4-bedroom-house-budiriro-harare-prcl11198",
+    "title": "House to Rent in Budiriro",
     "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-budiriro-harare-prcl11198",
     "price_raw": "USD 500/pm",
     "location": "Budiriro, Harare High Density, Harare"
   },
   {
-    "id": "prcl11195",
-    "title": "4 Bedroom House to Rent in Tynwald",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-tynwald-harare-prcl11195",
-    "price_raw": "USD 800/pm",
-    "location": "Tynwald, Harare West, Harare"
-  },
-  {
-    "id": "prt0037",
-    "title": "4 Bedroom House to Rent in Pomona",
+    "id": "4-bedroom-house-pomona-harare-prt0037",
+    "title": "House to Rent in Pomona",
     "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-pomona-harare-prt0037",
     "price_raw": "USD 1,500/pm",
     "location": "Pomona, Harare North, Harare"
   },
   {
-    "id": "prcl11189",
-    "title": "5 Bedroom House to Rent in Highlands",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/5-bedroom-house-highlands-harare-prcl11189",
-    "price_raw": "USD 2,000/pm",
+    "id": "2-bedroom-house-mufakose-harare-bnp1204",
+    "title": "House to Rent in Mufakose",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/2-bedroom-house-mufakose-harare-bnp1204",
+    "price_raw": "USD 220/pm",
+    "location": "Mufakose, Harare High Density, Harare"
+  },
+  {
+    "id": "cp2037",
+    "title": "House to Rent in Highlands",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/5-bedroom-highlands-harare-cp2037",
+    "price_raw": "USD 2,800/pm",
     "location": "Highlands, Harare North, Harare"
   },
   {
-    "id": "3-bedroom-waterfalls-harare-nr0017",
-    "title": "3 Bedroom House to Rent in Waterfalls",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-waterfalls-harare-nr0017",
-    "price_raw": "USD 660/pm",
-    "location": "Waterfalls, Harare South, Harare"
-  },
-  {
-    "id": "5-bedroom-belvedere-harare-leg2141",
-    "title": "5 Bedroom House to Rent in Belvedere",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/5-bedroom-belvedere-harare-leg2141",
-    "price_raw": "USD 1,500/pm",
-    "location": "Belvedere, Harare West, Harare"
-  },
-  {
-    "id": "4-bedroom-house-bulawayo-city-centre-bulawayo-cei0487",
-    "title": "4 Bedroom House to Rent in Bulawayo City Centre",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-bulawayo-city-centre-bulawayo-cei0487",
-    "price_raw": "USD 1,200/pm",
-    "location": "Bulawayo City Centre, Bulawayo CBD, Industrial, Bulawayo"
-  },
-  {
-    "id": "3-bedroom-house-belvedere-harare-fac9124105",
-    "title": "3 Bedroom House to Rent in Belvedere",
+    "id": "fac9124105",
+    "title": "House to Rent in Belvedere",
     "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-belvedere-harare-fac9124105",
     "price_raw": "USD 1,200/pm",
     "location": "Belvedere, Harare West, Harare"
   },
   {
-    "id": "3-bedroom-house-quinnington-harare-rr1227",
-    "title": "3 Bedroom House to Rent in Quinnington",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-quinnington-harare-rr1227",
-    "price_raw": "USD 1,900/pm",
-    "location": "Quinnington, Harare North, Harare"
-  },
-  {
-    "id": "3-bedroom-house-westgate-harare-rr1210",
-    "title": "3 Bedroom House to Rent in Westgate",
+    "id": "rr1210",
+    "title": "House to Rent in Westgate",
     "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-westgate-harare-rr1210",
     "price_raw": "USD 750/pm",
     "location": "Westgate, Harare West, Harare"
   },
   {
-    "id": "4-bedroom-house-pomona-harare-vmm0073",
-    "title": "4 Bedroom House to Rent in Pomona",
+    "id": "pgp13358",
+    "title": "House to Rent in Pomona",
     "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-pomona-harare-vmm0073",
     "price_raw": "USD 2,000/pm",
     "location": "Pomona, Harare North, Harare"
   },
   {
-    "id": "3-bedroom-house-chitungwiza-ind125240",
-    "title": "3 Bedroom House to Rent in Chitungwiza",
-    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-chitungwiza-ind125240",
-    "price_raw": "USD 280/pm",
-    "location": "Chitungwiza"
+    "id": "vmm0079",
+    "title": "House to Rent in Manresa",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-manresa-harare-vmm0079",
+    "price_raw": "USD 1,200/pm",
+    "location": "Manresa, Harare East, Harare"
   },
   {
-    "id": "3-bedroom-house-cromlet-arcturus-cei0508",
-    "title": "3 Bedroom House to Rent in Cromlet",
+    "id": "cei0508",
+    "title": "House to Rent in Cromlet",
     "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-cromlet-arcturus-cei0508",
     "price_raw": "USD 1,200/pm",
     "location": "Cromlet, Arcturus"
   },
   {
-    "id": "4-bedroom-house-mandara-harare-xds152774",
-    "title": "4 Bedroom House to Rent in Mandara",
+    "id": "xds152774",
+    "title": "House to Rent in Mandara",
     "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-mandara-harare-xds152774",
     "price_raw": "USD 1,800/pm",
     "location": "Mandara, Harare East, Harare"
   },
   {
-    "id": "3-bedroom-house-hatfield-harare-sef335459",
-    "title": "3 Bedroom House to Rent in Hatfield",
+    "id": "sef335459",
+    "title": "House to Rent in Hatfield",
     "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-hatfield-harare-sef335459",
     "price_raw": "USD 700/pm",
     "location": "Hatfield, Harare South, Harare"
   },
   {
-    "id": "4-bedroom-house-helensvale-harare-reh15773",
-    "title": "4 Bedroom House to Rent in Helensvale",
+    "id": "reh15773",
+    "title": "House to Rent in Helensvale",
     "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-helensvale-harare-reh15773",
     "price_raw": "USD 6,000/pm",
     "location": "Helensvale, Harare North, Harare"
   },
   {
-    "id": "3-bedroom-house-marlborough-harare-car22174",
-    "title": "3 Bedroom House to Rent in Marlborough",
+    "id": "car22176",
+    "title": "House to Rent in Greendale",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-greendale-harare-car22176",
+    "price_raw": "USD 3,000/pm",
+    "location": "Greendale, Harare East, Harare"
+  },
+  {
+    "id": "car22174",
+    "title": "House to Rent in Marlborough",
     "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-marlborough-harare-car22174",
     "price_raw": "USD 675/pm",
     "location": "Marlborough, Harare West, Harare"
   },
   {
-    "id": "4-bedroom-house-goodhope-harare-pgp13358",
-    "title": "4 Bedroom House to Rent in Goodhope",
+    "id": "pgp13358",
+    "title": "House to Rent in Goodhope",
     "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-goodhope-harare-pgp13358",
     "price_raw": "USD 850/pm",
     "location": "Goodhope, Harare West, Harare"
   },
   {
-    "id": "3-bedroom-house-westgate-harare-pgp13354",
-    "title": "3 Bedroom House to Rent in Westgate",
+    "id": "pgp13354",
+    "title": "House to Rent in Westgate",
     "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-westgate-harare-pgp13354",
     "price_raw": "USD 1,000/pm",
     "location": "Westgate, Harare West, Harare"
   },
   {
-    "id": "3-bedroom-house-damofalls-lc0027",
-    "title": "3 Bedroom House to Rent in Damofalls",
+    "id": "prcl11189",
+    "title": "House to Rent in Highlands",
+    "url": "https://www.propertybook.co.zw/listings/to-rent/5-bedroom-house-highlands-harare-prcl11189",
+    "price_raw": "USD 2,000/pm",
+    "location": "Highlands, Harare North, Harare"
+  },
+  {
+    "id": "lc0027",
+    "title": "House to Rent in Damofalls",
     "url": "https://www.propertybook.co.zw/listings/to-rent/3-bedroom-house-damofalls-lc0027",
     "price_raw": "USD 550/pm",
     "location": "Damofalls"
   },
   {
-    "id": "4-bedroom-house-gletwin-park-harare-sef335460",
-    "title": "4 Bedroom House to Rent in Gletwin Park",
+    "id": "sef335460",
+    "title": "House to Rent in Gletwin Park",
     "url": "https://www.propertybook.co.zw/listings/to-rent/4-bedroom-house-gletwin-park-harare-sef335460",
     "price_raw": "USD 1,300/pm",
     "location": "Gletwin Park, Harare North, Harare"
