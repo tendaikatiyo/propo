@@ -558,12 +558,30 @@ function initSorting() {
   });
 }
 
-function fetchData() {
-  return Promise.all([
-    fetch("../data/market_metrics.json").then((res) => res.json()),
-    fetch("../data/cities.json").then((res) => res.json()),
-    fetch("../data/rankings.json").then((res) => res.json()),
+function getSupabaseClient() {
+  if (!window.SUPABASE_URL || !window.SUPABASE_ANON_KEY) {
+    throw new Error("Missing Supabase config. Copy frontend/config.example.js to frontend/config.js.");
+  }
+  if (!window.supabase?.createClient) {
+    throw new Error("Supabase JS client failed to load.");
+  }
+  return window.supabase.createClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY);
+}
+
+async function fetchData() {
+  const client = getSupabaseClient();
+  const [marketsRes, citiesRes, rankingsRes] = await Promise.all([
+    client.from("market_metrics").select("*"),
+    client.from("cities").select("*"),
+    client.from("rankings").select("payload").eq("id", "current").single(),
   ]);
+
+  const errors = [marketsRes.error, citiesRes.error, rankingsRes.error].filter(Boolean);
+  if (errors.length) {
+    throw new Error(errors.map((err) => err.message).join("; "));
+  }
+
+  return [marketsRes.data, citiesRes.data, rankingsRes.data.payload];
 }
 
 function initialize() {
@@ -588,7 +606,7 @@ function initialize() {
       console.error("Unable to load analytics data", error);
       document.body.insertAdjacentHTML(
         "beforeend",
-        `<div class="alert alert-danger m-4">Unable to load analytics data. Make sure <strong>data/market_metrics.json</strong>, <strong>data/cities.json</strong>, and <strong>data/rankings.json</strong> are accessible. If you opened the page directly from file://, run a local web server from the repository root and open <code>frontend/index.html</code> via http://localhost.</div>`
+        `<div class="alert alert-danger m-4">Unable to load analytics data from Supabase. Check <strong>frontend/config.js</strong> (copy from <code>config.example.js</code>), confirm migrations are applied, and run <code>python -m analytics.sync_dashboard</code> after the pipeline. Details: ${error.message}</div>`
       );
     });
 

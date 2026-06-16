@@ -10,20 +10,24 @@ A static investment intelligence dashboard for Zimbabwe property markets.
 
 ## Data sources
 
-The dashboard reads:
+The dashboard reads live data from Supabase:
 
-- `/data/market_metrics.json`
-- `/data/cities.json`
-- `/data/rankings.json`
+- `market_metrics` — suburb-level yields and opportunity scores
+- `cities` — city comparison aggregates
+- `rankings` — top yield / opportunity lists (JSON payload, id `current`)
+
+Configure `frontend/config.js` (copy from `config.example.js`) with your Supabase URL and anon key.
 
 ## Run locally
 
-Use a local HTTP server from the repository root so `fetch()` can load JSON files.
+Use a local HTTP server from the repository root so the browser can load config and scripts.
 
 ### Python
 
 ```bash
 cd "c:/Users/Katiyo/Documents/GitHub/easishop prototype"
+cp frontend/config.example.js frontend/config.js
+# edit frontend/config.js with your Supabase anon key
 python -m http.server 8000
 ```
 
@@ -31,6 +35,13 @@ Then open:
 
 ```text
 http://localhost:8000/frontend/index.html
+```
+
+Ensure the pipeline has synced dashboard tables to Supabase first:
+
+```bash
+npm run analytics:build
+python -m analytics.sync_dashboard
 ```
 
 ## What it shows

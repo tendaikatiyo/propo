@@ -1,5 +1,6 @@
 import json
 import re
+import sys
 import time
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
@@ -9,7 +10,11 @@ from bs4 import BeautifulSoup
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
-from property_co_common import normalize_city
+_root = Path(__file__).resolve().parents[1]
+if str(_root) not in sys.path:
+    sys.path.insert(0, str(_root))
+
+from scraper.property_co_common import normalize_city
 
 BASE_URL = "https://www.property.co.zw/residential-land-stands-for-sale"
 SITE_ORIGIN = "https://www.property.co.zw"

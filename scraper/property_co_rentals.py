@@ -1,5 +1,6 @@
 import json
 import re
+import sys
 import time
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
@@ -8,6 +9,10 @@ import requests
 from bs4 import BeautifulSoup
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
+
+_root = Path(__file__).resolve().parents[1]
+if str(_root) not in sys.path:
+    sys.path.insert(0, str(_root))
 
 from scraper.property_co_common import normalize_city
 
