@@ -8,7 +8,7 @@ Build a **RentCast-style property intelligence tool for Zimbabwe**: multi-source
 
 ## Workspace
 
-- **Repo:** `easishop prototype`
+- **Repo:** `https://github.com/tendaikatiyo/propo`
 - **Handover folder:** `prompts/handovers/` (this file)
 - **Source HTML samples:** `source codes/classifieds/`, `source codes/prop_co/`
 - **Live data:** `data/`
