@@ -18,6 +18,11 @@ def get_service_role_key() -> str:
     key = os.environ.get("SUPABASE_SERVICE_ROLE_KEY", "").strip()
     if not key:
         raise RuntimeError("SUPABASE_SERVICE_ROLE_KEY is not set in .env")
+    if "publishable" in key or key.startswith("sb_publishable_"):
+        raise RuntimeError(
+            "SUPABASE_SERVICE_ROLE_KEY looks like a publishable (anon) key. "
+            "Use the service_role secret from Supabase Dashboard → Project Settings → API."
+        )
     return key
 
 

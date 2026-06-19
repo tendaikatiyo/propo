@@ -1,3 +1,4 @@
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -11,8 +12,12 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 
 def run_analytics_build() -> None:
+    npm = shutil.which("npm")
+    if not npm:
+        raise SystemExit("npm not found in PATH. Install Node.js to run analytics:build.")
+
     result = subprocess.run(
-        ["npm", "run", "analytics:build"],
+        [npm, "run", "analytics:build"],
         cwd=PROJECT_ROOT,
         check=False,
     )
