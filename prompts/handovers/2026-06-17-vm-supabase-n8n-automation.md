@@ -299,21 +299,26 @@ cd C:\Users\Katiyo\Documents\GitHub\propo
 .\.venv\Scripts\Activate.ps1
 ```
 
-**Step 1 — Scrape (~30–45 min)**
+**Step 1 — Scrape (~30–45 min) + ingest + Supabase (one command)**
+
+```powershell
+python -m analytics.run_daily
+```
+
+Or via npm:
+
+```powershell
+npm run daily
+```
+
+Equivalent to `scrape_all` then `run_pipeline_cloud`.
+
+**Split commands** (if needed):
 
 ```powershell
 python -m scraper.scrape_all
-```
-
-**Step 2 — Ingest + Supabase push (~10–20 min)**
-
-One command (recommended):
-
-```powershell
 python -m analytics.run_pipeline_cloud
 ```
-
-This runs: local SQLite ingest → daily metrics → export → `analytics:build` → `ingest_supabase` → `sync_dashboard`.
 
 **Step 3 — Verify in Supabase Table Editor**
 
@@ -359,8 +364,7 @@ Daily (local → cloud)
 
 ### Daily checklist
 
-- [ ] `python -m scraper.scrape_all` (or per-source)
-- [ ] `python -m analytics.run_pipeline_cloud`
+- [ ] `python -m analytics.run_daily` (or `npm run daily`)
 - [ ] Verify `ingest_runs` + `listings` count in Supabase (not just dashboard tables)
 - [ ] Note failed sources (date, URL, error)
 
@@ -408,9 +412,8 @@ Daily (local → cloud)
 ```bash
 # Local machine (interim manual plan)
 cd /path/to/propo && source .venv/bin/activate
-python -m scraper.scrape_all
-python -m analytics.run_pipeline
-python -m analytics.run_pipeline_cloud   # daily full Supabase push (listings + dashboard)
+python -m analytics.run_daily              # scrape + full cloud pipeline
+python -m analytics.run_pipeline_cloud   # ingest + Supabase only (no scrape)
 
 # VM activate
 cd /opt/propo && source .venv/bin/activate

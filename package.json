@@ -16,8 +16,9 @@
     "pipeline:ingest": "python -m analytics.ingest",
     "pipeline:daily": "python -m analytics.daily_metrics",
     "pipeline:run": "python -m analytics.run_pipeline",
-    "pipeline:cloud": "python -m analytics.run_pipeline && npm run analytics:build && python -m analytics.ingest_supabase && python -m analytics.sync_dashboard",
+    "pipeline:cloud": "python -m analytics.run_pipeline_cloud",
     "pipeline:supabase": "python -m analytics.ingest_supabase && python -m analytics.sync_dashboard",
+    "daily": "python -m analytics.run_daily",
     "normalize": "node scraper/normalize.js",
     "aggregate": "node scraper/aggregate.js",
     "build": "npm run scrape && npm run normalize && npm run aggregate"
