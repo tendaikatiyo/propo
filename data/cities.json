@@ -62,12 +62,12 @@
   {
     "city": "Bulawayo",
     "suburb_count": 68,
-    "rental_count": 34,
-    "sale_count": 477,
-    "median_rent": 550,
+    "rental_count": 38,
+    "sale_count": 479,
+    "median_rent": 500,
     "median_sale_price": 175000,
-    "average_yield": 4.89,
-    "average_opportunity_score": 8.35
+    "average_yield": 4.66,
+    "average_opportunity_score": 8.24
   },
   {
     "city": "Chegutu",
@@ -93,9 +93,9 @@
     "city": "Chinhoyi",
     "suburb_count": 1,
     "rental_count": 0,
-    "sale_count": 9,
+    "sale_count": 10,
     "median_rent": null,
-    "median_sale_price": 150000,
+    "median_sale_price": 152500,
     "average_yield": null,
     "average_opportunity_score": 0.0
   },
@@ -113,9 +113,9 @@
     "city": "Chitungwiza",
     "suburb_count": 2,
     "rental_count": 5,
-    "sale_count": 35,
+    "sale_count": 36,
     "median_rent": 300,
-    "median_sale_price": 38000,
+    "median_sale_price": 39000,
     "average_yield": 9.47,
     "average_opportunity_score": 28.5
   },
@@ -132,8 +132,8 @@
   {
     "city": "Christon Bank",
     "suburb_count": 1,
-    "rental_count": 2,
-    "sale_count": 7,
+    "rental_count": 1,
+    "sale_count": 6,
     "median_rent": 2200,
     "median_sale_price": 1200000,
     "average_yield": 2.2,
@@ -152,7 +152,7 @@
   {
     "city": "Damofalls",
     "suburb_count": 1,
-    "rental_count": 5,
+    "rental_count": 6,
     "sale_count": 15,
     "median_rent": 380,
     "median_sale_price": 42000,
@@ -173,9 +173,9 @@
     "city": "Deka",
     "suburb_count": 1,
     "rental_count": 0,
-    "sale_count": 4,
+    "sale_count": 3,
     "median_rent": null,
-    "median_sale_price": 177500,
+    "median_sale_price": 195000,
     "average_yield": null,
     "average_opportunity_score": 0.0
   },
@@ -191,23 +191,23 @@
   },
   {
     "city": "Gweru",
-    "suburb_count": 17,
-    "rental_count": 0,
-    "sale_count": 46,
-    "median_rent": null,
-    "median_sale_price": 110000,
+    "suburb_count": 18,
+    "rental_count": 1,
+    "sale_count": 45,
+    "median_rent": 550,
+    "median_sale_price": 100000,
     "average_yield": null,
     "average_opportunity_score": 0.0
   },
   {
     "city": "Harare",
     "suburb_count": 137,
-    "rental_count": 855,
-    "sale_count": 2709,
+    "rental_count": 846,
+    "sale_count": 2703,
     "median_rent": 1300,
     "median_sale_price": 250000,
-    "average_yield": 6.8,
-    "average_opportunity_score": 33.83
+    "average_yield": 6.79,
+    "average_opportunity_score": 33.75
   },
   {
     "city": "Hwange",
@@ -283,7 +283,7 @@
     "city": "Lake Chivero",
     "suburb_count": 1,
     "rental_count": 0,
-    "sale_count": 5,
+    "sale_count": 4,
     "median_rent": null,
     "median_sale_price": 310000,
     "average_yield": null,
@@ -303,19 +303,19 @@
     "city": "Marondera",
     "suburb_count": 4,
     "rental_count": 1,
-    "sale_count": 21,
+    "sale_count": 20,
     "median_rent": 650,
     "median_sale_price": 65000,
     "average_yield": 12.0,
-    "average_opportunity_score": 14.0
+    "average_opportunity_score": 13.75
   },
   {
     "city": "Masvingo",
     "suburb_count": 3,
     "rental_count": 0,
-    "sale_count": 19,
+    "sale_count": 20,
     "median_rent": null,
-    "median_sale_price": 125000,
+    "median_sale_price": 137500,
     "average_yield": null,
     "average_opportunity_score": 0.0
   },
@@ -323,9 +323,9 @@
     "city": "Mazowe",
     "suburb_count": 2,
     "rental_count": 1,
-    "sale_count": 7,
+    "sale_count": 8,
     "median_rent": 1400,
-    "median_sale_price": 150000,
+    "median_sale_price": 155000,
     "average_yield": 28.0,
     "average_opportunity_score": 30.0
   },
@@ -361,23 +361,13 @@
   },
   {
     "city": "Mutare",
-    "suburb_count": 13,
-    "rental_count": 3,
-    "sale_count": 25,
-    "median_rent": 350,
-    "median_sale_price": 260000,
+    "suburb_count": 12,
+    "rental_count": 2,
+    "sale_count": 24,
+    "median_rent": 1175,
+    "median_sale_price": 220000,
     "average_yield": 17.14,
-    "average_opportunity_score": 4.62
-  },
-  {
-    "city": "Mutasa",
-    "suburb_count": 1,
-    "rental_count": 0,
-    "sale_count": 1,
-    "median_rent": null,
-    "median_sale_price": 30000,
-    "average_yield": null,
-    "average_opportunity_score": 0.0
+    "average_opportunity_score": 5.0
   },
   {
     "city": "Ngezi",
@@ -393,10 +383,10 @@
     "city": "Norton",
     "suburb_count": 3,
     "rental_count": 3,
-    "sale_count": 48,
+    "sale_count": 47,
     "median_rent": 900,
-    "median_sale_price": 86500,
-    "average_yield": 12.27,
+    "median_sale_price": 85000,
+    "average_yield": 12.49,
     "average_opportunity_score": 22.67
   },
   {
@@ -473,21 +463,21 @@
     "city": "Rusape",
     "suburb_count": 1,
     "rental_count": 0,
-    "sale_count": 2,
+    "sale_count": 3,
     "median_rent": null,
-    "median_sale_price": 78500,
+    "median_sale_price": 37000,
     "average_yield": null,
     "average_opportunity_score": 0.0
   },
   {
     "city": "Ruwa",
     "suburb_count": 8,
-    "rental_count": 17,
+    "rental_count": 19,
     "sale_count": 78,
-    "median_rent": 650,
-    "median_sale_price": 101750,
-    "average_yield": 9.24,
-    "average_opportunity_score": 25.5
+    "median_rent": 600,
+    "median_sale_price": 107500,
+    "average_yield": 8.29,
+    "average_opportunity_score": 29.5
   },
   {
     "city": "Seke",
@@ -533,7 +523,7 @@
     "city": "Victoria Falls",
     "suburb_count": 1,
     "rental_count": 0,
-    "sale_count": 31,
+    "sale_count": 29,
     "median_rent": null,
     "median_sale_price": 395000,
     "average_yield": null,
