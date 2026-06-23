@@ -7,6 +7,8 @@ from analytics.history_db import utc_date_iso
 from analytics.ingest import load_source_records
 from analytics.supabase_db import SupabaseHistoryDatabase, utc_now_iso
 
+INGEST_COMMIT_BATCH_SIZE = 100
+
 
 def ingest_all_supabase(db: Optional[SupabaseHistoryDatabase] = None) -> Dict[str, int]:
     database = db or SupabaseHistoryDatabase()
@@ -37,6 +39,8 @@ def ingest_all_supabase(db: Optional[SupabaseHistoryDatabase] = None) -> Dict[st
                 if database.insert_snapshot(conn, normalized, run_started_at):
                     snapshots_added += 1
                 listings_processed += 1
+                if listings_processed % INGEST_COMMIT_BATCH_SIZE == 0:
+                    conn.commit()
 
         deactivated = database.deactivate_stale_listings(
             conn, sources_to_ingest, run_started_at

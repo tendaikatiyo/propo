@@ -88,6 +88,9 @@ class SupabaseHistoryDatabase:
     def connect(self) -> Iterator[psycopg2.extensions.connection]:
         conn = psycopg2.connect(self.db_url)
         conn.autocommit = False
+        # Supabase defaults to a short statement_timeout; bulk ingest needs longer.
+        with conn.cursor() as cur:
+            cur.execute("SET statement_timeout = '0'")
         try:
             yield conn
             conn.commit()
