@@ -8,22 +8,10 @@
         "yield_percent": 28.0
       },
       {
-        "market_id": "harare_crowhill_views",
-        "city": "Harare",
-        "suburb": "Crowhill Views",
-        "yield_percent": 23.88
-      },
-      {
         "market_id": "mutare_mutare_cbd",
         "city": "Mutare",
         "suburb": "Mutare Cbd",
         "yield_percent": 17.14
-      },
-      {
-        "market_id": "harare_harare_city_centre",
-        "city": "Harare",
-        "suburb": "Harare City Centre",
-        "yield_percent": 15.98
       },
       {
         "market_id": "harare_dzivarasekwa",
@@ -44,31 +32,37 @@
         "yield_percent": 15.0
       },
       {
-        "market_id": "harare_kambanji",
-        "city": "Harare",
-        "suburb": "Kambanji",
-        "yield_percent": 14.48
-      },
-      {
         "market_id": "harare_mabvuku",
         "city": "Harare",
         "suburb": "Mabvuku",
         "yield_percent": 13.85
       },
       {
+        "market_id": "harare_kambanji",
+        "city": "Harare",
+        "suburb": "Kambanji",
+        "yield_percent": 13.24
+      },
+      {
         "market_id": "harare_kamfinsa",
         "city": "Harare",
         "suburb": "Kamfinsa",
         "yield_percent": 12.95
+      },
+      {
+        "market_id": "norton_norton",
+        "city": "Norton",
+        "suburb": "Norton",
+        "yield_percent": 12.27
+      },
+      {
+        "market_id": "harare_hillside",
+        "city": "Harare",
+        "suburb": "Hillside",
+        "yield_percent": 12.1
       }
     ],
     "top_opportunity_markets": [
-      {
-        "market_id": "harare_avenues",
-        "city": "Harare",
-        "suburb": "Avenues",
-        "opportunity_score": 79
-      },
       {
         "market_id": "harare_greendale",
         "city": "Harare",
@@ -76,22 +70,34 @@
         "opportunity_score": 79
       },
       {
-        "market_id": "harare_mount_pleasant",
+        "market_id": "harare_avenues",
         "city": "Harare",
-        "suburb": "Mount Pleasant",
+        "suburb": "Avenues",
         "opportunity_score": 77
       },
       {
         "market_id": "harare_marlborough",
         "city": "Harare",
         "suburb": "Marlborough",
-        "opportunity_score": 76
+        "opportunity_score": 75
+      },
+      {
+        "market_id": "harare_mount_pleasant",
+        "city": "Harare",
+        "suburb": "Mount Pleasant",
+        "opportunity_score": 73
+      },
+      {
+        "market_id": "norton_norton",
+        "city": "Norton",
+        "suburb": "Norton",
+        "opportunity_score": 73
       },
       {
         "market_id": "harare_arlington",
         "city": "Harare",
         "suburb": "Arlington",
-        "opportunity_score": 72
+        "opportunity_score": 71
       },
       {
         "market_id": "harare_highlands",
@@ -106,22 +112,16 @@
         "opportunity_score": 70
       },
       {
-        "market_id": "harare_crowhill_views",
-        "city": "Harare",
-        "suburb": "Crowhill Views",
-        "opportunity_score": 70
-      },
-      {
         "market_id": "harare_glen_lorne",
         "city": "Harare",
         "suburb": "Glen Lorne",
-        "opportunity_score": 70
+        "opportunity_score": 68
       },
       {
-        "market_id": "norton_norton",
-        "city": "Norton",
-        "suburb": "Norton",
-        "opportunity_score": 69
+        "market_id": "harare_borrowdale",
+        "city": "Harare",
+        "suburb": "Borrowdale",
+        "opportunity_score": 67
       }
     ],
     "most_expensive_markets": [
@@ -141,7 +141,7 @@
         "market_id": "harare_borrowdale_brooke",
         "city": "Harare",
         "suburb": "Borrowdale Brooke",
-        "median_sale_price": 1225000
+        "median_sale_price": 1250000
       },
       {
         "market_id": "christon_bank_christon_bank",
@@ -153,19 +153,13 @@
         "market_id": "harare_umwinsidale",
         "city": "Harare",
         "suburb": "Umwinsidale",
-        "median_sale_price": 1142500
+        "median_sale_price": 1175000
       },
       {
         "market_id": "harare_ballantyne_park",
         "city": "Harare",
         "suburb": "Ballantyne Park",
         "median_sale_price": 900000
-      },
-      {
-        "market_id": "harare_meyrick_park",
-        "city": "Harare",
-        "suburb": "Meyrick Park",
-        "median_sale_price": 850000
       },
       {
         "market_id": "harare_ryelands",
@@ -178,6 +172,12 @@
         "city": "Harare",
         "suburb": "Avondale - The Ridge",
         "median_sale_price": 750000
+      },
+      {
+        "market_id": "harare_glen_lorne",
+        "city": "Harare",
+        "suburb": "Glen Lorne",
+        "median_sale_price": 700000
       },
       {
         "market_id": "harare_rolf_valley",
@@ -200,6 +200,12 @@
         "median_sale_price": 18000
       },
       {
+        "market_id": "harare_mufakose",
+        "city": "Harare",
+        "suburb": "Mufakose",
+        "median_sale_price": 25000
+      },
+      {
         "market_id": "mutare_dangamvura",
         "city": "Mutare",
         "suburb": "Dangamvura",
@@ -212,16 +218,16 @@
         "median_sale_price": 25000
       },
       {
-        "market_id": "harare_mufakose",
-        "city": "Harare",
-        "suburb": "Mufakose",
-        "median_sale_price": 26000
-      },
-      {
         "market_id": "seke_seke",
         "city": "Seke",
         "suburb": "Seke",
         "median_sale_price": 26000
+      },
+      {
+        "market_id": "bulawayo_magwegwe",
+        "city": "Bulawayo",
+        "suburb": "Magwegwe",
+        "median_sale_price": 26250
       },
       {
         "market_id": "zvimba_nyabira",
@@ -239,12 +245,6 @@
         "market_id": "harare_willowvale",
         "city": "Harare",
         "suburb": "Willowvale",
-        "median_sale_price": 28000
-      },
-      {
-        "market_id": "plumtree_plumtree",
-        "city": "Plumtree",
-        "suburb": "Plumtree",
         "median_sale_price": 28000
       }
     ]
@@ -338,7 +338,7 @@
           "market_id": "bindura_bindura",
           "city": "Bindura",
           "suburb": "Bindura",
-          "median_sale_price": 30000
+          "median_sale_price": 32500
         }
       ],
       "best_opportunity_suburbs": [
@@ -379,6 +379,12 @@
           "yield_percent": 15.0
         },
         {
+          "market_id": "bulawayo_bulawayo_city_centre",
+          "city": "Bulawayo",
+          "suburb": "Bulawayo City Centre",
+          "yield_percent": 9.3
+        },
+        {
           "market_id": "bulawayo_famona",
           "city": "Bulawayo",
           "suburb": "Famona",
@@ -403,28 +409,22 @@
           "yield_percent": 6.06
         },
         {
-          "market_id": "bulawayo_bulawayo_city_centre",
-          "city": "Bulawayo",
-          "suburb": "Bulawayo City Centre",
-          "yield_percent": 5.36
-        },
-        {
-          "market_id": "bulawayo_hillside_byo",
-          "city": "Bulawayo",
-          "suburb": "Hillside Byo",
-          "yield_percent": 5.0
-        },
-        {
           "market_id": "bulawayo_kumalo",
           "city": "Bulawayo",
           "suburb": "Kumalo",
           "yield_percent": 4.92
         },
         {
+          "market_id": "bulawayo_hillside_byo",
+          "city": "Bulawayo",
+          "suburb": "Hillside Byo",
+          "yield_percent": 4.9
+        },
+        {
           "market_id": "bulawayo_woodville_park",
           "city": "Bulawayo",
           "suburb": "Woodville Park",
-          "yield_percent": 4.5
+          "yield_percent": 4.29
         },
         {
           "market_id": "bulawayo_ascot",
@@ -480,7 +480,7 @@
           "market_id": "bulawayo_bulawayo_city_centre",
           "city": "Bulawayo",
           "suburb": "Bulawayo City Centre",
-          "median_rent": 380
+          "median_rent": 465
         },
         {
           "market_id": "bulawayo_woodville_park",
@@ -489,10 +489,10 @@
           "median_rent": 375
         },
         {
-          "market_id": "bulawayo_matsheumhlope",
+          "market_id": "bulawayo_cowdray_park",
           "city": "Bulawayo",
-          "suburb": "Matsheumhlope",
-          "median_rent": 357
+          "suburb": "Cowdray Park",
+          "median_rent": 350
         }
       ],
       "highest_sale_price_suburbs": [
@@ -500,7 +500,7 @@
           "market_id": "bulawayo_burnside",
           "city": "Bulawayo",
           "suburb": "Burnside",
-          "median_sale_price": 265000
+          "median_sale_price": 262500
         },
         {
           "market_id": "bulawayo_hopeville",
@@ -533,15 +533,15 @@
           "median_sale_price": 250000
         },
         {
-          "market_id": "bulawayo_fortunes_gate",
-          "city": "Bulawayo",
-          "suburb": "Fortunes Gate",
-          "median_sale_price": 240000
-        },
-        {
           "market_id": "bulawayo_hillside_byo",
           "city": "Bulawayo",
           "suburb": "Hillside Byo",
+          "median_sale_price": 245000
+        },
+        {
+          "market_id": "bulawayo_fortunes_gate",
+          "city": "Bulawayo",
+          "suburb": "Fortunes Gate",
           "median_sale_price": 240000
         },
         {
@@ -568,13 +568,13 @@
           "market_id": "bulawayo_hillside_byo",
           "city": "Bulawayo",
           "suburb": "Hillside Byo",
-          "opportunity_score": 61
+          "opportunity_score": 60
         },
         {
           "market_id": "bulawayo_bulawayo_city_centre",
           "city": "Bulawayo",
           "suburb": "Bulawayo City Centre",
-          "opportunity_score": 45
+          "opportunity_score": 56
         },
         {
           "market_id": "bulawayo_famona",
@@ -668,7 +668,7 @@
           "market_id": "chinhoyi_chinhoyi",
           "city": "Chinhoyi",
           "suburb": "Chinhoyi",
-          "median_sale_price": 130000
+          "median_sale_price": 127500
         }
       ],
       "best_opportunity_suburbs": [
@@ -688,7 +688,7 @@
           "market_id": "chiredzi_chiredzi",
           "city": "Chiredzi",
           "suburb": "Chiredzi",
-          "median_sale_price": 85000
+          "median_sale_price": 97500
         }
       ],
       "best_opportunity_suburbs": [
@@ -706,7 +706,7 @@
           "market_id": "chitungwiza_chitungwiza",
           "city": "Chitungwiza",
           "suburb": "Chitungwiza",
-          "yield_percent": 9.47
+          "yield_percent": 9.0
         }
       ],
       "highest_rent_suburbs": [
@@ -719,16 +719,16 @@
       ],
       "highest_sale_price_suburbs": [
         {
+          "market_id": "chitungwiza_chitungwiza",
+          "city": "Chitungwiza",
+          "suburb": "Chitungwiza",
+          "median_sale_price": 40000
+        },
+        {
           "market_id": "chitungwiza_zengeza",
           "city": "Chitungwiza",
           "suburb": "Zengeza",
           "median_sale_price": 40000
-        },
-        {
-          "market_id": "chitungwiza_chitungwiza",
-          "city": "Chitungwiza",
-          "suburb": "Chitungwiza",
-          "median_sale_price": 38000
         }
       ],
       "best_opportunity_suburbs": [
@@ -736,7 +736,7 @@
           "market_id": "chitungwiza_chitungwiza",
           "city": "Chitungwiza",
           "suburb": "Chitungwiza",
-          "opportunity_score": 58
+          "opportunity_score": 56
         },
         {
           "market_id": "chitungwiza_zengeza",
@@ -868,7 +868,7 @@
           "market_id": "deka_deka",
           "city": "Deka",
           "suburb": "Deka",
-          "median_sale_price": 177500
+          "median_sale_price": 160000
         }
       ],
       "best_opportunity_suburbs": [
@@ -943,12 +943,6 @@
           "median_sale_price": 160000
         },
         {
-          "market_id": "gweru_daylesford",
-          "city": "Gweru",
-          "suburb": "Daylesford",
-          "median_sale_price": 150000
-        },
-        {
           "market_id": "gweru_ridgemont",
           "city": "Gweru",
           "suburb": "Ridgemont",
@@ -964,6 +958,12 @@
           "market_id": "gweru_adelaide_pk_gweru",
           "city": "Gweru",
           "suburb": "Adelaide Pk Gweru",
+          "median_sale_price": 145000
+        },
+        {
+          "market_id": "gweru_daylesford",
+          "city": "Gweru",
+          "suburb": "Daylesford",
           "median_sale_price": 145000
         },
         {
@@ -1051,18 +1051,6 @@
     "Harare": {
       "highest_yield_suburbs": [
         {
-          "market_id": "harare_crowhill_views",
-          "city": "Harare",
-          "suburb": "Crowhill Views",
-          "yield_percent": 23.88
-        },
-        {
-          "market_id": "harare_harare_city_centre",
-          "city": "Harare",
-          "suburb": "Harare City Centre",
-          "yield_percent": 15.98
-        },
-        {
           "market_id": "harare_dzivarasekwa",
           "city": "Harare",
           "suburb": "Dzivarasekwa",
@@ -1075,16 +1063,16 @@
           "yield_percent": 15.0
         },
         {
-          "market_id": "harare_kambanji",
-          "city": "Harare",
-          "suburb": "Kambanji",
-          "yield_percent": 14.48
-        },
-        {
           "market_id": "harare_mabvuku",
           "city": "Harare",
           "suburb": "Mabvuku",
           "yield_percent": 13.85
+        },
+        {
+          "market_id": "harare_kambanji",
+          "city": "Harare",
+          "suburb": "Kambanji",
+          "yield_percent": 13.24
         },
         {
           "market_id": "harare_kamfinsa",
@@ -1102,13 +1090,25 @@
           "market_id": "harare_mufakose",
           "city": "Harare",
           "suburb": "Mufakose",
-          "yield_percent": 11.54
+          "yield_percent": 12.0
+        },
+        {
+          "market_id": "harare_southview_park",
+          "city": "Harare",
+          "suburb": "Southview Park",
+          "yield_percent": 11.0
         },
         {
           "market_id": "harare_rolf_valley",
           "city": "Harare",
           "suburb": "Rolf Valley",
           "yield_percent": 10.59
+        },
+        {
+          "market_id": "harare_ashdown_park",
+          "city": "Harare",
+          "suburb": "Ashdown Park",
+          "yield_percent": 10.0
         }
       ],
       "highest_rent_suburbs": [
@@ -1122,7 +1122,7 @@
           "market_id": "harare_gunhill",
           "city": "Harare",
           "suburb": "Gunhill",
-          "median_rent": 4500
+          "median_rent": 3600
         },
         {
           "market_id": "harare_shawasha_hills",
@@ -1131,28 +1131,16 @@
           "median_rent": 3600
         },
         {
-          "market_id": "harare_kambanji",
-          "city": "Harare",
-          "suburb": "Kambanji",
-          "median_rent": 3500
-        },
-        {
           "market_id": "harare_ballantyne_park",
           "city": "Harare",
           "suburb": "Ballantyne Park",
           "median_rent": 3200
         },
         {
-          "market_id": "harare_avondale_the_ridge",
+          "market_id": "harare_kambanji",
           "city": "Harare",
-          "suburb": "Avondale - The Ridge",
-          "median_rent": 3000
-        },
-        {
-          "market_id": "harare_umwinsidale",
-          "city": "Harare",
-          "suburb": "Umwinsidale",
-          "median_rent": 3000
+          "suburb": "Kambanji",
+          "median_rent": 3200
         },
         {
           "market_id": "harare_carrick_creagh_estate",
@@ -1161,16 +1149,28 @@
           "median_rent": 2850
         },
         {
+          "market_id": "harare_umwinsidale",
+          "city": "Harare",
+          "suburb": "Umwinsidale",
+          "median_rent": 2850
+        },
+        {
+          "market_id": "harare_borrowdale_brooke",
+          "city": "Harare",
+          "suburb": "Borrowdale Brooke",
+          "median_rent": 2500
+        },
+        {
           "market_id": "harare_kensington",
           "city": "Harare",
           "suburb": "Kensington",
           "median_rent": 2500
         },
         {
-          "market_id": "harare_mount_pleasant",
+          "market_id": "harare_hillside",
           "city": "Harare",
-          "suburb": "Mount Pleasant",
-          "median_rent": 2500
+          "suburb": "Hillside",
+          "median_rent": 2400
         }
       ],
       "highest_sale_price_suburbs": [
@@ -1184,25 +1184,19 @@
           "market_id": "harare_borrowdale_brooke",
           "city": "Harare",
           "suburb": "Borrowdale Brooke",
-          "median_sale_price": 1225000
+          "median_sale_price": 1250000
         },
         {
           "market_id": "harare_umwinsidale",
           "city": "Harare",
           "suburb": "Umwinsidale",
-          "median_sale_price": 1142500
+          "median_sale_price": 1175000
         },
         {
           "market_id": "harare_ballantyne_park",
           "city": "Harare",
           "suburb": "Ballantyne Park",
           "median_sale_price": 900000
-        },
-        {
-          "market_id": "harare_meyrick_park",
-          "city": "Harare",
-          "suburb": "Meyrick Park",
-          "median_sale_price": 850000
         },
         {
           "market_id": "harare_ryelands",
@@ -1217,6 +1211,12 @@
           "median_sale_price": 750000
         },
         {
+          "market_id": "harare_glen_lorne",
+          "city": "Harare",
+          "suburb": "Glen Lorne",
+          "median_sale_price": 700000
+        },
+        {
           "market_id": "harare_rolf_valley",
           "city": "Harare",
           "suburb": "Rolf Valley",
@@ -1229,19 +1229,13 @@
           "median_sale_price": 675000
         },
         {
-          "market_id": "harare_glen_lorne",
+          "market_id": "harare_gunhill",
           "city": "Harare",
-          "suburb": "Glen Lorne",
-          "median_sale_price": 650000
+          "suburb": "Gunhill",
+          "median_sale_price": 640000
         }
       ],
       "best_opportunity_suburbs": [
-        {
-          "market_id": "harare_avenues",
-          "city": "Harare",
-          "suburb": "Avenues",
-          "opportunity_score": 79
-        },
         {
           "market_id": "harare_greendale",
           "city": "Harare",
@@ -1249,22 +1243,28 @@
           "opportunity_score": 79
         },
         {
-          "market_id": "harare_mount_pleasant",
+          "market_id": "harare_avenues",
           "city": "Harare",
-          "suburb": "Mount Pleasant",
+          "suburb": "Avenues",
           "opportunity_score": 77
         },
         {
           "market_id": "harare_marlborough",
           "city": "Harare",
           "suburb": "Marlborough",
-          "opportunity_score": 76
+          "opportunity_score": 75
+        },
+        {
+          "market_id": "harare_mount_pleasant",
+          "city": "Harare",
+          "suburb": "Mount Pleasant",
+          "opportunity_score": 73
         },
         {
           "market_id": "harare_arlington",
           "city": "Harare",
           "suburb": "Arlington",
-          "opportunity_score": 72
+          "opportunity_score": 71
         },
         {
           "market_id": "harare_highlands",
@@ -1279,22 +1279,22 @@
           "opportunity_score": 70
         },
         {
-          "market_id": "harare_crowhill_views",
-          "city": "Harare",
-          "suburb": "Crowhill Views",
-          "opportunity_score": 70
-        },
-        {
           "market_id": "harare_glen_lorne",
           "city": "Harare",
           "suburb": "Glen Lorne",
-          "opportunity_score": 70
+          "opportunity_score": 68
         },
         {
           "market_id": "harare_borrowdale",
           "city": "Harare",
           "suburb": "Borrowdale",
           "opportunity_score": 67
+        },
+        {
+          "market_id": "harare_mount_pleasant_heights",
+          "city": "Harare",
+          "suburb": "Mount Pleasant Heights",
+          "opportunity_score": 65
         }
       ]
     },
@@ -1520,7 +1520,7 @@
           "market_id": "lake_chivero_lake_chivero",
           "city": "Lake Chivero",
           "suburb": "Lake Chivero",
-          "median_sale_price": 310000
+          "median_sale_price": 315000
         }
       ],
       "best_opportunity_suburbs": [
@@ -1600,7 +1600,7 @@
           "market_id": "marondera_marondera",
           "city": "Marondera",
           "suburb": "Marondera",
-          "opportunity_score": 56
+          "opportunity_score": 55
         },
         {
           "market_id": "marondera_dombotombo",
@@ -1642,7 +1642,7 @@
           "market_id": "masvingo_masvingo",
           "city": "Masvingo",
           "suburb": "Masvingo",
-          "median_sale_price": 117500
+          "median_sale_price": 112500
         }
       ],
       "best_opportunity_suburbs": [
@@ -1688,7 +1688,7 @@
           "market_id": "mazowe_haydon_park",
           "city": "Mazowe",
           "suburb": "Haydon Park",
-          "median_sale_price": 160000
+          "median_sale_price": 166500
         },
         {
           "market_id": "mazowe_mazowe",
@@ -1800,7 +1800,7 @@
           "market_id": "mutare_murambi",
           "city": "Mutare",
           "suburb": "Murambi",
-          "median_sale_price": 500000
+          "median_sale_price": 448500
         },
         {
           "market_id": "mutare_fairbridge_park",
@@ -1845,16 +1845,16 @@
           "median_sale_price": 120000
         },
         {
+          "market_id": "mutare_chikanga",
+          "city": "Mutare",
+          "suburb": "Chikanga",
+          "median_sale_price": 55000
+        },
+        {
           "market_id": "mutare_hobhouse",
           "city": "Mutare",
           "suburb": "Hobhouse",
-          "median_sale_price": 29500
-        },
-        {
-          "market_id": "mutare_dangamvura",
-          "city": "Mutare",
-          "suburb": "Dangamvura",
-          "median_sale_price": 25000
+          "median_sale_price": 35000
         }
       ],
       "best_opportunity_suburbs": [
@@ -1874,6 +1874,12 @@
           "market_id": "mutare_bordervale",
           "city": "Mutare",
           "suburb": "Bordervale",
+          "opportunity_score": 0
+        },
+        {
+          "market_id": "mutare_chikanga",
+          "city": "Mutare",
+          "suburb": "Chikanga",
           "opportunity_score": 0
         },
         {
@@ -1910,12 +1916,6 @@
           "market_id": "mutare_murambi",
           "city": "Mutare",
           "suburb": "Murambi",
-          "opportunity_score": 0
-        },
-        {
-          "market_id": "mutare_tiger_s_kloof",
-          "city": "Mutare",
-          "suburb": "Tiger'S Kloof",
           "opportunity_score": 0
         }
       ]
@@ -1966,7 +1966,7 @@
           "market_id": "norton_norton",
           "city": "Norton",
           "suburb": "Norton",
-          "yield_percent": 12.49
+          "yield_percent": 12.27
         }
       ],
       "highest_rent_suburbs": [
@@ -1988,7 +1988,7 @@
           "market_id": "norton_norton",
           "city": "Norton",
           "suburb": "Norton",
-          "median_sale_price": 86500
+          "median_sale_price": 88000
         },
         {
           "market_id": "norton_katanga",
@@ -2002,7 +2002,7 @@
           "market_id": "norton_norton",
           "city": "Norton",
           "suburb": "Norton",
-          "opportunity_score": 69
+          "opportunity_score": 73
         },
         {
           "market_id": "norton_galloway",
@@ -2066,7 +2066,7 @@
           "market_id": "penhalonga_penhalonga",
           "city": "Penhalonga",
           "suburb": "Penhalonga",
-          "median_sale_price": 150000
+          "median_sale_price": 125000
         }
       ],
       "best_opportunity_suburbs": [
@@ -2205,22 +2205,16 @@
           "yield_percent": 10.29
         },
         {
+          "market_id": "ruwa_ruwa",
+          "city": "Ruwa",
+          "suburb": "Ruwa",
+          "yield_percent": 7.87
+        },
+        {
           "market_id": "ruwa_mabvazuva_estates",
           "city": "Ruwa",
           "suburb": "Mabvazuva Estates",
           "yield_percent": 7.64
-        },
-        {
-          "market_id": "ruwa_ruwa",
-          "city": "Ruwa",
-          "suburb": "Ruwa",
-          "yield_percent": 7.54
-        },
-        {
-          "market_id": "ruwa_riverside",
-          "city": "Ruwa",
-          "suburb": "Riverside",
-          "yield_percent": 4.5
         }
       ],
       "highest_rent_suburbs": [
@@ -2237,16 +2231,16 @@
           "median_rent": 650
         },
         {
+          "market_id": "ruwa_ruwa",
+          "city": "Ruwa",
+          "suburb": "Ruwa",
+          "median_rent": 600
+        },
+        {
           "market_id": "ruwa_springvale",
           "city": "Ruwa",
           "suburb": "Springvale",
           "median_rent": 600
-        },
-        {
-          "market_id": "ruwa_ruwa",
-          "city": "Ruwa",
-          "suburb": "Ruwa",
-          "median_rent": 575
         },
         {
           "market_id": "ruwa_riverside",
@@ -2287,12 +2281,6 @@
           "median_sale_price": 91500
         },
         {
-          "market_id": "ruwa_riverside",
-          "city": "Ruwa",
-          "suburb": "Riverside",
-          "median_sale_price": 80000
-        },
-        {
           "market_id": "ruwa_windsor_park",
           "city": "Ruwa",
           "suburb": "Windsor Park",
@@ -2310,7 +2298,7 @@
           "market_id": "ruwa_ruwa",
           "city": "Ruwa",
           "suburb": "Ruwa",
-          "opportunity_score": 54
+          "opportunity_score": 55
         },
         {
           "market_id": "ruwa_mabvazuva_estates",
@@ -2331,12 +2319,6 @@
           "opportunity_score": 48
         },
         {
-          "market_id": "ruwa_riverside",
-          "city": "Ruwa",
-          "suburb": "Riverside",
-          "opportunity_score": 32
-        },
-        {
           "market_id": "ruwa_chipukutu_park",
           "city": "Ruwa",
           "suburb": "Chipukutu Park",
@@ -2346,6 +2328,12 @@
           "market_id": "ruwa_erasmus_park",
           "city": "Ruwa",
           "suburb": "Erasmus Park",
+          "opportunity_score": 0
+        },
+        {
+          "market_id": "ruwa_riverside",
+          "city": "Ruwa",
+          "suburb": "Riverside",
           "opportunity_score": 0
         },
         {
@@ -2444,7 +2432,7 @@
           "market_id": "victoria_falls_victoria_falls",
           "city": "Victoria Falls",
           "suburb": "Victoria Falls",
-          "median_sale_price": 395000
+          "median_sale_price": 385000
         }
       ],
       "best_opportunity_suburbs": [
