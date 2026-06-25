@@ -11,6 +11,7 @@ CLEAN_RENTS_PATH = DATA_DIR / "clean_rentals.json"
 MARKET_METRICS_PATH = DATA_DIR / "market_metrics.json"
 
 PROPERTY_TYPE_BUCKETS = ["house", "apartment", "flat", "room", "townhouse", "commercial"]
+BEDROOM_BUCKETS = ["1", "2", "3", "4_plus"]
 
 
 def load_json(path: Path) -> List[Dict[str, Any]]:
@@ -65,6 +66,24 @@ def normalize_type(value: str) -> str:
     return "unknown"
 
 
+def normalize_bedroom_bucket(value: Any) -> Optional[str]:
+    if value is None:
+        return None
+    try:
+        beds = int(value)
+    except (TypeError, ValueError):
+        return None
+    if beds <= 0:
+        return None
+    if beds == 1:
+        return "1"
+    if beds == 2:
+        return "2"
+    if beds == 3:
+        return "3"
+    return "4_plus"
+
+
 def score_opportunity(
     yield_percent: Optional[float],
     rental_count: int,
@@ -105,6 +124,7 @@ def build_market_metrics(sales: List[Dict[str, Any]], rentals: List[Dict[str, An
                 "rental_days_on_market": [],
                 "sale_days_on_market": [],
                 "property_types": [],
+                "bedroom_buckets": [],
                 "rental_count": 0,
                 "sale_count": 0,
             }
@@ -114,6 +134,9 @@ def build_market_metrics(sales: List[Dict[str, Any]], rentals: List[Dict[str, An
         market = ensure_market(rent)
         market["rental_prices"].append(int(rent["price"]))
         market["property_types"].append(normalize_type(rent.get("property_type", "unknown")))
+        bedroom_bucket = normalize_bedroom_bucket(rent.get("bedrooms"))
+        if bedroom_bucket:
+            market["bedroom_buckets"].append(bedroom_bucket)
         market["rental_count"] += 1
         dom = rent.get("days_on_market")
         if dom is not None:
@@ -123,6 +146,9 @@ def build_market_metrics(sales: List[Dict[str, Any]], rentals: List[Dict[str, An
         market = ensure_market(sale)
         market["sale_prices"].append(int(sale["price"]))
         market["property_types"].append(normalize_type(sale.get("property_type", "unknown")))
+        bedroom_bucket = normalize_bedroom_bucket(sale.get("bedrooms"))
+        if bedroom_bucket:
+            market["bedroom_buckets"].append(bedroom_bucket)
         market["sale_count"] += 1
         dom = sale.get("days_on_market")
         if dom is not None:
@@ -159,6 +185,7 @@ def build_market_metrics(sales: List[Dict[str, Any]], rentals: List[Dict[str, An
         confidence_score = min(100, confidence_score)
 
         property_type_counter = Counter(market["property_types"])
+        bedroom_counter = Counter(market["bedroom_buckets"])
         output.append(
             {
                 "market_id": market_id,
@@ -180,6 +207,10 @@ def build_market_metrics(sales: List[Dict[str, Any]], rentals: List[Dict[str, An
                 "room_count": property_type_counter.get("room", 0),
                 "townhouse_count": property_type_counter.get("townhouse", 0),
                 "commercial_count": property_type_counter.get("commercial", 0),
+                "beds_1_count": bedroom_counter.get("1", 0),
+                "beds_2_count": bedroom_counter.get("2", 0),
+                "beds_3_count": bedroom_counter.get("3", 0),
+                "beds_4_plus_count": bedroom_counter.get("4_plus", 0),
                 "median_days_on_market_rent": safe_median(rental_days),
                 "average_days_on_market_rent": int(round(safe_mean(rental_days)))
                 if safe_mean(rental_days) is not None

@@ -22,7 +22,10 @@
     "daily": "python -m analytics.run_daily",
     "normalize": "node scraper/normalize.js",
     "aggregate": "node scraper/aggregate.js",
-    "build": "npm run scrape && npm run normalize && npm run aggregate"
+    "build": "npm run scrape && npm run normalize && npm run aggregate",
+    "web:dev": "npm run dev --prefix web",
+    "web:build": "npm run build --prefix web",
+    "web:start": "npm run start --prefix web"
   },
   "dependencies": {
     "dotenv": "^16.3.1",
