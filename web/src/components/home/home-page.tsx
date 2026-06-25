@@ -4,9 +4,11 @@ import Link from "next/link";
 import { Suspense, useState } from "react";
 
 import { BudgetSlider } from "@/components/filters/budget-slider";
+import { PageHeader } from "@/components/layout/page-header";
 import { SuburbCard } from "@/components/markets/suburb-card";
 import { Button, buttonVariants } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
+import { GradientOrbs } from "@/components/ui/gradient-orbs";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useMarketMetrics } from "@/hooks/use-market-data";
 import {
@@ -48,77 +50,85 @@ function HomeContent() {
   ).slice(0, 6);
 
   return (
-    <div className="space-y-10">
-      <section className="space-y-3">
-        <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-          Where can you afford in Zimbabwe?
-        </h1>
-        <p className="max-w-2xl text-muted-foreground">
-          A property data index — compare suburbs, filter by budget and property type, and pin
-          up to three markets to compare side by side.
-        </p>
+    <div className="space-y-16">
+      <section className="relative overflow-hidden rounded-3xl border bg-card px-6 py-12 sm:px-10 sm:py-16">
+        <GradientOrbs variants={["mint", "lavender", "peach"]} />
+        <div className="relative z-10 mx-auto max-w-3xl space-y-5 text-center">
+          <p className="caption-label">Zimbabwe property index</p>
+          <h1 className="font-display text-4xl font-medium leading-[1.06] tracking-[-0.03em] text-foreground sm:text-5xl md:text-6xl">
+            Where can you afford in Zimbabwe?
+          </h1>
+          <p className="mx-auto max-w-xl text-[16px] leading-relaxed tracking-[0.16px] text-muted-foreground">
+            Compare suburbs, filter by budget and property type, and pin up to three markets
+            to compare side by side.
+          </p>
+        </div>
       </section>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>My budget</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div className="flex gap-2">
-            {(["rent", "buy"] as const).map((option) => (
-              <Button
-                key={option}
-                type="button"
-                size="sm"
-                variant={mode === option ? "default" : "outline"}
-                onClick={() => {
-                  setMode(option);
-                  setBudget(option === "rent" ? DEFAULT_RENT_BUDGET : DEFAULT_BUY_BUDGET);
-                }}
-              >
-                {option === "rent" ? "I'm renting" : "I'm buying"}
-              </Button>
-            ))}
-          </div>
+      <section className="space-y-6">
+        <PageHeader
+          title="My budget"
+          description="Set your rent or buy budget and property preferences to surface matching suburbs."
+        />
 
-          <BudgetSlider mode={mode} value={budget} onChange={setBudget} />
-
-          <div className="space-y-2">
-            <p className="text-sm font-medium">Property type</p>
+        <Card>
+          <CardContent className="space-y-8 pt-6">
             <div className="flex flex-wrap gap-2">
-              {PROPERTY_TYPES.map((type) => {
-                const active = propertyTypes.includes(type);
-                return (
-                  <Button
-                    key={type}
-                    type="button"
-                    size="sm"
-                    variant={active ? "default" : "outline"}
-                    onClick={() => {
-                      setPropertyTypes((prev) =>
-                        active ? prev.filter((t) => t !== type) : [...prev, type]
-                      );
-                    }}
-                  >
-                    {propertyTypeLabel(type)}
-                  </Button>
-                );
-              })}
+              {(["rent", "buy"] as const).map((option) => (
+                <Button
+                  key={option}
+                  type="button"
+                  size="sm"
+                  variant={mode === option ? "default" : "outline"}
+                  onClick={() => {
+                    setMode(option);
+                    setBudget(option === "rent" ? DEFAULT_RENT_BUDGET : DEFAULT_BUY_BUDGET);
+                  }}
+                >
+                  {option === "rent" ? "I'm renting" : "I'm buying"}
+                </Button>
+              ))}
             </div>
-          </div>
 
-          <Link
-            href={buildExploreHref(mode, budget, propertyTypes)}
-            className={buttonVariants()}
-          >
-            See matching suburbs
-          </Link>
-        </CardContent>
-      </Card>
+            <BudgetSlider mode={mode} value={budget} onChange={setBudget} />
 
-      <section className="space-y-4">
-        <div className="flex items-center justify-between gap-4">
-          <h2 className="text-lg font-semibold">Top matches in your budget</h2>
+            <div className="space-y-3">
+              <p className="caption-label">Property type</p>
+              <div className="flex flex-wrap gap-2">
+                {PROPERTY_TYPES.map((type) => {
+                  const active = propertyTypes.includes(type);
+                  return (
+                    <Button
+                      key={type}
+                      type="button"
+                      size="sm"
+                      variant={active ? "default" : "outline"}
+                      onClick={() => {
+                        setPropertyTypes((prev) =>
+                          active ? prev.filter((t) => t !== type) : [...prev, type]
+                        );
+                      }}
+                    >
+                      {propertyTypeLabel(type)}
+                    </Button>
+                  );
+                })}
+              </div>
+            </div>
+
+            <Link
+              href={buildExploreHref(mode, budget, propertyTypes)}
+              className={buttonVariants({ size: "lg" })}
+            >
+              See matching suburbs
+            </Link>
+          </CardContent>
+        </Card>
+      </section>
+
+      <section className="space-y-6">
+        <div className="flex flex-wrap items-end justify-between gap-4">
+          <PageHeader title="Top matches in your budget" />
           <Link
             href={buildExploreHref(mode, budget, propertyTypes)}
             className={buttonVariants({ variant: "outline", size: "sm" })}
@@ -129,7 +139,7 @@ function HomeContent() {
         {isLoading ? (
           <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
             {Array.from({ length: 3 }).map((_, i) => (
-              <Skeleton key={i} className="h-40 w-full" />
+              <Skeleton key={i} className="h-44 w-full rounded-2xl" />
             ))}
           </div>
         ) : previewMarkets.length ? (
@@ -139,7 +149,7 @@ function HomeContent() {
             ))}
           </div>
         ) : (
-          <p className="text-sm text-muted-foreground">
+          <p className="text-[15px] tracking-[0.15px] text-muted-foreground">
             No suburbs in budget yet — try adjusting your budget or property type filters.
           </p>
         )}
@@ -150,7 +160,7 @@ function HomeContent() {
 
 export function HomePageClient() {
   return (
-    <Suspense fallback={<Skeleton className="h-96 w-full" />}>
+    <Suspense fallback={<Skeleton className="h-96 w-full rounded-2xl" />}>
       <HomeContent />
     </Suspense>
   );

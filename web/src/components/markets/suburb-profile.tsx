@@ -12,10 +12,10 @@ function MetricCard({ label, value }: { label: string; value: string }) {
   return (
     <Card>
       <CardHeader className="pb-2">
-        <CardTitle className="text-sm font-medium text-muted-foreground">{label}</CardTitle>
+        <CardTitle className="caption-label normal-case">{label}</CardTitle>
       </CardHeader>
       <CardContent>
-        <p className="text-2xl font-semibold tabular-nums">{value}</p>
+        <p className="font-stat text-2xl font-medium">{value}</p>
       </CardContent>
     </Card>
   );
@@ -26,12 +26,14 @@ export function SuburbProfile({ market, related }: { market: MarketMetric; relat
     <div className="space-y-8">
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div>
-          <p className="text-sm text-muted-foreground">
+          <p className="font-mono text-xs tracking-[0.08em] text-muted-foreground uppercase">
             <Link href={cityPath(market.city)} className="hover:underline">
               {market.city}
             </Link>
           </p>
-          <h1 className="text-3xl font-semibold tracking-tight">{sanitizeLabel(market.suburb)}</h1>
+          <h1 className="font-heading text-3xl font-medium tracking-[-0.02em] sm:text-4xl">
+            {sanitizeLabel(market.suburb)}
+          </h1>
         </div>
         <div className="flex flex-wrap items-center gap-2">
           <ConfidenceBadge score={market.confidence_score} />
@@ -88,13 +90,13 @@ export function SuburbProfile({ market, related }: { market: MarketMetric; relat
 
       {related.length ? (
         <section className="space-y-4">
-          <h2 className="text-lg font-semibold">Similar suburbs in {market.city}</h2>
+          <h2 className="font-heading text-lg font-medium">Similar suburbs in {market.city}</h2>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {related.map((item) => (
               <Link
                 key={item.market_id}
                 href={suburbPath(item.city, item.suburb)}
-                className="rounded-lg border p-4 transition-colors hover:bg-muted/50"
+                className="rounded-2xl border border-border/80 bg-card p-4 transition-shadow hover:shadow-[var(--shadow-card)]"
               >
                 <p className="font-medium">{sanitizeLabel(item.suburb)}</p>
                 <p className="text-sm text-muted-foreground">

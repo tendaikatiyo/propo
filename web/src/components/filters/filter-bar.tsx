@@ -38,7 +38,7 @@ function FilterControls({ compact = false }: { compact?: boolean }) {
   return (
     <div className={compact ? "space-y-5" : "grid gap-4 lg:grid-cols-[auto_1fr_1fr_1.5fr_auto] lg:items-end"}>
       <div className="space-y-2">
-        {!compact ? <Label>Mode</Label> : null}
+        {!compact ? <Label className="caption-label">Mode</Label> : null}
         <div className="flex gap-2">
           {(["rent", "buy"] as const).map((mode) => (
             <Button
@@ -55,7 +55,7 @@ function FilterControls({ compact = false }: { compact?: boolean }) {
       </div>
 
       <div className="space-y-2">
-        <Label>City</Label>
+        <Label className="caption-label">City</Label>
         <Select
           value={filters.city ?? "all"}
           onValueChange={(value) => setFilters({ city: value === "all" ? null : value })}
@@ -75,7 +75,7 @@ function FilterControls({ compact = false }: { compact?: boolean }) {
       </div>
 
       <div className="space-y-2">
-        <Label>Property type</Label>
+        <Label className="caption-label">Property type</Label>
         <div className="flex flex-wrap gap-2">
           {PROPERTY_TYPES.map((type) => {
             const active = filters.propertyTypes.includes(type);
@@ -101,7 +101,7 @@ function FilterControls({ compact = false }: { compact?: boolean }) {
 
       {hasBedroomData ? (
         <div className="space-y-2">
-          <Label>Bedrooms</Label>
+          <Label className="caption-label">Bedrooms</Label>
           <div className="flex flex-wrap gap-2">
             <Button
               type="button"
@@ -154,8 +154,8 @@ function FilterControls({ compact = false }: { compact?: boolean }) {
 export function FilterBar() {
   return (
     <>
-      <div className="hidden border-b bg-muted/30 px-4 py-4 sm:px-6 lg:block lg:px-8">
-        <div className="mx-auto max-w-7xl">
+      <div className="hidden border-b border-border/80 bg-card px-4 py-5 sm:px-6 lg:block lg:px-8">
+        <div className="mx-auto max-w-6xl">
           <FilterControls />
         </div>
       </div>

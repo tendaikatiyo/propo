@@ -14,16 +14,29 @@ export async function CitiesDirectory() {
   return (
     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {sorted.map((city) => (
-        <Link key={city.city} href={cityPath(city.city)}>
-          <Card className="h-full transition-colors hover:bg-muted/40">
+        <Link key={city.city} href={cityPath(city.city)} className="group">
+          <Card className="h-full transition-shadow group-hover:shadow-[var(--shadow-card)]">
             <CardHeader className="pb-2">
-              <CardTitle className="text-base">{city.city}</CardTitle>
+              <CardTitle>{city.city}</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-1 text-sm text-muted-foreground">
-              <p>{city.suburb_count} suburbs</p>
-              <p>Median rent {formatCurrency(city.median_rent)}</p>
-              <p>Median sale {formatCurrency(city.median_sale_price)}</p>
-              <p>Avg yield {formatPercent(city.average_yield)}</p>
+            <CardContent className="space-y-1.5 text-[15px] tracking-[0.15px] text-muted-foreground">
+              <p>
+                <span className="font-mono text-foreground">{city.suburb_count}</span> suburbs
+              </p>
+              <p>
+                Median rent{" "}
+                <span className="font-stat text-foreground">{formatCurrency(city.median_rent)}</span>
+              </p>
+              <p>
+                Median sale{" "}
+                <span className="font-stat text-foreground">
+                  {formatCurrency(city.median_sale_price)}
+                </span>
+              </p>
+              <p>
+                Avg yield{" "}
+                <span className="font-stat text-foreground">{formatPercent(city.average_yield)}</span>
+              </p>
             </CardContent>
           </Card>
         </Link>

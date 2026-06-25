@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 
+import { PageHeader } from "@/components/layout/page-header";
 import { SuburbTable } from "@/components/markets/suburb-table";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { formatCurrency, formatPercent } from "@/lib/format";
@@ -26,12 +27,12 @@ function TopList({
           <Link
             key={`${item.city}-${item.suburb}`}
             href={suburbPath(item.city, item.suburb)}
-            className="flex items-center justify-between rounded-md px-2 py-1.5 text-sm hover:bg-muted"
+            className="flex items-center justify-between rounded-xl px-2 py-2 text-sm hover:bg-muted/50"
           >
-            <span>
+            <span className="font-heading">
               {item.suburb}, {item.city}
             </span>
-            <span className="text-muted-foreground tabular-nums">{item.label}</span>
+            <span className="font-mono text-muted-foreground">{item.label}</span>
           </Link>
         ))}
       </CardContent>
@@ -52,43 +53,41 @@ export function CityDashboard({
 
   return (
     <div className="space-y-8">
-      <div>
-        <h1 className="text-3xl font-semibold tracking-tight">{city.city}</h1>
-        <p className="text-muted-foreground">
-          {city.suburb_count} suburbs · {city.rental_count} rentals · {city.sale_count} sales
-        </p>
-      </div>
+      <PageHeader
+        title={city.city}
+        description={`${city.suburb_count} suburbs · ${city.rental_count} rentals · ${city.sale_count} sales`}
+      />
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <Card>
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm text-muted-foreground">Median rent</CardTitle>
+            <CardTitle className="caption-label normal-case">Median rent</CardTitle>
           </CardHeader>
-          <CardContent className="text-2xl font-semibold tabular-nums">
+          <CardContent className="font-stat text-2xl font-medium">
             {formatCurrency(city.median_rent)}
           </CardContent>
         </Card>
         <Card>
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm text-muted-foreground">Median sale</CardTitle>
+            <CardTitle className="caption-label normal-case">Median sale</CardTitle>
           </CardHeader>
-          <CardContent className="text-2xl font-semibold tabular-nums">
+          <CardContent className="font-stat text-2xl font-medium">
             {formatCurrency(city.median_sale_price)}
           </CardContent>
         </Card>
         <Card>
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm text-muted-foreground">Average yield</CardTitle>
+            <CardTitle className="caption-label normal-case">Average yield</CardTitle>
           </CardHeader>
-          <CardContent className="text-2xl font-semibold tabular-nums">
+          <CardContent className="font-stat text-2xl font-medium">
             {formatPercent(city.average_yield)}
           </CardContent>
         </Card>
         <Card>
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm text-muted-foreground">Avg DOM (rent)</CardTitle>
+            <CardTitle className="caption-label normal-case">Avg DOM (rent)</CardTitle>
           </CardHeader>
-          <CardContent className="text-2xl font-semibold tabular-nums">
+          <CardContent className="font-mono text-2xl font-medium">
             {city.average_days_on_market_rent != null
               ? `${city.average_days_on_market_rent}d`
               : "—"}
@@ -118,7 +117,7 @@ export function CityDashboard({
       ) : null}
 
       <section className="space-y-4">
-        <h2 className="text-lg font-semibold">All suburbs</h2>
+        <h2 className="font-heading text-lg font-medium">All suburbs</h2>
         <SuburbTable markets={markets} mode="rent" />
       </section>
     </div>

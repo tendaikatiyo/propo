@@ -21,7 +21,9 @@ export function BudgetSlider({
   return (
     <div className="space-y-3">
       <div className="flex items-center justify-between gap-3">
-        <Label htmlFor="budget-input">Budget</Label>
+        <Label htmlFor="budget-input" className="caption-label normal-case">
+          Budget
+        </Label>
         <Input
           id="budget-input"
           type="number"
@@ -43,7 +45,7 @@ export function BudgetSlider({
           if (typeof next === "number") onChange(next);
         }}
       />
-      <p className="text-sm text-muted-foreground tabular-nums">{formatCurrency(value)}</p>
+      <p className="font-stat text-sm text-muted-foreground">{formatCurrency(value)}</p>
     </div>
   );
 }

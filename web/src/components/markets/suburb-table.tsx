@@ -56,14 +56,14 @@ export function SuburbTable({
 
   if (!sorted.length) {
     return (
-      <div className="rounded-lg border border-dashed p-8 text-center text-muted-foreground">
+      <div className="rounded-2xl border border-dashed border-border/80 bg-card p-10 text-center text-muted-foreground">
         No suburbs match your filters.
       </div>
     );
   }
 
   return (
-    <div className="overflow-x-auto rounded-lg border">
+    <div className="feature-card overflow-hidden p-0">
       <Table>
         <TableHeader>
           <TableRow>
@@ -101,30 +101,30 @@ export function SuburbTable({
 
             return (
               <TableRow key={market.market_id}>
-                <TableCell>
+                <TableCell className="font-heading font-medium">
                   <Link
                     href={suburbPath(market.city, market.suburb)}
-                    className="font-medium hover:underline"
+                    className="hover:underline"
                   >
                     {sanitizeLabel(market.suburb)}
                   </Link>
                 </TableCell>
-                <TableCell>{market.city}</TableCell>
-                <TableCell className="tabular-nums">{formatCurrency(market.median_rent)}</TableCell>
-                <TableCell className="tabular-nums">
+                <TableCell className="font-heading text-muted-foreground">{market.city}</TableCell>
+                <TableCell className="font-mono">{formatCurrency(market.median_rent)}</TableCell>
+                <TableCell className="font-mono">
                   {formatCurrency(market.median_sale_price)}
                 </TableCell>
-                <TableCell className="tabular-nums">{formatPercent(market.yield_percent)}</TableCell>
-                <TableCell className="tabular-nums">{market.opportunity_score ?? "—"}</TableCell>
+                <TableCell className="font-stat">{formatPercent(market.yield_percent)}</TableCell>
+                <TableCell className="font-mono">{market.opportunity_score ?? "—"}</TableCell>
                 <TableCell>
                   <ConfidenceBadge score={market.confidence_score} />
                 </TableCell>
-                <TableCell className="tabular-nums text-muted-foreground">
+                <TableCell className="font-mono text-muted-foreground">
                   {dom != null ? `${dom}d` : "—"}
                 </TableCell>
                 <TableCell className="text-right">
                   <div className="flex items-center justify-end gap-2">
-                    <span className="hidden text-sm text-muted-foreground tabular-nums sm:inline">
+                    <span className="font-stat hidden text-sm text-muted-foreground sm:inline">
                       {formatCurrency(price)}
                     </span>
                     <PinButton market={market} size="icon-sm" />

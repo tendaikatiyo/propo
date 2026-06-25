@@ -15,12 +15,12 @@ const TYPE_KEYS: Record<string, keyof MarketMetric> = {
 };
 
 const COLORS = [
-  "bg-sky-500",
-  "bg-emerald-500",
-  "bg-amber-500",
-  "bg-violet-500",
-  "bg-rose-500",
-  "bg-slate-500",
+  "bg-[#a7e5d3]",
+  "bg-[#a8c8e8]",
+  "bg-[#c8b8e0]",
+  "bg-[#f4c5a8]",
+  "bg-[#e8b8c4]",
+  "bg-[#d6d3d1]",
 ];
 
 export function PropertyMixBar({ market }: { market: MarketMetric }) {

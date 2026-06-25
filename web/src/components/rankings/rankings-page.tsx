@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 
+import { PageHeader } from "@/components/layout/page-header";
 import { PinButton } from "@/components/markets/pin-button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { formatCurrency, formatPercent, sanitizeLabel } from "@/lib/format";
@@ -26,13 +27,13 @@ function RankingList({
         {items.map((item) => (
           <div
             key={item.market_id}
-            className="flex items-center justify-between gap-2 rounded-md px-2 py-1.5 hover:bg-muted"
+            className="flex items-center justify-between gap-2 rounded-xl px-2 py-2 hover:bg-muted/50"
           >
             <Link href={suburbPath(item.city, item.suburb)} className="min-w-0 flex-1">
-              <p className="truncate font-medium">{sanitizeLabel(item.suburb)}</p>
+              <p className="truncate font-heading font-medium">{sanitizeLabel(item.suburb)}</p>
               <p className="truncate text-xs text-muted-foreground">{item.city}</p>
             </Link>
-            <span className="shrink-0 text-sm tabular-nums text-muted-foreground">
+            <span className="shrink-0 font-mono text-sm text-muted-foreground">
               {value(item)}
             </span>
             <PinButton market={item} size="icon-sm" />
@@ -49,13 +50,11 @@ export function RankingsPageClient({
   national: Record<string, RankingEntry[]>;
 }) {
   return (
-    <div className="space-y-6">
-      <div>
-        <h1 className="text-2xl font-semibold tracking-tight">Market rankings</h1>
-        <p className="text-muted-foreground">
-          National leaderboards from aggregated listing data across Zimbabwe.
-        </p>
-      </div>
+    <div className="space-y-10">
+      <PageHeader
+        title="Market rankings"
+        description="National leaderboards from aggregated listing data across Zimbabwe."
+      />
 
       <div className="grid gap-4 lg:grid-cols-2">
         <RankingList

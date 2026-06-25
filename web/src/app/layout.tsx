@@ -5,6 +5,7 @@ import { QueryProvider } from "@/components/providers/query-provider";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { SITE_DESCRIPTION, SITE_NAME } from "@/lib/constants";
+import { fontClassNames } from "@/lib/fonts";
 
 import "./globals.css";
 
@@ -22,8 +23,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="min-h-screen antialiased">
+    <html lang="en" className={fontClassNames}>
+      <body className="min-h-screen">
         <QueryProvider>
           <TooltipProvider>
             <AppShell>{children}</AppShell>

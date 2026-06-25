@@ -7,14 +7,13 @@ import {
 import { formatNumber } from "@/lib/format";
 
 export function ConfidenceBadge({ score }: { score: number }) {
-  const variant =
-    score >= 60 ? "default" : score >= 20 ? "secondary" : "outline";
+  const variant = score >= 60 ? "default" : score >= 20 ? "secondary" : "outline";
 
   return (
     <Tooltip>
       <TooltipTrigger>
-        <Badge variant={variant} className="tabular-nums">
-          {formatNumber(score)}% conf.
+        <Badge variant={variant} className="normal-case tracking-normal">
+          {formatNumber(score)}% conf
         </Badge>
       </TooltipTrigger>
       <TooltipContent>

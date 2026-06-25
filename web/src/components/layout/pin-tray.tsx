@@ -21,7 +21,7 @@ export function PinTray() {
         </span>
       ) : (
         pins.map((pin) => (
-          <Badge key={pin.market_id} variant="secondary" className="gap-1 pr-1">
+          <Badge key={pin.market_id} variant="secondary" className="gap-1 pr-1 normal-case tracking-normal">
             <Link href={suburbPath(pin.city, pin.suburb)} className="hover:underline">
               {sanitizeLabel(pin.suburb)}
             </Link>

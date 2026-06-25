@@ -65,8 +65,8 @@ export function ExploreResults({ preview = false }: { preview?: boolean }) {
       <div className="space-y-8">
         <section className="space-y-4">
           <div>
-            <h2 className="text-lg font-semibold">In budget</h2>
-            <p className="text-sm text-muted-foreground">
+            <h2 className="font-heading text-xl font-medium tracking-[-0.01em]">In budget</h2>
+            <p className="text-[15px] tracking-[0.15px] text-muted-foreground">
               Suburbs with median {filters.mode === "rent" ? "rent" : "sale price"} at or below{" "}
               {formatCurrency(filters.budget)}.
             </p>
@@ -77,8 +77,8 @@ export function ExploreResults({ preview = false }: { preview?: boolean }) {
         {rankedStretch.length ? (
           <section className="space-y-4">
             <div>
-              <h2 className="text-lg font-semibold">Stretch</h2>
-              <p className="text-sm text-muted-foreground">
+              <h2 className="font-heading text-xl font-medium tracking-[-0.01em]">Stretch</h2>
+              <p className="text-[15px] tracking-[0.15px] text-muted-foreground">
                 Within 15% above your budget — worth a look if you can flex slightly.
               </p>
             </div>
@@ -96,18 +96,18 @@ export function ExploreResults({ preview = false }: { preview?: boolean }) {
           <CardHeader className="pb-2">
             <CardTitle className="text-base">Summary</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-2 text-sm">
+          <CardContent className="space-y-3 text-sm">
             <p>
               <span className="text-muted-foreground">In budget:</span>{" "}
-              <span className="font-medium tabular-nums">{rankedInBudget.length}</span>
+              <span className="font-mono font-medium">{rankedInBudget.length}</span>
             </p>
             <p>
               <span className="text-muted-foreground">Stretch:</span>{" "}
-              <span className="font-medium tabular-nums">{rankedStretch.length}</span>
+              <span className="font-mono font-medium">{rankedStretch.length}</span>
             </p>
             <p>
               <span className="text-muted-foreground">Avg yield (matches):</span>{" "}
-              <span className="font-medium tabular-nums">{formatPercent(avgYield)}</span>
+              <span className="font-stat font-medium">{formatPercent(avgYield)}</span>
             </p>
           </CardContent>
         </Card>
