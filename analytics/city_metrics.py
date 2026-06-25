@@ -68,6 +68,20 @@ def build_city_metrics(
         average_opportunity_score = safe_mean(
             [market["opportunity_score"] for market in market_list if market.get("opportunity_score") is not None]
         )
+        average_days_on_market_rent = safe_mean(
+            [
+                market["average_days_on_market_rent"]
+                for market in market_list
+                if market.get("average_days_on_market_rent") is not None
+            ]
+        )
+        average_days_on_market_sale = safe_mean(
+            [
+                market["average_days_on_market_sale"]
+                for market in market_list
+                if market.get("average_days_on_market_sale") is not None
+            ]
+        )
 
         city_metrics.append(
             {
@@ -80,6 +94,12 @@ def build_city_metrics(
                 "average_yield": round(average_yield, 2) if average_yield is not None else None,
                 "average_opportunity_score": round(average_opportunity_score, 2)
                 if average_opportunity_score is not None
+                else None,
+                "average_days_on_market_rent": int(round(average_days_on_market_rent))
+                if average_days_on_market_rent is not None
+                else None,
+                "average_days_on_market_sale": int(round(average_days_on_market_sale))
+                if average_days_on_market_sale is not None
                 else None,
             }
         )

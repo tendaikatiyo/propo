@@ -22,7 +22,10 @@ create table if not exists listings (
     agency_logo text,
     first_seen_at timestamptz not null default now(),
     last_seen_at timestamptz not null default now(),
-    is_active boolean not null default true
+    is_active boolean not null default true,
+    days_on_market integer generated always as (
+        greatest(0, extract(day from (last_seen_at - first_seen_at))::integer)
+    ) stored
 );
 
 create table if not exists listing_snapshots (

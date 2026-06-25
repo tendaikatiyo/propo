@@ -65,10 +65,12 @@ ON CONFLICT (listing_url, scraped_at) DO NOTHING
 MARKET_SNAPSHOT_UPSERT_SQL = """
 INSERT INTO market_snapshots_daily (
     snapshot_date, city, suburb, listing_type, property_type,
-    listing_count, median_price, avg_price, min_price, max_price
+    listing_count, median_price, avg_price, min_price, max_price,
+    median_days_on_market, avg_days_on_market
 ) VALUES (
     %(snapshot_date)s::date, %(city)s, %(suburb)s, %(listing_type)s, %(property_type)s,
-    %(listing_count)s, %(median_price)s, %(avg_price)s, %(min_price)s, %(max_price)s
+    %(listing_count)s, %(median_price)s, %(avg_price)s, %(min_price)s, %(max_price)s,
+    %(median_days_on_market)s, %(avg_days_on_market)s
 )
 ON CONFLICT (snapshot_date, city, suburb, listing_type, property_type)
 DO UPDATE SET
@@ -76,7 +78,9 @@ DO UPDATE SET
     median_price = EXCLUDED.median_price,
     avg_price = EXCLUDED.avg_price,
     min_price = EXCLUDED.min_price,
-    max_price = EXCLUDED.max_price
+    max_price = EXCLUDED.max_price,
+    median_days_on_market = EXCLUDED.median_days_on_market,
+    avg_days_on_market = EXCLUDED.avg_days_on_market
 """
 
 

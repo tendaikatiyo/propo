@@ -5,6 +5,7 @@ from typing import Dict, List, Set, Tuple
 from analytics.clean_data import normalize_listing_record, save_json
 from analytics.data_sources import SOURCE_FILES
 from analytics.history_db import HistoryDatabase, utc_now_iso
+from analytics.listing_utils import days_on_market_from_row
 
 DATA_DIR = Path(__file__).resolve().parents[1] / "data"
 CLEAN_SALES_PATH = DATA_DIR / "clean_sales.json"
@@ -119,6 +120,7 @@ def _to_clean_shape(row: Dict) -> Dict:
         "lounges": row.get("lounges") or 0,
         "source": row.get("source"),
         "listing_type": row.get("listing_type"),
+        "days_on_market": days_on_market_from_row(row),
     }
 
 

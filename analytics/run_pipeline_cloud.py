@@ -17,12 +17,12 @@ def run_analytics_build() -> None:
         raise SystemExit("npm not found in PATH. Install Node.js to run analytics:build.")
 
     result = subprocess.run(
-        [npm, "run", "analytics:build"],
+        [npm, "run", "analytics:build:db"],
         cwd=PROJECT_ROOT,
         check=False,
     )
     if result.returncode != 0:
-        raise SystemExit("analytics:build failed")
+        raise SystemExit("analytics:build:db failed")
 
 
 def main() -> None:

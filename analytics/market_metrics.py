@@ -102,6 +102,8 @@ def build_market_metrics(sales: List[Dict[str, Any]], rentals: List[Dict[str, An
                 "suburb": record.get("suburb", ""),
                 "rental_prices": [],
                 "sale_prices": [],
+                "rental_days_on_market": [],
+                "sale_days_on_market": [],
                 "property_types": [],
                 "rental_count": 0,
                 "sale_count": 0,
@@ -113,17 +115,25 @@ def build_market_metrics(sales: List[Dict[str, Any]], rentals: List[Dict[str, An
         market["rental_prices"].append(int(rent["price"]))
         market["property_types"].append(normalize_type(rent.get("property_type", "unknown")))
         market["rental_count"] += 1
+        dom = rent.get("days_on_market")
+        if dom is not None:
+            market["rental_days_on_market"].append(int(dom))
 
     for sale in sales:
         market = ensure_market(sale)
         market["sale_prices"].append(int(sale["price"]))
         market["property_types"].append(normalize_type(sale.get("property_type", "unknown")))
         market["sale_count"] += 1
+        dom = sale.get("days_on_market")
+        if dom is not None:
+            market["sale_days_on_market"].append(int(dom))
 
     output: List[Dict[str, Any]] = []
     for market_id, market in markets.items():
         rental_prices = market["rental_prices"]
         sale_prices = market["sale_prices"]
+        rental_days = market["rental_days_on_market"]
+        sale_days = market["sale_days_on_market"]
         rental_count = market["rental_count"]
         sale_count = market["sale_count"]
 
@@ -170,6 +180,14 @@ def build_market_metrics(sales: List[Dict[str, Any]], rentals: List[Dict[str, An
                 "room_count": property_type_counter.get("room", 0),
                 "townhouse_count": property_type_counter.get("townhouse", 0),
                 "commercial_count": property_type_counter.get("commercial", 0),
+                "median_days_on_market_rent": safe_median(rental_days),
+                "average_days_on_market_rent": int(round(safe_mean(rental_days)))
+                if safe_mean(rental_days) is not None
+                else None,
+                "median_days_on_market_sale": safe_median(sale_days),
+                "average_days_on_market_sale": int(round(safe_mean(sale_days)))
+                if safe_mean(sale_days) is not None
+                else None,
                 "yield_percent": yield_percent,
                 "price_to_rent_ratio": price_to_rent_ratio,
                 "affordability_ratio": affordability_ratio,

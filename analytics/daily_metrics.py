@@ -3,6 +3,7 @@ from statistics import mean, median
 from typing import Any, Dict, Iterable, List, Optional
 
 from analytics.history_db import HistoryDatabase, utc_date_iso
+from analytics.listing_utils import days_on_market_from_row
 
 
 def safe_median(numbers: Iterable[int]) -> Optional[int]:
@@ -42,6 +43,7 @@ def bucket_property_type(value: Optional[str]) -> str:
 
 def build_daily_market_rows(listings: List[Dict[str, Any]], snapshot_date: str) -> List[Dict[str, Any]]:
     groups: Dict[tuple, List[int]] = defaultdict(list)
+    dom_groups: Dict[tuple, List[int]] = defaultdict(list)
     meta: Dict[tuple, Dict[str, str]] = {}
 
     for row in listings:
@@ -55,6 +57,7 @@ def build_daily_market_rows(listings: List[Dict[str, Any]], snapshot_date: str) 
         if not all(key):
             continue
         groups[key].append(int(row["price"]))
+        dom_groups[key].append(days_on_market_from_row(row))
         meta[key] = {
             "city": key[0],
             "suburb": key[1],
@@ -67,6 +70,7 @@ def build_daily_market_rows(listings: List[Dict[str, Any]], snapshot_date: str) 
         if not prices:
             continue
         info = meta[key]
+        days_on_market = dom_groups[key]
         output.append(
             {
                 "snapshot_date": snapshot_date,
@@ -79,6 +83,8 @@ def build_daily_market_rows(listings: List[Dict[str, Any]], snapshot_date: str) 
                 "avg_price": safe_mean(prices),
                 "min_price": min(prices),
                 "max_price": max(prices),
+                "median_days_on_market": safe_median(days_on_market),
+                "avg_days_on_market": safe_mean(days_on_market),
             }
         )
     return output

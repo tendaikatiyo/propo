@@ -62,6 +62,8 @@ CREATE TABLE IF NOT EXISTS market_snapshots_daily (
     avg_price INTEGER,
     min_price INTEGER,
     max_price INTEGER,
+    median_days_on_market INTEGER,
+    avg_days_on_market INTEGER,
     UNIQUE (snapshot_date, city, suburb, listing_type, property_type)
 );
 
@@ -118,6 +120,36 @@ class HistoryDatabase:
     def init_schema(self) -> None:
         with self.connect() as conn:
             conn.executescript(SCHEMA_SQL)
+            self._migrate_schema(conn)
+
+    def _migrate_schema(self, conn: sqlite3.Connection) -> None:
+        conn.execute(
+            """
+            CREATE VIEW IF NOT EXISTS listings_with_days_on_market AS
+            SELECT
+                listing_url, source, listing_type, property_type, market_id,
+                title, price, price_raw, city, suburb, location, description,
+                bedrooms, bathrooms, lounges, land_size, land_size_unit,
+                agency_name, agency_logo, first_seen_at, last_seen_at, is_active,
+                CAST(
+                    MAX(0, CAST(julianday(last_seen_at) - julianday(first_seen_at) AS INTEGER))
+                AS INTEGER) AS days_on_market
+            FROM listings
+            """
+        )
+
+        columns = {
+            row["name"]
+            for row in conn.execute("PRAGMA table_info(market_snapshots_daily)").fetchall()
+        }
+        if "median_days_on_market" not in columns:
+            conn.execute(
+                "ALTER TABLE market_snapshots_daily ADD COLUMN median_days_on_market INTEGER"
+            )
+        if "avg_days_on_market" not in columns:
+            conn.execute(
+                "ALTER TABLE market_snapshots_daily ADD COLUMN avg_days_on_market INTEGER"
+            )
 
     def start_ingest_run(self, sources: List[str]) -> int:
         with self.connect() as conn:
@@ -273,15 +305,18 @@ class HistoryDatabase:
             """
             INSERT INTO market_snapshots_daily (
                 snapshot_date, city, suburb, listing_type, property_type,
-                listing_count, median_price, avg_price, min_price, max_price
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                listing_count, median_price, avg_price, min_price, max_price,
+                median_days_on_market, avg_days_on_market
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             ON CONFLICT(snapshot_date, city, suburb, listing_type, property_type)
             DO UPDATE SET
                 listing_count = excluded.listing_count,
                 median_price = excluded.median_price,
                 avg_price = excluded.avg_price,
                 min_price = excluded.min_price,
-                max_price = excluded.max_price
+                max_price = excluded.max_price,
+                median_days_on_market = excluded.median_days_on_market,
+                avg_days_on_market = excluded.avg_days_on_market
             """,
             (
                 row["snapshot_date"],
@@ -294,6 +329,8 @@ class HistoryDatabase:
                 row["avg_price"],
                 row["min_price"],
                 row["max_price"],
+                row.get("median_days_on_market"),
+                row.get("avg_days_on_market"),
             ),
         )
 
@@ -331,7 +368,7 @@ class HistoryDatabase:
 
         query = f"""
             SELECT *
-            FROM listings
+            FROM listings_with_days_on_market
             WHERE {' AND '.join(clauses)}
             ORDER BY city, suburb, price
         """

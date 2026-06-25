@@ -34,6 +34,14 @@ def build_rankings(markets: List[Dict[str, Any]], cities: List[Dict[str, Any]]) 
         "top_opportunity_markets": [market_summary(m, "opportunity_score") for m in top_n(markets, "opportunity_score")],
         "most_expensive_markets": [market_summary(m, "median_sale_price") for m in top_n(markets, "median_sale_price")],
         "cheapest_markets": [market_summary(m, "median_sale_price") for m in top_n(markets, "median_sale_price", reverse=False)],
+        "longest_on_market_rentals": [
+            market_summary(m, "average_days_on_market_rent")
+            for m in top_n(markets, "average_days_on_market_rent")
+        ],
+        "longest_on_market_sales": [
+            market_summary(m, "average_days_on_market_sale")
+            for m in top_n(markets, "average_days_on_market_sale")
+        ],
     }
 
     per_city: Dict[str, Dict[str, List[Dict[str, Any]]]] = {}
@@ -47,6 +55,14 @@ def build_rankings(markets: List[Dict[str, Any]], cities: List[Dict[str, Any]]) 
             "highest_rent_suburbs": [market_summary(m, "median_rent") for m in top_n(city_markets, "median_rent")],
             "highest_sale_price_suburbs": [market_summary(m, "median_sale_price") for m in top_n(city_markets, "median_sale_price")],
             "best_opportunity_suburbs": [market_summary(m, "opportunity_score") for m in top_n(city_markets, "opportunity_score")],
+            "longest_on_market_rental_suburbs": [
+                market_summary(m, "average_days_on_market_rent")
+                for m in top_n(city_markets, "average_days_on_market_rent")
+            ],
+            "longest_on_market_sale_suburbs": [
+                market_summary(m, "average_days_on_market_sale")
+                for m in top_n(city_markets, "average_days_on_market_sale")
+            ],
         }
 
     return {
