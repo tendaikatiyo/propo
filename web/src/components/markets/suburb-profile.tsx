@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { BackLink } from "@/components/layout/back-nav";
 import { PinButton } from "@/components/markets/pin-button";
 import { PropertyMixBar } from "@/components/markets/property-mix-bar";
 import { ConfidenceBadge } from "@/components/markets/confidence-badge";
@@ -24,6 +25,8 @@ function MetricCard({ label, value }: { label: string; value: string }) {
 export function SuburbProfile({ market, related }: { market: MarketMetric; related: MarketMetric[] }) {
   return (
     <div className="space-y-8">
+      <BackLink href={cityPath(market.city)} label={`Back to ${market.city}`} />
+
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div>
           <p className="font-mono text-xs tracking-[0.08em] text-muted-foreground uppercase">

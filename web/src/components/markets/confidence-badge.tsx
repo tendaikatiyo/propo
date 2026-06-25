@@ -5,19 +5,38 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { formatNumber } from "@/lib/format";
+import { cn } from "@/lib/utils";
+
+function confidenceStyle(score: number): string {
+  if (score >= 60) {
+    return "border-[#bbf7d0] bg-[#dcfce7] text-[#166534]";
+  }
+  if (score >= 40) {
+    return "border-[#fef08a] bg-[#fef9c3] text-[#854d0e]";
+  }
+  if (score >= 20) {
+    return "border-[#fed7aa] bg-[#ffedd5] text-[#9a3412]";
+  }
+  return "border-[#fecaca] bg-[#fee2e2] text-[#991b1b]";
+}
 
 export function ConfidenceBadge({ score }: { score: number }) {
-  const variant = score >= 60 ? "default" : score >= 20 ? "secondary" : "outline";
-
   return (
     <Tooltip>
       <TooltipTrigger>
-        <Badge variant={variant} className="normal-case tracking-normal">
+        <Badge
+          variant="outline"
+          className={cn(
+            "normal-case tracking-normal",
+            confidenceStyle(score)
+          )}
+        >
           {formatNumber(score)}% conf
         </Badge>
       </TooltipTrigger>
       <TooltipContent>
-        Based on rental and sale listing volume in this suburb.
+        Based on rental and sale listing volume in this suburb. Green = strong
+        coverage; red = thin data.
       </TooltipContent>
     </Tooltip>
   );

@@ -3,6 +3,7 @@
 import { useMemo } from "react";
 
 import { CompareTable } from "@/components/markets/compare-table";
+import { BackLink } from "@/components/layout/back-nav";
 import { PageHeader } from "@/components/layout/page-header";
 import { Button } from "@/components/ui/button";
 import { useMarketMetrics } from "@/hooks/use-market-data";
@@ -19,6 +20,8 @@ export function ComparePageClient() {
 
   return (
     <div className="space-y-8">
+      <BackLink href="/explore" label="Back to explore" />
+
       <div className="flex flex-wrap items-start justify-between gap-4">
         <PageHeader
           title="Compare suburbs"

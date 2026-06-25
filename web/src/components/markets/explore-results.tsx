@@ -4,6 +4,7 @@ import { useMemo } from "react";
 
 import { SuburbCard } from "@/components/markets/suburb-card";
 import { SuburbTable } from "@/components/markets/suburb-table";
+import { BudgetListingsPreview } from "@/components/listings/budget-listings";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useMarketMetrics } from "@/hooks/use-market-data";
@@ -20,15 +21,21 @@ export function ExploreResults({ preview = false }: { preview?: boolean }) {
     [markets, filters]
   );
 
-  const rankedInBudget = useMemo(() => rankExploreResults(inBudget), [inBudget]);
-  const rankedStretch = useMemo(() => rankExploreResults(stretch), [stretch]);
-  const avgYield = averageYield(inBudget);
+  const rankedInBudget = useMemo(
+    () => rankExploreResults(inBudget, filters.mode),
+    [inBudget, filters.mode]
+  );
+  const rankedStretch = useMemo(
+    () => rankExploreResults(stretch, filters.mode),
+    [stretch, filters.mode]
+  );
+  const avgYield = filters.mode === "buy" ? averageYield(inBudget) : null;
 
   if (isLoading) {
     return (
       <div className="space-y-3">
         {Array.from({ length: 4 }).map((_, i) => (
-          <Skeleton key={i} className="h-24 w-full" />
+          <Skeleton key={i} className="h-24 w-full rounded-2xl" />
         ))}
       </div>
     );
@@ -36,7 +43,7 @@ export function ExploreResults({ preview = false }: { preview?: boolean }) {
 
   if (isError) {
     return (
-      <div className="rounded-lg border border-destructive/30 bg-destructive/5 p-6 text-sm">
+      <div className="rounded-2xl border border-destructive/30 bg-destructive/5 p-6 text-sm">
         Could not load market data. Check Supabase configuration or local data files.
       </div>
     );
@@ -61,57 +68,67 @@ export function ExploreResults({ preview = false }: { preview?: boolean }) {
   }
 
   return (
-    <div className="grid gap-6 lg:grid-cols-[1fr_280px]">
-      <div className="space-y-8">
+    <div className="space-y-8">
+      <section className="space-y-4">
+        <div>
+          <h2 className="font-heading text-xl font-medium tracking-[-0.01em]">In budget</h2>
+          <p className="text-[15px] tracking-[0.15px] text-muted-foreground">
+            Suburbs with median {filters.mode === "rent" ? "rent" : "sale price"} at or below{" "}
+            {formatCurrency(filters.budget)}.
+          </p>
+        </div>
+        <SuburbTable markets={rankedInBudget} mode={filters.mode} />
+      </section>
+
+      <BudgetListingsPreview
+        mode={filters.mode}
+        budget={filters.budget}
+        city={filters.city}
+        propertyType={filters.propertyType}
+      />
+
+      {rankedStretch.length ? (
         <section className="space-y-4">
           <div>
-            <h2 className="font-heading text-xl font-medium tracking-[-0.01em]">In budget</h2>
+            <h2 className="font-heading text-xl font-medium tracking-[-0.01em]">Stretch</h2>
             <p className="text-[15px] tracking-[0.15px] text-muted-foreground">
-              Suburbs with median {filters.mode === "rent" ? "rent" : "sale price"} at or below{" "}
-              {formatCurrency(filters.budget)}.
+              Within 15% above your budget — worth a look if you can flex slightly.
             </p>
           </div>
-          <SuburbTable markets={rankedInBudget} mode={filters.mode} />
+          <div className="grid gap-4 md:grid-cols-2">
+            {rankedStretch.map((market) => (
+              <SuburbCard
+                key={market.market_id}
+                market={market}
+                mode={filters.mode}
+                badge="Stretch"
+              />
+            ))}
+          </div>
         </section>
+      ) : null}
 
-        {rankedStretch.length ? (
-          <section className="space-y-4">
-            <div>
-              <h2 className="font-heading text-xl font-medium tracking-[-0.01em]">Stretch</h2>
-              <p className="text-[15px] tracking-[0.15px] text-muted-foreground">
-                Within 15% above your budget — worth a look if you can flex slightly.
-              </p>
-            </div>
-            <div className="grid gap-4 md:grid-cols-2">
-              {rankedStretch.map((market) => (
-                <SuburbCard key={market.market_id} market={market} mode={filters.mode} badge="Stretch" />
-              ))}
-            </div>
-          </section>
-        ) : null}
-      </div>
-
-      <aside className="space-y-4">
-        <Card>
-          <CardHeader className="pb-2">
-            <CardTitle className="text-base">Summary</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-3 text-sm">
+      <Card>
+        <CardHeader className="pb-2">
+          <CardTitle className="text-base">Summary</CardTitle>
+        </CardHeader>
+        <CardContent className="grid gap-3 text-sm sm:grid-cols-3">
+          <p>
+            <span className="text-muted-foreground">In budget: </span>
+            <span className="font-mono font-medium">{rankedInBudget.length}</span>
+          </p>
+          <p>
+            <span className="text-muted-foreground">Stretch: </span>
+            <span className="font-mono font-medium">{rankedStretch.length}</span>
+          </p>
+          {avgYield != null ? (
             <p>
-              <span className="text-muted-foreground">In budget:</span>{" "}
-              <span className="font-mono font-medium">{rankedInBudget.length}</span>
-            </p>
-            <p>
-              <span className="text-muted-foreground">Stretch:</span>{" "}
-              <span className="font-mono font-medium">{rankedStretch.length}</span>
-            </p>
-            <p>
-              <span className="text-muted-foreground">Avg yield (matches):</span>{" "}
+              <span className="text-muted-foreground">Avg yield: </span>
               <span className="font-stat font-medium">{formatPercent(avgYield)}</span>
             </p>
-          </CardContent>
-        </Card>
-      </aside>
+          ) : null}
+        </CardContent>
+      </Card>
     </div>
   );
 }

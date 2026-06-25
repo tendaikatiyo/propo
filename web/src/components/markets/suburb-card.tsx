@@ -16,6 +16,10 @@ export function SuburbCard({
   badge?: string;
 }) {
   const price = mode === "rent" ? market.median_rent : market.median_sale_price;
+  const dom =
+    mode === "rent"
+      ? market.average_days_on_market_rent
+      : market.average_days_on_market_sale;
 
   return (
     <Card className="h-full">
@@ -32,18 +36,16 @@ export function SuburbCard({
           <ConfidenceBadge score={market.confidence_score} />
         </div>
         <div className="flex flex-wrap gap-3 text-sm text-muted-foreground">
-          {market.yield_percent != null ? (
+          {mode === "buy" && market.yield_percent != null ? (
             <span className="font-stat">Yield {formatPercent(market.yield_percent)}</span>
           ) : null}
-          {market.opportunity_score != null ? (
+          {mode === "buy" && market.opportunity_score != null ? (
             <span className="font-mono text-xs tracking-wide">
               Opp {market.opportunity_score}
             </span>
           ) : null}
-          {market.average_days_on_market_rent != null ? (
-            <span className="font-mono text-xs tracking-wide">
-              DOM {market.average_days_on_market_rent}d
-            </span>
+          {dom != null ? (
+            <span className="font-mono text-xs tracking-wide">DOM {dom}d</span>
           ) : null}
         </div>
         <PinButton market={market} />

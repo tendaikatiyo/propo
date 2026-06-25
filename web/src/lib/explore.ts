@@ -1,5 +1,8 @@
 import {
   BEDROOM_COUNT_KEY,
+  BUY_BUDGET_RANGE,
+  DEFAULT_BUY_BUDGET,
+  DEFAULT_RENT_BUDGET,
   MIN_CONFIDENCE_THRESHOLD,
   PROPERTY_TYPE_COUNT_KEY,
   STRETCH_BUDGET_MULTIPLIER,
@@ -22,13 +25,21 @@ function getPriceForMode(market: MarketMetric, mode: ExploreMode): number | null
   return mode === "rent" ? market.median_rent : market.median_sale_price;
 }
 
-export function hasPropertyType(market: MarketMetric, types: ExploreFilters["propertyTypes"]): boolean {
-  if (!types.length) return true;
-  return types.some((type) => {
-    const key = PROPERTY_TYPE_COUNT_KEY[type];
-    const count = market[key];
-    return typeof count === "number" && count > 0;
-  });
+/** Snap budget to the correct default when mode and amount disagree (e.g. $800 left on buy). */
+export function budgetForMode(mode: ExploreMode, current: number): number {
+  if (mode === "buy" && current < BUY_BUDGET_RANGE.min) return DEFAULT_BUY_BUDGET;
+  if (mode === "rent" && current >= BUY_BUDGET_RANGE.min) return DEFAULT_RENT_BUDGET;
+  return current;
+}
+
+export function hasPropertyType(
+  market: MarketMetric,
+  propertyType: ExploreFilters["propertyType"]
+): boolean {
+  if (!propertyType) return true;
+  const key = PROPERTY_TYPE_COUNT_KEY[propertyType];
+  const count = market[key];
+  return typeof count === "number" && count > 0;
 }
 
 export function hasBedroomCount(market: MarketMetric, bedroom: number | null): boolean {
@@ -48,7 +59,7 @@ export function passesConfidence(market: MarketMetric, includeLowConfidence: boo
 export function filterMarkets(markets: MarketMetric[], filters: ExploreFilters): ExploreResult {
   const filtered = markets.filter((market) => {
     if (filters.city && market.city !== filters.city) return false;
-    if (!hasPropertyType(market, filters.propertyTypes)) return false;
+    if (!hasPropertyType(market, filters.propertyType)) return false;
     if (!hasBedroomCount(market, filters.bedroom)) return false;
     if (!passesConfidence(market, filters.includeLowConfidence)) return false;
     const price = getPriceForMode(market, filters.mode);
@@ -87,7 +98,19 @@ export function sortMarkets(
   return direction === "desc" ? sorted.reverse() : sorted;
 }
 
-export function rankExploreResults(markets: MarketMetric[]): MarketMetric[] {
+export function rankExploreResults(
+  markets: MarketMetric[],
+  mode: ExploreMode = "buy"
+): MarketMetric[] {
+  if (mode === "rent") {
+    return [...markets].sort((a, b) => {
+      const conf = (b.confidence_score ?? 0) - (a.confidence_score ?? 0);
+      if (conf !== 0) return conf;
+      const rentA = a.median_rent ?? Infinity;
+      const rentB = b.median_rent ?? Infinity;
+      return rentA - rentB;
+    });
+  }
   return sortMarkets(markets, "opportunity_score", "desc").sort((a, b) => {
     const opp = (b.opportunity_score ?? 0) - (a.opportunity_score ?? 0);
     if (opp !== 0) return opp;

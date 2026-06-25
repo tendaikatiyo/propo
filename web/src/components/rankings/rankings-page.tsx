@@ -3,6 +3,7 @@
 import Link from "next/link";
 
 import { PageHeader } from "@/components/layout/page-header";
+import { BackLink } from "@/components/layout/back-nav";
 import { PinButton } from "@/components/markets/pin-button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { formatCurrency, formatPercent, sanitizeLabel } from "@/lib/format";
@@ -51,6 +52,7 @@ export function RankingsPageClient({
 }) {
   return (
     <div className="space-y-10">
+      <BackLink href="/" label="Back to home" />
       <PageHeader
         title="Market rankings"
         description="National leaderboards from aggregated listing data across Zimbabwe."

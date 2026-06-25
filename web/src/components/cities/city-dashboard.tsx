@@ -1,10 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import { useMemo, useState } from "react";
+import { Search } from "lucide-react";
 
+import { BackLink } from "@/components/layout/back-nav";
 import { PageHeader } from "@/components/layout/page-header";
 import { SuburbTable } from "@/components/markets/suburb-table";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 import { formatCurrency, formatPercent } from "@/lib/format";
 import { suburbPath } from "@/lib/slug";
 import type { CityMetric, MarketMetric, RankingsPayload } from "@/lib/types";
@@ -49,16 +53,25 @@ export function CityDashboard({
   markets: MarketMetric[];
   rankings: RankingsPayload | null;
 }) {
+  const [query, setQuery] = useState("");
   const cityRankings = rankings?.per_city?.[city.city];
+
+  const filteredMarkets = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    if (!q) return markets;
+    return markets.filter((m) => m.suburb.toLowerCase().includes(q));
+  }, [markets, query]);
 
   return (
     <div className="space-y-8">
+      <BackLink href="/cities" label="All cities" />
+
       <PageHeader
         title={city.city}
         description={`${city.suburb_count} suburbs · ${city.rental_count} rentals · ${city.sale_count} sales`}
       />
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
         <Card>
           <CardHeader className="pb-2">
             <CardTitle className="caption-label normal-case">Median rent</CardTitle>
@@ -93,6 +106,16 @@ export function CityDashboard({
               : "—"}
           </CardContent>
         </Card>
+        <Card>
+          <CardHeader className="pb-2">
+            <CardTitle className="caption-label normal-case">Avg DOM (sale)</CardTitle>
+          </CardHeader>
+          <CardContent className="font-mono text-2xl font-medium">
+            {city.average_days_on_market_sale != null
+              ? `${city.average_days_on_market_sale}d`
+              : "—"}
+          </CardContent>
+        </Card>
       </div>
 
       {cityRankings ? (
@@ -117,8 +140,24 @@ export function CityDashboard({
       ) : null}
 
       <section className="space-y-4">
-        <h2 className="font-heading text-lg font-medium">All suburbs</h2>
-        <SuburbTable markets={markets} mode="rent" />
+        <div className="flex flex-wrap items-end justify-between gap-4">
+          <h2 className="font-heading text-lg font-medium">All suburbs</h2>
+          <div className="relative w-full max-w-sm">
+            <Search className="absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted-foreground" />
+            <Input
+              type="search"
+              placeholder="Search suburbs..."
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              className="pl-9"
+            />
+          </div>
+        </div>
+        {!filteredMarkets.length ? (
+          <p className="text-muted-foreground">No suburbs match your search.</p>
+        ) : (
+          <SuburbTable markets={filteredMarkets} mode="buy" layout="city" />
+        )}
       </section>
     </div>
   );

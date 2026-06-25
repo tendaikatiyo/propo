@@ -6,7 +6,6 @@ export const PROPERTY_TYPES: PropertyType[] = [
   "flat",
   "room",
   "townhouse",
-  "commercial",
 ];
 
 export const PROPERTY_TYPE_COUNT_KEY: Record<PropertyType, keyof import("@/lib/types").MarketMetric> = {
@@ -40,6 +39,7 @@ export const DEFAULT_BUY_BUDGET = 250000;
 export const RENT_BUDGET_RANGE = { min: 100, max: 10000, step: 50 };
 export const BUY_BUDGET_RANGE = { min: 20000, max: 1000000, step: 5000 };
 
+export const DEFAULT_CITY = "Harare";
 export const SITE_NAME = "Propo";
 export const SITE_DESCRIPTION =
   "Property data index for Zimbabwe — compare suburbs, find markets in your budget, and explore rental yields.";

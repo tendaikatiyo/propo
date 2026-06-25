@@ -2,6 +2,7 @@
 
 import { useQuery } from "@tanstack/react-query";
 
+import { filterZimbabweCities, filterZimbabweMarkets } from "@/lib/geo";
 import type { CityMetric, MarketMetric, RankingsPayload } from "@/lib/types";
 
 async function fetchJson<T>(url: string): Promise<T> {
@@ -13,14 +14,20 @@ async function fetchJson<T>(url: string): Promise<T> {
 export function useMarketMetrics() {
   return useQuery({
     queryKey: ["market-metrics"],
-    queryFn: () => fetchJson<MarketMetric[]>("/api/markets"),
+    queryFn: async () => {
+      const data = await fetchJson<MarketMetric[]>("/api/markets");
+      return filterZimbabweMarkets(data);
+    },
   });
 }
 
 export function useCities() {
   return useQuery({
     queryKey: ["cities"],
-    queryFn: () => fetchJson<CityMetric[]>("/api/cities"),
+    queryFn: async () => {
+      const data = await fetchJson<CityMetric[]>("/api/cities");
+      return filterZimbabweCities(data);
+    },
   });
 }
 

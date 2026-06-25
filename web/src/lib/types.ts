@@ -75,6 +75,23 @@ export interface RankingsPayload {
   per_city: Record<string, Record<string, RankingEntry[]>>;
 }
 
+export interface Listing {
+  listing_url: string;
+  title?: string | null;
+  price: number | null;
+  price_raw?: string | null;
+  city: string | null;
+  suburb: string | null;
+  location?: string | null;
+  property_type: string | null;
+  listing_type: string;
+  bedrooms?: number | null;
+  days_on_market?: number | null;
+  image_url?: string | null;
+  agency_logo?: string | null;
+  description?: string | null;
+}
+
 export interface PinnedMarket {
   market_id: string;
   city: string;
@@ -86,7 +103,7 @@ export interface ExploreFilters {
   mode: ExploreMode;
   budget: number;
   city: string | null;
-  propertyTypes: PropertyType[];
+  propertyType: PropertyType | null;
   bedroom: number | null;
   includeLowConfidence: boolean;
 }

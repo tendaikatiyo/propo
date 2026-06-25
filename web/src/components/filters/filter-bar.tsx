@@ -3,15 +3,11 @@
 import { Filter } from "lucide-react";
 
 import { BudgetSlider } from "@/components/filters/budget-slider";
+import { CitySearchCombobox } from "@/components/filters/city-search-combobox";
 import { Button, buttonVariants } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { Separator } from "@/components/ui/separator";
 import {
   Sheet,
   SheetContent,
@@ -21,161 +17,178 @@ import {
 } from "@/components/ui/sheet";
 import { useCities } from "@/hooks/use-market-data";
 import { useExploreFilters } from "@/hooks/use-explore-filters";
-import { BEDROOM_OPTIONS, PROPERTY_TYPES } from "@/lib/constants";
+import { BEDROOM_OPTIONS, DEFAULT_BUY_BUDGET, DEFAULT_RENT_BUDGET, PROPERTY_TYPES } from "@/lib/constants";
 import { propertyTypeLabel } from "@/lib/format";
-import type { PropertyType } from "@/lib/types";
 
-function FilterControls({ compact = false }: { compact?: boolean }) {
+function FilterPanelContent() {
   const { filters, setFilters, resetFilters } = useExploreFilters();
   const { data: cities = [] } = useCities();
 
-  const cityOptions = [...cities]
-    .sort((a, b) => a.city.localeCompare(b.city))
-    .map((c) => c.city);
-
-  const hasBedroomData = true;
-
   return (
-    <div className={compact ? "space-y-5" : "grid gap-4 lg:grid-cols-[auto_1fr_1fr_1.5fr_auto] lg:items-end"}>
-      <div className="space-y-2">
-        {!compact ? <Label className="caption-label">Mode</Label> : null}
-        <div className="flex gap-2">
+    <div className="space-y-6">
+      <section className="space-y-3">
+        <Label className="caption-label">I want to</Label>
+        <div className="grid grid-cols-2 gap-2">
           {(["rent", "buy"] as const).map((mode) => (
             <Button
               key={mode}
               type="button"
-              size="sm"
               variant={filters.mode === mode ? "default" : "outline"}
-              onClick={() => setFilters({ mode })}
+              onClick={() =>
+                setFilters({
+                  mode,
+                  budget:
+                    mode === filters.mode
+                      ? filters.budget
+                      : mode === "rent"
+                        ? DEFAULT_RENT_BUDGET
+                        : DEFAULT_BUY_BUDGET,
+                })
+              }
             >
               {mode === "rent" ? "Rent" : "Buy"}
             </Button>
           ))}
         </div>
-      </div>
+      </section>
 
-      <div className="space-y-2">
+      <Separator />
+
+      <section className="space-y-3">
         <Label className="caption-label">City</Label>
-        <Select
-          value={filters.city ?? "all"}
-          onValueChange={(value) => setFilters({ city: value === "all" ? null : value })}
-        >
-          <SelectTrigger className="w-full">
-            <SelectValue placeholder="All cities" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="all">All cities</SelectItem>
-            {cityOptions.map((city) => (
-              <SelectItem key={city} value={city}>
-                {city}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-      </div>
+        <CitySearchCombobox
+          cities={cities}
+          value={filters.city}
+          onChange={(city) => setFilters({ city })}
+        />
+      </section>
 
-      <div className="space-y-2">
-        <Label className="caption-label">Property type</Label>
-        <div className="flex flex-wrap gap-2">
-          {PROPERTY_TYPES.map((type) => {
-            const active = filters.propertyTypes.includes(type);
-            return (
-              <Button
-                key={type}
-                type="button"
-                size="sm"
-                variant={active ? "default" : "outline"}
-                onClick={() => {
-                  const next = active
-                    ? filters.propertyTypes.filter((t) => t !== type)
-                    : [...filters.propertyTypes, type];
-                  setFilters({ propertyTypes: next as PropertyType[] });
-                }}
-              >
-                {propertyTypeLabel(type)}
-              </Button>
-            );
-          })}
-        </div>
-      </div>
-
-      {hasBedroomData ? (
-        <div className="space-y-2">
-          <Label className="caption-label">Bedrooms</Label>
-          <div className="flex flex-wrap gap-2">
-            <Button
-              type="button"
-              size="sm"
-              variant={filters.bedroom == null ? "default" : "outline"}
-              onClick={() => setFilters({ bedroom: null })}
-            >
-              Any
-            </Button>
-            {BEDROOM_OPTIONS.map((opt) => (
-              <Button
-                key={opt.value}
-                type="button"
-                size="sm"
-                variant={filters.bedroom === opt.value ? "default" : "outline"}
-                onClick={() => setFilters({ bedroom: opt.value })}
-              >
-                {opt.label}
-              </Button>
-            ))}
-          </div>
-        </div>
-      ) : null}
-
-      <div className="space-y-2 lg:min-w-[240px]">
+      <section className="space-y-3">
         <BudgetSlider
           mode={filters.mode}
           value={filters.budget}
           onChange={(budget) => setFilters({ budget })}
         />
-      </div>
+      </section>
 
-      <div className="flex flex-wrap gap-2">
+      <Separator />
+
+      <section className="space-y-3">
+        <Label className="caption-label">Property type</Label>
+        <div className="flex flex-wrap gap-2">
+          <Button
+            type="button"
+            size="sm"
+            variant={filters.propertyType == null ? "default" : "outline"}
+            onClick={() => setFilters({ propertyType: null })}
+          >
+            Any
+          </Button>
+          {PROPERTY_TYPES.map((type) => (
+            <Button
+              key={type}
+              type="button"
+              size="sm"
+              variant={filters.propertyType === type ? "default" : "outline"}
+              onClick={() =>
+                setFilters({
+                  propertyType: filters.propertyType === type ? null : type,
+                })
+              }
+            >
+              {propertyTypeLabel(type)}
+            </Button>
+          ))}
+        </div>
+      </section>
+
+      <section className="space-y-3">
+        <Label className="caption-label">Bedrooms</Label>
+        <div className="flex flex-wrap gap-2">
+          <Button
+            type="button"
+            size="sm"
+            variant={filters.bedroom == null ? "default" : "outline"}
+            onClick={() => setFilters({ bedroom: null })}
+          >
+            Any
+          </Button>
+          {BEDROOM_OPTIONS.map((opt) => (
+            <Button
+              key={opt.value}
+              type="button"
+              size="sm"
+              variant={filters.bedroom === opt.value ? "default" : "outline"}
+              onClick={() => setFilters({ bedroom: opt.value })}
+            >
+              {opt.label}
+            </Button>
+          ))}
+        </div>
+      </section>
+
+      <Separator />
+
+      <section className="space-y-3">
         <Button
           type="button"
           size="sm"
           variant={filters.includeLowConfidence ? "default" : "outline"}
+          className="w-full"
           onClick={() => setFilters({ includeLowConfidence: !filters.includeLowConfidence })}
         >
           Include thin markets
         </Button>
-        <Button type="button" size="sm" variant="ghost" onClick={resetFilters}>
-          Clear
+        <Button type="button" size="sm" variant="ghost" className="w-full" onClick={resetFilters}>
+          Reset filters
         </Button>
-      </div>
+      </section>
     </div>
   );
 }
 
+export function ExploreFilterSidebar() {
+  return (
+    <Card className="sticky top-24 hidden lg:block">
+      <CardHeader className="pb-3">
+        <CardTitle className="text-base">Filters</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <FilterPanelContent />
+      </CardContent>
+    </Card>
+  );
+}
+
+export function ExploreFilterMobile() {
+  return (
+    <div className="lg:hidden">
+      <Sheet>
+        <SheetTrigger
+          className={buttonVariants({ variant: "outline", className: "w-full" })}
+        >
+          <Filter className="mr-2 size-4" />
+          Filters
+        </SheetTrigger>
+        <SheetContent side="left" className="w-[min(100%,320px)] overflow-y-auto">
+          <SheetHeader>
+            <SheetTitle>Filters</SheetTitle>
+          </SheetHeader>
+          <div className="mt-6">
+            <FilterPanelContent />
+          </div>
+        </SheetContent>
+      </Sheet>
+    </div>
+  );
+}
+
+/** @deprecated Use ExploreFilterSidebar + ExploreFilterMobile */
 export function FilterBar() {
   return (
     <>
-      <div className="hidden border-b border-border/80 bg-card px-4 py-5 sm:px-6 lg:block lg:px-8">
-        <div className="mx-auto max-w-6xl">
-          <FilterControls />
-        </div>
-      </div>
-
-      <div className="border-b px-4 py-3 lg:hidden">
-        <Sheet>
-          <SheetTrigger className={buttonVariants({ variant: "outline", className: "w-full" })}>
-            <Filter className="mr-2 size-4" />
-            Filters
-          </SheetTrigger>
-          <SheetContent side="bottom" className="max-h-[85vh] overflow-y-auto">
-            <SheetHeader>
-              <SheetTitle>Filters</SheetTitle>
-            </SheetHeader>
-            <div className="mt-4">
-              <FilterControls compact />
-            </div>
-          </SheetContent>
-        </Sheet>
-      </div>
+      <ExploreFilterSidebar />
+      <ExploreFilterMobile />
     </>
   );
 }
