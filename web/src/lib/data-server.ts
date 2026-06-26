@@ -3,6 +3,7 @@ import path from "path";
 
 import { STRETCH_BUDGET_MULTIPLIER } from "@/lib/constants";
 import { filterRankingsPayload, filterZimbabweCities, filterZimbabweMarkets, isZimbabweCity } from "@/lib/geo";
+import { isLandPropertyType } from "@/lib/listings";
 import { createServerSupabaseClient } from "@/lib/supabase";
 import type {
   CityMetric,
@@ -90,6 +91,8 @@ export interface ListingQuery {
 }
 
 function matchesListingQuery(listing: Listing, query: ListingQuery): boolean {
+  if (isLandPropertyType(listing.property_type)) return false;
+
   const price = listing.price;
   if (!price || price <= 0) return false;
 
