@@ -1,8 +1,8 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "main": ".open-next/worker.js",
-  "name": "propo-web",
-  "compatibility_date": "2024-12-30",
+  "name": "propo",
+  "compatibility_date": "2026-06-26",
   "compatibility_flags": [
     "nodejs_compat",
     "global_fetch_strictly_public"
@@ -14,7 +14,10 @@
   "services": [
     {
       "binding": "WORKER_SELF_REFERENCE",
-      "service": "propo-web"
+      "service": "propo"
     }
-  ]
+  ],
+  "observability": {
+    "enabled": true
+  }
 }

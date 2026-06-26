@@ -23,8 +23,12 @@
     "normalize": "node scraper/normalize.js",
     "aggregate": "node scraper/aggregate.js",
     "build": "npm run scrape && npm run normalize && npm run aggregate",
+    "build:cf": "npm ci --prefix web && npm run build:cf --prefix web",
+    "deploy:cf": "npm --prefix web exec wrangler -- deploy",
     "web:dev": "npm run dev --prefix web",
     "web:build": "npm run build --prefix web",
+    "web:build:cf": "npm run build:cf --prefix web",
+    "web:deploy": "npm run deploy --prefix web",
     "web:start": "npm run start --prefix web"
   },
   "dependencies": {
