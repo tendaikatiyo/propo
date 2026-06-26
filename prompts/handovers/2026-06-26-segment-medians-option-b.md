@@ -10,11 +10,13 @@ When a user filters by **property type** and/or **bedrooms** (e.g. 1-bed house i
 
 ## Problem (current behaviour)
 
-| Step | Today |
-|------|--------|
-| Filter | `hasPropertyType()` / `hasBedroomCount()` use `house_count`, `beds_1_count`, etc. — suburbs **included** if spec exists |
-| Budget | `filterMarkets()` uses `median_rent` / `median_sale_price` — **all listings** in suburb |
-| Display | `SuburbCard`, `SuburbTable`, `suburb-profile.tsx` show same aggregate medians |
+
+| Step    | Today                                                                                                                   |
+| ------- | ----------------------------------------------------------------------------------------------------------------------- |
+| Filter  | `hasPropertyType()` / `hasBedroomCount()` use `house_count`, `beds_1_count`, etc. — suburbs **included** if spec exists |
+| Budget  | `filterMarkets()` uses `median_rent` / `median_sale_price` — **all listings** in suburb                                 |
+| Display | `SuburbCard`, `SuburbTable`, `suburb-profile.tsx` show same aggregate medians                                           |
+
 
 **Data gap:** `analytics/market_metrics.py` counts types/beds but only computes one rent median and one sale median per suburb. Individual listing rows in Supabase `listings` already have `property_type`, `bedrooms`, `price` — but the dashboard table does not roll them up by segment.
 
@@ -22,15 +24,17 @@ When a user filters by **property type** and/or **bedrooms** (e.g. 1-bed house i
 
 ## Workspace
 
-| Area | Path |
-|------|------|
-| Pipeline | `analytics/market_metrics.py`, `analytics/sync_dashboard.py` |
-| Migrations | `supabase/migrations/` |
-| JSON output | `data/market_metrics.json` |
-| Web types | `web/src/lib/types.ts` |
-| Explore logic | `web/src/lib/explore.ts`, `web/src/hooks/use-explore-filters.ts` |
-| UI | `explore-results.tsx`, `suburb-table.tsx`, `suburb-list.tsx`, `suburb-card.tsx`, `suburb-profile.tsx` |
-| Related handover | [2026-06-25-web-ux-listings-explore.md](./2026-06-25-web-ux-listings-explore.md) |
+
+| Area             | Path                                                                                                  |
+| ---------------- | ----------------------------------------------------------------------------------------------------- |
+| Pipeline         | `analytics/market_metrics.py`, `analytics/sync_dashboard.py`                                          |
+| Migrations       | `supabase/migrations/`                                                                                |
+| JSON output      | `data/market_metrics.json`                                                                            |
+| Web types        | `web/src/lib/types.ts`                                                                                |
+| Explore logic    | `web/src/lib/explore.ts`, `web/src/hooks/use-explore-filters.ts`                                      |
+| UI               | `explore-results.tsx`, `suburb-table.tsx`, `suburb-list.tsx`, `suburb-card.tsx`, `suburb-profile.tsx` |
+| Related handover | [2026-06-25-web-ux-listings-explore.md](./2026-06-25-web-ux-listings-explore.md)                      |
+
 
 ---
 
@@ -41,7 +45,7 @@ When a user filters by **property type** and/or **bedrooms** (e.g. 1-bed house i
 A **segment** is a `(property_type, bedroom_bucket)` pair within a suburb market.
 
 | `property_type` | Same normalisation as today (`normalize_type` in `market_metrics.py`). `apartment` counts toward `flat` in filters — store under `flat` only in segments. |
-| `bedroom_bucket` | `1` \| `2` \| `3` \| `4_plus` — same as `normalize_bedroom_bucket()`. |
+| `bedroom_bucket` | `1`  `2`  `3`  `4_plus` — same as `normalize_bedroom_bucket()`. |
 
 **Segment key string** (for JSON object keys):
 
@@ -53,7 +57,7 @@ A **segment** is a `(property_type, bedroom_bucket)` pair within a suburb market
 
 When **no filters** are active in the UI, keep using top-level `median_rent` / `median_sale_price` (unchanged).
 
-When **only type** is selected → resolve `house:*`.  
+When **only type** is selected → resolve `house:`*.  
 When **only bedroom** is selected → resolve `*:1`.  
 When **both** → resolve `house:1`.
 
@@ -225,12 +229,14 @@ Resolution order when both filters set: `house:1` → fallback `house:*` → `*:
 
 When `propertyType` or `bedroom` is set, update copy:
 
-| Location | Example |
-|----------|---------|
-| `explore-results.tsx` header | “Suburbs with median **rent (1-bed house)** at or below $800” |
-| `suburb-table.tsx` column header | “Median rent (1-bed house)” via `lib/metric-tooltips.ts` |
-| `suburb-card.tsx` | Optional subtitle under price |
-| `suburb-profile.tsx` | If arriving from explore with query params, show spec-specific medians; else aggregate |
+
+| Location                         | Example                                                                                |
+| -------------------------------- | -------------------------------------------------------------------------------------- |
+| `explore-results.tsx` header     | “Suburbs with median **rent (1-bed house)** at or below $800”                          |
+| `suburb-table.tsx` column header | “Median rent (1-bed house)” via `lib/metric-tooltips.ts`                               |
+| `suburb-card.tsx`                | Optional subtitle under price                                                          |
+| `suburb-profile.tsx`             | If arriving from explore with query params, show spec-specific medians; else aggregate |
+
 
 Pass `filters` from `useExploreFilters()` into table/card components, or pre-compute `displayPrice` on a thin wrapper type.
 
@@ -272,11 +278,15 @@ flowchart TD
   phase1 --> phase2 --> phase3
 ```
 
-| Phase | Deliverable | Verify |
-|-------|-------------|--------|
-| **1** | Migration + pipeline + Supabase sync | `market_metrics.segments->'house:1'` non-null for Borrowdale in SQL |
-| **2** | Explore in-budget uses segment medians | Filter 1-bed house rent $800 — suburbs reorder vs unfiltered |
-| **3** | Suburb page + low-n warnings | URL with `?type=house&bedroom=1` shows spec medians |
+
+
+
+| Phase | Deliverable                            | Verify                                                              |
+| ----- | -------------------------------------- | ------------------------------------------------------------------- |
+| **1** | Migration + pipeline + Supabase sync   | `market_metrics.segments->'house:1'` non-null for Borrowdale in SQL |
+| **2** | Explore in-budget uses segment medians | Filter 1-bed house rent $800 — suburbs reorder vs unfiltered        |
+| **3** | Suburb page + low-n warnings           | URL with `?type=house&bedroom=1` shows spec medians                 |
+
 
 ---
 
@@ -311,15 +321,17 @@ flowchart TD
 
 ## Edge cases
 
-| Case | Handling |
-|------|----------|
-| `apartment` listings | Roll into `flat` segments only |
-| `room` with no bedrooms | Bedroom bucket `None` — only `{room}:*` segment, not `room:1` |
-| Commercial | Usually no bedrooms — type-only segments |
-| Suburb has rent but no sales for spec | Show rent median; sale shows “—” |
-| Filters set but segment missing | Fall back to aggregate; show “All types” badge or dashed confidence |
-| Local dev without Supabase | `segments` in `market_metrics.json` works same as other columns |
-| Cloudflare Worker runtime | No change — reads `market_metrics` from Supabase API same as today |
+
+| Case                                  | Handling                                                            |
+| ------------------------------------- | ------------------------------------------------------------------- |
+| `apartment` listings                  | Roll into `flat` segments only                                      |
+| `room` with no bedrooms               | Bedroom bucket `None` — only `{room}:`* segment, not `room:1`       |
+| Commercial                            | Usually no bedrooms — type-only segments                            |
+| Suburb has rent but no sales for spec | Show rent median; sale shows “—”                                    |
+| Filters set but segment missing       | Fall back to aggregate; show “All types” badge or dashed confidence |
+| Local dev without Supabase            | `segments` in `market_metrics.json` works same as other columns     |
+| Cloudflare Worker runtime             | No change — reads `market_metrics` from Supabase API same as today  |
+
 
 ---
 
@@ -343,10 +355,12 @@ flowchart TD
 
 ## Estimated effort
 
-| Phase | Time |
-|-------|------|
+
+| Phase                          | Time       |
+| ------------------------------ | ---------- |
 | Phase 1 (pipeline + migration) | ~3–4 hours |
-| Phase 2 (explore + UI) | ~4–6 hours |
-| Phase 3 (profile + polish) | ~2 hours |
+| Phase 2 (explore + UI)         | ~4–6 hours |
+| Phase 3 (profile + polish)     | ~2 hours   |
+
 
 Run `npm run build` in `web/` after Phase 2. Re-run `npm run pipeline:supabase` after Phase 1 before testing production Worker.
