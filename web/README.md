@@ -14,7 +14,7 @@ Production frontend for the Zimbabwe property data index.
 ```bash
 cd web
 cp .env.example .env.local
-# Add NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY
+# Set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY (anon key from Supabase dashboard)
 npm install
 npm run dev
 ```
@@ -65,12 +65,44 @@ If the project was created as static Pages and cannot be converted, create a new
 
 ### Build environment variables
 
-Add these under **Variables and secrets** (required for runtime API routes on Workers):
+Add these under **Workers Builds → Build variables and secrets**:
 
 - `NEXT_PUBLIC_SUPABASE_URL`
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
 
-SSG pages can read `../data/` during the build, but Workers cannot read that folder at runtime — APIs need Supabase in production.
+### Runtime environment variables (required for live data)
+
+Cloudflare Workers **cannot read** the repo’s `../data/` JSON files at runtime. The live site loads suburbs, cities, and listings from **Supabase** via `/api/*` routes.
+
+You must also set the same variables under **Workers & Pages → your worker (`propo`) → Settings → Variables and secrets** for **runtime**. Build-time vars alone are not enough.
+
+After each deploy, Wrangler can wipe dashboard vars unless you use `--keep-vars` (already set in `npm run deploy` / `npm run deploy:cf`).
+
+Use the **anon** key (not the service role key) for the web app.
+
+### Sync data to Supabase
+
+If tables are empty, run locally or on your VM:
+
+```bash
+npm run pipeline:supabase
+```
+
+That ingests listings and syncs `market_metrics`, `cities`, and `rankings` from `data/` into Supabase.
+
+### Verify deployment
+
+Open `https://your-domain/api/meta` after deploy. You should see:
+
+```json
+{
+  "supabaseConfigured": true,
+  "supabaseMarketCount": 378,
+  "marketCount": 378
+}
+```
+
+If `supabaseConfigured` is `false`, runtime env vars are missing. If counts are `0`, run the sync pipeline above.
 
 ### Local Workers preview
 

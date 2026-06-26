@@ -26,7 +26,11 @@ export async function fetchMarketMetrics(): Promise<MarketMetric[]> {
   const client = createServerSupabaseClient();
   if (client) {
     const { data, error } = await client.from("market_metrics").select("*");
-    if (!error && data) return filterZimbabweMarkets(data as MarketMetric[]);
+    if (error) {
+      console.error("[data-server] market_metrics:", error.message);
+    } else if (data?.length) {
+      return filterZimbabweMarkets(data as MarketMetric[]);
+    }
   }
   try {
     return filterZimbabweMarkets(await readLocalJson<MarketMetric[]>("market_metrics.json"));
@@ -39,7 +43,11 @@ export async function fetchCities(): Promise<CityMetric[]> {
   const client = createServerSupabaseClient();
   if (client) {
     const { data, error } = await client.from("cities").select("*");
-    if (!error && data) return filterZimbabweCities(data as CityMetric[]);
+    if (error) {
+      console.error("[data-server] cities:", error.message);
+    } else if (data?.length) {
+      return filterZimbabweCities(data as CityMetric[]);
+    }
   }
   try {
     return filterZimbabweCities(await readLocalJson<CityMetric[]>("cities.json"));
@@ -56,7 +64,9 @@ export async function fetchRankings(): Promise<RankingsPayload | null> {
       .select("payload")
       .eq("id", "current")
       .maybeSingle();
-    if (!error && data?.payload) {
+    if (error) {
+      console.error("[data-server] rankings:", error.message);
+    } else if (data?.payload) {
       return filterRankingsPayload(data.payload as RankingsPayload);
     }
   }

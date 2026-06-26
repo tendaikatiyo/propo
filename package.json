@@ -24,7 +24,7 @@
     "aggregate": "node scraper/aggregate.js",
     "build": "npm run scrape && npm run normalize && npm run aggregate",
     "build:cf": "npm ci --prefix web && npm run build:cf --prefix web",
-    "deploy:cf": "npm --prefix web exec wrangler -- deploy",
+    "deploy:cf": "npm --prefix web exec wrangler -- deploy --keep-vars",
     "web:dev": "npm run dev --prefix web",
     "web:build": "npm run build --prefix web",
     "web:build:cf": "npm run build:cf --prefix web",
