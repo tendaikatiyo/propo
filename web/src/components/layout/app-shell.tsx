@@ -2,8 +2,10 @@
 
 import { usePathname } from "next/navigation";
 
+import { AppSidebar } from "@/components/layout/app-sidebar";
 import { AppFooter, SiteHero } from "@/components/layout/site-chrome";
-import { AppSidebar, MobileNav, MobileTopBar } from "@/components/layout/app-sidebar";
+import { MobileTabBar } from "@/components/mobile/mobile-tab-bar";
+import { MobileTopBar } from "@/components/mobile/mobile-top-bar";
 
 export function AppShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -21,7 +23,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           {children}
         </main>
         <AppFooter />
-        <MobileNav />
+        <MobileTabBar />
       </div>
     </div>
   );

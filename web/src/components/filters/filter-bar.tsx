@@ -1,28 +1,37 @@
 "use client";
 
-import { Filter } from "lucide-react";
-
 import { BudgetSlider } from "@/components/filters/budget-slider";
 import { CitySearchCombobox } from "@/components/filters/city-search-combobox";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
 import { useCities } from "@/hooks/use-market-data";
 import { useExploreFilters } from "@/hooks/use-explore-filters";
 import { BEDROOM_OPTIONS, DEFAULT_BUY_BUDGET, DEFAULT_RENT_BUDGET, PROPERTY_TYPES } from "@/lib/constants";
 import { propertyTypeLabel } from "@/lib/format";
 
-function FilterPanelContent() {
+export function ExploreFilterPanel({
+  targetPath,
+  onNavigate,
+}: {
+  targetPath?: string;
+  onNavigate?: () => void;
+}) {
   const { filters, setFilters, resetFilters } = useExploreFilters();
   const { data: cities = [] } = useCities();
+
+  const filterOptions = targetPath ? { targetPath } : undefined;
+
+  const apply = (patch: Parameters<typeof setFilters>[0]) => {
+    setFilters(patch, filterOptions);
+    onNavigate?.();
+  };
+
+  const reset = () => {
+    resetFilters(filterOptions);
+    onNavigate?.();
+  };
 
   return (
     <div className="space-y-6">
@@ -35,7 +44,7 @@ function FilterPanelContent() {
               type="button"
               variant={filters.mode === mode ? "default" : "outline"}
               onClick={() =>
-                setFilters({
+                apply({
                   mode,
                   budget:
                     mode === filters.mode
@@ -59,7 +68,7 @@ function FilterPanelContent() {
         <CitySearchCombobox
           cities={cities}
           value={filters.city}
-          onChange={(city) => setFilters({ city })}
+          onChange={(city) => apply({ city })}
         />
       </section>
 
@@ -67,7 +76,7 @@ function FilterPanelContent() {
         <BudgetSlider
           mode={filters.mode}
           value={filters.budget}
-          onChange={(budget) => setFilters({ budget })}
+          onChange={(budget) => apply({ budget })}
         />
       </section>
 
@@ -80,7 +89,7 @@ function FilterPanelContent() {
             type="button"
             size="sm"
             variant={filters.propertyType == null ? "default" : "outline"}
-            onClick={() => setFilters({ propertyType: null })}
+            onClick={() => apply({ propertyType: null })}
           >
             Any
           </Button>
@@ -91,7 +100,7 @@ function FilterPanelContent() {
               size="sm"
               variant={filters.propertyType === type ? "default" : "outline"}
               onClick={() =>
-                setFilters({
+                apply({
                   propertyType: filters.propertyType === type ? null : type,
                 })
               }
@@ -109,7 +118,7 @@ function FilterPanelContent() {
             type="button"
             size="sm"
             variant={filters.bedroom == null ? "default" : "outline"}
-            onClick={() => setFilters({ bedroom: null })}
+            onClick={() => apply({ bedroom: null })}
           >
             Any
           </Button>
@@ -119,7 +128,7 @@ function FilterPanelContent() {
               type="button"
               size="sm"
               variant={filters.bedroom === opt.value ? "default" : "outline"}
-              onClick={() => setFilters({ bedroom: opt.value })}
+              onClick={() => apply({ bedroom: opt.value })}
             >
               {opt.label}
             </Button>
@@ -135,11 +144,11 @@ function FilterPanelContent() {
           size="sm"
           variant={filters.includeLowConfidence ? "default" : "outline"}
           className="w-full"
-          onClick={() => setFilters({ includeLowConfidence: !filters.includeLowConfidence })}
+          onClick={() => apply({ includeLowConfidence: !filters.includeLowConfidence })}
         >
           Include thin markets
         </Button>
-        <Button type="button" size="sm" variant="ghost" className="w-full" onClick={resetFilters}>
+        <Button type="button" size="sm" variant="ghost" className="w-full" onClick={reset}>
           Reset filters
         </Button>
       </section>
@@ -154,41 +163,13 @@ export function ExploreFilterSidebar() {
         <CardTitle className="text-base">Filters</CardTitle>
       </CardHeader>
       <CardContent>
-        <FilterPanelContent />
+        <ExploreFilterPanel />
       </CardContent>
     </Card>
   );
 }
 
-export function ExploreFilterMobile() {
-  return (
-    <div className="lg:hidden">
-      <Sheet>
-        <SheetTrigger
-          className={buttonVariants({ variant: "outline", className: "w-full" })}
-        >
-          <Filter className="mr-2 size-4" />
-          Filters
-        </SheetTrigger>
-        <SheetContent side="left" className="w-[min(100%,320px)] overflow-y-auto">
-          <SheetHeader>
-            <SheetTitle>Filters</SheetTitle>
-          </SheetHeader>
-          <div className="mt-6">
-            <FilterPanelContent />
-          </div>
-        </SheetContent>
-      </Sheet>
-    </div>
-  );
-}
-
-/** @deprecated Use ExploreFilterSidebar + ExploreFilterMobile */
+/** @deprecated Use ExploreFilterSidebar */
 export function FilterBar() {
-  return (
-    <>
-      <ExploreFilterSidebar />
-      <ExploreFilterMobile />
-    </>
-  );
+  return <ExploreFilterSidebar />;
 }

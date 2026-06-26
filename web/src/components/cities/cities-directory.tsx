@@ -6,6 +6,7 @@ import { Search } from "lucide-react";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { CityListRow } from "@/components/mobile/city-list-row";
 import { cityListingTotal, sortCitiesByMarketSize } from "@/lib/geo";
 import { formatCurrency, formatPercent } from "@/lib/format";
 import { cityPath } from "@/lib/slug";
@@ -35,7 +36,13 @@ export function CitiesDirectoryClient({ cities }: { cities: CityMetric[] }) {
         />
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="lg:hidden overflow-hidden rounded-2xl border border-border/80 bg-card">
+        {filtered.map((city) => (
+          <CityListRow key={city.city} city={city} />
+        ))}
+      </div>
+
+      <div className="hidden gap-4 sm:grid-cols-2 lg:grid lg:grid-cols-3">
         {filtered.map((city) => {
           const total = cityListingTotal(city);
           const isLarge = total >= 100;

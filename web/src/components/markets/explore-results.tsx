@@ -4,6 +4,7 @@ import { useMemo } from "react";
 
 import { SuburbCard } from "@/components/markets/suburb-card";
 import { SuburbTable } from "@/components/markets/suburb-table";
+import { SuburbList } from "@/components/mobile/suburb-list";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useMarketMetrics } from "@/hooks/use-market-data";
@@ -76,7 +77,12 @@ export function ExploreResults({ preview = false }: { preview?: boolean }) {
             {formatCurrency(filters.budget)}.
           </p>
         </div>
-        <SuburbTable markets={rankedInBudget} mode={filters.mode} />
+        <div className="lg:hidden">
+          <SuburbList markets={rankedInBudget} mode={filters.mode} />
+        </div>
+        <div className="hidden lg:block">
+          <SuburbTable markets={rankedInBudget} mode={filters.mode} />
+        </div>
       </section>
 
       {rankedStretch.length ? (

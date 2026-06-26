@@ -54,7 +54,8 @@ export function useExploreFilters() {
   }, [searchParams]);
 
   const setFilters = useCallback(
-    (patch: Partial<ExploreFilters>) => {
+    (patch: Partial<ExploreFilters>, options?: { targetPath?: string }) => {
+      const target = options?.targetPath ?? pathname;
       const next = { ...filters, ...patch };
       if (patch.mode !== undefined && patch.mode !== filters.mode && patch.budget === undefined) {
         next.budget = budgetForMode(patch.mode, filters.budget);
@@ -75,14 +76,18 @@ export function useExploreFilters() {
       if (next.includeLowConfidence) params.set("lowconf", "1");
 
       const qs = params.toString();
-      router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
+      router.replace(qs ? `${target}?${qs}` : target, { scroll: false });
     },
     [filters, pathname, router]
   );
 
-  const resetFilters = useCallback(() => {
-    router.replace(`${pathname}?city=${DEFAULT_CITY}`, { scroll: false });
-  }, [pathname, router]);
+  const resetFilters = useCallback(
+    (options?: { targetPath?: string }) => {
+      const target = options?.targetPath ?? pathname;
+      router.replace(`${target}?city=${DEFAULT_CITY}`, { scroll: false });
+    },
+    [pathname, router]
+  );
 
   const exploreHref = useCallback(
     (patch?: Partial<ExploreFilters>) => {

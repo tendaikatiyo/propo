@@ -17,6 +17,7 @@ export function BackLink({
       href={href}
       className={cn(
         "inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground",
+        "hidden lg:inline-flex",
         className
       )}
     >

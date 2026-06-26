@@ -1,11 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { Suspense, useState } from "react";
+import { Suspense, useRef, useState } from "react";
 
 import { BudgetSlider } from "@/components/filters/budget-slider";
 import { PageHeader } from "@/components/layout/page-header";
 import { BudgetListingsPreview } from "@/components/listings/budget-listings";
+import { HomeBudgetBar } from "@/components/mobile/home-budget-bar";
 import { SuburbCard } from "@/components/markets/suburb-card";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -35,6 +36,7 @@ function buildExploreHref(
 }
 
 function HomeContent() {
+  const budgetSectionRef = useRef<HTMLElement>(null);
   const [mode, setMode] = useState<ExploreMode>("rent");
   const [budget, setBudget] = useState(DEFAULT_RENT_BUDGET);
   const [propertyType, setPropertyType] = useState<PropertyType | null>(null);
@@ -54,7 +56,7 @@ function HomeContent() {
 
   return (
     <div className="space-y-16">
-      <section className="space-y-6">
+      <section ref={budgetSectionRef} className="space-y-6">
         <PageHeader
           title="My budget"
           description="Set your rent or buy budget and property preferences to surface matching suburbs in Harare and beyond."
@@ -150,6 +152,13 @@ function HomeContent() {
         budget={budget}
         city={DEFAULT_CITY}
         propertyType={propertyType}
+      />
+
+      <HomeBudgetBar
+        mode={mode}
+        budget={budget}
+        propertyType={propertyType}
+        observeRef={budgetSectionRef}
       />
     </div>
   );

@@ -6,6 +6,9 @@ import { Search } from "lucide-react";
 
 import { BackLink } from "@/components/layout/back-nav";
 import { PageHeader } from "@/components/layout/page-header";
+import { CityRankingList } from "@/components/mobile/city-ranking-list";
+import { CityStatsGrid } from "@/components/mobile/city-stats-grid";
+import { SuburbList } from "@/components/mobile/suburb-list";
 import { SuburbTable } from "@/components/markets/suburb-table";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -22,7 +25,7 @@ function TopList({
 }) {
   if (!items.length) return null;
   return (
-    <Card>
+    <Card className="hidden lg:block">
       <CardHeader className="pb-2">
         <CardTitle className="text-base">{title}</CardTitle>
       </CardHeader>
@@ -62,8 +65,22 @@ export function CityDashboard({
     return markets.filter((m) => m.suburb.toLowerCase().includes(q));
   }, [markets, query]);
 
+  const yieldItems =
+    cityRankings?.highest_yield_suburbs?.slice(0, 5).map((r) => ({
+      city: r.city,
+      suburb: r.suburb,
+      label: formatPercent(r.yield_percent ?? null),
+    })) ?? [];
+
+  const opportunityItems =
+    cityRankings?.best_opportunity_suburbs?.slice(0, 5).map((r) => ({
+      city: r.city,
+      suburb: r.suburb,
+      label: String(r.opportunity_score ?? "—"),
+    })) ?? [];
+
   return (
-    <div className="space-y-8">
+    <div className="space-y-6 lg:space-y-8">
       <BackLink href="/cities" label="All cities" />
 
       <PageHeader
@@ -71,7 +88,9 @@ export function CityDashboard({
         description={`${city.suburb_count} suburbs · ${city.rental_count} rentals · ${city.sale_count} sales`}
       />
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+      <CityStatsGrid city={city} />
+
+      <div className="hidden gap-4 sm:grid-cols-2 lg:grid lg:grid-cols-5">
         <Card>
           <CardHeader className="pb-2">
             <CardTitle className="caption-label normal-case">Median rent</CardTitle>
@@ -119,44 +138,46 @@ export function CityDashboard({
       </div>
 
       {cityRankings ? (
-        <div className="grid gap-4 lg:grid-cols-2">
-          <TopList
-            title="Highest yield suburbs"
-            items={(cityRankings.highest_yield_suburbs ?? []).slice(0, 5).map((r) => ({
-              city: r.city,
-              suburb: r.suburb,
-              label: formatPercent(r.yield_percent ?? null),
-            }))}
-          />
-          <TopList
-            title="Top opportunity suburbs"
-            items={(cityRankings.best_opportunity_suburbs ?? []).slice(0, 5).map((r) => ({
-              city: r.city,
-              suburb: r.suburb,
-              label: String(r.opportunity_score ?? "—"),
-            }))}
-          />
-        </div>
+        <>
+          <div className="space-y-4 lg:hidden">
+            <CityRankingList title="Highest yield" items={yieldItems} />
+            <CityRankingList title="Top opportunity" items={opportunityItems} />
+          </div>
+          <div className="hidden gap-4 lg:grid lg:grid-cols-2">
+            <TopList title="Highest yield suburbs" items={yieldItems} />
+            <TopList title="Top opportunity suburbs" items={opportunityItems} />
+          </div>
+        </>
       ) : null}
 
-      <section className="space-y-4">
-        <div className="flex flex-wrap items-end justify-between gap-4">
-          <h2 className="font-heading text-lg font-medium">All suburbs</h2>
-          <div className="relative w-full max-w-sm">
-            <Search className="absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted-foreground" />
+      <section className="space-y-3 lg:space-y-4">
+        <div className="space-y-3">
+          <h2 className="font-heading text-lg font-semibold tracking-tight lg:text-lg lg:font-medium">
+            All suburbs
+          </h2>
+          <div className="relative">
+            <Search className="absolute top-1/2 left-3.5 size-4 -translate-y-1/2 text-muted-foreground" />
             <Input
               type="search"
               placeholder="Search suburbs..."
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              className="pl-9"
+              className="h-11 rounded-xl border-0 bg-muted/50 pl-10 text-[15px] shadow-none focus-visible:ring-1"
             />
           </div>
         </div>
+
         {!filteredMarkets.length ? (
           <p className="text-muted-foreground">No suburbs match your search.</p>
         ) : (
-          <SuburbTable markets={filteredMarkets} mode="buy" layout="city" />
+          <>
+            <div className="lg:hidden">
+              <SuburbList markets={filteredMarkets} mode="buy" />
+            </div>
+            <div className="hidden lg:block">
+              <SuburbTable markets={filteredMarkets} mode="buy" layout="city" />
+            </div>
+          </>
         )}
       </section>
     </div>

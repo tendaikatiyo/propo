@@ -154,6 +154,10 @@
     animation: skeleton-stagger 1.6s ease-in-out infinite;
   }
 
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
   @keyframes skeleton-stagger {
     0%,
     100% {

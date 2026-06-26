@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { BackLink } from "@/components/layout/back-nav";
+import { SuburbActionBar } from "@/components/mobile/suburb-action-bar";
 import { PinButton } from "@/components/markets/pin-button";
 import { SuburbValueListings } from "@/components/listings/suburb-value-listings";
 import { PropertyMixBar } from "@/components/markets/property-mix-bar";
@@ -25,7 +26,7 @@ function MetricCard({ label, value }: { label: string; value: string }) {
 
 export function SuburbProfile({ market, related }: { market: MarketMetric; related: MarketMetric[] }) {
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 pb-20 lg:pb-0">
       <BackLink href={cityPath(market.city)} label={`Back to ${market.city}`} />
 
       <div className="flex flex-wrap items-start justify-between gap-4">
@@ -39,7 +40,10 @@ export function SuburbProfile({ market, related }: { market: MarketMetric; relat
             {sanitizeLabel(market.suburb)}
           </h1>
         </div>
-        <div className="flex flex-wrap items-center gap-2">
+        <div className="lg:hidden">
+          <ConfidenceBadge score={market.confidence_score} />
+        </div>
+        <div className="hidden flex-wrap items-center gap-2 lg:flex">
           <ConfidenceBadge score={market.confidence_score} />
           <PinButton market={market} />
         </div>
@@ -92,7 +96,9 @@ export function SuburbProfile({ market, related }: { market: MarketMetric; relat
         </CardContent>
       </Card>
 
-      <SuburbValueListings market={market} />
+      <div id="suburb-listings">
+        <SuburbValueListings market={market} />
+      </div>
 
       {related.length ? (
         <section className="space-y-4">
@@ -113,6 +119,8 @@ export function SuburbProfile({ market, related }: { market: MarketMetric; relat
           </div>
         </section>
       ) : null}
+
+      <SuburbActionBar market={market} />
     </div>
   );
 }

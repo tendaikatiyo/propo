@@ -3,6 +3,7 @@
 import { useMemo } from "react";
 
 import { CompareTable } from "@/components/markets/compare-table";
+import { CompareCards } from "@/components/mobile/compare-cards";
 import { BackLink } from "@/components/layout/back-nav";
 import { PageHeader } from "@/components/layout/page-header";
 import { Button } from "@/components/ui/button";
@@ -33,7 +34,12 @@ export function ComparePageClient() {
           </Button>
         ) : null}
       </div>
-      <CompareTable markets={pinnedMarkets} />
+      <div className="lg:hidden">
+        <CompareCards markets={pinnedMarkets} />
+      </div>
+      <div className="hidden lg:block">
+        <CompareTable markets={pinnedMarkets} />
+      </div>
     </div>
   );
 }

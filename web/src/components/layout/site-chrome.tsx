@@ -6,7 +6,7 @@ import { SITE_NAME } from "@/lib/constants";
 
 export function AppFooter() {
   return (
-    <footer className="relative mt-auto overflow-hidden border-t border-border/80 bg-card">
+    <footer className="relative mt-auto hidden overflow-hidden border-t border-border/80 bg-card lg:block">
       <FooterOrbs />
       <div className="relative z-10 mx-auto flex max-w-6xl flex-col gap-4 px-4 py-10 sm:px-6 lg:px-8">
         <div className="flex flex-wrap items-center justify-between gap-4">
@@ -37,7 +37,7 @@ export function SiteHero({ compact = false }: { compact?: boolean }) {
       className={
         compact
           ? "relative h-32 w-full overflow-hidden border-b border-border/80 sm:h-40"
-          : "relative h-52 w-full overflow-hidden border-b border-border/80 sm:h-72 md:h-96"
+          : "relative h-40 w-full overflow-hidden border-b border-border/80 sm:h-72 md:h-96"
       }
     >
       <Image
@@ -54,7 +54,7 @@ export function SiteHero({ compact = false }: { compact?: boolean }) {
           <span className="inline-flex items-center rounded-full border border-white/35 bg-white/25 px-4 py-1.5 text-[11px] font-medium tracking-[0.14em] text-foreground uppercase shadow-[0_8px_32px_rgba(0,0,0,0.12)] backdrop-blur-xl backdrop-saturate-150">
             Zimbabwe property index
           </span>
-          <h1 className="font-display mt-4 max-w-2xl text-3xl font-medium leading-tight tracking-[-0.03em] text-foreground sm:text-4xl md:text-5xl">
+          <h1 className="font-display mt-3 max-w-2xl text-2xl font-medium leading-tight tracking-[-0.03em] text-foreground sm:mt-4 sm:text-4xl md:text-5xl">
             Where can you afford in Zimbabwe?
           </h1>
         </div>
