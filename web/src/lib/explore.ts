@@ -37,6 +37,9 @@ export function hasPropertyType(
   propertyType: ExploreFilters["propertyType"]
 ): boolean {
   if (!propertyType) return true;
+  if (propertyType === "flat") {
+    return market.flat_count + market.apartment_count > 0;
+  }
   const key = PROPERTY_TYPE_COUNT_KEY[propertyType];
   const count = market[key];
   return typeof count === "number" && count > 0;

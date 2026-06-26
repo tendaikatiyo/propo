@@ -28,9 +28,11 @@ export function MobileMenuDrawer({
         <div className="flex flex-col gap-6 px-5 py-6">
           <MobileComparePanel onNavigate={close} />
 
-          <MobileMenuAccordion title="Filters" defaultOpen={false}>
-            <ExploreFilterPanel targetPath="/explore" onNavigate={close} />
-          </MobileMenuAccordion>
+          <div data-tour="filters">
+            <MobileMenuAccordion title="Filters" defaultOpen={false}>
+              <ExploreFilterPanel targetPath="/explore" onNavigate={close} />
+            </MobileMenuAccordion>
+          </div>
 
           <MobileMenuLinks onNavigate={close} />
         </div>

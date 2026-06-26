@@ -7,7 +7,7 @@ import {
   DEFAULT_BUY_BUDGET,
   DEFAULT_CITY,
   DEFAULT_RENT_BUDGET,
-  PROPERTY_TYPES,
+  normalizePropertyType,
 } from "@/lib/constants";
 import { budgetForMode } from "@/lib/explore";
 import type { ExploreFilters, ExploreMode, PropertyType } from "@/lib/types";
@@ -23,7 +23,7 @@ const DEFAULT_FILTERS: ExploreFilters = {
 
 function parsePropertyType(value: string | null): PropertyType | null {
   if (!value) return null;
-  return PROPERTY_TYPES.includes(value as PropertyType) ? (value as PropertyType) : null;
+  return normalizePropertyType(value);
 }
 
 function parseMode(value: string | null): ExploreMode {

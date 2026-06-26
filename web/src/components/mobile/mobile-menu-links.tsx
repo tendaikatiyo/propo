@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { Building2, ChevronRight, Compass, HelpCircle } from "lucide-react";
 
+import { DataFreshnessPill } from "@/components/layout/data-freshness-pill";
+
 const LINKS = [
   { href: "/methodology", label: "Methodology", icon: HelpCircle },
   { href: "/explore", label: "Explore", icon: Compass },
@@ -37,6 +39,9 @@ export function MobileMenuLinks({ onNavigate }: { onNavigate?: () => void }) {
       <p className="px-1 pt-2 text-center text-[12px] text-muted-foreground">
         Property data index for Zimbabwe
       </p>
+      <div className="flex justify-center pt-1">
+        <DataFreshnessPill />
+      </div>
     </section>
   );
 }

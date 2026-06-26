@@ -14,7 +14,7 @@ export function PinTray() {
   const { pins, removePin } = usePinnedMarkets();
 
   return (
-    <div className="flex flex-wrap items-center gap-2">
+    <div data-tour="pin-tray" className="flex flex-wrap items-center gap-2">
       {pins.length === 0 ? (
         <span className="hidden text-xs text-muted-foreground md:inline">
           Pin up to {MAX_PINNED_MARKETS} suburbs to compare

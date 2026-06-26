@@ -43,6 +43,7 @@ export function MobileTopBar() {
 
         <button
           type="button"
+          data-tour="menu-button"
           onClick={() => setMenuOpen((v) => !v)}
           className={cn(
             "relative flex size-11 shrink-0 items-center justify-center rounded-full text-foreground transition-transform active:scale-95 active:opacity-70"

@@ -97,7 +97,15 @@ function matchesListingQuery(listing: Listing, query: ListingQuery): boolean {
   if (listing.city && !isZimbabweCity(listing.city)) return false;
   if (query.city && listing.city?.toLowerCase() !== query.city.toLowerCase()) return false;
   if (query.suburb && listing.suburb?.toLowerCase() !== query.suburb.toLowerCase()) return false;
-  if (query.propertyType && listing.property_type !== query.propertyType) return false;
+  if (query.propertyType) {
+    if (query.propertyType === "flat") {
+      if (listing.property_type !== "flat" && listing.property_type !== "apartment") {
+        return false;
+      }
+    } else if (listing.property_type !== query.propertyType) {
+      return false;
+    }
+  }
   return true;
 }
 
@@ -182,7 +190,11 @@ export async function fetchListings(query: ListingQuery): Promise<Listing[]> {
 
     if (query.city) request = request.ilike("city", query.city);
     if (query.suburb) request = request.ilike("suburb", query.suburb);
-    if (query.propertyType) request = request.eq("property_type", query.propertyType);
+    if (query.propertyType === "flat") {
+      request = request.in("property_type", ["flat", "apartment"]);
+    } else if (query.propertyType) {
+      request = request.eq("property_type", query.propertyType);
+    }
 
     const { data, error } = await request;
     if (!error && data) {

@@ -1,12 +1,19 @@
 import type { PropertyType } from "@/lib/types";
 
+/** Filter UI types — apartment is grouped under flat in Zimbabwe. */
 export const PROPERTY_TYPES: PropertyType[] = [
   "house",
-  "apartment",
   "flat",
   "room",
   "townhouse",
 ];
+
+export function normalizePropertyType(value: string): PropertyType | null {
+  const normalized = value === "apartment" ? "flat" : value;
+  return PROPERTY_TYPES.includes(normalized as PropertyType)
+    ? (normalized as PropertyType)
+    : null;
+}
 
 export const PROPERTY_TYPE_COUNT_KEY: Record<PropertyType, keyof import("@/lib/types").MarketMetric> = {
   house: "house_count",

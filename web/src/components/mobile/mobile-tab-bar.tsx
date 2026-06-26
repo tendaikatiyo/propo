@@ -22,7 +22,7 @@ export function MobileTabBar() {
   const pathname = usePathname();
 
   return (
-    <nav className="fixed inset-x-0 bottom-0 z-50 border-t border-border/60 bg-background/80 backdrop-blur-xl backdrop-saturate-150 pb-[env(safe-area-inset-bottom)] lg:hidden">
+    <nav data-tour="nav-tabs" className="fixed inset-x-0 bottom-0 z-50 border-t border-border/60 bg-background/80 backdrop-blur-xl backdrop-saturate-150 pb-[env(safe-area-inset-bottom)] lg:hidden">
       <div className="grid grid-cols-4">
         {TAB_ITEMS.map((item) => {
           const Icon = item.icon;

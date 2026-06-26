@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 
 import { PinTray } from "@/components/layout/pin-tray";
+import { DataFreshnessPill } from "@/components/layout/data-freshness-pill";
 import { SITE_NAME } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
@@ -38,7 +39,7 @@ export function AppSidebar() {
         </Link>
       </div>
 
-      <nav className="flex-1 space-y-1 p-3">
+      <nav data-tour="nav-sidebar" className="flex-1 space-y-1 p-3">
         {NAV_ITEMS.map((item) => {
           const Icon = item.icon;
           const active =
@@ -63,7 +64,8 @@ export function AppSidebar() {
         })}
       </nav>
 
-      <div className="border-t border-border/80 p-4">
+      <div className="border-t border-border/80 p-4 space-y-3">
+        <DataFreshnessPill className="w-full justify-center border-border/60 bg-muted/40 text-[10px]" />
         <PinTray />
       </div>
     </aside>

@@ -158,7 +158,7 @@ export function ExploreFilterPanel({
 
 export function ExploreFilterSidebar() {
   return (
-    <Card className="sticky top-24 hidden lg:block">
+    <Card data-tour="filters" className="sticky top-24 hidden lg:block">
       <CardHeader className="pb-3">
         <CardTitle className="text-base">Filters</CardTitle>
       </CardHeader>

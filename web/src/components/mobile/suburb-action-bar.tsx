@@ -1,20 +1,25 @@
 "use client";
 
 import { PinButton } from "@/components/markets/pin-button";
-import { Button } from "@/components/ui/button";
+import { liquidGlassPillClass } from "@/lib/liquid-glass";
 import type { MarketMetric } from "@/lib/types";
+import { cn } from "@/lib/utils";
 
 export function SuburbActionBar({ market }: { market: MarketMetric }) {
   return (
     <div
-      className="fixed inset-x-0 z-30 border-t border-border/80 bg-background/95 px-4 py-3 backdrop-blur-md lg:hidden"
-      style={{ bottom: "calc(4.5rem + env(safe-area-inset-bottom))" }}
+      className="pointer-events-none fixed inset-x-0 z-30 flex justify-center px-4 lg:hidden"
+      style={{ bottom: "calc(4.75rem + env(safe-area-inset-bottom))" }}
     >
-      <div className="mx-auto flex max-w-6xl items-center gap-3">
-        <Button
+      <div
+        className={cn(
+          "pointer-events-auto inline-flex max-w-full items-center gap-2 px-3 py-2 shadow-[0_8px_32px_rgba(0,0,0,0.12)]",
+          liquidGlassPillClass
+        )}
+      >
+        <button
           type="button"
-          variant="outline"
-          className="min-h-11 flex-1"
+          className="min-h-9 flex-1 rounded-full px-3 text-sm font-medium text-foreground transition-colors hover:bg-white/20 active:bg-white/30"
           onClick={() => {
             document.getElementById("suburb-listings")?.scrollIntoView({
               behavior: "smooth",
@@ -23,8 +28,8 @@ export function SuburbActionBar({ market }: { market: MarketMetric }) {
           }}
         >
           View listings
-        </Button>
-        <PinButton market={market} />
+        </button>
+        <PinButton market={market} size="icon-sm" />
       </div>
     </div>
   );

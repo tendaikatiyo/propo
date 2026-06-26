@@ -2,8 +2,12 @@ import { NextRequest, NextResponse } from "next/server";
 
 import { fetchListings } from "@/lib/data-server";
 import { budgetForMode } from "@/lib/explore";
-import { DEFAULT_BUY_BUDGET, DEFAULT_RENT_BUDGET, PROPERTY_TYPES } from "@/lib/constants";
-import type { ExploreMode, PropertyType } from "@/lib/types";
+import {
+  DEFAULT_BUY_BUDGET,
+  DEFAULT_RENT_BUDGET,
+  normalizePropertyType,
+} from "@/lib/constants";
+import type { ExploreMode } from "@/lib/types";
 
 export const revalidate = 3600;
 
@@ -22,10 +26,7 @@ export async function GET(request: NextRequest) {
   const city = params.get("city") || null;
   const suburb = params.get("suburb") || null;
   const typeParam = params.get("type");
-  const propertyType =
-    typeParam && PROPERTY_TYPES.includes(typeParam as PropertyType)
-      ? (typeParam as PropertyType)
-      : null;
+  const propertyType = typeParam ? normalizePropertyType(typeParam) : null;
   const limitParam = Number(params.get("limit"));
   const limit = Number.isFinite(limitParam) && limitParam > 0 ? Math.min(limitParam, 12) : 4;
   const tierParam = params.get("tier");
