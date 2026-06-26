@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BarChart3, Building2, Compass, Home } from "lucide-react";
+import { Building2, Compass, Home } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
@@ -10,7 +10,7 @@ const TAB_ITEMS = [
   { href: "/", label: "Home", icon: Home },
   { href: "/explore", label: "Explore", icon: Compass },
   { href: "/cities", label: "Cities", icon: Building2 },
-  { href: "/rankings", label: "Rankings", icon: BarChart3 },
+  // { href: "/rankings", label: "Rankings", icon: BarChart3 },
 ] as const;
 
 function isActive(pathname: string, href: string): boolean {
@@ -23,7 +23,7 @@ export function MobileTabBar() {
 
   return (
     <nav data-tour="nav-tabs" className="fixed inset-x-0 bottom-0 z-50 border-t border-border/60 bg-background/80 backdrop-blur-xl backdrop-saturate-150 pb-[env(safe-area-inset-bottom)] lg:hidden">
-      <div className="grid grid-cols-4">
+      <div className="grid grid-cols-3">
         {TAB_ITEMS.map((item) => {
           const Icon = item.icon;
           const active = isActive(pathname, item.href);

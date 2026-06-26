@@ -16,7 +16,7 @@ const MOBILE_STEPS: TourStepConfig[] = [
   {
     target: "nav-tabs",
     title: "Navigate the app",
-    body: "Use the tab bar to jump between Home, Explore, Cities, and Rankings.",
+    body: "Use the tab bar to jump between Home, Explore, and Cities.",
     placement: "top",
   },
   {
@@ -48,7 +48,7 @@ const DESKTOP_STEPS: TourStepConfig[] = [
   {
     target: "nav-sidebar",
     title: "Navigate the app",
-    body: "Use the sidebar to move between Home, Explore, Cities, Rankings, and more.",
+    body: "Use the sidebar to move between Home, Explore, Cities, and more.",
     placement: "right",
   },
   {

@@ -13,7 +13,7 @@ export function AppFooter() {
       <div className="relative z-10 mx-auto flex max-w-6xl flex-col gap-4 px-4 py-10 sm:px-6 lg:px-8">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <p className="font-display text-lg font-medium">{SITE_NAME.toLowerCase()}</p>
-          <DataFreshnessPill className="border-border/60 bg-muted/60 text-xs" />
+          <DataFreshnessPill />
         </div>
         <p className="text-sm text-muted-foreground">
           Property data index for Zimbabwe

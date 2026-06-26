@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { SiteHero } from "@/components/layout/site-chrome";
 import {
   HERO_LAST_VARIANT_KEY,
+  isHeroVariant,
   nextHeroVariant,
   type HeroVariant,
 } from "@/lib/hero";
@@ -12,8 +13,7 @@ import {
 function readLastVariant(): HeroVariant | null {
   if (typeof window === "undefined") return null;
   const stored = localStorage.getItem(HERO_LAST_VARIANT_KEY);
-  if (stored === "harare" || stored === "bulawayo") return stored;
-  return null;
+  return stored && isHeroVariant(stored) ? stored : null;
 }
 
 export function HomeHero() {
