@@ -4,7 +4,6 @@ import { useMemo } from "react";
 
 import { SuburbCard } from "@/components/markets/suburb-card";
 import { SuburbTable } from "@/components/markets/suburb-table";
-import { BudgetListingsPreview } from "@/components/listings/budget-listings";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useMarketMetrics } from "@/hooks/use-market-data";
@@ -79,13 +78,6 @@ export function ExploreResults({ preview = false }: { preview?: boolean }) {
         </div>
         <SuburbTable markets={rankedInBudget} mode={filters.mode} />
       </section>
-
-      <BudgetListingsPreview
-        mode={filters.mode}
-        budget={filters.budget}
-        city={filters.city}
-        propertyType={filters.propertyType}
-      />
 
       {rankedStretch.length ? (
         <section className="space-y-4">

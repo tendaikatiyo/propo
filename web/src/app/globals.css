@@ -149,4 +149,18 @@
   .caption-label {
     @apply font-mono text-[11px] font-medium tracking-[0.08em] text-muted-foreground uppercase;
   }
+
+  .skeleton-stagger {
+    animation: skeleton-stagger 1.6s ease-in-out infinite;
+  }
+
+  @keyframes skeleton-stagger {
+    0%,
+    100% {
+      opacity: 0.45;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
 }

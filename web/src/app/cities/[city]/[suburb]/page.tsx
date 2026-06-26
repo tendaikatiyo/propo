@@ -5,15 +5,16 @@ import { SuburbProfile } from "@/components/markets/suburb-profile";
 import { fetchMarketMetrics } from "@/lib/data-server";
 import { findMarketBySlugs } from "@/lib/markets";
 import { formatCurrency, sanitizeLabel } from "@/lib/format";
-import { matchesSlug } from "@/lib/slug";
+import { matchesSlug, toSlug } from "@/lib/slug";
 
 export const revalidate = 3600;
+export const dynamicParams = true;
 
 export async function generateStaticParams() {
   const markets = await fetchMarketMetrics();
-  return markets.slice(0, 200).map((market) => ({
-    city: market.city.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, ""),
-    suburb: market.suburb.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, ""),
+  return markets.map((market) => ({
+    city: toSlug(market.city),
+    suburb: toSlug(market.suburb),
   }));
 }
 

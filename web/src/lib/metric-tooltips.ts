@@ -26,8 +26,6 @@ export function columnsForMode(mode: ExploreMode): SortKey[] {
   const base: SortKey[] = ["suburb", "city", "median_rent"];
   if (mode === "buy") {
     base.push("median_sale_price", "yield_percent", "opportunity_score");
-  } else {
-    base.push("median_sale_price");
   }
   base.push("confidence_score");
   return base;

@@ -41,7 +41,7 @@ export function SiteHero({ compact = false }: { compact?: boolean }) {
       }
     >
       <Image
-        src="/harare_skyline_bg.png"
+        src="/harare_skyline_bg2.png"
         alt="Harare skyline illustration"
         fill
         priority

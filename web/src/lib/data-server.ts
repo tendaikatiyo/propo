@@ -1,6 +1,7 @@
 import { readFile } from "fs/promises";
 import path from "path";
 
+import { STRETCH_BUDGET_MULTIPLIER } from "@/lib/constants";
 import { filterRankingsPayload, filterZimbabweCities, filterZimbabweMarkets, isZimbabweCity } from "@/lib/geo";
 import { createServerSupabaseClient } from "@/lib/supabase";
 import type {
@@ -71,22 +72,41 @@ export interface ListingQuery {
   mode: ExploreMode;
   budget: number;
   city?: string | null;
+  suburb?: string | null;
   propertyType?: PropertyType | null;
   limit?: number;
+  tier?: "in" | "stretch" | "value";
+  medianPrice?: number | null;
 }
 
 function matchesListingQuery(listing: Listing, query: ListingQuery): boolean {
-  if (!listing.price || listing.price <= 0 || listing.price > query.budget) return false;
+  const price = listing.price;
+  if (!price || price <= 0) return false;
+
+  const tier = query.tier ?? "in";
+  if (tier === "in") {
+    if (price > query.budget) return false;
+  } else if (tier === "stretch") {
+    const max = Math.round(query.budget * STRETCH_BUDGET_MULTIPLIER);
+    if (price <= query.budget || price > max) return false;
+  } else if (tier === "value") {
+    const median = query.medianPrice;
+    if (!median || median <= 0 || price > median) return false;
+  }
+
   if (listing.city && !isZimbabweCity(listing.city)) return false;
   if (query.city && listing.city?.toLowerCase() !== query.city.toLowerCase()) return false;
+  if (query.suburb && listing.suburb?.toLowerCase() !== query.suburb.toLowerCase()) return false;
   if (query.propertyType && listing.property_type !== query.propertyType) return false;
   return true;
 }
 
-function rankListings(listings: Listing[], limit: number): Listing[] {
-  return [...listings]
-    .sort((a, b) => (b.price ?? 0) - (a.price ?? 0))
-    .slice(0, limit);
+function rankListings(listings: Listing[], limit: number, tier: ListingQuery["tier"] = "in"): Listing[] {
+  const sorted =
+    tier === "value"
+      ? [...listings].sort((a, b) => (a.price ?? Infinity) - (b.price ?? Infinity))
+      : [...listings].sort((a, b) => (b.price ?? 0) - (a.price ?? 0));
+  return sorted.slice(0, limit);
 }
 
 const listingImageCache = new Map<string, Map<string, string>>();
@@ -135,6 +155,15 @@ export async function fetchListings(query: ListingQuery): Promise<Listing[]> {
 
   const client = createServerSupabaseClient();
   if (client) {
+    const tier = query.tier ?? "in";
+    const stretchMax = Math.round(query.budget * STRETCH_BUDGET_MULTIPLIER);
+    const priceCap =
+      tier === "stretch"
+        ? stretchMax
+        : tier === "value"
+          ? (query.medianPrice ?? query.budget)
+          : query.budget;
+
     let request = client
       .from("listings")
       .select(
@@ -142,12 +171,17 @@ export async function fetchListings(query: ListingQuery): Promise<Listing[]> {
       )
       .eq("listing_type", listingType)
       .eq("is_active", true)
-      .lte("price", query.budget)
+      .lte("price", priceCap)
       .not("price", "is", null)
-      .order("price", { ascending: false })
-      .limit(80);
+      .order("price", { ascending: tier === "value" })
+      .limit(120);
+
+    if (tier === "stretch") {
+      request = request.gt("price", query.budget);
+    }
 
     if (query.city) request = request.ilike("city", query.city);
+    if (query.suburb) request = request.ilike("suburb", query.suburb);
     if (query.propertyType) request = request.eq("property_type", query.propertyType);
 
     const { data, error } = await request;
@@ -155,7 +189,7 @@ export async function fetchListings(query: ListingQuery): Promise<Listing[]> {
       const matched = (data as Listing[])
         .map(withImageUrl)
         .filter((row) => matchesListingQuery(row, query));
-      return rankListings(matched, limit);
+      return rankListings(matched, limit, query.tier);
     }
   }
 
@@ -163,7 +197,7 @@ export async function fetchListings(query: ListingQuery): Promise<Listing[]> {
     const filename = listingType === "rent" ? "clean_rentals.json" : "clean_sales.json";
     const all = await readLocalJson<Listing[]>(filename);
     const matched = all.filter((row) => matchesListingQuery(row, query));
-    const ranked = rankListings(matched, limit);
+    const ranked = rankListings(matched, limit, query.tier);
     return enrichLocalListingImages(ranked, listingType);
   } catch {
     return [];

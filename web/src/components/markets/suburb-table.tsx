@@ -223,11 +223,7 @@ export function SuburbTable({
                       {market.opportunity_score ?? "—"}
                     </TableCell>
                   </>
-                ) : (
-                  <TableCell className="font-mono">
-                    {formatCurrency(market.median_sale_price)}
-                  </TableCell>
-                )}
+                ) : null}
                 <TableCell>
                   <ConfidenceBadge score={market.confidence_score} />
                 </TableCell>

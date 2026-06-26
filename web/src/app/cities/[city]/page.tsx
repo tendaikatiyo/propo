@@ -3,14 +3,14 @@ import { notFound } from "next/navigation";
 import { CityDashboard } from "@/components/cities/city-dashboard";
 import { fetchCities, fetchMarketMetrics, fetchRankings } from "@/lib/data-server";
 import { findCityMarkets } from "@/lib/markets";
-import { matchesSlug } from "@/lib/slug";
+import { matchesSlug, toSlug } from "@/lib/slug";
 
 export const revalidate = 3600;
 
 export async function generateStaticParams() {
   const cities = await fetchCities();
   return cities.map((city) => ({
-    city: city.city.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, ""),
+    city: toSlug(city.city),
   }));
 }
 

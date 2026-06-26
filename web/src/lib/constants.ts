@@ -34,6 +34,7 @@ export const BEDROOM_COUNT_KEY: Record<number, keyof import("@/lib/types").Marke
 export const MAX_PINNED_MARKETS = 3;
 export const STRETCH_BUDGET_MULTIPLIER = 1.15;
 export const MIN_CONFIDENCE_THRESHOLD = 20;
+export const RANKINGS_MIN_CONFIDENCE = 40;
 export const DEFAULT_RENT_BUDGET = 800;
 export const DEFAULT_BUY_BUDGET = 250000;
 export const RENT_BUDGET_RANGE = { min: 100, max: 10000, step: 50 };

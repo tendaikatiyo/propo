@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { BackLink } from "@/components/layout/back-nav";
 import { PinButton } from "@/components/markets/pin-button";
+import { SuburbValueListings } from "@/components/listings/suburb-value-listings";
 import { PropertyMixBar } from "@/components/markets/property-mix-bar";
 import { ConfidenceBadge } from "@/components/markets/confidence-badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -90,6 +91,8 @@ export function SuburbProfile({ market, related }: { market: MarketMetric; relat
           </div>
         </CardContent>
       </Card>
+
+      <SuburbValueListings market={market} />
 
       {related.length ? (
         <section className="space-y-4">

@@ -7,6 +7,7 @@ import { BackLink } from "@/components/layout/back-nav";
 import { PinButton } from "@/components/markets/pin-button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { formatCurrency, formatPercent, sanitizeLabel } from "@/lib/format";
+import { RANKINGS_MIN_CONFIDENCE } from "@/lib/constants";
 import { suburbPath } from "@/lib/slug";
 import type { RankingEntry } from "@/lib/types";
 
@@ -55,7 +56,7 @@ export function RankingsPageClient({
       <BackLink href="/" label="Back to home" />
       <PageHeader
         title="Market rankings"
-        description="National leaderboards from aggregated listing data across Zimbabwe."
+        description={`National leaderboards from aggregated listing data. Only suburbs with at least ${RANKINGS_MIN_CONFIDENCE}% data confidence are shown.`}
       />
 
       <div className="grid gap-4 lg:grid-cols-2">
