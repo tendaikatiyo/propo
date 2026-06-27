@@ -29,6 +29,17 @@ export function AppFooter() {
             Methodology
           </Link>
         </div>
+        <div className="flex flex-wrap gap-x-4 gap-y-2 border-t border-border/60 pt-4 text-sm text-muted-foreground">
+          <Link href="/privacy" className="hover:text-foreground">
+            Privacy Policy
+          </Link>
+          <Link href="/cookies" className="hover:text-foreground">
+            Cookie Policy
+          </Link>
+          <Link href="/terms" className="hover:text-foreground">
+            Terms of Service
+          </Link>
+        </div>
       </div>
     </footer>
   );
