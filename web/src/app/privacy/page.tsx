@@ -116,8 +116,8 @@ export default function PrivacyPolicyPage() {
         <p>
           If you have questions about this Privacy Policy or how we handle information, please
           contact us at{" "}
-          <a href="mailto:privacy@propo.app" className="text-foreground underline-offset-4 hover:underline">
-            privacy@propo.app
+          <a href="mailto:hello@propo.fyi" className="text-foreground underline-offset-4 hover:underline">
+            hello@propo.fyi
           </a>
           .
         </p>

@@ -137,8 +137,8 @@ export default function TermsOfServicePage() {
       <LegalSection title="Contact">
         <p>
           For questions about these Terms, contact us at{" "}
-          <a href="mailto:legal@propo.app" className="text-foreground underline-offset-4 hover:underline">
-            legal@propo.app
+          <a href="mailto:hello@propo.fyi" className="text-foreground underline-offset-4 hover:underline">
+            hello@propo.fyi
           </a>
           .
         </p>
