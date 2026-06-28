@@ -1,15 +1,28 @@
 import { readFile } from "fs/promises";
 import path from "path";
+import { execFileSync } from "child_process";
 
 import { STRETCH_BUDGET_MULTIPLIER } from "@/lib/constants";
 import { filterRankingsPayload, filterZimbabweCities, filterZimbabweMarkets, isZimbabweCity } from "@/lib/geo";
 import { isLandPropertyType } from "@/lib/listings";
 import { createServerSupabaseClient } from "@/lib/supabase";
+import {
+  aggregateSnapshotsByDate,
+  buildTrendsPayload,
+  computeMoversFromSeries,
+  listingTypeForMode,
+  parseTrendRange,
+  startDateForRange,
+  topMovers,
+  type TrendRange,
+} from "@/lib/trends";
 import type {
   CityMetric,
+  CityTrendMoversPayload,
   ExploreMode,
   Listing,
   MarketMetric,
+  MarketTrendsPayload,
   PropertyType,
   RankingsPayload,
 } from "@/lib/types";
@@ -230,3 +243,183 @@ export async function fetchListings(query: ListingQuery): Promise<Listing[]> {
 }
 
 export const dashboardRevalidate = REVALIDATE_SECONDS;
+
+const REPO_ROOT = path.join(process.cwd(), "..");
+
+interface SnapshotRow {
+  snapshot_date: string;
+  suburb?: string;
+  median_price: number | null;
+  listing_count: number;
+}
+
+function fetchTrendsFromLocalPython(
+  command: "market" | "city-movers",
+  args: Record<string, string>
+): unknown | null {
+  try {
+    const cliArgs = ["-m", "analytics.trends_fetch", command];
+    for (const [key, value] of Object.entries(args)) {
+      cliArgs.push(`--${key}`, value);
+    }
+    const output = execFileSync("python", cliArgs, {
+      cwd: REPO_ROOT,
+      encoding: "utf-8",
+      stdio: ["ignore", "pipe", "pipe"],
+    });
+    return JSON.parse(output.trim());
+  } catch (error) {
+    console.error("[data-server] local trends fallback:", error);
+    return null;
+  }
+}
+
+async function fetchSnapshotRows(params: {
+  city: string;
+  suburb?: string;
+  listingType: "rent" | "sale";
+  startDate: string;
+}): Promise<SnapshotRow[]> {
+  const client = createServerSupabaseClient();
+  if (client) {
+    let request = client
+      .from("market_snapshots_daily")
+      .select("snapshot_date, suburb, median_price, listing_count")
+      .eq("city", params.city)
+      .eq("listing_type", params.listingType)
+      .gte("snapshot_date", params.startDate)
+      .order("snapshot_date", { ascending: true });
+
+    if (params.suburb) {
+      request = request.eq("suburb", params.suburb);
+    }
+
+    const { data, error } = await request;
+    if (!error && data?.length) {
+      return data as SnapshotRow[];
+    }
+    if (error) {
+      console.error("[data-server] market_snapshots_daily:", error.message);
+    }
+  }
+
+  if (params.suburb) {
+    const payload = fetchTrendsFromLocalPython("market", {
+      city: params.city,
+      suburb: params.suburb,
+      "listing-type": params.listingType,
+      "start-date": params.startDate,
+    }) as MarketTrendsPayload | null;
+
+    if (payload?.points?.length) {
+      return payload.points.map((point) => ({
+        snapshot_date: point.date,
+        median_price: point.median_price,
+        listing_count: point.listing_count,
+      }));
+    }
+  }
+
+  return [];
+}
+
+export async function fetchMarketTrends(
+  market: Pick<MarketMetric, "city" | "suburb">,
+  range: TrendRange,
+  mode: ExploreMode
+): Promise<MarketTrendsPayload> {
+  const listingType = listingTypeForMode(mode);
+  const startDate = startDateForRange(range);
+  const rows = await fetchSnapshotRows({
+    city: market.city,
+    suburb: market.suburb,
+    listingType,
+    startDate,
+  });
+
+  const points = aggregateSnapshotsByDate(
+    rows.map((row) => ({
+      snapshot_date: row.snapshot_date,
+      median_price: row.median_price,
+      listing_count: row.listing_count,
+    }))
+  );
+
+  return buildTrendsPayload(points);
+}
+
+export async function fetchCityTrendMovers(
+  city: string,
+  markets: MarketMetric[],
+  range: TrendRange,
+  mode: ExploreMode
+): Promise<CityTrendMoversPayload> {
+  const listingType = listingTypeForMode(mode);
+  const startDate = startDateForRange(range);
+  const marketIds = new Map(markets.map((market) => [market.suburb, market.market_id]));
+
+  const client = createServerSupabaseClient();
+  if (client) {
+    const { data, error } = await client
+      .from("market_snapshots_daily")
+      .select("snapshot_date, suburb, median_price, listing_count")
+      .eq("city", city)
+      .eq("listing_type", listingType)
+      .gte("snapshot_date", startDate)
+      .order("snapshot_date", { ascending: true });
+
+    if (!error && data?.length) {
+      const seriesBySuburb = new Map<string, ReturnType<typeof aggregateSnapshotsByDate>>();
+      const grouped = new Map<string, SnapshotRow[]>();
+
+      for (const row of data as SnapshotRow[]) {
+        const suburb = row.suburb ?? "";
+        if (!grouped.has(suburb)) grouped.set(suburb, []);
+        grouped.get(suburb)!.push(row);
+      }
+
+      for (const [suburb, suburbRows] of grouped) {
+        seriesBySuburb.set(
+          suburb,
+          aggregateSnapshotsByDate(
+            suburbRows.map((row) => ({
+              snapshot_date: row.snapshot_date,
+              median_price: row.median_price,
+              listing_count: row.listing_count,
+            }))
+          )
+        );
+      }
+
+      const movers = computeMoversFromSeries(seriesBySuburb, marketIds);
+      return {
+        risers: topMovers(movers, "up"),
+        fallers: topMovers(movers, "down"),
+      };
+    }
+
+    if (error) {
+      console.error("[data-server] city trend movers:", error.message);
+    }
+  }
+
+  const payload = fetchTrendsFromLocalPython("city-movers", {
+    city,
+    "listing-type": listingType,
+    "start-date": startDate,
+    "market-ids-json": JSON.stringify(Object.fromEntries(marketIds)),
+    limit: "3",
+  }) as CityTrendMoversPayload | null;
+
+  return payload ?? { risers: [], fallers: [] };
+}
+
+export function parseTrendQuery(rangeParam: string | null, modeParam: string | null): {
+  range: TrendRange;
+  mode: ExploreMode;
+} {
+  return {
+    range: parseTrendRange(rangeParam),
+    mode: modeParam === "buy" ? "buy" : "rent",
+  };
+}

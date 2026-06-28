@@ -136,3 +136,29 @@ export type SortKey =
   | "opportunity_score";
 
 export type SortDirection = "asc" | "desc";
+
+export type TrendRange = "30d" | "90d" | "180d";
+
+export interface MarketTrendPoint {
+  date: string;
+  median_price: number | null;
+  listing_count: number;
+}
+
+export interface MarketTrendsPayload {
+  points: MarketTrendPoint[];
+  pct_change_median: number | null;
+  pct_change_listings: number | null;
+}
+
+export interface TrendMover {
+  market_id: string;
+  suburb: string;
+  pct_change_median: number;
+  median_price: number | null;
+}
+
+export interface CityTrendMoversPayload {
+  risers: TrendMover[];
+  fallers: TrendMover[];
+}

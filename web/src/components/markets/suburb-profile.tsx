@@ -5,6 +5,7 @@ import { SuburbActionBar } from "@/components/mobile/suburb-action-bar";
 import { PinButton } from "@/components/markets/pin-button";
 import { SuburbValueListings } from "@/components/listings/suburb-value-listings";
 import { PropertyMixBar } from "@/components/markets/property-mix-bar";
+import { SuburbTrendsSection } from "@/components/markets/suburb-trends-section";
 import { ConfidenceBadge } from "@/components/markets/confidence-badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { formatCurrency, formatPercent, sanitizeLabel } from "@/lib/format";
@@ -115,6 +116,8 @@ export function SuburbProfile({
         />
         <MetricCard label="Opportunity score" value={String(market.opportunity_score ?? "—")} />
       </div>
+
+      <SuburbTrendsSection market={market} />
 
       <Card>
         <CardHeader>

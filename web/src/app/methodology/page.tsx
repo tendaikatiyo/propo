@@ -70,6 +70,18 @@ export default function MethodologyPage() {
             bedroom bucket counts when available in the analytics pipeline.
           </CardContent>
         </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>Price & supply trends</CardTitle>
+          </CardHeader>
+          <CardContent className="text-[15px] leading-relaxed tracking-[0.15px] text-muted-foreground">
+            Trend charts use daily snapshots of active listings. Each point is the median price and
+            listing count for that suburb on that date, aggregated across property types. Percent
+            change compares the first and last available snapshot in the selected window (30, 90,
+            or 180 days). Trends reflect what was on the market each day, not closed transactions.
+          </CardContent>
+        </Card>
       </div>
     </div>
   );

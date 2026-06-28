@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { Search } from "lucide-react";
 
+import { CityTrendMovers } from "@/components/cities/city-trend-movers";
 import { BackLink } from "@/components/layout/back-nav";
 import { PageHeader } from "@/components/layout/page-header";
 import { CityRankingList } from "@/components/mobile/city-ranking-list";
@@ -136,6 +137,8 @@ export function CityDashboard({
           </CardContent>
         </Card>
       </div>
+
+      <CityTrendMovers city={city.city} />
 
       {cityRankings ? (
         <>

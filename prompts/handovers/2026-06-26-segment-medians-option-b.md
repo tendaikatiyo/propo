@@ -1,5 +1,7 @@
 # Session Handover — 2026-06-26 (segment medians — Option B)
 
+**Ship status (2026-06-28):** F1 core + polish shipped — see [2026-06-28-f0-f1-segment-explore-polish.md](./2026-06-28-f0-f1-segment-explore-polish.md).
+
 ## Goal
 
 When a user filters by **property type** and/or **bedrooms** (e.g. 1-bed house in Borrowdale), the app should show **median rent and median sale for that spec** in each suburb — not the suburb-wide aggregate medians.
@@ -283,9 +285,9 @@ flowchart TD
 
 | Phase | Deliverable                            | Verify                                                              |
 | ----- | -------------------------------------- | ------------------------------------------------------------------- |
-| **1** | Migration + pipeline + Supabase sync   | `market_metrics.segments->'house:1'` non-null for Borrowdale in SQL |
-| **2** | Explore in-budget uses segment medians | Filter 1-bed house rent $800 — suburbs reorder vs unfiltered        |
-| **3** | Suburb page + low-n warnings           | URL with `?type=house&bedroom=1` shows spec medians                 |
+| **1** | Migration + pipeline + Supabase sync   | ✅ `market_metrics.segments` populated; migration 006 applied        |
+| **2** | Explore in-budget uses segment medians | ✅ Shipped                                                            |
+| **3** | Suburb page + low-n warnings           | Partial — fallback copy + switches; methodology note + sample badges still open (F8) |
 
 
 ---
@@ -294,28 +296,28 @@ flowchart TD
 
 ### Pipeline & DB
 
-- [ ] `supabase/migrations/006_market_segments.sql`
-- [ ] `analytics/market_metrics.py` — segment rollups
-- [ ] Run `npm run analytics:metrics` and spot-check `data/market_metrics.json`
-- [ ] `npm run pipeline:supabase` or `sync_dashboard`
+- [x] `supabase/migrations/006_market_segments.sql`
+- [x] `analytics/market_metrics.py` — segment rollups
+- [x] Run `npm run analytics:metrics` and spot-check `data/market_metrics.json`
+- [x] `sync_dashboard` (full `pipeline:supabase` ingest may need retry)
 
 ### Web
 
-- [ ] `web/src/lib/types.ts`
-- [ ] `web/src/lib/segments.ts` (new)
-- [ ] `web/src/lib/explore.ts`
-- [ ] `web/src/lib/metric-tooltips.ts` — dynamic column labels
-- [ ] `web/src/components/markets/explore-results.tsx`
-- [ ] `web/src/components/markets/suburb-table.tsx`
-- [ ] `web/src/components/mobile/suburb-list.tsx`
-- [ ] `web/src/components/markets/suburb-card.tsx`
-- [ ] `web/src/components/markets/suburb-profile.tsx`
-- [ ] `web/src/lib/markets.ts` or suburb links — preserve filter query string
+- [x] `web/src/lib/types.ts`
+- [x] `web/src/lib/segments.ts` (new)
+- [x] `web/src/lib/explore.ts`
+- [x] `web/src/lib/metric-tooltips.ts` — dynamic column labels
+- [x] `web/src/components/markets/explore-results.tsx`
+- [x] `web/src/components/markets/suburb-table.tsx`
+- [x] `web/src/components/mobile/suburb-list.tsx`
+- [x] `web/src/components/markets/suburb-card.tsx`
+- [x] `web/src/components/markets/suburb-profile.tsx`
+- [x] `web/src/lib/slug.ts` — preserve filter query string on navigate
 
 ### Tests (lightweight)
 
 - [ ] Unit tests for `segmentKey`, `resolveSegmentStats`, `priceForFilters` in `web/src/lib/segments.test.ts` (optional but high value)
-- [ ] Manual: Explore Harare, house, 1 bed, rent — compare median column to manual median from `clean_rentals.json` for one suburb
+- [x] Manual: Explore Harare, house, 1 bed, rent — segment medians + fallback UX verified
 
 ---
 
@@ -328,7 +330,7 @@ flowchart TD
 | `room` with no bedrooms               | Bedroom bucket `None` — only `{room}:`* segment, not `room:1`       |
 | Commercial                            | Usually no bedrooms — type-only segments                            |
 | Suburb has rent but no sales for spec | Show rent median; sale shows “—”                                    |
-| Filters set but segment missing       | Fall back to aggregate; show “All types” badge or dashed confidence |
+| Filters set but segment missing       | Fall back to aggregate; label "Suburb median"; **Include suburb medians** switch (default off) |
 | Local dev without Supabase            | `segments` in `market_metrics.json` works same as other columns     |
 | Cloudflare Worker runtime             | No change — reads `market_metrics` from Supabase API same as today  |
 

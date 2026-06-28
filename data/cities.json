@@ -8,7 +8,7 @@
     "median_sale_price": null,
     "average_yield": null,
     "average_opportunity_score": 0.0,
-    "average_days_on_market_rent": 12,
+    "average_days_on_market_rent": 14,
     "average_days_on_market_sale": null
   },
   {
@@ -17,7 +17,7 @@
     "rental_count": 0,
     "sale_count": 3,
     "median_rent": null,
-    "median_sale_price": 120000,
+    "median_sale_price": 140000,
     "average_yield": null,
     "average_opportunity_score": 0.0,
     "average_days_on_market_rent": null,
@@ -29,11 +29,11 @@
     "rental_count": 0,
     "sale_count": 4,
     "median_rent": null,
-    "median_sale_price": 52500,
+    "median_sale_price": 50000,
     "average_yield": null,
     "average_opportunity_score": 0.0,
     "average_days_on_market_rent": null,
-    "average_days_on_market_sale": 12
+    "average_days_on_market_sale": 14
   },
   {
     "city": "Beitbridge",
@@ -41,47 +41,47 @@
     "rental_count": 0,
     "sale_count": 16,
     "median_rent": null,
-    "median_sale_price": 157500,
+    "median_sale_price": 142500,
     "average_yield": null,
     "average_opportunity_score": 0.0,
     "average_days_on_market_rent": null,
-    "average_days_on_market_sale": 12
+    "average_days_on_market_sale": 13
   },
   {
     "city": "Bindura",
     "suburb_count": 1,
     "rental_count": 0,
-    "sale_count": 6,
+    "sale_count": 7,
     "median_rent": null,
-    "median_sale_price": 32500,
+    "median_sale_price": 40000,
     "average_yield": null,
     "average_opportunity_score": 0.0,
     "average_days_on_market_rent": null,
-    "average_days_on_market_sale": 12
+    "average_days_on_market_sale": 14
   },
   {
     "city": "Binga",
     "suburb_count": 1,
     "rental_count": 0,
-    "sale_count": 20,
+    "sale_count": 21,
     "median_rent": null,
     "median_sale_price": 180000,
     "average_yield": null,
     "average_opportunity_score": 0.0,
     "average_days_on_market_rent": null,
-    "average_days_on_market_sale": 11
+    "average_days_on_market_sale": 13
   },
   {
     "city": "Bulawayo",
-    "suburb_count": 80,
-    "rental_count": 56,
-    "sale_count": 756,
+    "suburb_count": 77,
+    "rental_count": 54,
+    "sale_count": 752,
     "median_rent": 550,
     "median_sale_price": 175000,
-    "average_yield": 5.0,
-    "average_opportunity_score": 8.96,
-    "average_days_on_market_rent": 11,
-    "average_days_on_market_sale": 11
+    "average_yield": 9.07,
+    "average_opportunity_score": 9.87,
+    "average_days_on_market_rent": 12,
+    "average_days_on_market_sale": 13
   },
   {
     "city": "Centenary",
@@ -93,19 +93,19 @@
     "average_yield": null,
     "average_opportunity_score": 0.0,
     "average_days_on_market_rent": null,
-    "average_days_on_market_sale": 12
+    "average_days_on_market_sale": 14
   },
   {
     "city": "Chegutu",
     "suburb_count": 1,
     "rental_count": 0,
-    "sale_count": 12,
+    "sale_count": 13,
     "median_rent": null,
     "median_sale_price": 200000,
     "average_yield": null,
     "average_opportunity_score": 0.0,
     "average_days_on_market_rent": null,
-    "average_days_on_market_sale": 11
+    "average_days_on_market_sale": 12
   },
   {
     "city": "Chimanimani",
@@ -117,67 +117,67 @@
     "average_yield": null,
     "average_opportunity_score": 0.0,
     "average_days_on_market_rent": null,
-    "average_days_on_market_sale": 10
+    "average_days_on_market_sale": 11
   },
   {
     "city": "Chinhoyi",
     "suburb_count": 1,
     "rental_count": 1,
-    "sale_count": 17,
+    "sale_count": 18,
     "median_rent": 1800,
-    "median_sale_price": 155000,
-    "average_yield": 13.94,
-    "average_opportunity_score": 61.0,
-    "average_days_on_market_rent": 12,
-    "average_days_on_market_sale": 12
+    "median_sale_price": 152500,
+    "average_yield": 14.16,
+    "average_opportunity_score": 62.0,
+    "average_days_on_market_rent": 14,
+    "average_days_on_market_sale": 14
   },
   {
     "city": "Chiredzi",
     "suburb_count": 1,
     "rental_count": 1,
-    "sale_count": 27,
-    "median_rent": 150,
+    "sale_count": 26,
+    "median_rent": 4125,
     "median_sale_price": 85000,
-    "average_yield": 2.12,
-    "average_opportunity_score": 36.0,
-    "average_days_on_market_rent": 12,
-    "average_days_on_market_sale": 12
+    "average_yield": 58.24,
+    "average_opportunity_score": 70.0,
+    "average_days_on_market_rent": 14,
+    "average_days_on_market_sale": 14
   },
   {
     "city": "Chitungwiza",
     "suburb_count": 4,
-    "rental_count": 18,
-    "sale_count": 106,
-    "median_rent": 335,
-    "median_sale_price": 37000,
-    "average_yield": 11.34,
-    "average_opportunity_score": 47.75,
-    "average_days_on_market_rent": 12,
-    "average_days_on_market_sale": 10
+    "rental_count": 19,
+    "sale_count": 105,
+    "median_rent": 350,
+    "median_sale_price": 38000,
+    "average_yield": 10.58,
+    "average_opportunity_score": 46.25,
+    "average_days_on_market_rent": 14,
+    "average_days_on_market_sale": 12
   },
   {
     "city": "Chivhu",
     "suburb_count": 1,
     "rental_count": 0,
-    "sale_count": 6,
+    "sale_count": 8,
     "median_rent": null,
-    "median_sale_price": 119000,
+    "median_sale_price": 36500,
     "average_yield": null,
     "average_opportunity_score": 0.0,
     "average_days_on_market_rent": null,
-    "average_days_on_market_sale": 4
+    "average_days_on_market_sale": 7
   },
   {
     "city": "Christon Bank",
     "suburb_count": 1,
     "rental_count": 3,
-    "sale_count": 19,
+    "sale_count": 20,
     "median_rent": 2200,
     "median_sale_price": 1200000,
     "average_yield": 2.2,
-    "average_opportunity_score": 30.0,
-    "average_days_on_market_rent": 12,
-    "average_days_on_market_sale": 10
+    "average_opportunity_score": 35.0,
+    "average_days_on_market_rent": 14,
+    "average_days_on_market_sale": 12
   },
   {
     "city": "Concession",
@@ -189,19 +189,19 @@
     "average_yield": null,
     "average_opportunity_score": 0.0,
     "average_days_on_market_rent": null,
-    "average_days_on_market_sale": 12
+    "average_days_on_market_sale": 14
   },
   {
     "city": "Damofalls",
     "suburb_count": 1,
     "rental_count": 8,
-    "sale_count": 27,
+    "sale_count": 31,
     "median_rent": 450,
     "median_sale_price": 42000,
     "average_yield": 12.86,
-    "average_opportunity_score": 66.0,
-    "average_days_on_market_rent": 10,
-    "average_days_on_market_sale": 11
+    "average_opportunity_score": 67.0,
+    "average_days_on_market_rent": 11,
+    "average_days_on_market_sale": 13
   },
   {
     "city": "Darwendale",
@@ -213,19 +213,31 @@
     "average_yield": null,
     "average_opportunity_score": 0.0,
     "average_days_on_market_rent": null,
-    "average_days_on_market_sale": 12
+    "average_days_on_market_sale": 14
   },
   {
     "city": "Deka",
     "suburb_count": 1,
     "rental_count": 0,
-    "sale_count": 3,
+    "sale_count": 2,
     "median_rent": null,
     "median_sale_price": 160000,
     "average_yield": null,
     "average_opportunity_score": 0.0,
     "average_days_on_market_rent": null,
-    "average_days_on_market_sale": 12
+    "average_days_on_market_sale": 14
+  },
+  {
+    "city": "Esigodini",
+    "suburb_count": 1,
+    "rental_count": 0,
+    "sale_count": 1,
+    "median_rent": null,
+    "median_sale_price": 55000,
+    "average_yield": null,
+    "average_opportunity_score": 0.0,
+    "average_days_on_market_rent": null,
+    "average_days_on_market_sale": 0
   },
   {
     "city": "Goromonzi",
@@ -236,32 +248,44 @@
     "median_sale_price": 50000,
     "average_yield": 7.2,
     "average_opportunity_score": 39.0,
-    "average_days_on_market_rent": 12,
-    "average_days_on_market_sale": 12
+    "average_days_on_market_rent": 14,
+    "average_days_on_market_sale": 14
+  },
+  {
+    "city": "Gwanda",
+    "suburb_count": 1,
+    "rental_count": 0,
+    "sale_count": 1,
+    "median_rent": null,
+    "median_sale_price": 80000,
+    "average_yield": null,
+    "average_opportunity_score": 0.0,
+    "average_days_on_market_rent": null,
+    "average_days_on_market_sale": 14
   },
   {
     "city": "Gweru",
-    "suburb_count": 23,
-    "rental_count": 5,
-    "sale_count": 70,
+    "suburb_count": 22,
+    "rental_count": 6,
+    "sale_count": 69,
     "median_rent": 550,
-    "median_sale_price": 110000,
-    "average_yield": 8.61,
-    "average_opportunity_score": 5.65,
-    "average_days_on_market_rent": 8,
-    "average_days_on_market_sale": 11
+    "median_sale_price": 100000,
+    "average_yield": 8.78,
+    "average_opportunity_score": 6.0,
+    "average_days_on_market_rent": 10,
+    "average_days_on_market_sale": 13
   },
   {
     "city": "Harare",
-    "suburb_count": 157,
-    "rental_count": 1936,
-    "sale_count": 5255,
-    "median_rent": 1200,
-    "median_sale_price": 245000,
-    "average_yield": 6.57,
-    "average_opportunity_score": 39.96,
-    "average_days_on_market_rent": 10,
-    "average_days_on_market_sale": 11
+    "suburb_count": 156,
+    "rental_count": 1933,
+    "sale_count": 5260,
+    "median_rent": 1250,
+    "median_sale_price": 243000,
+    "average_yield": 7.92,
+    "average_opportunity_score": 40.69,
+    "average_days_on_market_rent": 12,
+    "average_days_on_market_sale": 13
   },
   {
     "city": "Hwange",
@@ -273,7 +297,7 @@
     "average_yield": null,
     "average_opportunity_score": 0.0,
     "average_days_on_market_rent": null,
-    "average_days_on_market_sale": 12
+    "average_days_on_market_sale": 14
   },
   {
     "city": "Insiza",
@@ -285,7 +309,7 @@
     "average_yield": null,
     "average_opportunity_score": 0.0,
     "average_days_on_market_rent": null,
-    "average_days_on_market_sale": 12
+    "average_days_on_market_sale": 14
   },
   {
     "city": "Johannesburg",
@@ -297,103 +321,103 @@
     "average_yield": null,
     "average_opportunity_score": 0.0,
     "average_days_on_market_rent": null,
-    "average_days_on_market_sale": 11
+    "average_days_on_market_sale": 13
   },
   {
     "city": "Kadoma",
     "suburb_count": 2,
     "rental_count": 2,
-    "sale_count": 19,
+    "sale_count": 17,
     "median_rent": 600,
     "median_sale_price": 160000,
     "average_yield": 4.5,
     "average_opportunity_score": 17.5,
-    "average_days_on_market_rent": 12,
-    "average_days_on_market_sale": 11
+    "average_days_on_market_rent": 14,
+    "average_days_on_market_sale": 13
   },
   {
     "city": "Kariba",
     "suburb_count": 2,
     "rental_count": 1,
-    "sale_count": 50,
+    "sale_count": 53,
     "median_rent": 1300,
-    "median_sale_price": 197500,
-    "average_yield": 7.8,
-    "average_opportunity_score": 28.0,
-    "average_days_on_market_rent": 12,
-    "average_days_on_market_sale": 12
+    "median_sale_price": 195000,
+    "average_yield": 7.9,
+    "average_opportunity_score": 30.5,
+    "average_days_on_market_rent": 14,
+    "average_days_on_market_sale": 14
   },
   {
     "city": "Karoi",
     "suburb_count": 1,
     "rental_count": 2,
-    "sale_count": 3,
+    "sale_count": 4,
     "median_rent": 150,
-    "median_sale_price": 28000,
-    "average_yield": 6.43,
-    "average_opportunity_score": 37.0,
-    "average_days_on_market_rent": 12,
-    "average_days_on_market_sale": 12
+    "median_sale_price": 26500,
+    "average_yield": 6.79,
+    "average_opportunity_score": 39.0,
+    "average_days_on_market_rent": 14,
+    "average_days_on_market_sale": 14
   },
   {
     "city": "Kwekwe",
-    "suburb_count": 3,
+    "suburb_count": 5,
     "rental_count": 0,
-    "sale_count": 17,
+    "sale_count": 19,
     "median_rent": null,
     "median_sale_price": 95000,
     "average_yield": null,
     "average_opportunity_score": 0.0,
     "average_days_on_market_rent": null,
-    "average_days_on_market_sale": 12
+    "average_days_on_market_sale": 14
   },
   {
     "city": "Lake Chivero",
     "suburb_count": 1,
-    "rental_count": 0,
-    "sale_count": 8,
-    "median_rent": null,
+    "rental_count": 1,
+    "sale_count": 7,
+    "median_rent": 1000,
     "median_sale_price": 320000,
-    "average_yield": null,
-    "average_opportunity_score": 0.0,
-    "average_days_on_market_rent": null,
-    "average_days_on_market_sale": 10
+    "average_yield": 3.75,
+    "average_opportunity_score": 31.0,
+    "average_days_on_market_rent": 0,
+    "average_days_on_market_sale": 12
   },
   {
     "city": "Macheke",
     "suburb_count": 1,
     "rental_count": 0,
-    "sale_count": 3,
+    "sale_count": 2,
     "median_rent": null,
-    "median_sale_price": 50000,
+    "median_sale_price": 37500,
     "average_yield": null,
     "average_opportunity_score": 0.0,
     "average_days_on_market_rent": null,
-    "average_days_on_market_sale": 12
+    "average_days_on_market_sale": 14
   },
   {
     "city": "Marondera",
     "suburb_count": 4,
-    "rental_count": 5,
-    "sale_count": 32,
-    "median_rent": 600,
-    "median_sale_price": 57500,
-    "average_yield": 13.09,
-    "average_opportunity_score": 16.5,
-    "average_days_on_market_rent": 12,
-    "average_days_on_market_sale": 12
+    "rental_count": 4,
+    "sale_count": 35,
+    "median_rent": 625,
+    "median_sale_price": 65000,
+    "average_yield": 12.5,
+    "average_opportunity_score": 16.25,
+    "average_days_on_market_rent": 14,
+    "average_days_on_market_sale": 14
   },
   {
     "city": "Masvingo",
     "suburb_count": 7,
     "rental_count": 1,
-    "sale_count": 24,
+    "sale_count": 25,
     "median_rent": 350,
     "median_sale_price": 150000,
     "average_yield": null,
     "average_opportunity_score": 0.0,
-    "average_days_on_market_rent": 12,
-    "average_days_on_market_sale": 11
+    "average_days_on_market_rent": 14,
+    "average_days_on_market_sale": 13
   },
   {
     "city": "Mazowe",
@@ -404,20 +428,32 @@
     "median_sale_price": 160000,
     "average_yield": 28.0,
     "average_opportunity_score": 30.0,
-    "average_days_on_market_rent": 12,
-    "average_days_on_market_sale": 11
+    "average_days_on_market_rent": 14,
+    "average_days_on_market_sale": 13
   },
   {
     "city": "Mazvikadei",
     "suburb_count": 1,
     "rental_count": 0,
-    "sale_count": 5,
+    "sale_count": 4,
     "median_rent": null,
     "median_sale_price": 350000,
     "average_yield": null,
     "average_opportunity_score": 0.0,
     "average_days_on_market_rent": null,
-    "average_days_on_market_sale": 12
+    "average_days_on_market_sale": 14
+  },
+  {
+    "city": "Mhondoro Ngezi",
+    "suburb_count": 1,
+    "rental_count": 0,
+    "sale_count": 1,
+    "median_rent": null,
+    "median_sale_price": 34000,
+    "average_yield": null,
+    "average_opportunity_score": 0.0,
+    "average_days_on_market_rent": null,
+    "average_days_on_market_sale": 14
   },
   {
     "city": "Mount Darwin",
@@ -429,19 +465,19 @@
     "average_yield": null,
     "average_opportunity_score": 0.0,
     "average_days_on_market_rent": null,
-    "average_days_on_market_sale": 12
+    "average_days_on_market_sale": 14
   },
   {
     "city": "Msuna",
     "suburb_count": 1,
     "rental_count": 0,
-    "sale_count": 9,
+    "sale_count": 8,
     "median_rent": null,
     "median_sale_price": 175000,
     "average_yield": null,
     "average_opportunity_score": 0.0,
     "average_days_on_market_rent": null,
-    "average_days_on_market_sale": 11
+    "average_days_on_market_sale": 13
   },
   {
     "city": "Mudzi",
@@ -453,19 +489,19 @@
     "average_yield": null,
     "average_opportunity_score": 0.0,
     "average_days_on_market_rent": null,
-    "average_days_on_market_sale": 12
+    "average_days_on_market_sale": 14
   },
   {
     "city": "Mutare",
-    "suburb_count": 19,
+    "suburb_count": 20,
     "rental_count": 7,
-    "sale_count": 58,
+    "sale_count": 61,
     "median_rent": 1400,
-    "median_sale_price": 255000,
+    "median_sale_price": 260000,
     "average_yield": 15.16,
-    "average_opportunity_score": 8.11,
-    "average_days_on_market_rent": 12,
-    "average_days_on_market_sale": 12
+    "average_opportunity_score": 7.75,
+    "average_days_on_market_rent": 14,
+    "average_days_on_market_sale": 14
   },
   {
     "city": "Mutasa",
@@ -477,7 +513,7 @@
     "average_yield": null,
     "average_opportunity_score": 0.0,
     "average_days_on_market_rent": null,
-    "average_days_on_market_sale": 12
+    "average_days_on_market_sale": 14
   },
   {
     "city": "Mvuma",
@@ -489,7 +525,7 @@
     "average_yield": null,
     "average_opportunity_score": 0.0,
     "average_days_on_market_rent": null,
-    "average_days_on_market_sale": 11
+    "average_days_on_market_sale": 12
   },
   {
     "city": "Mvurwi",
@@ -500,8 +536,8 @@
     "median_sale_price": 36500,
     "average_yield": 23.67,
     "average_opportunity_score": 60.0,
-    "average_days_on_market_rent": 12,
-    "average_days_on_market_sale": 12
+    "average_days_on_market_rent": 14,
+    "average_days_on_market_sale": 14
   },
   {
     "city": "Ngezi",
@@ -513,19 +549,19 @@
     "average_yield": null,
     "average_opportunity_score": 0.0,
     "average_days_on_market_rent": null,
-    "average_days_on_market_sale": 12
+    "average_days_on_market_sale": 14
   },
   {
     "city": "Norton",
     "suburb_count": 7,
     "rental_count": 5,
-    "sale_count": 108,
-    "median_rent": 650,
-    "median_sale_price": 90000,
-    "average_yield": 8.92,
-    "average_opportunity_score": 23.0,
-    "average_days_on_market_rent": 12,
-    "average_days_on_market_sale": 11
+    "sale_count": 103,
+    "median_rent": 900,
+    "median_sale_price": 85000,
+    "average_yield": 95.72,
+    "average_opportunity_score": 21.57,
+    "average_days_on_market_rent": 14,
+    "average_days_on_market_sale": 12
   },
   {
     "city": "Nyabira",
@@ -537,7 +573,7 @@
     "average_yield": null,
     "average_opportunity_score": 0.0,
     "average_days_on_market_rent": null,
-    "average_days_on_market_sale": 12
+    "average_days_on_market_sale": 14
   },
   {
     "city": "Nyanga",
@@ -549,7 +585,7 @@
     "average_yield": null,
     "average_opportunity_score": 0.0,
     "average_days_on_market_rent": null,
-    "average_days_on_market_sale": 12
+    "average_days_on_market_sale": 14
   },
   {
     "city": "Ongwediva",
@@ -561,7 +597,7 @@
     "average_yield": null,
     "average_opportunity_score": 0.0,
     "average_days_on_market_rent": null,
-    "average_days_on_market_sale": 12
+    "average_days_on_market_sale": 14
   },
   {
     "city": "Penhalonga",
@@ -573,7 +609,7 @@
     "average_yield": null,
     "average_opportunity_score": 0.0,
     "average_days_on_market_rent": null,
-    "average_days_on_market_sale": 12
+    "average_days_on_market_sale": 14
   },
   {
     "city": "Plumtree",
@@ -585,7 +621,7 @@
     "average_yield": null,
     "average_opportunity_score": 0.0,
     "average_days_on_market_rent": null,
-    "average_days_on_market_sale": 12
+    "average_days_on_market_sale": 14
   },
   {
     "city": "Port Shepston",
@@ -597,7 +633,7 @@
     "average_yield": null,
     "average_opportunity_score": 0.0,
     "average_days_on_market_rent": null,
-    "average_days_on_market_sale": 12
+    "average_days_on_market_sale": 14
   },
   {
     "city": "Pretoria",
@@ -609,43 +645,43 @@
     "average_yield": null,
     "average_opportunity_score": 0.0,
     "average_days_on_market_rent": null,
-    "average_days_on_market_sale": 12
+    "average_days_on_market_sale": 14
   },
   {
     "city": "Redcliff",
     "suburb_count": 1,
     "rental_count": 0,
-    "sale_count": 5,
+    "sale_count": 2,
     "median_rent": null,
-    "median_sale_price": 55000,
+    "median_sale_price": 61500,
     "average_yield": null,
     "average_opportunity_score": 0.0,
     "average_days_on_market_rent": null,
-    "average_days_on_market_sale": 11
+    "average_days_on_market_sale": 14
   },
   {
     "city": "Rusape",
     "suburb_count": 1,
     "rental_count": 0,
-    "sale_count": 6,
+    "sale_count": 4,
     "median_rent": null,
-    "median_sale_price": 41000,
+    "median_sale_price": 76000,
     "average_yield": null,
     "average_opportunity_score": 0.0,
     "average_days_on_market_rent": null,
-    "average_days_on_market_sale": 12
+    "average_days_on_market_sale": 14
   },
   {
     "city": "Ruwa",
     "suburb_count": 13,
-    "rental_count": 63,
-    "sale_count": 154,
+    "rental_count": 60,
+    "sale_count": 166,
     "median_rent": 650,
-    "median_sale_price": 100000,
-    "average_yield": 6.44,
-    "average_opportunity_score": 27.08,
-    "average_days_on_market_rent": 10,
-    "average_days_on_market_sale": 11
+    "median_sale_price": 94000,
+    "average_yield": 7.13,
+    "average_opportunity_score": 28.38,
+    "average_days_on_market_rent": 12,
+    "average_days_on_market_sale": 13
   },
   {
     "city": "Seke",
@@ -657,19 +693,19 @@
     "average_yield": null,
     "average_opportunity_score": 0.0,
     "average_days_on_market_rent": null,
-    "average_days_on_market_sale": 12
+    "average_days_on_market_sale": 14
   },
   {
     "city": "Shamva",
     "suburb_count": 1,
     "rental_count": 0,
-    "sale_count": 3,
+    "sale_count": 2,
     "median_rent": null,
     "median_sale_price": 90000,
     "average_yield": null,
     "average_opportunity_score": 0.0,
     "average_days_on_market_rent": null,
-    "average_days_on_market_sale": 12
+    "average_days_on_market_sale": 14
   },
   {
     "city": "Shurugwi",
@@ -681,7 +717,7 @@
     "average_yield": null,
     "average_opportunity_score": 0.0,
     "average_days_on_market_rent": null,
-    "average_days_on_market_sale": 12
+    "average_days_on_market_sale": 14
   },
   {
     "city": "Umzingwane",
@@ -693,19 +729,19 @@
     "average_yield": null,
     "average_opportunity_score": 0.0,
     "average_days_on_market_rent": null,
-    "average_days_on_market_sale": 12
+    "average_days_on_market_sale": 14
   },
   {
     "city": "Victoria Falls",
     "suburb_count": 1,
     "rental_count": 0,
-    "sale_count": 54,
+    "sale_count": 51,
     "median_rent": null,
-    "median_sale_price": 337500,
+    "median_sale_price": 350000,
     "average_yield": null,
-    "average_opportunity_score": 4.0,
+    "average_opportunity_score": 3.0,
     "average_days_on_market_rent": null,
-    "average_days_on_market_sale": 12
+    "average_days_on_market_sale": 14
   },
   {
     "city": "Vilanculos",
@@ -717,19 +753,31 @@
     "average_yield": null,
     "average_opportunity_score": 0.0,
     "average_days_on_market_rent": null,
-    "average_days_on_market_sale": 12
+    "average_days_on_market_sale": 14
   },
   {
     "city": "Vumba",
     "suburb_count": 1,
     "rental_count": 0,
-    "sale_count": 2,
+    "sale_count": 3,
     "median_rent": null,
-    "median_sale_price": 277500,
+    "median_sale_price": 280000,
     "average_yield": null,
     "average_opportunity_score": 0.0,
     "average_days_on_market_rent": null,
-    "average_days_on_market_sale": 12
+    "average_days_on_market_sale": 14
+  },
+  {
+    "city": "Zvimba",
+    "suburb_count": 1,
+    "rental_count": 0,
+    "sale_count": 1,
+    "median_rent": null,
+    "median_sale_price": 27000,
+    "average_yield": null,
+    "average_opportunity_score": 0.0,
+    "average_days_on_market_rent": null,
+    "average_days_on_market_sale": 14
   },
   {
     "city": "Zvishavane",
@@ -740,7 +788,7 @@
     "median_sale_price": 80000,
     "average_yield": 3.98,
     "average_opportunity_score": 31.0,
-    "average_days_on_market_rent": 12,
-    "average_days_on_market_sale": 12
+    "average_days_on_market_rent": 14,
+    "average_days_on_market_sale": 14
   }
 ]

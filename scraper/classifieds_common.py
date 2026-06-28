@@ -17,6 +17,11 @@ if str(_root) not in sys.path:
 
 from scraper.property_co_common import normalize_city
 
+try:
+    from analytics.price_utils import reconcile_classifieds_rent_price
+except ImportError:
+    reconcile_classifieds_rent_price = None  # type: ignore[misc, assignment]
+
 SITE_ORIGIN = "https://www.classifieds.co.zw"
 USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
@@ -246,6 +251,32 @@ def format_price_raw(price: Optional[int], listing_kind: str) -> str:
     return f"USD {price:,}"
 
 
+def extract_card_price(card, listing_kind: str) -> tuple[Optional[int], str]:
+    """Read listing price from card markup.
+
+    Prefer the visible `.price` node (includes /month for rentals). The
+    `.usd-price-tooltip` sibling can contain a ZIG amount mislabeled as USD.
+    """
+    for node in card.select(".pull-left.price, .price.pull-left"):
+        text = node.get_text(" ", strip=True)
+        if not text:
+            continue
+        if listing_kind == "rental" and "month" not in text.lower():
+            continue
+        price = parse_price(text)
+        if price is not None:
+            return price, text
+
+    tooltip = card.select_one(".usd-price-tooltip")
+    if tooltip:
+        text = tooltip.get_text(strip=True)
+        price = parse_price(text)
+        if price is not None:
+            return price, text
+
+    return None, ""
+
+
 def parse_listing_card(card, feed_type: str, listing_kind: str) -> Optional[Dict]:
     listing_id = card.get("data-id")
     if not listing_id:
@@ -266,9 +297,7 @@ def parse_listing_card(card, feed_type: str, listing_kind: str) -> Optional[Dict
     if feed_type == "residential_land" and not is_residential_land(title):
         return None
 
-    price_node = card.select_one(".usd-price-tooltip")
-    price_text = price_node.get_text(strip=True) if price_node else ""
-    price = parse_price(price_text)
+    price, _price_text = extract_card_price(card, listing_kind)
 
     suburb = parse_suburb_from_title(title)
     bedrooms, bathrooms, land_size, land_size_unit, region = parse_property_chips(card)
@@ -276,6 +305,11 @@ def parse_listing_card(card, feed_type: str, listing_kind: str) -> Optional[Dict
     location = build_location(suburb, city)
     description = extract_card_description(card)
     agency_name, agency_logo = extract_agency(card)
+
+    if listing_kind == "rental" and reconcile_classifieds_rent_price is not None:
+        price = reconcile_classifieds_rent_price(price, description)
+        if price is None:
+            return None
 
     record = {
         "title": title,

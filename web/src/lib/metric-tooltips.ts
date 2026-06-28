@@ -23,6 +23,12 @@ export const DOM_RENT_TOOLTIP =
 export const DOM_SALE_TOOLTIP =
   "Average days sale listings stayed active in our scrape history for this suburb.";
 
+export const PRICE_TREND_TOOLTIP =
+  "Daily median price from active listings, rolled up across property types in the suburb. Percent change compares the first and last snapshot in the selected range.";
+
+export const SUPPLY_TREND_TOOLTIP =
+  "Count of active listings captured in each daily snapshot. Rising supply can mean more choice; falling supply can mean tighter inventory.";
+
 export function columnsForMode(mode: ExploreMode): SortKey[] {
   const base: SortKey[] = ["suburb", "city", "median_rent"];
   if (mode === "buy") {

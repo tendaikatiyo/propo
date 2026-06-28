@@ -10,16 +10,29 @@ Strengthen Propo as a **market intelligence platform** for Zimbabwe — not a li
 
 ---
 
+## Ship status (2026-06-28)
+
+| Feature | Status | Handover |
+| ------- | ------ | -------- |
+| **F0** Pipeline type normalization | ✅ Done | [2026-06-28-f0-f1-segment-explore-polish.md](./2026-06-28-f0-f1-segment-explore-polish.md) |
+| **F1** Segment medians + Explore polish | ✅ Done | same |
+| **F2** Price trends | ✅ Done | [2026-06-28-f2-trends-classifieds-prices.md](./2026-06-28-f2-trends-classifieds-prices.md) |
+| **F3–F10** | Not started | below |
+
+**Next recommended:** F3 (fair value) → F8 transparency slice → pipeline refresh for repaired classifieds prices.
+
+---
+
 ## Problem (current behaviour)
 
 | Layer | Today | Gap |
 | ----- | ----- | --- |
-| **Explore** | Budget vs suburb-wide median; type filter uses `*_count` but price is aggregate | Spec filters mislead (e.g. townhouse listings show, suburbs empty — see normalize_type bug) |
-| **Suburb profile** | Point-in-time medians, yield, DOM, property mix, value listings | No historical trend; no "fair vs median" on listings |
+| **Explore** | Segment medians when type/bed set; fallback labeled; **Include suburb medians** switch; buy has no room | F7 affordability cards; segment-aware home preview |
+| **Suburb profile** | Spec medians via `?type=&bedroom=`; point-in-time yield, DOM, property mix | No historical trend; no fair-value on listings |
 | **Rankings** | Static leaderboards (yield, opportunity, DOM) | No "movers" (price change, supply shift) |
 | **Compare** | Up to 3 pinned suburbs, aggregate metrics | No spec-aware compare; no trend sparklines |
 | **History data** | `market_snapshots_daily`, `listing_snapshots` populated by daily pipeline | **Not exposed in web UI** |
-| **Trust** | Confidence badge, methodology page, data freshness pill | Sample sizes and segment limits not surfaced on suburb pages |
+| **Trust** | Confidence badge, fallback copy on Explore; methodology page | Sample sizes per segment not on suburb pages (F8) |
 | **Listings join** | Filter by suburb string equality | Mismatches vs `market_metrics` suburb names; no `market_id` on listings |
 
 ---
@@ -36,7 +49,7 @@ Strengthen Propo as a **market intelligence platform** for Zimbabwe — not a li
 | Suburb UI | `suburb-profile.tsx`, `suburb-table.tsx`, `suburb-card.tsx`, `city-dashboard.tsx` |
 | Listings UI | `listing-card.tsx`, `budget-listings.tsx`, `suburb-value-listings.tsx` |
 | Compare / rankings | `compare-page.tsx`, `compare-table.tsx`, `rankings-page.tsx`, `web/src/lib/rankings.ts` |
-| Related handovers | [2026-06-26-segment-medians-option-b.md](./2026-06-26-segment-medians-option-b.md), [2026-06-25-web-ux-listings-explore.md](./2026-06-25-web-ux-listings-explore.md) |
+| Related handovers | [2026-06-28-f0-f1-segment-explore-polish.md](./2026-06-28-f0-f1-segment-explore-polish.md), [2026-06-26-segment-medians-option-b.md](./2026-06-26-segment-medians-option-b.md), [2026-06-25-web-ux-listings-explore.md](./2026-06-25-web-ux-listings-explore.md) |
 
 ---
 
@@ -74,7 +87,7 @@ flowchart TD
 
 ---
 
-## F0 — Pipeline type normalization fix
+## F0 — Pipeline type normalization fix ✅
 
 ### Problem
 
@@ -86,11 +99,12 @@ Check **townhouse/cluster before house** in both files; optionally consolidate i
 
 ### Files to touch
 
-- [ ] `analytics/market_metrics.py` — `normalize_type()`
-- [ ] `analytics/daily_metrics.py` — `bucket_property_type()`
-- [ ] `analytics/listing_utils.py` (optional) — shared normalizer imported by both
-- [ ] Run `npm run analytics:metrics` + spot-check `townhouse_count > 0` in `data/market_metrics.json`
-- [ ] `npm run pipeline:supabase` or daily sync
+- [x] `analytics/market_metrics.py` — uses `listing_utils.normalize_property_type()`
+- [x] `analytics/daily_metrics.py` — uses shared normalizer
+- [x] `analytics/listing_utils.py` — shared `normalize_property_type()`
+- [x] `package.json` — `analytics:metrics` runs as `python -m analytics.market_metrics`
+- [x] Run `npm run analytics:metrics` + spot-check `townhouse_count > 0` in `data/market_metrics.json`
+- [x] `sync_dashboard` (metrics synced); full `pipeline:supabase` ingest may need retry
 
 ### Verify
 
@@ -103,9 +117,10 @@ Check **townhouse/cluster before house** in both files; optionally consolidate i
 
 ---
 
-## F1 — Segment medians (spec-aware prices)
+## F1 — Segment medians (spec-aware prices) ✅
 
-**Full spec:** [2026-06-26-segment-medians-option-b.md](./2026-06-26-segment-medians-option-b.md)
+**Full spec:** [2026-06-26-segment-medians-option-b.md](./2026-06-26-segment-medians-option-b.md)  
+**Ship notes:** [2026-06-28-f0-f1-segment-explore-polish.md](./2026-06-28-f0-f1-segment-explore-polish.md)
 
 ### Deliverable (short)
 
@@ -115,22 +130,36 @@ Pre-aggregate `(property_type, bedroom_bucket)` medians into `market_metrics.seg
 
 **Pipeline & DB**
 
-- [ ] `supabase/migrations/006_market_segments.sql`
-- [ ] `analytics/market_metrics.py` — segment rollups
-- [ ] Regenerate `data/market_metrics.json`; sync Supabase
+- [x] `supabase/migrations/006_market_segments.sql` (applied on Supabase)
+- [x] `analytics/market_metrics.py` — segment rollups
+- [x] Regenerate `data/market_metrics.json`; sync Supabase
 
 **Web**
 
-- [ ] `web/src/lib/types.ts` — `MarketSegmentStats`, `segments?` on `MarketMetric`
-- [ ] `web/src/lib/segments.ts` (new) — `resolveSegmentStats`, `priceForFilters`
-- [ ] `web/src/lib/explore.ts` — budget uses segment median
-- [ ] `web/src/lib/metric-tooltips.ts` — dynamic column labels
-- [ ] `web/src/components/markets/explore-results.tsx`
-- [ ] `web/src/components/markets/suburb-table.tsx`
-- [ ] `web/src/components/mobile/suburb-list.tsx`
-- [ ] `web/src/components/markets/suburb-card.tsx`
-- [ ] `web/src/components/markets/suburb-profile.tsx` — read `type` / `bedroom` from URL
-- [ ] Suburb links — preserve filter query string on navigate
+- [x] `web/src/lib/types.ts` — `MarketSegmentStats`, `segments?` on `MarketMetric`
+- [x] `web/src/lib/segments.ts` (new) — `resolveSegmentStats`, `priceForFilters`
+- [x] `web/src/lib/explore.ts` — budget uses segment median
+- [x] `web/src/lib/metric-tooltips.ts` — dynamic column labels
+- [x] `web/src/components/markets/explore-results.tsx`
+- [x] `web/src/components/markets/suburb-table.tsx`
+- [x] `web/src/components/mobile/suburb-list.tsx`
+- [x] `web/src/components/markets/suburb-card.tsx`
+- [x] `web/src/components/markets/suburb-profile.tsx` — read `type` / `bedroom` from URL
+- [x] `web/src/lib/slug.ts` — suburb links preserve filter query string
+
+### F1 polish (shipped with F1, 2026-06-28)
+
+- [x] Suburb median fallback labeling — `segment-price-note.tsx`, table "Suburb median" sublabel
+- [x] **Include suburb medians** switch (`hideSuburbMedianFallback`, default hide; URL `showfallback=1`)
+- [x] **Show suburbs with less data** switch (replaces thin-markets button)
+- [x] `web/src/components/ui/switch.tsx`
+- [x] Buy mode: no `room`; room → 1 bed; `normalizeExploreFilters()`
+
+**Still open (F8 / Phase 3 overlap)**
+
+- [ ] Methodology page segment-median note
+- [ ] `web/src/lib/segments.test.ts` (optional)
+- [ ] `sample-size-badge.tsx` on suburb profile (F8)
 
 ### Verify
 
@@ -535,7 +564,7 @@ Track core events server-side for **your** product decisions and future B2B pitc
 
 | Migration | Feature | Notes |
 | --------- | ------- | ----- |
-| `006_market_segments.sql` | F1 | From segment handover |
+| `006_market_segments.sql` | F1 | ✅ Applied on Supabase (2026-06-28) |
 | `007_trends_rollup.sql` | F2 | Optional view |
 | `008_listings_market_id.sql` | F9 | Backfill only if needed (`market_id` may exist) |
 | `009_analytics.sql` | F10 | Optional |
@@ -549,14 +578,14 @@ Check `001_history.sql` — `listings.market_id` column already exists; F9 may b
 - **Do not** add chat / natural-language property search as primary UX
 - **Do not** expand into a Facebook-style listing feed (explore listings panel was removed intentionally)
 - **Do not** promise attributes not in scrape (borehole, walled, pool) on fair-value or reports
-- **Do not** block F2/F3 on perfect segment data — ship F0+F1 first
+- **Do not** block F2/F3 on perfect segment data — F0+F1 shipped; fallback UX in place
 - **Do not** build consumer email alerts without auth strategy
 
 ---
 
 ## Success criteria (platform-level)
 
-1. User can answer **"where should I rent a 2-bed flat at $700?"** with segment-accurate suburbs (F0+F1+F7)
+1. User can answer **"where should I rent a 2-bed flat at $700?"** with segment-accurate suburbs ✅ (F0+F1; F7 cards still TODO)
 2. User can answer **"is this listing fairly priced?"** on listing cards (F3)
 3. User can answer **"is Borrowdale getting more expensive?"** from suburb trend chart (F2)
 4. User can **share/print a suburb report** for diaspora research (F4)
@@ -608,7 +637,7 @@ npm run build
 
 ## Suggested session order for agents
 
-1. Read F0 + [segment handover](./2026-06-26-segment-medians-option-b.md) → implement F0 then F1
+1. ~~F0 + F1~~ — done; see [2026-06-28 handover](./2026-06-28-f0-f1-segment-explore-polish.md)
 2. F2 trends API + suburb chart (unblocks F6)
 3. F3 fair value badges
 4. F8 transparency (quick win alongside F3)

@@ -3,6 +3,8 @@ import re
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional
 
+from analytics.price_utils import reconcile_classifieds_rent_price, reconcile_rent_price
+
 DATA_DIR = Path(__file__).resolve().parents[1] / "data"
 RAW_SALES_PATH = DATA_DIR / "sales.json"
 RAW_RENTS_PATH = DATA_DIR / "rentals.json"
@@ -139,16 +141,23 @@ def normalize_listing_record(
     suburb = normalize_suburb(record.get("suburb"))
     price = parse_price(record.get("price"))
 
-    if not suburb or not city:
-        return None
-    if price is None or price <= 0:
-        return None
-
     title = normalize_text(record.get("title"))
     location = str(record.get("location", "")).strip()
     location = re.sub(r"\s+", " ", location)
     description = str(record.get("description", "")).strip()
     description = re.sub(r"\s+", " ", description)
+
+    if listing_type == "rent":
+        if source == "classifieds":
+            price = reconcile_classifieds_rent_price(price, description)
+        else:
+            price = reconcile_rent_price(price, description)
+
+    if not suburb or not city:
+        return None
+    if price is None or price <= 0:
+        return None
+
     property_type = normalize_property_type(record.get("property_type") or title)
     if property_type == "unknown" and listing_type == "sale":
         property_type = normalize_property_type(title)
@@ -156,6 +165,12 @@ def normalize_listing_record(
     city = normalize_city(city)
     suburb = normalize_suburb(suburb)
     market_id = f"{slugify(city)}_{slugify(suburb)}"
+    original_price = parse_price(record.get("price"))
+    price_raw = str(record.get("price_raw", "")).strip()
+    if listing_type == "rent" and price != original_price:
+        price_raw = f"USD {price:,}/pm"
+    elif not price_raw:
+        price_raw = f"USD {price:,}/pm" if listing_type == "rent" else f"USD {price:,}"
 
     return {
         "listing_url": listing_url,
@@ -165,7 +180,7 @@ def normalize_listing_record(
         "city": city,
         "suburb": suburb,
         "title": title,
-        "price_raw": str(record.get("price_raw", "")).strip(),
+        "price_raw": price_raw,
         "price": price,
         "location": location,
         "property_type": property_type,
