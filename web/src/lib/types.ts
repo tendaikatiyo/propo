@@ -8,6 +8,21 @@ export type PropertyType =
 
 export type ExploreMode = "rent" | "buy";
 
+export interface MarketSegmentStats {
+  median_rent?: number | null;
+  average_rent?: number | null;
+  minimum_rent?: number | null;
+  maximum_rent?: number | null;
+  rental_count?: number;
+  median_sale_price?: number | null;
+  average_sale_price?: number | null;
+  minimum_sale_price?: number | null;
+  maximum_sale_price?: number | null;
+  sale_count?: number;
+  median_days_on_market_rent?: number | null;
+  median_days_on_market_sale?: number | null;
+}
+
 export interface MarketMetric {
   market_id: string;
   city: string;
@@ -42,6 +57,7 @@ export interface MarketMetric {
   confidence_score: number;
   opportunity_score: number;
   updated_at?: string;
+  segments?: Record<string, MarketSegmentStats>;
 }
 
 export interface CityMetric {

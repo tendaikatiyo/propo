@@ -8,7 +8,14 @@ import { PropertyMixBar } from "@/components/markets/property-mix-bar";
 import { ConfidenceBadge } from "@/components/markets/confidence-badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { formatCurrency, formatPercent, sanitizeLabel } from "@/lib/format";
-import type { MarketMetric } from "@/lib/types";
+import {
+  isSegmentLimitedData,
+  priceForFilters,
+  resolveSegmentStats,
+  segmentFilterLabel,
+  segmentMedianLabel,
+} from "@/lib/segments";
+import type { MarketMetric, PropertyType } from "@/lib/types";
 import { cityPath, suburbPath } from "@/lib/slug";
 
 function MetricCard({ label, value }: { label: string; value: string }) {
@@ -24,7 +31,30 @@ function MetricCard({ label, value }: { label: string; value: string }) {
   );
 }
 
-export function SuburbProfile({ market, related }: { market: MarketMetric; related: MarketMetric[] }) {
+export function SuburbProfile({
+  market,
+  related,
+  propertyType = null,
+  bedroom = null,
+}: {
+  market: MarketMetric;
+  related: MarketMetric[];
+  propertyType?: PropertyType | null;
+  bedroom?: number | null;
+}) {
+  const segment = resolveSegmentStats(market, propertyType, bedroom);
+  const specLabel = segmentFilterLabel(propertyType, bedroom);
+  const rentLimited = isSegmentLimitedData(market, "rent", { propertyType, bedroom });
+  const saleLimited = isSegmentLimitedData(market, "buy", { propertyType, bedroom });
+
+  const medianRent = priceForFilters(market, "rent", { propertyType, bedroom });
+  const medianSale = priceForFilters(market, "buy", { propertyType, bedroom });
+
+  const rentMin = segment?.minimum_rent ?? market.minimum_rent;
+  const rentMax = segment?.maximum_rent ?? market.maximum_rent;
+  const saleMin = segment?.minimum_sale_price ?? market.minimum_sale_price;
+  const saleMax = segment?.maximum_sale_price ?? market.maximum_sale_price;
+
   return (
     <div className="space-y-8 pb-20 lg:pb-0">
       <BackLink href={cityPath(market.city)} label={`Back to ${market.city}`} />
@@ -39,6 +69,12 @@ export function SuburbProfile({ market, related }: { market: MarketMetric; relat
           <h1 className="font-heading text-3xl font-medium tracking-[-0.02em] sm:text-4xl">
             {sanitizeLabel(market.suburb)}
           </h1>
+          {specLabel ? (
+            <p className="mt-2 text-sm text-muted-foreground">
+              Showing medians for {specLabel}
+              {rentLimited || saleLimited ? " (limited sample — suburb-wide fallback where needed)" : ""}
+            </p>
+          ) : null}
         </div>
         <div className="lg:hidden">
           <ConfidenceBadge score={market.confidence_score} />
@@ -50,16 +86,30 @@ export function SuburbProfile({ market, related }: { market: MarketMetric; relat
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        <MetricCard label="Median rent" value={formatCurrency(market.median_rent)} />
-        <MetricCard label="Median sale" value={formatCurrency(market.median_sale_price)} />
+        <MetricCard
+          label={segmentMedianLabel("rent", propertyType, bedroom)}
+          value={formatCurrency(medianRent)}
+        />
+        <MetricCard
+          label={segmentMedianLabel("buy", propertyType, bedroom)}
+          value={formatCurrency(medianSale)}
+        />
         <MetricCard label="Gross yield" value={formatPercent(market.yield_percent)} />
         <MetricCard
           label="Days on market (rent)"
-          value={market.average_days_on_market_rent != null ? `${market.average_days_on_market_rent}d` : "—"}
+          value={
+            (segment?.median_days_on_market_rent ?? market.average_days_on_market_rent) != null
+              ? `${segment?.median_days_on_market_rent ?? market.average_days_on_market_rent}d`
+              : "—"
+          }
         />
         <MetricCard
           label="Days on market (sale)"
-          value={market.average_days_on_market_sale != null ? `${market.average_days_on_market_sale}d` : "—"}
+          value={
+            (segment?.median_days_on_market_sale ?? market.average_days_on_market_sale) != null
+              ? `${segment?.median_days_on_market_sale ?? market.average_days_on_market_sale}d`
+              : "—"
+          }
         />
         <MetricCard label="Opportunity score" value={String(market.opportunity_score ?? "—")} />
       </div>
@@ -81,16 +131,15 @@ export function SuburbProfile({ market, related }: { market: MarketMetric; relat
           <div>
             <p className="mb-2 text-sm font-medium">Rent</p>
             <p className="text-sm text-muted-foreground">
-              Min {formatCurrency(market.minimum_rent)} · Median{" "}
-              {formatCurrency(market.median_rent)} · Max {formatCurrency(market.maximum_rent)}
+              Min {formatCurrency(rentMin)} · Median {formatCurrency(medianRent)} · Max{" "}
+              {formatCurrency(rentMax)}
             </p>
           </div>
           <div>
             <p className="mb-2 text-sm font-medium">Sale</p>
             <p className="text-sm text-muted-foreground">
-              Min {formatCurrency(market.minimum_sale_price)} · Median{" "}
-              {formatCurrency(market.median_sale_price)} · Max{" "}
-              {formatCurrency(market.maximum_sale_price)}
+              Min {formatCurrency(saleMin)} · Median {formatCurrency(medianSale)} · Max{" "}
+              {formatCurrency(saleMax)}
             </p>
           </div>
         </CardContent>
@@ -107,7 +156,7 @@ export function SuburbProfile({ market, related }: { market: MarketMetric; relat
             {related.map((item) => (
               <Link
                 key={item.market_id}
-                href={suburbPath(item.city, item.suburb)}
+                href={suburbPath(item.city, item.suburb, { type: propertyType, bedroom })}
                 className="rounded-2xl border border-border/80 bg-card p-4 transition-shadow hover:shadow-[var(--shadow-card)]"
               >
                 <p className="font-medium">{sanitizeLabel(item.suburb)}</p>

@@ -1,9 +1,10 @@
 import json
-import math
-from collections import Counter
+from collections import Counter, defaultdict
 from pathlib import Path
 from statistics import mean, median
 from typing import Any, Dict, Iterable, List, Optional
+
+from analytics.listing_utils import normalize_property_type
 
 DATA_DIR = Path(__file__).resolve().parents[1] / "data"
 CLEAN_SALES_PATH = DATA_DIR / "clean_sales.json"
@@ -49,21 +50,88 @@ def confidence_points(count: int) -> int:
     return 0
 
 
-def normalize_type(value: str) -> str:
-    text = str(value or "").lower()
-    if "house" in text:
-        return "house"
-    if "townhouse" in text or "cluster" in text:
-        return "townhouse"
-    if "apartment" in text:
-        return "apartment"
-    if "flat" in text:
+def segment_property_type(value: Any) -> Optional[str]:
+    """Canonical type for segment keys; apartment rolls into flat."""
+    ptype = normalize_property_type(value)
+    if ptype in ("unknown", "residential_land", "cottage"):
+        return None
+    if ptype == "apartment":
         return "flat"
-    if "room" in text:
-        return "room"
-    if "commercial" in text or "shop" in text or "office" in text:
-        return "commercial"
-    return "unknown"
+    return ptype
+
+
+def new_segment_bucket() -> Dict[str, List[int]]:
+    return {
+        "rental_prices": [],
+        "sale_prices": [],
+        "rental_dom": [],
+        "sale_dom": [],
+    }
+
+
+def add_listing_to_segments(
+    segments: Dict[str, Dict[str, List[int]]],
+    listing: Dict[str, Any],
+    listing_kind: str,
+) -> None:
+    ptype = segment_property_type(listing.get("property_type", "unknown"))
+    bed = normalize_bedroom_bucket(listing.get("bedrooms"))
+    price = int(listing["price"])
+    dom = listing.get("days_on_market")
+
+    def append(key: str) -> None:
+        bucket = segments[key]
+        if listing_kind == "rent":
+            bucket["rental_prices"].append(price)
+            if dom is not None:
+                bucket["rental_dom"].append(int(dom))
+        else:
+            bucket["sale_prices"].append(price)
+            if dom is not None:
+                bucket["sale_dom"].append(int(dom))
+
+    if ptype:
+        append(f"{ptype}:*")
+        if bed:
+            append(f"{ptype}:{bed}")
+    if bed:
+        append(f"*:{bed}")
+
+
+def build_segment_stats(bucket: Dict[str, List[int]]) -> Optional[Dict[str, Any]]:
+    rental_prices = bucket["rental_prices"]
+    sale_prices = bucket["sale_prices"]
+    rental_count = len(rental_prices)
+    sale_count = len(sale_prices)
+    if rental_count == 0 and sale_count == 0:
+        return None
+
+    stats: Dict[str, Any] = {}
+    if rental_count > 0:
+        average_rent = safe_mean(rental_prices)
+        stats.update(
+            {
+                "median_rent": safe_median(rental_prices),
+                "average_rent": int(round(average_rent)) if average_rent is not None else None,
+                "minimum_rent": min(rental_prices),
+                "maximum_rent": max(rental_prices),
+                "rental_count": rental_count,
+                "median_days_on_market_rent": safe_median(bucket["rental_dom"]),
+            }
+        )
+    if sale_count > 0:
+        average_sale = safe_mean(sale_prices)
+        stats.update(
+            {
+                "median_sale_price": safe_median(sale_prices),
+                "average_sale_price": int(round(average_sale)) if average_sale is not None else None,
+                "minimum_sale_price": min(sale_prices),
+                "maximum_sale_price": max(sale_prices),
+                "sale_count": sale_count,
+                "median_days_on_market_sale": safe_median(bucket["sale_dom"]),
+            }
+        )
+    return stats
 
 
 def normalize_bedroom_bucket(value: Any) -> Optional[str]:
@@ -127,13 +195,14 @@ def build_market_metrics(sales: List[Dict[str, Any]], rentals: List[Dict[str, An
                 "bedroom_buckets": [],
                 "rental_count": 0,
                 "sale_count": 0,
+                "segment_prices": defaultdict(new_segment_bucket),
             }
         return markets[market_id]
 
     for rent in rentals:
         market = ensure_market(rent)
         market["rental_prices"].append(int(rent["price"]))
-        market["property_types"].append(normalize_type(rent.get("property_type", "unknown")))
+        market["property_types"].append(normalize_property_type(rent.get("property_type", "unknown")))
         bedroom_bucket = normalize_bedroom_bucket(rent.get("bedrooms"))
         if bedroom_bucket:
             market["bedroom_buckets"].append(bedroom_bucket)
@@ -141,11 +210,12 @@ def build_market_metrics(sales: List[Dict[str, Any]], rentals: List[Dict[str, An
         dom = rent.get("days_on_market")
         if dom is not None:
             market["rental_days_on_market"].append(int(dom))
+        add_listing_to_segments(market["segment_prices"], rent, "rent")
 
     for sale in sales:
         market = ensure_market(sale)
         market["sale_prices"].append(int(sale["price"]))
-        market["property_types"].append(normalize_type(sale.get("property_type", "unknown")))
+        market["property_types"].append(normalize_property_type(sale.get("property_type", "unknown")))
         bedroom_bucket = normalize_bedroom_bucket(sale.get("bedrooms"))
         if bedroom_bucket:
             market["bedroom_buckets"].append(bedroom_bucket)
@@ -153,6 +223,7 @@ def build_market_metrics(sales: List[Dict[str, Any]], rentals: List[Dict[str, An
         dom = sale.get("days_on_market")
         if dom is not None:
             market["sale_days_on_market"].append(int(dom))
+        add_listing_to_segments(market["segment_prices"], sale, "sale")
 
     output: List[Dict[str, Any]] = []
     for market_id, market in markets.items():
@@ -186,6 +257,13 @@ def build_market_metrics(sales: List[Dict[str, Any]], rentals: List[Dict[str, An
 
         property_type_counter = Counter(market["property_types"])
         bedroom_counter = Counter(market["bedroom_buckets"])
+
+        segments: Dict[str, Dict[str, Any]] = {}
+        for key, bucket in market["segment_prices"].items():
+            stats = build_segment_stats(bucket)
+            if stats:
+                segments[key] = stats
+
         output.append(
             {
                 "market_id": market_id,
@@ -226,6 +304,7 @@ def build_market_metrics(sales: List[Dict[str, Any]], rentals: List[Dict[str, An
                 "opportunity_score": score_opportunity(
                     yield_percent, rental_count, sale_count, confidence_score
                 ),
+                "segments": segments,
             }
         )
 

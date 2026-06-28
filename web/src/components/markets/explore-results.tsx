@@ -10,6 +10,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { useMarketMetrics } from "@/hooks/use-market-data";
 import { useExploreFilters } from "@/hooks/use-explore-filters";
 import { averageYield, filterMarkets, rankExploreResults } from "@/lib/explore";
+import { exploreBudgetDescription } from "@/lib/metric-tooltips";
 import { formatCurrency, formatPercent } from "@/lib/format";
 
 export function ExploreResults({ preview = false }: { preview?: boolean }) {
@@ -22,12 +23,12 @@ export function ExploreResults({ preview = false }: { preview?: boolean }) {
   );
 
   const rankedInBudget = useMemo(
-    () => rankExploreResults(inBudget, filters.mode),
-    [inBudget, filters.mode]
+    () => rankExploreResults(inBudget, filters.mode, filters),
+    [inBudget, filters]
   );
   const rankedStretch = useMemo(
-    () => rankExploreResults(stretch, filters.mode),
-    [stretch, filters.mode]
+    () => rankExploreResults(stretch, filters.mode, filters),
+    [stretch, filters]
   );
   const avgYield = filters.mode === "buy" ? averageYield(inBudget) : null;
 
@@ -61,7 +62,13 @@ export function ExploreResults({ preview = false }: { preview?: boolean }) {
     return (
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
         {previewMarkets.map((market) => (
-          <SuburbCard key={market.market_id} market={market} mode={filters.mode} badge="In budget" />
+          <SuburbCard
+            key={market.market_id}
+            market={market}
+            mode={filters.mode}
+            badge="In budget"
+            filters={filters}
+          />
         ))}
       </div>
     );
@@ -73,15 +80,19 @@ export function ExploreResults({ preview = false }: { preview?: boolean }) {
         <div>
           <h2 className="font-heading text-xl font-medium tracking-[-0.01em]">In budget</h2>
           <p className="text-[15px] tracking-[0.15px] text-muted-foreground">
-            Suburbs with median {filters.mode === "rent" ? "rent" : "sale price"} at or below{" "}
-            {formatCurrency(filters.budget)}.
+            {exploreBudgetDescription(
+              filters.mode,
+              formatCurrency(filters.budget),
+              filters.propertyType,
+              filters.bedroom
+            )}
           </p>
         </div>
         <div className="lg:hidden">
-          <SuburbList markets={rankedInBudget} mode={filters.mode} />
+          <SuburbList markets={rankedInBudget} mode={filters.mode} filters={filters} />
         </div>
         <div className="hidden lg:block">
-          <SuburbTable markets={rankedInBudget} mode={filters.mode} />
+          <SuburbTable markets={rankedInBudget} mode={filters.mode} filters={filters} />
         </div>
       </section>
 
@@ -100,6 +111,7 @@ export function ExploreResults({ preview = false }: { preview?: boolean }) {
                 market={market}
                 mode={filters.mode}
                 badge="Stretch"
+                filters={filters}
               />
             ))}
           </div>

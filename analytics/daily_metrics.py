@@ -3,7 +3,7 @@ from statistics import mean, median
 from typing import Any, Dict, Iterable, List, Optional
 
 from analytics.history_db import HistoryDatabase, utc_date_iso
-from analytics.listing_utils import days_on_market_from_row
+from analytics.listing_utils import days_on_market_from_row, normalize_property_type
 
 
 def safe_median(numbers: Iterable[int]) -> Optional[int]:
@@ -20,34 +20,13 @@ def safe_mean(numbers: Iterable[int]) -> Optional[int]:
     return int(round(mean(values)))
 
 
-def bucket_property_type(value: Optional[str]) -> str:
-    text = str(value or "unknown").lower()
-    if text == "residential_land":
-        return "residential_land"
-    if "house" in text:
-        return "house"
-    if "townhouse" in text or "cluster" in text:
-        return "townhouse"
-    if "cottage" in text:
-        return "cottage"
-    if "flat" in text:
-        return "flat"
-    if "apartment" in text:
-        return "apartment"
-    if "room" in text:
-        return "room"
-    if "commercial" in text:
-        return "commercial"
-    return "unknown"
-
-
 def build_daily_market_rows(listings: List[Dict[str, Any]], snapshot_date: str) -> List[Dict[str, Any]]:
     groups: Dict[tuple, List[int]] = defaultdict(list)
     dom_groups: Dict[tuple, List[int]] = defaultdict(list)
     meta: Dict[tuple, Dict[str, str]] = {}
 
     for row in listings:
-        property_type = bucket_property_type(row.get("property_type"))
+        property_type = normalize_property_type(row.get("property_type"))
         key = (
             row.get("city", ""),
             row.get("suburb", ""),

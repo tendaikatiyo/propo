@@ -20,11 +20,12 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { COLUMN_TOOLTIPS, columnsForCityDashboard, columnsForMode, DOM_RENT_TOOLTIP, DOM_SALE_TOOLTIP, DOM_TOOLTIP } from "@/lib/metric-tooltips";
+import { COLUMN_TOOLTIPS, columnLabelForMode, columnsForCityDashboard, columnsForMode, DOM_RENT_TOOLTIP, DOM_SALE_TOOLTIP, DOM_TOOLTIP } from "@/lib/metric-tooltips";
 import { formatCurrency, formatPercent, sanitizeLabel } from "@/lib/format";
 import { sortMarkets } from "@/lib/explore";
+import { priceForFilters } from "@/lib/segments";
 import { suburbPath } from "@/lib/slug";
-import type { ExploreMode, MarketMetric, SortDirection, SortKey } from "@/lib/types";
+import type { ExploreFilters, ExploreMode, MarketMetric, SortDirection, SortKey } from "@/lib/types";
 
 const COLUMN_LABELS: Record<SortKey, string> = {
   suburb: "Suburb",
@@ -87,10 +88,12 @@ export function SuburbTable({
   markets,
   mode,
   layout = "explore",
+  filters,
 }: {
   markets: MarketMetric[];
   mode: ExploreMode;
   layout?: "explore" | "city";
+  filters?: Pick<ExploreFilters, "propertyType" | "bedroom">;
 }) {
   const isCityLayout = layout === "city";
   const columns = isCityLayout ? columnsForCityDashboard() : columnsForMode(mode);
@@ -105,8 +108,8 @@ export function SuburbTable({
   );
 
   const sorted = useMemo(
-    () => sortMarkets(markets, sortKey, sortDirection),
-    [markets, sortKey, sortDirection]
+    () => sortMarkets(markets, sortKey, sortDirection, filters),
+    [markets, sortKey, sortDirection, filters]
   );
 
   function toggleSort(key: SortKey) {
@@ -134,7 +137,11 @@ export function SuburbTable({
             {columns.map((col) => (
               <SortableHeader
                 key={col}
-                label={COLUMN_LABELS[col]}
+                label={
+                  !isCityLayout && filters
+                    ? columnLabelForMode(col, mode, filters.propertyType, filters.bedroom)
+                    : COLUMN_LABELS[col]
+                }
                 tooltip={COLUMN_TOOLTIPS[col]}
                 sortKey={col}
                 activeKey={sortKey}
@@ -191,7 +198,21 @@ export function SuburbTable({
         </TableHeader>
         <TableBody>
           {sorted.map((market) => {
-            const price = mode === "rent" ? market.median_rent : market.median_sale_price;
+            const price = priceForFilters(
+              market,
+              mode,
+              filters ?? { propertyType: null, bedroom: null }
+            );
+            const displayRent = priceForFilters(
+              market,
+              "rent",
+              filters ?? { propertyType: null, bedroom: null }
+            );
+            const displaySale = priceForFilters(
+              market,
+              "buy",
+              filters ?? { propertyType: null, bedroom: null }
+            );
             const dom =
               mode === "rent"
                 ? market.average_days_on_market_rent
@@ -201,7 +222,10 @@ export function SuburbTable({
               <TableRow key={market.market_id}>
                 <TableCell className="font-heading font-medium">
                   <Link
-                    href={suburbPath(market.city, market.suburb)}
+                    href={suburbPath(market.city, market.suburb, {
+                      type: filters?.propertyType,
+                      bedroom: filters?.bedroom,
+                    })}
                     className="hover:underline"
                   >
                     {sanitizeLabel(market.suburb)}
@@ -210,11 +234,11 @@ export function SuburbTable({
                 {!isCityLayout ? (
                   <TableCell className="font-heading text-muted-foreground">{market.city}</TableCell>
                 ) : null}
-                <TableCell className="font-mono">{formatCurrency(market.median_rent)}</TableCell>
+                <TableCell className="font-mono">{formatCurrency(displayRent)}</TableCell>
                 {isCityLayout || mode === "buy" ? (
                   <>
                     <TableCell className="font-mono">
-                      {formatCurrency(market.median_sale_price)}
+                      {formatCurrency(displaySale)}
                     </TableCell>
                     <TableCell className="font-stat">
                       {formatPercent(market.yield_percent)}

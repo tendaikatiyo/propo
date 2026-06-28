@@ -51,7 +51,8 @@ function HomeContent() {
       bedroom: null,
       includeLowConfidence: false,
     }).inBudget,
-    mode
+    mode,
+    { propertyType, bedroom: null }
   ).slice(0, 6);
 
   return (
@@ -137,7 +138,13 @@ function HomeContent() {
         ) : previewMarkets.length ? (
           <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
             {previewMarkets.map((market) => (
-              <SuburbCard key={market.market_id} market={market} mode={mode} badge="In budget" />
+              <SuburbCard
+                key={market.market_id}
+                market={market}
+                mode={mode}
+                badge="In budget"
+                filters={{ propertyType, bedroom: null }}
+              />
             ))}
           </div>
         ) : (

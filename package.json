@@ -8,7 +8,7 @@
     "scrape:rentals": "python scraper/propertybook_rentals.py",
     "scrape:sales": "python scraper/propertybook_sales.py",
     "analytics:clean": "python analytics/clean_data.py",
-    "analytics:metrics": "python analytics/market_metrics.py",
+    "analytics:metrics": "python -m analytics.market_metrics",
     "analytics:cities": "python analytics/city_metrics.py",
     "analytics:rankings": "python analytics/rankings.py",
     "analytics:build": "npm run analytics:clean && npm run analytics:metrics && npm run analytics:cities && npm run analytics:rankings",

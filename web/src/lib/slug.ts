@@ -14,8 +14,18 @@ export function fromSlug(slug: string): string {
     .join(" ");
 }
 
-export function suburbPath(city: string, suburb: string): string {
-  return `/cities/${toSlug(city)}/${toSlug(suburb)}`;
+export function suburbPath(
+  city: string,
+  suburb: string,
+  query?: { type?: string | null; bedroom?: number | null }
+): string {
+  const base = `/cities/${toSlug(city)}/${toSlug(suburb)}`;
+  if (!query?.type && query?.bedroom == null) return base;
+  const params = new URLSearchParams();
+  if (query.type) params.set("type", query.type);
+  if (query.bedroom != null) params.set("bedroom", String(query.bedroom));
+  const qs = params.toString();
+  return qs ? `${base}?${qs}` : base;
 }
 
 export function cityPath(city: string): string {

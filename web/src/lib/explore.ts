@@ -7,6 +7,7 @@ import {
   PROPERTY_TYPE_COUNT_KEY,
   STRETCH_BUDGET_MULTIPLIER,
 } from "@/lib/constants";
+import { priceForFilters } from "@/lib/segments";
 import type {
   ExploreFilters,
   ExploreMode,
@@ -21,8 +22,12 @@ export interface ExploreResult {
   filtered: MarketMetric[];
 }
 
-function getPriceForMode(market: MarketMetric, mode: ExploreMode): number | null {
-  return mode === "rent" ? market.median_rent : market.median_sale_price;
+function getPriceForMode(
+  market: MarketMetric,
+  mode: ExploreMode,
+  filters: Pick<ExploreFilters, "propertyType" | "bedroom">
+): number | null {
+  return priceForFilters(market, mode, filters);
 }
 
 /** Snap budget to the correct default when mode and amount disagree (e.g. $800 left on buy). */
@@ -65,7 +70,7 @@ export function filterMarkets(markets: MarketMetric[], filters: ExploreFilters):
     if (!hasPropertyType(market, filters.propertyType)) return false;
     if (!hasBedroomCount(market, filters.bedroom)) return false;
     if (!passesConfidence(market, filters.includeLowConfidence)) return false;
-    const price = getPriceForMode(market, filters.mode);
+    const price = getPriceForMode(market, filters.mode, filters);
     if (price == null || price <= 0) return false;
     return true;
   });
@@ -74,7 +79,7 @@ export function filterMarkets(markets: MarketMetric[], filters: ExploreFilters):
   const stretch: MarketMetric[] = [];
 
   for (const market of filtered) {
-    const price = getPriceForMode(market, filters.mode)!;
+    const price = getPriceForMode(market, filters.mode, filters)!;
     if (price <= filters.budget) {
       inBudget.push(market);
     } else if (price <= filters.budget * STRETCH_BUDGET_MULTIPLIER) {
@@ -88,11 +93,21 @@ export function filterMarkets(markets: MarketMetric[], filters: ExploreFilters):
 export function sortMarkets(
   markets: MarketMetric[],
   key: SortKey,
-  direction: SortDirection
+  direction: SortDirection,
+  filters?: Pick<ExploreFilters, "propertyType" | "bedroom">
 ): MarketMetric[] {
   const sorted = [...markets].sort((a, b) => {
     if (key === "suburb") return a.suburb.localeCompare(b.suburb);
     if (key === "city") return a.city.localeCompare(b.city);
+    if (
+      filters &&
+      (key === "median_rent" || key === "median_sale_price")
+    ) {
+      const priceMode = key === "median_rent" ? "rent" : "buy";
+      const aVal = priceForFilters(a, priceMode, filters) ?? (direction === "asc" ? Infinity : -Infinity);
+      const bVal = priceForFilters(b, priceMode, filters) ?? (direction === "asc" ? Infinity : -Infinity);
+      return aVal - bVal;
+    }
     const aVal = a[key] ?? (direction === "asc" ? Infinity : -Infinity);
     const bVal = b[key] ?? (direction === "asc" ? Infinity : -Infinity);
     if (typeof aVal === "string" || typeof bVal === "string") return 0;
@@ -103,14 +118,15 @@ export function sortMarkets(
 
 export function rankExploreResults(
   markets: MarketMetric[],
-  mode: ExploreMode = "buy"
+  mode: ExploreMode = "buy",
+  filters?: Pick<ExploreFilters, "propertyType" | "bedroom">
 ): MarketMetric[] {
   if (mode === "rent") {
     return [...markets].sort((a, b) => {
       const conf = (b.confidence_score ?? 0) - (a.confidence_score ?? 0);
       if (conf !== 0) return conf;
-      const rentA = a.median_rent ?? Infinity;
-      const rentB = b.median_rent ?? Infinity;
+      const rentA = priceForFilters(a, "rent", filters ?? { propertyType: null, bedroom: null }) ?? Infinity;
+      const rentB = priceForFilters(b, "rent", filters ?? { propertyType: null, bedroom: null }) ?? Infinity;
       return rentA - rentB;
     });
   }

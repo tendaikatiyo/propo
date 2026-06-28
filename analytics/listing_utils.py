@@ -1,5 +1,30 @@
 from datetime import datetime, timezone
-from typing import Any, Dict
+from typing import Any, Dict, Optional
+
+
+def normalize_property_type(value: Optional[Any]) -> str:
+    """Map raw property_type strings to canonical buckets.
+
+    Townhouse/cluster must be checked before house — "townhouse" contains "house".
+    """
+    text = str(value or "unknown").strip().lower()
+    if text == "residential_land":
+        return "residential_land"
+    if "townhouse" in text or "cluster" in text:
+        return "townhouse"
+    if "house" in text or text == "home":
+        return "house"
+    if "cottage" in text:
+        return "cottage"
+    if "flat" in text:
+        return "flat"
+    if "apartment" in text:
+        return "apartment"
+    if "room" in text:
+        return "room"
+    if "commercial" in text or "shop" in text or "office" in text:
+        return "commercial"
+    return "unknown"
 
 
 def _parse_timestamp(value: str) -> datetime:

@@ -9,8 +9,9 @@ import { PinButton } from "@/components/markets/pin-button";
 import { Button } from "@/components/ui/button";
 import { sortMarkets } from "@/lib/explore";
 import { formatCurrency, formatPercent, sanitizeLabel } from "@/lib/format";
+import { priceForFilters } from "@/lib/segments";
 import { suburbPath } from "@/lib/slug";
-import type { ExploreMode, MarketMetric, SortKey } from "@/lib/types";
+import type { ExploreFilters, ExploreMode, MarketMetric, SortKey } from "@/lib/types";
 
 const SORT_OPTIONS: { key: SortKey; label: string; modes?: ExploreMode[] }[] = [
   { key: "median_rent", label: "Rent", modes: ["rent"] },
@@ -22,9 +23,11 @@ const SORT_OPTIONS: { key: SortKey; label: string; modes?: ExploreMode[] }[] = [
 export function SuburbList({
   markets,
   mode,
+  filters,
 }: {
   markets: MarketMetric[];
   mode: ExploreMode;
+  filters?: Pick<ExploreFilters, "propertyType" | "bedroom">;
 }) {
   const [sortKey, setSortKey] = useState<SortKey>(
     mode === "rent" ? "median_rent" : "median_sale_price"
@@ -35,8 +38,8 @@ export function SuburbList({
   );
 
   const sorted = useMemo(
-    () => sortMarkets(markets, sortKey, sortKey === "suburb" ? "asc" : "asc"),
-    [markets, sortKey]
+    () => sortMarkets(markets, sortKey, sortKey === "suburb" ? "asc" : "asc", filters),
+    [markets, sortKey, filters]
   );
 
   if (!markets.length) {
@@ -66,8 +69,11 @@ export function SuburbList({
 
       <div className="divide-y divide-border/80 overflow-hidden rounded-2xl border border-border/80 bg-card">
         {sorted.map((market) => {
-          const price =
-            mode === "rent" ? market.median_rent : market.median_sale_price;
+          const price = priceForFilters(
+            market,
+            mode,
+            filters ?? { propertyType: null, bedroom: null }
+          );
           const dom =
             mode === "rent"
               ? market.average_days_on_market_rent
@@ -79,7 +85,10 @@ export function SuburbList({
               className="flex min-h-[68px] items-center gap-2 px-3 py-3"
             >
               <Link
-                href={suburbPath(market.city, market.suburb)}
+                href={suburbPath(market.city, market.suburb, {
+                  type: filters?.propertyType,
+                  bedroom: filters?.bedroom,
+                })}
                 className="flex min-w-0 flex-1 items-center gap-2 active:opacity-70"
               >
                 <div className="min-w-0 flex-1">

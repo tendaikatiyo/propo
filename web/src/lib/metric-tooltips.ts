@@ -1,4 +1,5 @@
-import type { ExploreMode, SortKey } from "@/lib/types";
+import type { ExploreMode, PropertyType, SortKey } from "@/lib/types";
+import { segmentFilterLabel, segmentMedianLabel } from "@/lib/segments";
 
 export const COLUMN_TOOLTIPS: Record<SortKey, string> = {
   suburb: "Suburb or neighbourhood name within the city.",
@@ -40,4 +41,38 @@ export function columnsForCityDashboard(): SortKey[] {
     "opportunity_score",
     "confidence_score",
   ];
+}
+
+export function exploreBudgetDescription(
+  mode: ExploreMode,
+  budgetLabel: string,
+  propertyType: PropertyType | null,
+  bedroom: number | null
+): string {
+  const priceLabel = mode === "rent" ? "rent" : "sale price";
+  const spec = segmentFilterLabel(propertyType, bedroom);
+  if (spec) {
+    return `Suburbs with median ${priceLabel} (${spec}) at or below ${budgetLabel}.`;
+  }
+  return `Suburbs with median ${priceLabel} at or below ${budgetLabel}.`;
+}
+
+export function columnLabelForMode(
+  key: SortKey,
+  mode: ExploreMode,
+  propertyType: PropertyType | null,
+  bedroom: number | null
+): string {
+  if (key === "median_rent") return segmentMedianLabel("rent", propertyType, bedroom);
+  if (key === "median_sale_price") return segmentMedianLabel("buy", propertyType, bedroom);
+  const labels: Record<SortKey, string> = {
+    suburb: "Suburb",
+    city: "City",
+    median_rent: "Median rent",
+    median_sale_price: "Median sale",
+    yield_percent: "Yield",
+    opportunity_score: "Opportunity",
+    confidence_score: "Confidence",
+  };
+  return labels[key];
 }
