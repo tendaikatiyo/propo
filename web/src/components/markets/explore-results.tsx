@@ -9,8 +9,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useMarketMetrics } from "@/hooks/use-market-data";
 import { useExploreFilters } from "@/hooks/use-explore-filters";
-import { averageYield, filterMarkets, rankExploreResults } from "@/lib/explore";
+import { averageYield, applySuburbMedianVisibility, filterMarkets, rankExploreResults } from "@/lib/explore";
 import { exploreBudgetDescription } from "@/lib/metric-tooltips";
+import { hasActiveSegmentFilters } from "@/lib/segments";
 import { formatCurrency, formatPercent } from "@/lib/format";
 
 export function ExploreResults({ preview = false }: { preview?: boolean }) {
@@ -23,11 +24,19 @@ export function ExploreResults({ preview = false }: { preview?: boolean }) {
   );
 
   const rankedInBudget = useMemo(
-    () => rankExploreResults(inBudget, filters.mode, filters),
+    () =>
+      applySuburbMedianVisibility(
+        rankExploreResults(inBudget, filters.mode, filters),
+        filters
+      ),
     [inBudget, filters]
   );
   const rankedStretch = useMemo(
-    () => rankExploreResults(stretch, filters.mode, filters),
+    () =>
+      applySuburbMedianVisibility(
+        rankExploreResults(stretch, filters.mode, filters),
+        filters
+      ),
     [stretch, filters]
   );
   const avgYield = filters.mode === "buy" ? averageYield(inBudget) : null;
@@ -87,6 +96,13 @@ export function ExploreResults({ preview = false }: { preview?: boolean }) {
               filters.bedroom
             )}
           </p>
+          {hasActiveSegmentFilters(filters) ? (
+            <p className="text-xs text-muted-foreground">
+              {filters.hideSuburbMedianFallback
+                ? "Only suburbs with enough matching listings are shown. Turn off “Hide rough suburb averages” in filters to see more."
+                : "Some suburbs use a suburb-wide average when we lack enough listings — look for “Suburb median” under the price."}
+            </p>
+          ) : null}
         </div>
         <div className="lg:hidden">
           <SuburbList markets={rankedInBudget} mode={filters.mode} filters={filters} />

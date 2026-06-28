@@ -2,12 +2,15 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { SuburbProfile } from "@/components/markets/suburb-profile";
-import { normalizePropertyType } from "@/lib/constants";
+import {
+  DEFAULT_RENT_BUDGET,
+  normalizeExploreFilters,
+  normalizePropertyType,
+} from "@/lib/constants";
 import { fetchMarketMetrics } from "@/lib/data-server";
 import { findMarketBySlugs } from "@/lib/markets";
 import { formatCurrency, sanitizeLabel } from "@/lib/format";
 import { priceForFilters } from "@/lib/segments";
-import type { PropertyType } from "@/lib/types";
 import { matchesSlug, toSlug } from "@/lib/slug";
 
 export const revalidate = 3600;
@@ -30,8 +33,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { city: citySlug, suburb: suburbSlug } = await params;
   const sp = await searchParams;
-  const propertyType = parseSegmentPropertyType(sp.type);
-  const bedroom = parseSegmentBedroom(sp.bedroom);
+  const { propertyType, bedroom } = parseSegmentFilters(sp);
   const markets = await fetchMarketMetrics();
   const market = findMarketBySlugs(markets, citySlug, suburbSlug);
   if (!market) return { title: "Suburb not found" };
@@ -45,15 +47,16 @@ export async function generateMetadata({
   };
 }
 
-function parseSegmentPropertyType(value?: string): PropertyType | null {
-  if (!value) return null;
-  return normalizePropertyType(value);
-}
-
-function parseSegmentBedroom(value?: string): number | null {
-  if (!value) return null;
-  const n = Number(value);
-  return Number.isFinite(n) && n > 0 ? n : null;
+function parseSegmentFilters(sp: { type?: string; bedroom?: string }) {
+  return normalizeExploreFilters({
+    mode: "rent",
+    budget: DEFAULT_RENT_BUDGET,
+    city: null,
+    propertyType: sp.type ? normalizePropertyType(sp.type) : null,
+    bedroom: sp.bedroom ? Number(sp.bedroom) : null,
+    includeLowConfidence: false,
+    hideSuburbMedianFallback: true,
+  });
 }
 
 export default async function SuburbPage({
@@ -65,8 +68,7 @@ export default async function SuburbPage({
 }) {
   const { city: citySlug, suburb: suburbSlug } = await params;
   const sp = await searchParams;
-  const propertyType = parseSegmentPropertyType(sp.type);
-  const bedroom = parseSegmentBedroom(sp.bedroom);
+  const { propertyType, bedroom } = parseSegmentFilters(sp);
   const markets = await fetchMarketMetrics();
   const market = findMarketBySlugs(markets, citySlug, suburbSlug);
   if (!market) notFound();

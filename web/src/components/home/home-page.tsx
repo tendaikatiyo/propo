@@ -16,7 +16,8 @@ import {
   DEFAULT_BUY_BUDGET,
   DEFAULT_CITY,
   DEFAULT_RENT_BUDGET,
-  PROPERTY_TYPES,
+  propertyTypesForMode,
+  ROOM_BEDROOM_COUNT,
 } from "@/lib/constants";
 import { filterMarkets, rankExploreResults } from "@/lib/explore";
 import { propertyTypeLabel } from "@/lib/format";
@@ -31,7 +32,10 @@ function buildExploreHref(
   params.set("mode", mode);
   params.set("budget", String(budget));
   params.set("city", DEFAULT_CITY);
-  if (propertyType) params.set("type", propertyType);
+  if (propertyType) {
+    params.set("type", propertyType);
+    if (propertyType === "room") params.set("bedroom", String(ROOM_BEDROOM_COUNT));
+  }
   return `/explore?${params.toString()}`;
 }
 
@@ -48,11 +52,12 @@ function HomeContent() {
       budget,
       city: DEFAULT_CITY,
       propertyType,
-      bedroom: null,
+      bedroom: propertyType === "room" ? ROOM_BEDROOM_COUNT : null,
       includeLowConfidence: false,
+      hideSuburbMedianFallback: true,
     }).inBudget,
     mode,
-    { propertyType, bedroom: null }
+    { propertyType, bedroom: propertyType === "room" ? ROOM_BEDROOM_COUNT : null }
   ).slice(0, 6);
 
   return (
@@ -75,6 +80,9 @@ function HomeContent() {
                   onClick={() => {
                     setMode(option);
                     setBudget(option === "rent" ? DEFAULT_RENT_BUDGET : DEFAULT_BUY_BUDGET);
+                    if (option === "buy" && propertyType === "room") {
+                      setPropertyType(null);
+                    }
                   }}
                 >
                   {option === "rent" ? "I'm renting" : "I'm buying"}
@@ -95,13 +103,17 @@ function HomeContent() {
                 >
                   Any
                 </Button>
-                {PROPERTY_TYPES.map((type) => (
+                {propertyTypesForMode(mode).map((type) => (
                   <Button
                     key={type}
                     type="button"
                     size="sm"
                     variant={propertyType === type ? "default" : "outline"}
-                    onClick={() => setPropertyType(propertyType === type ? null : type)}
+                    onClick={() =>
+                      setPropertyType(
+                        propertyType === type ? null : type === "room" ? "room" : type
+                      )
+                    }
                   >
                     {propertyTypeLabel(type)}
                   </Button>
@@ -143,7 +155,10 @@ function HomeContent() {
                 market={market}
                 mode={mode}
                 badge="In budget"
-                filters={{ propertyType, bedroom: null }}
+                filters={{
+                  propertyType,
+                  bedroom: propertyType === "room" ? ROOM_BEDROOM_COUNT : null,
+                }}
               />
             ))}
           </div>

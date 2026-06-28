@@ -9,7 +9,7 @@ import { ConfidenceBadge } from "@/components/markets/confidence-badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { formatCurrency, formatPercent, sanitizeLabel } from "@/lib/format";
 import {
-  isSegmentLimitedData,
+  isUsingAggregateFallback,
   priceForFilters,
   resolveSegmentStats,
   segmentFilterLabel,
@@ -44,8 +44,8 @@ export function SuburbProfile({
 }) {
   const segment = resolveSegmentStats(market, propertyType, bedroom);
   const specLabel = segmentFilterLabel(propertyType, bedroom);
-  const rentLimited = isSegmentLimitedData(market, "rent", { propertyType, bedroom });
-  const saleLimited = isSegmentLimitedData(market, "buy", { propertyType, bedroom });
+  const rentFallback = isUsingAggregateFallback(market, "rent", { propertyType, bedroom });
+  const saleFallback = isUsingAggregateFallback(market, "buy", { propertyType, bedroom });
 
   const medianRent = priceForFilters(market, "rent", { propertyType, bedroom });
   const medianSale = priceForFilters(market, "buy", { propertyType, bedroom });
@@ -72,7 +72,9 @@ export function SuburbProfile({
           {specLabel ? (
             <p className="mt-2 text-sm text-muted-foreground">
               Showing medians for {specLabel}
-              {rentLimited || saleLimited ? " (limited sample — suburb-wide fallback where needed)" : ""}
+              {rentFallback || saleFallback
+                ? " (suburb-wide median shown where spec data is limited or missing)"
+                : ""}
             </p>
           ) : null}
         </div>

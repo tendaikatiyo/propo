@@ -7,7 +7,7 @@ import {
   PROPERTY_TYPE_COUNT_KEY,
   STRETCH_BUDGET_MULTIPLIER,
 } from "@/lib/constants";
-import { priceForFilters } from "@/lib/segments";
+import { priceForFilters, hasActiveSegmentFilters, isUsingAggregateFallback } from "@/lib/segments";
 import type {
   ExploreFilters,
   ExploreMode,
@@ -88,6 +88,24 @@ export function filterMarkets(markets: MarketMetric[], filters: ExploreFilters):
   }
 
   return { inBudget, stretch, filtered };
+}
+
+export function isSuburbMedianFallbackRow(
+  market: MarketMetric,
+  filters: ExploreFilters
+): boolean {
+  if (!hasActiveSegmentFilters(filters)) return false;
+  return isUsingAggregateFallback(market, filters.mode, filters);
+}
+
+export function applySuburbMedianVisibility(
+  markets: MarketMetric[],
+  filters: ExploreFilters
+): MarketMetric[] {
+  if (!filters.hideSuburbMedianFallback || !hasActiveSegmentFilters(filters)) {
+    return markets;
+  }
+  return markets.filter((market) => !isSuburbMedianFallbackRow(market, filters));
 }
 
 export function sortMarkets(

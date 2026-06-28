@@ -6,6 +6,7 @@ import { ChevronRight } from "lucide-react";
 
 import { ConfidenceBadge } from "@/components/markets/confidence-badge";
 import { PinButton } from "@/components/markets/pin-button";
+import { SegmentPriceNote } from "@/components/markets/segment-price-note";
 import { Button } from "@/components/ui/button";
 import { sortMarkets } from "@/lib/explore";
 import { formatCurrency, formatPercent, sanitizeLabel } from "@/lib/format";
@@ -69,11 +70,8 @@ export function SuburbList({
 
       <div className="divide-y divide-border/80 overflow-hidden rounded-2xl border border-border/80 bg-card">
         {sorted.map((market) => {
-          const price = priceForFilters(
-            market,
-            mode,
-            filters ?? { propertyType: null, bedroom: null }
-          );
+          const segmentFilters = filters ?? { propertyType: null, bedroom: null };
+          const price = priceForFilters(market, mode, segmentFilters);
           const dom =
             mode === "rent"
               ? market.average_days_on_market_rent
@@ -113,6 +111,13 @@ export function SuburbList({
                       </span>
                     ) : null}
                   </div>
+                  <SegmentPriceNote
+                    market={market}
+                    mode={mode}
+                    filters={segmentFilters}
+                    fallbackOnly
+                    className="mt-1 text-[10px] leading-tight text-muted-foreground"
+                  />
                 </div>
                 <ChevronRight className="size-4 shrink-0 text-muted-foreground" />
               </Link>

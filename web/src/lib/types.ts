@@ -122,6 +122,8 @@ export interface ExploreFilters {
   propertyType: PropertyType | null;
   bedroom: number | null;
   includeLowConfidence: boolean;
+  /** When true (default), hide rows that fall back to suburb-wide median under an active spec filter. */
+  hideSuburbMedianFallback: boolean;
 }
 
 export type SortKey =

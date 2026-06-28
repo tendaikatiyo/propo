@@ -7,6 +7,7 @@ import {
   DEFAULT_BUY_BUDGET,
   DEFAULT_CITY,
   DEFAULT_RENT_BUDGET,
+  normalizeExploreFilters,
   normalizePropertyType,
 } from "@/lib/constants";
 import { budgetForMode } from "@/lib/explore";
@@ -19,6 +20,7 @@ const DEFAULT_FILTERS: ExploreFilters = {
   propertyType: null,
   bedroom: null,
   includeLowConfidence: false,
+  hideSuburbMedianFallback: true,
 };
 
 function parsePropertyType(value: string | null): PropertyType | null {
@@ -43,20 +45,21 @@ export function useExploreFilters() {
     const rawBudget =
       Number.isFinite(budgetParam) && budgetParam > 0 ? budgetParam : defaultBudget;
 
-    return {
+    return normalizeExploreFilters({
       mode,
       budget: budgetForMode(mode, rawBudget),
       city: cityParam === "all" ? null : cityParam || DEFAULT_CITY,
       propertyType: parsePropertyType(searchParams.get("type")),
       bedroom: searchParams.has("bedroom") ? Number(searchParams.get("bedroom")) : null,
       includeLowConfidence: searchParams.get("lowconf") === "1",
-    };
+      hideSuburbMedianFallback: searchParams.get("showfallback") !== "1",
+    });
   }, [searchParams]);
 
   const setFilters = useCallback(
     (patch: Partial<ExploreFilters>, options?: { targetPath?: string }) => {
       const target = options?.targetPath ?? pathname;
-      const next = { ...filters, ...patch };
+      const next = normalizeExploreFilters({ ...filters, ...patch });
       if (patch.mode !== undefined && patch.mode !== filters.mode && patch.budget === undefined) {
         next.budget = budgetForMode(patch.mode, filters.budget);
       }
@@ -74,6 +77,7 @@ export function useExploreFilters() {
       if (next.propertyType) params.set("type", next.propertyType);
       if (next.bedroom != null) params.set("bedroom", String(next.bedroom));
       if (next.includeLowConfidence) params.set("lowconf", "1");
+      if (!next.hideSuburbMedianFallback) params.set("showfallback", "1");
 
       const qs = params.toString();
       router.replace(qs ? `${target}?${qs}` : target, { scroll: false });
@@ -91,7 +95,7 @@ export function useExploreFilters() {
 
   const exploreHref = useCallback(
     (patch?: Partial<ExploreFilters>) => {
-      const next = { ...DEFAULT_FILTERS, ...filters, ...patch };
+      const next = normalizeExploreFilters({ ...DEFAULT_FILTERS, ...filters, ...patch });
       const params = new URLSearchParams();
       params.set("mode", next.mode);
       params.set("budget", String(next.budget));
@@ -100,6 +104,7 @@ export function useExploreFilters() {
       if (next.propertyType) params.set("type", next.propertyType);
       if (next.bedroom != null) params.set("bedroom", String(next.bedroom));
       if (next.includeLowConfidence) params.set("lowconf", "1");
+      if (!next.hideSuburbMedianFallback) params.set("showfallback", "1");
       return `/explore?${params.toString()}`;
     },
     [filters]

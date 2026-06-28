@@ -80,27 +80,61 @@ export function priceForFilters(
   mode: ExploreMode,
   filters: Pick<ExploreFilters, "propertyType" | "bedroom">
 ): number | null {
+  return resolvePriceForFilters(market, mode, filters).price;
+}
+
+export interface SegmentPriceResolution {
+  price: number | null;
+  usedAggregate: boolean;
+  segmentCount: number;
+}
+
+export function resolvePriceForFilters(
+  market: MarketMetric,
+  mode: ExploreMode,
+  filters: Pick<ExploreFilters, "propertyType" | "bedroom">
+): SegmentPriceResolution {
   const aggregate = mode === "rent" ? market.median_rent : market.median_sale_price;
-  if (!hasActiveSegmentFilters(filters)) return aggregate;
+  if (!hasActiveSegmentFilters(filters)) {
+    return { price: aggregate, usedAggregate: false, segmentCount: 0 };
+  }
 
   const segment = resolveSegmentStats(market, filters.propertyType, filters.bedroom);
   const segmentPrice = segmentMedianForMode(segment, mode);
-  if (segmentPrice != null && segmentPrice > 0) {
-    const count = segmentCountForMode(segment, mode);
-    if (count >= MIN_SEGMENT_LISTINGS) return segmentPrice;
+  const count = segmentCountForMode(segment, mode);
+
+  if (segmentPrice != null && segmentPrice > 0 && count >= MIN_SEGMENT_LISTINGS) {
+    return { price: segmentPrice, usedAggregate: false, segmentCount: count };
   }
-  return aggregate;
+
+  return { price: aggregate, usedAggregate: true, segmentCount: count };
 }
 
-export function isSegmentLimitedData(
+export function isUsingAggregateFallback(
   market: MarketMetric,
   mode: ExploreMode,
   filters: Pick<ExploreFilters, "propertyType" | "bedroom">
 ): boolean {
-  if (!hasActiveSegmentFilters(filters)) return false;
-  const segment = resolveSegmentStats(market, filters.propertyType, filters.bedroom);
-  const count = segmentCountForMode(segment, mode);
-  return count > 0 && count < MIN_SEGMENT_LISTINGS;
+  return resolvePriceForFilters(market, mode, filters).usedAggregate;
+}
+
+export function segmentPriceCaption(
+  market: MarketMetric,
+  mode: ExploreMode,
+  filters: Pick<ExploreFilters, "propertyType" | "bedroom">
+): string | null {
+  if (!hasActiveSegmentFilters(filters)) return null;
+
+  const spec = segmentFilterLabel(filters.propertyType, filters.bedroom);
+  if (!spec) return null;
+
+  const { usedAggregate, segmentCount } = resolvePriceForFilters(market, mode, filters);
+  if (!usedAggregate) return `Median for ${spec}`;
+
+  if (segmentCount > 0) {
+    return `Limited data for ${spec} (n=${segmentCount}) — suburb-wide median`;
+  }
+  return `No ${spec} data — suburb-wide median`;
 }
 
 const TYPE_LABELS: Record<PropertyType, string> = {

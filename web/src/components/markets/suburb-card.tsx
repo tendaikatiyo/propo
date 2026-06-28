@@ -1,13 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { SegmentPriceNote } from "@/components/markets/segment-price-note";
 import { formatCurrency, formatPercent, sanitizeLabel } from "@/lib/format";
-import {
-  isSegmentLimitedData,
-  priceForFilters,
-  resolveSegmentStats,
-  segmentFilterLabel,
-  segmentMedianForMode,
-} from "@/lib/segments";
+import { priceForFilters, resolveSegmentStats } from "@/lib/segments";
 import type { ExploreFilters, ExploreMode, MarketMetric } from "@/lib/types";
 
 import { ConfidenceBadge } from "./confidence-badge";
@@ -40,12 +35,6 @@ export function SuburbCard({
     (mode === "rent"
       ? market.average_days_on_market_rent
       : market.average_days_on_market_sale);
-  const specLabel = segmentFilterLabel(
-    segmentFilters.propertyType,
-    segmentFilters.bedroom
-  );
-  const limitedData = isSegmentLimitedData(market, mode, segmentFilters);
-  const segmentPrice = segmentMedianForMode(segment, mode);
 
   return (
     <Card className="h-full">
@@ -61,13 +50,7 @@ export function SuburbCard({
           <span className="font-stat text-2xl font-medium">{formatCurrency(price)}</span>
           <ConfidenceBadge score={market.confidence_score} />
         </div>
-        {specLabel ? (
-          <p className="text-xs text-muted-foreground">
-            {limitedData && segmentPrice != null
-              ? `Limited data for ${specLabel} — showing suburb-wide median`
-              : `Median for ${specLabel}`}
-          </p>
-        ) : null}
+        <SegmentPriceNote market={market} mode={mode} filters={segmentFilters} />
         <div className="flex flex-wrap gap-3 text-sm text-muted-foreground">
           {mode === "buy" && market.yield_percent != null ? (
             <span className="font-stat">Yield {formatPercent(market.yield_percent)}</span>

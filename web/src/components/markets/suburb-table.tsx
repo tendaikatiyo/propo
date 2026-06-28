@@ -5,6 +5,7 @@ import { useMemo, useState } from "react";
 import { ArrowDown, ArrowUp, HelpCircle } from "lucide-react";
 
 import { PinButton } from "@/components/markets/pin-button";
+import { SegmentPriceCell } from "@/components/markets/segment-price-note";
 import { ConfidenceBadge } from "@/components/markets/confidence-badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -198,21 +199,8 @@ export function SuburbTable({
         </TableHeader>
         <TableBody>
           {sorted.map((market) => {
-            const price = priceForFilters(
-              market,
-              mode,
-              filters ?? { propertyType: null, bedroom: null }
-            );
-            const displayRent = priceForFilters(
-              market,
-              "rent",
-              filters ?? { propertyType: null, bedroom: null }
-            );
-            const displaySale = priceForFilters(
-              market,
-              "buy",
-              filters ?? { propertyType: null, bedroom: null }
-            );
+            const segmentFilters = filters ?? { propertyType: null, bedroom: null };
+            const price = priceForFilters(market, mode, segmentFilters);
             const dom =
               mode === "rent"
                 ? market.average_days_on_market_rent
@@ -234,11 +222,13 @@ export function SuburbTable({
                 {!isCityLayout ? (
                   <TableCell className="font-heading text-muted-foreground">{market.city}</TableCell>
                 ) : null}
-                <TableCell className="font-mono">{formatCurrency(displayRent)}</TableCell>
+                <TableCell>
+                  <SegmentPriceCell market={market} mode="rent" filters={segmentFilters} />
+                </TableCell>
                 {isCityLayout || mode === "buy" ? (
                   <>
-                    <TableCell className="font-mono">
-                      {formatCurrency(displaySale)}
+                    <TableCell>
+                      <SegmentPriceCell market={market} mode="buy" filters={segmentFilters} />
                     </TableCell>
                     <TableCell className="font-stat">
                       {formatPercent(market.yield_percent)}

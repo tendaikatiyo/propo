@@ -6,10 +6,50 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
+import { Switch } from "@/components/ui/switch";
 import { useCities } from "@/hooks/use-market-data";
 import { useExploreFilters } from "@/hooks/use-explore-filters";
-import { BEDROOM_OPTIONS, DEFAULT_BUY_BUDGET, DEFAULT_RENT_BUDGET, PROPERTY_TYPES } from "@/lib/constants";
+import {
+  BEDROOM_OPTIONS,
+  DEFAULT_BUY_BUDGET,
+  DEFAULT_RENT_BUDGET,
+  propertyTypesForMode,
+  ROOM_BEDROOM_COUNT,
+} from "@/lib/constants";
 import { propertyTypeLabel } from "@/lib/format";
+import { hasActiveSegmentFilters } from "@/lib/segments";
+import type { PropertyType } from "@/lib/types";
+
+function FilterSwitchRow({
+  id,
+  label,
+  description,
+  checked,
+  onCheckedChange,
+}: {
+  id: string;
+  label: string;
+  description: string;
+  checked: boolean;
+  onCheckedChange: (checked: boolean) => void;
+}) {
+  return (
+    <div className="flex items-start justify-between gap-3">
+      <div className="min-w-0 space-y-1">
+        <Label htmlFor={id} className="cursor-pointer text-sm leading-snug font-medium">
+          {label}
+        </Label>
+        <p className="text-xs leading-relaxed text-muted-foreground">{description}</p>
+      </div>
+      <Switch
+        id={id}
+        checked={checked}
+        onCheckedChange={onCheckedChange}
+        className="mt-0.5 shrink-0"
+      />
+    </div>
+  );
+}
 
 export function ExploreFilterPanel({
   targetPath,
@@ -22,6 +62,8 @@ export function ExploreFilterPanel({
   const { data: cities = [] } = useCities();
 
   const filterOptions = targetPath ? { targetPath } : undefined;
+  const propertyTypes = propertyTypesForMode(filters.mode);
+  const isRoom = filters.propertyType === "room";
 
   const apply = (patch: Parameters<typeof setFilters>[0]) => {
     setFilters(patch, filterOptions);
@@ -31,6 +73,29 @@ export function ExploreFilterPanel({
   const reset = () => {
     resetFilters(filterOptions);
     onNavigate?.();
+  };
+
+  const selectPropertyType = (type: PropertyType | null) => {
+    const wasRoom = filters.propertyType === "room";
+    if (type === null) {
+      apply({
+        propertyType: null,
+        bedroom: wasRoom ? null : filters.bedroom,
+      });
+      return;
+    }
+    if (type === "room") {
+      apply({ propertyType: "room", bedroom: ROOM_BEDROOM_COUNT });
+      return;
+    }
+    if (filters.propertyType === type) {
+      apply({ propertyType: null, bedroom: wasRoom ? null : filters.bedroom });
+      return;
+    }
+    apply({
+      propertyType: type,
+      bedroom: wasRoom ? null : filters.bedroom,
+    });
   };
 
   return (
@@ -89,21 +154,17 @@ export function ExploreFilterPanel({
             type="button"
             size="sm"
             variant={filters.propertyType == null ? "default" : "outline"}
-            onClick={() => apply({ propertyType: null })}
+            onClick={() => selectPropertyType(null)}
           >
             Any
           </Button>
-          {PROPERTY_TYPES.map((type) => (
+          {propertyTypes.map((type) => (
             <Button
               key={type}
               type="button"
               size="sm"
               variant={filters.propertyType === type ? "default" : "outline"}
-              onClick={() =>
-                apply({
-                  propertyType: filters.propertyType === type ? null : type,
-                })
-              }
+              onClick={() => selectPropertyType(type)}
             >
               {propertyTypeLabel(type)}
             </Button>
@@ -111,43 +172,55 @@ export function ExploreFilterPanel({
         </div>
       </section>
 
-      <section className="space-y-3">
-        <Label className="caption-label">Bedrooms</Label>
-        <div className="flex flex-wrap gap-2">
-          <Button
-            type="button"
-            size="sm"
-            variant={filters.bedroom == null ? "default" : "outline"}
-            onClick={() => apply({ bedroom: null })}
-          >
-            Any
-          </Button>
-          {BEDROOM_OPTIONS.map((opt) => (
+      {!isRoom ? (
+        <section className="space-y-3">
+          <Label className="caption-label">Bedrooms</Label>
+          <div className="flex flex-wrap gap-2">
             <Button
-              key={opt.value}
               type="button"
               size="sm"
-              variant={filters.bedroom === opt.value ? "default" : "outline"}
-              onClick={() => apply({ bedroom: opt.value })}
+              variant={filters.bedroom == null ? "default" : "outline"}
+              onClick={() => apply({ bedroom: null })}
             >
-              {opt.label}
+              Any
             </Button>
-          ))}
-        </div>
-      </section>
+            {BEDROOM_OPTIONS.map((opt) => (
+              <Button
+                key={opt.value}
+                type="button"
+                size="sm"
+                variant={filters.bedroom === opt.value ? "default" : "outline"}
+                onClick={() => apply({ bedroom: opt.value })}
+              >
+                {opt.label}
+              </Button>
+            ))}
+          </div>
+        </section>
+      ) : (
+        <p className="text-xs text-muted-foreground">Rooms are listed as single occupancy (1 bed).</p>
+      )}
+
+      {hasActiveSegmentFilters(filters) ? (
+        <FilterSwitchRow
+          id="hide-suburb-estimates"
+          label="Hide rough suburb averages"
+          description="When on, we skip suburbs where we don't have enough listings for your home type and bedrooms — only suburbs with a reliable match stay in the list."
+          checked={filters.hideSuburbMedianFallback}
+          onCheckedChange={(checked) => apply({ hideSuburbMedianFallback: checked })}
+        />
+      ) : null}
 
       <Separator />
 
-      <section className="space-y-3">
-        <Button
-          type="button"
-          size="sm"
-          variant={filters.includeLowConfidence ? "default" : "outline"}
-          className="w-full"
-          onClick={() => apply({ includeLowConfidence: !filters.includeLowConfidence })}
-        >
-          Include thin markets
-        </Button>
+      <section className="space-y-4">
+        <FilterSwitchRow
+          id="include-thin-markets"
+          label="Show suburbs with less data"
+          description="When on, we also include suburbs where we have fewer listings to work with. Helpful if you want more options, but prices may be less reliable."
+          checked={filters.includeLowConfidence}
+          onCheckedChange={(checked) => apply({ includeLowConfidence: checked })}
+        />
         <Button type="button" size="sm" variant="ghost" className="w-full" onClick={reset}>
           Reset filters
         </Button>
