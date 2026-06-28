@@ -203,11 +203,11 @@ export function ExploreFilterPanel({
 
       {hasActiveSegmentFilters(filters) ? (
         <FilterSwitchRow
-          id="hide-suburb-estimates"
-          label="Hide rough suburb averages"
-          description="When on, we skip suburbs where we don't have enough listings for your home type and bedrooms — only suburbs with a reliable match stay in the list."
-          checked={filters.hideSuburbMedianFallback}
-          onCheckedChange={(checked) => apply({ hideSuburbMedianFallback: checked })}
+          id="include-suburb-medians"
+          label="Include suburb medians"
+          description="When on, we also show suburbs where we only have a suburb-wide average — not enough listings for your exact home type and bedrooms."
+          checked={!filters.hideSuburbMedianFallback}
+          onCheckedChange={(checked) => apply({ hideSuburbMedianFallback: !checked })}
         />
       ) : null}
 

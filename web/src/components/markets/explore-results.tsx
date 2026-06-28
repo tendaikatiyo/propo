@@ -99,7 +99,7 @@ export function ExploreResults({ preview = false }: { preview?: boolean }) {
           {hasActiveSegmentFilters(filters) ? (
             <p className="text-xs text-muted-foreground">
               {filters.hideSuburbMedianFallback
-                ? "Only suburbs with enough matching listings are shown. Turn off “Hide rough suburb averages” in filters to see more."
+                ? "Only suburbs with enough matching listings are shown. Turn on “Include suburb medians” in filters to see more."
                 : "Some suburbs use a suburb-wide average when we lack enough listings — look for “Suburb median” under the price."}
             </p>
           ) : null}
