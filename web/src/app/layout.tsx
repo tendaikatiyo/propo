@@ -4,18 +4,12 @@ import { AppShell } from "@/components/layout/app-shell";
 import { QueryProvider } from "@/components/providers/query-provider";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { SITE_DESCRIPTION, SITE_NAME } from "@/lib/constants";
 import { fontClassNames } from "@/lib/fonts";
+import { rootMetadata } from "@/lib/seo";
 
 import "./globals.css";
 
-export const metadata: Metadata = {
-  title: {
-    default: SITE_NAME,
-    template: `%s · ${SITE_NAME}`,
-  },
-  description: SITE_DESCRIPTION,
-};
+export const metadata: Metadata = rootMetadata();
 
 export const viewport: Viewport = {
   width: "device-width",

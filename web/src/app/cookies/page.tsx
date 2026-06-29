@@ -1,12 +1,12 @@
-import type { Metadata } from "next";
-
 import { LegalPage, LegalSection } from "@/components/legal/legal-page";
 import { SITE_NAME } from "@/lib/constants";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Cookie Policy",
   description: `How ${SITE_NAME} uses cookies and similar technologies on your device.`,
-};
+  path: "/cookies",
+});
 
 const LAST_UPDATED = "28 June 2026";
 

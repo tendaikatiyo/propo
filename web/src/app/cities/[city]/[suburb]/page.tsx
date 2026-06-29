@@ -11,6 +11,7 @@ import { fetchMarketMetrics } from "@/lib/data-server";
 import { findMarketBySlugs } from "@/lib/markets";
 import { formatCurrency, sanitizeLabel } from "@/lib/format";
 import { priceForFilters } from "@/lib/segments";
+import { buildPageMetadata } from "@/lib/seo";
 import { matchesSlug, toSlug } from "@/lib/slug";
 
 export const revalidate = 3600;
@@ -40,11 +41,16 @@ export async function generateMetadata({
 
   const medianRent = priceForFilters(market, "rent", { propertyType, bedroom });
   const medianSale = priceForFilters(market, "buy", { propertyType, bedroom });
+  const suburbLabel = sanitizeLabel(market.suburb);
 
-  return {
-    title: `${sanitizeLabel(market.suburb)}, ${market.city}`,
-    description: `Median rent ${formatCurrency(medianRent)}, median sale ${formatCurrency(medianSale)}. Property market data for ${market.suburb}, ${market.city}.`,
-  };
+  return buildPageMetadata({
+    title: `${suburbLabel}, ${market.city}`,
+    description: `Median rent ${formatCurrency(medianRent)}, median sale ${formatCurrency(medianSale)} in ${suburbLabel}, ${market.city}. Yields, price trends, and active listings.`,
+    path: `/cities/${citySlug}/${suburbSlug}`,
+    ogImage: {
+      alt: `${suburbLabel}, ${market.city} — property market data on Propo`,
+    },
+  });
 }
 
 function parseSegmentFilters(sp: { type?: string; bedroom?: string }) {

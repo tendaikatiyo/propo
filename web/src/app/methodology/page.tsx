@@ -1,5 +1,13 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PageHeader } from "@/components/layout/page-header";
+import { buildPageMetadata } from "@/lib/seo";
+
+export const metadata = buildPageMetadata({
+  title: "Methodology",
+  description:
+    "How Propo calculates rental yields, opportunity scores, segment medians, and price trends from scraped listing data.",
+  path: "/methodology",
+});
 
 export default function MethodologyPage() {
   return (
