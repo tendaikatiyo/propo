@@ -29,6 +29,20 @@ export const PRICE_TREND_TOOLTIP =
 export const SUPPLY_TREND_TOOLTIP =
   "Count of active listings captured in each daily snapshot. Rising supply can mean more choice; falling supply can mean tighter inventory.";
 
+export const FAIR_VALUE_TOOLTIP =
+  "Compares this listing's price to the suburb median for the same property type and bedroom count when enough listings exist; otherwise uses the suburb-wide median. Badges appear only when the difference is at least 5%.";
+
+export function fairValueTooltipDetail(
+  medianLabel: string,
+  usedAggregate: boolean,
+  sampleCount: number
+): string {
+  const basis = usedAggregate
+    ? `Suburb-wide median: ${medianLabel} (n=${sampleCount}).`
+    : `Segment median: ${medianLabel} (n=${sampleCount}).`;
+  return `${basis} ${FAIR_VALUE_TOOLTIP}`;
+}
+
 export function columnsForMode(mode: ExploreMode): SortKey[] {
   const base: SortKey[] = ["suburb", "city", "median_rent"];
   if (mode === "buy") {

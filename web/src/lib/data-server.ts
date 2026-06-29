@@ -4,7 +4,7 @@ import { execFileSync } from "child_process";
 
 import { STRETCH_BUDGET_MULTIPLIER } from "@/lib/constants";
 import { filterRankingsPayload, filterZimbabweCities, filterZimbabweMarkets, isZimbabweCity } from "@/lib/geo";
-import { isLandPropertyType } from "@/lib/listings";
+import { isLandPropertyType, resolveListingThumbnailUrl } from "@/lib/listings";
 import { createServerSupabaseClient } from "@/lib/supabase";
 import {
   aggregateSnapshotsByDate,
@@ -151,10 +151,13 @@ async function loadListingImageMap(listingType: "rent" | "sale"): Promise<Map<st
 
   const filename = listingType === "rent" ? "rentals.json" : "sales.json";
   try {
-    const raw = await readLocalJson<{ listing_url: string; agency_logo?: string }[]>(filename);
+    const raw = await readLocalJson<
+      { listing_url: string; agency_logo?: string; image_url?: string }[]
+    >(filename);
     const map = new Map<string, string>();
     for (const row of raw) {
-      if (row.agency_logo) map.set(row.listing_url, row.agency_logo);
+      const url = resolveListingThumbnailUrl(row);
+      if (url) map.set(row.listing_url, url);
     }
     listingImageCache.set(listingType, map);
     return map;
@@ -166,8 +169,8 @@ async function loadListingImageMap(listingType: "rent" | "sale"): Promise<Map<st
 }
 
 function withImageUrl(listing: Listing): Listing {
-  const image_url = listing.image_url ?? listing.agency_logo ?? null;
-  return image_url ? { ...listing, image_url } : listing;
+  const image_url = resolveListingThumbnailUrl(listing);
+  return image_url ? { ...listing, image_url } : { ...listing, image_url: null };
 }
 
 async function enrichLocalListingImages(
@@ -201,7 +204,7 @@ export async function fetchListings(query: ListingQuery): Promise<Listing[]> {
     let request = client
       .from("listings")
       .select(
-        "listing_url, title, price, price_raw, city, suburb, location, property_type, listing_type, bedrooms, days_on_market, agency_logo"
+        "listing_url, title, price, price_raw, city, suburb, location, property_type, listing_type, bedrooms, days_on_market, agency_logo, image_url"
       )
       .eq("listing_type", listingType)
       .eq("is_active", true)
@@ -251,6 +254,9 @@ interface SnapshotRow {
   suburb?: string;
   median_price: number | null;
   listing_count: number;
+  min_price?: number | null;
+  max_price?: number | null;
+  listing_type?: "rent" | "sale";
 }
 
 function fetchTrendsFromLocalPython(
@@ -284,7 +290,7 @@ async function fetchSnapshotRows(params: {
   if (client) {
     let request = client
       .from("market_snapshots_daily")
-      .select("snapshot_date, suburb, median_price, listing_count")
+      .select("snapshot_date, suburb, median_price, listing_count, min_price, max_price, listing_type")
       .eq("city", params.city)
       .eq("listing_type", params.listingType)
       .gte("snapshot_date", params.startDate)
@@ -316,6 +322,7 @@ async function fetchSnapshotRows(params: {
         snapshot_date: point.date,
         median_price: point.median_price,
         listing_count: point.listing_count,
+        listing_type: params.listingType,
       }));
     }
   }
@@ -342,6 +349,9 @@ export async function fetchMarketTrends(
       snapshot_date: row.snapshot_date,
       median_price: row.median_price,
       listing_count: row.listing_count,
+      min_price: row.min_price,
+      max_price: row.max_price,
+      listing_type: listingType,
     }))
   );
 
@@ -362,7 +372,7 @@ export async function fetchCityTrendMovers(
   if (client) {
     const { data, error } = await client
       .from("market_snapshots_daily")
-      .select("snapshot_date, suburb, median_price, listing_count")
+      .select("snapshot_date, suburb, median_price, listing_count, min_price, max_price, listing_type")
       .eq("city", city)
       .eq("listing_type", listingType)
       .gte("snapshot_date", startDate)
@@ -386,12 +396,15 @@ export async function fetchCityTrendMovers(
               snapshot_date: row.snapshot_date,
               median_price: row.median_price,
               listing_count: row.listing_count,
+              min_price: row.min_price,
+              max_price: row.max_price,
+              listing_type: listingType,
             }))
           )
         );
       }
 
-      const movers = computeMoversFromSeries(seriesBySuburb, marketIds);
+      const movers = computeMoversFromSeries(seriesBySuburb, marketIds, listingType);
       return {
         risers: topMovers(movers, "up"),
         fallers: topMovers(movers, "down"),

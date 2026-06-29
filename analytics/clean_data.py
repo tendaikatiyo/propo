@@ -3,6 +3,7 @@ import re
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional
 
+from analytics.listing_images import resolve_listing_image_url
 from analytics.price_utils import reconcile_classifieds_rent_price, reconcile_rent_price
 
 DATA_DIR = Path(__file__).resolve().parents[1] / "data"
@@ -172,6 +173,11 @@ def normalize_listing_record(
     elif not price_raw:
         price_raw = f"USD {price:,}/pm" if listing_type == "rent" else f"USD {price:,}"
 
+    image_url = resolve_listing_image_url(
+        str(record.get("image_url") or "").strip() or None,
+        str(record.get("agency_logo") or "").strip() or None,
+    )
+
     return {
         "listing_url": listing_url,
         "source": source,
@@ -192,6 +198,7 @@ def normalize_listing_record(
         "land_size_unit": str(record.get("land_size_unit") or "").strip() or None,
         "agency_name": str(record.get("agency_name") or "").strip(),
         "agency_logo": str(record.get("agency_logo") or "").strip(),
+        "image_url": image_url or "",
     }
 
 

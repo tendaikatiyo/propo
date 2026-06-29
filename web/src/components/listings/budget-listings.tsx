@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 
 import { ListingCard } from "@/components/listings/listing-card";
 import { Skeleton } from "@/components/ui/skeleton";
+import { useMarketLookup } from "@/hooks/use-market-lookup";
 import { fetchListingsFromApi } from "@/lib/listings-client";
 import type { ExploreMode, PropertyType } from "@/lib/types";
 
@@ -18,6 +19,8 @@ export function BudgetListingsPreview({
   city: string | null;
   propertyType: PropertyType | null;
 }) {
+  const { getMarket } = useMarketLookup();
+
   const { data = [], isLoading, isError } = useQuery({
     queryKey: ["budget-listings", mode, budget, city, propertyType],
     queryFn: () =>
@@ -64,7 +67,11 @@ export function BudgetListingsPreview({
       </div>
       <div className="grid gap-3 sm:grid-cols-2">
         {data.map((listing) => (
-          <ListingCard key={listing.listing_url} listing={listing} />
+          <ListingCard
+            key={listing.listing_url}
+            listing={listing}
+            market={getMarket(listing.city, listing.suburb)}
+          />
         ))}
       </div>
     </section>

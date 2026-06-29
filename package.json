@@ -9,6 +9,7 @@
     "scrape:sales": "python scraper/propertybook_sales.py",
     "analytics:clean": "python analytics/clean_data.py",
     "analytics:repair-classifieds": "python -m analytics.repair_classifieds_rentals",
+    "analytics:repair-snapshots": "python -m analytics.repair_market_snapshots",
     "analytics:metrics": "python -m analytics.market_metrics",
     "analytics:cities": "python analytics/city_metrics.py",
     "analytics:rankings": "python analytics/rankings.py",

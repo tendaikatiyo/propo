@@ -6,37 +6,52 @@ import argparse
 import json
 import sys
 from collections import defaultdict
-from typing import Any, Dict, List, Optional, Tuple
+from statistics import median
+from typing import Any, Dict, List, Optional
 
 from analytics.history_db import HistoryDatabase
+from analytics.price_utils import sanitize_snapshot_rent_price
+
+MAX_MOVER_PCT = 200
+MIN_MOVER_SNAPSHOTS = 4
+MIN_MOVER_LISTINGS = 5
+MOVER_WINDOW = 3
 
 
-def _weighted_median_approx(items: List[Tuple[int, int]]) -> Optional[int]:
-    if not items:
-        return None
-    total = sum(count for _, count in items)
-    if total <= 0:
-        return None
-    weighted = sum(price * count for price, count in items)
-    return int(round(weighted / total))
+def _sanitize_row(row: Dict[str, Any], listing_type: str) -> Optional[int]:
+    if listing_type != "rent":
+        return row.get("median_price")
+    return sanitize_snapshot_rent_price(
+        row.get("median_price"),
+        row.get("min_price"),
+        row.get("max_price"),
+    )
 
 
-def aggregate_by_date(rows: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    by_date: Dict[str, Dict[str, Any]] = defaultdict(lambda: {"prices": [], "listing_count": 0})
+def aggregate_by_date(rows: List[Dict[str, Any]], listing_type: str) -> List[Dict[str, Any]]:
+    by_date: Dict[str, Dict[str, Any]] = defaultdict(
+        lambda: {"weighted_sum": 0, "total_weight": 0, "listing_count": 0}
+    )
 
     for row in rows:
         date = row["snapshot_date"]
-        by_date[date]["listing_count"] += int(row["listing_count"] or 0)
-        if row.get("median_price") is not None and int(row.get("listing_count") or 0) > 0:
-            by_date[date]["prices"].append((int(row["median_price"]), int(row["listing_count"])))
+        by_date[date]["listing_count"] += int(row.get("listing_count") or 0)
+        clean = _sanitize_row(row, listing_type)
+        weight = int(row.get("listing_count") or 0)
+        if clean is not None and weight > 0:
+            by_date[date]["weighted_sum"] += clean * weight
+            by_date[date]["total_weight"] += weight
 
     points: List[Dict[str, Any]] = []
     for date in sorted(by_date):
         bucket = by_date[date]
+        total_weight = bucket["total_weight"]
         points.append(
             {
                 "date": date,
-                "median_price": _weighted_median_approx(bucket["prices"]),
+                "median_price": int(round(bucket["weighted_sum"] / total_weight))
+                if total_weight
+                else None,
                 "listing_count": bucket["listing_count"],
             }
         )
@@ -47,6 +62,29 @@ def _pct_change(first: Optional[int], last: Optional[int]) -> Optional[float]:
     if first is None or last is None or first == 0:
         return None
     return round((last - first) / first * 100, 1)
+
+
+def _window_stats(
+    median_points: List[Dict[str, Any]], from_start: bool
+) -> tuple[Optional[int], int]:
+    slice_points = median_points[:MOVER_WINDOW] if from_start else median_points[-MOVER_WINDOW:]
+    prices = [p["median_price"] for p in slice_points if p.get("median_price") is not None]
+    listing_count = sum(int(p.get("listing_count") or 0) for p in slice_points)
+    return (int(median(prices)) if prices else None, listing_count)
+
+
+def _is_plausible_mover(
+    change: float, median_points: List[Dict[str, Any]], listing_type: str
+) -> bool:
+    if len(median_points) < MIN_MOVER_SNAPSHOTS:
+        return False
+    if abs(change) > MAX_MOVER_PCT:
+        return False
+    if listing_type == "rent":
+        last = median_points[-1].get("median_price")
+        if last is not None and last > 6000:
+            return False
+    return True
 
 
 def build_payload(points: List[Dict[str, Any]]) -> Dict[str, Any]:
@@ -72,7 +110,7 @@ def fetch_market_trends(
     with database.connect() as conn:
         cursor = conn.execute(
             """
-            SELECT snapshot_date, median_price, listing_count
+            SELECT snapshot_date, median_price, listing_count, min_price, max_price
             FROM market_snapshots_daily
             WHERE city = ? AND suburb = ? AND listing_type = ? AND snapshot_date >= ?
             ORDER BY snapshot_date ASC
@@ -81,7 +119,7 @@ def fetch_market_trends(
         )
         rows = [dict(row) for row in cursor.fetchall()]
 
-    return build_payload(aggregate_by_date(rows))
+    return build_payload(aggregate_by_date(rows, listing_type))
 
 
 def fetch_city_movers(
@@ -95,7 +133,7 @@ def fetch_city_movers(
     with database.connect() as conn:
         cursor = conn.execute(
             """
-            SELECT snapshot_date, suburb, median_price, listing_count
+            SELECT snapshot_date, suburb, median_price, listing_count, min_price, max_price
             FROM market_snapshots_daily
             WHERE city = ? AND listing_type = ? AND snapshot_date >= ?
             ORDER BY suburb ASC, snapshot_date ASC
@@ -110,12 +148,18 @@ def fetch_city_movers(
 
     movers: List[Dict[str, Any]] = []
     for suburb, suburb_rows in by_suburb.items():
-        points = aggregate_by_date(suburb_rows)
+        points = aggregate_by_date(suburb_rows, listing_type)
         median_points = [p for p in points if p.get("median_price") is not None]
-        if len(median_points) < 2:
+        if len(median_points) < MIN_MOVER_SNAPSHOTS:
             continue
-        change = _pct_change(median_points[0]["median_price"], median_points[-1]["median_price"])
-        if change is None:
+
+        start_price, start_count = _window_stats(median_points, True)
+        end_price, end_count = _window_stats(median_points, False)
+        if start_count < MIN_MOVER_LISTINGS or end_count < MIN_MOVER_LISTINGS:
+            continue
+
+        change = _pct_change(start_price, end_price)
+        if change is None or not _is_plausible_mover(change, median_points, listing_type):
             continue
         market_id = market_ids.get(suburb)
         if not market_id:
@@ -125,7 +169,7 @@ def fetch_city_movers(
                 "market_id": market_id,
                 "suburb": suburb,
                 "pct_change_median": change,
-                "median_price": median_points[-1]["median_price"],
+                "median_price": end_price,
             }
         )
 

@@ -28,6 +28,7 @@ CREATE TABLE IF NOT EXISTS listings (
     land_size_unit TEXT,
     agency_name TEXT,
     agency_logo TEXT,
+    image_url TEXT,
     first_seen_at TEXT NOT NULL,
     last_seen_at TEXT NOT NULL,
     is_active INTEGER NOT NULL DEFAULT 1
@@ -123,14 +124,21 @@ class HistoryDatabase:
             self._migrate_schema(conn)
 
     def _migrate_schema(self, conn: sqlite3.Connection) -> None:
+        listing_columns = {
+            row["name"] for row in conn.execute("PRAGMA table_info(listings)").fetchall()
+        }
+        if "image_url" not in listing_columns:
+            conn.execute("ALTER TABLE listings ADD COLUMN image_url TEXT")
+
+        conn.execute("DROP VIEW IF EXISTS listings_with_days_on_market")
         conn.execute(
             """
-            CREATE VIEW IF NOT EXISTS listings_with_days_on_market AS
+            CREATE VIEW listings_with_days_on_market AS
             SELECT
                 listing_url, source, listing_type, property_type, market_id,
                 title, price, price_raw, city, suburb, location, description,
                 bedrooms, bathrooms, lounges, land_size, land_size_unit,
-                agency_name, agency_logo, first_seen_at, last_seen_at, is_active,
+                agency_name, agency_logo, image_url, first_seen_at, last_seen_at, is_active,
                 CAST(
                     MAX(0, CAST(julianday(last_seen_at) - julianday(first_seen_at) AS INTEGER))
                 AS INTEGER) AS days_on_market
@@ -195,12 +203,12 @@ class HistoryDatabase:
                 listing_url, source, listing_type, property_type, market_id,
                 title, price, price_raw, city, suburb, location, description,
                 bedrooms, bathrooms, lounges, land_size, land_size_unit,
-                agency_name, agency_logo, first_seen_at, last_seen_at, is_active
+                agency_name, agency_logo, image_url, first_seen_at, last_seen_at, is_active
             ) VALUES (
                 ?, ?, ?, ?, ?,
                 ?, ?, ?, ?, ?, ?, ?,
                 ?, ?, ?, ?, ?,
-                ?, ?, ?, ?, 1
+                ?, ?, ?, ?, ?, 1
             )
             ON CONFLICT(listing_url) DO UPDATE SET
                 source = excluded.source,
@@ -221,6 +229,7 @@ class HistoryDatabase:
                 land_size_unit = excluded.land_size_unit,
                 agency_name = excluded.agency_name,
                 agency_logo = excluded.agency_logo,
+                image_url = excluded.image_url,
                 last_seen_at = excluded.last_seen_at,
                 is_active = 1
             """,
@@ -244,6 +253,7 @@ class HistoryDatabase:
                 record["land_size_unit"],
                 record["agency_name"],
                 record["agency_logo"],
+                record.get("image_url") or "",
                 seen_at,
                 seen_at,
             ),

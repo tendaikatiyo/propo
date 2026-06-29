@@ -4,6 +4,7 @@ from typing import Any, Dict, Iterable, List, Optional
 
 from analytics.history_db import HistoryDatabase, utc_date_iso
 from analytics.listing_utils import days_on_market_from_row, normalize_property_type
+from analytics.price_utils import sanitize_listing_rent_price
 
 
 def safe_median(numbers: Iterable[int]) -> Optional[int]:
@@ -35,7 +36,15 @@ def build_daily_market_rows(listings: List[Dict[str, Any]], snapshot_date: str) 
         )
         if not all(key):
             continue
-        groups[key].append(int(row["price"]))
+
+        if row.get("listing_type") == "rent":
+            price = sanitize_listing_rent_price(row)
+            if price is None:
+                continue
+        else:
+            price = int(row["price"])
+
+        groups[key].append(price)
         dom_groups[key].append(days_on_market_from_row(row))
         meta[key] = {
             "city": key[0],

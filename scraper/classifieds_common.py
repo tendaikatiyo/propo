@@ -15,7 +15,7 @@ _root = Path(__file__).resolve().parents[1]
 if str(_root) not in sys.path:
     sys.path.insert(0, str(_root))
 
-from scraper.property_co_common import normalize_city
+from analytics.listing_images import extract_classifieds_carousel_image
 
 try:
     from analytics.price_utils import reconcile_classifieds_rent_price
@@ -206,6 +206,15 @@ def extract_description_from_carousel(card) -> str:
     return decode_carousel_text(match.group(1))
 
 
+def extract_listing_image_from_carousel(card) -> str:
+    carousel = card.select_one("div.carousel[data-images]")
+    if not carousel:
+        return ""
+
+    raw = html.unescape(carousel.get("data-images", ""))
+    return extract_classifieds_carousel_image(raw)
+
+
 def extract_card_description(card) -> str:
     full = extract_description_from_carousel(card)
     if full:
@@ -305,6 +314,7 @@ def parse_listing_card(card, feed_type: str, listing_kind: str) -> Optional[Dict
     location = build_location(suburb, city)
     description = extract_card_description(card)
     agency_name, agency_logo = extract_agency(card)
+    image_url = extract_listing_image_from_carousel(card)
 
     if listing_kind == "rental" and reconcile_classifieds_rent_price is not None:
         price = reconcile_classifieds_rent_price(price, description)
@@ -324,6 +334,7 @@ def parse_listing_card(card, feed_type: str, listing_kind: str) -> Optional[Dict
         "description": description,
         "agency_name": agency_name,
         "agency_logo": agency_logo,
+        "image_url": image_url,
     }
 
     if feed_type == "residential_land":

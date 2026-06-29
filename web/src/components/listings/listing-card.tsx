@@ -3,12 +3,25 @@
 import Image from "next/image";
 import { ExternalLink, Home } from "lucide-react";
 
+import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { resolveListingThumbnailUrl } from "@/lib/listings";
+import {
+  resolveFairValueForListing,
+  type FairValueBadge,
+} from "@/lib/fair-value";
 import { formatCurrency, propertyTypeLabel, sanitizeLabel } from "@/lib/format";
-import type { Listing, PropertyType } from "@/lib/types";
+import { fairValueTooltipDetail } from "@/lib/metric-tooltips";
+import { cn } from "@/lib/utils";
+import type { Listing, MarketMetric, PropertyType } from "@/lib/types";
 
 export function ListingThumbnail({ listing }: { listing: Listing }) {
-  const imageUrl = listing.image_url ?? listing.agency_logo;
+  const imageUrl = resolveListingThumbnailUrl(listing);
 
   if (imageUrl) {
     return (
@@ -32,13 +45,46 @@ export function ListingThumbnail({ listing }: { listing: Listing }) {
   );
 }
 
+function FairValueBadgeDisplay({ fairValue }: { fairValue: FairValueBadge }) {
+  const tooltip = fairValueTooltipDetail(
+    formatCurrency(fairValue.median),
+    fairValue.usedAggregate,
+    fairValue.sampleCount
+  );
+
+  return (
+    <Tooltip>
+      <TooltipTrigger>
+        <Badge
+          variant="outline"
+          className={cn(
+            "normal-case tracking-normal",
+            fairValue.variant === "below"
+              ? "border-[#bbf7d0] bg-[#dcfce7] text-[#166534]"
+              : "border-[#fef08a] bg-[#fef9c3] text-[#854d0e]"
+          )}
+        >
+          {fairValue.label}
+        </Badge>
+      </TooltipTrigger>
+      <TooltipContent className="max-w-xs font-sans text-sm normal-case tracking-normal">
+        {tooltip}
+      </TooltipContent>
+    </Tooltip>
+  );
+}
+
 export function ListingCard({
   listing,
   compact = false,
+  market,
 }: {
   listing: Listing;
   compact?: boolean;
+  market?: MarketMetric | null;
 }) {
+  const fairValue = market ? resolveFairValueForListing(market, listing) : null;
+
   return (
     <Card className="overflow-hidden">
       <CardContent className={compact ? "flex gap-2.5 p-3" : "flex gap-3 p-4"}>
@@ -53,9 +99,18 @@ export function ListingCard({
           >
             {listing.title ? sanitizeLabel(listing.title) : "Listing"}
           </p>
-          <p className={compact ? "font-stat text-sm font-medium" : "font-stat text-base font-medium"}>
-            {formatCurrency(listing.price)}
-          </p>
+          <div className="flex flex-wrap items-center gap-2">
+            <p
+              className={
+                compact
+                  ? "font-stat text-sm font-medium"
+                  : "font-stat text-base font-medium"
+              }
+            >
+              {formatCurrency(listing.price)}
+            </p>
+            {fairValue ? <FairValueBadgeDisplay fairValue={fairValue} /> : null}
+          </div>
           <p className="line-clamp-2 text-[11px] text-muted-foreground">
             {[listing.suburb, listing.city].filter(Boolean).join(", ")}
             {listing.property_type

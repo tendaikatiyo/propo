@@ -21,12 +21,12 @@ INSERT INTO listings (
     listing_url, source, listing_type, property_type, market_id,
     title, price, price_raw, city, suburb, location, description,
     bedrooms, bathrooms, lounges, land_size, land_size_unit,
-    agency_name, agency_logo, first_seen_at, last_seen_at, is_active
+    agency_name, agency_logo, image_url, first_seen_at, last_seen_at, is_active
 ) VALUES (
     %(listing_url)s, %(source)s, %(listing_type)s, %(property_type)s, %(market_id)s,
     %(title)s, %(price)s, %(price_raw)s, %(city)s, %(suburb)s, %(location)s, %(description)s,
     %(bedrooms)s, %(bathrooms)s, %(lounges)s, %(land_size)s, %(land_size_unit)s,
-    %(agency_name)s, %(agency_logo)s, %(first_seen_at)s::timestamptz, %(last_seen_at)s::timestamptz, true
+    %(agency_name)s, %(agency_logo)s, %(image_url)s, %(first_seen_at)s::timestamptz, %(last_seen_at)s::timestamptz, true
 )
 ON CONFLICT (listing_url) DO UPDATE SET
     source = EXCLUDED.source,
@@ -47,6 +47,7 @@ ON CONFLICT (listing_url) DO UPDATE SET
     land_size_unit = EXCLUDED.land_size_unit,
     agency_name = EXCLUDED.agency_name,
     agency_logo = EXCLUDED.agency_logo,
+    image_url = EXCLUDED.image_url,
     last_seen_at = EXCLUDED.last_seen_at,
     is_active = true
 """

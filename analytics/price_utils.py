@@ -123,3 +123,54 @@ def reconcile_classifieds_rent_price(
         return desc_price
 
     return None
+
+
+def sanitize_snapshot_rent_price(
+    median_price: Optional[int],
+    min_price: Optional[int] = None,
+    max_price: Optional[int] = None,
+) -> Optional[int]:
+    """Correct ZIG-inflated segment medians stored in market_snapshots_daily."""
+    if median_price is None:
+        return None
+
+    if median_price <= ZIG_CORRECTED_RENT_MAX:
+        return median_price
+
+    zig_median = infer_usd_from_zig_scrape(median_price)
+    if zig_median is not None:
+        return zig_median
+
+    if min_price and max_price and min_price > 0 and max_price > min_price:
+        if max_price / min_price >= 5:
+            zig_max = infer_usd_from_zig_scrape(max_price)
+            tolerance = max(int(min_price * 0.5), 200)
+            if zig_max is not None and abs(zig_max - min_price) <= tolerance:
+                return min_price
+
+    if median_price > MAX_MONTHLY_RENT_USD:
+        return None
+
+    return None
+
+
+def sanitize_listing_rent_price(row: dict) -> Optional[int]:
+    """Sanitize a single listing price before daily snapshot rollups."""
+    price = parse_price_amount(row.get("price"))
+    if price is None:
+        return None
+
+    source = str(row.get("source") or "")
+    description = str(row.get("description") or "")
+
+    if source == "classifieds":
+        return reconcile_classifieds_rent_price(price, description)
+
+    zig_usd = infer_usd_from_zig_scrape(price)
+    if zig_usd is not None:
+        return zig_usd
+
+    if price > MAX_MONTHLY_RENT_USD:
+        return None
+
+    return price if price <= ZIG_CORRECTED_RENT_MAX else None

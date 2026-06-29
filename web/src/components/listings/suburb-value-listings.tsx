@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 
 import { ListingCard } from "@/components/listings/listing-card";
 import { Skeleton } from "@/components/ui/skeleton";
+import { dedupeListingsByThumbnail } from "@/lib/listings";
 import { fetchListingsFromApi } from "@/lib/listings-client";
 import { formatCurrency } from "@/lib/format";
 import type { Listing, MarketMetric } from "@/lib/types";
@@ -12,10 +13,12 @@ function ListingsBlock({
   title,
   description,
   listings,
+  market,
 }: {
   title: string;
   description: string;
   listings: Listing[];
+  market: MarketMetric;
 }) {
   if (!listings.length) return null;
 
@@ -26,8 +29,8 @@ function ListingsBlock({
         <p className="text-xs text-muted-foreground">{description}</p>
       </div>
       <div className="grid gap-3 sm:grid-cols-2">
-        {listings.map((listing) => (
-          <ListingCard key={listing.listing_url} listing={listing} />
+        {dedupeListingsByThumbnail(listings).map((listing) => (
+          <ListingCard key={listing.listing_url} listing={listing} market={market} />
         ))}
       </div>
     </section>
@@ -106,6 +109,7 @@ export function SuburbValueListings({ market }: { market: MarketMetric }) {
             : "Below suburb median rent."
         }
         listings={rentListings}
+        market={market}
       />
 
       <ListingsBlock
@@ -116,6 +120,7 @@ export function SuburbValueListings({ market }: { market: MarketMetric }) {
             : "Below suburb median sale price."
         }
         listings={saleListings}
+        market={market}
       />
     </section>
   );
