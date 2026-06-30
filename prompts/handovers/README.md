@@ -14,3 +14,8 @@ Chronological notes for agent/developer continuity between sessions.
 | 2026-06-27 | [2026-06-27-market-intelligence-roadmap.md](./2026-06-27-market-intelligence-roadmap.md) | Prioritized market intelligence features (trends, fair value, movers, reports, compare, transparency); no chat; file touch lists per feature F0–F10 |
 | 2026-06-28 | [2026-06-28-f0-f1-segment-explore-polish.md](./2026-06-28-f0-f1-segment-explore-polish.md) | F0+F1 shipped; segment medians, Explore fallback UX, filter switches, room/buy rules; next F2 |
 | 2026-06-28 | [2026-06-28-f2-trends-classifieds-prices.md](./2026-06-28-f2-trends-classifieds-prices.md) | F2 trends API + charts; city movers rent/sale toggle; classifieds ZIG→USD price fix + repair |
+| 2026-06-29 | [2026-06-29-f3-fair-value-movers-seo.md](./2026-06-29-f3-fair-value-movers-seo.md) | F3 fair value badges; city movers plausibility fix; Open Graph / Twitter SEO |
+| 2026-06-29 | [2026-06-29-listing-thumbnails-image-url.md](./2026-06-29-listing-thumbnails-image-url.md) | Listing thumbnails; `image_url` pipeline; classifieds carousel scrape; migration 007 |
+| 2026-06-30 | [2026-06-30-pipeline-run-scraper-migration-fixes.md](./2026-06-30-pipeline-run-scraper-migration-fixes.md) | Full pipeline run; `normalize_city` scraper fix; Supabase migration 007 apply; ingest sync |
+| 2026-06-29 | [2026-06-29-f3-fair-value-movers-seo.md](./2026-06-29-f3-fair-value-movers-seo.md) | F3 fair value badges; city movers fix (sale empty, rent inflated); Open Graph SEO; Harare skyline OG image |
+| 2026-06-29 | [2026-06-29-listing-thumbnails-image-url.md](./2026-06-29-listing-thumbnails-image-url.md) | Duplicate listing thumbnails fix; `image_url` column; classifieds carousel scrape; agency-logo heuristics |

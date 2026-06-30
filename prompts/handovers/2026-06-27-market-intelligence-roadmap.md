@@ -10,16 +10,21 @@ Strengthen Propo as a **market intelligence platform** for Zimbabwe — not a li
 
 ---
 
-## Ship status (2026-06-28)
+## Ship status (2026-06-30)
 
 | Feature | Status | Handover |
 | ------- | ------ | -------- |
 | **F0** Pipeline type normalization | ✅ Done | [2026-06-28-f0-f1-segment-explore-polish.md](./2026-06-28-f0-f1-segment-explore-polish.md) |
 | **F1** Segment medians + Explore polish | ✅ Done | same |
 | **F2** Price trends | ✅ Done | [2026-06-28-f2-trends-classifieds-prices.md](./2026-06-28-f2-trends-classifieds-prices.md) |
-| **F3–F10** | Not started | below |
+| **F3** Fair value badges | ✅ Done | [2026-06-29-f3-fair-value-movers-seo.md](./2026-06-29-f3-fair-value-movers-seo.md) |
+| **F4** Suburb market report | ✅ Done | below |
+| **F5** Smarter compare | ✅ Done | below |
+| **F6–F10** | Not started | below |
 
-**Next recommended:** F3 (fair value) → F8 transparency slice → pipeline refresh for repaired classifieds prices.
+**Ancillary (not roadmap features):** listing thumbnails + `image_url` ([2026-06-29](./2026-06-29-listing-thumbnails-image-url.md), [2026-06-30 pipeline](./2026-06-30-pipeline-run-scraper-migration-fixes.md)); Open Graph SEO + city movers polish (F3 handover); classifieds ZIG→USD price fix (F2 handover).
+
+**Next recommended:** F8 transparency slice → F6 movers rankings page → F7 affordability cards.
 
 ---
 
@@ -28,12 +33,12 @@ Strengthen Propo as a **market intelligence platform** for Zimbabwe — not a li
 | Layer | Today | Gap |
 | ----- | ----- | --- |
 | **Explore** | Segment medians when type/bed set; fallback labeled; **Include suburb medians** switch; buy has no room | F7 affordability cards; segment-aware home preview |
-| **Suburb profile** | Spec medians via `?type=&bedroom=`; point-in-time yield, DOM, property mix | No historical trend; no fair-value on listings |
-| **Rankings** | Static leaderboards (yield, opportunity, DOM) | No "movers" (price change, supply shift) |
-| **Compare** | Up to 3 pinned suburbs, aggregate metrics | No spec-aware compare; no trend sparklines |
-| **History data** | `market_snapshots_daily`, `listing_snapshots` populated by daily pipeline | **Not exposed in web UI** |
-| **Trust** | Confidence badge, fallback copy on Explore; methodology page | Sample sizes per segment not on suburb pages (F8) |
-| **Listings join** | Filter by suburb string equality | Mismatches vs `market_metrics` suburb names; no `market_id` on listings |
+| **Suburb profile** | Spec medians via `?type=&bedroom=`; 30/90/180d trend charts; fair-value badges; **printable report** at `/report` | Segment-filtered trends; sample size on header (F8) |
+| **Rankings** | Static leaderboards (yield, opportunity, DOM); city page 90d movers teaser | No dedicated `/rankings` movers tab (F6) |
+| **Compare** | Up to 3 pinned suburbs; spec selector (mode + type + bed); segment-aware medians; best-value highlights | Trend sparklines (v2, deferred)
+| **History data** | `market_snapshots_daily` exposed via trends API on suburb/city pages | Segment-filtered trends; DOM trend line |
+| **Trust** | Confidence badge, fallback copy on Explore; methodology page (trends + segment copy in meta) | Sample sizes per segment not on suburb pages (F8) |
+| **Listings join** | Filter by suburb string equality; `image_url` on listings | Mismatches vs `market_metrics` suburb names; no `market_id` join (F9) |
 
 ---
 
@@ -83,7 +88,7 @@ flowchart TD
 | **F9** | `market_id` on listings | Data quality foundation |
 | **F10** | Analytics MVP (optional) | Internal demand signals for B2B later |
 
-**If only three ships in the next month:** F0 + F1 → F2 → F3.
+**If only three ships in the next month:** ~~F0 + F1 → F2 → F3~~ **shipped** — next: F8 → F6 → F7.
 
 ---
 
@@ -172,11 +177,13 @@ Pre-aggregate `(property_type, bedroom_bucket)` medians into `market_metrics.seg
 
 ---
 
-## F2 — Price & activity trends
+## F2 — Price & activity trends ✅
+
+**Ship notes:** [2026-06-28-f2-trends-classifieds-prices.md](./2026-06-28-f2-trends-classifieds-prices.md) (city movers polish in F3 handover)
 
 ### Problem
 
-Daily pipeline writes `market_snapshots_daily` (median price, listing count by city/suburb/listing_type/property_type per date). Web shows only latest point on suburb/city pages.
+Daily pipeline writes `market_snapshots_daily` (median price, listing count by city/suburb/listing_type/property_type per date). Web showed only latest point on suburb/city pages.
 
 ### Deliverable
 
@@ -219,15 +226,24 @@ Returns time series:
 
 **Web**
 
-- [ ] `web/src/lib/types.ts` — `MarketTrendPoint`, `MarketTrendsPayload`
-- [ ] `web/src/lib/trends.ts` (new) — `% change`, date range helpers
-- [ ] `web/src/lib/data-server.ts` — `fetchMarketTrends(marketId, range, mode)`
-- [ ] `web/src/app/api/markets/[marketId]/trends/route.ts` (new)
-- [ ] `web/src/components/markets/trend-chart.tsx` (new) — Recharts line/area
-- [ ] `web/src/components/markets/suburb-profile.tsx` — trends section below metric cards
-- [ ] `web/src/components/cities/city-dashboard.tsx` — city-level trend summary (top suburbs movers teaser)
-- [ ] `web/src/lib/metric-tooltips.ts` — tooltip for trend charts
-- [ ] `web/src/app/methodology/page.tsx` — note on trend calculation (daily snapshot medians)
+- [x] `web/src/lib/types.ts` — `MarketTrendPoint`, `MarketTrendsPayload`, `TrendMover`
+- [x] `web/src/lib/trends.ts` (new) — `% change`, date range helpers, movers logic
+- [x] `web/src/lib/data-server.ts` — `fetchMarketTrends`, `fetchCityTrendMovers`
+- [x] `web/src/app/api/markets/[marketId]/trends/route.ts` (new)
+- [x] `web/src/app/api/cities/[city]/trend-movers/route.ts` (new) — city movers teaser
+- [x] `web/src/components/markets/trend-chart.tsx` (new) — Recharts area
+- [x] `web/src/components/markets/suburb-trends-section.tsx` (new) — 30/90/180d + rent/sale toggle
+- [x] `web/src/components/markets/suburb-profile.tsx` — trends section wired
+- [x] `web/src/components/cities/city-trend-movers.tsx` (new) — 90d movers + rent/sale toggle
+- [x] `web/src/components/cities/city-dashboard.tsx` — city-level movers teaser
+- [x] `web/src/lib/metric-tooltips.ts` — tooltip for trend charts
+- [x] `web/src/app/methodology/page.tsx` — note on trend calculation (daily snapshot medians)
+- [x] `analytics/trends_fetch.py` — local SQLite fallback when Supabase not configured
+
+**Deferred (v2)**
+
+- [ ] Segment-filtered trends (type/bed on chart)
+- [ ] DOM trend line
 
 ### Verify
 
@@ -240,11 +256,13 @@ Returns time series:
 
 ---
 
-## F3 — Fair value badges on listings
+## F3 — Fair value badges on listings ✅
+
+**Ship notes:** [2026-06-29-f3-fair-value-movers-seo.md](./2026-06-29-f3-fair-value-movers-seo.md)
 
 ### Problem
 
-Listings show price but not context vs market. Users ask "is $720 rent fair for this suburb?"
+Listings showed price but not context vs market. Users ask "is $720 rent fair for this suburb?"
 
 ### Deliverable
 
@@ -270,13 +288,14 @@ Threshold: show badge only if `|pctDiff| >= 5` and sample count ≥ `MIN_SEGMENT
 
 ### Files to touch
 
-- [ ] `web/src/lib/fair-value.ts` (new)
-- [ ] `web/src/lib/segments.ts` — reuse resolver; may need market lookup by suburb+city
-- [ ] `web/src/hooks/use-market-by-suburb.ts` (new, optional) — map suburb → `MarketMetric`
-- [ ] `web/src/components/listings/listing-card.tsx` — badge UI
-- [ ] `web/src/components/listings/budget-listings.tsx` — pass mode + markets context
-- [ ] `web/src/components/listings/suburb-value-listings.tsx` — segment median already known from market
-- [ ] `web/src/lib/metric-tooltips.ts` — "Fair value" tooltip
+- [x] `web/src/lib/fair-value.ts` (new) — `fairValueLabel`, `resolveFairValueForListing`
+- [x] `web/src/lib/segments.ts` — reuse resolver
+- [x] `web/src/hooks/use-market-lookup.ts` (new) — map `city|suburb` → `MarketMetric`
+- [x] `web/src/components/listings/listing-card.tsx` — badge UI
+- [x] `web/src/components/listings/budget-listings.tsx` — pass mode + markets context
+- [x] `web/src/components/listings/suburb-value-listings.tsx` — segment median already known from market
+- [x] `web/src/lib/metric-tooltips.ts` — `FAIR_VALUE_TOOLTIP`, `fairValueTooltipDetail()`
+- [x] `web/src/lib/constants.ts` — `MIN_SEGMENT_LISTINGS = 3` (shared with F8)
 
 ### Depends on
 
@@ -294,7 +313,7 @@ Threshold: show badge only if `|pctDiff| >= 5` and sample count ≥ `MIN_SEGMENT
 
 ---
 
-## F4 — Suburb market report (shareable / export)
+## F4 — Suburb market report (shareable / export) ✅
 
 ### Deliverable
 
@@ -313,11 +332,15 @@ Threshold: show badge only if `|pctDiff| >= 5` and sample count ≥ `MIN_SEGMENT
 
 ### Files to touch
 
-- [ ] `web/src/app/cities/[city]/[suburb]/report/page.tsx` (new)
-- [ ] `web/src/components/markets/suburb-report.tsx` (new) — print layout
-- [ ] `web/src/components/markets/suburb-profile.tsx` — "Export report" button
-- [ ] Reuse: `trend-chart.tsx`, `property-mix-bar.tsx`, `suburb-value-listings.tsx`, `confidence-badge.tsx`
-- [ ] `web/src/app/globals.css` — print styles
+- [x] `web/src/app/cities/[city]/[suburb]/report/page.tsx` (new) — server fetch trends + listings
+- [x] `web/src/components/markets/suburb-report.tsx` (new) — print layout
+- [x] `web/src/components/markets/suburb-report-trends.tsx` (new) — 90d rent + sale charts
+- [x] `web/src/components/markets/suburb-report-actions.tsx` (new) — Print / Save PDF
+- [x] `web/src/components/markets/suburb-profile.tsx` — "Export report" button (desktop + mobile)
+- [x] `web/src/lib/slug.ts` — `suburbReportPath()`
+- [x] Reuse: `trend-chart.tsx`, `property-mix-bar.tsx`, `listing-card.tsx`, `confidence-badge.tsx`
+- [x] `web/src/app/globals.css` — `@media print` A4 styles
+- [x] `web/src/components/layout/app-shell.tsx` — hide chrome on print
 
 ### Depends on
 
@@ -334,7 +357,7 @@ Threshold: show badge only if `|pctDiff| >= 5` and sample count ≥ `MIN_SEGMENT
 
 ---
 
-## F5 — Smarter compare
+## F5 — Smarter compare ✅
 
 ### Deliverable
 
@@ -346,12 +369,15 @@ Extend compare beyond aggregate pins:
 
 ### Files to touch
 
-- [ ] `web/src/components/compare/compare-page.tsx` — filter bar for spec
-- [ ] `web/src/components/markets/compare-table.tsx` — spec-aware values via `resolveSegmentStats`; highlight best cell
-- [ ] `web/src/components/mobile/compare-cards.tsx` — same
-- [ ] `web/src/lib/explore.ts` — export/compare helpers for segment-aware `getValue`
-- [ ] `web/src/lib/metric-tooltips.ts` — compare column labels when spec set
-- [ ] `web/src/components/markets/trend-sparkline.tsx` (optional v2)
+- [x] `web/src/components/compare/compare-page.tsx` — filter bar + spec-aware description
+- [x] `web/src/components/compare/compare-filter-bar.tsx` (new) — mode + type + bedroom
+- [x] `web/src/hooks/use-compare-filters.ts` (new) — URL params on `/compare`
+- [x] `web/src/components/markets/compare-table.tsx` — spec-aware values; best cell highlight; fallback sublabel
+- [x] `web/src/components/mobile/compare-cards.tsx` — same
+- [x] `web/src/lib/explore.ts` — `buildCompareMetrics()`, segment-aware `getValue`
+- [x] `web/src/lib/metric-tooltips.ts` — `compareMetricTooltip()` when spec set
+- [x] `web/src/lib/types.ts` + `constants.ts` — `CompareFilters`, `normalizeCompareFilters()`
+- [ ] `web/src/components/markets/trend-sparkline.tsx` (optional v2 — deferred)
 
 ### Depends on
 
@@ -368,6 +394,8 @@ Extend compare beyond aggregate pins:
 ---
 
 ## F6 — Market movers (rankings v2)
+
+**Partial:** City dashboard 90d movers teaser shipped (F2/F3 polish). Dedicated `/rankings` movers tab still TODO.
 
 ### Deliverable
 
@@ -387,15 +415,17 @@ Minimum data: ≥4 snapshot dates and confidence ≥ 40% (reuse `RANKINGS_MIN_CO
 
 **Pipeline / API**
 
-- [ ] `web/src/lib/trends.ts` — `computeMovers(markets, snapshots, range)`
-- [ ] `web/src/lib/data-server.ts` — `fetchMarketSnapshots()` or bulk trends query
+- [x] `web/src/lib/trends.ts` — `computeMoversFromSeries`, windowed comparison (city teaser)
+- [x] `web/src/lib/data-server.ts` — `fetchCityTrendMovers`
+- [x] `web/src/app/api/cities/[city]/trend-movers/route.ts` — city-level movers
 - [ ] `web/src/app/api/rankings/movers/route.ts` (new) — precomputed movers JSON
 - [ ] `analytics/rankings.py` (optional) — nightly `data/rankings_movers.json` for static fallback
 
 **Web**
 
-- [ ] `web/src/lib/types.ts` — `MoverEntry`
-- [ ] `web/src/lib/rankings.ts` — movers sort/filter
+- [x] `web/src/lib/types.ts` — `TrendMover` (city teaser)
+- [x] `web/src/components/cities/city-trend-movers.tsx` — city page movers UI
+- [ ] `web/src/lib/rankings.ts` — movers sort/filter for rankings page
 - [ ] `web/src/components/rankings/movers-rankings.tsx` (new)
 - [ ] `web/src/components/rankings/rankings-page.tsx` — tabs: Classic | Movers
 - [ ] `web/src/app/rankings/page.tsx` — wire tabs
@@ -469,7 +499,7 @@ Surface data quality on suburb profile and listing cards:
 
 ### Files to touch
 
-- [ ] `web/src/lib/constants.ts` — `MIN_SEGMENT_LISTINGS = 3`
+- [x] `web/src/lib/constants.ts` — `MIN_SEGMENT_LISTINGS = 3` (shipped with F3)
 - [ ] `web/src/components/markets/sample-size-badge.tsx` (new)
 - [ ] `web/src/components/markets/confidence-badge.tsx` — optional `sampleCount` prop
 - [ ] `web/src/components/markets/suburb-profile.tsx` — sample size + scope
@@ -565,7 +595,8 @@ Track core events server-side for **your** product decisions and future B2B pitc
 | Migration | Feature | Notes |
 | --------- | ------- | ----- |
 | `006_market_segments.sql` | F1 | ✅ Applied on Supabase (2026-06-28) |
-| `007_trends_rollup.sql` | F2 | Optional view |
+| `007_listing_image_url.sql` | Listings UX | ✅ Applied on Supabase (2026-06-30) — not F2 rollup |
+| `007_trends_rollup.sql` | F2 | Optional view — not applied; API aggregates at read time |
 | `008_listings_market_id.sql` | F9 | Backfill only if needed (`market_id` may exist) |
 | `009_analytics.sql` | F10 | Optional |
 
@@ -586,9 +617,9 @@ Check `001_history.sql` — `listings.market_id` column already exists; F9 may b
 ## Success criteria (platform-level)
 
 1. User can answer **"where should I rent a 2-bed flat at $700?"** with segment-accurate suburbs ✅ (F0+F1; F7 cards still TODO)
-2. User can answer **"is this listing fairly priced?"** on listing cards (F3)
-3. User can answer **"is Borrowdale getting more expensive?"** from suburb trend chart (F2)
-4. User can **share/print a suburb report** for diaspora research (F4)
+2. User can answer **"is this listing fairly priced?"** on listing cards ✅ (F3)
+3. User can answer **"is Borrowdale getting more expensive?"** from suburb trend chart ✅ (F2)
+4. User can **share/print a suburb report** for diaspora research ✅ (F4)
 5. Rankings surface **movers**, not only static top yield (F6)
 6. Every metric shows **how much data backs it** (F8)
 
@@ -638,12 +669,12 @@ npm run build
 ## Suggested session order for agents
 
 1. ~~F0 + F1~~ — done; see [2026-06-28 handover](./2026-06-28-f0-f1-segment-explore-polish.md)
-2. F2 trends API + suburb chart (unblocks F6)
-3. F3 fair value badges
-4. F8 transparency (quick win alongside F3)
-5. F7 affordability cards on home
-6. F6 movers rankings
-7. F5 compare upgrades
-8. F4 suburb report
+2. ~~F2 trends API + suburb chart~~ — done; see [2026-06-28 handover](./2026-06-28-f2-trends-classifieds-prices.md)
+3. ~~F3 fair value badges~~ — done; see [2026-06-29 handover](./2026-06-29-f3-fair-value-movers-seo.md)
+4. **F8** transparency (sample size badges on suburb profile)
+5. **F6** movers rankings page (city card is teaser only)
+6. **F7** affordability cards on home
+7. ~~F5 compare upgrades~~ — done (2026-06-30)
+8. ~~F4 suburb report~~ — done (2026-06-30)
 9. F9 market_id backfill
 10. F10 analytics when ready for B2B / internal ops

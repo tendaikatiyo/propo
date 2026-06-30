@@ -126,6 +126,12 @@ export interface ExploreFilters {
   hideSuburbMedianFallback: boolean;
 }
 
+export interface CompareFilters {
+  mode: ExploreMode;
+  propertyType: PropertyType | null;
+  bedroom: number | null;
+}
+
 export type SortKey =
   | "suburb"
   | "city"

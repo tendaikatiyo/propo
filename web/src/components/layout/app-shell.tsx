@@ -23,19 +23,35 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="flex min-h-screen">
-      <AppSidebar />
-      <div className="flex min-h-screen flex-1 flex-col lg:pl-60">
-        <MobileTopBar />
-        {isHome ? <HomeHero /> : null}
-        {showCompactHero ? (
-          <SiteHero compact variant={heroForCitySlug(citySlug)} />
+      <div className="print:hidden">
+        <AppSidebar />
+      </div>
+      <div className="flex min-h-screen flex-1 flex-col lg:pl-60 print:pl-0">
+        <div className="print:hidden">
+          <MobileTopBar />
+        </div>
+        {isHome ? (
+          <div className="print:hidden">
+            <HomeHero />
+          </div>
         ) : null}
-        <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8 pb-24 sm:px-6 lg:px-8 lg:pb-10">
+        {showCompactHero ? (
+          <div className="print:hidden">
+            <SiteHero compact variant={heroForCitySlug(citySlug)} />
+          </div>
+        ) : null}
+        <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8 pb-24 sm:px-6 lg:px-8 lg:pb-10 print:max-w-none print:px-0 print:py-0 print:pb-0">
           {children}
         </main>
-        <AppFooter />
-        <MobileTabBar />
-        <OnboardingTour />
+        <div className="print:hidden">
+          <AppFooter />
+        </div>
+        <div className="print:hidden">
+          <MobileTabBar />
+        </div>
+        <div className="print:hidden">
+          <OnboardingTour />
+        </div>
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FileDown } from "lucide-react";
 
 import { BackLink } from "@/components/layout/back-nav";
 import { SuburbActionBar } from "@/components/mobile/suburb-action-bar";
@@ -7,6 +8,7 @@ import { SuburbValueListings } from "@/components/listings/suburb-value-listings
 import { PropertyMixBar } from "@/components/markets/property-mix-bar";
 import { SuburbTrendsSection } from "@/components/markets/suburb-trends-section";
 import { ConfidenceBadge } from "@/components/markets/confidence-badge";
+import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { formatCurrency, formatPercent, sanitizeLabel } from "@/lib/format";
 import {
@@ -17,7 +19,8 @@ import {
   segmentMedianLabel,
 } from "@/lib/segments";
 import type { MarketMetric, PropertyType } from "@/lib/types";
-import { cityPath, suburbPath } from "@/lib/slug";
+import { cityPath, suburbPath, suburbReportPath } from "@/lib/slug";
+import { cn } from "@/lib/utils";
 
 function MetricCard({ label, value }: { label: string; value: string }) {
   return (
@@ -78,11 +81,33 @@ export function SuburbProfile({
                 : ""}
             </p>
           ) : null}
+          <p className="mt-3 print:hidden lg:hidden">
+            <Link
+              href={suburbReportPath(market.city, market.suburb, {
+                type: propertyType,
+                bedroom,
+              })}
+              className="inline-flex items-center gap-1.5 text-sm font-medium hover:underline"
+            >
+              <FileDown className="size-4" />
+              Export report
+            </Link>
+          </p>
         </div>
         <div className="lg:hidden">
           <ConfidenceBadge score={market.confidence_score} />
         </div>
         <div className="hidden flex-wrap items-center gap-2 lg:flex">
+          <Link
+            href={suburbReportPath(market.city, market.suburb, {
+              type: propertyType,
+              bedroom,
+            })}
+            className={cn(buttonVariants({ variant: "outline", size: "sm" }), "print:hidden")}
+          >
+            <FileDown className="size-4" />
+            Export report
+          </Link>
           <ConfidenceBadge score={market.confidence_score} />
           <PinButton market={market} />
         </div>

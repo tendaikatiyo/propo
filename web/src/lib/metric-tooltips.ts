@@ -96,3 +96,32 @@ export function columnLabelForMode(
   };
   return labels[key];
 }
+
+const COMPARE_METRIC_TOOLTIPS: Record<string, string> = {
+  median_rent: COLUMN_TOOLTIPS.median_rent,
+  median_sale_price: COLUMN_TOOLTIPS.median_sale_price,
+  yield_percent: COLUMN_TOOLTIPS.yield_percent,
+  opportunity_score: COLUMN_TOOLTIPS.opportunity_score,
+  confidence_score: COLUMN_TOOLTIPS.confidence_score,
+  avg_dom_rent: DOM_RENT_TOOLTIP,
+  avg_dom_sale: DOM_SALE_TOOLTIP,
+  rental_count: "Count of active rental listings in the suburb or segment.",
+  sale_count: "Count of active sale listings in the suburb or segment.",
+};
+
+export function compareMetricTooltip(
+  key: string,
+  propertyType: PropertyType | null,
+  bedroom: number | null
+): string | undefined {
+  if (key === "median_rent" || key === "median_sale_price") {
+    const mode = key === "median_rent" ? "rent" : "buy";
+    const spec = segmentFilterLabel(propertyType, bedroom);
+    const base = COMPARE_METRIC_TOOLTIPS[key] ?? "";
+    if (spec) {
+      return `${base} With spec filters active, uses ${spec} segment median when n≥3; otherwise suburb-wide median.`;
+    }
+    return base;
+  }
+  return COMPARE_METRIC_TOOLTIPS[key];
+}

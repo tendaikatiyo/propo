@@ -14,17 +14,34 @@ export function fromSlug(slug: string): string {
     .join(" ");
 }
 
+function segmentQueryString(query?: {
+  type?: string | null;
+  bedroom?: number | null;
+}): string {
+  if (!query?.type && query?.bedroom == null) return "";
+  const params = new URLSearchParams();
+  if (query.type) params.set("type", query.type);
+  if (query.bedroom != null) params.set("bedroom", String(query.bedroom));
+  return params.toString();
+}
+
 export function suburbPath(
   city: string,
   suburb: string,
   query?: { type?: string | null; bedroom?: number | null }
 ): string {
   const base = `/cities/${toSlug(city)}/${toSlug(suburb)}`;
-  if (!query?.type && query?.bedroom == null) return base;
-  const params = new URLSearchParams();
-  if (query.type) params.set("type", query.type);
-  if (query.bedroom != null) params.set("bedroom", String(query.bedroom));
-  const qs = params.toString();
+  const qs = segmentQueryString(query);
+  return qs ? `${base}?${qs}` : base;
+}
+
+export function suburbReportPath(
+  city: string,
+  suburb: string,
+  query?: { type?: string | null; bedroom?: number | null }
+): string {
+  const base = `/cities/${toSlug(city)}/${toSlug(suburb)}/report`;
+  const qs = segmentQueryString(query);
   return qs ? `${base}?${qs}` : base;
 }
 

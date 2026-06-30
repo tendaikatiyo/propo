@@ -16,6 +16,7 @@ if str(_root) not in sys.path:
     sys.path.insert(0, str(_root))
 
 from analytics.listing_images import extract_classifieds_carousel_image
+from scraper.property_co_common import normalize_city
 
 try:
     from analytics.price_utils import reconcile_classifieds_rent_price

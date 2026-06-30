@@ -1,4 +1,4 @@
-import type { ExploreFilters, PropertyType } from "@/lib/types";
+import type { CompareFilters, ExploreFilters, PropertyType } from "@/lib/types";
 import type { ExploreMode } from "@/lib/types";
 
 /** Filter UI types — apartment is grouped under flat in Zimbabwe. */
@@ -32,6 +32,20 @@ export function normalizeExploreFilters(filters: ExploreFilters): ExploreFilters
     bedroom = ROOM_BEDROOM_COUNT;
   }
   return { ...filters, propertyType, bedroom };
+}
+
+export function normalizeCompareFilters(filters: CompareFilters): CompareFilters {
+  let { propertyType, bedroom, mode } = filters;
+  if (mode === "buy" && propertyType === "room") {
+    propertyType = null;
+  }
+  if (propertyType && !propertyTypesForMode(mode).includes(propertyType)) {
+    propertyType = null;
+  }
+  if (propertyType === "room") {
+    bedroom = ROOM_BEDROOM_COUNT;
+  }
+  return { mode, propertyType, bedroom };
 }
 
 export function normalizePropertyType(value: string): PropertyType | null {

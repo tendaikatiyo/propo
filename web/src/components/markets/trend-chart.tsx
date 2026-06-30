@@ -57,11 +57,15 @@ export function TrendChart({
   points,
   kind,
   emptyLabel = "Not enough history yet",
+  chartId,
 }: {
   points: MarketTrendPoint[];
   kind: TrendChartKind;
   emptyLabel?: string;
+  /** Unique id for SVG gradient defs when multiple charts share a page */
+  chartId?: string;
 }) {
+  const gradientId = chartId ?? kind;
   const data =
     kind === "price"
       ? points.filter((point) => point.median_price != null)
@@ -83,7 +87,7 @@ export function TrendChart({
       <ResponsiveContainer width="100%" height="100%">
         <AreaChart data={data} margin={{ top: 8, right: 8, left: 0, bottom: 0 }}>
           <defs>
-            <linearGradient id={`trend-fill-${kind}`} x1="0" y1="0" x2="0" y2="1">
+            <linearGradient id={`trend-fill-${gradientId}`} x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stopColor={color} stopOpacity={0.25} />
               <stop offset="100%" stopColor={color} stopOpacity={0.02} />
             </linearGradient>
@@ -110,7 +114,7 @@ export function TrendChart({
             dataKey={dataKey}
             stroke={color}
             strokeWidth={2}
-            fill={`url(#trend-fill-${kind})`}
+            fill={`url(#trend-fill-${gradientId})`}
             dot={false}
             activeDot={{ r: 4, fill: color }}
           />

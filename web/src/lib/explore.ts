@@ -7,8 +7,9 @@ import {
   PROPERTY_TYPE_COUNT_KEY,
   STRETCH_BUDGET_MULTIPLIER,
 } from "@/lib/constants";
-import { priceForFilters, hasActiveSegmentFilters, isUsingAggregateFallback } from "@/lib/segments";
+import { priceForFilters, hasActiveSegmentFilters, isUsingAggregateFallback, resolveSegmentStats, segmentCountForMode, segmentMedianLabel } from "@/lib/segments";
 import type {
+  CompareFilters,
   ExploreFilters,
   ExploreMode,
   MarketMetric,
@@ -186,87 +187,150 @@ export interface CompareMetricRow {
   format: "currency" | "percent" | "number" | "days";
   higherIsBetter: boolean;
   getValue: (market: MarketMetric) => number | null;
+  /** When set, cell may show a suburb-median fallback sublabel */
+  segmentMode?: ExploreMode;
 }
 
-export const COMPARE_METRICS: CompareMetricRow[] = [
-  {
-    key: "median_rent",
-    label: "Median rent",
-    format: "currency",
-    higherIsBetter: false,
-    getValue: (m) => m.median_rent,
-  },
-  {
-    key: "median_sale_price",
-    label: "Median sale price",
-    format: "currency",
-    higherIsBetter: false,
-    getValue: (m) => m.median_sale_price,
-  },
-  {
-    key: "minimum_rent",
-    label: "Min rent",
-    format: "currency",
-    higherIsBetter: false,
-    getValue: (m) => m.minimum_rent,
-  },
-  {
-    key: "maximum_rent",
-    label: "Max rent",
-    format: "currency",
-    higherIsBetter: false,
-    getValue: (m) => m.maximum_rent,
-  },
-  {
-    key: "yield_percent",
-    label: "Gross yield",
-    format: "percent",
-    higherIsBetter: true,
-    getValue: (m) => m.yield_percent,
-  },
-  {
-    key: "opportunity_score",
-    label: "Opportunity score",
-    format: "number",
-    higherIsBetter: true,
-    getValue: (m) => m.opportunity_score,
-  },
-  {
-    key: "confidence_score",
-    label: "Confidence",
-    format: "number",
-    higherIsBetter: true,
-    getValue: (m) => m.confidence_score,
-  },
-  {
-    key: "avg_dom_rent",
-    label: "Avg days on market (rent)",
-    format: "days",
-    higherIsBetter: false,
-    getValue: (m) => m.average_days_on_market_rent,
-  },
-  {
-    key: "avg_dom_sale",
-    label: "Avg days on market (sale)",
-    format: "days",
-    higherIsBetter: false,
-    getValue: (m) => m.average_days_on_market_sale,
-  },
-  {
-    key: "rental_count",
-    label: "Rental listings",
-    format: "number",
-    higherIsBetter: true,
-    getValue: (m) => m.rental_count,
-  },
-  {
-    key: "sale_count",
-    label: "Sale listings",
-    format: "number",
-    higherIsBetter: true,
-    getValue: (m) => m.sale_count,
-  },
-];
+function segmentSpec(filters: Pick<CompareFilters, "propertyType" | "bedroom">) {
+  return { propertyType: filters.propertyType, bedroom: filters.bedroom };
+}
+
+function segmentDom(
+  market: MarketMetric,
+  filters: Pick<CompareFilters, "propertyType" | "bedroom">,
+  mode: "rent" | "sale"
+): number | null {
+  const segment = resolveSegmentStats(market, filters.propertyType, filters.bedroom);
+  if (hasActiveSegmentFilters(filters) && segment) {
+    const value =
+      mode === "rent"
+        ? segment.median_days_on_market_rent
+        : segment.median_days_on_market_sale;
+    if (value != null) return value;
+  }
+  return mode === "rent"
+    ? market.average_days_on_market_rent
+    : market.average_days_on_market_sale;
+}
+
+function segmentListingCount(
+  market: MarketMetric,
+  filters: Pick<CompareFilters, "propertyType" | "bedroom">,
+  mode: ExploreMode
+): number | null {
+  if (!hasActiveSegmentFilters(filters)) {
+    return mode === "rent" ? market.rental_count : market.sale_count;
+  }
+  const segment = resolveSegmentStats(market, filters.propertyType, filters.bedroom);
+  if (!segment) {
+    return mode === "rent" ? market.rental_count : market.sale_count;
+  }
+  return segmentCountForMode(segment, mode);
+}
+
+export function buildCompareMetrics(
+  filters: Pick<CompareFilters, "propertyType" | "bedroom">
+): CompareMetricRow[] {
+  const spec = segmentSpec(filters);
+
+  return [
+    {
+      key: "median_rent",
+      label: segmentMedianLabel("rent", filters.propertyType, filters.bedroom),
+      format: "currency",
+      higherIsBetter: false,
+      segmentMode: "rent",
+      getValue: (m) => priceForFilters(m, "rent", spec),
+    },
+    {
+      key: "median_sale_price",
+      label: segmentMedianLabel("buy", filters.propertyType, filters.bedroom),
+      format: "currency",
+      higherIsBetter: false,
+      segmentMode: "buy",
+      getValue: (m) => priceForFilters(m, "buy", spec),
+    },
+    {
+      key: "minimum_rent",
+      label: hasActiveSegmentFilters(filters) ? "Min rent (spec)" : "Min rent",
+      format: "currency",
+      higherIsBetter: false,
+      getValue: (m) => {
+        const segment = resolveSegmentStats(m, filters.propertyType, filters.bedroom);
+        return segment?.minimum_rent ?? m.minimum_rent;
+      },
+    },
+    {
+      key: "maximum_rent",
+      label: hasActiveSegmentFilters(filters) ? "Max rent (spec)" : "Max rent",
+      format: "currency",
+      higherIsBetter: false,
+      getValue: (m) => {
+        const segment = resolveSegmentStats(m, filters.propertyType, filters.bedroom);
+        return segment?.maximum_rent ?? m.maximum_rent;
+      },
+    },
+    {
+      key: "yield_percent",
+      label: "Gross yield",
+      format: "percent",
+      higherIsBetter: true,
+      getValue: (m) => m.yield_percent,
+    },
+    {
+      key: "opportunity_score",
+      label: "Opportunity score",
+      format: "number",
+      higherIsBetter: true,
+      getValue: (m) => m.opportunity_score,
+    },
+    {
+      key: "confidence_score",
+      label: "Confidence",
+      format: "number",
+      higherIsBetter: true,
+      getValue: (m) => m.confidence_score,
+    },
+    {
+      key: "avg_dom_rent",
+      label: hasActiveSegmentFilters(filters)
+        ? "Days on market (rent, spec)"
+        : "Avg days on market (rent)",
+      format: "days",
+      higherIsBetter: false,
+      getValue: (m) => segmentDom(m, filters, "rent"),
+    },
+    {
+      key: "avg_dom_sale",
+      label: hasActiveSegmentFilters(filters)
+        ? "Days on market (sale, spec)"
+        : "Avg days on market (sale)",
+      format: "days",
+      higherIsBetter: false,
+      getValue: (m) => segmentDom(m, filters, "sale"),
+    },
+    {
+      key: "rental_count",
+      label: hasActiveSegmentFilters(filters) ? "Rental listings (spec)" : "Rental listings",
+      format: "number",
+      higherIsBetter: true,
+      getValue: (m) => segmentListingCount(m, filters, "rent"),
+    },
+    {
+      key: "sale_count",
+      label: hasActiveSegmentFilters(filters) ? "Sale listings (spec)" : "Sale listings",
+      format: "number",
+      higherIsBetter: true,
+      getValue: (m) => segmentListingCount(m, filters, "buy"),
+    },
+  ];
+}
+
+/** @deprecated Use buildCompareMetrics(filters) for spec-aware compare */
+export const COMPARE_METRICS: CompareMetricRow[] = buildCompareMetrics({
+  propertyType: null,
+  bedroom: null,
+});
 
 export function getBestMarketId(
   markets: MarketMetric[],

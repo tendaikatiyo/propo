@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 export function SuburbActionBar({ market }: { market: MarketMetric }) {
   return (
     <div
-      className="pointer-events-none fixed inset-x-0 z-30 flex justify-center px-4 lg:hidden"
+      className="pointer-events-none fixed inset-x-0 z-30 flex justify-center px-4 print:hidden lg:hidden"
       style={{ bottom: "calc(4.75rem + env(safe-area-inset-bottom))" }}
     >
       <div
