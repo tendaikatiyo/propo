@@ -7,7 +7,7 @@ import { buildPageMetadata } from "@/lib/seo";
 export const metadata = buildPageMetadata({
   title: "Explore suburbs",
   description:
-    "Filter Zimbabwe suburbs by budget, property type, and bedrooms. Compare median rents, sale prices, and yields.",
+    "Filter Zimbabwe suburbs by budget and property type. Compare median rents, sale prices, and yields.",
   path: "/explore",
 });
 

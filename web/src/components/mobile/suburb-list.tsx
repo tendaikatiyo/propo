@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { ChevronRight } from "lucide-react";
+import { ArrowDown, ArrowUp, ChevronRight } from "lucide-react";
 
 import { ConfidenceBadge } from "@/components/markets/confidence-badge";
 import { PinButton } from "@/components/markets/pin-button";
@@ -12,7 +12,7 @@ import { sortMarkets } from "@/lib/explore";
 import { formatCurrency, formatPercent, sanitizeLabel } from "@/lib/format";
 import { priceForFilters } from "@/lib/segments";
 import { suburbPath } from "@/lib/slug";
-import type { ExploreFilters, ExploreMode, MarketMetric, SortKey } from "@/lib/types";
+import type { ExploreFilters, ExploreMode, MarketMetric, SortDirection, SortKey } from "@/lib/types";
 
 const SORT_OPTIONS: { key: SortKey; label: string; modes?: ExploreMode[] }[] = [
   { key: "median_rent", label: "Rent", modes: ["rent"] },
@@ -33,14 +33,26 @@ export function SuburbList({
   const [sortKey, setSortKey] = useState<SortKey>(
     mode === "rent" ? "median_rent" : "median_sale_price"
   );
+  const [sortDirection, setSortDirection] = useState<SortDirection>(
+    mode === "rent" ? "asc" : "desc"
+  );
 
   const sortOptions = SORT_OPTIONS.filter(
     (opt) => !opt.modes || opt.modes.includes(mode)
   );
 
+  function toggleSort(key: SortKey) {
+    if (sortKey === key) {
+      setSortDirection((d) => (d === "asc" ? "desc" : "asc"));
+    } else {
+      setSortKey(key);
+      setSortDirection(key === "median_rent" ? "asc" : "desc");
+    }
+  }
+
   const sorted = useMemo(
-    () => sortMarkets(markets, sortKey, sortKey === "suburb" ? "asc" : "asc", filters),
-    [markets, sortKey, filters]
+    () => sortMarkets(markets, sortKey, sortDirection, filters),
+    [markets, sortKey, sortDirection, filters]
   );
 
   if (!markets.length) {
@@ -60,10 +72,17 @@ export function SuburbList({
             type="button"
             size="sm"
             variant={sortKey === opt.key ? "default" : "outline"}
-            className="h-9 rounded-full px-3"
-            onClick={() => setSortKey(opt.key)}
+            className="h-9 gap-1 rounded-full px-3"
+            onClick={() => toggleSort(opt.key)}
           >
             {opt.label}
+            {sortKey === opt.key ? (
+              sortDirection === "asc" ? (
+                <ArrowUp className="size-3" />
+              ) : (
+                <ArrowDown className="size-3" />
+              )
+            ) : null}
           </Button>
         ))}
       </div>
@@ -72,10 +91,6 @@ export function SuburbList({
         {sorted.map((market) => {
           const segmentFilters = filters ?? { propertyType: null, bedroom: null };
           const price = priceForFilters(market, mode, segmentFilters);
-          const dom =
-            mode === "rent"
-              ? market.average_days_on_market_rent
-              : market.average_days_on_market_sale;
 
           return (
             <div
@@ -103,11 +118,6 @@ export function SuburbList({
                     {mode === "buy" && market.yield_percent != null ? (
                       <span className="text-xs text-muted-foreground">
                         {formatPercent(market.yield_percent)} yield
-                      </span>
-                    ) : null}
-                    {dom != null ? (
-                      <span className="font-mono text-xs text-muted-foreground">
-                        {dom}d DOM
                       </span>
                     ) : null}
                   </div>

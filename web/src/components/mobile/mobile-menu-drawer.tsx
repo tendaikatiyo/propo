@@ -30,7 +30,7 @@ export function MobileMenuDrawer({
 
           <div data-tour="filters">
             <MobileMenuAccordion title="Filters" defaultOpen={false}>
-              <ExploreFilterPanel targetPath="/explore" onNavigate={close} />
+              <ExploreFilterPanel targetPath="/explore" />
             </MobileMenuAccordion>
           </div>
 

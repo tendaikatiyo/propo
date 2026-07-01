@@ -5,11 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { useCompareFilters } from "@/hooks/use-compare-filters";
-import {
-  BEDROOM_OPTIONS,
-  propertyTypesForMode,
-  ROOM_BEDROOM_COUNT,
-} from "@/lib/constants";
+import { propertyTypesForMode } from "@/lib/constants";
 import { propertyTypeLabel } from "@/lib/format";
 import { hasActiveSegmentFilters, segmentFilterLabel } from "@/lib/segments";
 import type { PropertyType } from "@/lib/types";
@@ -21,26 +17,15 @@ export function CompareFilterBar() {
   const specLabel = segmentFilterLabel(filters.propertyType, filters.bedroom);
 
   const selectPropertyType = (type: PropertyType | null) => {
-    const wasRoom = filters.propertyType === "room";
     if (type === null) {
-      setFilters({
-        propertyType: null,
-        bedroom: wasRoom ? null : filters.bedroom,
-      });
-      return;
-    }
-    if (type === "room") {
-      setFilters({ propertyType: "room", bedroom: ROOM_BEDROOM_COUNT });
+      setFilters({ propertyType: null });
       return;
     }
     if (filters.propertyType === type) {
-      setFilters({ propertyType: null, bedroom: wasRoom ? null : filters.bedroom });
+      setFilters({ propertyType: null });
       return;
     }
-    setFilters({
-      propertyType: type,
-      bedroom: wasRoom ? null : filters.bedroom,
-    });
+    setFilters({ propertyType: type });
   };
 
   return (
@@ -54,7 +39,7 @@ export function CompareFilterBar() {
           </p>
         ) : (
           <p className="text-sm text-muted-foreground">
-            Optional: filter medians by property type and bedrooms (same as Explore).
+            Optional: filter medians by property type (same as Explore).
           </p>
         )}
       </CardHeader>
@@ -103,36 +88,9 @@ export function CompareFilterBar() {
           </div>
         </section>
 
-        {!isRoom ? (
-          <section className="space-y-2">
-            <Label className="caption-label">Bedrooms</Label>
-            <div className="flex flex-wrap gap-2">
-              <Button
-                type="button"
-                size="sm"
-                variant={filters.bedroom == null ? "default" : "outline"}
-                onClick={() => setFilters({ bedroom: null })}
-              >
-                Any
-              </Button>
-              {BEDROOM_OPTIONS.map((opt) => (
-                <Button
-                  key={opt.value}
-                  type="button"
-                  size="sm"
-                  variant={filters.bedroom === opt.value ? "default" : "outline"}
-                  onClick={() => setFilters({ bedroom: opt.value })}
-                >
-                  {opt.label}
-                </Button>
-              ))}
-            </div>
-          </section>
-        ) : (
-          <p className="text-xs text-muted-foreground">
-            Rooms are listed as single occupancy (1 bed).
-          </p>
-        )}
+        {isRoom ? (
+          <p className="text-xs text-muted-foreground">Rooms are listed as single occupancy (1 bed).</p>
+        ) : null}
 
         {hasActiveSegmentFilters(filters) ? (
           <Button type="button" size="sm" variant="ghost" onClick={resetFilters}>

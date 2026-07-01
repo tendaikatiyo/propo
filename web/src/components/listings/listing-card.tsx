@@ -117,7 +117,6 @@ export function ListingCard({
               ? ` · ${propertyTypeLabel(listing.property_type as PropertyType)}`
               : null}
             {listing.bedrooms != null ? ` · ${listing.bedrooms} bed` : null}
-            {listing.days_on_market != null ? ` · ${listing.days_on_market}d` : null}
           </p>
           <a
             href={listing.listing_url}

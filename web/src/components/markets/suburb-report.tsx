@@ -99,9 +99,6 @@ export function SuburbReport({
   const saleMin = segment?.minimum_sale_price ?? market.minimum_sale_price;
   const saleMax = segment?.maximum_sale_price ?? market.maximum_sale_price;
 
-  const domRent = segment?.median_days_on_market_rent ?? market.average_days_on_market_rent;
-  const domSale = segment?.median_days_on_market_sale ?? market.average_days_on_market_sale;
-
   const freshnessLabel = updatedAt ? formatDataFreshness(updatedAt) : "Data freshness unknown";
 
   return (
@@ -156,14 +153,6 @@ export function SuburbReport({
             value={formatCurrency(medianSale)}
           />
           <ReportMetric label="Gross yield" value={formatPercent(market.yield_percent)} />
-          <ReportMetric
-            label="Days on market (rent)"
-            value={domRent != null ? `${domRent}d` : "—"}
-          />
-          <ReportMetric
-            label="Days on market (sale)"
-            value={domSale != null ? `${domSale}d` : "—"}
-          />
           <ReportMetric
             label="Opportunity score"
             value={String(market.opportunity_score ?? "—")}
@@ -241,9 +230,9 @@ export function SuburbReport({
         </p>
         <p>
           <strong className="font-medium text-foreground">Methodology:</strong> Medians, yields, and
-          trends are computed from active listings scraped from public portals — not closed
+          trends are computed from active listings on public property portals — not closed
           transaction data. Fair-value badges compare listing price to segment or suburb medians.
-          Attributes like borehole, pool, or security are not in our scrape and are not reflected
+          Attributes like borehole, pool, or security are not in our listing data and are not reflected
           in these figures.
         </p>
         <p>

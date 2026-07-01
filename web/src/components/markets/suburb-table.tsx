@@ -21,7 +21,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { COLUMN_TOOLTIPS, columnLabelForMode, columnsForCityDashboard, columnsForMode, DOM_RENT_TOOLTIP, DOM_SALE_TOOLTIP, DOM_TOOLTIP } from "@/lib/metric-tooltips";
+import { COLUMN_TOOLTIPS, columnLabelForMode, columnsForCityDashboard, columnsForMode } from "@/lib/metric-tooltips";
 import { formatCurrency, formatPercent, sanitizeLabel } from "@/lib/format";
 import { sortMarkets } from "@/lib/explore";
 import { priceForFilters } from "@/lib/segments";
@@ -150,50 +150,6 @@ export function SuburbTable({
                 onSort={toggleSort}
               />
             ))}
-            {isCityLayout ? (
-              <>
-                <TableHead>
-                  <div className="flex items-center gap-1">
-                    <span className="font-mono text-[11px] tracking-[0.08em] uppercase">DOM rent</span>
-                    <Tooltip>
-                      <TooltipTrigger className="text-muted-foreground">
-                        <HelpCircle className="size-3.5" />
-                      </TooltipTrigger>
-                      <TooltipContent className="max-w-xs font-sans text-sm normal-case">
-                        {DOM_RENT_TOOLTIP}
-                      </TooltipContent>
-                    </Tooltip>
-                  </div>
-                </TableHead>
-                <TableHead>
-                  <div className="flex items-center gap-1">
-                    <span className="font-mono text-[11px] tracking-[0.08em] uppercase">DOM sale</span>
-                    <Tooltip>
-                      <TooltipTrigger className="text-muted-foreground">
-                        <HelpCircle className="size-3.5" />
-                      </TooltipTrigger>
-                      <TooltipContent className="max-w-xs font-sans text-sm normal-case">
-                        {DOM_SALE_TOOLTIP}
-                      </TooltipContent>
-                    </Tooltip>
-                  </div>
-                </TableHead>
-              </>
-            ) : (
-              <TableHead>
-                <div className="flex items-center gap-1">
-                  <span>DOM</span>
-                  <Tooltip>
-                    <TooltipTrigger className="text-muted-foreground">
-                      <HelpCircle className="size-3.5" />
-                    </TooltipTrigger>
-                    <TooltipContent className="max-w-xs font-sans text-sm normal-case">
-                      {DOM_TOOLTIP}
-                    </TooltipContent>
-                  </Tooltip>
-                </div>
-              </TableHead>
-            )}
             <TableHead />
           </TableRow>
         </TableHeader>
@@ -201,10 +157,6 @@ export function SuburbTable({
           {sorted.map((market) => {
             const segmentFilters = filters ?? { propertyType: null, bedroom: null };
             const price = priceForFilters(market, mode, segmentFilters);
-            const dom =
-              mode === "rent"
-                ? market.average_days_on_market_rent
-                : market.average_days_on_market_sale;
 
             return (
               <TableRow key={market.market_id}>
@@ -241,24 +193,6 @@ export function SuburbTable({
                 <TableCell>
                   <ConfidenceBadge score={market.confidence_score} />
                 </TableCell>
-                {isCityLayout ? (
-                  <>
-                    <TableCell className="font-mono text-muted-foreground">
-                      {market.average_days_on_market_rent != null
-                        ? `${market.average_days_on_market_rent}d`
-                        : "—"}
-                    </TableCell>
-                    <TableCell className="font-mono text-muted-foreground">
-                      {market.average_days_on_market_sale != null
-                        ? `${market.average_days_on_market_sale}d`
-                        : "—"}
-                    </TableCell>
-                  </>
-                ) : (
-                  <TableCell className="font-mono text-muted-foreground">
-                    {dom != null ? `${dom}d` : "—"}
-                  </TableCell>
-                )}
                 <TableCell className="text-right">
                   <div className="flex items-center justify-end gap-2">
                     {!isCityLayout ? (

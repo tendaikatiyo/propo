@@ -80,6 +80,14 @@ After each deploy, Wrangler can wipe dashboard vars unless you use `--keep-vars`
 
 Use the **anon** key (not the service role key) for the web app.
 
+For the private **admin ops dashboard** at `/admin`, also set (runtime + local `.env.local`):
+
+- `ADMIN_SECRET` — password for the admin page (server-only)
+- `SUPABASE_URL` — same project URL as above
+- `SUPABASE_SERVICE_ROLE_KEY` — used only on server routes; never prefix with `NEXT_PUBLIC_`
+
+Apply `supabase/migrations/009_admin_dashboard.sql` on Supabase so the stats RPC is available.
+
 ### Sync data to Supabase
 
 If tables are empty, run locally or on your VM:
@@ -121,3 +129,4 @@ After `build:cf`, confirm `.open-next/worker.js` and `.open-next/assets/` exist.
 - Pin up to 3 suburbs (localStorage) and compare side by side
 - City directory and suburb profile pages
 - National rankings and methodology
+- Private admin ops dashboard at `/admin` (pipeline health, listing counts, ingest history)

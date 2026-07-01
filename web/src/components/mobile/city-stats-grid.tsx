@@ -6,20 +6,6 @@ export function CityStatsGrid({ city }: { city: CityMetric }) {
     { label: "Median rent", value: formatCurrency(city.median_rent) },
     { label: "Median sale", value: formatCurrency(city.median_sale_price) },
     { label: "Avg yield", value: formatPercent(city.average_yield) },
-    {
-      label: "DOM rent",
-      value:
-        city.average_days_on_market_rent != null
-          ? `${city.average_days_on_market_rent}d`
-          : "—",
-    },
-    {
-      label: "DOM sale",
-      value:
-        city.average_days_on_market_sale != null
-          ? `${city.average_days_on_market_sale}d`
-          : "—",
-    },
   ];
 
   return (

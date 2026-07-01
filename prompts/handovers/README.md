@@ -19,3 +19,4 @@ Chronological notes for agent/developer continuity between sessions.
 | 2026-06-30 | [2026-06-30-pipeline-run-scraper-migration-fixes.md](./2026-06-30-pipeline-run-scraper-migration-fixes.md) | Full pipeline run; `normalize_city` scraper fix; Supabase migration 007 apply; ingest sync |
 | 2026-06-30 | [2026-06-30-f4-f5-report-compare.md](./2026-06-30-f4-f5-report-compare.md) | F4 printable suburb report; F5 spec-aware compare; roadmap F0–F5 tick refresh |
 | 2026-07-01 | [2026-07-01-f6-movers-rankings.md](./2026-07-01-f6-movers-rankings.md) | F6 national movers tab; home teaser; leaderboard confidence backfill; cheapest-rent fix; Rankings nav restored |
+| 2026-07-01 | [2026-07-01-f7-f8-f9-insights-transparency-market-id.md](./2026-07-01-f7-f8-f9-insights-transparency-market-id.md) | F7 home budget insights; F8 transparency (sample size, scope, methodology limits); F9 `market_id` join + migration 008 |

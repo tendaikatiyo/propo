@@ -21,13 +21,14 @@ Strengthen Propo as a **market intelligence platform** for Zimbabwe — not a li
 | **F4** Suburb market report | ✅ Done | [2026-06-30-f4-f5-report-compare.md](./2026-06-30-f4-f5-report-compare.md) |
 | **F5** Smarter compare | ✅ Done | same |
 | **F6** Market movers rankings | ✅ Done | [2026-07-01-f6-movers-rankings.md](./2026-07-01-f6-movers-rankings.md) |
-| **F7** Affordability insight cards | ✅ Done | below (F7 section) |
-| **F8** Transparency layer | ✅ Done | below (F8 section) |
-| **F9–F10** | Not started | below |
+| **F7** Affordability insight cards | ✅ Done | [2026-07-01-f7-f8-f9-insights-transparency-market-id.md](./2026-07-01-f7-f8-f9-insights-transparency-market-id.md) |
+| **F8** Transparency layer | ✅ Done | same |
+| **F9** `market_id` on listings | ✅ Done | same |
+| **F10** Analytics MVP | Not started | below |
 
 **Ancillary (not roadmap features):** listing thumbnails + `image_url` ([2026-06-29](./2026-06-29-listing-thumbnails-image-url.md), [2026-06-30 pipeline](./2026-06-30-pipeline-run-scraper-migration-fixes.md)); Open Graph SEO + city movers polish (F3 handover); classifieds ZIG→USD price fix (F2 handover); leaderboard confidence backfill + cheapest-rent fix (F6 handover).
 
-**Next recommended:** F9 `market_id` backfill → F10 analytics MVP (optional).
+**Next recommended:** F10 analytics MVP (optional) — core intelligence roadmap F0–F9 complete.
 
 ---
 
@@ -42,7 +43,7 @@ Strengthen Propo as a **market intelligence platform** for Zimbabwe — not a li
 | **Compare** | Up to 3 pinned suburbs; spec selector (mode + type + bed); segment-aware medians; best-value highlights | Trend sparklines (v2, deferred) |
 | **History data** | `market_snapshots_daily` exposed via trends API on suburb/city pages | Segment-filtered trends; DOM trend line |
 | **Trust** | Confidence badge (+ optional sample count); sample-size badges; scope labels; Explore aggregate vs segment copy; methodology **Data limits** section | — |
-| **Listings join** | Filter by suburb string equality; `image_url` on listings; fair-value tooltips with n= | Mismatches vs `market_metrics` suburb names; no `market_id` join (F9) |
+| **Listings join** | `market_id` on ingest + web filter; string city/suburb fallback; fair-value lookup by `market_id` when strings mismatch | Apply migration 008 + Supabase backfill in prod if not yet run |
 
 ---
 
@@ -50,16 +51,16 @@ Strengthen Propo as a **market intelligence platform** for Zimbabwe — not a li
 
 | Area | Path |
 | ---- | ---- |
-| Pipeline | `analytics/market_metrics.py`, `analytics/daily_metrics.py`, `analytics/sync_dashboard.py`, `analytics/ingest_supabase.py` |
-| History DB | `analytics/history_db.py`, `supabase/migrations/001_history.sql` |
+| Pipeline | `analytics/market_metrics.py`, `analytics/daily_metrics.py`, `analytics/sync_dashboard.py`, `analytics/ingest_supabase.py`, `analytics/listing_utils.py`, `analytics/backfill_market_id.py` |
+| History DB | `analytics/history_db.py`, `supabase/migrations/001_history.sql`, `008_listings_market_id.sql` |
 | Dashboard JSON | `data/market_metrics.json`, `data/rankings.json` |
 | Web data layer | `web/src/lib/data-server.ts`, `web/src/app/api/` |
 | Explore | `web/src/lib/explore.ts`, `web/src/hooks/use-explore-filters.ts` |
 | Home | `web/src/components/home/home-page.tsx`, `affordability-insights.tsx`, `web/src/lib/affordability-insights.ts` |
 | Suburb UI | `suburb-profile.tsx`, `suburb-table.tsx`, `suburb-card.tsx`, `sample-size-badge.tsx`, `city-dashboard.tsx` |
-| Listings UI | `listing-card.tsx`, `budget-listings.tsx`, `suburb-value-listings.tsx` |
+| Listings UI | `listing-card.tsx`, `budget-listings.tsx`, `suburb-value-listings.tsx`, `web/src/hooks/use-market-lookup.ts` |
 | Compare / rankings | `compare-page.tsx`, `compare-table.tsx`, `rankings-page.tsx`, `web/src/lib/rankings.ts` |
-| Related handovers | [2026-06-28-f0-f1-segment-explore-polish.md](./2026-06-28-f0-f1-segment-explore-polish.md), [2026-06-26-segment-medians-option-b.md](./2026-06-26-segment-medians-option-b.md), [2026-06-25-web-ux-listings-explore.md](./2026-06-25-web-ux-listings-explore.md) |
+| Related handovers | [2026-07-01-f7-f8-f9-insights-transparency-market-id.md](./2026-07-01-f7-f8-f9-insights-transparency-market-id.md), [2026-06-28-f0-f1-segment-explore-polish.md](./2026-06-28-f0-f1-segment-explore-polish.md), [2026-06-26-segment-medians-option-b.md](./2026-06-26-segment-medians-option-b.md), [2026-06-25-web-ux-listings-explore.md](./2026-06-25-web-ux-listings-explore.md) |
 
 ---
 
@@ -93,7 +94,7 @@ flowchart TD
 | **F9** | `market_id` on listings | Data quality foundation |
 | **F10** | Analytics MVP (optional) | Internal demand signals for B2B later |
 
-**If only three ships in the next month:** ~~F0–F8 core intelligence~~ **shipped** — next: F9 → F10 (optional).
+**If only three ships in the next month:** ~~F0–F9 core intelligence~~ **shipped** — optional: F10 analytics MVP.
 
 ---
 
@@ -466,7 +467,7 @@ Minimum data: ≥4 snapshot dates; movers require confidence ≥ `RANKINGS_MIN_C
 
 ## F7 — Affordability insight cards ✅
 
-**Ship notes:** 2026-07-01 — home **Budget insights** section between budget controls and Top matches.
+**Ship notes:** [2026-07-01-f7-f8-f9-insights-transparency-market-id.md](./2026-07-01-f7-f8-f9-insights-transparency-market-id.md)
 
 ### Deliverable
 
@@ -507,7 +508,7 @@ Borrowdale — $920 median · Stretch · Stronger amenities
 
 ## F8 — Transparency layer ✅
 
-**Ship notes:** 2026-07-01 — suburb profile header, Explore scope copy, methodology Data limits.
+**Ship notes:** [2026-07-01-f7-f8-f9-insights-transparency-market-id.md](./2026-07-01-f7-f8-f9-insights-transparency-market-id.md)
 
 ### Deliverable
 
@@ -551,7 +552,9 @@ Surface data quality on suburb profile and listing cards:
 
 ---
 
-## F9 — `market_id` on listings (data join reliability)
+## F9 — `market_id` on listings (data join reliability) ✅
+
+**Ship notes:** [2026-07-01-f7-f8-f9-insights-transparency-market-id.md](./2026-07-01-f7-f8-f9-insights-transparency-market-id.md)
 
 ### Problem
 
@@ -567,25 +570,34 @@ Listings filtered by suburb string; mismatches with `market_metrics` cause empty
 
 **Pipeline**
 
-- [ ] `analytics/clean_data.py` or ingest normalizer — set `market_id` on each listing
-- [ ] `analytics/ingest_supabase.py` — upsert includes `market_id`
-- [ ] `supabase/migrations/008_listings_market_id.sql` — column + index (if not already on `listings.market_id` from 001 — verify; 001 already has `market_id text` nullable)
-- [ ] Backfill script or SQL update joining on normalized city/suburb
+- [x] `analytics/listing_utils.py` — shared `build_market_id()`
+- [x] `analytics/clean_data.py` — uses `build_market_id` after city/suburb normalization
+- [x] `analytics/ingest_supabase.py` — upsert includes `market_id` (via `normalize_listing_record`)
+- [x] `supabase/migrations/008_listings_market_id.sql` — index + SQL backfill (`market_id` column from 001)
+- [x] `analytics/backfill_market_id.py` — Python backfill for SQLite + Supabase
+- [x] `package.json` — `analytics:backfill-market-id`
 
 **Web**
 
-- [ ] `web/src/lib/data-server.ts` — `fetchListings` filter by `market_id` when suburb page knows `market.market_id`
-- [ ] `web/src/lib/types.ts` — ensure `Listing` includes `market_id?`
-- [ ] `web/src/app/api/listings/route.ts` — accept `market_id` query param
+- [x] `web/src/lib/data-server.ts` — `fetchListings` filter by `market_id` when set; string fallback
+- [x] `web/src/lib/types.ts` — `Listing.market_id?`
+- [x] `web/src/app/api/listings/route.ts` — `market_id` query param
+- [x] `web/src/lib/listings-client.ts`, `suburb-value-listings.tsx`, report page — pass `market.market_id`
+- [x] `web/src/hooks/use-market-lookup.ts` — resolve market by `listing.market_id` fallback
+
+### Depends on
+
+- F1 (segment medians); F3 (fair-value uses market join)
 
 ### Verify
 
 - Suburb profile listings count matches manual SQL for `market_id`
 - Fewer empty `suburb-value-listings` on edge-case suburb names
+- Apply migration 008 on Supabase; run `npm run analytics:backfill-market-id -- --target supabase`
 
 ### Estimated effort
 
-~3–4 hours
+~3–4 hours (shipped 2026-07-01)
 
 ---
 
@@ -626,7 +638,7 @@ Track core events server-side for **your** product decisions and future B2B pitc
 | `006_market_segments.sql` | F1 | ✅ Applied on Supabase (2026-06-28) |
 | `007_listing_image_url.sql` | Listings UX | ✅ Applied on Supabase (2026-06-30) — not F2 rollup |
 | `007_trends_rollup.sql` | F2 | Optional view — not applied; API aggregates at read time |
-| `008_listings_market_id.sql` | F9 | Backfill only if needed (`market_id` may exist) |
+| `008_listings_market_id.sql` | F9 | Index + SQL backfill — **apply on Supabase**; Python backfill preferred for city normalization |
 | `009_analytics.sql` | F10 | Optional |
 
 Check `001_history.sql` — `listings.market_id` column already exists; F9 may be **backfill + pipeline populate** only.
@@ -651,6 +663,7 @@ Check `001_history.sql` — `listings.market_id` column already exists; F9 may b
 4. User can **share/print a suburb report** for diaspora research ✅ (F4)
 5. Rankings surface **movers**, not only static top yield ✅ (F6)
 6. Every metric shows **how much data backs it** ✅ (F8 sample size, scope, methodology limits)
+7. Listings join to suburb markets reliably ✅ (F9 `market_id` on ingest + web filter)
 
 ---
 
@@ -687,6 +700,9 @@ npm run pipeline:supabase
 # Daily history (trends depend on this running)
 npm run daily
 
+# F9 backfill (after applying 008 on Supabase)
+npm run analytics:backfill-market-id
+
 # Web verify
 cd web
 npm run dev
@@ -703,7 +719,7 @@ npm run build
 4. ~~F4 suburb report~~ — done (2026-06-30)
 5. ~~F5 compare upgrades~~ — done (2026-06-30)
 6. ~~F6 movers rankings page~~ — done (2026-07-01); see [handover](./2026-07-01-f6-movers-rankings.md)
-7. ~~F8 transparency~~ — done (2026-07-01)
-8. ~~F7 affordability cards on home~~ — done (2026-07-01)
-9. **F9** market_id backfill
+7. ~~F8 transparency~~ — done (2026-07-01); see [handover](./2026-07-01-f7-f8-f9-insights-transparency-market-id.md)
+8. ~~F7 affordability cards on home~~ — done (2026-07-01); same handover
+9. ~~F9 market_id backfill~~ — done (2026-07-01); same handover
 10. **F10** analytics when ready for B2B / internal ops

@@ -49,9 +49,7 @@ npm run dev
 
 - [ ] Nightly `data/rankings_movers.json` precompute (optional; API computes at read time)
 - [ ] `median_days_on_market` column on Supabase `market_snapshots_daily` (DOM shift needs local SQLite or migration)
-- [ ] F7 affordability cards
-- [ ] F8 transparency / sample size badges
 
 ## Next recommended
 
-**F8** transparency slice → **F7** affordability cards → **F9** `market_id` backfill
+See [2026-07-01-f7-f8-f9-insights-transparency-market-id.md](./2026-07-01-f7-f8-f9-insights-transparency-market-id.md) — **F10** analytics MVP (optional); core F0–F9 complete.

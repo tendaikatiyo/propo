@@ -195,24 +195,6 @@ function segmentSpec(filters: Pick<CompareFilters, "propertyType" | "bedroom">) 
   return { propertyType: filters.propertyType, bedroom: filters.bedroom };
 }
 
-function segmentDom(
-  market: MarketMetric,
-  filters: Pick<CompareFilters, "propertyType" | "bedroom">,
-  mode: "rent" | "sale"
-): number | null {
-  const segment = resolveSegmentStats(market, filters.propertyType, filters.bedroom);
-  if (hasActiveSegmentFilters(filters) && segment) {
-    const value =
-      mode === "rent"
-        ? segment.median_days_on_market_rent
-        : segment.median_days_on_market_sale;
-    if (value != null) return value;
-  }
-  return mode === "rent"
-    ? market.average_days_on_market_rent
-    : market.average_days_on_market_sale;
-}
-
 function segmentListingCount(
   market: MarketMetric,
   filters: Pick<CompareFilters, "propertyType" | "bedroom">,
@@ -290,24 +272,6 @@ export function buildCompareMetrics(
       format: "number",
       higherIsBetter: true,
       getValue: (m) => m.confidence_score,
-    },
-    {
-      key: "avg_dom_rent",
-      label: hasActiveSegmentFilters(filters)
-        ? "Days on market (rent, spec)"
-        : "Avg days on market (rent)",
-      format: "days",
-      higherIsBetter: false,
-      getValue: (m) => segmentDom(m, filters, "rent"),
-    },
-    {
-      key: "avg_dom_sale",
-      label: hasActiveSegmentFilters(filters)
-        ? "Days on market (sale, spec)"
-        : "Avg days on market (sale)",
-      format: "days",
-      higherIsBetter: false,
-      getValue: (m) => segmentDom(m, filters, "sale"),
     },
     {
       key: "rental_count",

@@ -48,12 +48,8 @@ function inBudgetDetailCopy(market: MarketMetric, mode: ExploreMode): string {
   if (mode === "buy" && market.yield_percent != null) {
     return `Yield ${formatPercent(market.yield_percent)}`;
   }
-  const dom =
-    mode === "rent"
-      ? market.average_days_on_market_rent
-      : market.average_days_on_market_sale;
-  if (dom != null) {
-    return `Avg DOM ${dom}d`;
+  if ((market.confidence_score ?? 0) >= 40) {
+    return "Higher confidence data";
   }
   return mode === "rent" ? "Competitive rent" : "Strong value";
 }

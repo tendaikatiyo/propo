@@ -62,7 +62,7 @@ export function BudgetListingsPreview({
       <div>
         <h2 className="font-heading text-lg font-medium">Active listings in budget</h2>
         <p className="text-sm text-muted-foreground">
-          Sample properties from our scrape that match your criteria.
+          Sample active listings that match your criteria.
         </p>
       </div>
       <div className="grid gap-3 sm:grid-cols-2">

@@ -23,22 +23,8 @@ function formatCompareValue(
 }
 
 const MOBILE_METRIC_KEYS: Record<"rent" | "buy", string[]> = {
-  rent: [
-    "median_rent",
-    "median_sale_price",
-    "yield_percent",
-    "opportunity_score",
-    "avg_dom_rent",
-    "avg_dom_sale",
-  ],
-  buy: [
-    "median_sale_price",
-    "median_rent",
-    "yield_percent",
-    "opportunity_score",
-    "avg_dom_sale",
-    "avg_dom_rent",
-  ],
+  rent: ["median_rent", "median_sale_price", "yield_percent", "opportunity_score"],
+  buy: ["median_sale_price", "median_rent", "yield_percent", "opportunity_score"],
 };
 
 function mobileCompareMetrics(filters: CompareFilters) {

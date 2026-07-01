@@ -30,6 +30,8 @@ export function normalizeExploreFilters(filters: ExploreFilters): ExploreFilters
   }
   if (propertyType === "room") {
     bedroom = ROOM_BEDROOM_COUNT;
+  } else {
+    bedroom = null;
   }
   return { ...filters, propertyType, bedroom };
 }
@@ -44,6 +46,8 @@ export function normalizeCompareFilters(filters: CompareFilters): CompareFilters
   }
   if (propertyType === "room") {
     bedroom = ROOM_BEDROOM_COUNT;
+  } else {
+    bedroom = null;
   }
   return { mode, propertyType, bedroom };
 }

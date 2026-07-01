@@ -14,14 +14,10 @@ function moverDetail(mover: TrendMover, kind: MoverListKind): string {
     const count = mover.listing_count;
     return count != null ? `${count} listings` : "—";
   }
-  if (kind === "dom") {
-    const dom = mover.median_days_on_market;
-    return dom != null ? `${dom}d on market` : "—";
-  }
   return formatCurrency(mover.median_price);
 }
 
-type MoverListKind = "price" | "supply" | "dom";
+type MoverListKind = "price" | "supply";
 
 function MoverList({
   title,
@@ -84,8 +80,8 @@ export function MoversRankings({
   return (
     <div className="space-y-6">
       <p className="text-[15px] tracking-[0.15px] text-muted-foreground">
-        Suburbs with the largest changes in median rent, sale price, listing supply, and days on
-        market over the last {rangeLabel}. Based on daily listing snapshots.
+        Suburbs with the largest changes in median rent, sale price, and listing supply over the
+        last {rangeLabel}. Based on daily listing snapshots.
       </p>
 
       <div className="grid gap-4 lg:grid-cols-2">
@@ -98,12 +94,6 @@ export function MoversRankings({
           items={movers.supply_surge}
           kind="supply"
           emptyLabel="No suburbs with rising listing counts in this period."
-        />
-        <MoverList
-          title="DOM shift"
-          items={movers.dom_shift}
-          kind="dom"
-          emptyLabel="Days-on-market trends need more daily snapshot history."
         />
       </div>
     </div>

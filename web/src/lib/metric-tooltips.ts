@@ -21,13 +21,13 @@ export const COLUMN_TOOLTIPS: Record<SortKey, string> = {
 };
 
 export const DOM_TOOLTIP =
-  "Average days listings stayed active in our scrape history for the selected mode (rent or buy).";
+  "Average days listings stayed active in our data history for the selected mode (rent or buy).";
 
 export const DOM_RENT_TOOLTIP =
-  "Average days rental listings stayed active in our scrape history for this suburb.";
+  "Average days rental listings stayed active in our data history for this suburb.";
 
 export const DOM_SALE_TOOLTIP =
-  "Average days sale listings stayed active in our scrape history for this suburb.";
+  "Average days sale listings stayed active in our data history for this suburb.";
 
 export const PRICE_TREND_TOOLTIP =
   "Daily median price from active listings, rolled up across property types in the suburb. Percent change compares the first and last snapshot in the selected range.";
@@ -77,9 +77,9 @@ export function sampleSizeLabel(count: number, mode: "rent" | "buy"): string {
 
 export function sampleSizeTooltip(mode: "rent" | "buy"): string {
   if (mode === "rent") {
-    return "Count of active rental listings captured in our latest scrape for this suburb or segment.";
+    return "Count of active rental listings in our latest data for this suburb or segment.";
   }
-  return "Count of active sale listings captured in our latest scrape for this suburb or segment.";
+  return "Count of active sale listings in our latest data for this suburb or segment.";
 }
 
 export function segmentLimitedDataTooltip(count: number): string {
@@ -100,10 +100,10 @@ export function exploreScopeDescription(
   const priceLabel = mode === "rent" ? "rent" : "sale price";
 
   if (hideSuburbMedianFallback) {
-    return `Showing ${scope}. Medians use only spec-matched listings when at least ${MIN_SEGMENT_LISTINGS} exist; suburbs without enough data are hidden.`;
+    return `Showing ${scope}. Medians use listings for that property type when at least ${MIN_SEGMENT_LISTINGS} exist; suburbs without enough data are hidden.`;
   }
 
-  return `Showing ${scope}. Medians prefer spec-matched listings (n≥${MIN_SEGMENT_LISTINGS}); otherwise suburb-wide ${priceLabel} is shown — look for “Suburb median” under prices.`;
+  return `Showing ${scope}. Medians prefer type-matched listings (n≥${MIN_SEGMENT_LISTINGS}); otherwise suburb-wide ${priceLabel} is shown — look for “Suburb median” under prices.`;
 }
 
 export function exploreBudgetDescription(
@@ -146,8 +146,6 @@ const COMPARE_METRIC_TOOLTIPS: Record<string, string> = {
   yield_percent: COLUMN_TOOLTIPS.yield_percent,
   opportunity_score: COLUMN_TOOLTIPS.opportunity_score,
   confidence_score: COLUMN_TOOLTIPS.confidence_score,
-  avg_dom_rent: DOM_RENT_TOOLTIP,
-  avg_dom_sale: DOM_SALE_TOOLTIP,
   rental_count: "Count of active rental listings in the suburb or segment.",
   sale_count: "Count of active sale listings in the suburb or segment.",
 };

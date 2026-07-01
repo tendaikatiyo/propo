@@ -91,7 +91,7 @@ export function CityDashboard({
 
       <CityStatsGrid city={city} />
 
-      <div className="hidden gap-4 sm:grid-cols-2 lg:grid lg:grid-cols-5">
+      <div className="hidden gap-4 sm:grid-cols-2 lg:grid lg:grid-cols-3">
         <Card>
           <CardHeader className="pb-2">
             <CardTitle className="caption-label normal-case">Median rent</CardTitle>
@@ -114,26 +114,6 @@ export function CityDashboard({
           </CardHeader>
           <CardContent className="font-stat text-2xl font-medium">
             {formatPercent(city.average_yield)}
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader className="pb-2">
-            <CardTitle className="caption-label normal-case">Avg DOM (rent)</CardTitle>
-          </CardHeader>
-          <CardContent className="font-mono text-2xl font-medium">
-            {city.average_days_on_market_rent != null
-              ? `${city.average_days_on_market_rent}d`
-              : "—"}
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader className="pb-2">
-            <CardTitle className="caption-label normal-case">Avg DOM (sale)</CardTitle>
-          </CardHeader>
-          <CardContent className="font-mono text-2xl font-medium">
-            {city.average_days_on_market_sale != null
-              ? `${city.average_days_on_market_sale}d`
-              : "—"}
           </CardContent>
         </Card>
       </div>

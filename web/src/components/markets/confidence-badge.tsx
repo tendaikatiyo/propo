@@ -36,7 +36,7 @@ export function ConfidenceBadge({
   ];
   if (sampleCount != null) {
     const modeLabel = sampleMode === "buy" ? "sale" : "rental";
-    tooltipParts.push(`This suburb has ${sampleCount} active ${modeLabel} listing${sampleCount === 1 ? "" : "s"} in the latest scrape.`);
+    tooltipParts.push(`This suburb has ${sampleCount} active ${modeLabel} listing${sampleCount === 1 ? "" : "s"} in our latest data.`);
   }
 
   return (

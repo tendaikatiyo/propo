@@ -150,22 +150,6 @@ export function SuburbProfile({
           value={formatCurrency(medianSale)}
         />
         <MetricCard label="Gross yield" value={formatPercent(market.yield_percent)} />
-        <MetricCard
-          label="Days on market (rent)"
-          value={
-            (segment?.median_days_on_market_rent ?? market.average_days_on_market_rent) != null
-              ? `${segment?.median_days_on_market_rent ?? market.average_days_on_market_rent}d`
-              : "—"
-          }
-        />
-        <MetricCard
-          label="Days on market (sale)"
-          value={
-            (segment?.median_days_on_market_sale ?? market.average_days_on_market_sale) != null
-              ? `${segment?.median_days_on_market_sale ?? market.average_days_on_market_sale}d`
-              : "—"
-          }
-        />
         <MetricCard label="Opportunity score" value={String(market.opportunity_score ?? "—")} />
       </div>
 

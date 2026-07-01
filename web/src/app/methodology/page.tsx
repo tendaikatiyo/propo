@@ -5,7 +5,7 @@ import { buildPageMetadata } from "@/lib/seo";
 export const metadata = buildPageMetadata({
   title: "Methodology",
   description:
-    "How Propo calculates rental yields, opportunity scores, segment medians, and price trends from scraped listing data.",
+    "How Propo calculates rental yields, opportunity scores, segment medians, and price trends from public listing data.",
   path: "/methodology",
 });
 
@@ -50,16 +50,6 @@ export default function MethodologyPage() {
 
         <Card>
           <CardHeader>
-            <CardTitle>Days on market</CardTitle>
-          </CardHeader>
-          <CardContent className="text-[15px] leading-relaxed tracking-[0.15px] text-muted-foreground">
-            Days on market is measured from first seen to last seen in our scrape history. It
-            indicates how long listings typically remain active in a suburb.
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
             <CardTitle>Budget matching</CardTitle>
           </CardHeader>
           <CardContent className="text-[15px] leading-relaxed tracking-[0.15px] text-muted-foreground">
@@ -74,8 +64,9 @@ export default function MethodologyPage() {
             <CardTitle>Property type filters</CardTitle>
           </CardHeader>
           <CardContent className="text-[15px] leading-relaxed tracking-[0.15px] text-muted-foreground">
-            Property type filters use listing counts by type in each suburb. Bedroom filters use
-            bedroom bucket counts when available in the analytics pipeline.
+            Explore filters suburbs by property type (house, flat, room, and so on). Medians prefer
+            type-matched listings in each suburb. Bedroom-level detail remains available on suburb
+            profiles when opened with a bedroom filter in the URL.
           </CardContent>
         </Card>
 
@@ -97,7 +88,7 @@ export default function MethodologyPage() {
           </CardHeader>
           <CardContent className="space-y-3 text-[15px] leading-relaxed tracking-[0.15px] text-muted-foreground">
             <p>
-              Propo derives medians, yields, and fair-value badges from publicly scraped listing
+              Propo derives medians, yields, and fair-value badges from publicly available listing
               text and prices. We do not verify title deeds, plot sizes, or off-market
               transactions.
             </p>
@@ -107,13 +98,18 @@ export default function MethodologyPage() {
               similar features — even when agents mention them in ad copy.
             </p>
             <p>
-              Segment medians (by property type and bedroom count) require at least three matching
-              active listings. Below that threshold we show suburb-wide medians with a limited-data
-              warning, or hide the suburb from filtered explore results.
+              Type-level segment medians require at least three matching active listings. Below that
+              threshold we show suburb-wide medians with a limited-data warning, or hide the suburb
+              from filtered Explore results.
             </p>
             <p>
               Fair-value badges compare a listing to the best available median and appear only when
               the price differs by at least 5% and enough comparable listings exist.
+            </p>
+            <p>
+              We track how long listings stay in our listing history, but do not show days-on-market
+              in the product yet — it undercounts listings that were already live before we started
+              tracking.
             </p>
           </CardContent>
         </Card>

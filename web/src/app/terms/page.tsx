@@ -63,7 +63,7 @@ export default function TermsOfServicePage() {
         <ul className="list-disc space-y-2 pl-5">
           <li>Use the Service in violation of applicable laws or regulations</li>
           <li>Attempt to gain unauthorised access to our systems or data</li>
-          <li>Scrape, crawl, or harvest data from the Service at scale without permission</li>
+          <li>Crawl or harvest data from the Service at scale without permission</li>
           <li>Interfere with or disrupt the Service or its infrastructure</li>
           <li>Misrepresent {SITE_NAME} data as official valuations or guaranteed forecasts</li>
         </ul>

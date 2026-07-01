@@ -10,11 +10,9 @@ import { Switch } from "@/components/ui/switch";
 import { useCities } from "@/hooks/use-market-data";
 import { useExploreFilters } from "@/hooks/use-explore-filters";
 import {
-  BEDROOM_OPTIONS,
   DEFAULT_BUY_BUDGET,
   DEFAULT_RENT_BUDGET,
   propertyTypesForMode,
-  ROOM_BEDROOM_COUNT,
 } from "@/lib/constants";
 import { propertyTypeLabel } from "@/lib/format";
 import { hasActiveSegmentFilters } from "@/lib/segments";
@@ -76,26 +74,15 @@ export function ExploreFilterPanel({
   };
 
   const selectPropertyType = (type: PropertyType | null) => {
-    const wasRoom = filters.propertyType === "room";
     if (type === null) {
-      apply({
-        propertyType: null,
-        bedroom: wasRoom ? null : filters.bedroom,
-      });
-      return;
-    }
-    if (type === "room") {
-      apply({ propertyType: "room", bedroom: ROOM_BEDROOM_COUNT });
+      apply({ propertyType: null });
       return;
     }
     if (filters.propertyType === type) {
-      apply({ propertyType: null, bedroom: wasRoom ? null : filters.bedroom });
+      apply({ propertyType: null });
       return;
     }
-    apply({
-      propertyType: type,
-      bedroom: wasRoom ? null : filters.bedroom,
-    });
+    apply({ propertyType: type });
   };
 
   return (
@@ -172,40 +159,15 @@ export function ExploreFilterPanel({
         </div>
       </section>
 
-      {!isRoom ? (
-        <section className="space-y-3">
-          <Label className="caption-label">Bedrooms</Label>
-          <div className="flex flex-wrap gap-2">
-            <Button
-              type="button"
-              size="sm"
-              variant={filters.bedroom == null ? "default" : "outline"}
-              onClick={() => apply({ bedroom: null })}
-            >
-              Any
-            </Button>
-            {BEDROOM_OPTIONS.map((opt) => (
-              <Button
-                key={opt.value}
-                type="button"
-                size="sm"
-                variant={filters.bedroom === opt.value ? "default" : "outline"}
-                onClick={() => apply({ bedroom: opt.value })}
-              >
-                {opt.label}
-              </Button>
-            ))}
-          </div>
-        </section>
-      ) : (
+      {isRoom ? (
         <p className="text-xs text-muted-foreground">Rooms are listed as single occupancy (1 bed).</p>
-      )}
+      ) : null}
 
       {hasActiveSegmentFilters(filters) ? (
         <FilterSwitchRow
           id="include-suburb-medians"
           label="Include suburb medians"
-          description="When on, we also show suburbs where we only have a suburb-wide average — not enough listings for your exact home type and bedrooms."
+          description="When on, we also show suburbs where we only have a suburb-wide average — not enough listings for your property type."
           checked={!filters.hideSuburbMedianFallback}
           onCheckedChange={(checked) => apply({ hideSuburbMedianFallback: !checked })}
         />

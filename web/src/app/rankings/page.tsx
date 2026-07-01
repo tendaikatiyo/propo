@@ -11,7 +11,7 @@ export const revalidate = 3600;
 export const metadata = buildPageMetadata({
   title: "Market rankings",
   description:
-    "Top Zimbabwe suburbs by rental yield, investment opportunity, price movers, and days on market — ranked from active listing data.",
+    "Top Zimbabwe suburbs by rental yield, investment opportunity, and price movers — ranked from active listing data.",
   path: "/rankings",
 });
 

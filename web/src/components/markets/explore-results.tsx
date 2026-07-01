@@ -106,7 +106,7 @@ export function ExploreResults({ preview = false }: { preview?: boolean }) {
           </p>
           {hasActiveSegmentFilters(filters) && !filters.hideSuburbMedianFallback ? (
             <p className="text-xs text-muted-foreground">
-              Look for “Suburb median” under prices when spec data is thin.
+              Look for “Suburb median” under prices when property-type data is thin.
             </p>
           ) : null}
         </div>

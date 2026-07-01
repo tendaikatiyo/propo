@@ -11,7 +11,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { formatCurrency, formatPercent, sanitizeLabel } from "@/lib/format";
 import { LEADERBOARD_MIN_CONFIDENCE, RANKINGS_MIN_CONFIDENCE } from "@/lib/constants";
-import { daysOnMarketRent, daysOnMarketSale } from "@/lib/rankings";
 import { suburbPath } from "@/lib/slug";
 import type { MarketMoversRankingsPayload, RankingEntry } from "@/lib/types";
 
@@ -82,22 +81,6 @@ function ClassicRankings({
         title="Most expensive markets (sale)"
         items={national.most_expensive_markets ?? []}
         value={(item) => formatCurrency(item.median_sale_price ?? null)}
-      />
-      <RankingList
-        title="Longest on market (rentals)"
-        items={national.longest_on_market_rentals ?? []}
-        value={(item) => {
-          const days = daysOnMarketRent(item);
-          return days != null ? `${days}d` : "—";
-        }}
-      />
-      <RankingList
-        title="Longest on market (sales)"
-        items={national.longest_on_market_sales ?? []}
-        value={(item) => {
-          const days = daysOnMarketSale(item);
-          return days != null ? `${days}d` : "—";
-        }}
       />
     </div>
   );

@@ -7,7 +7,7 @@ import { buildPageMetadata } from "@/lib/seo";
 export const metadata = buildPageMetadata({
   title: "Compare suburbs",
   description:
-    "Pin up to three Zimbabwe suburbs and compare median rents, sale prices, yields, and market confidence — filter by property type and bedrooms for segment-accurate medians.",
+    "Pin up to three Zimbabwe suburbs and compare median rents, sale prices, yields, and market confidence — filter by property type for segment-accurate medians.",
   path: "/compare",
 });
 
