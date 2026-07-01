@@ -146,6 +146,32 @@ const TYPE_LABELS: Record<PropertyType, string> = {
   commercial: "commercial",
 };
 
+const TYPE_PLURALS: Record<PropertyType, string> = {
+  house: "houses",
+  flat: "flats",
+  apartment: "flats",
+  room: "rooms",
+  townhouse: "townhouses",
+  commercial: "commercial",
+};
+
+/** Scope label for transparency UI — e.g. "All property types" or "2-bed flats only". */
+export function dataScopeLabel(
+  propertyType: PropertyType | null,
+  bedroom: number | null
+): string {
+  if (!propertyType && bedroom == null) return "All property types";
+
+  const parts: string[] = [];
+  if (bedroom != null) {
+    parts.push(bedroom >= 4 ? "4+ bed" : `${bedroom}-bed`);
+  }
+  if (propertyType) {
+    parts.push(TYPE_PLURALS[propertyType]);
+  }
+  return parts.length ? `${parts.join(" ")} only` : "All property types";
+}
+
 export function segmentFilterLabel(
   propertyType: PropertyType | null,
   bedroom: number | null

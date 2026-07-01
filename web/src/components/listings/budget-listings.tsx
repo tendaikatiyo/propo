@@ -70,7 +70,7 @@ export function BudgetListingsPreview({
           <ListingCard
             key={listing.listing_url}
             listing={listing}
-            market={getMarket(listing.city, listing.suburb)}
+            market={getMarket(listing.city, listing.suburb, listing.market_id)}
           />
         ))}
       </div>

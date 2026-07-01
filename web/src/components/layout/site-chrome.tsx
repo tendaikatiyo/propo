@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { DataFreshnessPill } from "@/components/layout/data-freshness-pill";
+import { HowItWorksButton } from "@/components/onboarding/how-it-works-button";
 import { FooterOrbs } from "@/components/ui/footer-orbs";
 import { SITE_NAME } from "@/lib/constants";
 import { HERO_IMAGES, type HeroVariant } from "@/lib/hero";
@@ -28,6 +29,7 @@ export function AppFooter() {
           <Link href="/methodology" className="hover:text-foreground">
             Methodology
           </Link>
+          <HowItWorksButton />
         </div>
         <div className="flex flex-wrap gap-x-4 gap-y-2 border-t border-border/60 pt-4 text-sm text-muted-foreground">
           <Link href="/privacy" className="hover:text-foreground">

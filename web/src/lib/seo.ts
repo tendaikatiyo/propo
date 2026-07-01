@@ -13,6 +13,9 @@ export const OG_IMAGE_ALT = `${SITE_NAME} — ${HERO_IMAGES.harare.alt}`;
 export const OG_IMAGE_WIDTH = 1200;
 export const OG_IMAGE_HEIGHT = 630;
 
+/** Site favicon — `web/public/propo logo.svg` */
+export const FAVICON_PATH = "/propo logo.svg";
+
 export function absoluteUrl(path = ""): string {
   const normalized = path.startsWith("/") ? path : `/${path}`;
   return `${SITE_URL}${normalized === "/" ? "" : normalized}` || SITE_URL;
@@ -85,5 +88,9 @@ export function rootMetadata(): Metadata {
     },
     applicationName: SITE_NAME,
     category: "real estate",
+    icons: {
+      icon: [{ url: FAVICON_PATH, type: "image/svg+xml" }],
+      shortcut: FAVICON_PATH,
+    },
   };
 }

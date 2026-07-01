@@ -47,6 +47,7 @@ export function SuburbValueListings({ market }: { market: MarketMetric }) {
       fetchListingsFromApi({
         mode: "rent",
         budget: rentMedian ?? 0,
+        marketId: market.market_id,
         city: market.city,
         suburb: market.suburb,
         tier: "value",
@@ -63,6 +64,7 @@ export function SuburbValueListings({ market }: { market: MarketMetric }) {
       fetchListingsFromApi({
         mode: "buy",
         budget: saleMedian ?? 0,
+        marketId: market.market_id,
         city: market.city,
         suburb: market.suburb,
         tier: "value",

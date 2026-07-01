@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 
 import { AppShell } from "@/components/layout/app-shell";
+import { OnboardingTourProvider } from "@/components/onboarding/onboarding-tour-context";
 import { QueryProvider } from "@/components/providers/query-provider";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -27,7 +28,9 @@ export default function RootLayout({
       <body className="min-h-screen">
         <QueryProvider>
           <TooltipProvider>
-            <AppShell>{children}</AppShell>
+            <OnboardingTourProvider>
+              <AppShell>{children}</AppShell>
+            </OnboardingTourProvider>
             <Toaster />
           </TooltipProvider>
         </QueryProvider>

@@ -2,19 +2,24 @@ import Link from "next/link";
 import { FileDown } from "lucide-react";
 
 import { BackLink } from "@/components/layout/back-nav";
+import { DataFreshnessPill } from "@/components/layout/data-freshness-pill";
 import { SuburbActionBar } from "@/components/mobile/suburb-action-bar";
 import { PinButton } from "@/components/markets/pin-button";
+import { SampleSizeBadge, ScopeLabel } from "@/components/markets/sample-size-badge";
 import { SuburbValueListings } from "@/components/listings/suburb-value-listings";
 import { PropertyMixBar } from "@/components/markets/property-mix-bar";
 import { SuburbTrendsSection } from "@/components/markets/suburb-trends-section";
 import { ConfidenceBadge } from "@/components/markets/confidence-badge";
 import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { MIN_SEGMENT_LISTINGS } from "@/lib/constants";
 import { formatCurrency, formatPercent, sanitizeLabel } from "@/lib/format";
 import {
+  hasActiveSegmentFilters,
   isUsingAggregateFallback,
   priceForFilters,
   resolveSegmentStats,
+  segmentCountForMode,
   segmentFilterLabel,
   segmentMedianLabel,
 } from "@/lib/segments";
@@ -48,8 +53,14 @@ export function SuburbProfile({
 }) {
   const segment = resolveSegmentStats(market, propertyType, bedroom);
   const specLabel = segmentFilterLabel(propertyType, bedroom);
+  const hasSpecFilters = hasActiveSegmentFilters({ propertyType, bedroom });
   const rentFallback = isUsingAggregateFallback(market, "rent", { propertyType, bedroom });
   const saleFallback = isUsingAggregateFallback(market, "buy", { propertyType, bedroom });
+
+  const rentSample = segment ? segmentCountForMode(segment, "rent") : market.rental_count;
+  const saleSample = segment ? segmentCountForMode(segment, "buy") : market.sale_count;
+  const rentLimited = hasSpecFilters && rentSample < MIN_SEGMENT_LISTINGS;
+  const saleLimited = hasSpecFilters && saleSample < MIN_SEGMENT_LISTINGS;
 
   const medianRent = priceForFilters(market, "rent", { propertyType, bedroom });
   const medianSale = priceForFilters(market, "buy", { propertyType, bedroom });
@@ -81,6 +92,14 @@ export function SuburbProfile({
                 : ""}
             </p>
           ) : null}
+          <div className="mt-3 flex flex-col gap-2">
+            <ScopeLabel propertyType={propertyType} bedroom={bedroom} />
+            <div className="flex flex-col gap-1 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-4">
+              <SampleSizeBadge count={rentSample} mode="rent" limited={rentLimited} />
+              <SampleSizeBadge count={saleSample} mode="buy" limited={saleLimited} />
+            </div>
+            <DataFreshnessPill prefix="Market data" />
+          </div>
           <p className="mt-3 print:hidden lg:hidden">
             <Link
               href={suburbReportPath(market.city, market.suburb, {
@@ -95,7 +114,11 @@ export function SuburbProfile({
           </p>
         </div>
         <div className="lg:hidden">
-          <ConfidenceBadge score={market.confidence_score} />
+          <ConfidenceBadge
+            score={market.confidence_score}
+            sampleCount={rentSample + saleSample}
+            sampleMode="rent"
+          />
         </div>
         <div className="hidden flex-wrap items-center gap-2 lg:flex">
           <Link
@@ -108,7 +131,11 @@ export function SuburbProfile({
             <FileDown className="size-4" />
             Export report
           </Link>
-          <ConfidenceBadge score={market.confidence_score} />
+          <ConfidenceBadge
+            score={market.confidence_score}
+            sampleCount={rentSample + saleSample}
+            sampleMode="rent"
+          />
           <PinButton market={market} />
         </div>
       </div>

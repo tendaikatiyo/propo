@@ -4,6 +4,7 @@ from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional
 
 from analytics.listing_images import resolve_listing_image_url
+from analytics.listing_utils import build_market_id
 from analytics.price_utils import reconcile_classifieds_rent_price, reconcile_rent_price
 
 DATA_DIR = Path(__file__).resolve().parents[1] / "data"
@@ -52,10 +53,10 @@ CITY_NORMALIZATION = {
 
 
 def slugify(value: str) -> str:
-    value = str(value or "").strip().lower()
-    value = re.sub(r"[^a-z0-9]+", "_", value)
-    value = re.sub(r"_+", "_", value)
-    return value.strip("_")
+    """Deprecated alias — prefer `listing_utils.slugify_market_part`."""
+    from analytics.listing_utils import slugify_market_part
+
+    return slugify_market_part(value)
 
 
 def normalize_text(value: Any) -> str:
@@ -165,7 +166,7 @@ def normalize_listing_record(
 
     city = normalize_city(city)
     suburb = normalize_suburb(suburb)
-    market_id = f"{slugify(city)}_{slugify(suburb)}"
+    market_id = build_market_id(city, suburb)
     original_price = parse_price(record.get("price"))
     price_raw = str(record.get("price_raw", "")).strip()
     if listing_type == "rent" and price != original_price:

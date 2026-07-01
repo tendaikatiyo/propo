@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Building2, ChevronRight, Compass, HelpCircle } from "lucide-react";
 
+import { HowItWorksButton } from "@/components/onboarding/how-it-works-button";
 import { DataFreshnessPill } from "@/components/layout/data-freshness-pill";
 
 const LINKS = [
@@ -17,7 +18,8 @@ export function MobileMenuLinks({ onNavigate }: { onNavigate?: () => void }) {
       <h3 className="px-1 text-[13px] font-medium uppercase tracking-wide text-muted-foreground">
         More
       </h3>
-      <nav className="overflow-hidden rounded-2xl bg-muted/50">
+      <nav className="divide-y divide-border/60 overflow-hidden rounded-2xl bg-muted/50">
+        <HowItWorksButton variant="menu" onNavigate={onNavigate} />
         {LINKS.map((item) => {
           const Icon = item.icon;
           return (

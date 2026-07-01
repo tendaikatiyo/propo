@@ -83,6 +83,7 @@ export default async function SuburbReportPage({
       ? fetchListings({
           mode: "rent",
           budget: medianRent,
+          marketId: market.market_id,
           city: market.city,
           suburb: market.suburb,
           tier: "value",
@@ -94,6 +95,7 @@ export default async function SuburbReportPage({
       ? fetchListings({
           mode: "buy",
           budget: medianSale,
+          marketId: market.market_id,
           city: market.city,
           suburb: market.suburb,
           tier: "value",

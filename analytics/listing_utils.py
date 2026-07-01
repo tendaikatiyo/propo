@@ -1,5 +1,18 @@
 from datetime import datetime, timezone
+import re
 from typing import Any, Dict, Optional
+
+
+def slugify_market_part(value: str) -> str:
+    text = str(value or "").strip().lower()
+    text = re.sub(r"[^a-z0-9]+", "_", text)
+    text = re.sub(r"_+", "_", text)
+    return text.strip("_")
+
+
+def build_market_id(city: str, suburb: str) -> str:
+    """Canonical market key — must match `market_metrics.market_id`."""
+    return f"{slugify_market_part(city)}_{slugify_market_part(suburb)}"
 
 
 def normalize_property_type(value: Optional[Any]) -> str:

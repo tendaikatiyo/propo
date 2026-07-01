@@ -33,7 +33,7 @@ def build_rankings(markets: List[Dict[str, Any]], cities: List[Dict[str, Any]]) 
         "top_yield_markets": [market_summary(m, "yield_percent") for m in top_n(markets, "yield_percent")],
         "top_opportunity_markets": [market_summary(m, "opportunity_score") for m in top_n(markets, "opportunity_score")],
         "most_expensive_markets": [market_summary(m, "median_sale_price") for m in top_n(markets, "median_sale_price")],
-        "cheapest_markets": [market_summary(m, "median_sale_price") for m in top_n(markets, "median_sale_price", reverse=False)],
+        "cheapest_markets": [market_summary(m, "median_rent") for m in top_n(markets, "median_rent", reverse=False)],
         "longest_on_market_rentals": [
             market_summary(m, "average_days_on_market_rent")
             for m in top_n(markets, "average_days_on_market_rent")

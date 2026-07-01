@@ -7,6 +7,7 @@ export function buildListingsQuery(params: {
   budget: number;
   city?: string | null;
   suburb?: string | null;
+  marketId?: string | null;
   propertyType?: PropertyType | null;
   tier?: ListingTier;
   medianPrice?: number | null;
@@ -15,6 +16,7 @@ export function buildListingsQuery(params: {
   const qs = new URLSearchParams();
   qs.set("mode", params.mode);
   qs.set("budget", String(params.budget));
+  if (params.marketId) qs.set("market_id", params.marketId);
   if (params.city) qs.set("city", params.city);
   if (params.suburb) qs.set("suburb", params.suburb);
   if (params.propertyType) qs.set("type", params.propertyType);

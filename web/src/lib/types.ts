@@ -84,6 +84,8 @@ export interface RankingEntry {
   median_sale_price?: number;
   median_days_on_market_rent?: number;
   median_days_on_market_sale?: number;
+  average_days_on_market_rent?: number;
+  average_days_on_market_sale?: number;
 }
 
 export interface RankingsPayload {
@@ -106,6 +108,7 @@ export interface Listing {
   image_url?: string | null;
   agency_logo?: string | null;
   description?: string | null;
+  market_id?: string | null;
 }
 
 export interface PinnedMarket {
@@ -149,6 +152,7 @@ export interface MarketTrendPoint {
   date: string;
   median_price: number | null;
   listing_count: number;
+  median_days_on_market?: number | null;
 }
 
 export interface MarketTrendsPayload {
@@ -159,12 +163,25 @@ export interface MarketTrendsPayload {
 
 export interface TrendMover {
   market_id: string;
+  city: string;
   suburb: string;
   pct_change_median: number;
   median_price: number | null;
+  listing_count?: number | null;
+  median_days_on_market?: number | null;
 }
 
 export interface CityTrendMoversPayload {
   risers: TrendMover[];
   fallers: TrendMover[];
+}
+
+export interface MarketMoversRankingsPayload {
+  range: TrendRange;
+  rent_risers: TrendMover[];
+  rent_fallers: TrendMover[];
+  sale_risers: TrendMover[];
+  sale_fallers: TrendMover[];
+  supply_surge: TrendMover[];
+  dom_shift: TrendMover[];
 }

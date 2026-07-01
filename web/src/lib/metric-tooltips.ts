@@ -1,5 +1,11 @@
+import { MIN_SEGMENT_LISTINGS } from "@/lib/constants";
 import type { ExploreMode, PropertyType, SortKey } from "@/lib/types";
-import { segmentFilterLabel, segmentMedianLabel } from "@/lib/segments";
+import {
+  dataScopeLabel,
+  hasActiveSegmentFilters,
+  segmentFilterLabel,
+  segmentMedianLabel,
+} from "@/lib/segments";
 
 export const COLUMN_TOOLTIPS: Record<SortKey, string> = {
   suburb: "Suburb or neighbourhood name within the city.",
@@ -61,6 +67,43 @@ export function columnsForCityDashboard(): SortKey[] {
     "opportunity_score",
     "confidence_score",
   ];
+}
+
+export function sampleSizeLabel(count: number, mode: "rent" | "buy"): string {
+  const noun = mode === "rent" ? "rental listing" : "sale listing";
+  const plural = count === 1 ? "" : "s";
+  return `Based on ${count} active ${noun}${plural}`;
+}
+
+export function sampleSizeTooltip(mode: "rent" | "buy"): string {
+  if (mode === "rent") {
+    return "Count of active rental listings captured in our latest scrape for this suburb or segment.";
+  }
+  return "Count of active sale listings captured in our latest scrape for this suburb or segment.";
+}
+
+export function segmentLimitedDataTooltip(count: number): string {
+  return `Limited data (n=${count}). We need at least ${MIN_SEGMENT_LISTINGS} matching listings for a reliable segment median; suburb-wide medians may be shown instead.`;
+}
+
+export function exploreScopeDescription(
+  mode: ExploreMode,
+  propertyType: PropertyType | null,
+  bedroom: number | null,
+  hideSuburbMedianFallback: boolean
+): string {
+  if (!hasActiveSegmentFilters({ propertyType, bedroom })) {
+    return "Prices use suburb-wide medians across all property types in each suburb.";
+  }
+
+  const scope = dataScopeLabel(propertyType, bedroom);
+  const priceLabel = mode === "rent" ? "rent" : "sale price";
+
+  if (hideSuburbMedianFallback) {
+    return `Showing ${scope}. Medians use only spec-matched listings when at least ${MIN_SEGMENT_LISTINGS} exist; suburbs without enough data are hidden.`;
+  }
+
+  return `Showing ${scope}. Medians prefer spec-matched listings (n≥${MIN_SEGMENT_LISTINGS}); otherwise suburb-wide ${priceLabel} is shown — look for “Suburb median” under prices.`;
 }
 
 export function exploreBudgetDescription(

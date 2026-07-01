@@ -2,26 +2,32 @@ import { readFile } from "fs/promises";
 import path from "path";
 import { execFileSync } from "child_process";
 
-import { STRETCH_BUDGET_MULTIPLIER } from "@/lib/constants";
+import { STRETCH_BUDGET_MULTIPLIER, RANKINGS_MIN_CONFIDENCE } from "@/lib/constants";
 import { filterRankingsPayload, filterZimbabweCities, filterZimbabweMarkets, isZimbabweCity } from "@/lib/geo";
 import { isLandPropertyType, resolveListingThumbnailUrl } from "@/lib/listings";
 import { createServerSupabaseClient } from "@/lib/supabase";
 import {
   aggregateSnapshotsByDate,
   buildTrendsPayload,
+  computeDomMoversFromSeries,
   computeMoversFromSeries,
+  computeSupplyMoversFromSeries,
   listingTypeForMode,
+  marketSeriesKey,
   parseTrendRange,
   startDateForRange,
   topMovers,
+  topMoversByMagnitude,
   type TrendRange,
 } from "@/lib/trends";
+import { buildMoverMarketLookup } from "@/lib/rankings";
 import type {
   CityMetric,
   CityTrendMoversPayload,
   ExploreMode,
   Listing,
   MarketMetric,
+  MarketMoversRankingsPayload,
   MarketTrendsPayload,
   PropertyType,
   RankingsPayload,
@@ -97,6 +103,7 @@ export interface ListingQuery {
   budget: number;
   city?: string | null;
   suburb?: string | null;
+  marketId?: string | null;
   propertyType?: PropertyType | null;
   limit?: number;
   tier?: "in" | "stretch" | "value";
@@ -121,8 +128,22 @@ function matchesListingQuery(listing: Listing, query: ListingQuery): boolean {
   }
 
   if (listing.city && !isZimbabweCity(listing.city)) return false;
-  if (query.city && listing.city?.toLowerCase() !== query.city.toLowerCase()) return false;
-  if (query.suburb && listing.suburb?.toLowerCase() !== query.suburb.toLowerCase()) return false;
+
+  if (query.marketId) {
+    if (listing.market_id) {
+      if (listing.market_id !== query.marketId) return false;
+    } else {
+      if (query.city && listing.city?.toLowerCase() !== query.city.toLowerCase()) return false;
+      if (query.suburb && listing.suburb?.toLowerCase() !== query.suburb.toLowerCase()) {
+        return false;
+      }
+    }
+  } else {
+    if (query.city && listing.city?.toLowerCase() !== query.city.toLowerCase()) return false;
+    if (query.suburb && listing.suburb?.toLowerCase() !== query.suburb.toLowerCase()) {
+      return false;
+    }
+  }
   if (query.propertyType) {
     if (query.propertyType === "flat") {
       if (listing.property_type !== "flat" && listing.property_type !== "apartment") {
@@ -204,7 +225,7 @@ export async function fetchListings(query: ListingQuery): Promise<Listing[]> {
     let request = client
       .from("listings")
       .select(
-        "listing_url, title, price, price_raw, city, suburb, location, property_type, listing_type, bedrooms, days_on_market, agency_logo, image_url"
+        "listing_url, title, price, price_raw, city, suburb, location, property_type, listing_type, bedrooms, days_on_market, agency_logo, image_url, market_id"
       )
       .eq("listing_type", listingType)
       .eq("is_active", true)
@@ -217,8 +238,12 @@ export async function fetchListings(query: ListingQuery): Promise<Listing[]> {
       request = request.gt("price", query.budget);
     }
 
-    if (query.city) request = request.ilike("city", query.city);
-    if (query.suburb) request = request.ilike("suburb", query.suburb);
+    if (query.marketId) {
+      request = request.eq("market_id", query.marketId);
+    } else {
+      if (query.city) request = request.ilike("city", query.city);
+      if (query.suburb) request = request.ilike("suburb", query.suburb);
+    }
     if (query.propertyType === "flat") {
       request = request.in("property_type", ["flat", "apartment"]);
     } else if (query.propertyType) {
@@ -251,16 +276,18 @@ const REPO_ROOT = path.join(process.cwd(), "..");
 
 interface SnapshotRow {
   snapshot_date: string;
+  city?: string;
   suburb?: string;
   median_price: number | null;
   listing_count: number;
   min_price?: number | null;
   max_price?: number | null;
   listing_type?: "rent" | "sale";
+  median_days_on_market?: number | null;
 }
 
 function fetchTrendsFromLocalPython(
-  command: "market" | "city-movers",
+  command: "market" | "city-movers" | "national-movers",
   args: Record<string, string>
 ): unknown | null {
   try {
@@ -358,56 +385,133 @@ export async function fetchMarketTrends(
   return buildTrendsPayload(points);
 }
 
+function rowsToSeriesMap(
+  rows: SnapshotRow[],
+  listingType: "rent" | "sale"
+): Map<string, ReturnType<typeof aggregateSnapshotsByDate>> {
+  const grouped = new Map<string, SnapshotRow[]>();
+
+  for (const row of rows) {
+    const city = row.city ?? "";
+    const suburb = row.suburb ?? "";
+    if (!city || !suburb) continue;
+    const key = marketSeriesKey(city, suburb);
+    if (!grouped.has(key)) grouped.set(key, []);
+    grouped.get(key)!.push(row);
+  }
+
+  const seriesByKey = new Map<string, ReturnType<typeof aggregateSnapshotsByDate>>();
+  for (const [key, suburbRows] of grouped) {
+    seriesByKey.set(
+      key,
+      aggregateSnapshotsByDate(
+        suburbRows.map((row) => ({
+          snapshot_date: row.snapshot_date,
+          median_price: row.median_price,
+          listing_count: row.listing_count,
+          min_price: row.min_price,
+          max_price: row.max_price,
+          listing_type: listingType,
+          median_days_on_market: row.median_days_on_market,
+        }))
+      )
+    );
+  }
+
+  return seriesByKey;
+}
+
+function emptyMoversPayload(range: TrendRange): MarketMoversRankingsPayload {
+  return {
+    range,
+    rent_risers: [],
+    rent_fallers: [],
+    sale_risers: [],
+    sale_fallers: [],
+    supply_surge: [],
+    dom_shift: [],
+  };
+}
+
+function buildMoversRankingsPayload(
+  seriesByKeyRent: Map<string, ReturnType<typeof aggregateSnapshotsByDate>>,
+  seriesByKeySale: Map<string, ReturnType<typeof aggregateSnapshotsByDate>>,
+  marketLookup: ReturnType<typeof buildMoverMarketLookup>,
+  range: TrendRange,
+  limit: number
+): MarketMoversRankingsPayload {
+  const rentMovers = computeMoversFromSeries(seriesByKeyRent, marketLookup, "rent");
+  const saleMovers = computeMoversFromSeries(seriesByKeySale, marketLookup, "sale");
+  const supplySeries = new Map<string, ReturnType<typeof aggregateSnapshotsByDate>>();
+
+  for (const [key, points] of seriesByKeyRent) {
+    supplySeries.set(key, points);
+  }
+  for (const [key, points] of seriesByKeySale) {
+    const existing = supplySeries.get(key) ?? [];
+    const merged = [...existing];
+    for (const point of points) {
+      const match = merged.find((item) => item.date === point.date);
+      if (match) {
+        match.listing_count += point.listing_count;
+      } else {
+        merged.push({ ...point });
+      }
+    }
+    supplySeries.set(
+      key,
+      merged.sort((a, b) => a.date.localeCompare(b.date))
+    );
+  }
+
+  const supplyMovers = computeSupplyMoversFromSeries(supplySeries, marketLookup);
+  const domMovers = computeDomMoversFromSeries(seriesByKeyRent, marketLookup);
+
+  return {
+    range,
+    rent_risers: topMovers(rentMovers, "up", limit),
+    rent_fallers: topMovers(rentMovers, "down", limit),
+    sale_risers: topMovers(saleMovers, "up", limit),
+    sale_fallers: topMovers(saleMovers, "down", limit),
+    supply_surge: topMovers(supplyMovers, "up", limit),
+    dom_shift: topMoversByMagnitude(domMovers, limit),
+  };
+}
+
 export async function fetchCityTrendMovers(
   city: string,
   markets: MarketMetric[],
   range: TrendRange,
-  mode: ExploreMode
+  mode: ExploreMode,
+  limit = 3
 ): Promise<CityTrendMoversPayload> {
   const listingType = listingTypeForMode(mode);
   const startDate = startDateForRange(range);
-  const marketIds = new Map(markets.map((market) => [market.suburb, market.market_id]));
+  const eligibleMarkets = markets.filter(
+    (market) =>
+      market.city === city && market.confidence_score >= RANKINGS_MIN_CONFIDENCE
+  );
+  const marketLookup = buildMoverMarketLookup(eligibleMarkets, RANKINGS_MIN_CONFIDENCE);
 
   const client = createServerSupabaseClient();
   if (client) {
     const { data, error } = await client
       .from("market_snapshots_daily")
-      .select("snapshot_date, suburb, median_price, listing_count, min_price, max_price, listing_type")
+      .select(
+        "snapshot_date, suburb, median_price, listing_count, min_price, max_price, listing_type"
+      )
       .eq("city", city)
       .eq("listing_type", listingType)
       .gte("snapshot_date", startDate)
       .order("snapshot_date", { ascending: true });
 
     if (!error && data?.length) {
-      const seriesBySuburb = new Map<string, ReturnType<typeof aggregateSnapshotsByDate>>();
-      const grouped = new Map<string, SnapshotRow[]>();
-
-      for (const row of data as SnapshotRow[]) {
-        const suburb = row.suburb ?? "";
-        if (!grouped.has(suburb)) grouped.set(suburb, []);
-        grouped.get(suburb)!.push(row);
-      }
-
-      for (const [suburb, suburbRows] of grouped) {
-        seriesBySuburb.set(
-          suburb,
-          aggregateSnapshotsByDate(
-            suburbRows.map((row) => ({
-              snapshot_date: row.snapshot_date,
-              median_price: row.median_price,
-              listing_count: row.listing_count,
-              min_price: row.min_price,
-              max_price: row.max_price,
-              listing_type: listingType,
-            }))
-          )
-        );
-      }
-
-      const movers = computeMoversFromSeries(seriesBySuburb, marketIds, listingType);
+      const rows = (data as SnapshotRow[]).map((row) => ({ ...row, city }));
+      const seriesByKey = rowsToSeriesMap(rows, listingType);
+      const movers = computeMoversFromSeries(seriesByKey, marketLookup, listingType);
       return {
-        risers: topMovers(movers, "up"),
-        fallers: topMovers(movers, "down"),
+        risers: topMovers(movers, "up", limit),
+        fallers: topMovers(movers, "down", limit),
       };
     }
 
@@ -420,11 +524,61 @@ export async function fetchCityTrendMovers(
     city,
     "listing-type": listingType,
     "start-date": startDate,
-    "market-ids-json": JSON.stringify(Object.fromEntries(marketIds)),
-    limit: "3",
+    "market-ids-json": JSON.stringify(
+      Object.fromEntries(
+        [...marketLookup.entries()].map(([key, value]) => [value.suburb, value.market_id])
+      )
+    ),
+    limit: String(limit),
   }) as CityTrendMoversPayload | null;
 
   return payload ?? { risers: [], fallers: [] };
+}
+
+export async function fetchNationalTrendMovers(
+  markets: MarketMetric[],
+  range: TrendRange = "90d",
+  limit = 10
+): Promise<MarketMoversRankingsPayload> {
+  const startDate = startDateForRange(range);
+  const marketLookup = buildMoverMarketLookup(markets, RANKINGS_MIN_CONFIDENCE);
+
+  const client = createServerSupabaseClient();
+  if (client) {
+    const { data, error } = await client
+      .from("market_snapshots_daily")
+      .select(
+        "snapshot_date, city, suburb, median_price, listing_count, min_price, max_price, listing_type, median_days_on_market"
+      )
+      .gte("snapshot_date", startDate)
+      .order("snapshot_date", { ascending: true });
+
+    if (!error && data?.length) {
+      const rows = data as SnapshotRow[];
+      const rentRows = rows.filter((row) => row.listing_type === "rent");
+      const saleRows = rows.filter((row) => row.listing_type === "sale");
+      return buildMoversRankingsPayload(
+        rowsToSeriesMap(rentRows, "rent"),
+        rowsToSeriesMap(saleRows, "sale"),
+        marketLookup,
+        range,
+        limit
+      );
+    }
+
+    if (error) {
+      console.error("[data-server] national trend movers:", error.message);
+    }
+  }
+
+  const payload = fetchTrendsFromLocalPython("national-movers", {
+    "start-date": startDate,
+    "market-lookup-json": JSON.stringify(Object.fromEntries(marketLookup)),
+    limit: String(limit),
+    range,
+  }) as MarketMoversRankingsPayload | null;
+
+  return payload ?? emptyMoversPayload(range);
 }
 
 export function parseTrendQuery(rangeParam: string | null, modeParam: string | null): {

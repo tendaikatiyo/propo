@@ -1,3 +1,5 @@
+"use client";
+
 import { Badge } from "@/components/ui/badge";
 import {
   Tooltip,
@@ -20,7 +22,23 @@ function confidenceStyle(score: number): string {
   return "border-[#fecaca] bg-[#fee2e2] text-[#991b1b]";
 }
 
-export function ConfidenceBadge({ score }: { score: number }) {
+export function ConfidenceBadge({
+  score,
+  sampleCount,
+  sampleMode,
+}: {
+  score: number;
+  sampleCount?: number;
+  sampleMode?: "rent" | "buy";
+}) {
+  const tooltipParts = [
+    "Based on rental and sale listing volume in this suburb. Green = strong coverage; red = thin data.",
+  ];
+  if (sampleCount != null) {
+    const modeLabel = sampleMode === "buy" ? "sale" : "rental";
+    tooltipParts.push(`This suburb has ${sampleCount} active ${modeLabel} listing${sampleCount === 1 ? "" : "s"} in the latest scrape.`);
+  }
+
   return (
     <Tooltip>
       <TooltipTrigger>
@@ -34,9 +52,8 @@ export function ConfidenceBadge({ score }: { score: number }) {
           {formatNumber(score)}% conf
         </Badge>
       </TooltipTrigger>
-      <TooltipContent>
-        Based on rental and sale listing volume in this suburb. Green = strong
-        coverage; red = thin data.
+      <TooltipContent className="max-w-xs font-sans text-sm normal-case tracking-normal">
+        {tooltipParts.join(" ")}
       </TooltipContent>
     </Tooltip>
   );

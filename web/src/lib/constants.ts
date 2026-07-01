@@ -82,6 +82,9 @@ export const MAX_PINNED_MARKETS = 3;
 export const STRETCH_BUDGET_MULTIPLIER = 1.15;
 export const MIN_CONFIDENCE_THRESHOLD = 20;
 export const MIN_SEGMENT_LISTINGS = 3;
+/** Classic leaderboard lists — prefer this threshold; backfill if too few pass. */
+export const LEADERBOARD_MIN_CONFIDENCE = MIN_CONFIDENCE_THRESHOLD;
+/** Trend movers — stricter because % changes need reliable snapshot history. */
 export const RANKINGS_MIN_CONFIDENCE = 40;
 export const DEFAULT_RENT_BUDGET = 800;
 export const DEFAULT_BUY_BUDGET = 250000;

@@ -90,6 +90,33 @@ export default function MethodologyPage() {
             or 180 days). Trends reflect what was on the market each day, not closed transactions.
           </CardContent>
         </Card>
+
+        <Card className="lg:col-span-2">
+          <CardHeader>
+            <CardTitle>Data limits</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-3 text-[15px] leading-relaxed tracking-[0.15px] text-muted-foreground">
+            <p>
+              Propo derives medians, yields, and fair-value badges from publicly scraped listing
+              text and prices. We do not verify title deeds, plot sizes, or off-market
+              transactions.
+            </p>
+            <p>
+              Listing descriptions are not structured for amenities. We do not capture or score
+              borehole water, swimming pools, backup power, security estates, paved roads, or
+              similar features — even when agents mention them in ad copy.
+            </p>
+            <p>
+              Segment medians (by property type and bedroom count) require at least three matching
+              active listings. Below that threshold we show suburb-wide medians with a limited-data
+              warning, or hide the suburb from filtered explore results.
+            </p>
+            <p>
+              Fair-value badges compare a listing to the best available median and appear only when
+              the price differs by at least 5% and enough comparable listings exist.
+            </p>
+          </CardContent>
+        </Card>
       </div>
     </div>
   );

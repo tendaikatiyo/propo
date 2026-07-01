@@ -23,17 +23,29 @@ export function useMarketLookup() {
   });
 
   const lookup = useMemo(() => {
-    const map = new Map<string, MarketMetric>();
+    const byLocation = new Map<string, MarketMetric>();
+    const byId = new Map<string, MarketMetric>();
     for (const market of markets) {
-      map.set(marketKey(market.city, market.suburb), market);
+      byLocation.set(marketKey(market.city, market.suburb), market);
+      byId.set(market.market_id, market);
     }
-    return map;
+    return { byLocation, byId };
   }, [markets]);
 
   const getMarket = useCallback(
-    (city: string | null | undefined, suburb: string | null | undefined) => {
-      if (!city || !suburb) return null;
-      return lookup.get(marketKey(city, suburb)) ?? null;
+    (
+      city: string | null | undefined,
+      suburb: string | null | undefined,
+      marketId?: string | null
+    ) => {
+      if (city && suburb) {
+        const hit = lookup.byLocation.get(marketKey(city, suburb));
+        if (hit) return hit;
+      }
+      if (marketId) {
+        return lookup.byId.get(marketId) ?? null;
+      }
+      return null;
     },
     [lookup]
   );

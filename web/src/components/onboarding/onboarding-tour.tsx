@@ -1,10 +1,9 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
-import { usePathname } from "next/navigation";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
+import { useOnboardingTour } from "@/components/onboarding/onboarding-tour-context";
 import { TourStep, type TourStepConfig } from "@/components/onboarding/tour-step";
-import { useOnboarding } from "@/hooks/use-onboarding";
 
 const MOBILE_STEPS: TourStepConfig[] = [
   {
@@ -84,11 +83,10 @@ function useIsDesktop() {
 }
 
 export function OnboardingTour() {
-  const pathname = usePathname();
-  const { shouldShow, complete } = useOnboarding();
+  const { isActive, endTour } = useOnboardingTour();
   const isDesktop = useIsDesktop();
-  const [active, setActive] = useState(false);
   const [stepIndex, setStepIndex] = useState(0);
+  const wasActive = useRef(false);
 
   const steps = useMemo(
     () => (isDesktop ? DESKTOP_STEPS : MOBILE_STEPS),
@@ -96,14 +94,11 @@ export function OnboardingTour() {
   );
 
   useEffect(() => {
-    if (!shouldShow || pathname !== "/") {
-      setActive(false);
-      return;
+    if (isActive && !wasActive.current) {
+      setStepIndex(0);
     }
-
-    const timer = window.setTimeout(() => setActive(true), 600);
-    return () => window.clearTimeout(timer);
-  }, [shouldShow, pathname]);
+    wasActive.current = isActive;
+  }, [isActive]);
 
   const handleBack = useCallback(() => {
     setStepIndex((i) => Math.max(0, i - 1));
@@ -111,19 +106,17 @@ export function OnboardingTour() {
 
   const handleNext = useCallback(() => {
     if (stepIndex + 1 >= steps.length) {
-      complete();
-      setActive(false);
+      endTour();
       return;
     }
     setStepIndex((i) => i + 1);
-  }, [stepIndex, steps.length, complete]);
+  }, [stepIndex, steps.length, endTour]);
 
   const handleSkip = useCallback(() => {
-    complete();
-    setActive(false);
-  }, [complete]);
+    endTour();
+  }, [endTour]);
 
-  if (!active || pathname !== "/") return null;
+  if (!isActive) return null;
 
   return (
     <TourStep

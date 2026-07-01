@@ -10,7 +10,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { useMarketMetrics } from "@/hooks/use-market-data";
 import { useExploreFilters } from "@/hooks/use-explore-filters";
 import { averageYield, applySuburbMedianVisibility, filterMarkets, rankExploreResults } from "@/lib/explore";
-import { exploreBudgetDescription } from "@/lib/metric-tooltips";
+import { exploreBudgetDescription, exploreScopeDescription } from "@/lib/metric-tooltips";
 import { hasActiveSegmentFilters } from "@/lib/segments";
 import { formatCurrency, formatPercent } from "@/lib/format";
 
@@ -96,11 +96,17 @@ export function ExploreResults({ preview = false }: { preview?: boolean }) {
               filters.bedroom
             )}
           </p>
-          {hasActiveSegmentFilters(filters) ? (
+          <p className="text-xs text-muted-foreground">
+            {exploreScopeDescription(
+              filters.mode,
+              filters.propertyType,
+              filters.bedroom,
+              filters.hideSuburbMedianFallback
+            )}
+          </p>
+          {hasActiveSegmentFilters(filters) && !filters.hideSuburbMedianFallback ? (
             <p className="text-xs text-muted-foreground">
-              {filters.hideSuburbMedianFallback
-                ? "Only suburbs with enough matching listings are shown. Turn on “Include suburb medians” in filters to see more."
-                : "Some suburbs use a suburb-wide average when we lack enough listings — look for “Suburb median” under the price."}
+              Look for “Suburb median” under prices when spec data is thin.
             </p>
           ) : null}
         </div>

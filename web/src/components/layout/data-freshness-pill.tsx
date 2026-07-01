@@ -11,7 +11,13 @@ async function fetchMeta(): Promise<{ updatedAt: string | null }> {
   return res.json();
 }
 
-export function DataFreshnessPill({ className }: { className?: string }) {
+export function DataFreshnessPill({
+  className,
+  prefix,
+}: {
+  className?: string;
+  prefix?: string;
+}) {
   const { data } = useQuery({
     queryKey: ["data-meta"],
     queryFn: fetchMeta,
@@ -20,12 +26,15 @@ export function DataFreshnessPill({ className }: { className?: string }) {
 
   if (!data?.updatedAt) return null;
 
+  const freshness = formatDataFreshness(data.updatedAt);
+
   return (
     <span
       className={cn("text-xs text-muted-foreground", className)}
       title={new Date(data.updatedAt).toLocaleString()}
     >
-      {formatDataFreshness(data.updatedAt)}
+      {prefix ? `${prefix} · ` : null}
+      {freshness}
     </span>
   );
 }

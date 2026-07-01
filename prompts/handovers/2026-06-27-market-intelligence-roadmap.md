@@ -10,7 +10,7 @@ Strengthen Propo as a **market intelligence platform** for Zimbabwe — not a li
 
 ---
 
-## Ship status (2026-06-30)
+## Ship status (2026-07-01)
 
 | Feature | Status | Handover |
 | ------- | ------ | -------- |
@@ -18,13 +18,16 @@ Strengthen Propo as a **market intelligence platform** for Zimbabwe — not a li
 | **F1** Segment medians + Explore polish | ✅ Done | same |
 | **F2** Price trends | ✅ Done | [2026-06-28-f2-trends-classifieds-prices.md](./2026-06-28-f2-trends-classifieds-prices.md) |
 | **F3** Fair value badges | ✅ Done | [2026-06-29-f3-fair-value-movers-seo.md](./2026-06-29-f3-fair-value-movers-seo.md) |
-| **F4** Suburb market report | ✅ Done | below |
-| **F5** Smarter compare | ✅ Done | below |
-| **F6–F10** | Not started | below |
+| **F4** Suburb market report | ✅ Done | [2026-06-30-f4-f5-report-compare.md](./2026-06-30-f4-f5-report-compare.md) |
+| **F5** Smarter compare | ✅ Done | same |
+| **F6** Market movers rankings | ✅ Done | [2026-07-01-f6-movers-rankings.md](./2026-07-01-f6-movers-rankings.md) |
+| **F7** Affordability insight cards | ✅ Done | below (F7 section) |
+| **F8** Transparency layer | ✅ Done | below (F8 section) |
+| **F9–F10** | Not started | below |
 
-**Ancillary (not roadmap features):** listing thumbnails + `image_url` ([2026-06-29](./2026-06-29-listing-thumbnails-image-url.md), [2026-06-30 pipeline](./2026-06-30-pipeline-run-scraper-migration-fixes.md)); Open Graph SEO + city movers polish (F3 handover); classifieds ZIG→USD price fix (F2 handover).
+**Ancillary (not roadmap features):** listing thumbnails + `image_url` ([2026-06-29](./2026-06-29-listing-thumbnails-image-url.md), [2026-06-30 pipeline](./2026-06-30-pipeline-run-scraper-migration-fixes.md)); Open Graph SEO + city movers polish (F3 handover); classifieds ZIG→USD price fix (F2 handover); leaderboard confidence backfill + cheapest-rent fix (F6 handover).
 
-**Next recommended:** F8 transparency slice → F6 movers rankings page → F7 affordability cards.
+**Next recommended:** F9 `market_id` backfill → F10 analytics MVP (optional).
 
 ---
 
@@ -32,13 +35,14 @@ Strengthen Propo as a **market intelligence platform** for Zimbabwe — not a li
 
 | Layer | Today | Gap |
 | ----- | ----- | --- |
-| **Explore** | Segment medians when type/bed set; fallback labeled; **Include suburb medians** switch; buy has no room | F7 affordability cards; segment-aware home preview |
-| **Suburb profile** | Spec medians via `?type=&bedroom=`; 30/90/180d trend charts; fair-value badges; **printable report** at `/report` | Segment-filtered trends; sample size on header (F8) |
-| **Rankings** | Static leaderboards (yield, opportunity, DOM); city page 90d movers teaser | No dedicated `/rankings` movers tab (F6) |
-| **Compare** | Up to 3 pinned suburbs; spec selector (mode + type + bed); segment-aware medians; best-value highlights | Trend sparklines (v2, deferred)
+| **Home** | Budget controls; **Budget insights** cards (in-budget + stretch); Top matches grid; movers teaser | — |
+| **Explore** | Segment medians when type/bed set; fallback labeled; **Include suburb medians** switch; scope + aggregate vs segment copy in header; buy has no room | — |
+| **Suburb profile** | Spec medians via `?type=&bedroom=`; 30/90/180d trend charts; fair-value badges; **printable report** at `/report`; sample size + scope + freshness on header | Segment-filtered trends (v2) |
+| **Rankings** | Leaderboards + **Movers** tabs at `/rankings`; national 90d rent/sale/supply/DOM; city page movers teaser; nav link restored | Sample-size context on ranking cards (optional polish) |
+| **Compare** | Up to 3 pinned suburbs; spec selector (mode + type + bed); segment-aware medians; best-value highlights | Trend sparklines (v2, deferred) |
 | **History data** | `market_snapshots_daily` exposed via trends API on suburb/city pages | Segment-filtered trends; DOM trend line |
-| **Trust** | Confidence badge, fallback copy on Explore; methodology page (trends + segment copy in meta) | Sample sizes per segment not on suburb pages (F8) |
-| **Listings join** | Filter by suburb string equality; `image_url` on listings | Mismatches vs `market_metrics` suburb names; no `market_id` join (F9) |
+| **Trust** | Confidence badge (+ optional sample count); sample-size badges; scope labels; Explore aggregate vs segment copy; methodology **Data limits** section | — |
+| **Listings join** | Filter by suburb string equality; `image_url` on listings; fair-value tooltips with n= | Mismatches vs `market_metrics` suburb names; no `market_id` join (F9) |
 
 ---
 
@@ -51,7 +55,8 @@ Strengthen Propo as a **market intelligence platform** for Zimbabwe — not a li
 | Dashboard JSON | `data/market_metrics.json`, `data/rankings.json` |
 | Web data layer | `web/src/lib/data-server.ts`, `web/src/app/api/` |
 | Explore | `web/src/lib/explore.ts`, `web/src/hooks/use-explore-filters.ts` |
-| Suburb UI | `suburb-profile.tsx`, `suburb-table.tsx`, `suburb-card.tsx`, `city-dashboard.tsx` |
+| Home | `web/src/components/home/home-page.tsx`, `affordability-insights.tsx`, `web/src/lib/affordability-insights.ts` |
+| Suburb UI | `suburb-profile.tsx`, `suburb-table.tsx`, `suburb-card.tsx`, `sample-size-badge.tsx`, `city-dashboard.tsx` |
 | Listings UI | `listing-card.tsx`, `budget-listings.tsx`, `suburb-value-listings.tsx` |
 | Compare / rankings | `compare-page.tsx`, `compare-table.tsx`, `rankings-page.tsx`, `web/src/lib/rankings.ts` |
 | Related handovers | [2026-06-28-f0-f1-segment-explore-polish.md](./2026-06-28-f0-f1-segment-explore-polish.md), [2026-06-26-segment-medians-option-b.md](./2026-06-26-segment-medians-option-b.md), [2026-06-25-web-ux-listings-explore.md](./2026-06-25-web-ux-listings-explore.md) |
@@ -88,7 +93,7 @@ flowchart TD
 | **F9** | `market_id` on listings | Data quality foundation |
 | **F10** | Analytics MVP (optional) | Internal demand signals for B2B later |
 
-**If only three ships in the next month:** ~~F0 + F1 → F2 → F3~~ **shipped** — next: F8 → F6 → F7.
+**If only three ships in the next month:** ~~F0–F8 core intelligence~~ **shipped** — next: F9 → F10 (optional).
 
 ---
 
@@ -160,11 +165,9 @@ Pre-aggregate `(property_type, bedroom_bucket)` medians into `market_metrics.seg
 - [x] `web/src/components/ui/switch.tsx`
 - [x] Buy mode: no `room`; room → 1 bed; `normalizeExploreFilters()`
 
-**Still open (F8 / Phase 3 overlap)**
+**Still open (optional)**
 
-- [ ] Methodology page segment-median note
 - [ ] `web/src/lib/segments.test.ts` (optional)
-- [ ] `sample-size-badge.tsx` on suburb profile (F8)
 
 ### Verify
 
@@ -315,6 +318,8 @@ Threshold: show badge only if `|pctDiff| >= 5` and sample count ≥ `MIN_SEGMENT
 
 ## F4 — Suburb market report (shareable / export) ✅
 
+**Ship notes:** [2026-06-30-f4-f5-report-compare.md](./2026-06-30-f4-f5-report-compare.md)
+
 ### Deliverable
 
 "Download report" or print-optimized view for a suburb:
@@ -359,6 +364,8 @@ Threshold: show badge only if `|pctDiff| >= 5` and sample count ≥ `MIN_SEGMENT
 
 ## F5 — Smarter compare ✅
 
+**Ship notes:** [2026-06-30-f4-f5-report-compare.md](./2026-06-30-f4-f5-report-compare.md)
+
 ### Deliverable
 
 Extend compare beyond aggregate pins:
@@ -393,13 +400,13 @@ Extend compare beyond aggregate pins:
 
 ---
 
-## F6 — Market movers (rankings v2)
+## F6 — Market movers (rankings v2) ✅
 
-**Partial:** City dashboard 90d movers teaser shipped (F2/F3 polish). Dedicated `/rankings` movers tab still TODO.
+**Ship notes:** [2026-07-01-f6-movers-rankings.md](./2026-07-01-f6-movers-rankings.md)
 
 ### Deliverable
 
-New rankings views (tabs on `/rankings` or separate `/rankings/movers`):
+Rankings views at `/rankings` — **Leaderboards | Movers** tabs (`?tab=movers`):
 
 | Ranking | Definition |
 | ------- | ---------- |
@@ -407,29 +414,38 @@ New rankings views (tabs on `/rankings` or separate `/rankings/movers`):
 | **Rent fallers** | Largest % decrease |
 | **Sale movers** | Same for sale |
 | **Supply surge** | Largest % increase in listing count |
-| **DOM shift** | Biggest change in median DOM (requires DOM in snapshots or compute from listings history) |
+| **DOM shift** | Biggest change in median DOM |
 
-Minimum data: ≥4 snapshot dates and confidence ≥ 40% (reuse `RANKINGS_MIN_CONFIDENCE`).
+Minimum data: ≥4 snapshot dates; movers require confidence ≥ `RANKINGS_MIN_CONFIDENCE` (40%). Classic leaderboards use `LEADERBOARD_MIN_CONFIDENCE` (20%) with backfill when &lt;5 pass.
 
 ### Files to touch
 
 **Pipeline / API**
 
-- [x] `web/src/lib/trends.ts` — `computeMoversFromSeries`, windowed comparison (city teaser)
-- [x] `web/src/lib/data-server.ts` — `fetchCityTrendMovers`
+- [x] `web/src/lib/trends.ts` — `computeMoversFromSeries`, `computeSupplyMoversFromSeries`, `computeDomMoversFromSeries`
+- [x] `web/src/lib/data-server.ts` — `fetchCityTrendMovers`, `fetchNationalTrendMovers`
 - [x] `web/src/app/api/cities/[city]/trend-movers/route.ts` — city-level movers
-- [ ] `web/src/app/api/rankings/movers/route.ts` (new) — precomputed movers JSON
-- [ ] `analytics/rankings.py` (optional) — nightly `data/rankings_movers.json` for static fallback
+- [x] `web/src/app/api/rankings/movers/route.ts` — national movers API
+- [x] `analytics/trends_fetch.py` — `national-movers` CLI fallback
+- [ ] `analytics/rankings.py` nightly `data/rankings_movers.json` (optional — deferred)
 
 **Web**
 
-- [x] `web/src/lib/types.ts` — `TrendMover` (city teaser)
+- [x] `web/src/lib/types.ts` — `TrendMover`, `MarketMoversRankingsPayload`
+- [x] `web/src/lib/rankings.ts` — `filterMoversPayload`, `filterRankingsByConfidence` (leaderboard backfill)
+- [x] `web/src/lib/constants.ts` — `LEADERBOARD_MIN_CONFIDENCE` (20) vs `RANKINGS_MIN_CONFIDENCE` (40)
 - [x] `web/src/components/cities/city-trend-movers.tsx` — city page movers UI
-- [ ] `web/src/lib/rankings.ts` — movers sort/filter for rankings page
-- [ ] `web/src/components/rankings/movers-rankings.tsx` (new)
-- [ ] `web/src/components/rankings/rankings-page.tsx` — tabs: Classic | Movers
-- [ ] `web/src/app/rankings/page.tsx` — wire tabs
-- [ ] `web/src/components/home/home-page.tsx` (optional) — "Biggest rent movers this quarter" teaser
+- [x] `web/src/components/rankings/movers-rankings.tsx`
+- [x] `web/src/components/rankings/rankings-page.tsx` — Leaderboards | Movers tabs
+- [x] `web/src/app/rankings/page.tsx` — server fetch movers + classic rankings
+- [x] `web/src/components/home/home-movers-teaser.tsx` — home rent movers teaser
+- [x] `web/src/components/layout/app-sidebar.tsx` + `mobile-tab-bar.tsx` — Rankings nav restored
+
+**Leaderboard polish (shipped with F6)**
+
+- [x] `analytics/rankings.py` — `cheapest_markets` ranks by `median_rent` (was sale price)
+- [x] DOM list UI reads `average_days_on_market_*` from rankings JSON
+- [x] Regenerate `data/rankings.json` after pipeline fix
 
 ### Depends on
 
@@ -437,20 +453,24 @@ Minimum data: ≥4 snapshot dates and confidence ≥ 40% (reuse `RANKINGS_MIN_CO
 
 ### Verify
 
-- Suburb with known rising rent in snapshots appears in "Rent risers"
-- Low-confidence suburbs excluded
+- `/rankings?tab=movers` — rent risers/fallers populated when snapshot history exists
+- Low-confidence suburbs excluded from movers (40%)
+- All six classic leaderboard cards show entries (20% + backfill)
+- Rankings link visible in sidebar and mobile tab bar
 
 ### Estimated effort
 
-~6–8 hours
+~6–8 hours (shipped 2026-07-01)
 
 ---
 
-## F7 — Affordability insight cards
+## F7 — Affordability insight cards ✅
+
+**Ship notes:** 2026-07-01 — home **Budget insights** section between budget controls and Top matches.
 
 ### Deliverable
 
-On home page (below budget controls or above "Top matches"), show 2–3 **insight cards** instead of only suburb grid:
+On home page (below budget controls or above "Top matches"), show 2–3 **insight cards** in addition to the suburb grid:
 
 - "In budget at $700 rent" — top suburb + median + yield snippet
 - "Stretch option" — one suburb in stretch band with tradeoff copy ("Higher yield, 12% over budget")
@@ -465,10 +485,10 @@ Borrowdale — $920 median · Stretch · Stronger amenities
 
 ### Files to touch
 
-- [ ] `web/src/lib/affordability-insights.ts` (new) — pick top in-budget + one stretch from `filterMarkets` + segment resolver
-- [ ] `web/src/components/home/affordability-insights.tsx` (new)
-- [ ] `web/src/components/home/home-page.tsx` — insert section
-- [ ] Reuse `filterMarkets`, `rankExploreResults`, `priceForFilters` from explore + segments
+- [x] `web/src/lib/affordability-insights.ts` (new) — pick top in-budget + one stretch from `filterMarkets` + segment resolver
+- [x] `web/src/components/home/affordability-insights.tsx` (new)
+- [x] `web/src/components/home/home-page.tsx` — insert section
+- [x] Reuse `filterMarkets`, `rankExploreResults`, `priceForFilters` from explore + segments
 
 ### Depends on
 
@@ -477,15 +497,17 @@ Borrowdale — $920 median · Stretch · Stronger amenities
 ### Verify
 
 - Change budget slider → insight cards update
-- Cards link to correct explore URL
+- "Explore matches" link preserves mode/budget/type filters; cards link to suburb profile with segment query params
 
 ### Estimated effort
 
-~3–4 hours
+~3–4 hours (shipped 2026-07-01)
 
 ---
 
-## F8 — Transparency layer
+## F8 — Transparency layer ✅
+
+**Ship notes:** 2026-07-01 — suburb profile header, Explore scope copy, methodology Data limits.
 
 ### Deliverable
 
@@ -500,12 +522,18 @@ Surface data quality on suburb profile and listing cards:
 ### Files to touch
 
 - [x] `web/src/lib/constants.ts` — `MIN_SEGMENT_LISTINGS = 3` (shipped with F3)
-- [ ] `web/src/components/markets/sample-size-badge.tsx` (new)
-- [ ] `web/src/components/markets/confidence-badge.tsx` — optional `sampleCount` prop
-- [ ] `web/src/components/markets/suburb-profile.tsx` — sample size + scope
-- [ ] `web/src/components/markets/explore-results.tsx` — header explains aggregate vs segment
-- [ ] `web/src/lib/metric-tooltips.ts` — sample size tooltips
-- [ ] `web/src/app/methodology/page.tsx` — "Data limits" section
+- [x] `web/src/components/markets/sample-size-badge.tsx` (new) — `SampleSizeBadge`, `ScopeLabel`
+- [x] `web/src/components/markets/confidence-badge.tsx` — optional `sampleCount` + `sampleMode` props
+- [x] `web/src/components/markets/suburb-profile.tsx` — sample size + scope + freshness
+- [x] `web/src/components/markets/explore-results.tsx` — header explains aggregate vs segment
+- [x] `web/src/lib/metric-tooltips.ts` — `sampleSizeLabel`, `segmentLimitedDataTooltip`, `exploreScopeDescription`
+- [x] `web/src/lib/segments.ts` — `dataScopeLabel()`
+- [x] `web/src/components/layout/data-freshness-pill.tsx` — optional `prefix` prop
+- [x] `web/src/app/methodology/page.tsx` — "Data limits" section
+
+**Deferred (optional polish)**
+
+- [ ] Sample-size context on rankings / mover cards
 
 ### Depends on
 
@@ -515,10 +543,11 @@ Surface data quality on suburb profile and listing cards:
 
 - Suburb with `rental_count: 2` for resolved segment shows limited-data warning
 - Methodology page lists what is not in scrape
+- Listing fair-value tooltips already expose n= and aggregate vs segment basis (F3)
 
 ### Estimated effort
 
-~3 hours
+~3 hours (shipped 2026-07-01)
 
 ---
 
@@ -616,12 +645,12 @@ Check `001_history.sql` — `listings.market_id` column already exists; F9 may b
 
 ## Success criteria (platform-level)
 
-1. User can answer **"where should I rent a 2-bed flat at $700?"** with segment-accurate suburbs ✅ (F0+F1; F7 cards still TODO)
+1. User can answer **"where should I rent a 2-bed flat at $700?"** with segment-accurate suburbs ✅ (F0+F1+F7 home insight cards)
 2. User can answer **"is this listing fairly priced?"** on listing cards ✅ (F3)
 3. User can answer **"is Borrowdale getting more expensive?"** from suburb trend chart ✅ (F2)
 4. User can **share/print a suburb report** for diaspora research ✅ (F4)
-5. Rankings surface **movers**, not only static top yield (F6)
-6. Every metric shows **how much data backs it** (F8)
+5. Rankings surface **movers**, not only static top yield ✅ (F6)
+6. Every metric shows **how much data backs it** ✅ (F8 sample size, scope, methodology limits)
 
 ---
 
@@ -671,10 +700,10 @@ npm run build
 1. ~~F0 + F1~~ — done; see [2026-06-28 handover](./2026-06-28-f0-f1-segment-explore-polish.md)
 2. ~~F2 trends API + suburb chart~~ — done; see [2026-06-28 handover](./2026-06-28-f2-trends-classifieds-prices.md)
 3. ~~F3 fair value badges~~ — done; see [2026-06-29 handover](./2026-06-29-f3-fair-value-movers-seo.md)
-4. **F8** transparency (sample size badges on suburb profile)
-5. **F6** movers rankings page (city card is teaser only)
-6. **F7** affordability cards on home
-7. ~~F5 compare upgrades~~ — done (2026-06-30)
-8. ~~F4 suburb report~~ — done (2026-06-30)
-9. F9 market_id backfill
-10. F10 analytics when ready for B2B / internal ops
+4. ~~F4 suburb report~~ — done (2026-06-30)
+5. ~~F5 compare upgrades~~ — done (2026-06-30)
+6. ~~F6 movers rankings page~~ — done (2026-07-01); see [handover](./2026-07-01-f6-movers-rankings.md)
+7. ~~F8 transparency~~ — done (2026-07-01)
+8. ~~F7 affordability cards on home~~ — done (2026-07-01)
+9. **F9** market_id backfill
+10. **F10** analytics when ready for B2B / internal ops

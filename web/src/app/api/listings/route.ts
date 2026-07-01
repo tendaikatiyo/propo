@@ -25,6 +25,7 @@ export async function GET(request: NextRequest) {
   );
   const city = params.get("city") || null;
   const suburb = params.get("suburb") || null;
+  const marketId = params.get("market_id") || null;
   const typeParam = params.get("type");
   const propertyType = typeParam ? normalizePropertyType(typeParam) : null;
   const limitParam = Number(params.get("limit"));
@@ -40,6 +41,7 @@ export async function GET(request: NextRequest) {
     budget,
     city,
     suburb,
+    marketId,
     propertyType,
     limit,
     tier,

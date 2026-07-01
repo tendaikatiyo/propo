@@ -40,6 +40,7 @@ export interface RawSnapshotRow {
   min_price?: number | null;
   max_price?: number | null;
   listing_type?: "rent" | "sale";
+  median_days_on_market?: number | null;
 }
 
 const ZIG_USD_RATE = 27.5;
@@ -101,12 +102,22 @@ function sanitizeRowPrice(row: RawSnapshotRow): number | null {
 export function aggregateSnapshotsByDate(rows: RawSnapshotRow[]): MarketTrendPoint[] {
   const byDate = new Map<
     string,
-    { weightedSum: number; totalWeight: number; listing_count: number }
+    {
+      weightedSum: number;
+      totalWeight: number;
+      listing_count: number;
+      domValues: number[];
+    }
   >();
 
   for (const row of rows) {
     if (!byDate.has(row.snapshot_date)) {
-      byDate.set(row.snapshot_date, { weightedSum: 0, totalWeight: 0, listing_count: 0 });
+      byDate.set(row.snapshot_date, {
+        weightedSum: 0,
+        totalWeight: 0,
+        listing_count: 0,
+        domValues: [],
+      });
     }
     const bucket = byDate.get(row.snapshot_date)!;
     bucket.listing_count += row.listing_count;
@@ -115,15 +126,19 @@ export function aggregateSnapshotsByDate(rows: RawSnapshotRow[]): MarketTrendPoi
       bucket.weightedSum += price * row.listing_count;
       bucket.totalWeight += row.listing_count;
     }
+    if (row.median_days_on_market != null && row.median_days_on_market > 0) {
+      bucket.domValues.push(row.median_days_on_market);
+    }
   }
 
   return [...byDate.entries()]
     .sort(([a], [b]) => a.localeCompare(b))
-    .map(([date, { weightedSum, totalWeight, listing_count }]) => ({
+    .map(([date, { weightedSum, totalWeight, listing_count, domValues }]) => ({
       date,
       median_price:
         totalWeight > 0 ? Math.round(weightedSum / totalWeight) : null,
       listing_count,
+      median_days_on_market: medianOf(domValues),
     }));
 }
 
@@ -185,14 +200,48 @@ function isPlausibleMover(
   return true;
 }
 
+function windowListingStats(
+  points: MarketTrendPoint[],
+  fromStart: boolean
+): { listing_count: number } {
+  const slice = fromStart ? points.slice(0, MOVER_WINDOW) : points.slice(-MOVER_WINDOW);
+  const counts = slice.map((point) => point.listing_count);
+  const listing_count =
+    counts.length > 0
+      ? Math.round(counts.reduce((sum, count) => sum + count, 0) / counts.length)
+      : 0;
+  return { listing_count };
+}
+
+function windowDomStats(
+  points: MarketTrendPoint[],
+  fromStart: boolean
+): { dom: number | null; listing_count: number } {
+  const slice = fromStart ? points.slice(0, MOVER_WINDOW) : points.slice(-MOVER_WINDOW);
+  const domValues = slice
+    .map((point) => point.median_days_on_market)
+    .filter((dom): dom is number => dom != null);
+  const listing_count = slice.reduce((sum, point) => sum + point.listing_count, 0);
+  return { dom: medianOf(domValues), listing_count };
+}
+
+export interface MoverMarketLookup {
+  market_id: string;
+  city: string;
+  suburb: string;
+}
+
 export function computeMoversFromSeries(
-  seriesBySuburb: Map<string, MarketTrendPoint[]>,
-  marketIds: Map<string, string>,
+  seriesByKey: Map<string, MarketTrendPoint[]>,
+  marketLookup: Map<string, MoverMarketLookup>,
   listingType: "rent" | "sale" = "rent"
 ): TrendMover[] {
   const movers: TrendMover[] = [];
 
-  for (const [suburb, points] of seriesBySuburb) {
+  for (const [key, points] of seriesByKey) {
+    const lookup = marketLookup.get(key);
+    if (!lookup) continue;
+
     const medianPoints = points.filter((point) => point.median_price != null);
     if (medianPoints.length < MIN_MOVER_SNAPSHOTS) continue;
 
@@ -209,8 +258,9 @@ export function computeMoversFromSeries(
     if (change == null || !isPlausibleMover(change, medianPoints, listingType)) continue;
 
     movers.push({
-      market_id: marketIds.get(suburb) ?? "",
-      suburb,
+      market_id: lookup.market_id,
+      city: lookup.city,
+      suburb: lookup.suburb,
       pct_change_median: change,
       median_price: end.price ?? null,
     });
@@ -219,12 +269,99 @@ export function computeMoversFromSeries(
   return movers.filter((mover) => mover.market_id && mover.median_price != null);
 }
 
+export function computeSupplyMoversFromSeries(
+  seriesByKey: Map<string, MarketTrendPoint[]>,
+  marketLookup: Map<string, MoverMarketLookup>
+): TrendMover[] {
+  const movers: TrendMover[] = [];
+
+  for (const [key, points] of seriesByKey) {
+    const lookup = marketLookup.get(key);
+    if (!lookup) continue;
+    if (points.length < MIN_MOVER_SNAPSHOTS) continue;
+
+    const start = windowListingStats(points, true);
+    const end = windowListingStats(points, false);
+    if (start.listing_count < MIN_MOVER_LISTINGS || end.listing_count < MIN_MOVER_LISTINGS) {
+      continue;
+    }
+
+    const change = pctChange(start.listing_count, end.listing_count);
+    if (change == null || Math.abs(change) > MAX_MOVER_PCT) continue;
+
+    movers.push({
+      market_id: lookup.market_id,
+      city: lookup.city,
+      suburb: lookup.suburb,
+      pct_change_median: change,
+      median_price: null,
+      listing_count: end.listing_count,
+    });
+  }
+
+  return movers.filter((mover) => mover.market_id);
+}
+
+export function computeDomMoversFromSeries(
+  seriesByKey: Map<string, MarketTrendPoint[]>,
+  marketLookup: Map<string, MoverMarketLookup>
+): TrendMover[] {
+  const movers: TrendMover[] = [];
+
+  for (const [key, points] of seriesByKey) {
+    const lookup = marketLookup.get(key);
+    if (!lookup) continue;
+
+    const domPoints = points.filter((point) => point.median_days_on_market != null);
+    if (domPoints.length < MIN_MOVER_SNAPSHOTS) continue;
+
+    const start = windowDomStats(domPoints, true);
+    const end = windowDomStats(domPoints, false);
+    if (
+      start.dom == null ||
+      end.dom == null ||
+      start.listing_count < MIN_MOVER_LISTINGS ||
+      end.listing_count < MIN_MOVER_LISTINGS
+    ) {
+      continue;
+    }
+
+    const change = pctChange(start.dom, end.dom);
+    if (change == null || Math.abs(change) > MAX_MOVER_PCT) continue;
+
+    movers.push({
+      market_id: lookup.market_id,
+      city: lookup.city,
+      suburb: lookup.suburb,
+      pct_change_median: change,
+      median_price: null,
+      median_days_on_market: end.dom,
+    });
+  }
+
+  return movers.filter((mover) => mover.market_id);
+}
+
 export function topMovers(movers: TrendMover[], direction: "up" | "down", limit = 3): TrendMover[] {
   const sorted =
     direction === "up"
       ? [...movers].sort((a, b) => b.pct_change_median - a.pct_change_median)
       : [...movers].sort((a, b) => a.pct_change_median - b.pct_change_median);
-  return sorted.filter((mover) => (direction === "up" ? mover.pct_change_median > 0 : mover.pct_change_median < 0)).slice(0, limit);
+  return sorted
+    .filter((mover) =>
+      direction === "up" ? mover.pct_change_median > 0 : mover.pct_change_median < 0
+    )
+    .slice(0, limit);
+}
+
+export function topMoversByMagnitude(movers: TrendMover[], limit = 10): TrendMover[] {
+  return [...movers]
+    .sort((a, b) => Math.abs(b.pct_change_median) - Math.abs(a.pct_change_median))
+    .slice(0, limit);
+}
+
+export function marketSeriesKey(city: string, suburb: string): string {
+  return `${city}|${suburb}`;
 }
 
 export function formatChartDate(date: string): string {

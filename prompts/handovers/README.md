@@ -17,5 +17,5 @@ Chronological notes for agent/developer continuity between sessions.
 | 2026-06-29 | [2026-06-29-f3-fair-value-movers-seo.md](./2026-06-29-f3-fair-value-movers-seo.md) | F3 fair value badges; city movers plausibility fix; Open Graph / Twitter SEO |
 | 2026-06-29 | [2026-06-29-listing-thumbnails-image-url.md](./2026-06-29-listing-thumbnails-image-url.md) | Listing thumbnails; `image_url` pipeline; classifieds carousel scrape; migration 007 |
 | 2026-06-30 | [2026-06-30-pipeline-run-scraper-migration-fixes.md](./2026-06-30-pipeline-run-scraper-migration-fixes.md) | Full pipeline run; `normalize_city` scraper fix; Supabase migration 007 apply; ingest sync |
-| 2026-06-29 | [2026-06-29-f3-fair-value-movers-seo.md](./2026-06-29-f3-fair-value-movers-seo.md) | F3 fair value badges; city movers fix (sale empty, rent inflated); Open Graph SEO; Harare skyline OG image |
-| 2026-06-29 | [2026-06-29-listing-thumbnails-image-url.md](./2026-06-29-listing-thumbnails-image-url.md) | Duplicate listing thumbnails fix; `image_url` column; classifieds carousel scrape; agency-logo heuristics |
+| 2026-06-30 | [2026-06-30-f4-f5-report-compare.md](./2026-06-30-f4-f5-report-compare.md) | F4 printable suburb report; F5 spec-aware compare; roadmap F0–F5 tick refresh |
+| 2026-07-01 | [2026-07-01-f6-movers-rankings.md](./2026-07-01-f6-movers-rankings.md) | F6 national movers tab; home teaser; leaderboard confidence backfill; cheapest-rent fix; Rankings nav restored |

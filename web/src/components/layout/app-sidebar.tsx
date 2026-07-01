@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
+  BarChart3,
   Building2,
   Compass,
   GitCompare,
@@ -20,7 +21,7 @@ const NAV_ITEMS = [
   { href: "/explore", label: "Explore", icon: Compass },
   { href: "/cities", label: "Cities", icon: Building2 },
   { href: "/compare", label: "Compare", icon: GitCompare },
-  // { href: "/rankings", label: "Rankings", icon: BarChart3 },
+  { href: "/rankings", label: "Rankings", icon: BarChart3 },
   { href: "/methodology", label: "Methodology", icon: HelpCircle },
 ];
 

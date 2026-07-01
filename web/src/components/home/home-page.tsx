@@ -5,7 +5,9 @@ import { Suspense, useRef, useState } from "react";
 
 import { BudgetSlider } from "@/components/filters/budget-slider";
 import { PageHeader } from "@/components/layout/page-header";
+import { AffordabilityInsights } from "@/components/home/affordability-insights";
 import { BudgetListingsPreview } from "@/components/listings/budget-listings";
+import { HomeMoversTeaser } from "@/components/home/home-movers-teaser";
 import { HomeBudgetBar } from "@/components/mobile/home-budget-bar";
 import { SuburbCard } from "@/components/markets/suburb-card";
 import { Button, buttonVariants } from "@/components/ui/button";
@@ -131,6 +133,20 @@ function HomeContent() {
         </Card>
       </section>
 
+      <AffordabilityInsights
+        markets={markets}
+        isLoading={isLoading}
+        filters={{
+          mode,
+          budget,
+          city: DEFAULT_CITY,
+          propertyType,
+          bedroom: propertyType === "room" ? ROOM_BEDROOM_COUNT : null,
+          includeLowConfidence: false,
+          hideSuburbMedianFallback: true,
+        }}
+      />
+
       <section className="space-y-6">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <PageHeader title="Top matches in Harare" />
@@ -168,6 +184,8 @@ function HomeContent() {
           </p>
         )}
       </section>
+
+      <HomeMoversTeaser />
 
       <BudgetListingsPreview
         mode={mode}
