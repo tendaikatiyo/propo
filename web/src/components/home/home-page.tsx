@@ -3,14 +3,16 @@
 import Link from "next/link";
 import { Suspense, useRef, useState } from "react";
 
-import { AffordabilityInsights } from "@/components/home/affordability-insights";
-import { HomeLandingHero } from "@/components/home/home-landing-hero";
-import { HomeMoversTeaser } from "@/components/home/home-movers-teaser";
-import { BudgetListingsPreview } from "@/components/listings/budget-listings";
-import { HomeBudgetBar } from "@/components/mobile/home-budget-bar";
+import { BudgetSlider } from "@/components/filters/budget-slider";
+import { PropertyTypeButtons } from "@/components/filters/property-type-buttons";
 import { PageHeader } from "@/components/layout/page-header";
+import { AffordabilityInsights } from "@/components/home/affordability-insights";
+import { BudgetListingsPreview } from "@/components/listings/budget-listings";
+import { HomeMoversTeaser } from "@/components/home/home-movers-teaser";
+import { HomeBudgetBar } from "@/components/mobile/home-budget-bar";
 import { SuburbCard } from "@/components/markets/suburb-card";
-import { buttonVariants } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useMarketMetrics } from "@/hooks/use-market-data";
 import {
@@ -45,8 +47,6 @@ function HomeContent() {
   const [propertyType, setPropertyType] = useState<PropertyType | null>(null);
   const { data: markets = [], isLoading } = useMarketMetrics();
 
-  const exploreHref = buildExploreHref(mode, budget, propertyType);
-
   const previewMarkets = rankExploreResults(
     filterMarkets(markets, {
       mode,
@@ -61,87 +61,118 @@ function HomeContent() {
     { propertyType, bedroom: propertyType === "room" ? ROOM_BEDROOM_COUNT : null }
   ).slice(0, 6);
 
-  function handleModeChange(next: ExploreMode) {
-    setMode(next);
-    setBudget(next === "rent" ? DEFAULT_RENT_BUDGET : DEFAULT_BUY_BUDGET);
-    if (next === "buy" && propertyType === "room") {
-      setPropertyType(null);
-    }
-  }
-
   return (
-    <div className="flex flex-col">
-      <HomeLandingHero
-        sectionRef={budgetSectionRef}
-        mode={mode}
-        budget={budget}
-        propertyType={propertyType}
-        exploreHref={exploreHref}
-        onModeChange={handleModeChange}
-        onBudgetChange={setBudget}
-        onPropertyTypeChange={setPropertyType}
+    <div className="space-y-16">
+      <section ref={budgetSectionRef} className="space-y-6">
+        <PageHeader
+          title="My budget"
+          description="Set your rent or buy budget and property preferences to surface matching suburbs in Harare and beyond."
+        />
+
+        <Card>
+          <CardContent className="space-y-8 pt-6">
+            <div className="flex flex-wrap gap-2">
+              {(["rent", "buy"] as const).map((option) => (
+                <Button
+                  key={option}
+                  type="button"
+                  size="sm"
+                  variant={mode === option ? "default" : "outline"}
+                  onClick={() => {
+                    setMode(option);
+                    setBudget(option === "rent" ? DEFAULT_RENT_BUDGET : DEFAULT_BUY_BUDGET);
+                    if (option === "buy" && propertyType === "room") {
+                      setPropertyType(null);
+                    }
+                  }}
+                >
+                  {option === "rent" ? "I'm renting" : "I'm buying"}
+                </Button>
+              ))}
+            </div>
+
+            <BudgetSlider mode={mode} value={budget} onChange={setBudget} />
+
+            <div className="space-y-3">
+              <p className="caption-label">Property type</p>
+              <PropertyTypeButtons
+                mode={mode}
+                value={propertyType}
+                onChange={setPropertyType}
+              />
+            </div>
+
+            <Link
+              href={buildExploreHref(mode, budget, propertyType)}
+              className={buttonVariants({ size: "lg" })}
+            >
+              See matching suburbs
+            </Link>
+          </CardContent>
+        </Card>
+      </section>
+
+      <AffordabilityInsights
+        markets={markets}
+        isLoading={isLoading}
+        filters={{
+          mode,
+          budget,
+          city: DEFAULT_CITY,
+          propertyType,
+          bedroom: propertyType === "room" ? ROOM_BEDROOM_COUNT : null,
+          includeLowConfidence: false,
+          hideSuburbMedianFallback: true,
+        }}
       />
 
-      <div className="mx-auto w-full max-w-6xl space-y-16 px-4 py-16 pb-24 sm:px-6 lg:px-8 lg:pb-10">
-        <AffordabilityInsights
-          markets={markets}
-          isLoading={isLoading}
-          filters={{
-            mode,
-            budget,
-            city: DEFAULT_CITY,
-            propertyType,
-            bedroom: propertyType === "room" ? ROOM_BEDROOM_COUNT : null,
-            includeLowConfidence: false,
-            hideSuburbMedianFallback: true,
-          }}
-        />
-
-        <section className="space-y-6">
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <PageHeader title="Top matches in Harare" />
-            <Link href={exploreHref} className={buttonVariants({ variant: "outline", size: "sm" })}>
-              View all
-            </Link>
+      <section className="space-y-6">
+        <div className="flex flex-wrap items-end justify-between gap-4">
+          <PageHeader title="Top matches in Harare" />
+          <Link
+            href={buildExploreHref(mode, budget, propertyType)}
+            className={buttonVariants({ variant: "outline", size: "sm" })}
+          >
+            View all
+          </Link>
+        </div>
+        {isLoading ? (
+          <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+            {Array.from({ length: 3 }).map((_, i) => (
+              <Skeleton key={i} className="h-44 w-full rounded-2xl" />
+            ))}
           </div>
-          {isLoading ? (
-            <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-              {Array.from({ length: 3 }).map((_, i) => (
-                <Skeleton key={i} className="h-44 w-full rounded-2xl" />
-              ))}
-            </div>
-          ) : previewMarkets.length ? (
-            <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-              {previewMarkets.map((market) => (
-                <SuburbCard
-                  key={market.market_id}
-                  market={market}
-                  mode={mode}
-                  badge="In budget"
-                  clickSource="home_card"
-                  filters={{
-                    propertyType,
-                    bedroom: propertyType === "room" ? ROOM_BEDROOM_COUNT : null,
-                  }}
-                />
-              ))}
-            </div>
-          ) : (
-            <p className="text-[15px] tracking-[0.15px] text-muted-foreground">
-              No suburbs in budget yet — try adjusting your budget or property type filters.
-            </p>
-          )}
-        </section>
+        ) : previewMarkets.length ? (
+          <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+            {previewMarkets.map((market) => (
+              <SuburbCard
+                key={market.market_id}
+                market={market}
+                mode={mode}
+                badge="In budget"
+                clickSource="home_card"
+                filters={{
+                  propertyType,
+                  bedroom: propertyType === "room" ? ROOM_BEDROOM_COUNT : null,
+                }}
+              />
+            ))}
+          </div>
+        ) : (
+          <p className="text-[15px] tracking-[0.15px] text-muted-foreground">
+            No suburbs in budget yet — try adjusting your budget or property type filters.
+          </p>
+        )}
+      </section>
 
-        <HomeMoversTeaser />
+      <HomeMoversTeaser />
 
-        <BudgetListingsPreview
-          mode={mode}
-          budget={budget}
-          city={DEFAULT_CITY}
-          propertyType={propertyType}
-        />
-      </div>
+      <BudgetListingsPreview
+        mode={mode}
+        budget={budget}
+        city={DEFAULT_CITY}
+        propertyType={propertyType}
+      />
 
       <HomeBudgetBar
         mode={mode}
@@ -155,7 +186,7 @@ function HomeContent() {
 
 export function HomePageClient() {
   return (
-    <Suspense fallback={<Skeleton className="h-screen w-full" />}>
+    <Suspense fallback={<Skeleton className="h-96 w-full rounded-2xl" />}>
       <HomeContent />
     </Suspense>
   );
