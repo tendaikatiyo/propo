@@ -1,9 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import { useMemo, useState } from "react";
 import { ArrowDown, ArrowUp, HelpCircle } from "lucide-react";
 
+import { TrackedSuburbLink } from "@/components/analytics/tracked-suburb-link";
 import { PinButton } from "@/components/markets/pin-button";
 import { SegmentPriceCell } from "@/components/markets/segment-price-note";
 import { ConfidenceBadge } from "@/components/markets/confidence-badge";
@@ -161,15 +161,22 @@ export function SuburbTable({
             return (
               <TableRow key={market.market_id}>
                 <TableCell className="font-heading font-medium">
-                  <Link
+                  <TrackedSuburbLink
                     href={suburbPath(market.city, market.suburb, {
                       type: filters?.propertyType,
                       bedroom: filters?.bedroom,
                     })}
+                    tracking={{
+                      marketId: market.market_id,
+                      city: market.city,
+                      suburb: market.suburb,
+                      source: "explore_table",
+                      mode,
+                    }}
                     className="hover:underline"
                   >
                     {sanitizeLabel(market.suburb)}
-                  </Link>
+                  </TrackedSuburbLink>
                 </TableCell>
                 {!isCityLayout ? (
                   <TableCell className="font-heading text-muted-foreground">{market.city}</TableCell>

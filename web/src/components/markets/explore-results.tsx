@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { useMemo, useEffect, useRef } from "react";
 
 import { SuburbCard } from "@/components/markets/suburb-card";
 import { SuburbTable } from "@/components/markets/suburb-table";
@@ -9,6 +9,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useMarketMetrics } from "@/hooks/use-market-data";
 import { useExploreFilters } from "@/hooks/use-explore-filters";
+import { trackExploreZeroResults } from "@/lib/analytics/track";
 import { averageYield, applySuburbMedianVisibility, filterMarkets, rankExploreResults } from "@/lib/explore";
 import { exploreBudgetDescription, exploreScopeDescription } from "@/lib/metric-tooltips";
 import { hasActiveSegmentFilters } from "@/lib/segments";
@@ -40,6 +41,34 @@ export function ExploreResults({ preview = false }: { preview?: boolean }) {
     [stretch, filters]
   );
   const avgYield = filters.mode === "buy" ? averageYield(inBudget) : null;
+  const zeroResultsKeyRef = useRef<string | null>(null);
+
+  useEffect(() => {
+    if (preview || isLoading) return;
+    const key = JSON.stringify({
+      mode: filters.mode,
+      budget: filters.budget,
+      city: filters.city,
+      propertyType: filters.propertyType,
+      bedroom: filters.bedroom,
+    });
+    if (rankedInBudget.length > 0) {
+      zeroResultsKeyRef.current = null;
+      return;
+    }
+    if (zeroResultsKeyRef.current === key) return;
+    zeroResultsKeyRef.current = key;
+    trackExploreZeroResults(filters, {
+      inBudgetCount: rankedInBudget.length,
+      stretchCount: rankedStretch.length,
+    });
+  }, [
+    preview,
+    isLoading,
+    filters,
+    rankedInBudget.length,
+    rankedStretch.length,
+  ]);
 
   if (isLoading) {
     return (

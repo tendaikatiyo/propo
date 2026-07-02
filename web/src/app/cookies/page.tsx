@@ -8,7 +8,7 @@ export const metadata = buildPageMetadata({
   path: "/cookies",
 });
 
-const LAST_UPDATED = "28 June 2026";
+const LAST_UPDATED = "1 July 2026";
 
 export default function CookiePolicyPage() {
   return (
@@ -44,6 +44,15 @@ export default function CookiePolicyPage() {
             <strong className="font-medium text-foreground">Display preferences</strong> — stores
             minor UI preferences such as hero image rotation
           </li>
+          <li>
+            <strong className="font-medium text-foreground">Analytics consent</strong> — records
+            whether you have accepted or declined anonymous usage analytics
+          </li>
+          <li>
+            <strong className="font-medium text-foreground">Analytics session</strong> — a random
+            session identifier (httpOnly cookie) used only if you accept analytics, to group
+            anonymous events within a visit
+          </li>
         </ul>
         <p>
           These are functional technologies required or helpful for core features. They are not
@@ -61,9 +70,14 @@ export default function CookiePolicyPage() {
 
       <LegalSection title="Analytics">
         <p>
-          We may introduce privacy-conscious analytics in the future to understand how features
-          are used. If we do, we will update this policy and, where required, ask for your
-          consent before placing non-essential analytics cookies.
+          If you accept analytics in the site banner, we collect anonymous feature-usage events
+          (for example explore filter changes, suburb clicks, and listing link clicks) to improve
+          {SITE_NAME}. Events are stored on our database with a random session id — no account, no
+          third-party ad trackers, and no cross-site profiling.
+        </p>
+        <p>
+          If you decline, no analytics cookies are set and no usage events are recorded. You can
+          change your mind later by clearing site cookies for {SITE_NAME}.
         </p>
       </LegalSection>
 

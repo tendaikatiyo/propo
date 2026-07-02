@@ -1,0 +1,13 @@
+export const ANALYTICS_CONSENT_COOKIE = "propo_analytics_consent";
+export const ANALYTICS_SESSION_COOKIE = "propo_analytics_sid";
+
+export const ANALYTICS_EVENT_NAMES = [
+  "explore_filter_change",
+  "explore_zero_results",
+  "suburb_click",
+  "listing_click",
+] as const;
+
+export type AnalyticsEventName = (typeof ANALYTICS_EVENT_NAMES)[number];
+
+export type AnalyticsConsent = "granted" | "denied";

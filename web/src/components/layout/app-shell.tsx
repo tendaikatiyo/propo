@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation";
 
 import { AppSidebar } from "@/components/layout/app-sidebar";
+import { AnalyticsConsentBanner } from "@/components/analytics/consent-banner";
 import { AppFooter, SiteHero } from "@/components/layout/site-chrome";
 import { HomeHero } from "@/components/layout/home-hero";
 import { OnboardingTour } from "@/components/onboarding/onboarding-tour";
@@ -51,6 +52,9 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         </div>
         <div className="print:hidden">
           <OnboardingTour />
+        </div>
+        <div className="print:hidden">
+          <AnalyticsConsentBanner />
         </div>
       </div>
     </div>

@@ -171,6 +171,7 @@ function HomeContent() {
                 market={market}
                 mode={mode}
                 badge="In budget"
+                clickSource="home_card"
                 filters={{
                   propertyType,
                   bedroom: propertyType === "room" ? ROOM_BEDROOM_COUNT : null,

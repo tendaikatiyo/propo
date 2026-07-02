@@ -24,11 +24,11 @@ Strengthen Propo as a **market intelligence platform** for Zimbabwe — not a li
 | **F7** Affordability insight cards | ✅ Done | [2026-07-01-f7-f8-f9-insights-transparency-market-id.md](./2026-07-01-f7-f8-f9-insights-transparency-market-id.md) |
 | **F8** Transparency layer | ✅ Done | same |
 | **F9** `market_id` on listings | ✅ Done | same |
-| **F10** Analytics MVP | Not started | below |
+| **F10** Analytics MVP | ✅ Done | [2026-07-01-f10-analytics-mvp.md](./2026-07-01-f10-analytics-mvp.md) |
 
-**Ancillary (not roadmap features):** listing thumbnails + `image_url` ([2026-06-29](./2026-06-29-listing-thumbnails-image-url.md), [2026-06-30 pipeline](./2026-06-30-pipeline-run-scraper-migration-fixes.md)); Open Graph SEO + city movers polish (F3 handover); classifieds ZIG→USD price fix (F2 handover); leaderboard confidence backfill + cheapest-rent fix (F6 handover).
+**Ancillary (not roadmap features):** listing thumbnails + `image_url` ([2026-06-29](./2026-06-29-listing-thumbnails-image-url.md), [2026-06-30 pipeline](./2026-06-30-pipeline-run-scraper-migration-fixes.md)); Open Graph SEO + city movers polish (F3 handover); classifieds ZIG→USD price fix (F2 handover); leaderboard confidence backfill + cheapest-rent fix (F6 handover); **admin ops dashboard** at `/admin` ([2026-07-01](./2026-07-01-admin-ops-dashboard.md)); UX polish (DOM de-emphasized in UI, bedroom filter hidden on Explore/Compare when data thin, mobile explore drawer/sort fixes).
 
-**Next recommended:** F10 analytics MVP (optional) — core intelligence roadmap F0–F9 complete.
+**Next recommended:** v2 polish — segment-filtered trends, compare trend sparklines, sample-size on ranking/mover cards; F10 `/insights` UI when traffic warrants; ensure migrations **008–010** applied on production Supabase.
 
 ---
 
@@ -44,6 +44,7 @@ Strengthen Propo as a **market intelligence platform** for Zimbabwe — not a li
 | **History data** | `market_snapshots_daily` exposed via trends API on suburb/city pages | Segment-filtered trends; DOM trend line |
 | **Trust** | Confidence badge (+ optional sample count); sample-size badges; scope labels; Explore aggregate vs segment copy; methodology **Data limits** section | — |
 | **Listings join** | `market_id` on ingest + web filter; string city/suburb fallback; fair-value lookup by `market_id` when strings mismatch | Apply migration 008 + Supabase backfill in prod if not yet run |
+| **Ops / analytics** | `/admin` pipeline health dashboard; consent-gated `analytics_events` + `/api/events` | `/insights` UI (F10 v2); stale-data alerts on admin |
 
 ---
 
@@ -60,7 +61,9 @@ Strengthen Propo as a **market intelligence platform** for Zimbabwe — not a li
 | Suburb UI | `suburb-profile.tsx`, `suburb-table.tsx`, `suburb-card.tsx`, `sample-size-badge.tsx`, `city-dashboard.tsx` |
 | Listings UI | `listing-card.tsx`, `budget-listings.tsx`, `suburb-value-listings.tsx`, `web/src/hooks/use-market-lookup.ts` |
 | Compare / rankings | `compare-page.tsx`, `compare-table.tsx`, `rankings-page.tsx`, `web/src/lib/rankings.ts` |
-| Related handovers | [2026-07-01-f7-f8-f9-insights-transparency-market-id.md](./2026-07-01-f7-f8-f9-insights-transparency-market-id.md), [2026-06-28-f0-f1-segment-explore-polish.md](./2026-06-28-f0-f1-segment-explore-polish.md), [2026-06-26-segment-medians-option-b.md](./2026-06-26-segment-medians-option-b.md), [2026-06-25-web-ux-listings-explore.md](./2026-06-25-web-ux-listings-explore.md) |
+| Analytics (F10) | `web/src/lib/analytics/*`, `web/src/app/api/events/route.ts`, `web/src/middleware.ts`, `consent-banner.tsx` |
+| Admin ops | `web/src/app/admin/`, `web/src/app/api/admin/*`, `009_admin_dashboard.sql` |
+| Related handovers | [2026-07-01-f10-analytics-mvp.md](./2026-07-01-f10-analytics-mvp.md), [2026-07-01-admin-ops-dashboard.md](./2026-07-01-admin-ops-dashboard.md), [2026-07-01-f7-f8-f9-insights-transparency-market-id.md](./2026-07-01-f7-f8-f9-insights-transparency-market-id.md), [2026-06-28-f0-f1-segment-explore-polish.md](./2026-06-28-f0-f1-segment-explore-polish.md), [2026-06-26-segment-medians-option-b.md](./2026-06-26-segment-medians-option-b.md), [2026-06-25-web-ux-listings-explore.md](./2026-06-25-web-ux-listings-explore.md) |
 
 ---
 
@@ -92,9 +95,9 @@ flowchart TD
 | **F7** | Affordability insight cards | Sharpens budget-first home flow |
 | **F8** | Transparency layer | Trust multiplier on everything |
 | **F9** | `market_id` on listings | Data quality foundation |
-| **F10** | Analytics MVP (optional) | Internal demand signals for B2B later |
+| **F10** | Analytics MVP | Internal demand signals for B2B later ✅ |
 
-**If only three ships in the next month:** ~~F0–F9 core intelligence~~ **shipped** — optional: F10 analytics MVP.
+**Roadmap F0–F10:** **complete** (2026-07-01). Remaining work is v2 polish and production ops (migrations, Cloudflare env vars).
 
 ---
 
@@ -601,33 +604,34 @@ Listings filtered by suburb string; mismatches with `market_metrics` cause empty
 
 ---
 
-## F10 — Analytics MVP (internal demand signals)
+## F10 — Analytics MVP (internal demand signals) ✅
 
-**Full spec (optional later):** see plan `anonymous_behavior_analytics_74398541.plan.md` in Cursor plans.
+**Handover:** [2026-07-01-f10-analytics-mvp.md](./2026-07-01-f10-analytics-mvp.md)
 
-### Deliverable (minimal slice)
+### Deliverable (minimal slice) — shipped
 
 Track core events server-side for **your** product decisions and future B2B pitches — not a full dashboard in v1:
 
-- Cookies + `/api/events` + Supabase `analytics_events` table
+- Consent banner + cookies + `/api/events` + Supabase `analytics_events` table
 - Events: `explore_filter_change`, `explore_zero_results`, `suburb_click`, `listing_click`
 - Query in Supabase SQL editor; defer `/insights` UI until traffic exists
 
-### Files to touch
+### Files touched
 
-- [ ] `supabase/migrations/009_analytics.sql` (coordinate numbering with 006–008)
-- [ ] `web/src/middleware.ts`, `web/src/app/api/events/route.ts`
-- [ ] `web/src/lib/analytics/*`, instrumentation on explore + listing-card
-- [ ] Consent banner (lightweight)
+- [x] `supabase/migrations/010_analytics.sql` (`009` used by admin dashboard RPC)
+- [x] `web/src/middleware.ts`, `web/src/app/api/events/route.ts`
+- [x] `web/src/lib/analytics/*`, instrumentation on explore + listing-card + suburb links
+- [x] `web/src/components/analytics/consent-banner.tsx`
+- [x] `web/src/app/cookies/page.tsx` — analytics consent copy
 
 ### Verify
 
-- Events appear in Supabase after browse session
-- No events when Supabase not configured (dev graceful no-op)
+- Events appear in Supabase after browse session (with consent accepted)
+- No events when consent declined or Supabase not configured (graceful no-op)
 
 ### Estimated effort
 
-~8–12 hours MVP; full dashboard + revenue tab is v2
+~8–12 hours MVP (shipped 2026-07-01); full `/insights` dashboard + revenue tab is v2
 
 ---
 
@@ -639,7 +643,8 @@ Track core events server-side for **your** product decisions and future B2B pitc
 | `007_listing_image_url.sql` | Listings UX | ✅ Applied on Supabase (2026-06-30) — not F2 rollup |
 | `007_trends_rollup.sql` | F2 | Optional view — not applied; API aggregates at read time |
 | `008_listings_market_id.sql` | F9 | Index + SQL backfill — **apply on Supabase**; Python backfill preferred for city normalization |
-| `009_analytics.sql` | F10 | Optional |
+| `009_admin_dashboard.sql` | Admin ops | `admin_dashboard_stats()` RPC — **apply on Supabase** for `/admin` |
+| `010_analytics.sql` | F10 | `analytics_events` table — **apply on Supabase** for `/api/events` |
 
 Check `001_history.sql` — `listings.market_id` column already exists; F9 may be **backfill + pipeline populate** only.
 
@@ -664,8 +669,20 @@ Check `001_history.sql` — `listings.market_id` column already exists; F9 may b
 5. Rankings surface **movers**, not only static top yield ✅ (F6)
 6. Every metric shows **how much data backs it** ✅ (F8 sample size, scope, methodology limits)
 7. Listings join to suburb markets reliably ✅ (F9 `market_id` on ingest + web filter)
+8. Operator can monitor pipeline health via `/admin` and query anonymous usage via `analytics_events` ✅ (ancillary admin + F10)
 
 ---
+
+## v2 backlog (post-roadmap)
+
+| Item | Notes |
+| ---- | ----- |
+| Segment-filtered trends | F2 v2 — charts by type/bed when sample size allows |
+| Compare trend sparklines | F5 v2 |
+| Sample-size on ranking / mover cards | F8 optional polish |
+| `/insights` analytics UI | F10 v2 — when traffic exists |
+| Admin stale-data alerts | Last ingest &gt; 24h banner |
+| POI / amenities | Out of scope for now; methodology disclaims |
 
 ## Estimated effort (total roadmap)
 
@@ -681,8 +698,10 @@ Check `001_history.sql` — `listings.market_id` column already exists; F9 may b
 | F7 Affordability cards | 3–4 |
 | F8 Transparency | 3 |
 | F9 market_id joins | 3–4 |
-| F10 Analytics MVP | 8–12 |
+| F10 Analytics MVP | 8–12 ✅ |
+| Admin ops dashboard | 4–8 ✅ (ancillary) |
 | **Core trio (F0+F1+F2+F3)** | **~20–26** |
+| **Full roadmap F0–F10** | **~52–70** |
 
 ---
 
@@ -707,6 +726,10 @@ npm run analytics:backfill-market-id
 cd web
 npm run dev
 npm run build
+
+# Admin / analytics (after applying 009 + 010 on Supabase)
+# /admin — ADMIN_SECRET + SUPABASE_SERVICE_ROLE_KEY in web/.env.local
+# Accept analytics banner → browse → query analytics_events in SQL editor
 ```
 
 ---
@@ -722,4 +745,6 @@ npm run build
 7. ~~F8 transparency~~ — done (2026-07-01); see [handover](./2026-07-01-f7-f8-f9-insights-transparency-market-id.md)
 8. ~~F7 affordability cards on home~~ — done (2026-07-01); same handover
 9. ~~F9 market_id backfill~~ — done (2026-07-01); same handover
-10. **F10** analytics when ready for B2B / internal ops
+10. ~~F10 analytics MVP~~ — done (2026-07-01); see [handover](./2026-07-01-f10-analytics-mvp.md)
+11. ~~Admin ops dashboard~~ — done (2026-07-01); see [handover](./2026-07-01-admin-ops-dashboard.md)
+12. **v2 polish** — segment trends, compare sparklines, `/insights` UI when traffic warrants

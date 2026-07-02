@@ -10,6 +10,7 @@ import {
   normalizeExploreFilters,
   normalizePropertyType,
 } from "@/lib/constants";
+import { trackExploreFilterChange } from "@/lib/analytics/track";
 import { budgetForMode } from "@/lib/explore";
 import type { ExploreFilters, ExploreMode, PropertyType } from "@/lib/types";
 
@@ -81,6 +82,9 @@ export function useExploreFilters() {
 
       const qs = params.toString();
       router.replace(qs ? `${target}?${qs}` : target, { scroll: false });
+      if (target === "/explore" || target.endsWith("/explore")) {
+        trackExploreFilterChange(next);
+      }
     },
     [filters, pathname, router]
   );
@@ -88,7 +92,14 @@ export function useExploreFilters() {
   const resetFilters = useCallback(
     (options?: { targetPath?: string }) => {
       const target = options?.targetPath ?? pathname;
+      const next = normalizeExploreFilters({
+        ...DEFAULT_FILTERS,
+        city: DEFAULT_CITY,
+      });
       router.replace(`${target}?city=${DEFAULT_CITY}`, { scroll: false });
+      if (target === "/explore" || target.endsWith("/explore")) {
+        trackExploreFilterChange(next);
+      }
     },
     [pathname, router]
   );

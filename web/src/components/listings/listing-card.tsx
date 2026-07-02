@@ -11,6 +11,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { resolveListingThumbnailUrl } from "@/lib/listings";
+import { trackListingClick } from "@/lib/analytics/track";
 import {
   resolveFairValueForListing,
   type FairValueBadge,
@@ -122,6 +123,16 @@ export function ListingCard({
             href={listing.listing_url}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() =>
+              trackListingClick({
+                listingUrl: listing.listing_url,
+                marketId: listing.market_id,
+                city: listing.city,
+                suburb: listing.suburb,
+                price: listing.price,
+                listingType: listing.listing_type,
+              })
+            }
             className="inline-flex items-center gap-1 text-[11px] font-medium text-foreground hover:underline"
           >
             View

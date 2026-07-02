@@ -1,9 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import { useMemo, useState } from "react";
 import { ArrowDown, ArrowUp, ChevronRight } from "lucide-react";
 
+import { TrackedSuburbLink } from "@/components/analytics/tracked-suburb-link";
 import { ConfidenceBadge } from "@/components/markets/confidence-badge";
 import { PinButton } from "@/components/markets/pin-button";
 import { SegmentPriceNote } from "@/components/markets/segment-price-note";
@@ -97,11 +97,18 @@ export function SuburbList({
               key={market.market_id}
               className="flex min-h-[68px] items-center gap-2 px-3 py-3"
             >
-              <Link
+              <TrackedSuburbLink
                 href={suburbPath(market.city, market.suburb, {
                   type: filters?.propertyType,
                   bedroom: filters?.bedroom,
                 })}
+                tracking={{
+                  marketId: market.market_id,
+                  city: market.city,
+                  suburb: market.suburb,
+                  source: "explore_list",
+                  mode,
+                }}
                 className="flex min-w-0 flex-1 items-center gap-2 active:opacity-70"
               >
                 <div className="min-w-0 flex-1">
@@ -130,7 +137,7 @@ export function SuburbList({
                   />
                 </div>
                 <ChevronRight className="size-4 shrink-0 text-muted-foreground" />
-              </Link>
+              </TrackedSuburbLink>
               <div className="flex shrink-0 flex-col items-end gap-2">
                 <ConfidenceBadge score={market.confidence_score} />
                 <PinButton market={market} size="icon-sm" />

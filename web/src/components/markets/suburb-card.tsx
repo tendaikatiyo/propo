@@ -1,6 +1,6 @@
-import Link from "next/link";
-
+import { TrackedSuburbLink } from "@/components/analytics/tracked-suburb-link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { SuburbClickPayload } from "@/lib/analytics/types";
 import { Badge } from "@/components/ui/badge";
 import { SegmentPriceNote } from "@/components/markets/segment-price-note";
 import { formatCurrency, formatPercent, sanitizeLabel } from "@/lib/format";
@@ -16,11 +16,13 @@ export function SuburbCard({
   mode,
   badge,
   filters,
+  clickSource = "explore_card",
 }: {
   market: MarketMetric;
   mode: ExploreMode;
   badge?: string;
   filters?: Pick<ExploreFilters, "propertyType" | "bedroom">;
+  clickSource?: SuburbClickPayload["source"];
 }) {
   const segmentFilters = filters ?? { propertyType: null, bedroom: null };
   const price = priceForFilters(market, mode, segmentFilters);
@@ -31,8 +33,15 @@ export function SuburbCard({
 
   return (
     <Card className="relative h-full transition-colors hover:bg-muted/30">
-      <Link
+      <TrackedSuburbLink
         href={href}
+        tracking={{
+          marketId: market.market_id,
+          city: market.city,
+          suburb: market.suburb,
+          source: clickSource,
+          mode,
+        }}
         className="absolute inset-0 z-0 rounded-[inherit]"
         aria-label={`View ${sanitizeLabel(market.suburb)} market profile`}
       />
