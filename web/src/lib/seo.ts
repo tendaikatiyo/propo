@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 
 import { SITE_DESCRIPTION, SITE_NAME } from "@/lib/constants";
-import { HERO_IMAGES } from "@/lib/hero";
+import { HOME_LANDING_PHOTO } from "@/lib/hero";
 
 /** Public site URL — set in production via NEXT_PUBLIC_SITE_URL (e.g. https://propo.fyi). */
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ?? "https://propo.fyi";
 
-/** Open Graph share image — Harare skyline illustration (same asset as the home hero). */
-export const OG_IMAGE_PATH = HERO_IMAGES.harare.src;
-export const OG_IMAGE_ALT = `${SITE_NAME} — ${HERO_IMAGES.harare.alt}`;
+/** Open Graph share image — Harare skyline photograph (home landing). */
+export const OG_IMAGE_PATH = HOME_LANDING_PHOTO.src;
+export const OG_IMAGE_ALT = `${SITE_NAME} — ${HOME_LANDING_PHOTO.alt}`;
 export const OG_IMAGE_WIDTH = 1200;
 export const OG_IMAGE_HEIGHT = 630;
 

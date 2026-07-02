@@ -2,6 +2,7 @@
 
 import { BudgetSlider } from "@/components/filters/budget-slider";
 import { CitySearchCombobox } from "@/components/filters/city-search-combobox";
+import { PropertyTypeButtons } from "@/components/filters/property-type-buttons";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
@@ -12,11 +13,8 @@ import { useExploreFilters } from "@/hooks/use-explore-filters";
 import {
   DEFAULT_BUY_BUDGET,
   DEFAULT_RENT_BUDGET,
-  propertyTypesForMode,
 } from "@/lib/constants";
-import { propertyTypeLabel } from "@/lib/format";
 import { hasActiveSegmentFilters } from "@/lib/segments";
-import type { PropertyType } from "@/lib/types";
 
 function FilterSwitchRow({
   id,
@@ -60,7 +58,6 @@ export function ExploreFilterPanel({
   const { data: cities = [] } = useCities();
 
   const filterOptions = targetPath ? { targetPath } : undefined;
-  const propertyTypes = propertyTypesForMode(filters.mode);
   const isRoom = filters.propertyType === "room";
 
   const apply = (patch: Parameters<typeof setFilters>[0]) => {
@@ -71,18 +68,6 @@ export function ExploreFilterPanel({
   const reset = () => {
     resetFilters(filterOptions);
     onNavigate?.();
-  };
-
-  const selectPropertyType = (type: PropertyType | null) => {
-    if (type === null) {
-      apply({ propertyType: null });
-      return;
-    }
-    if (filters.propertyType === type) {
-      apply({ propertyType: null });
-      return;
-    }
-    apply({ propertyType: type });
   };
 
   return (
@@ -136,27 +121,11 @@ export function ExploreFilterPanel({
 
       <section className="space-y-3">
         <Label className="caption-label">Property type</Label>
-        <div className="flex flex-wrap gap-2">
-          <Button
-            type="button"
-            size="sm"
-            variant={filters.propertyType == null ? "default" : "outline"}
-            onClick={() => selectPropertyType(null)}
-          >
-            Any
-          </Button>
-          {propertyTypes.map((type) => (
-            <Button
-              key={type}
-              type="button"
-              size="sm"
-              variant={filters.propertyType === type ? "default" : "outline"}
-              onClick={() => selectPropertyType(type)}
-            >
-              {propertyTypeLabel(type)}
-            </Button>
-          ))}
-        </div>
+        <PropertyTypeButtons
+          mode={filters.mode}
+          value={filters.propertyType}
+          onChange={(propertyType) => apply({ propertyType })}
+        />
       </section>
 
       {isRoom ? (

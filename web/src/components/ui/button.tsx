@@ -1,6 +1,13 @@
 import { Button as ButtonPrimitive } from "@base-ui/react/button"
 import { cva, type VariantProps } from "class-variance-authority"
 
+import {
+  liquidGlassButtonDefault,
+  liquidGlassButtonDestructive,
+  liquidGlassButtonGhost,
+  liquidGlassButtonOutline,
+  liquidGlassButtonSecondary,
+} from "@/lib/liquid-glass"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
@@ -8,14 +15,11 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-[#0c0a09]",
-        outline:
-          "border-[#d6d3d1] bg-transparent text-foreground hover:bg-muted",
-        secondary:
-          "bg-secondary text-secondary-foreground hover:bg-[#e7e5e4]",
-        ghost: "hover:bg-muted hover:text-foreground",
-        destructive:
-          "bg-destructive/10 text-destructive hover:bg-destructive/15",
+        default: liquidGlassButtonDefault,
+        outline: liquidGlassButtonOutline,
+        secondary: liquidGlassButtonSecondary,
+        ghost: liquidGlassButtonGhost,
+        destructive: liquidGlassButtonDestructive,
         link: "text-foreground underline-offset-4 hover:underline",
       },
       size: {

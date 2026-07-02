@@ -4,6 +4,14 @@ export const HERO_IMAGES = {
   vicfalls: { src: "/vf_skyline_bg.png", alt: "Victoria Falls illustration" },
 } as const;
 
+/** Full-bleed home landing background (photograph). */
+export const HOME_LANDING_PHOTO = {
+  src: "/harare_skyline_bg_photo.webp",
+  alt: "Harare skyline at dusk",
+  credit: "Erik Törner",
+  creditUrl: "https://www.flickr.com/photos/eriktorner/50605941258/",
+} as const;
+
 export type HeroVariant = keyof typeof HERO_IMAGES;
 
 export const HERO_ROTATION: HeroVariant[] = ["harare", "bulawayo", "vicfalls"];

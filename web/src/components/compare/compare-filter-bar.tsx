@@ -4,29 +4,14 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
+import { PropertyTypeButtons } from "@/components/filters/property-type-buttons";
 import { useCompareFilters } from "@/hooks/use-compare-filters";
-import { propertyTypesForMode } from "@/lib/constants";
-import { propertyTypeLabel } from "@/lib/format";
 import { hasActiveSegmentFilters, segmentFilterLabel } from "@/lib/segments";
-import type { PropertyType } from "@/lib/types";
 
 export function CompareFilterBar() {
   const { filters, setFilters, resetFilters } = useCompareFilters();
-  const propertyTypes = propertyTypesForMode(filters.mode);
   const isRoom = filters.propertyType === "room";
   const specLabel = segmentFilterLabel(filters.propertyType, filters.bedroom);
-
-  const selectPropertyType = (type: PropertyType | null) => {
-    if (type === null) {
-      setFilters({ propertyType: null });
-      return;
-    }
-    if (filters.propertyType === type) {
-      setFilters({ propertyType: null });
-      return;
-    }
-    setFilters({ propertyType: type });
-  };
 
   return (
     <Card>
@@ -65,27 +50,11 @@ export function CompareFilterBar() {
 
         <section className="space-y-2">
           <Label className="caption-label">Property type</Label>
-          <div className="flex flex-wrap gap-2">
-            <Button
-              type="button"
-              size="sm"
-              variant={filters.propertyType == null ? "default" : "outline"}
-              onClick={() => selectPropertyType(null)}
-            >
-              Any
-            </Button>
-            {propertyTypes.map((type) => (
-              <Button
-                key={type}
-                type="button"
-                size="sm"
-                variant={filters.propertyType === type ? "default" : "outline"}
-                onClick={() => selectPropertyType(type)}
-              >
-                {propertyTypeLabel(type)}
-              </Button>
-            ))}
-          </div>
+          <PropertyTypeButtons
+            mode={filters.mode}
+            value={filters.propertyType}
+            onChange={(propertyType) => setFilters({ propertyType })}
+          />
         </section>
 
         {isRoom ? (
