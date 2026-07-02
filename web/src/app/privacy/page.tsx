@@ -8,7 +8,7 @@ export const metadata = buildPageMetadata({
   path: "/privacy",
 });
 
-const LAST_UPDATED = "28 June 2026";
+const LAST_UPDATED = "1 July 2026";
 
 export default function PrivacyPolicyPage() {
   return (
@@ -29,8 +29,10 @@ export default function PrivacyPolicyPage() {
       <LegalSection title="Information we collect">
         <p>
           <strong className="font-medium text-foreground">Information you provide.</strong>{" "}
-          {SITE_NAME} does not require you to create an account. We do not ask for your name,
-          email address, or payment details to browse the site.
+          {SITE_NAME} does not require you to create an account to browse the site. If you join
+          our developer or API interest list, we collect the email address you submit, your
+          selected role, optional notes about your intended use case, and any data-product
+          preferences you choose. We do not ask for payment details to browse the site.
         </p>
         <p>
           <strong className="font-medium text-foreground">Information stored on your device.</strong>{" "}
@@ -59,6 +61,9 @@ export default function PrivacyPolicyPage() {
           <li>Remember your preferences across visits</li>
           <li>Monitor performance, diagnose errors, and protect against abuse</li>
           <li>Improve our data products and user experience</li>
+          <li>
+            Contact people who asked for updates about programmatic data access or a future API
+          </li>
         </ul>
         <p>We do not sell your personal information.</p>
       </LegalSection>
@@ -67,7 +72,7 @@ export default function PrivacyPolicyPage() {
         <p>
           Where applicable, we process information on the basis of legitimate interests in
           operating and improving the service, and on the basis of your consent where required
-          for non-essential storage on your device.
+          for non-essential storage on your device or when you join our API interest list.
         </p>
       </LegalSection>
 
@@ -84,7 +89,9 @@ export default function PrivacyPolicyPage() {
         <p>
           Information stored in your browser remains until you delete it or clear site data.
           Server logs are retained only as long as needed for security, troubleshooting, and
-          operational purposes, then deleted or aggregated.
+          operational purposes, then deleted or aggregated. API interest signups are retained
+          until you ask us to delete them or they are no longer needed for product planning and
+          related follow-up.
         </p>
       </LegalSection>
 
