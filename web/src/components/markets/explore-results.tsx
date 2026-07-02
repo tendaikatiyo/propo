@@ -1,7 +1,11 @@
 "use client";
 
-import { useMemo, useEffect, useRef } from "react";
+import { useMemo, useEffect, useRef, useState } from "react";
 
+import {
+  filterMarketsBySuburbQuery,
+  SuburbSearchInput,
+} from "@/components/filters/suburb-search-input";
 import { SuburbCard } from "@/components/markets/suburb-card";
 import { SuburbTable } from "@/components/markets/suburb-table";
 import { SuburbList } from "@/components/mobile/suburb-list";
@@ -18,6 +22,7 @@ import { formatCurrency, formatPercent } from "@/lib/format";
 export function ExploreResults({ preview = false }: { preview?: boolean }) {
   const { filters } = useExploreFilters();
   const { data: markets = [], isLoading, isError } = useMarketMetrics();
+  const [suburbQuery, setSuburbQuery] = useState("");
 
   const { inBudget, stretch } = useMemo(
     () => filterMarkets(markets, filters),
@@ -39,6 +44,14 @@ export function ExploreResults({ preview = false }: { preview?: boolean }) {
         filters
       ),
     [stretch, filters]
+  );
+  const filteredInBudget = useMemo(
+    () => filterMarketsBySuburbQuery(rankedInBudget, suburbQuery),
+    [rankedInBudget, suburbQuery]
+  );
+  const filteredStretch = useMemo(
+    () => filterMarketsBySuburbQuery(rankedStretch, suburbQuery),
+    [rankedStretch, suburbQuery]
   );
   const avgYield = filters.mode === "buy" ? averageYield(inBudget) : null;
   const zeroResultsKeyRef = useRef<string | null>(null);
@@ -112,8 +125,14 @@ export function ExploreResults({ preview = false }: { preview?: boolean }) {
     );
   }
 
+  const hasSuburbSearch = suburbQuery.trim().length > 0;
+
   return (
     <div className="space-y-8">
+      <div className="lg:hidden">
+        <SuburbSearchInput value={suburbQuery} onChange={setSuburbQuery} />
+      </div>
+
       <section className="space-y-4">
         <div>
           <h2 className="font-heading text-xl font-medium tracking-[-0.01em]">In budget</h2>
@@ -139,12 +158,18 @@ export function ExploreResults({ preview = false }: { preview?: boolean }) {
             </p>
           ) : null}
         </div>
-        <div className="lg:hidden">
-          <SuburbList markets={rankedInBudget} mode={filters.mode} filters={filters} />
-        </div>
-        <div className="hidden lg:block">
-          <SuburbTable markets={rankedInBudget} mode={filters.mode} filters={filters} />
-        </div>
+        {hasSuburbSearch && !filteredInBudget.length ? (
+          <p className="text-sm text-muted-foreground">No suburbs match your search.</p>
+        ) : (
+          <>
+            <div className="lg:hidden">
+              <SuburbList markets={filteredInBudget} mode={filters.mode} filters={filters} />
+            </div>
+            <div className="hidden lg:block">
+              <SuburbTable markets={rankedInBudget} mode={filters.mode} filters={filters} />
+            </div>
+          </>
+        )}
       </section>
 
       {rankedStretch.length ? (
@@ -155,8 +180,11 @@ export function ExploreResults({ preview = false }: { preview?: boolean }) {
               Within 15% above your budget — worth a look if you can flex slightly.
             </p>
           </div>
+          {hasSuburbSearch && !filteredStretch.length ? (
+            <p className="text-sm text-muted-foreground">No stretch suburbs match your search.</p>
+          ) : (
           <div className="grid gap-4 md:grid-cols-2">
-            {rankedStretch.map((market) => (
+            {filteredStretch.map((market) => (
               <SuburbCard
                 key={market.market_id}
                 market={market}
@@ -166,6 +194,7 @@ export function ExploreResults({ preview = false }: { preview?: boolean }) {
               />
             ))}
           </div>
+          )}
         </section>
       ) : null}
 
@@ -176,11 +205,15 @@ export function ExploreResults({ preview = false }: { preview?: boolean }) {
         <CardContent className="grid gap-3 text-sm sm:grid-cols-3">
           <p>
             <span className="text-muted-foreground">In budget: </span>
-            <span className="font-mono font-medium">{rankedInBudget.length}</span>
+            <span className="font-mono font-medium">
+              {hasSuburbSearch ? filteredInBudget.length : rankedInBudget.length}
+            </span>
           </p>
           <p>
             <span className="text-muted-foreground">Stretch: </span>
-            <span className="font-mono font-medium">{rankedStretch.length}</span>
+            <span className="font-mono font-medium">
+              {hasSuburbSearch ? filteredStretch.length : rankedStretch.length}
+            </span>
           </p>
           {avgYield != null ? (
             <p>
