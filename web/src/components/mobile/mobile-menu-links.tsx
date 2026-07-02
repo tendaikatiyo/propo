@@ -1,13 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { Building2, ChevronRight, Compass, HelpCircle } from "lucide-react";
+import { Building2, ChevronRight, Code2, Compass, HelpCircle } from "lucide-react";
 
 import { HowItWorksButton } from "@/components/onboarding/how-it-works-button";
 import { DataFreshnessPill } from "@/components/layout/data-freshness-pill";
 
 const LINKS = [
   { href: "/methodology", label: "Methodology", icon: HelpCircle },
+  { href: "/developers", label: "Developers", icon: Code2 },
   { href: "/explore", label: "Explore", icon: Compass },
   { href: "/cities", label: "Cities", icon: Building2 },
 ] as const;

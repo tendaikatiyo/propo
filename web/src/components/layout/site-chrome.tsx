@@ -29,6 +29,9 @@ export function AppFooter() {
           <Link href="/methodology" className="hover:text-foreground">
             Methodology
           </Link>
+          <Link href="/developers" className="hover:text-foreground">
+            Developers
+          </Link>
           <HowItWorksButton />
         </div>
         <div className="flex flex-wrap gap-x-4 gap-y-2 border-t border-border/60 pt-4 text-sm text-muted-foreground">
