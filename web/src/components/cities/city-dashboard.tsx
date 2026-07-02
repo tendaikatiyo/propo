@@ -2,9 +2,12 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { Search } from "lucide-react";
 
 import { CityTrendMovers } from "@/components/cities/city-trend-movers";
+import {
+  filterMarketsBySuburbQuery,
+  SuburbSearchInput,
+} from "@/components/filters/suburb-search-input";
 import { BackLink } from "@/components/layout/back-nav";
 import { PageHeader } from "@/components/layout/page-header";
 import { CityRankingList } from "@/components/mobile/city-ranking-list";
@@ -12,7 +15,6 @@ import { CityStatsGrid } from "@/components/mobile/city-stats-grid";
 import { SuburbList } from "@/components/mobile/suburb-list";
 import { SuburbTable } from "@/components/markets/suburb-table";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
 import { formatCurrency, formatPercent } from "@/lib/format";
 import { suburbPath } from "@/lib/slug";
 import type { CityMetric, MarketMetric, RankingsPayload } from "@/lib/types";
@@ -60,11 +62,10 @@ export function CityDashboard({
   const [query, setQuery] = useState("");
   const cityRankings = rankings?.per_city?.[city.city];
 
-  const filteredMarkets = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    if (!q) return markets;
-    return markets.filter((m) => m.suburb.toLowerCase().includes(q));
-  }, [markets, query]);
+  const filteredMarkets = useMemo(
+    () => filterMarketsBySuburbQuery(markets, query),
+    [markets, query]
+  );
 
   const yieldItems =
     cityRankings?.highest_yield_suburbs?.slice(0, 5).map((r) => ({
@@ -138,16 +139,7 @@ export function CityDashboard({
           <h2 className="font-heading text-lg font-semibold tracking-tight lg:text-lg lg:font-medium">
             All suburbs
           </h2>
-          <div className="relative">
-            <Search className="absolute top-1/2 left-3.5 size-4 -translate-y-1/2 text-muted-foreground" />
-            <Input
-              type="search"
-              placeholder="Search suburbs..."
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              className="h-11 rounded-xl border-0 bg-muted/50 pl-10 text-[15px] shadow-none focus-visible:ring-1"
-            />
-          </div>
+          <SuburbSearchInput value={query} onChange={setQuery} />
         </div>
 
         {!filteredMarkets.length ? (

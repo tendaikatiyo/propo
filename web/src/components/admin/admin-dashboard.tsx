@@ -24,6 +24,7 @@ import {
 } from "@/components/ui/table";
 import type { AdminDashboardStats } from "@/lib/admin-stats";
 import { formatNumber } from "@/lib/format";
+import { cn } from "@/lib/utils";
 
 function formatDateTime(value: string | null | undefined): string {
   if (!value) return "—";
@@ -40,6 +41,29 @@ function formatDate(value: string | null | undefined): string {
   const date = new Date(value);
   if (Number.isNaN(date.getTime())) return value;
   return new Intl.DateTimeFormat("en-ZW", { dateStyle: "medium" }).format(date);
+}
+
+function DetailRow({
+  label,
+  value,
+}: {
+  label: string;
+  value: React.ReactNode;
+}) {
+  return (
+    <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
+      <span className="text-muted-foreground">{label}</span>
+      <span className="sm:max-w-[60%] sm:text-right">{value}</span>
+    </div>
+  );
+}
+
+function AdminTableWrap({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="-mx-1 overflow-x-auto px-1 sm:mx-0 sm:px-0">
+      <div className="min-w-[32rem]">{children}</div>
+    </div>
+  );
 }
 
 function StatCard({
@@ -63,8 +87,8 @@ function StatCard({
   return (
     <Card size="sm">
       <CardHeader className="pb-0">
-        <CardDescription>{label}</CardDescription>
-        <CardTitle className={toneClass}>{value}</CardTitle>
+        <CardDescription className="text-xs sm:text-sm">{label}</CardDescription>
+        <CardTitle className={cn("text-xl sm:text-2xl", toneClass)}>{value}</CardTitle>
       </CardHeader>
       {hint ? (
         <CardContent className="pt-0 text-xs text-muted-foreground">{hint}</CardContent>
@@ -197,24 +221,31 @@ export function AdminDashboard() {
       : 0;
 
   return (
-    <div className="space-y-8">
-      <div className="flex flex-wrap items-start justify-between gap-4">
+    <div className="space-y-6 sm:space-y-8">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <PageHeader
           title="Admin ops"
           description="Pipeline health, listing inventory, and sync status. Internal use only."
         />
-        <div className="flex flex-wrap items-center gap-2">
+        <div className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row sm:items-center">
           <Button
             type="button"
             variant="outline"
             size="sm"
             disabled={refreshing}
             onClick={() => void loadStats()}
+            className="w-full sm:w-auto"
           >
             <RefreshCw className={refreshing ? "animate-spin" : ""} />
             Refresh
           </Button>
-          <Button type="button" variant="ghost" size="sm" onClick={() => void handleLogout()}>
+          <Button
+            type="button"
+            variant="ghost"
+            size="sm"
+            onClick={() => void handleLogout()}
+            className="w-full sm:w-auto"
+          >
             Sign out
           </Button>
         </div>
@@ -274,46 +305,54 @@ export function AdminDashboard() {
                 <CardDescription>When listings and snapshots were last seen.</CardDescription>
               </CardHeader>
               <CardContent className="space-y-3 text-sm">
-                <div className="flex justify-between gap-4">
-                  <span className="text-muted-foreground">First seen range</span>
-                  <span className="text-right">
-                    {formatDate(stats.listings.dateRange.firstSeenEarliest)} →{" "}
-                    {formatDate(stats.listings.dateRange.firstSeenLatest)}
-                  </span>
-                </div>
-                <div className="flex justify-between gap-4">
-                  <span className="text-muted-foreground">Last seen range</span>
-                  <span className="text-right">
-                    {formatDate(stats.listings.dateRange.lastSeenEarliest)} →{" "}
-                    {formatDateTime(stats.listings.dateRange.lastSeenLatest)}
-                  </span>
-                </div>
-                <div className="flex justify-between gap-4">
-                  <span className="text-muted-foreground">Daily snapshots</span>
-                  <span className="text-right">
-                    {formatDate(stats.marketSnapshotsDaily.minDate)} →{" "}
-                    {formatDate(stats.marketSnapshotsDaily.maxDate)}
-                  </span>
-                </div>
-                <div className="flex justify-between gap-4">
-                  <span className="text-muted-foreground">Listing snapshots scraped</span>
-                  <span className="text-right">
-                    {formatDateTime(stats.listingSnapshots.earliest)} →{" "}
-                    {formatDateTime(stats.listingSnapshots.latest)}
-                  </span>
-                </div>
-                <div className="flex justify-between gap-4">
-                  <span className="text-muted-foreground">Local JSON bundle</span>
-                  <span className="text-right">{formatDateTime(stats.localDataUpdatedAt)}</span>
-                </div>
-                <div className="flex justify-between gap-4">
-                  <span className="text-muted-foreground">Rankings payload</span>
-                  <span className="text-right">
-                    {stats.rankings.present
+                <DetailRow
+                  label="First seen range"
+                  value={
+                    <>
+                      {formatDate(stats.listings.dateRange.firstSeenEarliest)} →{" "}
+                      {formatDate(stats.listings.dateRange.firstSeenLatest)}
+                    </>
+                  }
+                />
+                <DetailRow
+                  label="Last seen range"
+                  value={
+                    <>
+                      {formatDate(stats.listings.dateRange.lastSeenEarliest)} →{" "}
+                      {formatDateTime(stats.listings.dateRange.lastSeenLatest)}
+                    </>
+                  }
+                />
+                <DetailRow
+                  label="Daily snapshots"
+                  value={
+                    <>
+                      {formatDate(stats.marketSnapshotsDaily.minDate)} →{" "}
+                      {formatDate(stats.marketSnapshotsDaily.maxDate)}
+                    </>
+                  }
+                />
+                <DetailRow
+                  label="Listing snapshots scraped"
+                  value={
+                    <>
+                      {formatDateTime(stats.listingSnapshots.earliest)} →{" "}
+                      {formatDateTime(stats.listingSnapshots.latest)}
+                    </>
+                  }
+                />
+                <DetailRow
+                  label="Local JSON bundle"
+                  value={formatDateTime(stats.localDataUpdatedAt)}
+                />
+                <DetailRow
+                  label="Rankings payload"
+                  value={
+                    stats.rankings.present
                       ? formatDateTime(stats.rankings.updatedAt)
-                      : "Missing"}
-                  </span>
-                </div>
+                      : "Missing"
+                  }
+                />
               </CardContent>
             </Card>
 
@@ -323,43 +362,53 @@ export function AdminDashboard() {
                 <CardDescription>Coverage and sanity checks on active inventory.</CardDescription>
               </CardHeader>
               <CardContent className="space-y-3 text-sm">
-                <div className="flex justify-between gap-4">
-                  <span className="text-muted-foreground">market_id coverage</span>
-                  <span>
-                    {formatNumber(stats.listings.withMarketId)} ({marketIdPct}%)
-                  </span>
-                </div>
-                <div className="flex justify-between gap-4">
-                  <span className="text-muted-foreground">image_url coverage</span>
-                  <span>
-                    {formatNumber(stats.listings.withImageUrl)} ({imageUrlPct}%)
-                  </span>
-                </div>
-                <div className="flex justify-between gap-4">
-                  <span className="text-muted-foreground">Suspect rent &gt; $6k</span>
-                  <span className={stats.listings.suspectRentOver6k > 0 ? "text-destructive" : ""}>
-                    {formatNumber(stats.listings.suspectRentOver6k)}
-                  </span>
-                </div>
-                <div className="flex justify-between gap-4">
-                  <span className="text-muted-foreground">Days on market (active)</span>
-                  <span>
-                    min {formatNumber(stats.listings.daysOnMarket.min)} · avg{" "}
-                    {formatNumber(stats.listings.daysOnMarket.avg)} · max{" "}
-                    {formatNumber(stats.listings.daysOnMarket.max)}
-                  </span>
-                </div>
-                <div className="flex justify-between gap-4">
-                  <span className="text-muted-foreground">Listing snapshots</span>
-                  <span>
-                    {formatNumber(stats.listingSnapshots.total)} rows ·{" "}
-                    {formatNumber(stats.listingSnapshots.uniqueListings)} listings
-                  </span>
-                </div>
-                <div className="flex justify-between gap-4">
-                  <span className="text-muted-foreground">Snapshot table rows</span>
-                  <span>{formatNumber(stats.marketSnapshotsDaily.totalRows)}</span>
-                </div>
+                <DetailRow
+                  label="market_id coverage"
+                  value={
+                    <>
+                      {formatNumber(stats.listings.withMarketId)} ({marketIdPct}%)
+                    </>
+                  }
+                />
+                <DetailRow
+                  label="image_url coverage"
+                  value={
+                    <>
+                      {formatNumber(stats.listings.withImageUrl)} ({imageUrlPct}%)
+                    </>
+                  }
+                />
+                <DetailRow
+                  label="Suspect rent > $6k"
+                  value={
+                    <span className={stats.listings.suspectRentOver6k > 0 ? "text-destructive" : ""}>
+                      {formatNumber(stats.listings.suspectRentOver6k)}
+                    </span>
+                  }
+                />
+                <DetailRow
+                  label="Days on market (active)"
+                  value={
+                    <>
+                      min {formatNumber(stats.listings.daysOnMarket.min)} · avg{" "}
+                      {formatNumber(stats.listings.daysOnMarket.avg)} · max{" "}
+                      {formatNumber(stats.listings.daysOnMarket.max)}
+                    </>
+                  }
+                />
+                <DetailRow
+                  label="Listing snapshots"
+                  value={
+                    <>
+                      {formatNumber(stats.listingSnapshots.total)} rows ·{" "}
+                      {formatNumber(stats.listingSnapshots.uniqueListings)} listings
+                    </>
+                  }
+                />
+                <DetailRow
+                  label="Snapshot table rows"
+                  value={formatNumber(stats.marketSnapshotsDaily.totalRows)}
+                />
               </CardContent>
             </Card>
           </section>
@@ -370,7 +419,8 @@ export function AdminDashboard() {
               <CardDescription>Active and inactive counts per source and listing type.</CardDescription>
             </CardHeader>
             <CardContent>
-              <Table>
+              <AdminTableWrap>
+                <Table>
                 <TableHeader>
                   <TableRow>
                     <TableHead>Type</TableHead>
@@ -406,6 +456,7 @@ export function AdminDashboard() {
                   )}
                 </TableBody>
               </Table>
+              </AdminTableWrap>
             </CardContent>
           </Card>
 
@@ -415,6 +466,7 @@ export function AdminDashboard() {
                 <CardTitle>Top cities (active)</CardTitle>
               </CardHeader>
               <CardContent>
+                <AdminTableWrap>
                 <Table>
                   <TableHeader>
                     <TableRow>
@@ -433,6 +485,7 @@ export function AdminDashboard() {
                     ))}
                   </TableBody>
                 </Table>
+                </AdminTableWrap>
               </CardContent>
             </Card>
 
@@ -442,6 +495,7 @@ export function AdminDashboard() {
                 <CardDescription>Last 10 pipeline ingests mirrored to Supabase.</CardDescription>
               </CardHeader>
               <CardContent>
+                <AdminTableWrap>
                 <Table>
                   <TableHeader>
                     <TableRow>
@@ -474,6 +528,7 @@ export function AdminDashboard() {
                     )}
                   </TableBody>
                 </Table>
+                </AdminTableWrap>
               </CardContent>
             </Card>
           </section>
