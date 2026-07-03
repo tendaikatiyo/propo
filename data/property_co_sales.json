@@ -8346,6 +8346,24 @@
     "land_size_unit": "sqm"
   },
   {
+    "title": "Upmarket Residential Property Up For Sale - Finish To Your Own Taste",
+    "listing_url": "https://www.property.co.zw/for-sale/houses-smy250615",
+    "price_raw": "USD 400,000",
+    "price": 400000,
+    "location": "Brookview, Harare, Zimbabwe",
+    "suburb": "Brookview",
+    "city": "Harare",
+    "property_type": "house",
+    "description": "INCOMPLETE STRUCUTER AT SLAB LEVEL -  8-bedroom, 4-bathroom family home on a generous 4,000 m² stand in desirable Brookview, Harare North — 800 m² of solid living space with excellent development potential. The images show a quiet, gently sloping street with established boundary walls and a pleasing outlook across Harare (panoramic street views in photos). A working borehole is pictured on site, ensuring reliable water supply and peace of mind. Also visible are exposed foundation columns and brickwork, offering options to complete or expand existing structures to suit a multi-generational household..  Mature trees and lawned areas provide private outdoor space for gardens, play areas, or parking. Ideal for investors or large families seeking room to grow in a serene North Harare neighbourhood. Contact us to arrange a viewing and explore the development potential.",
+    "bedrooms": 8,
+    "bathrooms": 4,
+    "lounges": 0,
+    "agency_name": "Sermony Properties",
+    "agency_logo": "https://www.property.co.zw/uploadedfiles/fe/28/b3/fe28b3aa-6721-4f63-acd1-2f5a000702bd.webp",
+    "land_size": 4000.0,
+    "land_size_unit": "sqm"
+  },
+  {
     "title": "Prime Milton Park Investment Opportunity",
     "listing_url": "https://www.property.co.zw/for-sale/houses-lcre248563",
     "price_raw": "USD 270,000",
@@ -8688,24 +8706,6 @@
     "land_size_unit": "sqm"
   },
   {
-    "title": "Newly built beautiful home for Sale in Rainham Park - gated community.",
-    "listing_url": "https://www.property.co.zw/for-sale/houses-dcpt250005",
-    "price_raw": "USD 90,000",
-    "price": 90000,
-    "location": "Rainham, Harare, Zimbabwe",
-    "suburb": "Rainham",
-    "city": "Harare",
-    "property_type": "house",
-    "description": "Located in the secure and rapidly developing Rainham Park gated community, this newly built modern family home offers comfort, convenience, and excellent value. Sitting on a 240sqm corner stand, the property is vacant and ready for immediate occupation.\n\nThe home comprises three well-sized bedrooms, including a main bedroom with an ensuite bathroom. There are two modern bathrooms fitted with both a shower and bathtub, as well as a separate guest toilet for added convenience. The neatly fitted kitchen flows into a comfortable lounge area, creating a warm and functional living space for the family.\n\nOutside, the property boasts a paved and landscaped yard, enhancing its overall appeal and providing a low-maintenance outdoor environment. Essential services are already in place, including council water, a water tank with a booster pump, and electricity.\n\nSituated in a fully servic...",
-    "bedrooms": 3,
-    "bathrooms": 3,
-    "lounges": 0,
-    "agency_name": "Decorum Properties",
-    "agency_logo": "https://www.property.co.zw/uploadedfiles/bd/5c/74/bd5c7445-f140-4eac-9dd9-433bb533e549.webp",
-    "land_size": 240.0,
-    "land_size_unit": "sqm"
-  },
-  {
     "title": "Stylish 5-Bed Double-Storey in Vainona — Garage & Balcony",
     "listing_url": "https://www.property.co.zw/for-sale/townhouses-cami248729",
     "price_raw": "USD 550,000",
@@ -8739,6 +8739,24 @@
     "agency_name": "Camitel",
     "agency_logo": "https://www.property.co.zw/uploadedfiles/3c/b9/d8/3cb9d832-5e57-47e2-ad79-b9f8c1ddb6bf.jpg",
     "land_size": 2000.0,
+    "land_size_unit": "sqm"
+  },
+  {
+    "title": "Newly built beautiful home for Sale in Rainham Park - gated community.",
+    "listing_url": "https://www.property.co.zw/for-sale/houses-dcpt250005",
+    "price_raw": "USD 90,000",
+    "price": 90000,
+    "location": "Rainham, Harare, Zimbabwe",
+    "suburb": "Rainham",
+    "city": "Harare",
+    "property_type": "house",
+    "description": "Located in the secure and rapidly developing Rainham Park gated community, this newly built modern family home offers comfort, convenience, and excellent value. Sitting on a 240sqm corner stand, the property is vacant and ready for immediate occupation.\n\nThe home comprises three well-sized bedrooms, including a main bedroom with an ensuite bathroom. There are two modern bathrooms fitted with both a shower and bathtub, as well as a separate guest toilet for added convenience. The neatly fitted kitchen flows into a comfortable lounge area, creating a warm and functional living space for the family.\n\nOutside, the property boasts a paved and landscaped yard, enhancing its overall appeal and providing a low-maintenance outdoor environment. Essential services are already in place, including council water, a water tank with a booster pump, and electricity.\n\nSituated in a fully servic...",
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "lounges": 0,
+    "agency_name": "Decorum Properties",
+    "agency_logo": "https://www.property.co.zw/uploadedfiles/bd/5c/74/bd5c7445-f140-4eac-9dd9-433bb533e549.webp",
+    "land_size": 240.0,
     "land_size_unit": "sqm"
   },
   {
@@ -9082,24 +9100,6 @@
     "land_size_unit": "sqm"
   },
   {
-    "title": "Sunlit 4-Bed House in New Marimba with Borehole",
-    "listing_url": "https://www.property.co.zw/for-sale/townhouses-thre249643",
-    "price_raw": "USD 100,000",
-    "price": 100000,
-    "location": "Marimba Park, Harare, Zimbabwe",
-    "suburb": "Marimba Park",
-    "city": "Harare",
-    "property_type": "townhouse",
-    "description": "MORDEN HOUSE FOR SALE\n\nNEW MARIMBA\nIDBZ project\n\nneat and well maintained\n4 beds main ensuite\nseparate lounge dining\nmodern fitted kitchen\nceramic floor tiles\nceiling\nsolar system\npaved\nelectric gate \nborehole \nwater tank \nwalled and gated\non 438sqm\nready for title",
-    "bedrooms": 4,
-    "bathrooms": 2,
-    "lounges": 0,
-    "agency_name": "Tripple Horizon Real Estate",
-    "agency_logo": "https://www.property.co.zw/uploadedfiles/63/41/2f/63412f3c-323b-4c11-9a62-5a20f29e6544.webp",
-    "land_size": 438.0,
-    "land_size_unit": "sqm"
-  },
-  {
     "title": "Arlington 4-Bed Townhouse Complex ,Borehole, Solar & 24hr Security",
     "listing_url": "https://www.property.co.zw/for-sale/townhouses-cami249353",
     "price_raw": "USD 165,000",
@@ -9133,6 +9133,24 @@
     "agency_name": "Camitel",
     "agency_logo": "https://www.property.co.zw/uploadedfiles/3c/b9/d8/3cb9d832-5e57-47e2-ad79-b9f8c1ddb6bf.jpg",
     "land_size": 500.0,
+    "land_size_unit": "sqm"
+  },
+  {
+    "title": "Sunlit 4-Bed House in New Marimba with Borehole",
+    "listing_url": "https://www.property.co.zw/for-sale/townhouses-thre249643",
+    "price_raw": "USD 100,000",
+    "price": 100000,
+    "location": "Marimba Park, Harare, Zimbabwe",
+    "suburb": "Marimba Park",
+    "city": "Harare",
+    "property_type": "townhouse",
+    "description": "MORDEN HOUSE FOR SALE\n\nNEW MARIMBA\nIDBZ project\n\nneat and well maintained\n4 beds main ensuite\nseparate lounge dining\nmodern fitted kitchen\nceramic floor tiles\nceiling\nsolar system\npaved\nelectric gate \nborehole \nwater tank \nwalled and gated\non 438sqm\nready for title",
+    "bedrooms": 4,
+    "bathrooms": 2,
+    "lounges": 0,
+    "agency_name": "Tripple Horizon Real Estate",
+    "agency_logo": "https://www.property.co.zw/uploadedfiles/63/41/2f/63412f3c-323b-4c11-9a62-5a20f29e6544.webp",
+    "land_size": 438.0,
     "land_size_unit": "sqm"
   },
   {
@@ -9478,24 +9496,6 @@
     "land_size_unit": "sqm"
   },
   {
-    "title": "Montgomery Property For Sale. Good Buy.",
-    "listing_url": "https://www.property.co.zw/for-sale/houses-pgp247409",
-    "price_raw": "USD 85,000",
-    "price": 85000,
-    "location": "Glengarry, Bulawayo, Zimbabwe",
-    "suburb": "Glengarry",
-    "city": "Bulawayo",
-    "property_type": "house",
-    "description": "Located in Montgomery, this property offers great potential for redevelopment or renovation, sitting on a generous 8,506m² stand. The property comprises a dilapidated 3-bedroom house with a main ensuite, lounge, dining room, kitchen, and entrance hall. \n\nAdditional improvements include staff quarters, as well as a borehole that is currently not equipped, with a water tank already in place. Conveniently situated close to Fairbridge Police Station and approximately 100 metres from the main road, the property enjoys easy access to key amenities and transport routes. \n\nThe property comes with Title Deeds.",
-    "bedrooms": 3,
-    "bathrooms": 2,
-    "lounges": 0,
-    "agency_name": "Pam Golding Properties",
-    "agency_logo": "https://www.property.co.zw/uploadedfiles/76/b8/ba/76b8ba53-6999-424e-99ad-6532e21930e5.jpg",
-    "land_size": 8056.0,
-    "land_size_unit": "sqm"
-  },
-  {
     "title": "Striking Contemporary Living",
     "listing_url": "https://www.property.co.zw/for-sale/houses-clrp241523",
     "price_raw": "USD 1,150,000",
@@ -9529,6 +9529,24 @@
     "agency_name": "The Benjamins Realty",
     "agency_logo": "https://www.property.co.zw/uploadedfiles/d2/eb/aa/d2ebaafe-b5ea-447a-a9a1-3d610360a7c2.jpg",
     "land_size": 2812.0,
+    "land_size_unit": "sqm"
+  },
+  {
+    "title": "Montgomery Property For Sale. Good Buy.",
+    "listing_url": "https://www.property.co.zw/for-sale/houses-pgp247409",
+    "price_raw": "USD 85,000",
+    "price": 85000,
+    "location": "Glengarry, Bulawayo, Zimbabwe",
+    "suburb": "Glengarry",
+    "city": "Bulawayo",
+    "property_type": "house",
+    "description": "Located in Montgomery, this property offers great potential for redevelopment or renovation, sitting on a generous 8,506m² stand. The property comprises a dilapidated 3-bedroom house with a main ensuite, lounge, dining room, kitchen, and entrance hall. \n\nAdditional improvements include staff quarters, as well as a borehole that is currently not equipped, with a water tank already in place. Conveniently situated close to Fairbridge Police Station and approximately 100 metres from the main road, the property enjoys easy access to key amenities and transport routes. \n\nThe property comes with Title Deeds.",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "lounges": 0,
+    "agency_name": "Pam Golding Properties",
+    "agency_logo": "https://www.property.co.zw/uploadedfiles/76/b8/ba/76b8ba53-6999-424e-99ad-6532e21930e5.jpg",
+    "land_size": 8056.0,
     "land_size_unit": "sqm"
   },
   {
@@ -9874,24 +9892,6 @@
     "land_size_unit": "sqm"
   },
   {
-    "title": "Kariba Hillside 6-Bed Stone Home, Dam Views & Borehole",
-    "listing_url": "https://www.property.co.zw/for-sale/houses-rws234950",
-    "price_raw": "USD 160,000",
-    "price": 160000,
-    "location": "Kariba, Kariba, Zimbabwe",
-    "suburb": "Kariba",
-    "city": "Kariba",
-    "property_type": "house",
-    "description": "Kariba Impressive stone-built family home or potential guest lodge on a 2,100 m² elevated plot in Kariba, Mashonaland West. This substantial 400 m², two-level residence features 6 bedrooms all ensuited, generous verandas and large windows that frame sweeping views of the lake and distant mountains. The exterior showcases traditional local stonework and a green corrugated roof, with terraced landscaping and secure retaining walls blending into the sloping site.\n\nInside, generous open-plan living areas and a central stairwell create bright, airy spaces ready for finishing touches or customisation to suit a family home or boutique lodge. Multiple covered terraces provide excellent entertaining areas and capture cooling breezes and the spectacular Kariba vistas. Ample parking and natural tree cover offer privacy and potential for gardens or expansion. A rare opportunity to own a substan...",
-    "bedrooms": 6,
-    "bathrooms": 6,
-    "lounges": 0,
-    "agency_name": "Rawson Properties Harare",
-    "agency_logo": "https://www.property.co.zw/uploadedfiles/9e/86/67/9e8667c8-6d7c-446d-bbd5-547ff9b1c4cd.jpg",
-    "land_size": 2100.0,
-    "land_size_unit": "sqm"
-  },
-  {
     "title": "A Solid Gem In A Premium Location!",
     "listing_url": "https://www.property.co.zw/for-sale/houses-alx248579",
     "price_raw": "USD 900,000",
@@ -9907,6 +9907,24 @@
     "agency_name": "AlexCourt Real Estate",
     "agency_logo": "https://www.property.co.zw/uploadedfiles/f3/a3/1a/f3a31a42-85fe-44e2-820c-a7d09ecc4b58.jpeg",
     "land_size": 3600.0,
+    "land_size_unit": "sqm"
+  },
+  {
+    "title": "Kariba Hillside 6-Bed Stone Home, Dam Views & Borehole",
+    "listing_url": "https://www.property.co.zw/for-sale/houses-rws234950",
+    "price_raw": "USD 160,000",
+    "price": 160000,
+    "location": "Kariba, Kariba, Zimbabwe",
+    "suburb": "Kariba",
+    "city": "Kariba",
+    "property_type": "house",
+    "description": "Kariba Impressive stone-built family home or potential guest lodge on a 2,100 m² elevated plot in Kariba, Mashonaland West. This substantial 400 m², two-level residence features 6 bedrooms all ensuited, generous verandas and large windows that frame sweeping views of the lake and distant mountains. The exterior showcases traditional local stonework and a green corrugated roof, with terraced landscaping and secure retaining walls blending into the sloping site.\n\nInside, generous open-plan living areas and a central stairwell create bright, airy spaces ready for finishing touches or customisation to suit a family home or boutique lodge. Multiple covered terraces provide excellent entertaining areas and capture cooling breezes and the spectacular Kariba vistas. Ample parking and natural tree cover offer privacy and potential for gardens or expansion. A rare opportunity to own a substan...",
+    "bedrooms": 6,
+    "bathrooms": 6,
+    "lounges": 0,
+    "agency_name": "Rawson Properties Harare",
+    "agency_logo": "https://www.property.co.zw/uploadedfiles/9e/86/67/9e8667c8-6d7c-446d-bbd5-547ff9b1c4cd.jpg",
+    "land_size": 2100.0,
     "land_size_unit": "sqm"
   },
   {

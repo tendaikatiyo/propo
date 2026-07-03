@@ -7,6 +7,7 @@ import { SuburbActionBar } from "@/components/mobile/suburb-action-bar";
 import { PinButton } from "@/components/markets/pin-button";
 import { SampleSizeBadge, ScopeLabel } from "@/components/markets/sample-size-badge";
 import { SuburbValueListings } from "@/components/listings/suburb-value-listings";
+import { SuburbLandListings } from "@/components/listings/suburb-land-listings";
 import { PropertyMixBar } from "@/components/markets/property-mix-bar";
 import { SuburbTrendsSection } from "@/components/markets/suburb-trends-section";
 import { ConfidenceBadge } from "@/components/markets/confidence-badge";
@@ -186,8 +187,9 @@ export function SuburbProfile({
         </CardContent>
       </Card>
 
-      <div id="suburb-listings">
+      <div id="suburb-listings" className="space-y-8">
         <SuburbValueListings market={market} />
+        <SuburbLandListings marketId={market.market_id} />
       </div>
 
       {related.length ? (

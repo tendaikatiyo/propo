@@ -6,6 +6,8 @@ import { ListingCard } from "@/components/listings/listing-card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useMarketLookup } from "@/hooks/use-market-lookup";
 import { fetchListingsFromApi } from "@/lib/listings-client";
+import { isLandMode } from "@/lib/mode";
+import { formatPricePerSqm } from "@/lib/format";
 import type { ExploreMode, PropertyType } from "@/lib/types";
 
 export function BudgetListingsPreview({
@@ -19,6 +21,7 @@ export function BudgetListingsPreview({
   city: string | null;
   propertyType: PropertyType | null;
 }) {
+  const land = isLandMode(mode);
   const { getMarket } = useMarketLookup();
 
   const { data = [], isLoading, isError } = useQuery({
@@ -28,7 +31,7 @@ export function BudgetListingsPreview({
         mode,
         budget,
         city,
-        propertyType,
+        propertyType: land ? null : propertyType,
         tier: "in",
         limit: 4,
       }),
@@ -60,9 +63,13 @@ export function BudgetListingsPreview({
   return (
     <section className="space-y-4">
       <div>
-        <h2 className="font-heading text-lg font-medium">Active listings in budget</h2>
+        <h2 className="font-heading text-lg font-medium">
+          {land ? "Active land listings in budget" : "Active listings in budget"}
+        </h2>
         <p className="text-sm text-muted-foreground">
-          Sample active listings that match your criteria.
+          {land
+            ? `Stands at or below ${formatPricePerSqm(budget)} in your selected area.`
+            : "Sample active listings that match your criteria."}
         </p>
       </div>
       <div className="grid gap-3 sm:grid-cols-2">
@@ -70,7 +77,7 @@ export function BudgetListingsPreview({
           <ListingCard
             key={listing.listing_url}
             listing={listing}
-            market={getMarket(listing.city, listing.suburb, listing.market_id)}
+            market={land ? null : getMarket(listing.city, listing.suburb, listing.market_id)}
           />
         ))}
       </div>

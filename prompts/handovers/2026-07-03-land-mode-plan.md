@@ -1,7 +1,7 @@
 # Land mode plan — Rent | Buy | Land
 
 **Date:** 2026-07-03  
-**Status:** Planned (not started)  
+**Status:** Phase 4 done (2026-07-03) — MVP complete; Phase 5 optional  
 **Goal:** Add land/stands as a third top-level explore mode, standardized on **price per sqm**, alongside existing rent and buy flows.
 
 ---
@@ -122,6 +122,20 @@ Optional size bands for v2: `0–500`, `500–1000`, `1000+` sqm segments.
 - Sync to Supabase alongside `market_metrics` (mirror `analytics/sync_dashboard.py` pattern)
 - Do **not** add land to `clean_sales.json` or existing sale aggregates
 
+### Phase 1 shipped (2026-07-03)
+
+| Deliverable | Path |
+| ----------- | ---- |
+| Size / $/sqm helpers | `analytics/land_utils.py` |
+| Suburb aggregation | `analytics/land_metrics.py` |
+| Output JSON | `data/land_metrics.json` (313 suburbs, 4811 listings, 4564 priced) |
+| Supabase migration | `supabase/migrations/011_land_metrics.sql` |
+| Dashboard sync | `analytics/sync_dashboard.py` → `sync_land_metrics()` |
+| npm script | `npm run analytics:land` (included in `analytics:build` / `analytics:build:db`) |
+| DOM on land export | `analytics/ingest.py` `_to_land_shape()` includes `days_on_market` (populates on next ingest) |
+
+Apply migration **011** on production Supabase, then run `npm run analytics:land` and `pipeline:supabase` (or full `pipeline:cloud`) to sync.
+
 ---
 
 ## Phase 2 — Types and filter model
@@ -167,6 +181,26 @@ Start with **A**; add min stand size in v2 if users ask for it.
 ```
 
 Extend `use-explore-filters.ts` `parseMode()` and `budgetForMode()`.
+
+### Phase 2 shipped (2026-07-03)
+
+| Deliverable | Path |
+| ----------- | ---- |
+| `ExploreMode` + `LandMetric` type | `web/src/lib/types.ts` |
+| Land budget constants + filter normalization | `web/src/lib/constants.ts` |
+| Mode helpers (`parseExploreMode`, `defaultBudgetForMode`, …) | `web/src/lib/mode.ts` |
+| Land explore filter/rank/sort | `web/src/lib/land-explore.ts` |
+| `budgetForMode` land snap | `web/src/lib/explore.ts` |
+| Segment guards for land mode | `web/src/lib/segments.ts` |
+| `formatPricePerSqm` | `web/src/lib/format.ts` |
+| Land mode accent color | `web/src/lib/mode-accent.ts` |
+| URL filter hook | `web/src/hooks/use-explore-filters.ts` |
+| `fetchLandMetrics` + API | `web/src/lib/data-server.ts`, `web/src/app/api/land-metrics/route.ts` |
+| Client hook | `web/src/hooks/use-market-data.ts` → `useLandMetrics()` |
+| Budget slider $/sqm label | `web/src/components/filters/budget-slider.tsx` |
+| Metric tooltips / column defs | `web/src/lib/metric-tooltips.ts` |
+
+**Try it:** `/explore?mode=land&budget=50&city=Harare` (Phase 3 UI will wire results to land data).
 
 ---
 
@@ -217,6 +251,22 @@ Show:
 
 Hide: bedroom count.
 
+### Phase 3 shipped (2026-07-03)
+
+| Deliverable | Path |
+| ----------- | ---- |
+| Shared mode toggle (Rent / Buy / Land) | `web/src/components/filters/explore-mode-toggle.tsx` |
+| Explore filters — land mode, hide property type | `web/src/components/filters/filter-bar.tsx` |
+| Explore results wired to land metrics | `web/src/components/markets/explore-results.tsx` |
+| Land suburb table (desktop) | `web/src/components/markets/land-suburb-table.tsx` |
+| Land suburb card | `web/src/components/markets/land-suburb-card.tsx` |
+| Land suburb list (mobile) | `web/src/components/mobile/land-suburb-list.tsx` |
+| Home page land mode + preview | `web/src/components/home/home-page.tsx` |
+| Mobile budget bar land $/sqm | `web/src/components/mobile/home-budget-bar.tsx` |
+| Conditional data hooks | `web/src/hooks/use-market-data.ts` (`enabled` option) |
+
+**Try it:** Home → “I'm buying land” → Explore, or `/explore?mode=land&budget=50&city=Harare`
+
 ---
 
 ## Phase 4 — Listings API
@@ -238,6 +288,21 @@ Extend `GET /api/listings` (or add `GET /api/land-listings`):
 Remove `isLandPropertyType` exclusion when `query.mode === "land"`.
 
 Filter and rank on computed `price_per_sqm`, not raw `price`.
+
+### Phase 4 shipped (2026-07-03)
+
+| Deliverable | Path |
+| ----------- | ---- |
+| $/sqm normalization (TS) | `web/src/lib/land-listings.ts` |
+| `fetchLandListings` + `mode=land` in `fetchListings` | `web/src/lib/data-server.ts` |
+| Listings API `mode=land` | `web/src/app/api/listings/route.ts` |
+| Listing type fields | `web/src/lib/types.ts` (`land_size`, `price_per_sqm`, …) |
+| Land listing card UI | `web/src/components/listings/listing-card.tsx` |
+| Home budget listings (land) | `web/src/components/listings/budget-listings.tsx` |
+| Suburb land listings section | `web/src/components/listings/suburb-land-listings.tsx` |
+| `formatLandSize` | `web/src/lib/format.ts` |
+
+**Try it:** `/api/listings?mode=land&budget=50&city=Harare&limit=4`
 
 ---
 

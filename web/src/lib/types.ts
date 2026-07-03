@@ -6,7 +6,23 @@ export type PropertyType =
   | "townhouse"
   | "commercial";
 
-export type ExploreMode = "rent" | "buy";
+export type ExploreMode = "rent" | "buy" | "land";
+
+export interface LandMetric {
+  market_id: string;
+  city: string;
+  suburb: string;
+  land_count: number;
+  priced_land_count: number;
+  median_price_per_sqm: number | null;
+  average_price_per_sqm: number | null;
+  minimum_price_per_sqm: number | null;
+  maximum_price_per_sqm: number | null;
+  median_days_on_market_land: number | null;
+  average_days_on_market_land: number | null;
+  confidence_score: number;
+  updated_at?: string;
+}
 
 export interface MarketSegmentStats {
   median_rent?: number | null;
@@ -109,6 +125,10 @@ export interface Listing {
   agency_logo?: string | null;
   description?: string | null;
   market_id?: string | null;
+  land_size?: number | null;
+  land_size_unit?: string | null;
+  land_size_sqm?: number | null;
+  price_per_sqm?: number | null;
 }
 
 export interface PinnedMarket {
@@ -140,6 +160,8 @@ export type SortKey =
   | "city"
   | "median_rent"
   | "median_sale_price"
+  | "median_price_per_sqm"
+  | "land_count"
   | "yield_percent"
   | "confidence_score"
   | "opportunity_score";

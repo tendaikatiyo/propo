@@ -4,19 +4,18 @@ import { useCallback, useMemo } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 import {
-  DEFAULT_BUY_BUDGET,
   DEFAULT_CITY,
-  DEFAULT_RENT_BUDGET,
   normalizeExploreFilters,
   normalizePropertyType,
 } from "@/lib/constants";
 import { trackExploreFilterChange } from "@/lib/analytics/track";
 import { budgetForMode } from "@/lib/explore";
-import type { ExploreFilters, ExploreMode, PropertyType } from "@/lib/types";
+import { defaultBudgetForMode, parseExploreMode } from "@/lib/mode";
+import type { ExploreFilters, PropertyType } from "@/lib/types";
 
 const DEFAULT_FILTERS: ExploreFilters = {
   mode: "rent",
-  budget: DEFAULT_RENT_BUDGET,
+  budget: defaultBudgetForMode("rent"),
   city: DEFAULT_CITY,
   propertyType: null,
   bedroom: null,
@@ -29,19 +28,15 @@ function parsePropertyType(value: string | null): PropertyType | null {
   return normalizePropertyType(value);
 }
 
-function parseMode(value: string | null): ExploreMode {
-  return value === "buy" ? "buy" : "rent";
-}
-
 export function useExploreFilters() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
 
   const filters = useMemo<ExploreFilters>(() => {
-    const mode = parseMode(searchParams.get("mode"));
+    const mode = parseExploreMode(searchParams.get("mode"));
     const budgetParam = Number(searchParams.get("budget"));
-    const defaultBudget = mode === "rent" ? DEFAULT_RENT_BUDGET : DEFAULT_BUY_BUDGET;
+    const defaultBudget = defaultBudgetForMode(mode);
     const cityParam = searchParams.get("city");
     const rawBudget =
       Number.isFinite(budgetParam) && budgetParam > 0 ? budgetParam : defaultBudget;
@@ -67,7 +62,7 @@ export function useExploreFilters() {
       const params = new URLSearchParams();
 
       if (next.mode !== "rent") params.set("mode", next.mode);
-      if (next.budget !== (next.mode === "rent" ? DEFAULT_RENT_BUDGET : DEFAULT_BUY_BUDGET)) {
+      if (next.budget !== defaultBudgetForMode(next.mode)) {
         params.set("budget", String(next.budget));
       }
       if (next.city) {

@@ -6,6 +6,7 @@ import { PinButton } from "@/components/markets/pin-button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { buildCompareMetrics, getBestMarketId } from "@/lib/explore";
 import { formatCurrency, formatNumber, formatPercent, sanitizeLabel } from "@/lib/format";
+import { isResidentialExploreMode } from "@/lib/mode";
 import { isUsingAggregateFallback } from "@/lib/segments";
 import { suburbPath } from "@/lib/slug";
 import type { CompareFilters, MarketMetric } from "@/lib/types";
@@ -29,7 +30,9 @@ const MOBILE_METRIC_KEYS: Record<"rent" | "buy", string[]> = {
 
 function mobileCompareMetrics(filters: CompareFilters) {
   const all = buildCompareMetrics(filters);
-  const keys = MOBILE_METRIC_KEYS[filters.mode];
+  const keys = isResidentialExploreMode(filters.mode)
+    ? MOBILE_METRIC_KEYS[filters.mode]
+    : [];
   return keys
     .map((key) => all.find((row) => row.key === key))
     .filter((row): row is (typeof all)[number] => row != null);

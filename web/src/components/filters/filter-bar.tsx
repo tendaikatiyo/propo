@@ -2,6 +2,7 @@
 
 import { BudgetSlider } from "@/components/filters/budget-slider";
 import { CitySearchCombobox } from "@/components/filters/city-search-combobox";
+import { ExploreModeToggle } from "@/components/filters/explore-mode-toggle";
 import { PropertyTypeButtons } from "@/components/filters/property-type-buttons";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -10,10 +11,8 @@ import { Separator } from "@/components/ui/separator";
 import { Switch } from "@/components/ui/switch";
 import { useCities } from "@/hooks/use-market-data";
 import { useExploreFilters } from "@/hooks/use-explore-filters";
-import {
-  DEFAULT_BUY_BUDGET,
-  DEFAULT_RENT_BUDGET,
-} from "@/lib/constants";
+import { budgetForMode } from "@/lib/explore";
+import { isLandMode } from "@/lib/mode";
 import { hasActiveSegmentFilters } from "@/lib/segments";
 
 function FilterSwitchRow({
@@ -59,6 +58,7 @@ export function ExploreFilterPanel({
 
   const filterOptions = targetPath ? { targetPath } : undefined;
   const isRoom = filters.propertyType === "room";
+  const land = isLandMode(filters.mode);
 
   const apply = (patch: Parameters<typeof setFilters>[0]) => {
     setFilters(patch, filterOptions);
@@ -74,28 +74,23 @@ export function ExploreFilterPanel({
     <div className="space-y-6">
       <section className="space-y-3">
         <Label className="caption-label">I want to</Label>
-        <div className="grid grid-cols-2 gap-2">
-          {(["rent", "buy"] as const).map((mode) => (
-            <Button
-              key={mode}
-              type="button"
-              variant={filters.mode === mode ? "default" : "outline"}
-              onClick={() =>
-                apply({
-                  mode,
-                  budget:
-                    mode === filters.mode
-                      ? filters.budget
-                      : mode === "rent"
-                        ? DEFAULT_RENT_BUDGET
-                        : DEFAULT_BUY_BUDGET,
-                })
-              }
-            >
-              {mode === "rent" ? "Rent" : "Buy"}
-            </Button>
-          ))}
-        </div>
+        <ExploreModeToggle
+          variant="short"
+          value={filters.mode}
+          onChange={(mode, defaultBudget) =>
+            apply({
+              mode,
+              budget:
+                mode === filters.mode
+                  ? filters.budget
+                  : budgetForMode(mode, defaultBudget),
+              ...(mode === "land" ? { propertyType: null, bedroom: null } : {}),
+              ...(mode === "buy" && filters.propertyType === "room"
+                ? { propertyType: null }
+                : {}),
+            })
+          }
+        />
       </section>
 
       <Separator />
@@ -117,29 +112,35 @@ export function ExploreFilterPanel({
         />
       </section>
 
-      <Separator />
+      {!land ? (
+        <>
+          <Separator />
 
-      <section className="space-y-3">
-        <Label className="caption-label">Property type</Label>
-        <PropertyTypeButtons
-          mode={filters.mode}
-          value={filters.propertyType}
-          onChange={(propertyType) => apply({ propertyType })}
-        />
-      </section>
+          <section className="space-y-3">
+            <Label className="caption-label">Property type</Label>
+            <PropertyTypeButtons
+              mode={filters.mode}
+              value={filters.propertyType}
+              onChange={(propertyType) => apply({ propertyType })}
+            />
+          </section>
 
-      {isRoom ? (
-        <p className="text-xs text-muted-foreground">Rooms are listed as single occupancy (1 bed).</p>
-      ) : null}
+          {isRoom ? (
+            <p className="text-xs text-muted-foreground">
+              Rooms are listed as single occupancy (1 bed).
+            </p>
+          ) : null}
 
-      {hasActiveSegmentFilters(filters) ? (
-        <FilterSwitchRow
-          id="include-suburb-medians"
-          label="Include suburb medians"
-          description="When on, we also show suburbs where we only have a suburb-wide average — not enough listings for your property type."
-          checked={!filters.hideSuburbMedianFallback}
-          onCheckedChange={(checked) => apply({ hideSuburbMedianFallback: !checked })}
-        />
+          {hasActiveSegmentFilters(filters) ? (
+            <FilterSwitchRow
+              id="include-suburb-medians"
+              label="Include suburb medians"
+              description="When on, we also show suburbs where we only have a suburb-wide average — not enough listings for your property type."
+              checked={!filters.hideSuburbMedianFallback}
+              onCheckedChange={(checked) => apply({ hideSuburbMedianFallback: !checked })}
+            />
+          ) : null}
+        </>
       ) : null}
 
       <Separator />

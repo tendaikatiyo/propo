@@ -16,7 +16,7 @@ export type SuburbClickPayload = {
   city: string;
   suburb: string;
   source: "explore_card" | "explore_table" | "explore_list" | "home_card";
-  mode?: "rent" | "buy";
+  mode?: "rent" | "buy" | "land";
 };
 
 export type ListingClickPayload = {

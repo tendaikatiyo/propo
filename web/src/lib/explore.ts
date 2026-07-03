@@ -2,7 +2,9 @@ import {
   BEDROOM_COUNT_KEY,
   BUY_BUDGET_RANGE,
   DEFAULT_BUY_BUDGET,
+  DEFAULT_LAND_BUDGET_PER_SQM,
   DEFAULT_RENT_BUDGET,
+  LAND_BUDGET_RANGE,
   MIN_CONFIDENCE_THRESHOLD,
   PROPERTY_TYPE_COUNT_KEY,
   STRETCH_BUDGET_MULTIPLIER,
@@ -33,6 +35,13 @@ function getPriceForMode(
 
 /** Snap budget to the correct default when mode and amount disagree (e.g. $800 left on buy). */
 export function budgetForMode(mode: ExploreMode, current: number): number {
+  if (mode === "land") {
+    if (current >= BUY_BUDGET_RANGE.min || current < LAND_BUDGET_RANGE.min) {
+      return DEFAULT_LAND_BUDGET_PER_SQM;
+    }
+    if (current > LAND_BUDGET_RANGE.max) return DEFAULT_LAND_BUDGET_PER_SQM;
+    return current;
+  }
   if (mode === "buy" && current < BUY_BUDGET_RANGE.min) return DEFAULT_BUY_BUDGET;
   if (mode === "rent" && current >= BUY_BUDGET_RANGE.min) return DEFAULT_RENT_BUDGET;
   return current;
@@ -118,6 +127,7 @@ export function sortMarkets(
   const sorted = [...markets].sort((a, b) => {
     if (key === "suburb") return a.suburb.localeCompare(b.suburb);
     if (key === "city") return a.city.localeCompare(b.city);
+    if (key === "median_price_per_sqm" || key === "land_count") return 0;
     if (
       filters &&
       (key === "median_rent" || key === "median_sale_price")
@@ -140,6 +150,7 @@ export function rankExploreResults(
   mode: ExploreMode = "buy",
   filters?: Pick<ExploreFilters, "propertyType" | "bedroom">
 ): MarketMetric[] {
+  if (mode === "land") return markets;
   if (mode === "rent") {
     return [...markets].sort((a, b) => {
       const conf = (b.confidence_score ?? 0) - (a.confidence_score ?? 0);
@@ -200,7 +211,8 @@ function segmentListingCount(
   filters: Pick<CompareFilters, "propertyType" | "bedroom">,
   mode: ExploreMode
 ): number | null {
-  if (!hasActiveSegmentFilters(filters)) {
+  if (mode === "land") return null;
+  if (!hasActiveSegmentFilters({ ...filters, mode })) {
     return mode === "rent" ? market.rental_count : market.sale_count;
   }
   const segment = resolveSegmentStats(market, filters.propertyType, filters.bedroom);

@@ -3,7 +3,8 @@ import path from "path";
 import { execFileSync } from "child_process";
 
 import { STRETCH_BUDGET_MULTIPLIER, RANKINGS_MIN_CONFIDENCE } from "@/lib/constants";
-import { filterRankingsPayload, filterZimbabweCities, filterZimbabweMarkets, isZimbabweCity } from "@/lib/geo";
+import { filterRankingsPayload, filterZimbabweCities, filterZimbabweLandMarkets, filterZimbabweMarkets, isZimbabweCity } from "@/lib/geo";
+import { enrichLandListingFields, validPricePerSqm } from "@/lib/land-listings";
 import { isLandPropertyType, resolveListingThumbnailUrl } from "@/lib/listings";
 import { createServerSupabaseClient } from "@/lib/supabase";
 import {
@@ -25,6 +26,7 @@ import type {
   CityMetric,
   CityTrendMoversPayload,
   ExploreMode,
+  LandMetric,
   Listing,
   MarketMetric,
   MarketMoversRankingsPayload,
@@ -54,6 +56,23 @@ export async function fetchMarketMetrics(): Promise<MarketMetric[]> {
   }
   try {
     return filterZimbabweMarkets(await readLocalJson<MarketMetric[]>("market_metrics.json"));
+  } catch {
+    return [];
+  }
+}
+
+export async function fetchLandMetrics(): Promise<LandMetric[]> {
+  const client = createServerSupabaseClient();
+  if (client) {
+    const { data, error } = await client.from("land_metrics").select("*");
+    if (error) {
+      console.error("[data-server] land_metrics:", error.message);
+    } else if (data?.length) {
+      return filterZimbabweLandMarkets(data as LandMetric[]);
+    }
+  }
+  try {
+    return filterZimbabweLandMarkets(await readLocalJson<LandMetric[]>("land_metrics.json"));
   } catch {
     return [];
   }
@@ -110,7 +129,46 @@ export interface ListingQuery {
   medianPrice?: number | null;
 }
 
+function matchesLandListingQuery(listing: Listing, query: ListingQuery): boolean {
+  const pps = validPricePerSqm(listing);
+  if (pps == null) return false;
+
+  const tier = query.tier ?? "in";
+  if (tier === "in") {
+    if (pps > query.budget) return false;
+  } else if (tier === "stretch") {
+    const max = query.budget * STRETCH_BUDGET_MULTIPLIER;
+    if (pps <= query.budget || pps > max) return false;
+  } else if (tier === "value") {
+    const median = query.medianPrice;
+    if (!median || median <= 0 || pps > median) return false;
+  }
+
+  if (listing.city && !isZimbabweCity(listing.city)) return false;
+
+  if (query.marketId) {
+    if (listing.market_id) {
+      if (listing.market_id !== query.marketId) return false;
+    } else {
+      if (query.city && listing.city?.toLowerCase() !== query.city.toLowerCase()) return false;
+      if (query.suburb && listing.suburb?.toLowerCase() !== query.suburb.toLowerCase()) {
+        return false;
+      }
+    }
+  } else {
+    if (query.city && listing.city?.toLowerCase() !== query.city.toLowerCase()) return false;
+    if (query.suburb && listing.suburb?.toLowerCase() !== query.suburb.toLowerCase()) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
 function matchesListingQuery(listing: Listing, query: ListingQuery): boolean {
+  if (query.mode === "land") {
+    return matchesLandListingQuery(listing, query);
+  }
   if (isLandPropertyType(listing.property_type)) return false;
 
   const price = listing.price;
@@ -159,9 +217,117 @@ function matchesListingQuery(listing: Listing, query: ListingQuery): boolean {
 function rankListings(listings: Listing[], limit: number, tier: ListingQuery["tier"] = "in"): Listing[] {
   const sorted =
     tier === "value"
-      ? [...listings].sort((a, b) => (a.price ?? Infinity) - (b.price ?? Infinity))
-      : [...listings].sort((a, b) => (b.price ?? 0) - (a.price ?? 0));
+      ? [...listings].sort((a, b) => {
+          const aVal = a.price_per_sqm ?? a.price ?? Infinity;
+          const bVal = b.price_per_sqm ?? b.price ?? Infinity;
+          return aVal - bVal;
+        })
+      : [...listings].sort((a, b) => {
+          const aVal = a.price_per_sqm ?? a.price ?? 0;
+          const bVal = b.price_per_sqm ?? b.price ?? 0;
+          return bVal - aVal;
+        });
   return sorted.slice(0, limit);
+}
+
+interface CleanLandRow {
+  market_id?: string;
+  city?: string | null;
+  suburb?: string | null;
+  title?: string | null;
+  listing_url: string;
+  price?: number | null;
+  price_raw?: string | null;
+  location?: string | null;
+  property_type?: string | null;
+  listing_type?: string;
+  land_size?: number | null;
+  land_size_unit?: string | null;
+  agency_name?: string | null;
+  agency_logo?: string | null;
+  days_on_market?: number | null;
+}
+
+function mapCleanLandRow(row: CleanLandRow): Listing {
+  const enriched = enrichLandListingFields({
+    land_size: row.land_size,
+    land_size_unit: row.land_size_unit,
+    price: row.price,
+  });
+
+  const listing: Listing = {
+    listing_url: row.listing_url,
+    title: row.title ?? null,
+    price: row.price ?? null,
+    price_raw: row.price_raw ?? null,
+    city: row.city ?? null,
+    suburb: row.suburb ?? null,
+    location: row.location ?? null,
+    property_type: row.property_type ?? "residential_land",
+    listing_type: row.listing_type ?? "sale",
+    market_id: row.market_id ?? null,
+    land_size: row.land_size ?? null,
+    land_size_unit: row.land_size_unit ?? null,
+    land_size_sqm: enriched.land_size_sqm ?? null,
+    price_per_sqm: enriched.price_per_sqm ?? null,
+    days_on_market: row.days_on_market ?? null,
+    agency_logo: row.agency_logo ?? null,
+    image_url: null,
+  };
+
+  return withImageUrl(listing);
+}
+
+async function fetchLandListings(query: ListingQuery): Promise<Listing[]> {
+  const limit = query.limit ?? 4;
+  const client = createServerSupabaseClient();
+
+  if (client) {
+    let request = client
+      .from("listings")
+      .select(
+        "listing_url, title, price, price_raw, city, suburb, location, property_type, listing_type, days_on_market, agency_logo, image_url, market_id, land_size, land_size_unit"
+      )
+      .eq("listing_type", "sale")
+      .eq("is_active", true)
+      .eq("property_type", "residential_land")
+      .not("price", "is", null)
+      .limit(300);
+
+    if (query.marketId) {
+      request = request.eq("market_id", query.marketId);
+    } else {
+      if (query.city) request = request.ilike("city", query.city);
+      if (query.suburb) request = request.ilike("suburb", query.suburb);
+    }
+
+    const { data, error } = await request;
+    if (!error && data) {
+      const matched = (data as Listing[])
+        .map((row) => {
+          const enriched = enrichLandListingFields({
+            land_size: row.land_size,
+            land_size_unit: row.land_size_unit,
+            price: row.price,
+          });
+          return withImageUrl({
+            ...row,
+            land_size_sqm: enriched.land_size_sqm ?? null,
+            price_per_sqm: enriched.price_per_sqm ?? null,
+          });
+        })
+        .filter((row) => matchesLandListingQuery(row, query));
+      return rankListings(matched, limit, query.tier);
+    }
+  }
+
+  try {
+    const all = await readLocalJson<CleanLandRow[]>("clean_land.json");
+    const matched = all.map(mapCleanLandRow).filter((row) => matchesLandListingQuery(row, query));
+    return rankListings(matched, limit, query.tier);
+  } catch {
+    return [];
+  }
 }
 
 const listingImageCache = new Map<string, Map<string, string>>();
@@ -208,6 +374,10 @@ async function enrichLocalListingImages(
 }
 
 export async function fetchListings(query: ListingQuery): Promise<Listing[]> {
+  if (query.mode === "land") {
+    return fetchLandListings(query);
+  }
+
   const listingType = query.mode === "rent" ? "rent" : "sale";
   const limit = query.limit ?? 4;
 

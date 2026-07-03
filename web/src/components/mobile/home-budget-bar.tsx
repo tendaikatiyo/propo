@@ -5,8 +5,9 @@ import { useEffect, useState } from "react";
 import { Compass } from "lucide-react";
 
 import { DEFAULT_CITY, ROOM_BEDROOM_COUNT } from "@/lib/constants";
-import { formatCurrency } from "@/lib/format";
+import { formatCurrency, formatPricePerSqm } from "@/lib/format";
 import { liquidGlassPillClass } from "@/lib/liquid-glass";
+import { isLandMode, modeLabel } from "@/lib/mode";
 import { MODE_ACCENT } from "@/lib/mode-accent";
 import type { ExploreMode, PropertyType } from "@/lib/types";
 import { cn } from "@/lib/utils";
@@ -20,7 +21,7 @@ function buildExploreHref(
   params.set("mode", mode);
   params.set("budget", String(budget));
   params.set("city", DEFAULT_CITY);
-  if (propertyType) {
+  if (propertyType && !isLandMode(mode)) {
     params.set("type", propertyType);
     if (propertyType === "room") params.set("bedroom", String(ROOM_BEDROOM_COUNT));
   }
@@ -40,6 +41,7 @@ export function HomeBudgetBar({
 }) {
   const [visible, setVisible] = useState(false);
   const accent = MODE_ACCENT[mode];
+  const land = isLandMode(mode);
 
   useEffect(() => {
     const target = observeRef.current;
@@ -57,9 +59,7 @@ export function HomeBudgetBar({
     <div
       className={cn(
         "pointer-events-none fixed inset-x-0 z-30 flex justify-center px-4 transition-all duration-300 ease-out lg:hidden",
-        visible
-          ? "translate-y-0 opacity-100"
-          : "translate-y-4 opacity-0"
+        visible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
       )}
       style={{ bottom: "calc(4.75rem + env(safe-area-inset-bottom))" }}
     >
@@ -78,10 +78,10 @@ export function HomeBudgetBar({
             accent.chip
           )}
         >
-          {mode === "rent" ? "Rent" : "Buy"}
+          {modeLabel(mode)}
         </span>
         <span className="truncate font-stat text-sm font-semibold tabular-nums">
-          {formatCurrency(budget)}
+          {land ? formatPricePerSqm(budget) : formatCurrency(budget)}
         </span>
         <span className="flex shrink-0 items-center gap-1 text-xs font-medium text-foreground/80">
           <Compass className="size-3.5" />

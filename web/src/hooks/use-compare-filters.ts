@@ -4,17 +4,14 @@ import { useCallback, useMemo } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 import { normalizeCompareFilters, normalizePropertyType } from "@/lib/constants";
-import type { CompareFilters, ExploreMode, PropertyType } from "@/lib/types";
+import { parseExploreMode } from "@/lib/mode";
+import type { CompareFilters, PropertyType } from "@/lib/types";
 
 const DEFAULT_COMPARE_FILTERS: CompareFilters = {
   mode: "rent",
   propertyType: null,
   bedroom: null,
 };
-
-function parseMode(value: string | null): ExploreMode {
-  return value === "buy" ? "buy" : "rent";
-}
 
 function parsePropertyType(value: string | null): PropertyType | null {
   if (!value) return null;
@@ -28,7 +25,7 @@ export function useCompareFilters() {
 
   const filters = useMemo<CompareFilters>(() => {
     return normalizeCompareFilters({
-      mode: parseMode(searchParams.get("mode")),
+      mode: parseExploreMode(searchParams.get("mode")),
       propertyType: parsePropertyType(searchParams.get("type")),
       bedroom: searchParams.has("bedroom") ? Number(searchParams.get("bedroom")) : null,
     });

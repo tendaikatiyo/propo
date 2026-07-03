@@ -1,7 +1,8 @@
 "use client";
 
-import { BUY_BUDGET_RANGE, RENT_BUDGET_RANGE } from "@/lib/constants";
-import { formatCurrency } from "@/lib/format";
+import { budgetRangeForMode } from "@/lib/constants";
+import { formatCurrency, formatPricePerSqm } from "@/lib/format";
+import { isLandMode } from "@/lib/mode";
 import type { ExploreMode } from "@/lib/types";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -16,13 +17,14 @@ export function BudgetSlider({
   value: number;
   onChange: (value: number) => void;
 }) {
-  const range = mode === "rent" ? RENT_BUDGET_RANGE : BUY_BUDGET_RANGE;
+  const range = budgetRangeForMode(mode);
+  const land = isLandMode(mode);
 
   return (
     <div className="space-y-3">
       <div className="flex items-center justify-between gap-3">
         <Label htmlFor="budget-input" className="caption-label normal-case">
-          Budget
+          {land ? "Budget (per sqm)" : "Budget"}
         </Label>
         <Input
           id="budget-input"
@@ -45,7 +47,9 @@ export function BudgetSlider({
           if (typeof next === "number") onChange(next);
         }}
       />
-      <p className="font-stat text-sm text-muted-foreground">{formatCurrency(value)}</p>
+      <p className="font-stat text-sm text-muted-foreground">
+        {land ? formatPricePerSqm(value) : formatCurrency(value)}
+      </p>
     </div>
   );
 }

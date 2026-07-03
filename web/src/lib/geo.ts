@@ -1,4 +1,4 @@
-import type { CityMetric, MarketMetric, RankingEntry, RankingsPayload } from "@/lib/types";
+import type { CityMetric, LandMetric, MarketMetric, RankingEntry, RankingsPayload } from "@/lib/types";
 
 /** Cities outside Zimbabwe that appear in scraped data. */
 export const EXCLUDED_CITIES = new Set([
@@ -24,6 +24,10 @@ export function filterZimbabweCities(cities: CityMetric[]): CityMetric[] {
 }
 
 export function filterZimbabweMarkets(markets: MarketMetric[]): MarketMetric[] {
+  return markets.filter((m) => isZimbabweCity(m.city));
+}
+
+export function filterZimbabweLandMarkets(markets: LandMetric[]): LandMetric[] {
   return markets.filter((m) => isZimbabweCity(m.city));
 }
 

@@ -55,7 +55,7 @@ export function segmentMedianForMode(
   segment: MarketSegmentStats | null,
   mode: ExploreMode
 ): number | null {
-  if (!segment) return null;
+  if (mode === "land" || !segment) return null;
   return mode === "rent"
     ? (segment.median_rent ?? null)
     : (segment.median_sale_price ?? null);
@@ -65,13 +65,14 @@ export function segmentCountForMode(
   segment: MarketSegmentStats | null,
   mode: ExploreMode
 ): number {
-  if (!segment) return 0;
+  if (mode === "land" || !segment) return 0;
   return mode === "rent" ? (segment.rental_count ?? 0) : (segment.sale_count ?? 0);
 }
 
 export function hasActiveSegmentFilters(
-  filters: Pick<ExploreFilters, "propertyType" | "bedroom">
+  filters: Pick<ExploreFilters, "propertyType" | "bedroom"> & { mode?: ExploreMode }
 ): boolean {
+  if (filters.mode === "land") return false;
   return filters.propertyType != null || filters.bedroom != null;
 }
 
@@ -94,6 +95,9 @@ export function resolvePriceForFilters(
   mode: ExploreMode,
   filters: Pick<ExploreFilters, "propertyType" | "bedroom">
 ): SegmentPriceResolution {
+  if (mode === "land") {
+    return { price: null, usedAggregate: false, segmentCount: 0 };
+  }
   const aggregate = mode === "rent" ? market.median_rent : market.median_sale_price;
   if (!hasActiveSegmentFilters(filters)) {
     return { price: aggregate, usedAggregate: false, segmentCount: 0 };
@@ -190,6 +194,7 @@ export function segmentMedianLabel(
   propertyType: PropertyType | null,
   bedroom: number | null
 ): string {
+  if (mode === "land") return "Median $/sqm";
   const spec = segmentFilterLabel(propertyType, bedroom);
   if (!spec) return mode === "rent" ? "Median rent" : "Median sale";
   return mode === "rent" ? `Median rent (${spec})` : `Median sale (${spec})`;

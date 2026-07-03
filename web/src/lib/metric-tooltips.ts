@@ -12,6 +12,8 @@ export const COLUMN_TOOLTIPS: Record<SortKey, string> = {
   city: "City where this market is located.",
   median_rent: "Median monthly rent from active rental listings in this suburb.",
   median_sale_price: "Median asking sale price from active sale listings in this suburb.",
+  median_price_per_sqm: "Median asking price per square metre from active land listings in this suburb.",
+  land_count: "Count of active residential land listings in this suburb.",
   yield_percent:
     "Gross rental yield: (median rent × 12) ÷ median sale price. Useful for investors comparing buy-to-rent potential.",
   confidence_score:
@@ -50,6 +52,9 @@ export function fairValueTooltipDetail(
 }
 
 export function columnsForMode(mode: ExploreMode): SortKey[] {
+  if (mode === "land") {
+    return ["suburb", "city", "median_price_per_sqm", "land_count", "confidence_score"];
+  }
   const base: SortKey[] = ["suburb", "city", "median_rent"];
   if (mode === "buy") {
     base.push("median_sale_price", "yield_percent", "opportunity_score");
@@ -92,7 +97,10 @@ export function exploreScopeDescription(
   bedroom: number | null,
   hideSuburbMedianFallback: boolean
 ): string {
-  if (!hasActiveSegmentFilters({ propertyType, bedroom })) {
+  if (mode === "land") {
+    return "Prices use suburb-wide median $/sqm from active residential land listings.";
+  }
+  if (!hasActiveSegmentFilters({ mode, propertyType, bedroom })) {
     return "Prices use suburb-wide medians across all property types in each suburb.";
   }
 
@@ -112,6 +120,9 @@ export function exploreBudgetDescription(
   propertyType: PropertyType | null,
   bedroom: number | null
 ): string {
+  if (mode === "land") {
+    return `Suburbs with median land price at or below ${budgetLabel}.`;
+  }
   const priceLabel = mode === "rent" ? "rent" : "sale price";
   const spec = segmentFilterLabel(propertyType, bedroom);
   if (spec) {
@@ -133,6 +144,8 @@ export function columnLabelForMode(
     city: "City",
     median_rent: "Median rent",
     median_sale_price: "Median sale",
+    median_price_per_sqm: "Median $/sqm",
+    land_count: "Land listings",
     yield_percent: "Yield",
     opportunity_score: "Opportunity",
     confidence_score: "Confidence",

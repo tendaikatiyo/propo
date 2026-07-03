@@ -15,4 +15,9 @@ export const MODE_ACCENT: Record<
     pillGlow:
       "shadow-[0_8px_32px_rgba(0,0,0,0.12),0_0_24px_rgba(155,135,196,0.4)]",
   },
+  land: {
+    chip: "bg-[#7A9B76] text-white",
+    pillGlow:
+      "shadow-[0_8px_32px_rgba(0,0,0,0.12),0_0_24px_rgba(122,155,118,0.4)]",
+  },
 };

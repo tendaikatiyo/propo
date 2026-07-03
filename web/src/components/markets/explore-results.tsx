@@ -6,20 +6,192 @@ import {
   filterMarketsBySuburbQuery,
   SuburbSearchInput,
 } from "@/components/filters/suburb-search-input";
+import { LandSuburbCard } from "@/components/markets/land-suburb-card";
+import { LandSuburbTable } from "@/components/markets/land-suburb-table";
 import { SuburbCard } from "@/components/markets/suburb-card";
 import { SuburbTable } from "@/components/markets/suburb-table";
+import { LandSuburbList } from "@/components/mobile/land-suburb-list";
 import { SuburbList } from "@/components/mobile/suburb-list";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
-import { useMarketMetrics } from "@/hooks/use-market-data";
+import { useLandMetrics, useMarketMetrics } from "@/hooks/use-market-data";
 import { useExploreFilters } from "@/hooks/use-explore-filters";
 import { trackExploreZeroResults } from "@/lib/analytics/track";
-import { averageYield, applySuburbMedianVisibility, filterMarkets, rankExploreResults } from "@/lib/explore";
+import {
+  averageYield,
+  applySuburbMedianVisibility,
+  filterMarkets,
+  rankExploreResults,
+} from "@/lib/explore";
+import { formatCurrency, formatPercent, formatPricePerSqm } from "@/lib/format";
+import { filterLandMarkets, rankLandExploreResults } from "@/lib/land-explore";
+import { isLandMode } from "@/lib/mode";
 import { exploreBudgetDescription, exploreScopeDescription } from "@/lib/metric-tooltips";
 import { hasActiveSegmentFilters } from "@/lib/segments";
-import { formatCurrency, formatPercent } from "@/lib/format";
 
-export function ExploreResults({ preview = false }: { preview?: boolean }) {
+function ExploreResultsSkeleton() {
+  return (
+    <div className="space-y-3">
+      {Array.from({ length: 4 }).map((_, i) => (
+        <Skeleton key={i} className="h-24 w-full rounded-2xl" />
+      ))}
+    </div>
+  );
+}
+
+function LandExploreResults({
+  preview = false,
+}: {
+  preview?: boolean;
+}) {
+  const { filters } = useExploreFilters();
+  const { data: markets = [], isLoading, isError } = useLandMetrics();
+  const [suburbQuery, setSuburbQuery] = useState("");
+
+  const { inBudget, stretch } = useMemo(
+    () => filterLandMarkets(markets, filters),
+    [markets, filters]
+  );
+
+  const rankedInBudget = useMemo(
+    () => rankLandExploreResults(inBudget),
+    [inBudget]
+  );
+  const rankedStretch = useMemo(() => rankLandExploreResults(stretch), [stretch]);
+  const filteredInBudget = useMemo(
+    () => filterMarketsBySuburbQuery(rankedInBudget, suburbQuery),
+    [rankedInBudget, suburbQuery]
+  );
+  const filteredStretch = useMemo(
+    () => filterMarketsBySuburbQuery(rankedStretch, suburbQuery),
+    [rankedStretch, suburbQuery]
+  );
+  const budgetLabel = formatPricePerSqm(filters.budget);
+  const zeroResultsKeyRef = useRef<string | null>(null);
+
+  useEffect(() => {
+    if (preview || isLoading) return;
+    const key = JSON.stringify({
+      mode: filters.mode,
+      budget: filters.budget,
+      city: filters.city,
+    });
+    if (rankedInBudget.length > 0) {
+      zeroResultsKeyRef.current = null;
+      return;
+    }
+    if (zeroResultsKeyRef.current === key) return;
+    zeroResultsKeyRef.current = key;
+    trackExploreZeroResults(filters, {
+      inBudgetCount: rankedInBudget.length,
+      stretchCount: rankedStretch.length,
+    });
+  }, [preview, isLoading, filters, rankedInBudget.length, rankedStretch.length]);
+
+  if (isLoading) return <ExploreResultsSkeleton />;
+
+  if (isError) {
+    return (
+      <div className="rounded-2xl border border-destructive/30 bg-destructive/5 p-6 text-sm">
+        Could not load land market data. Check Supabase configuration or local data files.
+      </div>
+    );
+  }
+
+  if (preview) {
+    const previewMarkets = rankedInBudget.slice(0, 6);
+    if (!previewMarkets.length) {
+      return (
+        <p className="text-sm text-muted-foreground">
+          No suburbs in budget yet — try adjusting your filters.
+        </p>
+      );
+    }
+    return (
+      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+        {previewMarkets.map((market) => (
+          <LandSuburbCard key={market.market_id} market={market} badge="In budget" />
+        ))}
+      </div>
+    );
+  }
+
+  const hasSuburbSearch = suburbQuery.trim().length > 0;
+
+  return (
+    <div className="space-y-8">
+      <div className="lg:hidden">
+        <SuburbSearchInput value={suburbQuery} onChange={setSuburbQuery} />
+      </div>
+
+      <section className="space-y-4">
+        <div>
+          <h2 className="font-heading text-xl font-medium tracking-[-0.01em]">In budget</h2>
+          <p className="text-[15px] tracking-[0.15px] text-muted-foreground">
+            {exploreBudgetDescription(filters.mode, budgetLabel, null, null)}
+          </p>
+          <p className="text-xs text-muted-foreground">
+            {exploreScopeDescription(filters.mode, null, null, filters.hideSuburbMedianFallback)}
+          </p>
+        </div>
+        {hasSuburbSearch && !filteredInBudget.length ? (
+          <p className="text-sm text-muted-foreground">No suburbs match your search.</p>
+        ) : (
+          <>
+            <div className="lg:hidden">
+              <LandSuburbList markets={filteredInBudget} />
+            </div>
+            <div className="hidden lg:block">
+              <LandSuburbTable markets={rankedInBudget} />
+            </div>
+          </>
+        )}
+      </section>
+
+      {rankedStretch.length ? (
+        <section className="space-y-4">
+          <div>
+            <h2 className="font-heading text-xl font-medium tracking-[-0.01em]">Stretch</h2>
+            <p className="text-[15px] tracking-[0.15px] text-muted-foreground">
+              Within 15% above your $/sqm budget — worth a look if you can flex slightly.
+            </p>
+          </div>
+          {hasSuburbSearch && !filteredStretch.length ? (
+            <p className="text-sm text-muted-foreground">No stretch suburbs match your search.</p>
+          ) : (
+            <div className="grid gap-4 md:grid-cols-2">
+              {filteredStretch.map((market) => (
+                <LandSuburbCard key={market.market_id} market={market} badge="Stretch" />
+              ))}
+            </div>
+          )}
+        </section>
+      ) : null}
+
+      <Card>
+        <CardHeader className="pb-2">
+          <CardTitle className="text-base">Summary</CardTitle>
+        </CardHeader>
+        <CardContent className="grid gap-3 text-sm sm:grid-cols-2">
+          <p>
+            <span className="text-muted-foreground">In budget: </span>
+            <span className="font-mono font-medium">
+              {hasSuburbSearch ? filteredInBudget.length : rankedInBudget.length}
+            </span>
+          </p>
+          <p>
+            <span className="text-muted-foreground">Stretch: </span>
+            <span className="font-mono font-medium">
+              {hasSuburbSearch ? filteredStretch.length : rankedStretch.length}
+            </span>
+          </p>
+        </CardContent>
+      </Card>
+    </div>
+  );
+}
+
+function ResidentialExploreResults({ preview = false }: { preview?: boolean }) {
   const { filters } = useExploreFilters();
   const { data: markets = [], isLoading, isError } = useMarketMetrics();
   const [suburbQuery, setSuburbQuery] = useState("");
@@ -83,15 +255,7 @@ export function ExploreResults({ preview = false }: { preview?: boolean }) {
     rankedStretch.length,
   ]);
 
-  if (isLoading) {
-    return (
-      <div className="space-y-3">
-        {Array.from({ length: 4 }).map((_, i) => (
-          <Skeleton key={i} className="h-24 w-full rounded-2xl" />
-        ))}
-      </div>
-    );
-  }
+  if (isLoading) return <ExploreResultsSkeleton />;
 
   if (isError) {
     return (
@@ -183,17 +347,17 @@ export function ExploreResults({ preview = false }: { preview?: boolean }) {
           {hasSuburbSearch && !filteredStretch.length ? (
             <p className="text-sm text-muted-foreground">No stretch suburbs match your search.</p>
           ) : (
-          <div className="grid gap-4 md:grid-cols-2">
-            {filteredStretch.map((market) => (
-              <SuburbCard
-                key={market.market_id}
-                market={market}
-                mode={filters.mode}
-                badge="Stretch"
-                filters={filters}
-              />
-            ))}
-          </div>
+            <div className="grid gap-4 md:grid-cols-2">
+              {filteredStretch.map((market) => (
+                <SuburbCard
+                  key={market.market_id}
+                  market={market}
+                  mode={filters.mode}
+                  badge="Stretch"
+                  filters={filters}
+                />
+              ))}
+            </div>
           )}
         </section>
       ) : null}
@@ -225,4 +389,14 @@ export function ExploreResults({ preview = false }: { preview?: boolean }) {
       </Card>
     </div>
   );
+}
+
+export function ExploreResults({ preview = false }: { preview?: boolean }) {
+  const { filters } = useExploreFilters();
+
+  if (isLandMode(filters.mode)) {
+    return <LandExploreResults preview={preview} />;
+  }
+
+  return <ResidentialExploreResults preview={preview} />;
 }

@@ -10,13 +10,20 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { resolveListingThumbnailUrl } from "@/lib/listings";
+import { isLandPropertyType, resolveListingThumbnailUrl } from "@/lib/listings";
 import { trackListingClick } from "@/lib/analytics/track";
 import {
   resolveFairValueForListing,
   type FairValueBadge,
 } from "@/lib/fair-value";
-import { formatCurrency, propertyTypeLabel, sanitizeLabel } from "@/lib/format";
+import {
+  formatCurrency,
+  formatLandSize,
+  formatNumber,
+  formatPricePerSqm,
+  propertyTypeLabel,
+  sanitizeLabel,
+} from "@/lib/format";
 import { fairValueTooltipDetail } from "@/lib/metric-tooltips";
 import { cn } from "@/lib/utils";
 import type { Listing, MarketMetric, PropertyType } from "@/lib/types";
@@ -84,7 +91,11 @@ export function ListingCard({
   compact?: boolean;
   market?: MarketMetric | null;
 }) {
-  const fairValue = market ? resolveFairValueForListing(market, listing) : null;
+  const isLand = isLandPropertyType(listing.property_type);
+  const fairValue = !isLand && market ? resolveFairValueForListing(market, listing) : null;
+  const standSize = isLand
+    ? formatLandSize(listing.land_size_sqm, listing.land_size, listing.land_size_unit)
+    : null;
 
   return (
     <Card className="overflow-hidden">
@@ -110,14 +121,30 @@ export function ListingCard({
             >
               {formatCurrency(listing.price)}
             </p>
+            {isLand && listing.price_per_sqm != null ? (
+              <span className="font-stat text-xs text-muted-foreground">
+                {formatPricePerSqm(listing.price_per_sqm)}
+              </span>
+            ) : null}
             {fairValue ? <FairValueBadgeDisplay fairValue={fairValue} /> : null}
           </div>
           <p className="line-clamp-2 text-[11px] text-muted-foreground">
             {[listing.suburb, listing.city].filter(Boolean).join(", ")}
-            {listing.property_type
-              ? ` · ${propertyTypeLabel(listing.property_type as PropertyType)}`
-              : null}
-            {listing.bedrooms != null ? ` · ${listing.bedrooms} bed` : null}
+            {isLand ? (
+              <>
+                {standSize ? ` · ${standSize}` : null}
+                {listing.days_on_market != null
+                  ? ` · ${formatNumber(listing.days_on_market)}d on market`
+                  : null}
+              </>
+            ) : (
+              <>
+                {listing.property_type
+                  ? ` · ${propertyTypeLabel(listing.property_type as PropertyType)}`
+                  : null}
+                {listing.bedrooms != null ? ` · ${listing.bedrooms} bed` : null}
+              </>
+            )}
           </p>
           <a
             href={listing.listing_url}
@@ -130,7 +157,7 @@ export function ListingCard({
                 city: listing.city,
                 suburb: listing.suburb,
                 price: listing.price,
-                listingType: listing.listing_type,
+                listingType: isLand ? "land" : listing.listing_type,
               })
             }
             className="inline-flex items-center gap-1 text-[11px] font-medium text-foreground hover:underline"

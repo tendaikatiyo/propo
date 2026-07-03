@@ -15,6 +15,7 @@ export const PROPERTY_TYPES_BUY: PropertyType[] = ["house", "flat", "townhouse"]
 export const PROPERTY_TYPES = PROPERTY_TYPES_RENT;
 
 export function propertyTypesForMode(mode: ExploreMode): PropertyType[] {
+  if (mode === "land") return [];
   return mode === "buy" ? PROPERTY_TYPES_BUY : PROPERTY_TYPES_RENT;
 }
 
@@ -22,6 +23,9 @@ export const ROOM_BEDROOM_COUNT = 1;
 
 export function normalizeExploreFilters(filters: ExploreFilters): ExploreFilters {
   let { propertyType, bedroom } = filters;
+  if (filters.mode === "land") {
+    return { ...filters, propertyType: null, bedroom: null };
+  }
   if (filters.mode === "buy" && propertyType === "room") {
     propertyType = null;
   }
@@ -38,6 +42,9 @@ export function normalizeExploreFilters(filters: ExploreFilters): ExploreFilters
 
 export function normalizeCompareFilters(filters: CompareFilters): CompareFilters {
   let { propertyType, bedroom, mode } = filters;
+  if (mode === "land") {
+    return { mode, propertyType: null, bedroom: null };
+  }
   if (mode === "buy" && propertyType === "room") {
     propertyType = null;
   }
@@ -92,8 +99,16 @@ export const LEADERBOARD_MIN_CONFIDENCE = MIN_CONFIDENCE_THRESHOLD;
 export const RANKINGS_MIN_CONFIDENCE = 40;
 export const DEFAULT_RENT_BUDGET = 800;
 export const DEFAULT_BUY_BUDGET = 250000;
+export const DEFAULT_LAND_BUDGET_PER_SQM = 50;
 export const RENT_BUDGET_RANGE = { min: 100, max: 10000, step: 50 };
 export const BUY_BUDGET_RANGE = { min: 20000, max: 1000000, step: 5000 };
+export const LAND_BUDGET_RANGE = { min: 10, max: 200, step: 5 };
+
+export function budgetRangeForMode(mode: ExploreMode) {
+  if (mode === "land") return LAND_BUDGET_RANGE;
+  if (mode === "buy") return BUY_BUDGET_RANGE;
+  return RENT_BUDGET_RANGE;
+}
 
 export const DEFAULT_CITY = "Harare";
 export const SITE_NAME = "Propo";

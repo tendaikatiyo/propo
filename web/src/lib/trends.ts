@@ -30,6 +30,7 @@ export function startDateForRange(range: TrendRange, endDate = new Date()): stri
 }
 
 export function listingTypeForMode(mode: ExploreMode): "rent" | "sale" {
+  if (mode === "land") return "sale";
   return mode === "rent" ? "rent" : "sale";
 }
 

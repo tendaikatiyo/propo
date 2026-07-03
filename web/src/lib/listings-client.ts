@@ -19,7 +19,7 @@ export function buildListingsQuery(params: {
   if (params.marketId) qs.set("market_id", params.marketId);
   if (params.city) qs.set("city", params.city);
   if (params.suburb) qs.set("suburb", params.suburb);
-  if (params.propertyType) qs.set("type", params.propertyType);
+  if (params.mode !== "land" && params.propertyType) qs.set("type", params.propertyType);
   if (params.tier) qs.set("tier", params.tier);
   if (params.medianPrice != null) qs.set("median", String(params.medianPrice));
   qs.set("limit", String(params.limit ?? 4));

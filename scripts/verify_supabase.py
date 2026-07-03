@@ -19,10 +19,12 @@ def main() -> None:
 
     client = create_client(get_supabase_url(), get_service_role_key())
     metrics = client.table("market_metrics").select("market_id", count="exact").limit(1).execute()
+    land = client.table("land_metrics").select("market_id", count="exact").limit(1).execute()
     cities = client.table("cities").select("city", count="exact").limit(1).execute()
     rankings = client.table("rankings").select("id").eq("id", "current").execute()
 
     print(f"market_metrics rows: {metrics.count}")
+    print(f"land_metrics rows: {land.count}")
     print(f"cities rows: {cities.count}")
     print(f"rankings current row: {'yes' if rankings.data else 'no'}")
 

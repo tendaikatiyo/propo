@@ -4,24 +4,24 @@ import Link from "next/link";
 import { Suspense, useRef, useState } from "react";
 
 import { BudgetSlider } from "@/components/filters/budget-slider";
+import { ExploreModeToggle } from "@/components/filters/explore-mode-toggle";
 import { PropertyTypeButtons } from "@/components/filters/property-type-buttons";
 import { PageHeader } from "@/components/layout/page-header";
 import { AffordabilityInsights } from "@/components/home/affordability-insights";
 import { BudgetListingsPreview } from "@/components/listings/budget-listings";
 import { HomeMoversTeaser } from "@/components/home/home-movers-teaser";
 import { HomeBudgetBar } from "@/components/mobile/home-budget-bar";
+import { LandSuburbCard } from "@/components/markets/land-suburb-card";
 import { SuburbCard } from "@/components/markets/suburb-card";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
-import { useMarketMetrics } from "@/hooks/use-market-data";
-import {
-  DEFAULT_BUY_BUDGET,
-  DEFAULT_CITY,
-  DEFAULT_RENT_BUDGET,
-  ROOM_BEDROOM_COUNT,
-} from "@/lib/constants";
+import { useLandMetrics, useMarketMetrics } from "@/hooks/use-market-data";
+import { DEFAULT_CITY, ROOM_BEDROOM_COUNT } from "@/lib/constants";
+import { budgetForMode } from "@/lib/explore";
+import { filterLandMarkets, rankLandExploreResults } from "@/lib/land-explore";
 import { filterMarkets, rankExploreResults } from "@/lib/explore";
+import { defaultBudgetForMode, isLandMode } from "@/lib/mode";
 import type { ExploreMode, PropertyType } from "@/lib/types";
 
 function buildExploreHref(
@@ -33,7 +33,7 @@ function buildExploreHref(
   params.set("mode", mode);
   params.set("budget", String(budget));
   params.set("city", DEFAULT_CITY);
-  if (propertyType) {
+  if (propertyType && !isLandMode(mode)) {
     params.set("type", propertyType);
     if (propertyType === "room") params.set("bedroom", String(ROOM_BEDROOM_COUNT));
   }
@@ -43,64 +43,79 @@ function buildExploreHref(
 function HomeContent() {
   const budgetSectionRef = useRef<HTMLElement>(null);
   const [mode, setMode] = useState<ExploreMode>("rent");
-  const [budget, setBudget] = useState(DEFAULT_RENT_BUDGET);
+  const [budget, setBudget] = useState(defaultBudgetForMode("rent"));
   const [propertyType, setPropertyType] = useState<PropertyType | null>(null);
-  const { data: markets = [], isLoading } = useMarketMetrics();
+  const land = isLandMode(mode);
+  const { data: markets = [], isLoading: residentialLoading } = useMarketMetrics({
+    enabled: !land,
+  });
+  const { data: landMarkets = [], isLoading: landLoading } = useLandMetrics({
+    enabled: land,
+  });
+  const isLoading = land ? landLoading : residentialLoading;
 
-  const previewMarkets = rankExploreResults(
-    filterMarkets(markets, {
-      mode,
-      budget,
-      city: DEFAULT_CITY,
-      propertyType,
-      bedroom: propertyType === "room" ? ROOM_BEDROOM_COUNT : null,
-      includeLowConfidence: false,
-      hideSuburbMedianFallback: true,
-    }).inBudget,
+  const exploreFilters = {
     mode,
-    { propertyType, bedroom: propertyType === "room" ? ROOM_BEDROOM_COUNT : null }
-  ).slice(0, 6);
+    budget,
+    city: DEFAULT_CITY,
+    propertyType: land ? null : propertyType,
+    bedroom: !land && propertyType === "room" ? ROOM_BEDROOM_COUNT : null,
+    includeLowConfidence: false,
+    hideSuburbMedianFallback: true,
+  };
+
+  const residentialPreview = !land
+    ? rankExploreResults(
+        filterMarkets(markets, exploreFilters).inBudget,
+        mode,
+        exploreFilters
+      ).slice(0, 6)
+    : [];
+  const landPreview = land
+    ? rankLandExploreResults(filterLandMarkets(landMarkets, exploreFilters).inBudget).slice(0, 6)
+    : [];
+  const hasPreview = land ? landPreview.length > 0 : residentialPreview.length > 0;
 
   return (
     <div className="space-y-16">
       <section ref={budgetSectionRef} className="space-y-6">
         <PageHeader
           title="My budget"
-          description="Set your rent or buy budget and property preferences to surface matching suburbs in Harare and beyond."
+          description={
+            land
+              ? "Set your land budget per square metre to surface matching suburbs in Harare and beyond."
+              : "Set your rent or buy budget and property preferences to surface matching suburbs in Harare and beyond."
+          }
         />
 
         <Card>
           <CardContent className="space-y-8 pt-6">
-            <div className="flex flex-wrap gap-2">
-              {(["rent", "buy"] as const).map((option) => (
-                <Button
-                  key={option}
-                  type="button"
-                  size="sm"
-                  variant={mode === option ? "default" : "outline"}
-                  onClick={() => {
-                    setMode(option);
-                    setBudget(option === "rent" ? DEFAULT_RENT_BUDGET : DEFAULT_BUY_BUDGET);
-                    if (option === "buy" && propertyType === "room") {
-                      setPropertyType(null);
-                    }
-                  }}
-                >
-                  {option === "rent" ? "I'm renting" : "I'm buying"}
-                </Button>
-              ))}
-            </div>
+            <ExploreModeToggle
+              value={mode}
+              onChange={(nextMode, defaultBudget) => {
+                setMode(nextMode);
+                setBudget(budgetForMode(nextMode, defaultBudget));
+                if (nextMode === "buy" && propertyType === "room") {
+                  setPropertyType(null);
+                }
+                if (isLandMode(nextMode)) {
+                  setPropertyType(null);
+                }
+              }}
+            />
 
             <BudgetSlider mode={mode} value={budget} onChange={setBudget} />
 
-            <div className="space-y-3">
-              <p className="caption-label">Property type</p>
-              <PropertyTypeButtons
-                mode={mode}
-                value={propertyType}
-                onChange={setPropertyType}
-              />
-            </div>
+            {!land ? (
+              <div className="space-y-3">
+                <p className="caption-label">Property type</p>
+                <PropertyTypeButtons
+                  mode={mode}
+                  value={propertyType}
+                  onChange={setPropertyType}
+                />
+              </div>
+            ) : null}
 
             <Link
               href={buildExploreHref(mode, budget, propertyType)}
@@ -112,23 +127,19 @@ function HomeContent() {
         </Card>
       </section>
 
-      <AffordabilityInsights
-        markets={markets}
-        isLoading={isLoading}
-        filters={{
-          mode,
-          budget,
-          city: DEFAULT_CITY,
-          propertyType,
-          bedroom: propertyType === "room" ? ROOM_BEDROOM_COUNT : null,
-          includeLowConfidence: false,
-          hideSuburbMedianFallback: true,
-        }}
-      />
+      {!land ? (
+        <AffordabilityInsights
+          markets={markets}
+          isLoading={isLoading}
+          filters={exploreFilters}
+        />
+      ) : null}
 
       <section className="space-y-6">
         <div className="flex flex-wrap items-end justify-between gap-4">
-          <PageHeader title="Top matches in Harare" />
+          <PageHeader
+            title={land ? "Top land matches in Harare" : "Top matches in Harare"}
+          />
           <Link
             href={buildExploreHref(mode, budget, propertyType)}
             className={buttonVariants({ variant: "outline", size: "sm" })}
@@ -142,36 +153,47 @@ function HomeContent() {
               <Skeleton key={i} className="h-44 w-full rounded-2xl" />
             ))}
           </div>
-        ) : previewMarkets.length ? (
+        ) : hasPreview ? (
           <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-            {previewMarkets.map((market) => (
-              <SuburbCard
-                key={market.market_id}
-                market={market}
-                mode={mode}
-                badge="In budget"
-                clickSource="home_card"
-                filters={{
-                  propertyType,
-                  bedroom: propertyType === "room" ? ROOM_BEDROOM_COUNT : null,
-                }}
-              />
-            ))}
+            {land
+              ? landPreview.map((market) => (
+                  <LandSuburbCard
+                    key={market.market_id}
+                    market={market}
+                    badge="In budget"
+                    clickSource="home_card"
+                  />
+                ))
+              : residentialPreview.map((market) => (
+                  <SuburbCard
+                    key={market.market_id}
+                    market={market}
+                    mode={mode}
+                    badge="In budget"
+                    clickSource="home_card"
+                    filters={{
+                      propertyType,
+                      bedroom: propertyType === "room" ? ROOM_BEDROOM_COUNT : null,
+                    }}
+                  />
+                ))}
           </div>
         ) : (
           <p className="text-[15px] tracking-[0.15px] text-muted-foreground">
-            No suburbs in budget yet — try adjusting your budget or property type filters.
+            {land
+              ? "No land suburbs in budget yet — try raising your $/sqm budget or pick another city on Explore."
+              : "No suburbs in budget yet — try adjusting your budget or property type filters."}
           </p>
         )}
       </section>
 
-      <HomeMoversTeaser />
+      {!land ? <HomeMoversTeaser /> : null}
 
       <BudgetListingsPreview
         mode={mode}
         budget={budget}
         city={DEFAULT_CITY}
-        propertyType={propertyType}
+        propertyType={land ? null : propertyType}
       />
 
       <HomeBudgetBar

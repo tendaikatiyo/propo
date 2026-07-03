@@ -33,6 +33,8 @@ const COLUMN_LABELS: Record<SortKey, string> = {
   city: "City",
   median_rent: "Median rent",
   median_sale_price: "Median sale",
+  median_price_per_sqm: "Median $/sqm",
+  land_count: "Land listings",
   yield_percent: "Yield",
   opportunity_score: "Opportunity",
   confidence_score: "Confidence",
