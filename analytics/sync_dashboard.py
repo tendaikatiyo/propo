@@ -8,6 +8,7 @@ from analytics.supabase_config import get_service_role_key, get_supabase_url
 
 DATA_DIR = Path(__file__).resolve().parents[1] / "data"
 MARKET_METRICS_PATH = DATA_DIR / "market_metrics.json"
+LAND_METRICS_PATH = DATA_DIR / "land_metrics.json"
 CITIES_PATH = DATA_DIR / "cities.json"
 RANKINGS_PATH = DATA_DIR / "rankings.json"
 
@@ -59,6 +60,22 @@ def sync_cities(client: Client) -> int:
     return count
 
 
+def sync_land_metrics(client: Client) -> int:
+    if not LAND_METRICS_PATH.exists():
+        raise FileNotFoundError(f"Missing {LAND_METRICS_PATH}. Run npm run analytics:land first.")
+
+    rows = load_json(LAND_METRICS_PATH)
+    client.table("land_metrics").delete().neq("market_id", "__keep__").execute()
+
+    count = 0
+    for batch in chunked(rows, BATCH_SIZE):
+        client.table("land_metrics").upsert(batch).execute()
+        count += len(batch)
+
+    print(f"Synced {count} land_metrics rows to Supabase")
+    return count
+
+
 def sync_rankings(client: Client) -> int:
     if not RANKINGS_PATH.exists():
         raise FileNotFoundError(f"Missing {RANKINGS_PATH}. Run npm run analytics:build first.")
@@ -76,6 +93,7 @@ def sync_dashboard(client: Client | None = None) -> Dict[str, int]:
     supabase = client or get_client()
     stats = {
         "market_metrics": sync_market_metrics(supabase),
+        "land_metrics": sync_land_metrics(supabase),
         "cities": sync_cities(supabase),
         "rankings": sync_rankings(supabase),
     }

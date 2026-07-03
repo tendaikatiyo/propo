@@ -142,6 +142,7 @@ def _to_land_shape(row: Dict) -> Dict:
         "agency_logo": row.get("agency_logo"),
         "source": row.get("source"),
         "listing_type": row.get("listing_type"),
+        "days_on_market": days_on_market_from_row(row),
     }
 
 
