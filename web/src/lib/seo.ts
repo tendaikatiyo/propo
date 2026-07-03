@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
 
 import { SITE_DESCRIPTION, SITE_NAME } from "@/lib/constants";
-import { HERO_IMAGES } from "@/lib/hero";
+import { formatCurrency, formatPricePerSqm } from "@/lib/format";
+import type { LandMetric, MarketMetric } from "@/lib/types";
 
 /** Public site URL — set in production via NEXT_PUBLIC_SITE_URL (e.g. https://propo.fyi). */
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ?? "https://propo.fyi";
 
-/** Open Graph share image — Harare skyline illustration (same asset as the home hero). */
-export const OG_IMAGE_PATH = HERO_IMAGES.harare.src;
-export const OG_IMAGE_ALT = `${SITE_NAME} — ${HERO_IMAGES.harare.alt}`;
+/** Open Graph / Twitter Card share image. */
+export const OG_IMAGE_PATH = "/og_tag_image.webp";
+export const OG_IMAGE_ALT = `${SITE_NAME} — houses to rent, property for sale & land in Zimbabwe`;
 export const OG_IMAGE_WIDTH = 1200;
 export const OG_IMAGE_HEIGHT = 630;
 
@@ -76,6 +77,40 @@ export function buildPageMetadata(options: PageSeoOptions = {}): Metadata {
       ? { index: false, follow: false }
       : { index: true, follow: true, googleBot: { index: true, follow: true } },
   };
+}
+
+export const HOME_PAGE_TITLE =
+  "Find houses to rent, homes to buy & land stands in Zimbabwe";
+
+export const HOME_PAGE_DESCRIPTION =
+  "Compare suburbs by budget — houses to let, property for sale, and residential stands. Median rents, sale prices, and land $/sqm across Harare and Zimbabwe.";
+
+export const EXPLORE_PAGE_TITLE = "Explore suburbs by budget";
+
+export const EXPLORE_PAGE_DESCRIPTION =
+  "Find houses to rent, homes to buy, and land stands in your budget. Filter Zimbabwe suburbs by price, property type, and city.";
+
+export function suburbPageTitle(suburb: string, city: string): string {
+  return `${suburb}, ${city} — rent, buy & land`;
+}
+
+export function suburbPageDescription(
+  market: MarketMetric,
+  suburbLabel: string,
+  medianRent: number | null,
+  medianSale: number | null,
+  landMarket: LandMetric | null
+): string {
+  const landLine =
+    landMarket?.median_price_per_sqm != null
+      ? ` Land stands from ${formatPricePerSqm(landMarket.median_price_per_sqm)} per sqm.`
+      : "";
+
+  return (
+    `Houses to rent and property for sale in ${suburbLabel}, ${market.city}. ` +
+    `Median rent ${formatCurrency(medianRent)}, median sale ${formatCurrency(medianSale)}.${landLine} ` +
+    `Yields, price trends, and active listings.`
+  );
 }
 
 /** Root layout defaults — merge with `title.template` in layout.tsx. */

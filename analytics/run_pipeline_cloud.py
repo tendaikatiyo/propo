@@ -4,6 +4,7 @@ import sys
 from pathlib import Path
 
 from analytics.daily_metrics import build_daily_market_snapshots
+from analytics.land_daily_metrics import build_land_daily_snapshots
 from analytics.ingest import export_current_json, ingest_all
 from analytics.ingest_supabase import ingest_all_supabase
 from analytics.sync_dashboard import sync_dashboard
@@ -31,6 +32,9 @@ def main() -> None:
 
     print("\n=== Daily market snapshots (SQLite) ===")
     build_daily_market_snapshots()
+
+    print("\n=== Daily land snapshots (SQLite) ===")
+    build_land_daily_snapshots()
 
     print("\n=== Export current JSON for legacy analytics ===")
     export_current_json()

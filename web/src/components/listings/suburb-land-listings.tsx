@@ -58,7 +58,11 @@ export function SuburbLandListings({ marketId }: { marketId: string }) {
       </div>
       <div className="grid gap-3 sm:grid-cols-2">
         {dedupeListingsByThumbnail(listings).map((listing) => (
-          <ListingCard key={listing.listing_url} listing={listing} />
+          <ListingCard
+            key={listing.listing_url}
+            listing={listing}
+            landMarket={landMarket}
+          />
         ))}
       </div>
     </section>

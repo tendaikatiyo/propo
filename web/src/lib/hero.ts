@@ -1,8 +1,24 @@
+export type HeroImage = {
+  src: string;
+  alt: string;
+  credit?: string;
+  creditUrl?: string;
+};
+
 export const HERO_IMAGES = {
   harare: { src: "/harare_skyline_bg2.png", alt: "Harare skyline illustration" },
-  bulawayo: { src: "/byo_skyline_bg.png", alt: "Bulawayo skyline illustration" },
-  vicfalls: { src: "/vf_skyline_bg.png", alt: "Victoria Falls illustration" },
-} as const;
+  bulawayo: {
+    src: "/joshua_nkomo_statue_byo.webp",
+    alt: "Joshua Nkomo statue, Bulawayo",
+    credit: "VoyagesAfriq",
+    creditUrl: "https://www.flickr.com/photos/122304274@N05/44447638662/",
+  },
+} as const satisfies Record<string, HeroImage>;
+
+export type HeroVariant = keyof typeof HERO_IMAGES;
+
+/** City pages without a dedicated hero image use this variant. */
+export const DEFAULT_HERO_VARIANT: HeroVariant = "harare";
 
 /** Full-bleed home landing background (photograph). */
 export const HOME_LANDING_PHOTO = {
@@ -12,9 +28,7 @@ export const HOME_LANDING_PHOTO = {
   creditUrl: "https://www.flickr.com/photos/eriktorner/50605941258/",
 } as const;
 
-export type HeroVariant = keyof typeof HERO_IMAGES;
-
-export const HERO_ROTATION: HeroVariant[] = ["harare", "bulawayo", "vicfalls"];
+export const HERO_ROTATION: HeroVariant[] = ["harare", "bulawayo"];
 
 export const HERO_LAST_VARIANT_KEY = "propo:heroLastVariant";
 
@@ -24,8 +38,7 @@ export function isHeroVariant(value: string): value is HeroVariant {
 
 export function heroForCitySlug(citySlug: string): HeroVariant {
   if (citySlug === "bulawayo") return "bulawayo";
-  if (citySlug === "victoria-falls") return "vicfalls";
-  return "harare";
+  return DEFAULT_HERO_VARIANT;
 }
 
 export function nextHeroVariant(last: HeroVariant | null): HeroVariant {

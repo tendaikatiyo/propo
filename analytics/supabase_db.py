@@ -84,6 +84,28 @@ DO UPDATE SET
     avg_days_on_market = EXCLUDED.avg_days_on_market
 """
 
+LAND_SNAPSHOT_UPSERT_SQL = """
+INSERT INTO land_snapshots_daily (
+    snapshot_date, city, suburb, land_count, priced_land_count,
+    median_price_per_sqm, avg_price_per_sqm, min_price_per_sqm, max_price_per_sqm,
+    median_days_on_market, avg_days_on_market
+) VALUES (
+    %(snapshot_date)s::date, %(city)s, %(suburb)s, %(land_count)s, %(priced_land_count)s,
+    %(median_price_per_sqm)s, %(avg_price_per_sqm)s, %(min_price_per_sqm)s, %(max_price_per_sqm)s,
+    %(median_days_on_market)s, %(avg_days_on_market)s
+)
+ON CONFLICT (snapshot_date, city, suburb)
+DO UPDATE SET
+    land_count = EXCLUDED.land_count,
+    priced_land_count = EXCLUDED.priced_land_count,
+    median_price_per_sqm = EXCLUDED.median_price_per_sqm,
+    avg_price_per_sqm = EXCLUDED.avg_price_per_sqm,
+    min_price_per_sqm = EXCLUDED.min_price_per_sqm,
+    max_price_per_sqm = EXCLUDED.max_price_per_sqm,
+    median_days_on_market = EXCLUDED.median_days_on_market,
+    avg_days_on_market = EXCLUDED.avg_days_on_market
+"""
+
 
 class SupabaseHistoryDatabase:
     def __init__(self, db_url: Optional[str] = None) -> None:
@@ -211,6 +233,14 @@ class SupabaseHistoryDatabase:
     ) -> None:
         with conn.cursor() as cur:
             cur.execute(MARKET_SNAPSHOT_UPSERT_SQL, row)
+
+    def insert_land_snapshot(
+        self,
+        conn: psycopg2.extensions.connection,
+        row: Dict[str, Any],
+    ) -> None:
+        with conn.cursor() as cur:
+            cur.execute(LAND_SNAPSHOT_UPSERT_SQL, row)
 
     def count_snapshots(self) -> int:
         with self.connect() as conn:

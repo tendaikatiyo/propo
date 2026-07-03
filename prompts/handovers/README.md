@@ -23,3 +23,5 @@ Chronological notes for agent/developer continuity between sessions.
 | 2026-07-01 | [2026-07-01-admin-ops-dashboard.md](./2026-07-01-admin-ops-dashboard.md) | Private `/admin` ops dashboard; `ADMIN_SECRET` auth; service-role stats RPC; migration `009_admin_dashboard.sql` |
 | 2026-07-01 | [2026-07-01-f10-analytics-mvp.md](./2026-07-01-f10-analytics-mvp.md) | F10 consent + `/api/events`; `analytics_events` table; migration `010_analytics.sql`; explore/suburb/listing instrumentation |
 | 2026-07-03 | [2026-07-03-web-polish-and-continuity.md](./2026-07-03-web-polish-and-continuity.md) | UX polish (DOM, bedroom, mobile); property-type icons; liquid-glass buttons; photo credits; developers interest; photo landing reverted |
+| 2026-07-03 | [2026-07-03-land-mode-plan.md](./2026-07-03-land-mode-plan.md) | Land mode product plan (Rent \| Buy \| Land); phased implementation spec |
+| 2026-07-03 | [2026-07-03-land-mode-shipped.md](./2026-07-03-land-mode-shipped.md) | **Land mode shipped** (Phases 1–5); city listing counts + `land_count`; migrations 011–013 |

@@ -8,6 +8,8 @@ import { PinButton } from "@/components/markets/pin-button";
 import { SampleSizeBadge, ScopeLabel } from "@/components/markets/sample-size-badge";
 import { SuburbValueListings } from "@/components/listings/suburb-value-listings";
 import { SuburbLandListings } from "@/components/listings/suburb-land-listings";
+import { SuburbLandMetrics } from "@/components/markets/suburb-land-metrics";
+import { SuburbLandTrendsSection } from "@/components/markets/suburb-land-trends-section";
 import { PropertyMixBar } from "@/components/markets/property-mix-bar";
 import { SuburbTrendsSection } from "@/components/markets/suburb-trends-section";
 import { ConfidenceBadge } from "@/components/markets/confidence-badge";
@@ -24,7 +26,7 @@ import {
   segmentFilterLabel,
   segmentMedianLabel,
 } from "@/lib/segments";
-import type { MarketMetric, PropertyType } from "@/lib/types";
+import type { LandMetric, MarketMetric, PropertyType } from "@/lib/types";
 import { cityPath, suburbPath, suburbReportPath } from "@/lib/slug";
 import { cn } from "@/lib/utils";
 
@@ -46,11 +48,15 @@ export function SuburbProfile({
   related,
   propertyType = null,
   bedroom = null,
+  landMarket = null,
+  landMode = false,
 }: {
   market: MarketMetric;
   related: MarketMetric[];
   propertyType?: PropertyType | null;
   bedroom?: number | null;
+  landMarket?: LandMetric | null;
+  landMode?: boolean;
 }) {
   const segment = resolveSegmentStats(market, propertyType, bedroom);
   const specLabel = segmentFilterLabel(propertyType, bedroom);
@@ -85,14 +91,17 @@ export function SuburbProfile({
           <h1 className="font-heading text-3xl font-medium tracking-[-0.02em] sm:text-4xl">
             {sanitizeLabel(market.suburb)}
           </h1>
-          {specLabel ? (
-            <p className="mt-2 text-sm text-muted-foreground">
-              Showing medians for {specLabel}
-              {rentFallback || saleFallback
-                ? " (suburb-wide median shown where spec data is limited or missing)"
-                : ""}
-            </p>
-          ) : null}
+          <p className="mt-2 text-sm text-muted-foreground">
+            {landMode
+              ? "Land stands for sale — prices per sqm, trends, and active listings."
+              : specLabel
+                ? `Houses to rent and property for sale — medians for ${specLabel}${
+                    rentFallback || saleFallback
+                      ? " (suburb-wide median shown where spec data is limited or missing)"
+                      : ""
+                  }.`
+                : "Houses to rent, homes to buy, and land stands — median prices and active listings."}
+          </p>
           <div className="mt-3 flex flex-col gap-2">
             <ScopeLabel propertyType={propertyType} bedroom={bedroom} />
             <div className="flex flex-col gap-1 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-4">
@@ -141,6 +150,15 @@ export function SuburbProfile({
         </div>
       </div>
 
+      {landMarket ? (
+        <>
+          <SuburbLandMetrics landMarket={landMarket} landMode={landMode} />
+          <SuburbLandTrendsSection landMarket={landMarket} />
+        </>
+      ) : null}
+
+      {!landMode ? (
+        <>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <MetricCard
           label={segmentMedianLabel("rent", propertyType, bedroom)}
@@ -186,9 +204,11 @@ export function SuburbProfile({
           </div>
         </CardContent>
       </Card>
+        </>
+      ) : null}
 
       <div id="suburb-listings" className="space-y-8">
-        <SuburbValueListings market={market} />
+        {!landMode ? <SuburbValueListings market={market} /> : null}
         <SuburbLandListings marketId={market.market_id} />
       </div>
 

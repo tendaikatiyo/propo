@@ -3,6 +3,7 @@ from typing import Dict, Optional
 from analytics.clean_data import normalize_listing_record
 from analytics.data_sources import SOURCE_FILES
 from analytics.daily_metrics import build_daily_market_rows
+from analytics.land_daily_metrics import build_land_daily_rows
 from analytics.history_db import utc_date_iso
 from analytics.ingest import load_source_records
 from analytics.supabase_db import SupabaseHistoryDatabase, utc_now_iso
@@ -51,9 +52,12 @@ def ingest_all_supabase(db: Optional[SupabaseHistoryDatabase] = None) -> Dict[st
     snapshot_date = utc_date_iso()
     active_listings = database.fetch_active_listings()
     daily_rows = build_daily_market_rows(active_listings, snapshot_date)
+    land_rows = build_land_daily_rows(active_listings, snapshot_date)
     with database.connect() as conn:
         for row in daily_rows:
             database.insert_market_snapshot(conn, row)
+        for row in land_rows:
+            database.insert_land_snapshot(conn, row)
 
     stats = {
         "listings_processed": listings_processed,
@@ -62,6 +66,7 @@ def ingest_all_supabase(db: Optional[SupabaseHistoryDatabase] = None) -> Dict[st
         "active_listings": database.count_listings(active_only=True),
         "total_snapshots": database.count_snapshots(),
         "daily_market_rows": len(daily_rows),
+        "daily_land_rows": len(land_rows),
     }
 
     print(
@@ -71,7 +76,8 @@ def ingest_all_supabase(db: Optional[SupabaseHistoryDatabase] = None) -> Dict[st
         f"{stats['listings_deactivated']} deactivated, "
         f"{stats['active_listings']} active listings, "
         f"{stats['total_snapshots']} total snapshots, "
-        f"{stats['daily_market_rows']} daily market rows"
+        f"{stats['daily_market_rows']} daily market rows, "
+        f"{stats['daily_land_rows']} daily land rows"
     )
     return stats
 

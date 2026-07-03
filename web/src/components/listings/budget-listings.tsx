@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 
 import { ListingCard } from "@/components/listings/listing-card";
 import { Skeleton } from "@/components/ui/skeleton";
+import { useLandMetrics } from "@/hooks/use-market-data";
 import { useMarketLookup } from "@/hooks/use-market-lookup";
 import { fetchListingsFromApi } from "@/lib/listings-client";
 import { isLandMode } from "@/lib/mode";
@@ -23,6 +24,12 @@ export function BudgetListingsPreview({
 }) {
   const land = isLandMode(mode);
   const { getMarket } = useMarketLookup();
+  const { data: landMarkets = [] } = useLandMetrics({ enabled: land });
+
+  const getLandMarket = (marketId?: string | null) => {
+    if (!marketId) return null;
+    return landMarkets.find((m) => m.market_id === marketId) ?? null;
+  };
 
   const { data = [], isLoading, isError } = useQuery({
     queryKey: ["budget-listings", mode, budget, city, propertyType],
@@ -78,6 +85,7 @@ export function BudgetListingsPreview({
             key={listing.listing_url}
             listing={listing}
             market={land ? null : getMarket(listing.city, listing.suburb, listing.market_id)}
+            landMarket={land ? getLandMarket(listing.market_id) : null}
           />
         ))}
       </div>

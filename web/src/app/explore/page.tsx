@@ -2,12 +2,15 @@ import { Suspense } from "react";
 
 import { ExplorePageClient } from "@/components/explore/explore-page";
 import { Skeleton } from "@/components/ui/skeleton";
-import { buildPageMetadata } from "@/lib/seo";
+import {
+  buildPageMetadata,
+  EXPLORE_PAGE_DESCRIPTION,
+  EXPLORE_PAGE_TITLE,
+} from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
-  title: "Explore suburbs",
-  description:
-    "Filter Zimbabwe suburbs by budget and property type. Compare median rents, sale prices, and yields.",
+  title: EXPLORE_PAGE_TITLE,
+  description: EXPLORE_PAGE_DESCRIPTION,
   path: "/explore",
 });
 

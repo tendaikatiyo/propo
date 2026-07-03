@@ -3,6 +3,7 @@ import Link from "next/link";
 import { DevelopersInterestForm } from "@/components/developers/developers-interest-form";
 import { PageHeader } from "@/components/layout/page-header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { CONTACT_EMAIL } from "@/lib/constants";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
@@ -69,10 +70,10 @@ export default function DevelopersPage() {
             <p>
               Need something sooner? Email{" "}
               <a
-                href="mailto:hello@propo.fyi"
+                href={`mailto:${CONTACT_EMAIL}`}
                 className="text-foreground underline-offset-4 hover:underline"
               >
-                hello@propo.fyi
+                {CONTACT_EMAIL}
               </a>{" "}
               with your use case.
             </p>

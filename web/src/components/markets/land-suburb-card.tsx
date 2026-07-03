@@ -50,11 +50,6 @@ export function LandSuburbCard({
         </div>
         <div className="flex flex-wrap gap-3 text-sm text-muted-foreground">
           <span>{formatNumber(market.land_count)} stands listed</span>
-          {market.median_days_on_market_land != null ? (
-            <span className="font-mono text-xs tracking-wide">
-              {formatNumber(market.median_days_on_market_land)}d median DOM
-            </span>
-          ) : null}
         </div>
       </CardContent>
       <div className="relative z-10 px-6 pb-6">

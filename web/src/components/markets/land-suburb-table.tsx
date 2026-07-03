@@ -131,11 +131,6 @@ export function LandSuburbTable({ markets }: { markets: LandMetric[] }) {
                 onSort={toggleSort}
               />
             ))}
-            <TableHead>
-              <span className="font-mono text-[11px] tracking-[0.08em] uppercase text-muted-foreground">
-                DOM
-              </span>
-            </TableHead>
             <TableHead />
           </TableRow>
         </TableHeader>
@@ -164,11 +159,6 @@ export function LandSuburbTable({ markets }: { markets: LandMetric[] }) {
               <TableCell className="font-mono">{formatNumber(market.land_count)}</TableCell>
               <TableCell>
                 <ConfidenceBadge score={market.confidence_score} />
-              </TableCell>
-              <TableCell className="font-mono text-muted-foreground">
-                {market.median_days_on_market_land != null
-                  ? `${formatNumber(market.median_days_on_market_land)}d`
-                  : "—"}
               </TableCell>
               <TableCell className="text-right">
                 <div className="flex items-center justify-end gap-2">

@@ -12,6 +12,14 @@ export const liquidGlassPanelClass = [
   "shadow-[0_8px_40px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,0.55)]",
 ].join(" ");
 
+/** Hero filter panel — milky frost so dark text stays readable over photos. */
+export const liquidGlassHeroPanelClass = [
+  "rounded-3xl border border-white/70",
+  "bg-white/58 backdrop-blur-2xl backdrop-saturate-150",
+  "shadow-[0_12px_48px_rgba(0,0,0,0.22),inset_0_1px_0_rgba(255,255,255,0.85)]",
+  "ring-1 ring-white/40",
+].join(" ");
+
 export const liquidGlassPanelSoftClass = [
   "rounded-2xl border border-white/35",
   "bg-white/12 backdrop-blur-xl backdrop-saturate-150",

@@ -8,6 +8,7 @@ DATA_DIR = Path(__file__).resolve().parents[1] / "data"
 CLEAN_SALES_PATH = DATA_DIR / "clean_sales.json"
 CLEAN_RENTS_PATH = DATA_DIR / "clean_rentals.json"
 MARKET_METRICS_PATH = DATA_DIR / "market_metrics.json"
+LAND_METRICS_PATH = DATA_DIR / "land_metrics.json"
 CITIES_PATH = DATA_DIR / "cities.json"
 
 
@@ -39,10 +40,17 @@ def build_city_metrics(
     sales: List[Dict[str, Any]],
     rentals: List[Dict[str, Any]],
     markets: List[Dict[str, Any]],
+    land_markets: Optional[List[Dict[str, Any]]] = None,
 ) -> List[Dict[str, Any]]:
     sales_by_city: Dict[str, List[int]] = defaultdict(list)
     rentals_by_city: Dict[str, List[int]] = defaultdict(list)
     markets_by_city: Dict[str, List[Dict[str, Any]]] = defaultdict(list)
+    land_by_city: Dict[str, int] = defaultdict(int)
+
+    for land in land_markets or []:
+        city_name = land.get("city")
+        if city_name:
+            land_by_city[city_name] += int(land.get("land_count") or 0)
 
     for sale in sales:
         sales_by_city[sale["city"]].append(int(sale["price"]))
@@ -59,6 +67,7 @@ def build_city_metrics(
         suburb_count = len({market["suburb"] for market in market_list})
         rental_count = sum(market.get("rental_count", 0) for market in market_list)
         sale_count = sum(market.get("sale_count", 0) for market in market_list)
+        land_count = land_by_city.get(city, 0)
 
         median_rent = safe_median(rentals_by_city.get(city, []))
         median_sale_price = safe_median(sales_by_city.get(city, []))
@@ -89,6 +98,7 @@ def build_city_metrics(
                 "suburb_count": suburb_count,
                 "rental_count": rental_count,
                 "sale_count": sale_count,
+                "land_count": land_count,
                 "median_rent": int(median_rent) if median_rent is not None else None,
                 "median_sale_price": int(median_sale_price) if median_sale_price is not None else None,
                 "average_yield": round(average_yield, 2) if average_yield is not None else None,
@@ -111,7 +121,10 @@ def main() -> None:
     sales = load_json(CLEAN_SALES_PATH)
     rentals = load_json(CLEAN_RENTS_PATH)
     markets = load_json(MARKET_METRICS_PATH)
-    city_metrics = build_city_metrics(sales, rentals, markets)
+    land_markets: List[Dict[str, Any]] = []
+    if LAND_METRICS_PATH.exists():
+        land_markets = load_json(LAND_METRICS_PATH)
+    city_metrics = build_city_metrics(sales, rentals, markets, land_markets)
     save_json(city_metrics, CITIES_PATH)
 
 

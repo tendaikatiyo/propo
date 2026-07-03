@@ -4643,5 +4643,195 @@
         }
       ]
     }
+  },
+  "land": {
+    "cheapest_land_per_sqm": [
+      {
+        "market_id": "selous_selous",
+        "city": "Selous",
+        "suburb": "Selous",
+        "median_price_per_sqm": 1.24
+      },
+      {
+        "market_id": "gweru_woodlands_park",
+        "city": "Gweru",
+        "suburb": "Woodlands Park",
+        "median_price_per_sqm": 1.5
+      },
+      {
+        "market_id": "bulawayo_gumtree",
+        "city": "Bulawayo",
+        "suburb": "Gumtree",
+        "median_price_per_sqm": 2.4
+      },
+      {
+        "market_id": "chegutu_chegutu",
+        "city": "Chegutu",
+        "suburb": "Chegutu",
+        "median_price_per_sqm": 2.75
+      },
+      {
+        "market_id": "gweru_montrose",
+        "city": "Gweru",
+        "suburb": "Montrose",
+        "median_price_per_sqm": 4.0
+      },
+      {
+        "market_id": "bulawayo_north_trenance",
+        "city": "Bulawayo",
+        "suburb": "North Trenance",
+        "median_price_per_sqm": 4.44
+      },
+      {
+        "market_id": "bulawayo_kensington",
+        "city": "Bulawayo",
+        "suburb": "Kensington",
+        "median_price_per_sqm": 4.94
+      },
+      {
+        "market_id": "binga_binga",
+        "city": "Binga",
+        "suburb": "Binga",
+        "median_price_per_sqm": 5.26
+      },
+      {
+        "market_id": "umguza_umguza",
+        "city": "Umguza",
+        "suburb": "Umguza",
+        "median_price_per_sqm": 6.0
+      },
+      {
+        "market_id": "gweru_kingston_park",
+        "city": "Gweru",
+        "suburb": "Kingston Park",
+        "median_price_per_sqm": 6.36
+      }
+    ],
+    "most_expensive_land_per_sqm": [
+      {
+        "market_id": "goromonzi_goromonzi",
+        "city": "Goromonzi",
+        "suburb": "Goromonzi",
+        "median_price_per_sqm": 186.36
+      },
+      {
+        "market_id": "harare_msasa",
+        "city": "Harare",
+        "suburb": "Msasa",
+        "median_price_per_sqm": 174.54
+      },
+      {
+        "market_id": "harare_avondale",
+        "city": "Harare",
+        "suburb": "Avondale",
+        "median_price_per_sqm": 171.9
+      },
+      {
+        "market_id": "harare_highlands",
+        "city": "Harare",
+        "suburb": "Highlands",
+        "median_price_per_sqm": 153.85
+      },
+      {
+        "market_id": "harare_eastlea",
+        "city": "Harare",
+        "suburb": "Eastlea",
+        "median_price_per_sqm": 134.62
+      },
+      {
+        "market_id": "harare_rainham",
+        "city": "Harare",
+        "suburb": "Rainham",
+        "median_price_per_sqm": 134.17
+      },
+      {
+        "market_id": "mvuma_mvuma",
+        "city": "Mvuma",
+        "suburb": "Mvuma",
+        "median_price_per_sqm": 127.91
+      },
+      {
+        "market_id": "harare_monavale",
+        "city": "Harare",
+        "suburb": "Monavale",
+        "median_price_per_sqm": 125.0
+      },
+      {
+        "market_id": "harare_chisipite",
+        "city": "Harare",
+        "suburb": "Chisipite",
+        "median_price_per_sqm": 123.76
+      },
+      {
+        "market_id": "harare_borrowdale_west",
+        "city": "Harare",
+        "suburb": "Borrowdale West",
+        "median_price_per_sqm": 121.71
+      }
+    ],
+    "most_land_listings": [
+      {
+        "market_id": "ruwa_ruwa",
+        "city": "Ruwa",
+        "suburb": "Ruwa",
+        "land_count": 223
+      },
+      {
+        "market_id": "norton_norton",
+        "city": "Norton",
+        "suburb": "Norton",
+        "land_count": 178
+      },
+      {
+        "market_id": "harare_borrowdale",
+        "city": "Harare",
+        "suburb": "Borrowdale",
+        "land_count": 163
+      },
+      {
+        "market_id": "harare_pomona",
+        "city": "Harare",
+        "suburb": "Pomona",
+        "land_count": 147
+      },
+      {
+        "market_id": "harare_sandton_park",
+        "city": "Harare",
+        "suburb": "Sandton Park",
+        "land_count": 132
+      },
+      {
+        "market_id": "harare_glen_lorne",
+        "city": "Harare",
+        "suburb": "Glen Lorne",
+        "land_count": 124
+      },
+      {
+        "market_id": "nyabira_nyabira",
+        "city": "Nyabira",
+        "suburb": "Nyabira",
+        "land_count": 122
+      },
+      {
+        "market_id": "harare_carrick_creagh",
+        "city": "Harare",
+        "suburb": "Carrick Creagh",
+        "land_count": 111
+      },
+      {
+        "market_id": "harare_gletwin_park",
+        "city": "Harare",
+        "suburb": "Gletwin Park",
+        "land_count": 109
+      },
+      {
+        "market_id": "harare_crowhill_views",
+        "city": "Harare",
+        "suburb": "Crowhill Views",
+        "land_count": 101
+      }
+    ],
+    "fastest_moving_land": [],
+    "longest_on_market_land": []
   }
 }

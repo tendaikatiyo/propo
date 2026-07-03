@@ -4,7 +4,7 @@ import {
   segmentCountForMode,
   segmentMedianForMode,
 } from "@/lib/segments";
-import type { ExploreMode, Listing, MarketMetric, PropertyType } from "@/lib/types";
+import type { ExploreMode, LandMetric, Listing, MarketMetric, PropertyType } from "@/lib/types";
 
 export const FAIR_VALUE_THRESHOLD_PCT = 5;
 
@@ -117,4 +117,54 @@ export function resolveFairValueForListing(
   if (!badge) return null;
 
   return { ...badge, usedAggregate };
+}
+
+export function landFairValueLabel(
+  listingPricePerSqm: number,
+  median: number | null,
+  sampleCount: number
+): Omit<FairValueBadge, "usedAggregate"> | null {
+  if (!median || median <= 0 || !listingPricePerSqm || listingPricePerSqm <= 0) return null;
+  if (sampleCount < MIN_SEGMENT_LISTINGS) return null;
+
+  const pctDiff = ((listingPricePerSqm - median) / median) * 100;
+  const absPct = Math.abs(pctDiff);
+
+  if (absPct < FAIR_VALUE_THRESHOLD_PCT) return null;
+
+  const rounded = Math.round(absPct);
+
+  if (pctDiff < 0) {
+    return {
+      label: `${rounded}% below typical $/sqm`,
+      pctDiff,
+      variant: "below",
+      median,
+      sampleCount,
+    };
+  }
+
+  return {
+    label: `${rounded}% above typical $/sqm`,
+    pctDiff,
+    variant: "above",
+    median,
+    sampleCount,
+  };
+}
+
+export function resolveFairValueForLandListing(
+  landMarket: LandMetric | null | undefined,
+  listing: Listing
+): FairValueBadge | null {
+  if (!landMarket || listing.price_per_sqm == null || listing.price_per_sqm <= 0) {
+    return null;
+  }
+
+  const median = landMarket.median_price_per_sqm;
+  const sampleCount = landMarket.priced_land_count ?? 0;
+  const badge = landFairValueLabel(listing.price_per_sqm, median, sampleCount);
+  if (!badge) return null;
+
+  return { ...badge, usedAggregate: true };
 }

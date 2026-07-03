@@ -267,6 +267,37 @@ def fetch_market_trends(
     return build_payload(aggregate_by_date(rows, listing_type))
 
 
+def fetch_land_market_trends(
+    city: str,
+    suburb: str,
+    start_date: str,
+) -> Dict[str, Any]:
+    database = HistoryDatabase()
+    with database.connect() as conn:
+        cursor = conn.execute(
+            """
+            SELECT snapshot_date, median_price_per_sqm, priced_land_count, median_days_on_market
+            FROM land_snapshots_daily
+            WHERE city = ? AND suburb = ? AND snapshot_date >= ?
+            ORDER BY snapshot_date ASC
+            """,
+            (city, suburb, start_date),
+        )
+        rows = [dict(row) for row in cursor.fetchall()]
+
+    points: List[Dict[str, Any]] = []
+    for row in rows:
+        points.append(
+            {
+                "date": row["snapshot_date"],
+                "median_price": row.get("median_price_per_sqm"),
+                "listing_count": int(row.get("priced_land_count") or 0),
+                "median_days_on_market": row.get("median_days_on_market"),
+            }
+        )
+    return build_payload(points)
+
+
 def fetch_city_movers(
     city: str,
     listing_type: str,
@@ -382,7 +413,7 @@ def fetch_national_movers(
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Fetch market trends from local SQLite")
-    parser.add_argument("command", choices=["market", "city-movers", "national-movers"])
+    parser.add_argument("command", choices=["market", "land-market", "city-movers", "national-movers"])
     parser.add_argument("--city", default="")
     parser.add_argument("--suburb", default="")
     parser.add_argument("--listing-type", default="rent")
@@ -398,6 +429,11 @@ def main() -> None:
             print("city and suburb are required for market command", file=sys.stderr)
             sys.exit(1)
         payload = fetch_market_trends(args.city, args.suburb, args.listing_type, args.start_date)
+    elif args.command == "land-market":
+        if not args.city or not args.suburb:
+            print("city and suburb are required for land-market command", file=sys.stderr)
+            sys.exit(1)
+        payload = fetch_land_market_trends(args.city, args.suburb, args.start_date)
     elif args.command == "city-movers":
         if not args.city:
             print("city is required for city-movers command", file=sys.stderr)

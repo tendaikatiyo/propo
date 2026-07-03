@@ -2,16 +2,23 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { SuburbProfile } from "@/components/markets/suburb-profile";
+import { JsonLd } from "@/components/seo/json-ld";
 import {
   DEFAULT_RENT_BUDGET,
   normalizeExploreFilters,
   normalizePropertyType,
 } from "@/lib/constants";
-import { fetchMarketMetrics } from "@/lib/data-server";
+import { fetchLandMetrics, fetchMarketMetrics } from "@/lib/data-server";
+import { parseExploreMode } from "@/lib/mode";
 import { findMarketBySlugs } from "@/lib/markets";
-import { formatCurrency, sanitizeLabel } from "@/lib/format";
+import { sanitizeLabel } from "@/lib/format";
+import { suburbPageJsonLd } from "@/lib/json-ld";
 import { priceForFilters } from "@/lib/segments";
-import { buildPageMetadata } from "@/lib/seo";
+import {
+  buildPageMetadata,
+  suburbPageDescription,
+  suburbPageTitle,
+} from "@/lib/seo";
 import { matchesSlug, toSlug } from "@/lib/slug";
 
 export const revalidate = 3600;
@@ -39,16 +46,26 @@ export async function generateMetadata({
   const market = findMarketBySlugs(markets, citySlug, suburbSlug);
   if (!market) return { title: "Suburb not found" };
 
+  const landMetrics = await fetchLandMetrics();
+  const landMarket = landMetrics.find((m) => m.market_id === market.market_id) ?? null;
+
   const medianRent = priceForFilters(market, "rent", { propertyType, bedroom });
   const medianSale = priceForFilters(market, "buy", { propertyType, bedroom });
   const suburbLabel = sanitizeLabel(market.suburb);
+  const description = suburbPageDescription(
+    market,
+    suburbLabel,
+    medianRent,
+    medianSale,
+    landMarket
+  );
 
   return buildPageMetadata({
-    title: `${suburbLabel}, ${market.city}`,
-    description: `Median rent ${formatCurrency(medianRent)}, median sale ${formatCurrency(medianSale)} in ${suburbLabel}, ${market.city}. Yields, price trends, and active listings.`,
+    title: suburbPageTitle(suburbLabel, market.city),
+    description,
     path: `/cities/${citySlug}/${suburbSlug}`,
     ogImage: {
-      alt: `${suburbLabel}, ${market.city} — property market data on Propo`,
+      alt: `${suburbLabel}, ${market.city} — houses to rent, property for sale & land on Propo`,
     },
   });
 }
@@ -70,26 +87,56 @@ export default async function SuburbPage({
   searchParams,
 }: {
   params: Promise<{ city: string; suburb: string }>;
-  searchParams: Promise<{ type?: string; bedroom?: string }>;
+  searchParams: Promise<{ type?: string; bedroom?: string; mode?: string }>;
 }) {
   const { city: citySlug, suburb: suburbSlug } = await params;
   const sp = await searchParams;
+  const landMode = parseExploreMode(sp.mode ?? null) === "land";
   const { propertyType, bedroom } = parseSegmentFilters(sp);
-  const markets = await fetchMarketMetrics();
+  const [markets, landMetrics] = await Promise.all([
+    fetchMarketMetrics(),
+    fetchLandMetrics(),
+  ]);
   const market = findMarketBySlugs(markets, citySlug, suburbSlug);
   if (!market) notFound();
+
+  const landMarket = landMetrics.find((m) => m.market_id === market.market_id) ?? null;
 
   const related = markets
     .filter((m) => matchesSlug(m.city, citySlug) && m.market_id !== market.market_id)
     .sort((a, b) => (b.opportunity_score ?? 0) - (a.opportunity_score ?? 0))
     .slice(0, 6);
 
+  const suburbLabel = sanitizeLabel(market.suburb);
+  const medianRent = priceForFilters(market, "rent", { propertyType, bedroom });
+  const medianSale = priceForFilters(market, "buy", { propertyType, bedroom });
+  const description = suburbPageDescription(
+    market,
+    suburbLabel,
+    medianRent,
+    medianSale,
+    landMarket
+  );
+
   return (
-    <SuburbProfile
-      market={market}
-      related={related}
-      propertyType={propertyType}
-      bedroom={bedroom}
-    />
+    <>
+      <JsonLd
+        data={suburbPageJsonLd({
+          city: market.city,
+          suburb: suburbLabel,
+          citySlug,
+          suburbSlug,
+          description,
+        })}
+      />
+      <SuburbProfile
+        market={market}
+        related={related}
+        propertyType={propertyType}
+        bedroom={bedroom}
+        landMarket={landMarket}
+        landMode={landMode}
+      />
+    </>
   );
 }

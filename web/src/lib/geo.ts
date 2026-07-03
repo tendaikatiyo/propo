@@ -1,4 +1,4 @@
-import type { CityMetric, LandMetric, MarketMetric, RankingEntry, RankingsPayload } from "@/lib/types";
+import type { CityMetric, ExploreMode, LandMetric, MarketMetric, RankingEntry, RankingsPayload } from "@/lib/types";
 
 /** Cities outside Zimbabwe that appear in scraped data. */
 export const EXCLUDED_CITIES = new Set([
@@ -15,8 +15,11 @@ export function isZimbabweCity(city: string): boolean {
   return !EXCLUDED_CITIES.has(city);
 }
 
-export function cityListingTotal(city: CityMetric): number {
-  return (city.rental_count ?? 0) + (city.sale_count ?? 0);
+export function cityListingTotal(city: CityMetric, mode?: ExploreMode): number {
+  if (mode === "rent") return city.rental_count ?? 0;
+  if (mode === "buy") return city.sale_count ?? 0;
+  if (mode === "land") return city.land_count ?? 0;
+  return (city.rental_count ?? 0) + (city.sale_count ?? 0) + (city.land_count ?? 0);
 }
 
 export function filterZimbabweCities(cities: CityMetric[]): CityMetric[] {
@@ -58,5 +61,16 @@ export function filterRankingsPayload(payload: RankingsPayload): RankingsPayload
     }
   }
 
-  return { national, per_city };
+  const land: RankingsPayload["land"] = {};
+  if (payload.land) {
+    for (const [key, items] of Object.entries(payload.land)) {
+      land[key] = filterRankingList(items);
+    }
+  }
+
+  return {
+    national,
+    per_city,
+    ...(Object.keys(land).length ? { land } : {}),
+  };
 }

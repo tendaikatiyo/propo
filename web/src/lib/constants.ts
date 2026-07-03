@@ -112,5 +112,6 @@ export function budgetRangeForMode(mode: ExploreMode) {
 
 export const DEFAULT_CITY = "Harare";
 export const SITE_NAME = "Propo";
+export const CONTACT_EMAIL = "carteayo@gmail.com";
 export const SITE_DESCRIPTION =
-  "Property data index for Zimbabwe — compare suburbs, find markets in your budget, and explore rental yields.";
+  "Find houses to rent, homes to buy, and residential stands in Zimbabwe. Compare suburbs by budget — median rents, sale prices, and land per sqm across Harare and beyond.";

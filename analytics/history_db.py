@@ -68,6 +68,22 @@ CREATE TABLE IF NOT EXISTS market_snapshots_daily (
     UNIQUE (snapshot_date, city, suburb, listing_type, property_type)
 );
 
+CREATE TABLE IF NOT EXISTS land_snapshots_daily (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    snapshot_date TEXT NOT NULL,
+    city TEXT NOT NULL,
+    suburb TEXT NOT NULL,
+    land_count INTEGER NOT NULL,
+    priced_land_count INTEGER NOT NULL,
+    median_price_per_sqm INTEGER,
+    avg_price_per_sqm INTEGER,
+    min_price_per_sqm INTEGER,
+    max_price_per_sqm INTEGER,
+    median_days_on_market INTEGER,
+    avg_days_on_market INTEGER,
+    UNIQUE (snapshot_date, city, suburb)
+);
+
 CREATE TABLE IF NOT EXISTS ingest_runs (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     started_at TEXT NOT NULL,
@@ -88,6 +104,8 @@ CREATE INDEX IF NOT EXISTS idx_snapshots_listing_url
     ON listing_snapshots(listing_url);
 CREATE INDEX IF NOT EXISTS idx_market_snapshots_date
     ON market_snapshots_daily(snapshot_date);
+CREATE INDEX IF NOT EXISTS idx_land_snapshots_date
+    ON land_snapshots_daily(snapshot_date);
 """
 
 
@@ -158,6 +176,29 @@ class HistoryDatabase:
             conn.execute(
                 "ALTER TABLE market_snapshots_daily ADD COLUMN avg_days_on_market INTEGER"
             )
+
+        conn.execute(
+            """
+            CREATE TABLE IF NOT EXISTS land_snapshots_daily (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                snapshot_date TEXT NOT NULL,
+                city TEXT NOT NULL,
+                suburb TEXT NOT NULL,
+                land_count INTEGER NOT NULL,
+                priced_land_count INTEGER NOT NULL,
+                median_price_per_sqm INTEGER,
+                avg_price_per_sqm INTEGER,
+                min_price_per_sqm INTEGER,
+                max_price_per_sqm INTEGER,
+                median_days_on_market INTEGER,
+                avg_days_on_market INTEGER,
+                UNIQUE (snapshot_date, city, suburb)
+            )
+            """
+        )
+        conn.execute(
+            "CREATE INDEX IF NOT EXISTS idx_land_snapshots_date ON land_snapshots_daily(snapshot_date)"
+        )
 
     def start_ingest_run(self, sources: List[str]) -> int:
         with self.connect() as conn:
@@ -339,6 +380,44 @@ class HistoryDatabase:
                 row["avg_price"],
                 row["min_price"],
                 row["max_price"],
+                row.get("median_days_on_market"),
+                row.get("avg_days_on_market"),
+            ),
+        )
+
+    def insert_land_snapshot(
+        self,
+        conn: sqlite3.Connection,
+        row: Dict[str, Any],
+    ) -> None:
+        conn.execute(
+            """
+            INSERT INTO land_snapshots_daily (
+                snapshot_date, city, suburb, land_count, priced_land_count,
+                median_price_per_sqm, avg_price_per_sqm, min_price_per_sqm, max_price_per_sqm,
+                median_days_on_market, avg_days_on_market
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ON CONFLICT(snapshot_date, city, suburb)
+            DO UPDATE SET
+                land_count = excluded.land_count,
+                priced_land_count = excluded.priced_land_count,
+                median_price_per_sqm = excluded.median_price_per_sqm,
+                avg_price_per_sqm = excluded.avg_price_per_sqm,
+                min_price_per_sqm = excluded.min_price_per_sqm,
+                max_price_per_sqm = excluded.max_price_per_sqm,
+                median_days_on_market = excluded.median_days_on_market,
+                avg_days_on_market = excluded.avg_days_on_market
+            """,
+            (
+                row["snapshot_date"],
+                row["city"],
+                row["suburb"],
+                row["land_count"],
+                row["priced_land_count"],
+                row.get("median_price_per_sqm"),
+                row.get("avg_price_per_sqm"),
+                row.get("min_price_per_sqm"),
+                row.get("max_price_per_sqm"),
                 row.get("median_days_on_market"),
                 row.get("avg_days_on_market"),
             ),

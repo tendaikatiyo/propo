@@ -87,7 +87,7 @@ export function CityDashboard({
 
       <PageHeader
         title={city.city}
-        description={`${city.suburb_count} suburbs · ${city.rental_count} rentals · ${city.sale_count} sales`}
+        description={`${city.suburb_count} suburbs · ${city.rental_count} rentals · ${city.sale_count} sales${city.land_count ? ` · ${city.land_count} land` : ""}`}
       />
 
       <CityStatsGrid city={city} />

@@ -79,20 +79,41 @@ export async function fetchLandMetrics(): Promise<LandMetric[]> {
 }
 
 export async function fetchCities(): Promise<CityMetric[]> {
+  let cities: CityMetric[] = [];
   const client = createServerSupabaseClient();
   if (client) {
     const { data, error } = await client.from("cities").select("*");
     if (error) {
       console.error("[data-server] cities:", error.message);
     } else if (data?.length) {
-      return filterZimbabweCities(data as CityMetric[]);
+      cities = filterZimbabweCities(data as CityMetric[]);
     }
   }
-  try {
-    return filterZimbabweCities(await readLocalJson<CityMetric[]>("cities.json"));
-  } catch {
-    return [];
+  if (!cities.length) {
+    try {
+      cities = filterZimbabweCities(await readLocalJson<CityMetric[]>("cities.json"));
+    } catch {
+      return [];
+    }
   }
+  return enrichCitiesWithLandCounts(cities);
+}
+
+async function enrichCitiesWithLandCounts(cities: CityMetric[]): Promise<CityMetric[]> {
+  const landMarkets = await fetchLandMetrics();
+  if (!landMarkets.length) {
+    return cities.map((city) => ({ ...city, land_count: city.land_count ?? 0 }));
+  }
+
+  const landByCity = new Map<string, number>();
+  for (const market of landMarkets) {
+    landByCity.set(market.city, (landByCity.get(market.city) ?? 0) + market.land_count);
+  }
+
+  return cities.map((city) => ({
+    ...city,
+    land_count: landByCity.get(city.city) ?? city.land_count ?? 0,
+  }));
 }
 
 export async function fetchRankings(): Promise<RankingsPayload | null> {
@@ -457,7 +478,7 @@ interface SnapshotRow {
 }
 
 function fetchTrendsFromLocalPython(
-  command: "market" | "city-movers" | "national-movers",
+  command: "market" | "land-market" | "city-movers" | "national-movers",
   args: Record<string, string>
 ): unknown | null {
   try {
@@ -551,6 +572,85 @@ export async function fetchMarketTrends(
       listing_type: listingType,
     }))
   );
+
+  return buildTrendsPayload(points);
+}
+
+interface LandSnapshotRow {
+  snapshot_date: string;
+  city?: string;
+  suburb?: string;
+  median_price_per_sqm: number | null;
+  priced_land_count: number;
+  median_days_on_market?: number | null;
+}
+
+async function fetchLandSnapshotRows(params: {
+  city: string;
+  suburb?: string;
+  startDate: string;
+}): Promise<LandSnapshotRow[]> {
+  const client = createServerSupabaseClient();
+  if (client) {
+    let request = client
+      .from("land_snapshots_daily")
+      .select(
+        "snapshot_date, suburb, median_price_per_sqm, priced_land_count, median_days_on_market"
+      )
+      .eq("city", params.city)
+      .gte("snapshot_date", params.startDate)
+      .order("snapshot_date", { ascending: true });
+
+    if (params.suburb) {
+      request = request.eq("suburb", params.suburb);
+    }
+
+    const { data, error } = await request;
+    if (!error && data?.length) {
+      return data as LandSnapshotRow[];
+    }
+    if (error) {
+      console.error("[data-server] land_snapshots_daily:", error.message);
+    }
+  }
+
+  if (params.suburb) {
+    const payload = fetchTrendsFromLocalPython("land-market", {
+      city: params.city,
+      suburb: params.suburb,
+      "start-date": params.startDate,
+    }) as MarketTrendsPayload | null;
+
+    if (payload?.points?.length) {
+      return payload.points.map((point) => ({
+        snapshot_date: point.date,
+        median_price_per_sqm: point.median_price,
+        priced_land_count: point.listing_count,
+        median_days_on_market: point.median_days_on_market,
+      }));
+    }
+  }
+
+  return [];
+}
+
+export async function fetchLandMarketTrends(
+  market: Pick<LandMetric, "city" | "suburb">,
+  range: TrendRange
+): Promise<MarketTrendsPayload> {
+  const startDate = startDateForRange(range);
+  const rows = await fetchLandSnapshotRows({
+    city: market.city,
+    suburb: market.suburb,
+    startDate,
+  });
+
+  const points = rows.map((row) => ({
+    date: row.snapshot_date,
+    median_price: row.median_price_per_sqm,
+    listing_count: row.priced_land_count,
+    median_days_on_market: row.median_days_on_market ?? null,
+  }));
 
   return buildTrendsPayload(points);
 }
@@ -757,6 +857,7 @@ export function parseTrendQuery(rangeParam: string | null, modeParam: string | n
 } {
   return {
     range: parseTrendRange(rangeParam),
-    mode: modeParam === "buy" ? "buy" : "rent",
+    mode:
+      modeParam === "buy" ? "buy" : modeParam === "land" ? "land" : "rent",
   };
 }

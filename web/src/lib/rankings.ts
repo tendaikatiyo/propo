@@ -1,5 +1,11 @@
 import { LEADERBOARD_MIN_CONFIDENCE, RANKINGS_MIN_CONFIDENCE } from "@/lib/constants";
-import type { MarketMetric, MarketMoversRankingsPayload, RankingEntry, TrendMover } from "@/lib/types";
+import type {
+  LandMetric,
+  MarketMetric,
+  MarketMoversRankingsPayload,
+  RankingEntry,
+  TrendMover,
+} from "@/lib/types";
 
 const LEADERBOARD_MIN_ITEMS = 5;
 
@@ -83,4 +89,27 @@ export function daysOnMarketRent(entry: RankingEntry): number | null {
 
 export function daysOnMarketSale(entry: RankingEntry): number | null {
   return entry.median_days_on_market_sale ?? entry.average_days_on_market_sale ?? null;
+}
+
+export function filterLandRankingsByConfidence(
+  land: Record<string, RankingEntry[]> | undefined,
+  markets: LandMetric[],
+  minConfidence = LEADERBOARD_MIN_CONFIDENCE
+): Record<string, RankingEntry[]> {
+  if (!land) return {};
+
+  const confidenceByMarket = new Map(markets.map((m) => [m.market_id, m.confidence_score]));
+  const filtered: Record<string, RankingEntry[]> = {};
+
+  for (const [key, items] of Object.entries(land)) {
+    const confident = items.filter(
+      (item) => (confidenceByMarket.get(item.market_id) ?? 0) >= minConfidence
+    );
+    filtered[key] =
+      confident.length >= LEADERBOARD_MIN_ITEMS
+        ? confident
+        : items.slice(0, Math.min(items.length, 10));
+  }
+
+  return filtered;
 }

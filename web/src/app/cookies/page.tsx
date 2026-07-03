@@ -1,5 +1,5 @@
 import { LegalPage, LegalSection } from "@/components/legal/legal-page";
-import { SITE_NAME } from "@/lib/constants";
+import { CONTACT_EMAIL, SITE_NAME } from "@/lib/constants";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
@@ -103,8 +103,8 @@ export default function CookiePolicyPage() {
       <LegalSection title="Contact">
         <p>
           Questions about this Cookie Policy can be sent to{" "}
-          <a href="mailto:hello@propo.fyi" className="text-foreground underline-offset-4 hover:underline">
-            hello@propo.fyi
+          <a href={`mailto:${CONTACT_EMAIL}`} className="text-foreground underline-offset-4 hover:underline">
+            {CONTACT_EMAIL}
           </a>
           .
         </p>

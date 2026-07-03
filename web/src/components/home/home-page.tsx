@@ -3,18 +3,15 @@
 import Link from "next/link";
 import { Suspense, useRef, useState } from "react";
 
-import { BudgetSlider } from "@/components/filters/budget-slider";
-import { ExploreModeToggle } from "@/components/filters/explore-mode-toggle";
-import { PropertyTypeButtons } from "@/components/filters/property-type-buttons";
-import { PageHeader } from "@/components/layout/page-header";
 import { AffordabilityInsights } from "@/components/home/affordability-insights";
-import { BudgetListingsPreview } from "@/components/listings/budget-listings";
+import { HomeLandingHero } from "@/components/home/home-landing-hero";
 import { HomeMoversTeaser } from "@/components/home/home-movers-teaser";
+import { BudgetListingsPreview } from "@/components/listings/budget-listings";
 import { HomeBudgetBar } from "@/components/mobile/home-budget-bar";
+import { PageHeader } from "@/components/layout/page-header";
 import { LandSuburbCard } from "@/components/markets/land-suburb-card";
 import { SuburbCard } from "@/components/markets/suburb-card";
 import { buttonVariants } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useLandMetrics, useMarketMetrics } from "@/hooks/use-market-data";
 import { DEFAULT_CITY, ROOM_BEDROOM_COUNT } from "@/lib/constants";
@@ -64,6 +61,8 @@ function HomeContent() {
     hideSuburbMedianFallback: true,
   };
 
+  const exploreHref = buildExploreHref(mode, budget, propertyType);
+
   const residentialPreview = !land
     ? rankExploreResults(
         filterMarkets(markets, exploreFilters).inBudget,
@@ -76,125 +75,97 @@ function HomeContent() {
     : [];
   const hasPreview = land ? landPreview.length > 0 : residentialPreview.length > 0;
 
+  function handleModeChange(nextMode: ExploreMode, defaultBudget: number) {
+    setMode(nextMode);
+    setBudget(budgetForMode(nextMode, defaultBudget));
+    if (nextMode === "buy" && propertyType === "room") {
+      setPropertyType(null);
+    }
+    if (isLandMode(nextMode)) {
+      setPropertyType(null);
+    }
+  }
+
   return (
-    <div className="space-y-16">
-      <section ref={budgetSectionRef} className="space-y-6">
-        <PageHeader
-          title="My budget"
-          description={
-            land
-              ? "Set your land budget per square metre to surface matching suburbs in Harare and beyond."
-              : "Set your rent or buy budget and property preferences to surface matching suburbs in Harare and beyond."
-          }
-        />
-
-        <Card>
-          <CardContent className="space-y-8 pt-6">
-            <ExploreModeToggle
-              value={mode}
-              onChange={(nextMode, defaultBudget) => {
-                setMode(nextMode);
-                setBudget(budgetForMode(nextMode, defaultBudget));
-                if (nextMode === "buy" && propertyType === "room") {
-                  setPropertyType(null);
-                }
-                if (isLandMode(nextMode)) {
-                  setPropertyType(null);
-                }
-              }}
-            />
-
-            <BudgetSlider mode={mode} value={budget} onChange={setBudget} />
-
-            {!land ? (
-              <div className="space-y-3">
-                <p className="caption-label">Property type</p>
-                <PropertyTypeButtons
-                  mode={mode}
-                  value={propertyType}
-                  onChange={setPropertyType}
-                />
-              </div>
-            ) : null}
-
-            <Link
-              href={buildExploreHref(mode, budget, propertyType)}
-              className={buttonVariants({ size: "lg" })}
-            >
-              See matching suburbs
-            </Link>
-          </CardContent>
-        </Card>
-      </section>
-
-      {!land ? (
-        <AffordabilityInsights
-          markets={markets}
-          isLoading={isLoading}
-          filters={exploreFilters}
-        />
-      ) : null}
-
-      <section className="space-y-6">
-        <div className="flex flex-wrap items-end justify-between gap-4">
-          <PageHeader
-            title={land ? "Top land matches in Harare" : "Top matches in Harare"}
-          />
-          <Link
-            href={buildExploreHref(mode, budget, propertyType)}
-            className={buttonVariants({ variant: "outline", size: "sm" })}
-          >
-            View all
-          </Link>
-        </div>
-        {isLoading ? (
-          <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-            {Array.from({ length: 3 }).map((_, i) => (
-              <Skeleton key={i} className="h-44 w-full rounded-2xl" />
-            ))}
-          </div>
-        ) : hasPreview ? (
-          <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-            {land
-              ? landPreview.map((market) => (
-                  <LandSuburbCard
-                    key={market.market_id}
-                    market={market}
-                    badge="In budget"
-                    clickSource="home_card"
-                  />
-                ))
-              : residentialPreview.map((market) => (
-                  <SuburbCard
-                    key={market.market_id}
-                    market={market}
-                    mode={mode}
-                    badge="In budget"
-                    clickSource="home_card"
-                    filters={{
-                      propertyType,
-                      bedroom: propertyType === "room" ? ROOM_BEDROOM_COUNT : null,
-                    }}
-                  />
-                ))}
-          </div>
-        ) : (
-          <p className="text-[15px] tracking-[0.15px] text-muted-foreground">
-            {land
-              ? "No land suburbs in budget yet — try raising your $/sqm budget or pick another city on Explore."
-              : "No suburbs in budget yet — try adjusting your budget or property type filters."}
-          </p>
-        )}
-      </section>
-
-      {!land ? <HomeMoversTeaser /> : null}
-
-      <BudgetListingsPreview
+    <div className="flex flex-col">
+      <HomeLandingHero
+        sectionRef={budgetSectionRef}
         mode={mode}
         budget={budget}
-        city={DEFAULT_CITY}
-        propertyType={land ? null : propertyType}
+        propertyType={propertyType}
+        exploreHref={exploreHref}
+        onModeChange={handleModeChange}
+        onBudgetChange={setBudget}
+        onPropertyTypeChange={setPropertyType}
       />
+
+      <div className="mx-auto w-full max-w-6xl space-y-16 px-4 py-16 pb-24 sm:px-6 lg:px-8 lg:pb-10">
+        {!land ? (
+          <AffordabilityInsights
+            markets={markets}
+            isLoading={isLoading}
+            filters={exploreFilters}
+          />
+        ) : null}
+
+        <section className="space-y-6">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <PageHeader
+              title={land ? "Top land matches in Harare" : "Top matches in Harare"}
+            />
+            <Link href={exploreHref} className={buttonVariants({ variant: "outline", size: "sm" })}>
+              View all
+            </Link>
+          </div>
+          {isLoading ? (
+            <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+              {Array.from({ length: 3 }).map((_, i) => (
+                <Skeleton key={i} className="h-44 w-full rounded-2xl" />
+              ))}
+            </div>
+          ) : hasPreview ? (
+            <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+              {land
+                ? landPreview.map((market) => (
+                    <LandSuburbCard
+                      key={market.market_id}
+                      market={market}
+                      badge="In budget"
+                      clickSource="home_card"
+                    />
+                  ))
+                : residentialPreview.map((market) => (
+                    <SuburbCard
+                      key={market.market_id}
+                      market={market}
+                      mode={mode}
+                      badge="In budget"
+                      clickSource="home_card"
+                      filters={{
+                        propertyType,
+                        bedroom: propertyType === "room" ? ROOM_BEDROOM_COUNT : null,
+                      }}
+                    />
+                  ))}
+            </div>
+          ) : (
+            <p className="text-[15px] tracking-[0.15px] text-muted-foreground">
+              {land
+                ? "No land suburbs in budget yet — try raising your $/sqm budget or pick another city on Explore."
+                : "No suburbs in budget yet — try adjusting your budget or property type filters."}
+            </p>
+          )}
+        </section>
+
+        {!land ? <HomeMoversTeaser /> : null}
+
+        <BudgetListingsPreview
+          mode={mode}
+          budget={budget}
+          city={DEFAULT_CITY}
+          propertyType={land ? null : propertyType}
+        />
+      </div>
 
       <HomeBudgetBar
         mode={mode}
@@ -208,7 +179,7 @@ function HomeContent() {
 
 export function HomePageClient() {
   return (
-    <Suspense fallback={<Skeleton className="h-96 w-full rounded-2xl" />}>
+    <Suspense fallback={<Skeleton className="h-screen w-full" />}>
       <HomeContent />
     </Suspense>
   );

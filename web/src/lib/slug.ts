@@ -17,18 +17,20 @@ export function fromSlug(slug: string): string {
 function segmentQueryString(query?: {
   type?: string | null;
   bedroom?: number | null;
+  mode?: string | null;
 }): string {
-  if (!query?.type && query?.bedroom == null) return "";
+  if (!query?.type && query?.bedroom == null && !query?.mode) return "";
   const params = new URLSearchParams();
   if (query.type) params.set("type", query.type);
   if (query.bedroom != null) params.set("bedroom", String(query.bedroom));
+  if (query.mode && query.mode !== "rent") params.set("mode", query.mode);
   return params.toString();
 }
 
 export function suburbPath(
   city: string,
   suburb: string,
-  query?: { type?: string | null; bedroom?: number | null }
+  query?: { type?: string | null; bedroom?: number | null; mode?: string | null }
 ): string {
   const base = `/cities/${toSlug(city)}/${toSlug(suburb)}`;
   const qs = segmentQueryString(query);

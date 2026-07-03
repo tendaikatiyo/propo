@@ -101,6 +101,7 @@ export function ExploreFilterPanel({
           cities={cities}
           value={filters.city}
           onChange={(city) => apply({ city })}
+          mode={filters.mode}
         />
       </section>
 

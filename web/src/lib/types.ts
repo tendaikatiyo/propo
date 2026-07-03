@@ -81,6 +81,7 @@ export interface CityMetric {
   suburb_count: number;
   rental_count: number;
   sale_count: number;
+  land_count: number;
   median_rent: number | null;
   median_sale_price: number | null;
   average_yield: number | null;
@@ -98,15 +99,19 @@ export interface RankingEntry {
   opportunity_score?: number;
   median_rent?: number;
   median_sale_price?: number;
+  median_price_per_sqm?: number;
+  land_count?: number;
   median_days_on_market_rent?: number;
   median_days_on_market_sale?: number;
   average_days_on_market_rent?: number;
   average_days_on_market_sale?: number;
+  average_days_on_market_land?: number;
 }
 
 export interface RankingsPayload {
   national: Record<string, RankingEntry[]>;
   per_city: Record<string, Record<string, RankingEntry[]>>;
+  land?: Record<string, RankingEntry[]>;
 }
 
 export interface Listing {

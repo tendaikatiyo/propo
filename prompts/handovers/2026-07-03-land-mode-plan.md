@@ -1,7 +1,7 @@
 # Land mode plan — Rent | Buy | Land
 
 **Date:** 2026-07-03  
-**Status:** Phase 4 done (2026-07-03) — MVP complete; Phase 5 optional  
+**Status:** Phase 5 done (2026-07-03) — land mode complete end-to-end  
 **Goal:** Add land/stands as a third top-level explore mode, standardized on **price per sqm**, alongside existing rent and buy flows.
 
 ---
@@ -308,8 +308,6 @@ Filter and rank on computed `price_per_sqm`, not raw `price`.
 
 ## Phase 5 — Compare, trends, rankings (later)
 
-Defer until core explore loop works.
-
 | Feature | Land-specific behavior |
 | ------- | ---------------------- |
 | **Compare** | Median $/sqm, land count, DOM only — no yield/opportunity |
@@ -317,6 +315,30 @@ Defer until core explore loop works.
 | **Rankings** | "Cheapest land per sqm", "Fastest-moving stands" — separate tab, not mixed with rent/buy leaderboards |
 | **Suburb profile** | Land section or land-only view when `?mode=land` |
 | **Fair value** | Suburb median $/sqm vs listing $/sqm badge |
+
+### Phase 5 shipped (2026-07-03)
+
+| Deliverable | Path |
+| ----------- | ---- |
+| Land daily snapshots (analytics) | `analytics/land_daily_metrics.py` |
+| Land snapshots table | `supabase/migrations/012_land_snapshots_daily.sql` |
+| Land leaderboards in rankings.json | `analytics/rankings.py` (`land` key) |
+| Land compare metrics | `web/src/lib/land-compare.ts` |
+| Land compare table / cards | `web/src/components/markets/land-compare-table.tsx`, `web/src/components/mobile/land-compare-cards.tsx` |
+| Compare page land mode | `web/src/components/compare/compare-page.tsx`, `compare-filter-bar.tsx` |
+| Fair value for land listings | `web/src/lib/fair-value.ts`, `listing-card.tsx` |
+| Land rankings tab | `web/src/components/rankings/rankings-page.tsx` |
+| Suburb land metrics + trends | `suburb-land-metrics.tsx`, `suburb-land-trends-section.tsx` |
+| Suburb `?mode=land` | `web/src/app/cities/[city]/[suburb]/page.tsx` |
+| Land trends API (`mode=land`) | `web/src/lib/data-server.ts`, `api/markets/[marketId]/trends` |
+
+**Try it:**
+- `/compare?mode=land` — pin land suburbs and compare $/sqm
+- `/rankings?tab=land` — cheapest / fastest-moving land leaderboards
+- `/cities/harare/borrowdale?mode=land` — land-focused suburb profile
+- Fair-value badges on land listing cards when suburb median is known
+
+**Note:** Land trend charts need a few days of `land_snapshots_daily` history from the daily pipeline before lines appear.
 
 ---
 

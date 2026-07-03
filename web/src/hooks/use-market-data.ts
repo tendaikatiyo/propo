@@ -29,6 +29,7 @@ export function useCities() {
       const data = await fetchJson<CityMetric[]>("/api/cities");
       return filterZimbabweCities(data);
     },
+    staleTime: 60_000,
   });
 }
 

@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 
+import { CONTACT_EMAIL } from "@/lib/constants";
 import { parseDeveloperInterestPayload } from "@/lib/developers-interest";
 import {
   createAdminSupabaseClient,
@@ -29,7 +30,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         error:
-          "Signups are temporarily unavailable. Email hello@propo.fyi and we will add you manually.",
+          `Signups are temporarily unavailable. Email ${CONTACT_EMAIL} and we will add you manually.`,
       },
       { status: 503 }
     );

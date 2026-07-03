@@ -5,6 +5,7 @@ from typing import Any, Dict, List, Optional
 
 DATA_DIR = Path(__file__).resolve().parents[1] / "data"
 MARKET_METRICS_PATH = DATA_DIR / "market_metrics.json"
+LAND_METRICS_PATH = DATA_DIR / "land_metrics.json"
 CITIES_PATH = DATA_DIR / "cities.json"
 RANKINGS_PATH = DATA_DIR / "rankings.json"
 
@@ -25,6 +26,23 @@ def market_summary(market: Dict[str, Any], metric: str) -> Dict[str, Any]:
         "city": market["city"],
         "suburb": market["suburb"],
         metric: market.get(metric),
+    }
+
+
+def build_land_rankings(land_markets: List[Dict[str, Any]]) -> Dict[str, List[Dict[str, Any]]]:
+    priced = [item for item in land_markets if item.get("median_price_per_sqm") is not None]
+    return {
+        "cheapest_land_per_sqm": [
+            market_summary(m, "median_price_per_sqm")
+            for m in top_n(priced, "median_price_per_sqm", reverse=False)
+        ],
+        "most_expensive_land_per_sqm": [
+            market_summary(m, "median_price_per_sqm")
+            for m in top_n(priced, "median_price_per_sqm")
+        ],
+        "most_land_listings": [
+            market_summary(m, "land_count") for m in top_n(land_markets, "land_count")
+        ],
     }
 
 
@@ -71,6 +89,17 @@ def build_rankings(markets: List[Dict[str, Any]], cities: List[Dict[str, Any]]) 
     }
 
 
+def build_full_rankings(
+    markets: List[Dict[str, Any]],
+    cities: List[Dict[str, Any]],
+    land_markets: Optional[List[Dict[str, Any]]] = None,
+) -> Dict[str, Any]:
+    payload = build_rankings(markets, cities)
+    if land_markets:
+        payload["land"] = build_land_rankings(land_markets)
+    return payload
+
+
 def save_json(data: Dict[str, Any], path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8") as fh:
@@ -81,7 +110,10 @@ def save_json(data: Dict[str, Any], path: Path) -> None:
 def main() -> None:
     markets = load_json(MARKET_METRICS_PATH)
     cities = load_json(CITIES_PATH)
-    rankings = build_rankings(markets, cities)
+    land_markets: List[Dict[str, Any]] = []
+    if LAND_METRICS_PATH.exists():
+        land_markets = load_json(LAND_METRICS_PATH)
+    rankings = build_full_rankings(markets, cities, land_markets)
     save_json(rankings, RANKINGS_PATH)
 
 

@@ -1,5 +1,5 @@
 import { LegalPage, LegalSection } from "@/components/legal/legal-page";
-import { SITE_NAME } from "@/lib/constants";
+import { CONTACT_EMAIL, SITE_NAME } from "@/lib/constants";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
@@ -137,8 +137,8 @@ export default function TermsOfServicePage() {
       <LegalSection title="Contact">
         <p>
           For questions about these Terms, contact us at{" "}
-          <a href="mailto:hello@propo.fyi" className="text-foreground underline-offset-4 hover:underline">
-            hello@propo.fyi
+          <a href={`mailto:${CONTACT_EMAIL}`} className="text-foreground underline-offset-4 hover:underline">
+            {CONTACT_EMAIL}
           </a>
           .
         </p>

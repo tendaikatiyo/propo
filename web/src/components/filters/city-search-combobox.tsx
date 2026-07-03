@@ -13,7 +13,7 @@ import {
   CommandList,
 } from "@/components/ui/command";
 import { sortCitiesByMarketSize, cityListingTotal } from "@/lib/geo";
-import type { CityMetric } from "@/lib/types";
+import type { CityMetric, ExploreMode } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
 export function CitySearchCombobox({
@@ -22,12 +22,14 @@ export function CitySearchCombobox({
   onChange,
   allowAll = true,
   placeholder = "Select city",
+  mode,
 }: {
   cities: CityMetric[];
   value: string | null;
   onChange: (city: string | null) => void;
   allowAll?: boolean;
   placeholder?: string;
+  mode?: ExploreMode;
 }) {
   const [open, setOpen] = useState(false);
   const sorted = useMemo(() => sortCitiesByMarketSize(cities), [cities]);
@@ -93,7 +95,7 @@ export function CitySearchCombobox({
                       />
                       <span className="flex-1">{city.city}</span>
                       <span className="font-mono text-xs text-muted-foreground">
-                        {cityListingTotal(city)}
+                        {cityListingTotal(city, mode)}
                       </span>
                     </CommandItem>
                   ))}

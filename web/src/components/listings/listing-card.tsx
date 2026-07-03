@@ -13,6 +13,7 @@ import {
 import { isLandPropertyType, resolveListingThumbnailUrl } from "@/lib/listings";
 import { trackListingClick } from "@/lib/analytics/track";
 import {
+  resolveFairValueForLandListing,
   resolveFairValueForListing,
   type FairValueBadge,
 } from "@/lib/fair-value";
@@ -26,7 +27,7 @@ import {
 } from "@/lib/format";
 import { fairValueTooltipDetail } from "@/lib/metric-tooltips";
 import { cn } from "@/lib/utils";
-import type { Listing, MarketMetric, PropertyType } from "@/lib/types";
+import type { LandMetric, Listing, MarketMetric, PropertyType } from "@/lib/types";
 
 export function ListingThumbnail({ listing }: { listing: Listing }) {
   const imageUrl = resolveListingThumbnailUrl(listing);
@@ -53,9 +54,18 @@ export function ListingThumbnail({ listing }: { listing: Listing }) {
   );
 }
 
-function FairValueBadgeDisplay({ fairValue }: { fairValue: FairValueBadge }) {
+function FairValueBadgeDisplay({
+  fairValue,
+  land = false,
+}: {
+  fairValue: FairValueBadge;
+  land?: boolean;
+}) {
+  const medianLabel = land
+    ? formatPricePerSqm(fairValue.median)
+    : formatCurrency(fairValue.median);
   const tooltip = fairValueTooltipDetail(
-    formatCurrency(fairValue.median),
+    medianLabel,
     fairValue.usedAggregate,
     fairValue.sampleCount
   );
@@ -86,13 +96,21 @@ export function ListingCard({
   listing,
   compact = false,
   market,
+  landMarket,
 }: {
   listing: Listing;
   compact?: boolean;
   market?: MarketMetric | null;
+  landMarket?: LandMetric | null;
 }) {
   const isLand = isLandPropertyType(listing.property_type);
-  const fairValue = !isLand && market ? resolveFairValueForListing(market, listing) : null;
+  const fairValue = isLand
+    ? landMarket
+      ? resolveFairValueForLandListing(landMarket, listing)
+      : null
+    : market
+      ? resolveFairValueForListing(market, listing)
+      : null;
   const standSize = isLand
     ? formatLandSize(listing.land_size_sqm, listing.land_size, listing.land_size_unit)
     : null;
@@ -126,17 +144,12 @@ export function ListingCard({
                 {formatPricePerSqm(listing.price_per_sqm)}
               </span>
             ) : null}
-            {fairValue ? <FairValueBadgeDisplay fairValue={fairValue} /> : null}
+            {fairValue ? <FairValueBadgeDisplay fairValue={fairValue} land={isLand} /> : null}
           </div>
           <p className="line-clamp-2 text-[11px] text-muted-foreground">
             {[listing.suburb, listing.city].filter(Boolean).join(", ")}
             {isLand ? (
-              <>
-                {standSize ? ` · ${standSize}` : null}
-                {listing.days_on_market != null
-                  ? ` · ${formatNumber(listing.days_on_market)}d on market`
-                  : null}
-              </>
+              standSize ? ` · ${standSize}` : null
             ) : (
               <>
                 {listing.property_type

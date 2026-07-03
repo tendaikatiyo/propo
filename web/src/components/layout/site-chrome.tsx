@@ -81,6 +81,16 @@ export function SiteHero({
         sizes="100vw"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-background/10" />
+      {"creditUrl" in image && image.creditUrl ? (
+        <a
+          href={image.creditUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="absolute right-3 bottom-2 z-10 text-[10px] text-white/70 hover:text-white sm:right-4 sm:bottom-3"
+        >
+          Photo: {image.credit}
+        </a>
+      ) : null}
       {!compact ? (
         <div className="absolute inset-x-0 bottom-0 mx-auto max-w-6xl px-4 pb-8 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-center gap-2">
