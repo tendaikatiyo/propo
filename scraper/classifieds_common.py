@@ -16,7 +16,7 @@ if str(_root) not in sys.path:
     sys.path.insert(0, str(_root))
 
 from analytics.listing_images import extract_classifieds_carousel_image
-from scraper.property_co_common import normalize_city
+from scraper.property_co_common import normalize_city_for_listing
 
 try:
     from analytics.price_utils import reconcile_classifieds_rent_price
@@ -311,7 +311,7 @@ def parse_listing_card(card, feed_type: str, listing_kind: str) -> Optional[Dict
 
     suburb = parse_suburb_from_title(title)
     bedrooms, bathrooms, land_size, land_size_unit, region = parse_property_chips(card)
-    city = normalize_city(region)
+    city = normalize_city_for_listing(suburb, region)
     location = build_location(suburb, city)
     description = extract_card_description(card)
     agency_name, agency_logo = extract_agency(card)

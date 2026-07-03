@@ -25,3 +25,4 @@ Chronological notes for agent/developer continuity between sessions.
 | 2026-07-03 | [2026-07-03-web-polish-and-continuity.md](./2026-07-03-web-polish-and-continuity.md) | UX polish (DOM, bedroom, mobile); property-type icons; liquid-glass buttons; photo credits; developers interest; photo landing reverted |
 | 2026-07-03 | [2026-07-03-land-mode-plan.md](./2026-07-03-land-mode-plan.md) | Land mode product plan (Rent \| Buy \| Land); phased implementation spec |
 | 2026-07-03 | [2026-07-03-land-mode-shipped.md](./2026-07-03-land-mode-shipped.md) | **Land mode shipped** (Phases 1–5); city listing counts + `land_count`; migrations 011–013 |
+| 2026-07-03 | [2026-07-03-landing-seo-polish.md](./2026-07-03-landing-seo-polish.md) | Photo landing hero, SEO (sitemap/robots/JSON-LD), OG image, 404, contact email; admin mobile UX; `sync_cities` fix (Cities: 0) |

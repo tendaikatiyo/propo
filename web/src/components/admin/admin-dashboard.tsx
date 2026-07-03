@@ -51,19 +51,33 @@ function DetailRow({
   value: React.ReactNode;
 }) {
   return (
-    <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
-      <span className="text-muted-foreground">{label}</span>
-      <span className="sm:max-w-[60%] sm:text-right">{value}</span>
+    <div className="flex flex-col gap-1 border-b border-border/50 py-2.5 last:border-0 sm:flex-row sm:items-start sm:justify-between sm:gap-4 sm:border-0 sm:py-0">
+      <span className="text-xs font-medium tracking-wide text-muted-foreground uppercase sm:normal-case sm:font-normal sm:tracking-normal">
+        {label}
+      </span>
+      <span className="break-words sm:max-w-[60%] sm:text-right">{value}</span>
     </div>
   );
 }
 
-function AdminTableWrap({ children }: { children: React.ReactNode }) {
+function MobileDataCard({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
   return (
-    <div className="-mx-1 overflow-x-auto px-1 sm:mx-0 sm:px-0">
-      <div className="min-w-[32rem]">{children}</div>
+    <div
+      className={cn("rounded-xl border border-border/80 bg-card px-4 py-3 text-sm", className)}
+    >
+      {children}
     </div>
   );
+}
+
+function DesktopTable({ children }: { children: React.ReactNode }) {
+  return <div className="hidden md:block">{children}</div>;
 }
 
 function StatCard({
@@ -88,7 +102,7 @@ function StatCard({
     <Card size="sm">
       <CardHeader className="pb-0">
         <CardDescription className="text-xs sm:text-sm">{label}</CardDescription>
-        <CardTitle className={cn("text-xl sm:text-2xl", toneClass)}>{value}</CardTitle>
+        <CardTitle className={cn("text-lg sm:text-2xl", toneClass)}>{value}</CardTitle>
       </CardHeader>
       {hint ? (
         <CardContent className="pt-0 text-xs text-muted-foreground">{hint}</CardContent>
@@ -173,7 +187,7 @@ export function AdminDashboard() {
 
   if (authState === "loading") {
     return (
-      <div className="space-y-6">
+      <div className="space-y-6 pb-6">
         <PageHeader title="Admin ops" description="Loading pipeline health…" />
       </div>
     );
@@ -181,7 +195,7 @@ export function AdminDashboard() {
 
   if (authState === "guest") {
     return (
-      <div className="mx-auto max-w-md space-y-6">
+      <div className="mx-auto w-full max-w-md space-y-6 pb-6">
         <PageHeader
           title="Admin ops"
           description="Private pipeline and data health dashboard. Not indexed or linked from the public site."
@@ -221,11 +235,12 @@ export function AdminDashboard() {
       : 0;
 
   return (
-    <div className="space-y-6 sm:space-y-8">
+    <div className="space-y-6 pb-6 sm:space-y-8">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <PageHeader
           title="Admin ops"
           description="Pipeline health, listing inventory, and sync status. Internal use only."
+          className="min-w-0"
         />
         <div className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row sm:items-center">
           <Button
@@ -274,16 +289,20 @@ export function AdminDashboard() {
             />
           </div>
 
-          <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          <section className="grid grid-cols-2 gap-3 sm:gap-4 xl:grid-cols-4">
             <StatCard
               label="Active listings"
               value={formatNumber(stats.listings.active)}
               hint={`${formatNumber(stats.listings.inactive)} inactive · ${formatNumber(stats.listings.total)} total`}
             />
             <StatCard
-              label="Days tracked (snapshots)"
-              value={formatNumber(stats.marketSnapshotsDaily.daysTracked)}
-              hint={`${formatNumber(stats.marketSnapshotsDaily.distinctDates)} distinct snapshot dates`}
+              label="Snapshot dates"
+              value={formatNumber(stats.marketSnapshotsDaily.distinctDates)}
+              hint={
+                stats.marketSnapshotsDaily.minDate && stats.marketSnapshotsDaily.maxDate
+                  ? `${formatDate(stats.marketSnapshotsDaily.minDate)} → ${formatDate(stats.marketSnapshotsDaily.maxDate)}`
+                  : `${formatNumber(stats.marketSnapshotsDaily.totalRows)} daily rows`
+              }
             />
             <StatCard
               label="Suburbs (market_metrics)"
@@ -294,7 +313,7 @@ export function AdminDashboard() {
             <StatCard
               label="Cities"
               value={formatNumber(stats.cities.count)}
-              hint={`Metrics updated ${formatDateTime(stats.marketMetrics.updatedAtMax)}`}
+              hint={`Metrics updated ${formatDateTime(stats.cities.updatedAtMax)}`}
             />
           </section>
 
@@ -304,7 +323,7 @@ export function AdminDashboard() {
                 <CardTitle>Data freshness</CardTitle>
                 <CardDescription>When listings and snapshots were last seen.</CardDescription>
               </CardHeader>
-              <CardContent className="space-y-3 text-sm">
+              <CardContent className="space-y-0 text-sm sm:space-y-3">
                 <DetailRow
                   label="First seen range"
                   value={
@@ -361,7 +380,7 @@ export function AdminDashboard() {
                 <CardTitle>Data quality</CardTitle>
                 <CardDescription>Coverage and sanity checks on active inventory.</CardDescription>
               </CardHeader>
-              <CardContent className="space-y-3 text-sm">
+              <CardContent className="space-y-0 text-sm sm:space-y-3">
                 <DetailRow
                   label="market_id coverage"
                   value={
@@ -419,7 +438,29 @@ export function AdminDashboard() {
               <CardDescription>Active and inactive counts per source and listing type.</CardDescription>
             </CardHeader>
             <CardContent>
-              <AdminTableWrap>
+              <div className="space-y-2 md:hidden">
+                {stats.listings.breakdown.length === 0 ? (
+                  <p className="text-sm text-muted-foreground">No listing rows returned.</p>
+                ) : (
+                  stats.listings.breakdown.map((row) => (
+                    <MobileDataCard key={`${row.listingType}-${row.source}-${row.isActive ? "active" : "inactive"}`}>
+                      <div className="flex items-start justify-between gap-3">
+                        <div className="min-w-0">
+                          <p className="font-medium">{row.listingType}</p>
+                          <p className="truncate text-muted-foreground">{row.source}</p>
+                        </div>
+                        <Badge variant={row.isActive ? "success" : "secondary"}>
+                          {row.isActive ? "active" : "inactive"}
+                        </Badge>
+                      </div>
+                      <p className="mt-2 font-mono text-base font-medium">
+                        {formatNumber(row.count)}
+                      </p>
+                    </MobileDataCard>
+                  ))
+                )}
+              </div>
+              <DesktopTable>
                 <Table>
                 <TableHeader>
                   <TableRow>
@@ -456,7 +497,7 @@ export function AdminDashboard() {
                   )}
                 </TableBody>
               </Table>
-              </AdminTableWrap>
+              </DesktopTable>
             </CardContent>
           </Card>
 
@@ -466,7 +507,19 @@ export function AdminDashboard() {
                 <CardTitle>Top cities (active)</CardTitle>
               </CardHeader>
               <CardContent>
-                <AdminTableWrap>
+                <div className="space-y-2 md:hidden">
+                  {stats.listings.topCities.map((row) => (
+                    <MobileDataCard key={row.city}>
+                      <div className="flex items-center justify-between gap-3">
+                        <span className="min-w-0 truncate font-medium">{row.city}</span>
+                        <span className="shrink-0 font-mono text-base font-medium">
+                          {formatNumber(row.count)}
+                        </span>
+                      </div>
+                    </MobileDataCard>
+                  ))}
+                </div>
+                <DesktopTable>
                 <Table>
                   <TableHeader>
                     <TableRow>
@@ -485,7 +538,7 @@ export function AdminDashboard() {
                     ))}
                   </TableBody>
                 </Table>
-                </AdminTableWrap>
+                </DesktopTable>
               </CardContent>
             </Card>
 
@@ -495,7 +548,37 @@ export function AdminDashboard() {
                 <CardDescription>Last 10 pipeline ingests mirrored to Supabase.</CardDescription>
               </CardHeader>
               <CardContent>
-                <AdminTableWrap>
+                <div className="space-y-2 md:hidden">
+                  {stats.ingestRuns.length === 0 ? (
+                    <p className="text-sm text-muted-foreground">No ingest runs recorded.</p>
+                  ) : (
+                    stats.ingestRuns.map((run) => (
+                      <MobileDataCard key={run.id}>
+                        <div className="flex items-start justify-between gap-3">
+                          <div>
+                            <p className="font-medium">Run #{run.id}</p>
+                            <p className="text-muted-foreground">{formatDateTime(run.startedAt)}</p>
+                          </div>
+                        </div>
+                        <div className="mt-3 grid grid-cols-2 gap-2 text-xs">
+                          <div className="rounded-lg bg-muted/50 px-2.5 py-2">
+                            <p className="text-muted-foreground">Processed</p>
+                            <p className="mt-0.5 font-mono text-sm font-medium">
+                              {formatNumber(run.listingsProcessed)}
+                            </p>
+                          </div>
+                          <div className="rounded-lg bg-muted/50 px-2.5 py-2">
+                            <p className="text-muted-foreground">Deactivated</p>
+                            <p className="mt-0.5 font-mono text-sm font-medium">
+                              {formatNumber(run.listingsDeactivated)}
+                            </p>
+                          </div>
+                        </div>
+                      </MobileDataCard>
+                    ))
+                  )}
+                </div>
+                <DesktopTable>
                 <Table>
                   <TableHeader>
                     <TableRow>
@@ -528,12 +611,12 @@ export function AdminDashboard() {
                     )}
                   </TableBody>
                 </Table>
-                </AdminTableWrap>
+                </DesktopTable>
               </CardContent>
             </Card>
           </section>
 
-          <p className="text-xs text-muted-foreground">
+          <p className="break-words text-xs text-muted-foreground">
             Generated {formatDateTime(stats.generatedAt)} · apply migration{" "}
             <code className="rounded bg-muted px-1 py-0.5">009_admin_dashboard.sql</code> on Supabase
             if RPC stats are missing.

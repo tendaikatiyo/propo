@@ -22,7 +22,7 @@ export const DEFAULT_HERO_VARIANT: HeroVariant = "harare";
 
 /** Full-bleed home landing background (photograph). */
 export const HOME_LANDING_PHOTO = {
-  src: "/harare_skyline_bg_photo.webp",
+  src: "/harare_skyline_bg_photo_small2.webp",
   alt: "Harare skyline at dusk",
   credit: "Erik Törner",
   creditUrl: "https://www.flickr.com/photos/eriktorner/50605941258/",

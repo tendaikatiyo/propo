@@ -14,7 +14,7 @@ _root = Path(__file__).resolve().parents[1]
 if str(_root) not in sys.path:
     sys.path.insert(0, str(_root))
 
-from scraper.property_co_common import normalize_city
+from scraper.property_co_common import normalize_city_for_listing
 
 BASE_URL = "https://www.property.co.zw/houses-for-sale"
 SITE_ORIGIN = "https://www.property.co.zw"
@@ -182,7 +182,7 @@ def jsonld_to_record(listing: Dict) -> Optional[Dict]:
     suburb = str(address.get("addressLocality") or "").strip()
     region = str(address.get("addressRegion") or "").strip()
     country = str(address.get("addressCountry") or "").strip()
-    city = normalize_city(region)
+    city = normalize_city_for_listing(suburb, region)
 
     title = str(listing.get("name") or "").strip()
     description = str(listing.get("description") or "").strip()

@@ -1,5 +1,7 @@
 from typing import Optional
 
+from analytics.geo_overrides import resolve_city_for_suburb
+
 CITY_ALIASES = {
     "harare": "Harare",
     "harare north": "Harare",
@@ -49,3 +51,11 @@ def normalize_city(value: Optional[str]) -> str:
         return "Bulawayo"
 
     return CITY_ALIASES.get(key, text)
+
+
+def normalize_city_for_listing(suburb: Optional[str], city: Optional[str]) -> str:
+    """Normalize portal city labels and apply suburb-specific municipality fixes."""
+    resolved = normalize_city(city)
+    if suburb and str(suburb).strip():
+        return resolve_city_for_suburb(str(suburb).strip(), resolved)
+    return resolved

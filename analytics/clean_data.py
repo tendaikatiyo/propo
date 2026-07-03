@@ -3,6 +3,7 @@ import re
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional
 
+from analytics.geo_overrides import resolve_city_for_suburb
 from analytics.listing_images import resolve_listing_image_url
 from analytics.listing_utils import build_market_id
 from analytics.price_utils import reconcile_classifieds_rent_price, reconcile_rent_price
@@ -141,6 +142,7 @@ def normalize_listing_record(
 
     city = normalize_city(record.get("city"))
     suburb = normalize_suburb(record.get("suburb"))
+    city = resolve_city_for_suburb(suburb, city)
     price = parse_price(record.get("price"))
 
     title = normalize_text(record.get("title"))
@@ -166,6 +168,7 @@ def normalize_listing_record(
 
     city = normalize_city(city)
     suburb = normalize_suburb(suburb)
+    city = resolve_city_for_suburb(suburb, city)
     market_id = build_market_id(city, suburb)
     original_price = parse_price(record.get("price"))
     price_raw = str(record.get("price_raw", "")).strip()

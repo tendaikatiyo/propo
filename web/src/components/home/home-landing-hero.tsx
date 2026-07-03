@@ -94,7 +94,7 @@ export function HomeLandingHero({
           >
             <div className="space-y-5 lg:space-y-7">
               <div>
-                <p className="caption-label">My budget</p>
+                <p className="caption-label">Focus</p>
                 <p className="mt-1.5 hidden text-sm text-muted-foreground sm:block">
                   Adjust filters — results update as you scroll.
                 </p>

@@ -6,19 +6,30 @@ import argparse
 from typing import Dict, Optional
 
 from analytics.clean_data import normalize_city, normalize_suburb
+from analytics.geo_overrides import resolve_city_for_suburb
 from analytics.history_db import HistoryDatabase
 from analytics.listing_utils import build_market_id
 from analytics.supabase_db import SupabaseHistoryDatabase
 
 
 def market_id_for_row(city: Optional[str], suburb: Optional[str]) -> Optional[str]:
-    if not city or not suburb:
+    corrected_city, corrected_suburb = corrected_location(city, suburb)
+    if not corrected_city or not corrected_suburb:
         return None
+    return build_market_id(corrected_city, corrected_suburb)
+
+
+def corrected_location(
+    city: Optional[str], suburb: Optional[str]
+) -> tuple[Optional[str], Optional[str]]:
+    if not city or not suburb:
+        return None, None
     normalized_city = normalize_city(city)
     normalized_suburb = normalize_suburb(suburb)
     if not normalized_city or not normalized_suburb:
-        return None
-    return build_market_id(normalized_city, normalized_suburb)
+        return None, None
+    corrected_city = resolve_city_for_suburb(normalized_suburb, normalized_city)
+    return corrected_city, normalized_suburb
 
 
 def backfill_sqlite(db: HistoryDatabase) -> int:
@@ -34,12 +45,22 @@ def backfill_sqlite(db: HistoryDatabase) -> int:
         )
         rows = cur.fetchall()
         for listing_url, city, suburb, current_market_id in rows:
+            corrected_city, corrected_suburb = corrected_location(city, suburb)
             market_id = market_id_for_row(city, suburb)
-            if not market_id or market_id == current_market_id:
+            if not market_id:
+                continue
+            if (
+                market_id == current_market_id
+                and corrected_city == normalize_city(city)
+            ):
                 continue
             cur.execute(
-                "UPDATE listings SET market_id = ? WHERE listing_url = ?",
-                (market_id, listing_url),
+                """
+                UPDATE listings
+                SET market_id = ?, city = ?, suburb = ?
+                WHERE listing_url = ?
+                """,
+                (market_id, corrected_city, corrected_suburb, listing_url),
             )
             updated += 1
         conn.commit()
@@ -59,16 +80,22 @@ def backfill_supabase(db: SupabaseHistoryDatabase) -> int:
             )
             rows = cur.fetchall()
             for listing_url, city, suburb, current_market_id in rows:
+                corrected_city, corrected_suburb = corrected_location(city, suburb)
                 market_id = market_id_for_row(city, suburb)
-                if not market_id or market_id == current_market_id:
+                if not market_id:
+                    continue
+                if (
+                    market_id == current_market_id
+                    and corrected_city == normalize_city(city)
+                ):
                     continue
                 cur.execute(
                     """
                     UPDATE listings
-                    SET market_id = %s
+                    SET market_id = %s, city = %s, suburb = %s
                     WHERE listing_url = %s
                     """,
-                    (market_id, listing_url),
+                    (market_id, corrected_city, corrected_suburb, listing_url),
                 )
                 updated += 1
     return updated
