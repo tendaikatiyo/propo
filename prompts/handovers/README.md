@@ -26,3 +26,5 @@ Chronological notes for agent/developer continuity between sessions.
 | 2026-07-03 | [2026-07-03-land-mode-plan.md](./2026-07-03-land-mode-plan.md) | Land mode product plan (Rent \| Buy \| Land); phased implementation spec |
 | 2026-07-03 | [2026-07-03-land-mode-shipped.md](./2026-07-03-land-mode-shipped.md) | **Land mode shipped** (Phases 1–5); city listing counts + `land_count`; migrations 011–013 |
 | 2026-07-03 | [2026-07-03-landing-seo-polish.md](./2026-07-03-landing-seo-polish.md) | Photo landing hero, SEO (sitemap/robots/JSON-LD), OG image, 404, contact email; admin mobile UX; `sync_cities` fix (Cities: 0) |
+| 2026-07-04 | [2026-07-04-pipeline-ops-polish-telegram.md](./2026-07-04-pipeline-ops-polish-telegram.md) | GHA daily pipeline live; Telegram stage alerts; admin ingest runtime; logomark/motion/hero; land trends hidden; freshness pill datetime; hero credit removed; `/about` page |
+| 2026-07-04 | [2026-07-04-brand-seo-design-doc.md](./2026-07-04-brand-seo-design-doc.md) | SEO/OG copy → affordability framing; red hamburger pin badge; `web/DESIGN.md` Propo design system |

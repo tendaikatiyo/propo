@@ -14,8 +14,15 @@ export const OG_IMAGE_ALT = `${SITE_NAME} — Where can you afford in Zimbabwe? 
 export const OG_IMAGE_WIDTH = 1200;
 export const OG_IMAGE_HEIGHT = 630;
 
-/** Site favicon — `web/public/propo logo.svg` */
-export const FAVICON_PATH = "/propo logo.svg";
+/** Production logomark — navbar and JSON-LD. */
+export const LOGOMARK_PATH = "/main_logomark.png";
+
+/** Dev-only favicon so local tabs are visually distinct from production. */
+export const LOCALHOST_LOGOMARK_PATH = "/localhost_logomark.png";
+
+/** Favicon path — purple mark locally, yellow mark in production builds. */
+export const FAVICON_PATH =
+  process.env.NODE_ENV === "development" ? LOCALHOST_LOGOMARK_PATH : LOGOMARK_PATH;
 
 export function absoluteUrl(path = ""): string {
   const normalized = path.startsWith("/") ? path : `/${path}`;
@@ -124,8 +131,9 @@ export function rootMetadata(): Metadata {
     applicationName: SITE_NAME,
     category: "real estate",
     icons: {
-      icon: [{ url: FAVICON_PATH, type: "image/svg+xml" }],
+      icon: [{ url: FAVICON_PATH, type: "image/png" }],
       shortcut: FAVICON_PATH,
+      apple: FAVICON_PATH,
     },
   };
 }

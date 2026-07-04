@@ -3,8 +3,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import type { SuburbClickPayload } from "@/lib/analytics/types";
 import { Badge } from "@/components/ui/badge";
 import { formatNumber, formatPricePerSqm, sanitizeLabel } from "@/lib/format";
+import { motionCard } from "@/lib/motion";
 import { suburbPath } from "@/lib/slug";
 import type { LandMetric } from "@/lib/types";
+import { cn } from "@/lib/utils";
 
 import { ConfidenceBadge } from "./confidence-badge";
 import { PinButton } from "./pin-button";
@@ -21,7 +23,7 @@ export function LandSuburbCard({
   const href = suburbPath(market.city, market.suburb);
 
   return (
-    <Card className="relative h-full transition-colors hover:bg-muted/30">
+    <Card className={cn("relative h-full hover:bg-muted/30", motionCard)}>
       <TrackedSuburbLink
         href={href}
         tracking={{

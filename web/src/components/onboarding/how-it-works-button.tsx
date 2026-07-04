@@ -3,6 +3,7 @@
 import { ChevronRight, PlayCircle } from "lucide-react";
 
 import { useOnboardingTour } from "@/components/onboarding/onboarding-tour-context";
+import { motionPress, motionRow } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
 export function HowItWorksButton({
@@ -27,6 +28,7 @@ export function HowItWorksButton({
         type="button"
         onClick={handleClick}
         className={cn(
+          motionRow,
           "flex min-h-[44px] w-full items-center gap-3 px-4 py-3 text-left active:bg-muted/80",
           className
         )}
@@ -42,7 +44,11 @@ export function HowItWorksButton({
     <button
       type="button"
       onClick={handleClick}
-      className={cn("text-sm text-muted-foreground hover:text-foreground", className)}
+      className={cn(
+        motionPress,
+        "text-sm text-muted-foreground hover:text-foreground",
+        className
+      )}
     >
       How it works
     </button>

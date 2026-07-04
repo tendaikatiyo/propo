@@ -29,10 +29,7 @@ export function DataFreshnessPill({
   const freshness = formatDataFreshness(data.updatedAt);
 
   return (
-    <span
-      className={cn("text-xs text-muted-foreground", className)}
-      title={new Date(data.updatedAt).toLocaleString()}
-    >
+    <span className={cn("text-xs text-muted-foreground", className)}>
       {prefix ? `${prefix} · ` : null}
       {freshness}
     </span>

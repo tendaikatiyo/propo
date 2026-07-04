@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { BarChart3, Building2, Compass, Home } from "lucide-react";
 
 import { cn } from "@/lib/utils";
+import { motionPressIcon } from "@/lib/motion";
 
 const TAB_ITEMS = [
   { href: "/", label: "Home", icon: Home },
@@ -32,7 +33,8 @@ export function MobileTabBar() {
               key={item.href}
               href={item.href}
               className={cn(
-                "relative flex min-h-[52px] flex-col items-center justify-center gap-1 px-2 py-2 text-[10px] font-medium transition-transform active:scale-95",
+                motionPressIcon,
+                "relative flex min-h-[52px] flex-col items-center justify-center gap-1 px-2 py-2 text-[10px] font-medium",
                 active ? "text-foreground" : "text-muted-foreground"
               )}
             >

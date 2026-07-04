@@ -4,9 +4,11 @@ import type { SuburbClickPayload } from "@/lib/analytics/types";
 import { Badge } from "@/components/ui/badge";
 import { SegmentPriceNote } from "@/components/markets/segment-price-note";
 import { formatCurrency, formatPercent, sanitizeLabel } from "@/lib/format";
+import { motionCard } from "@/lib/motion";
 import { priceForFilters } from "@/lib/segments";
 import { suburbPath } from "@/lib/slug";
 import type { ExploreFilters, ExploreMode, MarketMetric } from "@/lib/types";
+import { cn } from "@/lib/utils";
 
 import { ConfidenceBadge } from "./confidence-badge";
 import { PinButton } from "./pin-button";
@@ -32,7 +34,7 @@ export function SuburbCard({
   });
 
   return (
-    <Card className="relative h-full transition-colors hover:bg-muted/30">
+    <Card className={cn("relative h-full hover:bg-muted/30", motionCard)}>
       <TrackedSuburbLink
         href={href}
         tracking={{

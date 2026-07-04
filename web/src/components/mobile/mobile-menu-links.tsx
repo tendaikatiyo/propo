@@ -1,13 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { Building2, ChevronRight, Code2, Compass, HelpCircle } from "lucide-react";
+import { Building2, ChevronRight, Code2, Compass, HelpCircle, UserRound } from "lucide-react";
 
 import { HowItWorksButton } from "@/components/onboarding/how-it-works-button";
 import { DataFreshnessPill } from "@/components/layout/data-freshness-pill";
+import { motionRow } from "@/lib/motion";
+import { cn } from "@/lib/utils";
 
 const LINKS = [
   { href: "/methodology", label: "Methodology", icon: HelpCircle },
+  { href: "/about", label: "About", icon: UserRound },
   { href: "/developers", label: "Developers", icon: Code2 },
   { href: "/explore", label: "Explore", icon: Compass },
   { href: "/cities", label: "Cities", icon: Building2 },
@@ -28,7 +31,10 @@ export function MobileMenuLinks({ onNavigate }: { onNavigate?: () => void }) {
               key={item.href}
               href={item.href}
               onClick={onNavigate}
-              className="flex min-h-[44px] items-center gap-3 px-4 py-3 active:bg-muted/80"
+              className={cn(
+                motionRow,
+                "flex min-h-[44px] items-center gap-3 px-4 py-3 active:bg-muted/80"
+              )}
             >
               <Icon className="size-[18px] shrink-0 text-muted-foreground" />
               <span className="flex-1 font-heading text-[15px] font-medium">

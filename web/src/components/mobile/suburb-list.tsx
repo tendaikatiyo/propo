@@ -13,6 +13,8 @@ import { formatCurrency, formatPercent, sanitizeLabel } from "@/lib/format";
 import { priceForFilters } from "@/lib/segments";
 import { suburbPath } from "@/lib/slug";
 import type { ExploreFilters, ExploreMode, MarketMetric, SortDirection, SortKey } from "@/lib/types";
+import { motionRow } from "@/lib/motion";
+import { cn } from "@/lib/utils";
 
 const SORT_OPTIONS: { key: SortKey; label: string; modes?: ExploreMode[] }[] = [
   { key: "median_rent", label: "Rent", modes: ["rent"] },
@@ -109,7 +111,7 @@ export function SuburbList({
                   source: "explore_list",
                   mode,
                 }}
-                className="flex min-w-0 flex-1 items-center gap-2 active:opacity-70"
+                className={cn(motionRow, "flex min-w-0 flex-1 items-center gap-2")}
               >
                 <div className="min-w-0 flex-1">
                   <p className="truncate font-heading font-medium">

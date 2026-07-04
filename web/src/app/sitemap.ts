@@ -12,6 +12,7 @@ const STATIC_ROUTES: { path: string; priority: number; changeFrequency: Metadata
     { path: "/rankings", priority: 0.85, changeFrequency: "daily" },
     { path: "/compare", priority: 0.6, changeFrequency: "weekly" },
     { path: "/methodology", priority: 0.5, changeFrequency: "monthly" },
+    { path: "/about", priority: 0.45, changeFrequency: "monthly" },
     { path: "/developers", priority: 0.4, changeFrequency: "monthly" },
     { path: "/privacy", priority: 0.2, changeFrequency: "yearly" },
     { path: "/cookies", priority: 0.2, changeFrequency: "yearly" },

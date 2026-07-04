@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { PropoLogomark } from "@/components/brand/propo-logomark";
 import { DataFreshnessPill } from "@/components/layout/data-freshness-pill";
 import { HowItWorksButton } from "@/components/onboarding/how-it-works-button";
 import { FooterOrbs } from "@/components/ui/footer-orbs";
 import { SITE_NAME } from "@/lib/constants";
-import { HERO_IMAGES, type HeroVariant } from "@/lib/hero";
+import { HERO_IMAGES, type HeroImage, type HeroVariant } from "@/lib/hero";
 
 export function AppFooter() {
   return (
@@ -13,7 +14,13 @@ export function AppFooter() {
       <FooterOrbs />
       <div className="relative z-10 mx-auto flex max-w-6xl flex-col gap-4 px-4 py-10 sm:px-6 lg:px-8">
         <div className="flex flex-wrap items-center justify-between gap-4">
-          <p className="font-display text-lg font-medium">{SITE_NAME.toLowerCase()}</p>
+          <Link
+            href="/"
+            className="flex items-center gap-2.5 font-display text-lg font-medium"
+          >
+            <PropoLogomark size={28} />
+            <span>{SITE_NAME.toLowerCase()}</span>
+          </Link>
           <DataFreshnessPill />
         </div>
         <p className="text-sm text-muted-foreground">
@@ -28,6 +35,9 @@ export function AppFooter() {
           </Link>
           <Link href="/methodology" className="hover:text-foreground">
             Methodology
+          </Link>
+          <Link href="/about" className="hover:text-foreground">
+            About
           </Link>
           <Link href="/developers" className="hover:text-foreground">
             Developers
@@ -53,15 +63,17 @@ export function AppFooter() {
 export function SiteHero({
   compact = false,
   variant = "harare",
+  image,
   tourAnchor = false,
   showFreshness = false,
 }: {
   compact?: boolean;
   variant?: HeroVariant;
+  image?: HeroImage;
   tourAnchor?: boolean;
   showFreshness?: boolean;
 }) {
-  const image = HERO_IMAGES[variant];
+  const resolved = image ?? HERO_IMAGES[variant];
 
   return (
     <div
@@ -73,24 +85,14 @@ export function SiteHero({
       }
     >
       <Image
-        src={image.src}
-        alt={image.alt}
+        src={resolved.src}
+        alt={resolved.alt}
         fill
         priority
         className="object-cover object-[center_35%]"
         sizes="100vw"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-background/10" />
-      {"creditUrl" in image && image.creditUrl ? (
-        <a
-          href={image.creditUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="absolute right-3 bottom-2 z-10 text-[10px] text-white/70 hover:text-white sm:right-4 sm:bottom-3"
-        >
-          Photo: {image.credit}
-        </a>
-      ) : null}
       {!compact ? (
         <div className="absolute inset-x-0 bottom-0 mx-auto max-w-6xl px-4 pb-8 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-center gap-2">

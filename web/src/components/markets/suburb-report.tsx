@@ -4,11 +4,14 @@ import { ListingCard } from "@/components/listings/listing-card";
 import { ConfidenceBadge } from "@/components/markets/confidence-badge";
 import { PropertyMixBar } from "@/components/markets/property-mix-bar";
 import { SuburbReportActions } from "@/components/markets/suburb-report-actions";
-import { SuburbReportTrends } from "@/components/markets/suburb-report-trends";
+import {
+  // SuburbReportLandTrends,
+  SuburbReportTrends,
+} from "@/components/markets/suburb-report-trends";
 import { MIN_SEGMENT_LISTINGS, SITE_NAME } from "@/lib/constants";
 import { formatDataFreshness } from "@/lib/data-freshness";
 import { dedupeListingsByThumbnail } from "@/lib/listings";
-import { formatCurrency, formatPercent, sanitizeLabel } from "@/lib/format";
+import { formatCurrency, formatNumber, formatPercent, formatPricePerSqm, sanitizeLabel } from "@/lib/format";
 import {
   isUsingAggregateFallback,
   priceForFilters,
@@ -17,7 +20,7 @@ import {
   segmentFilterLabel,
   segmentMedianLabel,
 } from "@/lib/segments";
-import type { Listing, MarketMetric, MarketTrendsPayload, PropertyType } from "@/lib/types";
+import type { LandMetric, Listing, MarketMetric, MarketTrendsPayload, PropertyType } from "@/lib/types";
 
 function ReportMetric({
   label,
@@ -39,11 +42,13 @@ function ReportListings({
   description,
   listings,
   market,
+  landMarket,
 }: {
   title: string;
   description: string;
   listings: Listing[];
   market: MarketMetric;
+  landMarket?: LandMetric | null;
 }) {
   if (!listings.length) return null;
 
@@ -55,7 +60,13 @@ function ReportListings({
       </div>
       <div className="grid gap-3 sm:grid-cols-2">
         {dedupeListingsByThumbnail(listings).map((listing) => (
-          <ListingCard key={listing.listing_url} listing={listing} market={market} compact />
+          <ListingCard
+            key={listing.listing_url}
+            listing={listing}
+            market={market}
+            landMarket={landMarket ?? undefined}
+            compact
+          />
         ))}
       </div>
     </div>
@@ -69,8 +80,11 @@ export function SuburbReport({
   updatedAt,
   rentTrends,
   saleTrends,
+  landMarket = null,
+  landTrends = null,
   rentListings,
   saleListings,
+  landListings = [],
   profilePath,
 }: {
   market: MarketMetric;
@@ -79,8 +93,11 @@ export function SuburbReport({
   updatedAt: string | null;
   rentTrends: MarketTrendsPayload;
   saleTrends: MarketTrendsPayload;
+  landMarket?: LandMetric | null;
+  landTrends?: MarketTrendsPayload | null;
   rentListings: Listing[];
   saleListings: Listing[];
+  landListings?: Listing[];
   profilePath: string;
 }) {
   const segment = resolveSegmentStats(market, propertyType, bedroom);
@@ -100,6 +117,8 @@ export function SuburbReport({
   const saleMax = segment?.maximum_sale_price ?? market.maximum_sale_price;
 
   const freshnessLabel = updatedAt ? formatDataFreshness(updatedAt) : "Data freshness unknown";
+  const hasLandData = landMarket != null && (landMarket.priced_land_count ?? 0) > 0;
+  const medianLandPps = landMarket?.median_price_per_sqm ?? null;
 
   return (
     <article className="suburb-report mx-auto max-w-4xl space-y-8 pb-8">
@@ -136,6 +155,15 @@ export function SuburbReport({
             {saleSample} sale listing{saleSample === 1 ? "" : "s"}
             {specLabel && saleSample < MIN_SEGMENT_LISTINGS ? " (limited segment data)" : ""}
           </span>
+          {hasLandData ? (
+            <>
+              <span>·</span>
+              <span>
+                {landMarket!.priced_land_count} priced land stand
+                {landMarket!.priced_land_count === 1 ? "" : "s"}
+              </span>
+            </>
+          ) : null}
         </div>
 
         <SuburbReportActions profilePath={profilePath} />
@@ -189,7 +217,45 @@ export function SuburbReport({
         </div>
       </section>
 
-      {rentListings.length || saleListings.length ? (
+      {hasLandData ? (
+        <section className="suburb-report-section space-y-3">
+          <h2 className="font-heading text-lg font-medium">Land market</h2>
+          <p className="text-sm text-muted-foreground">
+            {landMarket!.priced_land_count} stands with size data · {landMarket!.land_count} total
+            listings
+          </p>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            <ReportMetric
+              label="Median $/sqm"
+              value={formatPricePerSqm(landMarket!.median_price_per_sqm)}
+            />
+            <ReportMetric
+              label="Land listings"
+              value={formatNumber(landMarket!.land_count)}
+            />
+            <ReportMetric
+              label="Land confidence"
+              value={String(landMarket!.confidence_score ?? "—")}
+            />
+          </div>
+          {landMarket!.minimum_price_per_sqm != null ||
+          landMarket!.maximum_price_per_sqm != null ? (
+            <div className="rounded-xl border border-border/80 bg-card p-4">
+              <p className="text-sm font-medium">Land price range ($/sqm)</p>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Min {formatPricePerSqm(landMarket!.minimum_price_per_sqm)} · Median{" "}
+                {formatPricePerSqm(medianLandPps)} · Max{" "}
+                {formatPricePerSqm(landMarket!.maximum_price_per_sqm)}
+              </p>
+            </div>
+          ) : null}
+        </section>
+      ) : null}
+
+      {/* Land trends hidden until land_snapshots_daily has 2+ days of history */}
+      {/* {landTrends && hasLandData ? <SuburbReportLandTrends landTrends={landTrends} /> : null} */}
+
+      {rentListings.length || saleListings.length || landListings.length ? (
         <section className="suburb-report-section space-y-6">
           <div>
             <h2 className="font-heading text-lg font-medium">Good value listings</h2>
@@ -218,6 +284,18 @@ export function SuburbReport({
             }
             listings={saleListings}
             market={market}
+          />
+
+          <ReportListings
+            title="Land for sale"
+            description={
+              medianLandPps != null
+                ? `At or below median of ${formatPricePerSqm(medianLandPps)} per sqm.`
+                : "Below suburb median $/sqm."
+            }
+            listings={landListings}
+            market={market}
+            landMarket={landMarket}
           />
         </section>
       ) : null}

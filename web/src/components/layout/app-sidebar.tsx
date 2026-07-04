@@ -13,7 +13,9 @@ import {
 
 import { PinTray } from "@/components/layout/pin-tray";
 import { DataFreshnessPill } from "@/components/layout/data-freshness-pill";
+import { PropoLogomark } from "@/components/brand/propo-logomark";
 import { SITE_NAME } from "@/lib/constants";
+import { motionNav } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
 const NAV_ITEMS = [
@@ -33,9 +35,10 @@ export function AppSidebar() {
       <div className="flex h-16 items-center border-b border-border/80 px-5">
         <Link
           href="/"
-          className="font-display text-xl font-medium tracking-[-0.02em]"
+          className="flex items-center gap-2.5 font-display text-xl font-medium tracking-[-0.02em]"
         >
-          {SITE_NAME.toLowerCase()}
+          <PropoLogomark size={32} />
+          <span>{SITE_NAME.toLowerCase()}</span>
         </Link>
       </div>
 
@@ -51,7 +54,8 @@ export function AppSidebar() {
               key={item.href}
               href={item.href}
               className={cn(
-                "flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-colors",
+                motionNav,
+                "flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium",
                 active
                   ? "bg-secondary text-foreground"
                   : "text-muted-foreground hover:bg-muted/60 hover:text-foreground"

@@ -5,9 +5,11 @@ import Link from "next/link";
 import { PinButton } from "@/components/markets/pin-button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { formatCurrency, sanitizeLabel } from "@/lib/format";
+import { motionRow } from "@/lib/motion";
 import { formatPctChange, trendRangeLabel } from "@/lib/trends";
 import { suburbPath } from "@/lib/slug";
 import type { MarketMoversRankingsPayload, TrendMover } from "@/lib/types";
+import { cn } from "@/lib/utils";
 
 function moverDetail(mover: TrendMover, kind: MoverListKind): string {
   if (kind === "supply") {
@@ -40,7 +42,7 @@ function MoverList({
           items.map((item) => (
             <div
               key={`${item.market_id}-${title}`}
-              className="flex items-center justify-between gap-2 rounded-xl px-2 py-2 hover:bg-muted/50"
+              className={cn(motionRow, "flex items-center justify-between gap-2 rounded-xl px-2 py-2 hover:bg-muted/50")}
             >
               <Link href={suburbPath(item.city, item.suburb)} className="min-w-0 flex-1">
                 <p className="truncate font-heading font-medium">{sanitizeLabel(item.suburb)}</p>

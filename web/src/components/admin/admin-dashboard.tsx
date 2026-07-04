@@ -36,6 +36,19 @@ function formatDateTime(value: string | null | undefined): string {
   }).format(date);
 }
 
+function formatIngestRuntimeMinutes(
+  startedAt: string,
+  completedAt: string | null
+): string {
+  if (!completedAt) return "—";
+  const startMs = new Date(startedAt).getTime();
+  const endMs = new Date(completedAt).getTime();
+  if (Number.isNaN(startMs) || Number.isNaN(endMs) || endMs < startMs) return "—";
+  const minutes = (endMs - startMs) / 60_000;
+  if (minutes < 1) return "<1 min";
+  return `${minutes.toFixed(1)} min`;
+}
+
 function formatDate(value: string | null | undefined): string {
   if (!value) return "—";
   const date = new Date(value);
@@ -573,6 +586,12 @@ export function AdminDashboard() {
                               {formatNumber(run.listingsDeactivated)}
                             </p>
                           </div>
+                          <div className="col-span-2 rounded-lg bg-muted/50 px-2.5 py-2">
+                            <p className="text-muted-foreground">Runtime</p>
+                            <p className="mt-0.5 font-mono text-sm font-medium">
+                              {formatIngestRuntimeMinutes(run.startedAt, run.completedAt)}
+                            </p>
+                          </div>
                         </div>
                       </MobileDataCard>
                     ))
@@ -584,6 +603,7 @@ export function AdminDashboard() {
                     <TableRow>
                       <TableHead>Run</TableHead>
                       <TableHead>Started</TableHead>
+                      <TableHead className="text-right">Runtime</TableHead>
                       <TableHead className="text-right">Processed</TableHead>
                       <TableHead className="text-right">Deactivated</TableHead>
                     </TableRow>
@@ -591,7 +611,7 @@ export function AdminDashboard() {
                   <TableBody>
                     {stats.ingestRuns.length === 0 ? (
                       <TableRow>
-                        <TableCell colSpan={4} className="text-muted-foreground">
+                        <TableCell colSpan={5} className="text-muted-foreground">
                           No ingest runs recorded.
                         </TableCell>
                       </TableRow>
@@ -600,6 +620,9 @@ export function AdminDashboard() {
                         <TableRow key={run.id}>
                           <TableCell>#{run.id}</TableCell>
                           <TableCell>{formatDateTime(run.startedAt)}</TableCell>
+                          <TableCell className="text-right font-mono">
+                            {formatIngestRuntimeMinutes(run.startedAt, run.completedAt)}
+                          </TableCell>
                           <TableCell className="text-right font-mono">
                             {formatNumber(run.listingsProcessed)}
                           </TableCell>

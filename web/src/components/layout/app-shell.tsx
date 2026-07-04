@@ -8,7 +8,7 @@ import { AppFooter, SiteHero } from "@/components/layout/site-chrome";
 import { OnboardingTour } from "@/components/onboarding/onboarding-tour";
 import { MobileTabBar } from "@/components/mobile/mobile-tab-bar";
 import { MobileTopBar } from "@/components/mobile/mobile-top-bar";
-import { heroForCitySlug } from "@/lib/hero";
+import { heroImageForCitySlug } from "@/lib/hero";
 import { cn } from "@/lib/utils";
 
 function citySlugFromPath(pathname: string): string | null {
@@ -31,7 +31,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         <MobileTopBar />
         {showCompactHero ? (
           <div className="print:hidden">
-            <SiteHero compact variant={heroForCitySlug(citySlug)} />
+            <SiteHero compact image={heroImageForCitySlug(citySlug)} />
           </div>
         ) : null}
         <main

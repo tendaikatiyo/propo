@@ -9,7 +9,7 @@ import { SampleSizeBadge, ScopeLabel } from "@/components/markets/sample-size-ba
 import { SuburbValueListings } from "@/components/listings/suburb-value-listings";
 import { SuburbLandListings } from "@/components/listings/suburb-land-listings";
 import { SuburbLandMetrics } from "@/components/markets/suburb-land-metrics";
-import { SuburbLandTrendsSection } from "@/components/markets/suburb-land-trends-section";
+// import { SuburbLandTrendsSection } from "@/components/markets/suburb-land-trends-section";
 import { PropertyMixBar } from "@/components/markets/property-mix-bar";
 import { SuburbTrendsSection } from "@/components/markets/suburb-trends-section";
 import { ConfidenceBadge } from "@/components/markets/confidence-badge";
@@ -150,13 +150,6 @@ export function SuburbProfile({
         </div>
       </div>
 
-      {landMarket ? (
-        <>
-          <SuburbLandMetrics landMarket={landMarket} landMode={landMode} />
-          <SuburbLandTrendsSection landMarket={landMarket} />
-        </>
-      ) : null}
-
       {!landMode ? (
         <>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -204,6 +197,14 @@ export function SuburbProfile({
           </div>
         </CardContent>
       </Card>
+        </>
+      ) : null}
+
+      {landMarket ? (
+        <>
+          <SuburbLandMetrics landMarket={landMarket} landMode={landMode} />
+          {/* Land trends hidden until land_snapshots_daily has 2+ days of history */}
+          {/* <SuburbLandTrendsSection landMarket={landMarket} /> */}
         </>
       ) : null}
 

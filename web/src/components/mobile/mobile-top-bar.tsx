@@ -6,8 +6,10 @@ import { usePathname } from "next/navigation";
 import { ChevronLeft, Menu, X } from "lucide-react";
 
 import { MobileMenuDrawer } from "@/components/mobile/mobile-menu-drawer";
+import { PropoLogomark } from "@/components/brand/propo-logomark";
 import { usePinnedMarkets } from "@/hooks/use-pinned-markets";
 import { SITE_NAME } from "@/lib/constants";
+import { motionPressIcon } from "@/lib/motion";
 import { getMobileBackHref } from "@/lib/mobile-nav";
 import { cn } from "@/lib/utils";
 
@@ -32,7 +34,8 @@ export function MobileTopBar() {
           <Link
             href={backHref}
             className={cn(
-              "flex size-11 shrink-0 items-center justify-center rounded-full transition-transform active:scale-95 active:opacity-70",
+              motionPressIcon,
+              "flex size-11 shrink-0 items-center justify-center rounded-full",
               isHome ? "text-white" : "text-foreground"
             )}
             aria-label="Go back"
@@ -45,9 +48,10 @@ export function MobileTopBar() {
 
         <Link
           href="/"
-          className="font-display shrink-0 text-[17px] font-semibold tracking-[-0.02em]"
+          className="flex shrink-0 items-center gap-2 font-display text-[17px] font-semibold tracking-[-0.02em]"
         >
-          {SITE_NAME.toLowerCase()}
+          <PropoLogomark size={28} />
+          <span>{SITE_NAME.toLowerCase()}</span>
         </Link>
 
         <div className="flex-1" />
@@ -57,7 +61,8 @@ export function MobileTopBar() {
           data-tour="menu-button"
           onClick={() => setMenuOpen((v) => !v)}
           className={cn(
-            "relative flex size-11 shrink-0 items-center justify-center rounded-full transition-transform active:scale-95 active:opacity-70",
+            motionPressIcon,
+            "relative flex size-11 shrink-0 items-center justify-center rounded-full",
             isHome ? "text-white" : "text-foreground"
           )}
           aria-label={menuOpen ? "Close menu" : "Open menu"}

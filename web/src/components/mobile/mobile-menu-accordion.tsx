@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
 import { cn } from "@/lib/utils";
+import { motionRow } from "@/lib/motion";
 
 export function MobileMenuAccordion({
   title,
@@ -21,7 +22,10 @@ export function MobileMenuAccordion({
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        className="flex w-full min-h-[44px] items-center justify-between px-4 py-3.5 text-left transition-colors active:bg-muted/80"
+        className={cn(
+          motionRow,
+          "flex w-full min-h-[44px] items-center justify-between px-4 py-3.5 text-left active:bg-muted/80"
+        )}
         aria-expanded={open}
       >
         <span className="font-heading text-[15px] font-medium">{title}</span>

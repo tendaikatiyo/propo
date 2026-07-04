@@ -7,6 +7,7 @@ import { Compass } from "lucide-react";
 import { DEFAULT_CITY, ROOM_BEDROOM_COUNT } from "@/lib/constants";
 import { formatCurrency, formatPricePerSqm } from "@/lib/format";
 import { liquidGlassPillClass } from "@/lib/liquid-glass";
+import { motionPress } from "@/lib/motion";
 import { isLandMode, modeLabel } from "@/lib/mode";
 import { MODE_ACCENT } from "@/lib/mode-accent";
 import type { ExploreMode, PropertyType } from "@/lib/types";
@@ -66,7 +67,8 @@ export function HomeBudgetBar({
       <Link
         href={buildExploreHref(mode, budget, propertyType)}
         className={cn(
-          "pointer-events-auto inline-flex max-w-full items-center gap-2.5 px-4 py-2.5 transition-transform active:scale-[0.97]",
+          motionPress,
+          "pointer-events-auto inline-flex max-w-full items-center gap-2.5 px-4 py-2.5",
           liquidGlassPillClass,
           accent.pillGlow,
           !visible && "pointer-events-none"

@@ -7,9 +7,11 @@ import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { formatCurrency, sanitizeLabel } from "@/lib/format";
+import { motionRow } from "@/lib/motion";
 import { formatPctChange } from "@/lib/trends";
 import { suburbPath, toSlug } from "@/lib/slug";
 import type { CityTrendMoversPayload, ExploreMode } from "@/lib/types";
+import { cn } from "@/lib/utils";
 
 async function fetchCityMovers(
   citySlug: string,
@@ -44,7 +46,10 @@ function MoverList({
           <li key={item.market_id}>
             <Link
               href={suburbPath(city, item.suburb)}
-              className="flex items-center justify-between rounded-lg px-2 py-1.5 text-sm hover:bg-muted/50"
+              className={cn(
+                motionRow,
+                "flex items-center justify-between rounded-lg px-2 py-1.5 text-sm hover:bg-muted/50"
+              )}
             >
               <span>{sanitizeLabel(item.suburb)}</span>
               <span className="font-mono text-muted-foreground">

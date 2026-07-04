@@ -1,5 +1,5 @@
 import { SITE_DESCRIPTION, SITE_NAME } from "@/lib/constants";
-import { absoluteUrl, FAVICON_PATH, SITE_URL } from "@/lib/seo";
+import { absoluteUrl, LOGOMARK_PATH, SITE_URL } from "@/lib/seo";
 
 export function siteJsonLd(): Record<string, unknown>[] {
   return [
@@ -8,7 +8,7 @@ export function siteJsonLd(): Record<string, unknown>[] {
       "@type": "Organization",
       name: SITE_NAME,
       url: SITE_URL,
-      logo: absoluteUrl(FAVICON_PATH),
+      logo: absoluteUrl(LOGOMARK_PATH),
       description: SITE_DESCRIPTION,
     },
     {

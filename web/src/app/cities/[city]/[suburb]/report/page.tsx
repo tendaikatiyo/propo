@@ -8,8 +8,14 @@ import {
   normalizePropertyType,
 } from "@/lib/constants";
 import { getDataUpdatedAt } from "@/lib/data-freshness-server";
-import { fetchListings, fetchMarketMetrics, fetchMarketTrends } from "@/lib/data-server";
-import { formatCurrency, sanitizeLabel } from "@/lib/format";
+import {
+  // fetchLandMarketTrends,
+  fetchLandMetrics,
+  fetchListings,
+  fetchMarketMetrics,
+  fetchMarketTrends,
+} from "@/lib/data-server";
+import { formatCurrency, formatPricePerSqm, sanitizeLabel } from "@/lib/format";
 import { findMarketBySlugs } from "@/lib/markets";
 import { priceForFilters } from "@/lib/segments";
 import { buildPageMetadata } from "@/lib/seo";
@@ -44,13 +50,20 @@ export async function generateMetadata({
   const market = findMarketBySlugs(markets, citySlug, suburbSlug);
   if (!market) return { title: "Report not found" };
 
+  const landMetrics = await fetchLandMetrics();
+  const landMarket = landMetrics.find((m) => m.market_id === market.market_id) ?? null;
+
   const suburbLabel = sanitizeLabel(market.suburb);
   const medianRent = priceForFilters(market, "rent", { propertyType, bedroom });
   const medianSale = priceForFilters(market, "buy", { propertyType, bedroom });
+  const landLine =
+    landMarket?.median_price_per_sqm != null
+      ? ` Land from ${formatPricePerSqm(landMarket.median_price_per_sqm)}/sqm.`
+      : "";
 
   return buildPageMetadata({
     title: `Market report — ${suburbLabel}, ${market.city}`,
-    description: `Printable suburb market report for ${suburbLabel}: median rent ${formatCurrency(medianRent)}, median sale ${formatCurrency(medianSale)}, 90-day trends, and value listings.`,
+    description: `Printable suburb market report for ${suburbLabel}: median rent ${formatCurrency(medianRent)}, median sale ${formatCurrency(medianSale)}.${landLine} 90-day trends, and value listings.`,
     path: suburbReportPath(market.city, market.suburb, { type: propertyType, bedroom }),
     ogImage: {
       alt: `${suburbLabel}, ${market.city} — market report on Propo`,
@@ -68,14 +81,27 @@ export default async function SuburbReportPage({
   const { city: citySlug, suburb: suburbSlug } = await params;
   const sp = await searchParams;
   const { propertyType, bedroom } = parseSegmentFilters(sp);
-  const markets = await fetchMarketMetrics();
+  const [markets, landMetrics] = await Promise.all([
+    fetchMarketMetrics(),
+    fetchLandMetrics(),
+  ]);
   const market = findMarketBySlugs(markets, citySlug, suburbSlug);
   if (!market) notFound();
 
+  const landMarket = landMetrics.find((m) => m.market_id === market.market_id) ?? null;
   const medianRent = priceForFilters(market, "rent", { propertyType, bedroom });
   const medianSale = priceForFilters(market, "buy", { propertyType, bedroom });
+  const medianLandPps = landMarket?.median_price_per_sqm ?? null;
+  const hasLandData = landMarket != null && (landMarket.priced_land_count ?? 0) > 0;
 
-  const [updatedAt, rentTrends, saleTrends, rentListings, saleListings] = await Promise.all([
+  const [
+    updatedAt,
+    rentTrends,
+    saleTrends,
+    rentListings,
+    saleListings,
+    landListings,
+  ] = await Promise.all([
     getDataUpdatedAt(),
     fetchMarketTrends(market, "90d", "rent"),
     fetchMarketTrends(market, "90d", "buy"),
@@ -103,6 +129,18 @@ export default async function SuburbReportPage({
           limit: 4,
         })
       : Promise.resolve([]),
+    hasLandData && medianLandPps != null && medianLandPps > 0
+      ? fetchListings({
+          mode: "land",
+          budget: medianLandPps,
+          marketId: market.market_id,
+          city: market.city,
+          suburb: market.suburb,
+          tier: "value",
+          medianPrice: medianLandPps,
+          limit: 4,
+        })
+      : Promise.resolve([]),
   ]);
 
   const profilePath = suburbPath(market.city, market.suburb, { type: propertyType, bedroom });
@@ -115,8 +153,10 @@ export default async function SuburbReportPage({
       updatedAt={updatedAt}
       rentTrends={rentTrends}
       saleTrends={saleTrends}
+      landMarket={landMarket}
       rentListings={rentListings}
       saleListings={saleListings}
+      landListings={landListings}
       profilePath={profilePath}
     />
   );

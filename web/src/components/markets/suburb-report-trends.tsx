@@ -48,6 +48,18 @@ function TrendBlock({
   );
 }
 
+export function SuburbReportLandTrends({ landTrends }: { landTrends: MarketTrendsPayload }) {
+  return (
+    <section className="suburb-report-section space-y-3">
+      <h2 className="font-heading text-lg font-medium">90-day land trends</h2>
+      <p className="text-sm text-muted-foreground">
+        Median asking price per square metre from active land listings with valid stand size.
+      </p>
+      <TrendBlock title="Land" trends={landTrends} chartId="report-land" />
+    </section>
+  );
+}
+
 export function SuburbReportTrends({
   rentTrends,
   saleTrends,
@@ -56,7 +68,7 @@ export function SuburbReportTrends({
   saleTrends: MarketTrendsPayload;
 }) {
   return (
-    <section className="space-y-3">
+    <section className="suburb-report-section space-y-3">
       <h2 className="font-heading text-lg font-medium">90-day market trends</h2>
       <p className="text-sm text-muted-foreground">
         Daily snapshot medians across all property types in this suburb.

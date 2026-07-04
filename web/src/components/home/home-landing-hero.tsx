@@ -126,15 +126,6 @@ export function HomeLandingHero({
             </div>
           </div>
         </div>
-
-        <a
-          href={HOME_LANDING_PHOTO.creditUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="absolute right-4 bottom-3 text-[10px] text-white/65 transition-colors hover:text-white lg:bottom-6 lg:right-8"
-        >
-          Photo: {HOME_LANDING_PHOTO.credit}
-        </a>
       </div>
     </section>
   );

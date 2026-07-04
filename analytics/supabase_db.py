@@ -257,6 +257,39 @@ class SupabaseHistoryDatabase:
                     cur.execute("SELECT COUNT(*) FROM listings")
                 return int(cur.fetchone()[0])
 
+    def fetch_data_quality_summary(self) -> Dict[str, int]:
+        with self.connect() as conn:
+            with conn.cursor() as cur:
+                cur.execute(
+                    """
+                    SELECT
+                        (SELECT COUNT(*) FROM listings WHERE is_active = true),
+                        (SELECT COUNT(*) FROM listings
+                         WHERE is_active = true
+                           AND market_id IS NOT NULL
+                           AND btrim(market_id) <> ''),
+                        (SELECT COUNT(*) FROM listings
+                         WHERE is_active = true
+                           AND image_url IS NOT NULL
+                           AND btrim(image_url) <> ''),
+                        (SELECT COUNT(*) FROM listings
+                         WHERE is_active = true
+                           AND listing_type = 'rent'
+                           AND price > 6000),
+                        (SELECT COUNT(*) FROM market_metrics WHERE confidence_score < 20),
+                        (SELECT COUNT(DISTINCT snapshot_date) FROM market_snapshots_daily)
+                    """
+                )
+                row = cur.fetchone()
+                return {
+                    "active_listings": int(row[0]),
+                    "with_market_id": int(row[1]),
+                    "with_image_url": int(row[2]),
+                    "suspect_rent_over_6k": int(row[3]),
+                    "low_confidence_metrics": int(row[4]),
+                    "snapshot_days": int(row[5]),
+                }
+
     def fetch_active_listings(
         self,
         listing_type: Optional[str] = None,

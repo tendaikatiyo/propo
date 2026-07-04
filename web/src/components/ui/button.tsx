@@ -8,18 +8,19 @@ import {
   liquidGlassButtonOutline,
   liquidGlassButtonSecondary,
 } from "@/lib/liquid-glass"
+import { motionPress } from "@/lib/motion"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "group/button inline-flex shrink-0 items-center justify-center rounded-full border border-transparent bg-clip-padding text-[15px] font-medium tracking-normal whitespace-nowrap transition-all outline-none select-none focus-visible:ring-2 focus-visible:ring-ring/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  "group/button inline-flex shrink-0 items-center justify-center rounded-full border border-transparent bg-clip-padding text-[15px] font-medium tracking-normal whitespace-nowrap outline-none select-none focus-visible:ring-2 focus-visible:ring-ring/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
   {
     variants: {
       variant: {
-        default: liquidGlassButtonDefault,
-        outline: liquidGlassButtonOutline,
-        secondary: liquidGlassButtonSecondary,
-        ghost: liquidGlassButtonGhost,
-        destructive: liquidGlassButtonDestructive,
+        default: cn(liquidGlassButtonDefault, motionPress),
+        outline: cn(liquidGlassButtonOutline, motionPress),
+        secondary: cn(liquidGlassButtonSecondary, motionPress),
+        ghost: cn(liquidGlassButtonGhost, motionPress),
+        destructive: cn(liquidGlassButtonDestructive, motionPress),
         link: "text-foreground underline-offset-4 hover:underline",
       },
       size: {

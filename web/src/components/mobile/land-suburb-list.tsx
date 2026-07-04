@@ -11,6 +11,8 @@ import { formatNumber, formatPricePerSqm, sanitizeLabel } from "@/lib/format";
 import { sortLandMarkets } from "@/lib/land-explore";
 import { suburbPath } from "@/lib/slug";
 import type { LandMetric, SortDirection, SortKey } from "@/lib/types";
+import { motionRow } from "@/lib/motion";
+import { cn } from "@/lib/utils";
 
 const SORT_OPTIONS: { key: SortKey; label: string }[] = [
   { key: "median_price_per_sqm", label: "$/sqm" },
@@ -81,7 +83,7 @@ export function LandSuburbList({ markets }: { markets: LandMetric[] }) {
                 source: "explore_list",
                 mode: "land",
               }}
-              className="flex min-w-0 flex-1 items-center gap-2 active:opacity-70"
+              className={cn(motionRow, "flex min-w-0 flex-1 items-center gap-2")}
             >
               <div className="min-w-0 flex-1">
                 <p className="truncate font-heading font-medium">

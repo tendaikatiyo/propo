@@ -135,11 +135,85 @@
   }
 
   .feature-card {
-    @apply rounded-2xl border bg-card shadow-none transition-shadow duration-200;
+    @apply rounded-2xl border bg-card shadow-none transition-shadow duration-200 ease-out;
   }
 
   .feature-card:hover {
     box-shadow: var(--shadow-card);
+  }
+
+  /* Interaction motion — Press/Tap feedback, ease-out, reduced motion */
+  .motion-press {
+    transition-property: transform, opacity, background-color, border-color, box-shadow, color;
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .motion-press:active {
+    transform: scale(0.97);
+  }
+
+  .motion-press-icon {
+    transition-property: transform, opacity;
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .motion-press-icon:active {
+    transform: scale(0.95);
+    opacity: 0.88;
+  }
+
+  .motion-row {
+    transition-property: transform, opacity, background-color;
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .motion-row:active {
+    transform: scale(0.99);
+    opacity: 0.9;
+  }
+
+  .motion-card-press {
+    transition-property: transform, background-color, box-shadow;
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .motion-card-press:has(a:active),
+  .motion-card-press:has(button:active) {
+    transform: scale(0.992);
+  }
+
+  .motion-nav {
+    transition-property: transform, background-color, color;
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .motion-nav:active {
+    transform: scale(0.98);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .motion-press:active,
+    .motion-press-icon:active,
+    .motion-row:active,
+    .motion-card-press:has(a:active),
+    .motion-card-press:has(button:active),
+    .motion-nav:active {
+      transform: none;
+      opacity: 1;
+    }
+
+    .motion-press,
+    .motion-press-icon,
+    .motion-row,
+    .motion-card-press,
+    .motion-nav {
+      transition-duration: 0.01ms !important;
+    }
   }
 
   .section-band {

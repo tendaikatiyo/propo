@@ -5,6 +5,7 @@ export function getMobileBackHref(pathname: string): string | null {
   if (pathname === "/rankings") return "/";
   if (pathname === "/compare") return "/explore";
   if (pathname === "/methodology") return "/";
+  if (pathname === "/about") return "/";
 
   const cityMatch = pathname.match(/^\/cities\/([^/]+)$/);
   if (cityMatch) return "/cities";
