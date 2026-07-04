@@ -308,10 +308,10 @@ export function SuburbReport({
         </p>
         <p>
           <strong className="font-medium text-foreground">Methodology:</strong> Medians, yields, and
-          trends are computed from active listings on public property portals — not closed
-          transaction data. Fair-value badges compare listing price to segment or suburb medians.
-          Attributes like borehole, pool, or security are not in our listing data and are not reflected
-          in these figures.
+          trends are computed from Propo&apos;s property market database — active listings from major
+          online portals, not closed transaction data. Fair-value badges compare listing price to
+          segment or suburb medians. Attributes like borehole, pool, or security are not captured in
+          the database and are not reflected in these figures.
         </p>
         <p>
           Full methodology:{" "}

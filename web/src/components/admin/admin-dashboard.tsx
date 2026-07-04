@@ -365,7 +365,7 @@ export function AdminDashboard() {
                   }
                 />
                 <DetailRow
-                  label="Listing snapshots scraped"
+                  label="Historical listing observations"
                   value={
                     <>
                       {formatDateTime(stats.listingSnapshots.earliest)} →{" "}

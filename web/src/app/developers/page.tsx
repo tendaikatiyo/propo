@@ -3,13 +3,13 @@ import Link from "next/link";
 import { DevelopersInterestForm } from "@/components/developers/developers-interest-form";
 import { PageHeader } from "@/components/layout/page-header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CONTACT_EMAIL } from "@/lib/constants";
+import { CONTACT_EMAIL, DATASET_SCALE } from "@/lib/constants";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
   title: "Developers",
   description:
-    "Express interest in programmatic access to Propo suburb medians, rental yields, trends, and listing data for Zimbabwe property markets.",
+    "Express interest in programmatic access to Propo suburb medians, rental yields, trends, and market database signals for Zimbabwe property markets.",
   path: "/developers",
 });
 
@@ -26,7 +26,7 @@ export default function DevelopersPage() {
     <div className="space-y-10">
       <PageHeader
         title="Developers"
-        description="Propo is a property data index for Zimbabwe. A public API is not available yet — tell us what you would use and we will prioritise access."
+        description="Propo is a continuously updated property market database for Zimbabwe. A public API is not available yet — tell us what you would use and we will prioritise access."
       />
 
       <div className="grid gap-4 lg:grid-cols-2">
@@ -36,8 +36,9 @@ export default function DevelopersPage() {
           </CardHeader>
           <CardContent className="space-y-4 text-[15px] leading-relaxed tracking-[0.15px] text-muted-foreground">
             <p>
-              The website already aggregates public listing data into suburb-level medians, yields,
-              trends, and rankings. A future API would expose the same signals for tools you build —
+              The website already rolls up portal listings into suburb-level medians, yields,
+              trends, and rankings — backed by {DATASET_SCALE.historicalObservations} historical
+              observations. A future API would expose the same signals for tools you build —
               dashboards, CRM plugins, valuation models, or research pipelines.
             </p>
             <ul className="list-disc space-y-2 pl-5">
@@ -58,7 +59,7 @@ export default function DevelopersPage() {
               documented public API, API keys, or rate-limited developer access yet.
             </p>
             <p>
-              Data is derived from publicly available listings, not verified transactions. Read our{" "}
+              Data is derived from major online property portals, not verified transactions. Read our{" "}
               <Link
                 href="/methodology"
                 className="text-foreground underline-offset-4 hover:underline"

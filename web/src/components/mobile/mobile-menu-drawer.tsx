@@ -4,6 +4,7 @@ import { X } from "lucide-react";
 
 import { ExploreFilterPanel } from "@/components/filters/filter-bar";
 import { PropoLogomark } from "@/components/brand/propo-logomark";
+import { BetaBadge } from "@/components/brand/beta-badge";
 import { MobileComparePanel } from "@/components/mobile/mobile-compare-panel";
 import { MobileMenuAccordion } from "@/components/mobile/mobile-menu-accordion";
 import { MobileMenuLinks } from "@/components/mobile/mobile-menu-links";
@@ -38,6 +39,7 @@ export function MobileMenuDrawer({
           <div className="flex items-center gap-2 font-display text-[17px] font-semibold tracking-[-0.02em]">
             <PropoLogomark size={28} />
             <span>{SITE_NAME.toLowerCase()}</span>
+            <BetaBadge />
           </div>
           <SheetClose
             render={

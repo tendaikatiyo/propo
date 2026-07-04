@@ -20,7 +20,7 @@ export const revalidate = 3600;
 export const metadata = buildPageMetadata({
   title: "Market rankings",
   description:
-    "Top Zimbabwe suburbs by rental yield, investment opportunity, land $/sqm, and price movers — ranked from active listing data.",
+    "Top Zimbabwe suburbs by rental yield, investment opportunity, land $/sqm, and price movers — ranked from Propo's property market database.",
   path: "/rankings",
 });
 

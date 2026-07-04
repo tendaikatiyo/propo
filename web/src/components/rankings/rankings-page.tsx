@@ -159,7 +159,7 @@ export function RankingsPageClient({
       <BackLink href="/" label="Back to home" />
       <PageHeader
         title="Market rankings"
-        description={`National leaderboards from aggregated listing data. Leaderboards prefer suburbs with at least ${LEADERBOARD_MIN_CONFIDENCE}% confidence; movers require ${RANKINGS_MIN_CONFIDENCE}%.`}
+        description={`National leaderboards from Propo's property market database. Leaderboards prefer suburbs with at least ${LEADERBOARD_MIN_CONFIDENCE}% confidence; movers require ${RANKINGS_MIN_CONFIDENCE}%.`}
       />
 
       <Tabs

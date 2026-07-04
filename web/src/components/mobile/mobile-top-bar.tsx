@@ -7,6 +7,7 @@ import { ChevronLeft, Menu, X } from "lucide-react";
 
 import { MobileMenuDrawer } from "@/components/mobile/mobile-menu-drawer";
 import { PropoLogomark } from "@/components/brand/propo-logomark";
+import { BetaBadge } from "@/components/brand/beta-badge";
 import { usePinnedMarkets } from "@/hooks/use-pinned-markets";
 import { SITE_NAME } from "@/lib/constants";
 import { motionPressIcon } from "@/lib/motion";
@@ -52,6 +53,7 @@ export function MobileTopBar() {
         >
           <PropoLogomark size={28} />
           <span>{SITE_NAME.toLowerCase()}</span>
+          <BetaBadge onDark={isHome} />
         </Link>
 
         <div className="flex-1" />

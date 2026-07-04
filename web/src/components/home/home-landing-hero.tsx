@@ -14,6 +14,10 @@ import {
   liquidGlassPillShadow,
 } from "@/lib/liquid-glass";
 import { budgetForMode } from "@/lib/explore";
+import {
+  DATASET_SCALE,
+  DATASET_UPDATE_CADENCE,
+} from "@/lib/constants";
 import { isLandMode } from "@/lib/mode";
 import type { ExploreMode, PropertyType } from "@/lib/types";
 import { cn } from "@/lib/utils";
@@ -74,15 +78,15 @@ export function HomeLandingHero({
                 "inline-flex items-center px-4 py-1.5 text-[11px] font-medium tracking-[0.14em] text-white uppercase"
               )}
             >
-              Zimbabwe property index
+              Zimbabwe property market database
             </span>
             <h1 className="font-display text-[1.75rem] font-medium leading-[1.08] tracking-[-0.03em] text-white drop-shadow-[0_2px_16px_rgba(0,0,0,0.5)] sm:text-4xl lg:text-[4rem] lg:leading-[1.02]">
               Where can you afford in Zimbabwe?
             </h1>
             <p className="mx-auto max-w-lg text-sm leading-relaxed tracking-[0.15px] text-white/90 drop-shadow-[0_1px_10px_rgba(0,0,0,0.4)] sm:text-base lg:mx-0 lg:text-lg">
               {land
-                ? "Set your land budget per square metre to surface matching suburbs across Harare and beyond."
-                : "Set your rent or buy budget and property type to find suburbs that match — backed by live listing data."}
+                ? `Set your land budget per square metre — explore ${DATASET_SCALE.landSuburbMarketsLabel} updated ${DATASET_UPDATE_CADENCE}.`
+                : `Set your rent or buy budget — explore ${DATASET_SCALE.suburbMarketsLabel} from a database updated ${DATASET_UPDATE_CADENCE}.`}
             </p>
           </div>
 

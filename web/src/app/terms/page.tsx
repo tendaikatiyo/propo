@@ -27,9 +27,9 @@ export default function TermsOfServicePage() {
 
       <LegalSection title="About the Service">
         <p>
-          {SITE_NAME} is a property market intelligence tool for Zimbabwe. It aggregates and
-          presents information about suburbs, rental and sale medians, yields, and related market
-          signals derived from publicly available listing data.
+          {SITE_NAME} is a property market intelligence tool for Zimbabwe. It presents suburb,
+          rental and sale medians, yields, and related market signals from its continuously updated
+          property market database.
         </p>
         <p>
           {SITE_NAME} is an informational platform. We are not a real estate agency, broker,

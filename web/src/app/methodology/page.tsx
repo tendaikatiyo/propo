@@ -1,11 +1,16 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PageHeader } from "@/components/layout/page-header";
+import {
+  DATASET_SCALE,
+  DATASET_SOURCE_LINE,
+  DATASET_UPDATE_CADENCE,
+} from "@/lib/constants";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
   title: "Methodology",
   description:
-    "How Propo calculates rental yields, opportunity scores, segment medians, and price trends from public listing data.",
+    "How Propo calculates rental yields, opportunity scores, segment medians, and price trends from its continuously updated property market database.",
   path: "/methodology",
 });
 
@@ -16,6 +21,25 @@ export default function MethodologyPage() {
         title="Methodology"
         description="How Propo calculates market signals and what each score means."
       />
+
+      <Card>
+        <CardHeader>
+          <CardTitle>The dataset</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-3 text-[15px] leading-relaxed tracking-[0.15px] text-muted-foreground">
+          <p>
+            Propo maintains a continuously updated property market database for Zimbabwe — not a
+            static export. {DATASET_SOURCE_LINE}. The pipeline refreshes{" "}
+            {DATASET_UPDATE_CADENCE}, compounding historical observations over time.
+          </p>
+          <p>
+            At current scale: {DATASET_SCALE.activeListings} active listings,{" "}
+            {DATASET_SCALE.historicalObservations} historical observations,{" "}
+            {DATASET_SCALE.suburbMarketsLabel}, {DATASET_SCALE.landSuburbMarketsLabel}, and{" "}
+            {DATASET_SCALE.citiesLabel}.
+          </p>
+        </CardContent>
+      </Card>
 
       <div className="grid gap-4 lg:grid-cols-2">
         <Card>
@@ -88,9 +112,9 @@ export default function MethodologyPage() {
           </CardHeader>
           <CardContent className="space-y-3 text-[15px] leading-relaxed tracking-[0.15px] text-muted-foreground">
             <p>
-              Propo derives medians, yields, and fair-value badges from publicly available listing
-              text and prices. We do not verify title deeds, plot sizes, or off-market
-              transactions.
+              Propo derives medians, yields, and fair-value badges from its property market
+              database — normalized listing text and prices from major online portals. We do not
+              verify title deeds, plot sizes, or off-market transactions.
             </p>
             <p>
               Listing descriptions are not structured for amenities. We do not capture or score

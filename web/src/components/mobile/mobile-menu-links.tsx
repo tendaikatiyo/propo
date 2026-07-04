@@ -5,6 +5,11 @@ import { Building2, ChevronRight, Code2, Compass, HelpCircle, UserRound } from "
 
 import { HowItWorksButton } from "@/components/onboarding/how-it-works-button";
 import { DataFreshnessPill } from "@/components/layout/data-freshness-pill";
+import {
+  DATASET_SCALE,
+  DATASET_UPDATE_CADENCE,
+  SITE_FOOTER_LINE,
+} from "@/lib/constants";
 import { motionRow } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
@@ -46,7 +51,9 @@ export function MobileMenuLinks({ onNavigate }: { onNavigate?: () => void }) {
         })}
       </nav>
       <p className="px-1 pt-2 text-center text-[12px] text-muted-foreground">
-        Property data index for Zimbabwe
+        {SITE_FOOTER_LINE}
+        <br />
+        {DATASET_SCALE.suburbMarketsLabel} · Updated {DATASET_UPDATE_CADENCE}
       </p>
       <div className="flex justify-center pt-1">
         <DataFreshnessPill />

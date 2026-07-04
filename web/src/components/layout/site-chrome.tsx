@@ -5,7 +5,7 @@ import { PropoLogomark } from "@/components/brand/propo-logomark";
 import { DataFreshnessPill } from "@/components/layout/data-freshness-pill";
 import { HowItWorksButton } from "@/components/onboarding/how-it-works-button";
 import { FooterOrbs } from "@/components/ui/footer-orbs";
-import { SITE_NAME } from "@/lib/constants";
+import { DATASET_SCALE, DATASET_UPDATE_CADENCE, SITE_FOOTER_LINE, SITE_NAME } from "@/lib/constants";
 import { HERO_IMAGES, type HeroImage, type HeroVariant } from "@/lib/hero";
 
 export function AppFooter() {
@@ -23,8 +23,10 @@ export function AppFooter() {
           </Link>
           <DataFreshnessPill />
         </div>
-        <p className="text-sm text-muted-foreground">
-          Property data index for Zimbabwe
+        <p className="text-sm text-muted-foreground">{SITE_FOOTER_LINE}</p>
+        <p className="text-xs text-muted-foreground">
+          {DATASET_SCALE.activeListings} active listings · {DATASET_SCALE.historicalObservations}{" "}
+          historical observations · Updated {DATASET_UPDATE_CADENCE}
         </p>
         <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
           <Link href="/explore" className="hover:text-foreground">
@@ -97,7 +99,7 @@ export function SiteHero({
         <div className="absolute inset-x-0 bottom-0 mx-auto max-w-6xl px-4 pb-8 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center rounded-full border border-white/35 bg-white/25 px-4 py-1.5 text-[11px] font-medium tracking-[0.14em] text-foreground uppercase shadow-[0_8px_32px_rgba(0,0,0,0.12)] backdrop-blur-xl backdrop-saturate-150">
-              Zimbabwe property index
+              Zimbabwe property market database
             </span>
             {showFreshness ? <DataFreshnessPill /> : null}
           </div>

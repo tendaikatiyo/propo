@@ -14,6 +14,7 @@ import {
 import { PinTray } from "@/components/layout/pin-tray";
 import { DataFreshnessPill } from "@/components/layout/data-freshness-pill";
 import { PropoLogomark } from "@/components/brand/propo-logomark";
+import { BetaBadge } from "@/components/brand/beta-badge";
 import { SITE_NAME } from "@/lib/constants";
 import { motionNav } from "@/lib/motion";
 import { cn } from "@/lib/utils";
@@ -35,10 +36,11 @@ export function AppSidebar() {
       <div className="flex h-16 items-center border-b border-border/80 px-5">
         <Link
           href="/"
-          className="flex items-center gap-2.5 font-display text-xl font-medium tracking-[-0.02em]"
+          className="flex items-center gap-2 font-display text-xl font-medium tracking-[-0.02em]"
         >
           <PropoLogomark size={32} />
           <span>{SITE_NAME.toLowerCase()}</span>
+          <BetaBadge />
         </Link>
       </div>
 

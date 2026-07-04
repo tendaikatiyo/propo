@@ -113,5 +113,26 @@ export function budgetRangeForMode(mode: ExploreMode) {
 export const DEFAULT_CITY = "Harare";
 export const SITE_NAME = "Propo";
 export const CONTACT_EMAIL = "carteayo@gmail.com";
+
+/** Approximate dataset scale — keep aligned with admin dashboard / pipeline runs. */
+export const DATASET_SCALE = {
+  activeListings: "~14,000",
+  historicalObservations: "400k+",
+  cities: 65,
+  citiesLabel: "65 towns and cities",
+  suburbMarkets: 378,
+  suburbMarketsLabel: "378 suburb markets",
+  landSuburbMarkets: 310,
+  landSuburbMarketsLabel: "310 land markets",
+} as const;
+
+export const DATASET_UPDATE_CADENCE = "every 24 hours";
+
+export const DATASET_SOURCE_LINE =
+  "Aggregates listings from Zimbabwe's three largest online property portals";
+
+export const SITE_FOOTER_LINE =
+  "Continuously updated property market database for Zimbabwe";
+
 export const SITE_DESCRIPTION =
-  "Where can you afford in Zimbabwe? Compare suburb house prices — median rents, sale prices, and land per sqm across Harare and beyond.";
+  "Where can you afford in Zimbabwe? Explore 378 suburb markets from a property database updated every 24 hours — median rents, sale prices, and land per sqm.";

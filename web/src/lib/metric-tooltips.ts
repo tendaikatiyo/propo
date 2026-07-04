@@ -17,7 +17,7 @@ export const COLUMN_TOOLTIPS: Record<SortKey, string> = {
   yield_percent:
     "Gross rental yield: (median rent × 12) ÷ median sale price. Useful for investors comparing buy-to-rent potential.",
   confidence_score:
-    "How much listing data supports these medians. Higher scores mean more rentals and sales were observed.",
+    "How much data from the property market database supports these medians. Higher scores mean more rentals and sales were observed.",
   opportunity_score:
     "Combined signal from yield, listing volume, and rent/sale balance. Higher may indicate stronger investment interest.",
 };
