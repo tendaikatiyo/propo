@@ -11,7 +11,7 @@
     "maximum_price_per_sqm": 14.32,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "arcturus_cromlet",
@@ -25,7 +25,7 @@
     "maximum_price_per_sqm": 12.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "banket_banket",
@@ -39,7 +39,7 @@
     "maximum_price_per_sqm": 35.59,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "beatrice_beatrice",
@@ -53,7 +53,7 @@
     "maximum_price_per_sqm": 63.25,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "beitbridge_beitbridge",
@@ -67,7 +67,7 @@
     "maximum_price_per_sqm": 46.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bikita_bikita",
@@ -81,7 +81,7 @@
     "maximum_price_per_sqm": 20.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bindura_bindura",
@@ -95,7 +95,7 @@
     "maximum_price_per_sqm": 60.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 30
+    "confidence_score": 60
   },
   {
     "market_id": "binga_binga",
@@ -109,7 +109,7 @@
     "maximum_price_per_sqm": 5.33,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_buena_vista",
@@ -123,7 +123,7 @@
     "maximum_price_per_sqm": 10.45,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_bulawayo_city_centre",
@@ -137,7 +137,7 @@
     "maximum_price_per_sqm": 35.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_burnside",
@@ -151,7 +151,7 @@
     "maximum_price_per_sqm": 111.11,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 18,
-    "confidence_score": 10
+    "confidence_score": 40
   },
   {
     "market_id": "bulawayo_douglasdale",
@@ -165,7 +165,7 @@
     "maximum_price_per_sqm": 10.63,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_eloana",
@@ -179,7 +179,7 @@
     "maximum_price_per_sqm": 43.75,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_emganwini",
@@ -193,7 +193,7 @@
     "maximum_price_per_sqm": 55.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 17,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_esigodini",
@@ -207,7 +207,7 @@
     "maximum_price_per_sqm": 10.32,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_fortunes_gate",
@@ -221,7 +221,7 @@
     "maximum_price_per_sqm": 62.5,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_gumtree",
@@ -235,7 +235,7 @@
     "maximum_price_per_sqm": 2.4,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_harrisvale",
@@ -249,7 +249,7 @@
     "maximum_price_per_sqm": 21.2,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_highmount",
@@ -263,7 +263,7 @@
     "maximum_price_per_sqm": 30.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_hillside",
@@ -277,7 +277,7 @@
     "maximum_price_per_sqm": 33.33,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_hillside_byo",
@@ -291,7 +291,7 @@
     "maximum_price_per_sqm": 22.5,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_hopeville",
@@ -305,7 +305,7 @@
     "maximum_price_per_sqm": 60.3,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 18,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_kensington",
@@ -319,7 +319,7 @@
     "maximum_price_per_sqm": 7.41,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_kensington_byo",
@@ -333,7 +333,7 @@
     "maximum_price_per_sqm": 7.41,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_killarney",
@@ -347,7 +347,7 @@
     "maximum_price_per_sqm": 24.27,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 18,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_kings_city",
@@ -361,7 +361,7 @@
     "maximum_price_per_sqm": 17.31,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_lochview",
@@ -375,7 +375,7 @@
     "maximum_price_per_sqm": 250.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_lower_rangemore",
@@ -389,7 +389,7 @@
     "maximum_price_per_sqm": 40.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 17,
-    "confidence_score": 10
+    "confidence_score": 40
   },
   {
     "market_id": "bulawayo_luveve",
@@ -403,7 +403,7 @@
     "maximum_price_per_sqm": 35.48,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_mahatshula",
@@ -417,7 +417,7 @@
     "maximum_price_per_sqm": 58.33,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_manningdale",
@@ -431,7 +431,7 @@
     "maximum_price_per_sqm": 35.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 18,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_matsheumhlope",
@@ -445,7 +445,7 @@
     "maximum_price_per_sqm": 53.33,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 16,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_mbundane",
@@ -459,7 +459,7 @@
     "maximum_price_per_sqm": 33.72,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_montgomery",
@@ -473,7 +473,7 @@
     "maximum_price_per_sqm": 10.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_nkulumane",
@@ -487,7 +487,7 @@
     "maximum_price_per_sqm": 35.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 18,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_north_lynne",
@@ -501,7 +501,7 @@
     "maximum_price_per_sqm": 14.71,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_north_trenance",
@@ -515,7 +515,7 @@
     "maximum_price_per_sqm": 4.45,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_northbrook",
@@ -529,7 +529,7 @@
     "maximum_price_per_sqm": 61.95,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_northlea",
@@ -543,7 +543,7 @@
     "maximum_price_per_sqm": 10.58,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_norwood",
@@ -557,7 +557,7 @@
     "maximum_price_per_sqm": 63.5,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_nyamandlovu",
@@ -571,7 +571,7 @@
     "maximum_price_per_sqm": null,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 0
+    "confidence_score": 10
   },
   {
     "market_id": "bulawayo_parklands",
@@ -585,7 +585,7 @@
     "maximum_price_per_sqm": 27.7,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_pumula_south",
@@ -599,7 +599,7 @@
     "maximum_price_per_sqm": 42.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_queens_park_east",
@@ -613,7 +613,7 @@
     "maximum_price_per_sqm": null,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 0
+    "confidence_score": 10
   },
   {
     "market_id": "bulawayo_rangemore",
@@ -627,7 +627,7 @@
     "maximum_price_per_sqm": 35.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_reigate",
@@ -641,7 +641,7 @@
     "maximum_price_per_sqm": 44.93,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_richmond",
@@ -655,7 +655,7 @@
     "maximum_price_per_sqm": 21.01,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_riverside_north",
@@ -669,7 +669,7 @@
     "maximum_price_per_sqm": 15.48,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_riverside_south",
@@ -683,7 +683,7 @@
     "maximum_price_per_sqm": 28.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_romney_park",
@@ -697,7 +697,7 @@
     "maximum_price_per_sqm": 28.75,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_selbourne_park",
@@ -711,7 +711,7 @@
     "maximum_price_per_sqm": 100.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_sunning_hill",
@@ -725,7 +725,7 @@
     "maximum_price_per_sqm": 40.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 15,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_sunnyside",
@@ -739,7 +739,7 @@
     "maximum_price_per_sqm": 25.0,
     "median_days_on_market_land": 11,
     "average_days_on_market_land": 11,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_trenance",
@@ -753,7 +753,7 @@
     "maximum_price_per_sqm": 30.0,
     "median_days_on_market_land": 18,
     "average_days_on_market_land": 18,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_umguza",
@@ -767,7 +767,7 @@
     "maximum_price_per_sqm": null,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 0
+    "confidence_score": 10
   },
   {
     "market_id": "bulawayo_upper_rangemore",
@@ -781,7 +781,7 @@
     "maximum_price_per_sqm": 38.46,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_waterford",
@@ -795,7 +795,7 @@
     "maximum_price_per_sqm": 6.6,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_willsgrove",
@@ -809,7 +809,7 @@
     "maximum_price_per_sqm": 54.13,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_woodville",
@@ -823,7 +823,7 @@
     "maximum_price_per_sqm": 100.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 17,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "bulawayo_woodville_park",
@@ -837,7 +837,7 @@
     "maximum_price_per_sqm": 39.17,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "chegutu_chegutu",
@@ -851,7 +851,7 @@
     "maximum_price_per_sqm": 4.5,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "chimanimani_chimanimani",
@@ -865,7 +865,7 @@
     "maximum_price_per_sqm": 25.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "chinhoyi_chinhoyi",
@@ -879,7 +879,7 @@
     "maximum_price_per_sqm": 283.69,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 30
+    "confidence_score": 60
   },
   {
     "market_id": "chipinge_chipinge",
@@ -893,7 +893,7 @@
     "maximum_price_per_sqm": 42.5,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 16,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "chiredzi_chiredzi",
@@ -907,7 +907,7 @@
     "maximum_price_per_sqm": 43.75,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 17,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "chitungwiza_chitungwiza",
@@ -921,7 +921,7 @@
     "maximum_price_per_sqm": 100.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 18,
-    "confidence_score": 10
+    "confidence_score": 40
   },
   {
     "market_id": "chitungwiza_manyame_park",
@@ -935,7 +935,7 @@
     "maximum_price_per_sqm": 40.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "chitungwiza_st_marys",
@@ -949,7 +949,7 @@
     "maximum_price_per_sqm": 25.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "chitungwiza_zengeza",
@@ -963,7 +963,7 @@
     "maximum_price_per_sqm": 43.33,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "chivhu_chivhu",
@@ -977,7 +977,7 @@
     "maximum_price_per_sqm": 14.5,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "christon_bank_christon_bank",
@@ -991,7 +991,7 @@
     "maximum_price_per_sqm": 18.03,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "concession_concession",
@@ -1005,7 +1005,7 @@
     "maximum_price_per_sqm": 11.61,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 16,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "damofalls_damofalls",
@@ -1019,7 +1019,7 @@
     "maximum_price_per_sqm": 129.31,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 18,
-    "confidence_score": 30
+    "confidence_score": 60
   },
   {
     "market_id": "darwendale_darwendale",
@@ -1033,7 +1033,7 @@
     "maximum_price_per_sqm": 40.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 18,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "esigodini_esigodini",
@@ -1047,7 +1047,7 @@
     "maximum_price_per_sqm": 10.32,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "glendale_glendale",
@@ -1061,7 +1061,7 @@
     "maximum_price_per_sqm": 65.0,
     "median_days_on_market_land": 18,
     "average_days_on_market_land": 18,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "goromonzi_goromonzi",
@@ -1075,7 +1075,7 @@
     "maximum_price_per_sqm": 186.36,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "gutu_gutu",
@@ -1089,7 +1089,7 @@
     "maximum_price_per_sqm": 24.51,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "gwanda_gwanda",
@@ -1103,7 +1103,7 @@
     "maximum_price_per_sqm": 18.75,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "gweru_brackenhurst",
@@ -1117,7 +1117,7 @@
     "maximum_price_per_sqm": 9.38,
     "median_days_on_market_land": 16,
     "average_days_on_market_land": 16,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "gweru_bridgewood",
@@ -1131,7 +1131,7 @@
     "maximum_price_per_sqm": 43.75,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "gweru_clysdale_park",
@@ -1145,7 +1145,7 @@
     "maximum_price_per_sqm": 25.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "gweru_daylesford",
@@ -1159,7 +1159,7 @@
     "maximum_price_per_sqm": 15.15,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "gweru_gweru_cbd",
@@ -1173,7 +1173,7 @@
     "maximum_price_per_sqm": 74.75,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "gweru_gweru_east",
@@ -1187,7 +1187,7 @@
     "maximum_price_per_sqm": 25.31,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 17,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "gweru_harben_park",
@@ -1201,7 +1201,7 @@
     "maximum_price_per_sqm": 212.77,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "gweru_hertfordshire",
@@ -1215,7 +1215,7 @@
     "maximum_price_per_sqm": 16.98,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "gweru_hertifordshire",
@@ -1229,7 +1229,7 @@
     "maximum_price_per_sqm": 16.98,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 16,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "gweru_kingston_park",
@@ -1243,7 +1243,7 @@
     "maximum_price_per_sqm": 6.36,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "gweru_lynfield",
@@ -1257,7 +1257,7 @@
     "maximum_price_per_sqm": 11.44,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "gweru_mkoba",
@@ -1271,7 +1271,7 @@
     "maximum_price_per_sqm": 25.0,
     "median_days_on_market_land": 18,
     "average_days_on_market_land": 18,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "gweru_montrose",
@@ -1285,7 +1285,7 @@
     "maximum_price_per_sqm": 4.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "gweru_mtausi_park",
@@ -1299,7 +1299,7 @@
     "maximum_price_per_sqm": 15.69,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "gweru_nehosho",
@@ -1313,7 +1313,7 @@
     "maximum_price_per_sqm": 60.15,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "gweru_northgate_heights",
@@ -1327,7 +1327,7 @@
     "maximum_price_per_sqm": 27.27,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 18,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "gweru_northlea",
@@ -1341,7 +1341,7 @@
     "maximum_price_per_sqm": 15.34,
     "median_days_on_market_land": 18,
     "average_days_on_market_land": 18,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "gweru_ridgemont",
@@ -1355,7 +1355,7 @@
     "maximum_price_per_sqm": 50.56,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "gweru_senga",
@@ -1369,7 +1369,7 @@
     "maximum_price_per_sqm": null,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 0
+    "confidence_score": 10
   },
   {
     "market_id": "gweru_westview_estates",
@@ -1383,7 +1383,7 @@
     "maximum_price_per_sqm": 208.33,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "gweru_woodlands_park",
@@ -1397,7 +1397,7 @@
     "maximum_price_per_sqm": 1.5,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_adelaide_park",
@@ -1411,7 +1411,7 @@
     "maximum_price_per_sqm": 75.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_adylinn",
@@ -1425,7 +1425,7 @@
     "maximum_price_per_sqm": 100.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_airport",
@@ -1439,7 +1439,7 @@
     "maximum_price_per_sqm": 38.39,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_alexandra_park",
@@ -1453,7 +1453,7 @@
     "maximum_price_per_sqm": null,
     "median_days_on_market_land": 17,
     "average_days_on_market_land": 17,
-    "confidence_score": 0
+    "confidence_score": 10
   },
   {
     "market_id": "harare_arcadia",
@@ -1467,7 +1467,7 @@
     "maximum_price_per_sqm": 37.04,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_ardbennie",
@@ -1481,7 +1481,7 @@
     "maximum_price_per_sqm": 55.96,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_arlington",
@@ -1495,7 +1495,7 @@
     "maximum_price_per_sqm": 287.04,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 13,
-    "confidence_score": 50
+    "confidence_score": 100
   },
   {
     "market_id": "harare_ashdown_park",
@@ -1509,7 +1509,7 @@
     "maximum_price_per_sqm": 175.0,
     "median_days_on_market_land": 16,
     "average_days_on_market_land": 14,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_aspindale_park",
@@ -1523,7 +1523,7 @@
     "maximum_price_per_sqm": 56.86,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 17,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_athlone",
@@ -1537,7 +1537,7 @@
     "maximum_price_per_sqm": 111.94,
     "median_days_on_market_land": 16,
     "average_days_on_market_land": 14,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_avondale",
@@ -1551,7 +1551,7 @@
     "maximum_price_per_sqm": 333.33,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_avondale_west",
@@ -1565,7 +1565,7 @@
     "maximum_price_per_sqm": 59.21,
     "median_days_on_market_land": 0,
     "average_days_on_market_land": 0,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_avonlea",
@@ -1579,7 +1579,7 @@
     "maximum_price_per_sqm": 47.72,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_ballantyne_park",
@@ -1593,7 +1593,7 @@
     "maximum_price_per_sqm": 118.75,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_belvedere",
@@ -1607,7 +1607,7 @@
     "maximum_price_per_sqm": 50.0,
     "median_days_on_market_land": 18,
     "average_days_on_market_land": 18,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_bluff_hill",
@@ -1621,7 +1621,7 @@
     "maximum_price_per_sqm": 425.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 17,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_borrowdale",
@@ -1635,7 +1635,7 @@
     "maximum_price_per_sqm": 325.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 17,
-    "confidence_score": 50
+    "confidence_score": 100
   },
   {
     "market_id": "harare_borrowdale_brooke",
@@ -1649,7 +1649,7 @@
     "maximum_price_per_sqm": 333.06,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 18,
-    "confidence_score": 30
+    "confidence_score": 60
   },
   {
     "market_id": "harare_borrowdale_west",
@@ -1663,7 +1663,7 @@
     "maximum_price_per_sqm": 130.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 13,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_brookeview",
@@ -1677,7 +1677,7 @@
     "maximum_price_per_sqm": 100.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 17,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_brookview",
@@ -1691,7 +1691,7 @@
     "maximum_price_per_sqm": 96.25,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_budiriro",
@@ -1705,7 +1705,7 @@
     "maximum_price_per_sqm": 83.33,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 15,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_carrick_creagh",
@@ -1719,7 +1719,7 @@
     "maximum_price_per_sqm": 212.5,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 18,
-    "confidence_score": 50
+    "confidence_score": 100
   },
   {
     "market_id": "harare_carrick_creagh_estate",
@@ -1733,7 +1733,7 @@
     "maximum_price_per_sqm": 307.1,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 15,
-    "confidence_score": 50
+    "confidence_score": 100
   },
   {
     "market_id": "harare_chadcombe",
@@ -1747,7 +1747,7 @@
     "maximum_price_per_sqm": 125.0,
     "median_days_on_market_land": 17,
     "average_days_on_market_land": 15,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_charlotte_brooke",
@@ -1761,7 +1761,7 @@
     "maximum_price_per_sqm": 28.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 17,
-    "confidence_score": 30
+    "confidence_score": 60
   },
   {
     "market_id": "harare_chiedza_park",
@@ -1775,7 +1775,7 @@
     "maximum_price_per_sqm": 40.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_chisipite",
@@ -1789,7 +1789,7 @@
     "maximum_price_per_sqm": 144.32,
     "median_days_on_market_land": 17,
     "average_days_on_market_land": 14,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_cold_comfort",
@@ -1803,7 +1803,7 @@
     "maximum_price_per_sqm": 173.33,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 18,
-    "confidence_score": 30
+    "confidence_score": 60
   },
   {
     "market_id": "harare_crowhill_views",
@@ -1817,7 +1817,7 @@
     "maximum_price_per_sqm": 153.12,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 18,
-    "confidence_score": 50
+    "confidence_score": 100
   },
   {
     "market_id": "harare_donnybrook",
@@ -1831,7 +1831,7 @@
     "maximum_price_per_sqm": 66.67,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 16,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_dzivarasekwa",
@@ -1845,7 +1845,7 @@
     "maximum_price_per_sqm": 80.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 17,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_eastlea",
@@ -1859,7 +1859,7 @@
     "maximum_price_per_sqm": 155.42,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 11,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_eastview",
@@ -1873,7 +1873,7 @@
     "maximum_price_per_sqm": 27.5,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_emerald_hill",
@@ -1887,7 +1887,7 @@
     "maximum_price_per_sqm": 110.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_epworth",
@@ -1901,7 +1901,7 @@
     "maximum_price_per_sqm": 34.14,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_fairview",
@@ -1915,7 +1915,7 @@
     "maximum_price_per_sqm": 115.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 16,
-    "confidence_score": 50
+    "confidence_score": 100
   },
   {
     "market_id": "harare_fidelity",
@@ -1929,7 +1929,7 @@
     "maximum_price_per_sqm": 105.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 14,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_glaudina",
@@ -1943,7 +1943,7 @@
     "maximum_price_per_sqm": 103.15,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 15,
-    "confidence_score": 30
+    "confidence_score": 60
   },
   {
     "market_id": "harare_glen_forest",
@@ -1957,7 +1957,7 @@
     "maximum_price_per_sqm": 212.5,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 17,
-    "confidence_score": 10
+    "confidence_score": 40
   },
   {
     "market_id": "harare_glen_lorne",
@@ -1971,7 +1971,7 @@
     "maximum_price_per_sqm": 500.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 17,
-    "confidence_score": 50
+    "confidence_score": 100
   },
   {
     "market_id": "harare_glen_view",
@@ -1985,7 +1985,7 @@
     "maximum_price_per_sqm": 75.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 18,
-    "confidence_score": 30
+    "confidence_score": 60
   },
   {
     "market_id": "harare_gletwin_park",
@@ -1999,7 +1999,7 @@
     "maximum_price_per_sqm": 129.57,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 18,
-    "confidence_score": 50
+    "confidence_score": 100
   },
   {
     "market_id": "harare_goodhope",
@@ -2013,7 +2013,7 @@
     "maximum_price_per_sqm": 120.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 15,
-    "confidence_score": 30
+    "confidence_score": 60
   },
   {
     "market_id": "harare_granary_park",
@@ -2027,7 +2027,7 @@
     "maximum_price_per_sqm": 150.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 18,
-    "confidence_score": 30
+    "confidence_score": 60
   },
   {
     "market_id": "harare_graylands_park",
@@ -2041,7 +2041,7 @@
     "maximum_price_per_sqm": 225.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_greendale",
@@ -2055,7 +2055,7 @@
     "maximum_price_per_sqm": 152.64,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 16,
-    "confidence_score": 50
+    "confidence_score": 100
   },
   {
     "market_id": "harare_greendale_north",
@@ -2069,7 +2069,7 @@
     "maximum_price_per_sqm": 105.0,
     "median_days_on_market_land": 9,
     "average_days_on_market_land": 11,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_greystone_park",
@@ -2083,7 +2083,7 @@
     "maximum_price_per_sqm": 155.56,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 17,
-    "confidence_score": 10
+    "confidence_score": 40
   },
   {
     "market_id": "harare_haig_park",
@@ -2097,7 +2097,7 @@
     "maximum_price_per_sqm": null,
     "median_days_on_market_land": 14,
     "average_days_on_market_land": 14,
-    "confidence_score": 0
+    "confidence_score": 10
   },
   {
     "market_id": "harare_harare_city_centre",
@@ -2111,7 +2111,7 @@
     "maximum_price_per_sqm": 175.0,
     "median_days_on_market_land": 0,
     "average_days_on_market_land": 6,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_hatcliffe",
@@ -2125,7 +2125,7 @@
     "maximum_price_per_sqm": 105.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 16,
-    "confidence_score": 30
+    "confidence_score": 60
   },
   {
     "market_id": "harare_hatfield",
@@ -2139,7 +2139,7 @@
     "maximum_price_per_sqm": 425.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 17,
-    "confidence_score": 50
+    "confidence_score": 100
   },
   {
     "market_id": "harare_haydon_park",
@@ -2153,7 +2153,7 @@
     "maximum_price_per_sqm": 101.91,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 16,
-    "confidence_score": 50
+    "confidence_score": 100
   },
   {
     "market_id": "harare_helensvale",
@@ -2167,7 +2167,7 @@
     "maximum_price_per_sqm": 156.03,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 17,
-    "confidence_score": 50
+    "confidence_score": 100
   },
   {
     "market_id": "harare_highlands",
@@ -2181,7 +2181,7 @@
     "maximum_price_per_sqm": 186.67,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_hogerty_hill",
@@ -2195,7 +2195,7 @@
     "maximum_price_per_sqm": 100.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 17,
-    "confidence_score": 50
+    "confidence_score": 100
   },
   {
     "market_id": "harare_kambuzuma",
@@ -2209,7 +2209,7 @@
     "maximum_price_per_sqm": 15.71,
     "median_days_on_market_land": 17,
     "average_days_on_market_land": 17,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_kutandara",
@@ -2223,7 +2223,7 @@
     "maximum_price_per_sqm": null,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 0
+    "confidence_score": 10
   },
   {
     "market_id": "harare_kuwadzana",
@@ -2237,7 +2237,7 @@
     "maximum_price_per_sqm": 100.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_lochinvar",
@@ -2251,7 +2251,7 @@
     "maximum_price_per_sqm": 72.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_logan_park",
@@ -2265,7 +2265,7 @@
     "maximum_price_per_sqm": 126.92,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_mabelreign",
@@ -2279,7 +2279,7 @@
     "maximum_price_per_sqm": 65.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 17,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_mabvuku",
@@ -2293,7 +2293,7 @@
     "maximum_price_per_sqm": 75.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_madokero",
@@ -2307,7 +2307,7 @@
     "maximum_price_per_sqm": 111.94,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_madokero_estates",
@@ -2321,7 +2321,7 @@
     "maximum_price_per_sqm": 101.12,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_mainway_meadows",
@@ -2335,7 +2335,7 @@
     "maximum_price_per_sqm": 77.67,
     "median_days_on_market_land": 10,
     "average_days_on_market_land": 10,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_mandara",
@@ -2349,7 +2349,7 @@
     "maximum_price_per_sqm": 64.29,
     "median_days_on_market_land": 0,
     "average_days_on_market_land": 4,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_manresa",
@@ -2363,7 +2363,7 @@
     "maximum_price_per_sqm": 83.18,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 17,
-    "confidence_score": 10
+    "confidence_score": 40
   },
   {
     "market_id": "harare_maranatha",
@@ -2377,7 +2377,7 @@
     "maximum_price_per_sqm": 94.94,
     "median_days_on_market_land": 8,
     "average_days_on_market_land": 8,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_marimba_park",
@@ -2391,7 +2391,7 @@
     "maximum_price_per_sqm": 106.67,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 16,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_marlborough",
@@ -2405,7 +2405,7 @@
     "maximum_price_per_sqm": 148.57,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 16,
-    "confidence_score": 30
+    "confidence_score": 60
   },
   {
     "market_id": "harare_mbudzi",
@@ -2419,7 +2419,7 @@
     "maximum_price_per_sqm": 66.33,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_meyrick_park",
@@ -2433,7 +2433,7 @@
     "maximum_price_per_sqm": 69.16,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_monavale",
@@ -2447,7 +2447,7 @@
     "maximum_price_per_sqm": 125.0,
     "median_days_on_market_land": 2,
     "average_days_on_market_land": 2,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_mount_hampden",
@@ -2461,7 +2461,7 @@
     "maximum_price_per_sqm": 42.5,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_mount_pleasant",
@@ -2475,7 +2475,7 @@
     "maximum_price_per_sqm": 180.94,
     "median_days_on_market_land": 15,
     "average_days_on_market_land": 10,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_mount_pleasant_heights",
@@ -2489,7 +2489,7 @@
     "maximum_price_per_sqm": 412.5,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 17,
-    "confidence_score": 30
+    "confidence_score": 60
   },
   {
     "market_id": "harare_msasa",
@@ -2503,7 +2503,7 @@
     "maximum_price_per_sqm": 174.54,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_msasa_park",
@@ -2517,7 +2517,7 @@
     "maximum_price_per_sqm": 80.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_mt_hampden",
@@ -2531,7 +2531,7 @@
     "maximum_price_per_sqm": 45.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 15,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_mt_pleasant_heights",
@@ -2545,7 +2545,7 @@
     "maximum_price_per_sqm": 87.5,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_mufakose",
@@ -2559,7 +2559,7 @@
     "maximum_price_per_sqm": 42.5,
     "median_days_on_market_land": 15,
     "average_days_on_market_land": 15,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_mwashuma_park",
@@ -2573,7 +2573,7 @@
     "maximum_price_per_sqm": 39.17,
     "median_days_on_market_land": 9,
     "average_days_on_market_land": 10,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_new_marlborough",
@@ -2587,7 +2587,7 @@
     "maximum_price_per_sqm": 80.0,
     "median_days_on_market_land": 0,
     "average_days_on_market_land": 6,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_newport",
@@ -2601,7 +2601,7 @@
     "maximum_price_per_sqm": 147.47,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_northwood",
@@ -2615,7 +2615,7 @@
     "maximum_price_per_sqm": 100.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_nyeredzi_ridge",
@@ -2629,7 +2629,7 @@
     "maximum_price_per_sqm": 130.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 14,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_parktown",
@@ -2643,7 +2643,7 @@
     "maximum_price_per_sqm": 101.25,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_philadelphia",
@@ -2657,7 +2657,7 @@
     "maximum_price_per_sqm": 160.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 15,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_pomona",
@@ -2671,7 +2671,7 @@
     "maximum_price_per_sqm": 205.13,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 17,
-    "confidence_score": 50
+    "confidence_score": 100
   },
   {
     "market_id": "harare_prospect",
@@ -2685,7 +2685,7 @@
     "maximum_price_per_sqm": 111.11,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 17,
-    "confidence_score": 30
+    "confidence_score": 60
   },
   {
     "market_id": "harare_quinnington",
@@ -2699,7 +2699,7 @@
     "maximum_price_per_sqm": 140.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 16,
-    "confidence_score": 50
+    "confidence_score": 100
   },
   {
     "market_id": "harare_rainham",
@@ -2713,7 +2713,7 @@
     "maximum_price_per_sqm": 208.33,
     "median_days_on_market_land": 3,
     "average_days_on_market_land": 10,
-    "confidence_score": 30
+    "confidence_score": 60
   },
   {
     "market_id": "harare_rock_ridge",
@@ -2727,7 +2727,7 @@
     "maximum_price_per_sqm": 45.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 16,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_rockview",
@@ -2741,7 +2741,7 @@
     "maximum_price_per_sqm": 61.86,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 17,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_rolf_valley",
@@ -2755,7 +2755,7 @@
     "maximum_price_per_sqm": 110.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_rydale_ridge",
@@ -2769,7 +2769,7 @@
     "maximum_price_per_sqm": 83.33,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 18,
-    "confidence_score": 30
+    "confidence_score": 60
   },
   {
     "market_id": "harare_rydale_ridge_park",
@@ -2783,7 +2783,7 @@
     "maximum_price_per_sqm": 57.5,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 15,
-    "confidence_score": 30
+    "confidence_score": 60
   },
   {
     "market_id": "harare_sally_mugabe_heights",
@@ -2797,7 +2797,7 @@
     "maximum_price_per_sqm": 11.82,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_sandton_commercial_stand_for_sale",
@@ -2811,7 +2811,7 @@
     "maximum_price_per_sqm": null,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 0
+    "confidence_score": 10
   },
   {
     "market_id": "harare_sandton_park",
@@ -2825,7 +2825,7 @@
     "maximum_price_per_sqm": 100.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 17,
-    "confidence_score": 50
+    "confidence_score": 100
   },
   {
     "market_id": "harare_shawasha_hills",
@@ -2839,7 +2839,7 @@
     "maximum_price_per_sqm": 100.86,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 17,
-    "confidence_score": 50
+    "confidence_score": 100
   },
   {
     "market_id": "harare_snake_park",
@@ -2853,7 +2853,7 @@
     "maximum_price_per_sqm": 70.0,
     "median_days_on_market_land": 11,
     "average_days_on_market_land": 10,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_southlands",
@@ -2867,7 +2867,7 @@
     "maximum_price_per_sqm": 60.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_southlands_park",
@@ -2881,7 +2881,7 @@
     "maximum_price_per_sqm": 32.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_southlea_park",
@@ -2895,7 +2895,7 @@
     "maximum_price_per_sqm": 75.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 17,
-    "confidence_score": 30
+    "confidence_score": 60
   },
   {
     "market_id": "harare_southview_park",
@@ -2909,7 +2909,7 @@
     "maximum_price_per_sqm": 121.28,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 18,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_spitzkop",
@@ -2923,7 +2923,7 @@
     "maximum_price_per_sqm": 96.15,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 17,
-    "confidence_score": 50
+    "confidence_score": 100
   },
   {
     "market_id": "harare_stapleford",
@@ -2937,7 +2937,7 @@
     "maximum_price_per_sqm": 85.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_stoneridge",
@@ -2951,7 +2951,7 @@
     "maximum_price_per_sqm": 85.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_strathaven",
@@ -2965,7 +2965,7 @@
     "maximum_price_per_sqm": 96.12,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_sunway_city",
@@ -2979,7 +2979,7 @@
     "maximum_price_per_sqm": 80.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 16,
-    "confidence_score": 30
+    "confidence_score": 60
   },
   {
     "market_id": "harare_tafara",
@@ -2993,7 +2993,7 @@
     "maximum_price_per_sqm": 43.33,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_the_grange",
@@ -3007,7 +3007,7 @@
     "maximum_price_per_sqm": 100.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_tynwald",
@@ -3021,7 +3021,7 @@
     "maximum_price_per_sqm": 166.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 16,
-    "confidence_score": 50
+    "confidence_score": 100
   },
   {
     "market_id": "harare_umwinsidale",
@@ -3035,7 +3035,7 @@
     "maximum_price_per_sqm": 440.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 17,
-    "confidence_score": 30
+    "confidence_score": 60
   },
   {
     "market_id": "harare_unidale",
@@ -3049,7 +3049,7 @@
     "maximum_price_per_sqm": 25.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_ushewokunze",
@@ -3063,7 +3063,7 @@
     "maximum_price_per_sqm": 25.0,
     "median_days_on_market_land": 17,
     "average_days_on_market_land": 14,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_vainona",
@@ -3077,7 +3077,7 @@
     "maximum_price_per_sqm": 111.21,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_warren_park",
@@ -3091,7 +3091,7 @@
     "maximum_price_per_sqm": 75.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_waterfalls",
@@ -3105,7 +3105,7 @@
     "maximum_price_per_sqm": 182.01,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 16,
-    "confidence_score": 50
+    "confidence_score": 100
   },
   {
     "market_id": "harare_westgate",
@@ -3119,7 +3119,7 @@
     "maximum_price_per_sqm": 388.89,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 14,
-    "confidence_score": 50
+    "confidence_score": 100
   },
   {
     "market_id": "harare_westlea",
@@ -3133,7 +3133,7 @@
     "maximum_price_per_sqm": 75.0,
     "median_days_on_market_land": 15,
     "average_days_on_market_land": 12,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "harare_whitecliff",
@@ -3147,7 +3147,7 @@
     "maximum_price_per_sqm": 73.33,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 17,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "headlands_headlands",
@@ -3161,7 +3161,7 @@
     "maximum_price_per_sqm": 13.0,
     "median_days_on_market_land": 15,
     "average_days_on_market_land": 15,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "hwange_hwange",
@@ -3175,7 +3175,7 @@
     "maximum_price_per_sqm": 40.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "insiza_insiza",
@@ -3189,7 +3189,7 @@
     "maximum_price_per_sqm": 15.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 17,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "juliasdale_juliasdale",
@@ -3203,7 +3203,7 @@
     "maximum_price_per_sqm": 10.62,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 17,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "kadoma_kadoma",
@@ -3217,7 +3217,7 @@
     "maximum_price_per_sqm": 350.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 17,
-    "confidence_score": 30
+    "confidence_score": 60
   },
   {
     "market_id": "kadoma_mornington",
@@ -3231,7 +3231,7 @@
     "maximum_price_per_sqm": 20.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "kariba_kariba",
@@ -3245,7 +3245,7 @@
     "maximum_price_per_sqm": 416.67,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 18,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "karoi_karoi",
@@ -3259,7 +3259,7 @@
     "maximum_price_per_sqm": 21.67,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "kwekwe_chicago",
@@ -3273,7 +3273,7 @@
     "maximum_price_per_sqm": 10.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "kwekwe_golden_acres",
@@ -3287,7 +3287,7 @@
     "maximum_price_per_sqm": 16.25,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "kwekwe_kwekwe",
@@ -3301,7 +3301,7 @@
     "maximum_price_per_sqm": 31.41,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 18,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "kwekwe_newtown",
@@ -3315,7 +3315,7 @@
     "maximum_price_per_sqm": 10.6,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "lake_chivero_lake_chivero",
@@ -3329,7 +3329,7 @@
     "maximum_price_per_sqm": 350.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 30
+    "confidence_score": 60
   },
   {
     "market_id": "lake_chivero_lake_city",
@@ -3343,7 +3343,7 @@
     "maximum_price_per_sqm": 45.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "lake_chivero_rock_ridge",
@@ -3357,7 +3357,7 @@
     "maximum_price_per_sqm": 45.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "macheke_macheke",
@@ -3371,7 +3371,7 @@
     "maximum_price_per_sqm": 27.5,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "marondera_cherutombo",
@@ -3385,7 +3385,7 @@
     "maximum_price_per_sqm": 35.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "marondera_landyview_park",
@@ -3399,7 +3399,7 @@
     "maximum_price_per_sqm": 16.25,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "marondera_marondera",
@@ -3413,7 +3413,7 @@
     "maximum_price_per_sqm": 72.22,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 18,
-    "confidence_score": 50
+    "confidence_score": 100
   },
   {
     "market_id": "marondera_paradise_park",
@@ -3427,7 +3427,7 @@
     "maximum_price_per_sqm": 32.5,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "marondera_rotsvlei",
@@ -3441,7 +3441,7 @@
     "maximum_price_per_sqm": 18.45,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "masvingo_clipsham",
@@ -3455,7 +3455,7 @@
     "maximum_price_per_sqm": 27.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 15,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "masvingo_clipsharm",
@@ -3469,7 +3469,7 @@
     "maximum_price_per_sqm": 26.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "masvingo_lake_mutirikwi",
@@ -3483,7 +3483,7 @@
     "maximum_price_per_sqm": 8.83,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "masvingo_masvingo",
@@ -3497,7 +3497,7 @@
     "maximum_price_per_sqm": 98.31,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 17,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "masvingo_morningside",
@@ -3511,7 +3511,7 @@
     "maximum_price_per_sqm": 16.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "mazowe_haydon_park",
@@ -3525,7 +3525,7 @@
     "maximum_price_per_sqm": 157.14,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 30
+    "confidence_score": 60
   },
   {
     "market_id": "mazowe_mazowe",
@@ -3539,7 +3539,7 @@
     "maximum_price_per_sqm": 46.5,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 16,
-    "confidence_score": 30
+    "confidence_score": 60
   },
   {
     "market_id": "mberengwa_mberengwa",
@@ -3553,7 +3553,7 @@
     "maximum_price_per_sqm": 9.44,
     "median_days_on_market_land": 6,
     "average_days_on_market_land": 6,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "mutare_beirra_corridor",
@@ -3567,7 +3567,7 @@
     "maximum_price_per_sqm": 27.27,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "mutare_chikanga",
@@ -3581,7 +3581,7 @@
     "maximum_price_per_sqm": null,
     "median_days_on_market_land": 10,
     "average_days_on_market_land": 10,
-    "confidence_score": 0
+    "confidence_score": 10
   },
   {
     "market_id": "mutare_dangamvura",
@@ -3595,7 +3595,7 @@
     "maximum_price_per_sqm": 175.0,
     "median_days_on_market_land": 12,
     "average_days_on_market_land": 12,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "mutare_fairbridge_park",
@@ -3609,7 +3609,7 @@
     "maximum_price_per_sqm": null,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 0
+    "confidence_score": 10
   },
   {
     "market_id": "mutare_fern_valley",
@@ -3623,7 +3623,7 @@
     "maximum_price_per_sqm": 28.75,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "mutare_irene",
@@ -3637,7 +3637,7 @@
     "maximum_price_per_sqm": 11.21,
     "median_days_on_market_land": 17,
     "average_days_on_market_land": 17,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "mutare_murambi",
@@ -3651,7 +3651,7 @@
     "maximum_price_per_sqm": 32.61,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "mutare_mutare_cbd",
@@ -3665,7 +3665,7 @@
     "maximum_price_per_sqm": 30.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "mutare_penhalonga",
@@ -3679,7 +3679,7 @@
     "maximum_price_per_sqm": 19.59,
     "median_days_on_market_land": 18,
     "average_days_on_market_land": 18,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "mutare_toronto",
@@ -3693,7 +3693,7 @@
     "maximum_price_per_sqm": 29.41,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 16,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "mutare_valley_of_kings",
@@ -3707,7 +3707,7 @@
     "maximum_price_per_sqm": 11.21,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "mutare_weirmouth",
@@ -3721,7 +3721,7 @@
     "maximum_price_per_sqm": 37.5,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 17,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "mutare_westgate_park",
@@ -3735,7 +3735,7 @@
     "maximum_price_per_sqm": 20.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "mutasa_mutasa",
@@ -3749,7 +3749,7 @@
     "maximum_price_per_sqm": 60.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "mvuma_mvuma",
@@ -3763,7 +3763,7 @@
     "maximum_price_per_sqm": 127.91,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "norton_galloway",
@@ -3777,7 +3777,7 @@
     "maximum_price_per_sqm": 150.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 17,
-    "confidence_score": 30
+    "confidence_score": 60
   },
   {
     "market_id": "norton_katanga",
@@ -3791,7 +3791,7 @@
     "maximum_price_per_sqm": 33.33,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "norton_knowe",
@@ -3805,7 +3805,7 @@
     "maximum_price_per_sqm": 58.59,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 30
+    "confidence_score": 60
   },
   {
     "market_id": "norton_maridale",
@@ -3819,7 +3819,7 @@
     "maximum_price_per_sqm": 62.5,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "norton_nhowe",
@@ -3833,7 +3833,7 @@
     "maximum_price_per_sqm": 10.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "norton_norton",
@@ -3847,7 +3847,7 @@
     "maximum_price_per_sqm": 116.67,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 18,
-    "confidence_score": 50
+    "confidence_score": 100
   },
   {
     "market_id": "norton_twinlakes",
@@ -3861,7 +3861,7 @@
     "maximum_price_per_sqm": 17.59,
     "median_days_on_market_land": 15,
     "average_days_on_market_land": 15,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "nyabira_nyabira",
@@ -3875,7 +3875,7 @@
     "maximum_price_per_sqm": 69.57,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 18,
-    "confidence_score": 50
+    "confidence_score": 100
   },
   {
     "market_id": "nyamandlovu_nyamandlovu",
@@ -3889,7 +3889,7 @@
     "maximum_price_per_sqm": null,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 0
+    "confidence_score": 10
   },
   {
     "market_id": "nyanga_nyanga",
@@ -3903,7 +3903,7 @@
     "maximum_price_per_sqm": 18.75,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 30
+    "confidence_score": 60
   },
   {
     "market_id": "odzi_odzi",
@@ -3917,7 +3917,7 @@
     "maximum_price_per_sqm": 26.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "penhalonga_penhalonga",
@@ -3931,7 +3931,7 @@
     "maximum_price_per_sqm": 35.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "plumtree_plumtree",
@@ -3945,7 +3945,7 @@
     "maximum_price_per_sqm": 134.9,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "redcliff_redcliff",
@@ -3959,7 +3959,7 @@
     "maximum_price_per_sqm": 20.83,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "rusape_rusape",
@@ -3973,7 +3973,7 @@
     "maximum_price_per_sqm": 284.62,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 16,
-    "confidence_score": 10
+    "confidence_score": 40
   },
   {
     "market_id": "ruwa_adelaide_park",
@@ -3987,7 +3987,7 @@
     "maximum_price_per_sqm": 72.17,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "ruwa_chipukutu_park",
@@ -4001,7 +4001,7 @@
     "maximum_price_per_sqm": 83.06,
     "median_days_on_market_land": 18,
     "average_days_on_market_land": 13,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "ruwa_erasmus_park",
@@ -4015,7 +4015,7 @@
     "maximum_price_per_sqm": 80.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 18,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "ruwa_fairview",
@@ -4029,7 +4029,7 @@
     "maximum_price_per_sqm": 87.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 17,
-    "confidence_score": 30
+    "confidence_score": 60
   },
   {
     "market_id": "ruwa_mabvazuva",
@@ -4043,7 +4043,7 @@
     "maximum_price_per_sqm": 100.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 17,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "ruwa_mabvazuva_estates",
@@ -4057,7 +4057,7 @@
     "maximum_price_per_sqm": 112.5,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 17,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "ruwa_riverside",
@@ -4071,7 +4071,7 @@
     "maximum_price_per_sqm": 29.41,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "ruwa_riverside_park",
@@ -4085,7 +4085,7 @@
     "maximum_price_per_sqm": 72.46,
     "median_days_on_market_land": 18,
     "average_days_on_market_land": 14,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "ruwa_ruwa",
@@ -4099,7 +4099,7 @@
     "maximum_price_per_sqm": 175.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 17,
-    "confidence_score": 50
+    "confidence_score": 100
   },
   {
     "market_id": "ruwa_springvale",
@@ -4113,7 +4113,7 @@
     "maximum_price_per_sqm": 108.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 18,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "ruwa_timire_park",
@@ -4127,7 +4127,7 @@
     "maximum_price_per_sqm": 67.5,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "ruwa_windsor_park",
@@ -4141,7 +4141,7 @@
     "maximum_price_per_sqm": 72.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 18,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "ruwa_zimre_park",
@@ -4155,7 +4155,7 @@
     "maximum_price_per_sqm": 75.56,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 16,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "seke_seke",
@@ -4169,7 +4169,7 @@
     "maximum_price_per_sqm": 31.43,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "selous_selous",
@@ -4183,7 +4183,7 @@
     "maximum_price_per_sqm": 1.24,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "shamva_shamva",
@@ -4197,7 +4197,7 @@
     "maximum_price_per_sqm": 16.67,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "shurugwi_shurugwi",
@@ -4211,7 +4211,7 @@
     "maximum_price_per_sqm": 33.33,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "umguza_umguza",
@@ -4225,7 +4225,7 @@
     "maximum_price_per_sqm": 6.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "umzingwane_esigodini",
@@ -4239,7 +4239,7 @@
     "maximum_price_per_sqm": 12.5,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "victoria_falls_victoria_falls",
@@ -4253,7 +4253,7 @@
     "maximum_price_per_sqm": 205.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 18,
-    "confidence_score": 10
+    "confidence_score": 40
   },
   {
     "market_id": "vumba_vumba",
@@ -4267,7 +4267,7 @@
     "maximum_price_per_sqm": 40.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "wedza_wedza",
@@ -4281,7 +4281,7 @@
     "maximum_price_per_sqm": 10.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "zvimba_nyabira",
@@ -4295,7 +4295,7 @@
     "maximum_price_per_sqm": 120.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 50
+    "confidence_score": 100
   },
   {
     "market_id": "zvimba_rosewood",
@@ -4309,7 +4309,7 @@
     "maximum_price_per_sqm": 27.5,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "zvimba_zvimba",
@@ -4323,7 +4323,7 @@
     "maximum_price_per_sqm": 55.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 19,
-    "confidence_score": 10
+    "confidence_score": 20
   },
   {
     "market_id": "zvishavane_zvishavane",
@@ -4337,6 +4337,6 @@
     "maximum_price_per_sqm": 25.0,
     "median_days_on_market_land": 19,
     "average_days_on_market_land": 18,
-    "confidence_score": 10
+    "confidence_score": 20
   }
 ]

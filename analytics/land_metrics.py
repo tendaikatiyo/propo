@@ -78,7 +78,10 @@ def build_land_metrics(land_listings: List[Dict[str, Any]]) -> List[Dict[str, An
         avg_dom_float = safe_mean_float(dom_values)
         average_dom = int(round(avg_dom_float)) if avg_dom_float is not None else None
 
-        confidence_score = min(100, confidence_points(priced_land_count))
+        # Mirror rent+buy (rental_count + sale_count): total stands + priced stands.
+        confidence_score = min(
+            100, confidence_points(land_count) + confidence_points(priced_land_count)
+        )
 
         output.append(
             {
