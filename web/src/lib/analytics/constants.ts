@@ -1,5 +1,6 @@
 export const ANALYTICS_CONSENT_COOKIE = "propo_analytics_consent";
 export const ANALYTICS_SESSION_COOKIE = "propo_analytics_sid";
+export const GA_MEASUREMENT_ID = "G-2QCXMVBDH1";
 
 export const ANALYTICS_EVENT_NAMES = [
   "explore_filter_change",

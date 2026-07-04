@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 
 import { AppSidebar } from "@/components/layout/app-sidebar";
 import { AnalyticsConsentBanner } from "@/components/analytics/consent-banner";
+import { GoogleAnalytics } from "@/components/analytics/google-analytics";
 import { AppFooter, SiteHero } from "@/components/layout/site-chrome";
 import { OnboardingTour } from "@/components/onboarding/onboarding-tour";
 import { MobileTabBar } from "@/components/mobile/mobile-tab-bar";
@@ -55,6 +56,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         </div>
         <div className="print:hidden">
           <AnalyticsConsentBanner />
+          <GoogleAnalytics />
         </div>
       </div>
     </div>
