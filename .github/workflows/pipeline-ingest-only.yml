@@ -1,0 +1,56 @@
+name: Pipeline ingest only
+
+on:
+  workflow_dispatch:
+    inputs:
+      skip_analytics_build:
+        description: Skip npm analytics build (use if JSON already built)
+        required: false
+        default: false
+        type: boolean
+
+concurrency:
+  group: pipeline-ingest-only
+  cancel-in-progress: false
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Restore SQLite history cache
+        uses: actions/cache@v4
+        with:
+          path: data/easishop.db
+          key: easishop-db-${{ github.run_number }}
+          restore-keys: |
+            easishop-db-
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          npm ci
+
+      - name: Ingest and sync to Supabase (no scrape)
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+        run: python -m analytics.run_pipeline_cloud
