@@ -1,0 +1,62 @@
+name: Test Telegram notification
+
+on:
+  workflow_dispatch:
+    inputs:
+      message:
+        description: Optional custom message (leave blank for default test text)
+        required: false
+        default: ""
+        type: string
+
+jobs:
+  test-telegram:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Send test message
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          CUSTOM_MESSAGE: ${{ github.event.inputs.message }}
+        run: |
+          set -euo pipefail
+
+          if [ -z "${TELEGRAM_BOT_TOKEN}" ]; then
+            echo "::error::TELEGRAM_BOT_TOKEN secret is not set in repository secrets."
+            exit 1
+          fi
+
+          if [ -z "${TELEGRAM_CHAT_ID}" ]; then
+            echo "::error::TELEGRAM_CHAT_ID secret is not set in repository secrets."
+            exit 1
+          fi
+
+          if [ -n "${CUSTOM_MESSAGE}" ]; then
+            TEXT="${CUSTOM_MESSAGE}"
+          else
+            TEXT="propo Telegram test from GitHub Actions
+
+          Repository: ${GITHUB_REPOSITORY}
+          Workflow: ${GITHUB_WORKFLOW}
+          Run: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}
+          Triggered by: ${GITHUB_ACTOR}
+          Time (UTC): $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          fi
+
+          RESPONSE=$(curl -sS -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -d "chat_id=${TELEGRAM_CHAT_ID}" \
+            --data-urlencode "text=${TEXT}")
+
+          echo "Telegram API response: ${RESPONSE}"
+
+          OK=$(echo "${RESPONSE}" | jq -r '.ok')
+          if [ "${OK}" != "true" ]; then
+            DESC=$(echo "${RESPONSE}" | jq -r '.description // "Unknown error"')
+            echo "::error::Telegram sendMessage failed: ${DESC}"
+            exit 1
+          fi
+
+          MESSAGE_ID=$(echo "${RESPONSE}" | jq -r '.result.message_id')
+          echo "Telegram message sent successfully (message_id=${MESSAGE_ID})."
