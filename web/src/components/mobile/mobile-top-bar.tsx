@@ -69,7 +69,7 @@ export function MobileTopBar() {
             <Menu className="size-[22px] stroke-[2px]" />
           )}
           {!menuOpen && pins.length > 0 ? (
-            <span className="absolute top-1 right-1 flex size-[18px] items-center justify-center rounded-full bg-primary text-[10px] font-bold text-primary-foreground">
+            <span className="absolute top-1 right-1 flex size-[18px] items-center justify-center rounded-full bg-destructive text-[10px] font-bold text-white">
               {pins.length}
             </span>
           ) : null}

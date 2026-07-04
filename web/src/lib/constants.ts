@@ -114,4 +114,4 @@ export const DEFAULT_CITY = "Harare";
 export const SITE_NAME = "Propo";
 export const CONTACT_EMAIL = "carteayo@gmail.com";
 export const SITE_DESCRIPTION =
-  "Find houses to rent, homes to buy, and residential stands in Zimbabwe. Compare suburbs by budget — median rents, sale prices, and land per sqm across Harare and beyond.";
+  "Where can you afford in Zimbabwe? Compare suburb house prices — median rents, sale prices, and land per sqm across Harare and beyond.";

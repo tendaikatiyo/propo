@@ -10,7 +10,7 @@ export const SITE_URL =
 
 /** Open Graph / Twitter Card share image. */
 export const OG_IMAGE_PATH = "/og_tag_image.webp";
-export const OG_IMAGE_ALT = `${SITE_NAME} — houses to rent, property for sale & land in Zimbabwe`;
+export const OG_IMAGE_ALT = `${SITE_NAME} — Where can you afford in Zimbabwe? Compare house prices by suburb`;
 export const OG_IMAGE_WIDTH = 1200;
 export const OG_IMAGE_HEIGHT = 630;
 
@@ -80,18 +80,18 @@ export function buildPageMetadata(options: PageSeoOptions = {}): Metadata {
 }
 
 export const HOME_PAGE_TITLE =
-  "Find houses to rent, homes to buy & land stands in Zimbabwe";
+  "Where can you afford in Zimbabwe? — compare house prices by suburb";
 
 export const HOME_PAGE_DESCRIPTION =
-  "Compare suburbs by budget — houses to let, property for sale, and residential stands. Median rents, sale prices, and land $/sqm across Harare and Zimbabwe.";
+  "Set your rent or buy budget and compare suburb prices across Zimbabwe. Median rents, sale prices, and land $/sqm — see which neighbourhoods fit your wallet.";
 
-export const EXPLORE_PAGE_TITLE = "Explore suburbs by budget";
+export const EXPLORE_PAGE_TITLE = "Where can you afford? — compare suburbs by budget";
 
 export const EXPLORE_PAGE_DESCRIPTION =
-  "Find houses to rent, homes to buy, and land stands in your budget. Filter Zimbabwe suburbs by price, property type, and city.";
+  "Compare house prices across Zimbabwe suburbs against your budget. Filter by median rent, sale price, property type, and city.";
 
 export function suburbPageTitle(suburb: string, city: string): string {
-  return `${suburb}, ${city} — rent, buy & land`;
+  return `${suburb}, ${city} — house prices & affordability`;
 }
 
 export function suburbPageDescription(
@@ -107,9 +107,9 @@ export function suburbPageDescription(
       : "";
 
   return (
-    `Houses to rent and property for sale in ${suburbLabel}, ${market.city}. ` +
+    `Compare house prices in ${suburbLabel}, ${market.city}. ` +
     `Median rent ${formatCurrency(medianRent)}, median sale ${formatCurrency(medianSale)}.${landLine} ` +
-    `Yields, price trends, and active listings.`
+    `Yields, price trends, and affordability signals.`
   );
 }
 

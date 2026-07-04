@@ -17,6 +17,11 @@ jobs:
   ingest:
     runs-on: ubuntu-latest
     timeout-minutes: 45
+    environment: production
+    env:
+      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+      SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
 
     steps:
       - name: Checkout
@@ -48,9 +53,16 @@ jobs:
           pip install -r requirements.txt
           npm ci
 
+      - name: Verify Supabase secrets
+        run: |
+          missing=()
+          [ -z "$SUPABASE_URL" ] && missing+=("SUPABASE_URL")
+          [ -z "$SUPABASE_SERVICE_ROLE_KEY" ] && missing+=("SUPABASE_SERVICE_ROLE_KEY")
+          [ -z "$SUPABASE_DB_URL" ] && missing+=("SUPABASE_DB_URL")
+          if [ ${#missing[@]} -gt 0 ]; then
+            echo "::error::Missing secrets in environment 'production': ${missing[*]}"
+            exit 1
+          fi
+
       - name: Ingest and sync to Supabase (no scrape)
-        env:
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
-          SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
         run: python -m analytics.run_pipeline_cloud

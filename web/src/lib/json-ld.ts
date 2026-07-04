@@ -49,7 +49,7 @@ export function suburbPageJsonLd({
   description: string;
 }): Record<string, unknown>[] {
   const pageUrl = absoluteUrl(`/cities/${citySlug}/${suburbSlug}`);
-  const pageName = `${suburb}, ${city} — houses to rent, property for sale & land`;
+  const pageName = `${suburb}, ${city} — house prices & affordability`;
 
   return [
     {
