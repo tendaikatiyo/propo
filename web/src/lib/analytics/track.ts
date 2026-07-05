@@ -7,8 +7,11 @@ import type {
   AnalyticsTrackBody,
   ExploreFilterPayload,
   ExploreZeroResultsPayload,
+  LensChangePayload,
   ListingClickPayload,
+  ReportExportPayload,
   SuburbClickPayload,
+  SuburbViewPayload,
 } from "@/lib/analytics/types";
 import type { ExploreFilters } from "@/lib/types";
 
@@ -66,4 +69,16 @@ export function trackSuburbClick(payload: SuburbClickPayload): void {
 
 export function trackListingClick(payload: ListingClickPayload): void {
   trackEvent("listing_click", payload);
+}
+
+export function trackLensChange(payload: LensChangePayload): void {
+  trackEvent("lens_change", payload);
+}
+
+export function trackSuburbView(payload: SuburbViewPayload): void {
+  trackEvent("suburb_view", payload);
+}
+
+export function trackReportExport(payload: ReportExportPayload): void {
+  trackEvent("report_export", payload);
 }

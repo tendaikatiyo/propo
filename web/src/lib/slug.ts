@@ -37,18 +37,40 @@ export function suburbPath(
   return qs ? `${base}?${qs}` : base;
 }
 
+function reportQueryString(query?: {
+  type?: string | null;
+  bedroom?: number | null;
+  scope?: string | null;
+}): string {
+  if (!query?.type && query?.bedroom == null && !query?.scope) return "";
+  const params = new URLSearchParams();
+  if (query.type) params.set("type", query.type);
+  if (query.bedroom != null) params.set("bedroom", String(query.bedroom));
+  if (query.scope && query.scope !== "full") params.set("scope", query.scope);
+  return params.toString();
+}
+
 export function suburbReportPath(
   city: string,
   suburb: string,
-  query?: { type?: string | null; bedroom?: number | null }
+  query?: {
+    type?: string | null;
+    bedroom?: number | null;
+    scope?: "full" | "rent" | null;
+  }
 ): string {
   const base = `/cities/${toSlug(city)}/${toSlug(suburb)}/report`;
-  const qs = segmentQueryString(query);
+  const qs = reportQueryString(query);
   return qs ? `${base}?${qs}` : base;
 }
 
-export function cityPath(city: string): string {
-  return `/cities/${toSlug(city)}`;
+export function cityPath(
+  city: string,
+  query?: { mode?: string | null }
+): string {
+  const base = `/cities/${toSlug(city)}`;
+  if (!query?.mode || query.mode === "rent") return base;
+  return `${base}?mode=${encodeURIComponent(query.mode)}`;
 }
 
 export function matchesSlug(actual: string, slug: string): boolean {

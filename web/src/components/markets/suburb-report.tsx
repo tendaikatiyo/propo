@@ -20,7 +20,7 @@ import {
   segmentFilterLabel,
   segmentMedianLabel,
 } from "@/lib/segments";
-import type { LandMetric, Listing, MarketMetric, MarketTrendsPayload, PropertyType } from "@/lib/types";
+import type { LandMetric, Listing, MarketMetric, MarketTrendsPayload, PropertyType, ReportScope } from "@/lib/types";
 
 function ReportMetric({
   label,
@@ -86,6 +86,8 @@ export function SuburbReport({
   saleListings,
   landListings = [],
   profilePath,
+  investProfilePath,
+  scope = "full",
 }: {
   market: MarketMetric;
   propertyType?: PropertyType | null;
@@ -99,7 +101,10 @@ export function SuburbReport({
   saleListings: Listing[];
   landListings?: Listing[];
   profilePath: string;
+  investProfilePath?: string;
+  scope?: ReportScope;
 }) {
+  const rentOnly = scope === "rent";
   const segment = resolveSegmentStats(market, propertyType, bedroom);
   const specLabel = segmentFilterLabel(propertyType, bedroom);
   const rentFallback = isUsingAggregateFallback(market, "rent", { propertyType, bedroom });
@@ -125,7 +130,9 @@ export function SuburbReport({
       <header className="suburb-report-section space-y-4 border-b border-border/80 pb-6">
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
-            <p className="caption-label">Market report</p>
+            <p className="caption-label">
+              {rentOnly ? "Rental market summary" : "Market report"}
+            </p>
             <h1 className="font-heading text-3xl font-medium tracking-[-0.02em]">
               {sanitizeLabel(market.suburb)}
             </h1>
@@ -150,12 +157,16 @@ export function SuburbReport({
             {rentSample === 1 ? "" : "s"}
             {specLabel && rentSample < MIN_SEGMENT_LISTINGS ? " (limited segment data)" : ""}
           </span>
-          <span>·</span>
-          <span>
-            {saleSample} sale listing{saleSample === 1 ? "" : "s"}
-            {specLabel && saleSample < MIN_SEGMENT_LISTINGS ? " (limited segment data)" : ""}
-          </span>
-          {hasLandData ? (
+          {!rentOnly ? (
+            <>
+              <span>·</span>
+              <span>
+                {saleSample} sale listing{saleSample === 1 ? "" : "s"}
+                {specLabel && saleSample < MIN_SEGMENT_LISTINGS ? " (limited segment data)" : ""}
+              </span>
+            </>
+          ) : null}
+          {!rentOnly && hasLandData ? (
             <>
               <span>·</span>
               <span>
@@ -166,29 +177,42 @@ export function SuburbReport({
           ) : null}
         </div>
 
-        <SuburbReportActions profilePath={profilePath} />
+        <SuburbReportActions
+          profilePath={profilePath}
+          investProfilePath={investProfilePath}
+          scope={scope}
+          marketId={market.market_id}
+          city={market.city}
+          suburb={market.suburb}
+        />
       </header>
 
       <section className="suburb-report-section space-y-3">
-        <h2 className="font-heading text-lg font-medium">Current market snapshot</h2>
+        <h2 className="font-heading text-lg font-medium">
+          {rentOnly ? "Current rental snapshot" : "Current market snapshot"}
+        </h2>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           <ReportMetric
             label={segmentMedianLabel("rent", propertyType, bedroom)}
             value={formatCurrency(medianRent)}
           />
-          <ReportMetric
-            label={segmentMedianLabel("buy", propertyType, bedroom)}
-            value={formatCurrency(medianSale)}
-          />
-          <ReportMetric label="Gross yield" value={formatPercent(market.yield_percent)} />
-          <ReportMetric
-            label="Opportunity score"
-            value={String(market.opportunity_score ?? "—")}
-          />
+          {!rentOnly ? (
+            <>
+              <ReportMetric
+                label={segmentMedianLabel("buy", propertyType, bedroom)}
+                value={formatCurrency(medianSale)}
+              />
+              <ReportMetric label="Gross yield" value={formatPercent(market.yield_percent)} />
+              <ReportMetric
+                label="Opportunity score"
+                value={String(market.opportunity_score ?? "—")}
+              />
+            </>
+          ) : null}
         </div>
       </section>
 
-      <SuburbReportTrends rentTrends={rentTrends} saleTrends={saleTrends} />
+      <SuburbReportTrends rentTrends={rentTrends} saleTrends={saleTrends} scope={scope} />
 
       <section className="suburb-report-section space-y-3">
         <h2 className="font-heading text-lg font-medium">Property mix</h2>
@@ -207,17 +231,19 @@ export function SuburbReport({
               {formatCurrency(rentMax)}
             </p>
           </div>
-          <div>
-            <p className="text-sm font-medium">Sale</p>
-            <p className="mt-1 text-sm text-muted-foreground">
-              Min {formatCurrency(saleMin)} · Median {formatCurrency(medianSale)} · Max{" "}
-              {formatCurrency(saleMax)}
-            </p>
-          </div>
+          {!rentOnly ? (
+            <div>
+              <p className="text-sm font-medium">Sale</p>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Min {formatCurrency(saleMin)} · Median {formatCurrency(medianSale)} · Max{" "}
+                {formatCurrency(saleMax)}
+              </p>
+            </div>
+          ) : null}
         </div>
       </section>
 
-      {hasLandData ? (
+      {!rentOnly && hasLandData ? (
         <section className="suburb-report-section space-y-3">
           <h2 className="font-heading text-lg font-medium">Land market</h2>
           <p className="text-sm text-muted-foreground">
@@ -255,7 +281,7 @@ export function SuburbReport({
       {/* Land trends hidden until land_snapshots_daily has 2+ days of history */}
       {/* {landTrends && hasLandData ? <SuburbReportLandTrends landTrends={landTrends} /> : null} */}
 
-      {rentListings.length || saleListings.length || landListings.length ? (
+      {rentListings.length || (!rentOnly && (saleListings.length || landListings.length)) ? (
         <section className="suburb-report-section space-y-6">
           <div>
             <h2 className="font-heading text-lg font-medium">Good value listings</h2>
@@ -275,43 +301,50 @@ export function SuburbReport({
             market={market}
           />
 
-          <ReportListings
-            title="For sale"
-            description={
-              medianSale != null
-                ? `At or below median sale of ${formatCurrency(medianSale)}.`
-                : "Below suburb median sale price."
-            }
-            listings={saleListings}
-            market={market}
-          />
+          {!rentOnly ? (
+            <>
+              <ReportListings
+                title="For sale"
+                description={
+                  medianSale != null
+                    ? `At or below median sale of ${formatCurrency(medianSale)}.`
+                    : "Below suburb median sale price."
+                }
+                listings={saleListings}
+                market={market}
+              />
 
-          <ReportListings
-            title="Land for sale"
-            description={
-              medianLandPps != null
-                ? `At or below median of ${formatPricePerSqm(medianLandPps)} per sqm.`
-                : "Below suburb median $/sqm."
-            }
-            listings={landListings}
-            market={market}
-            landMarket={landMarket}
-          />
+              <ReportListings
+                title="Land for sale"
+                description={
+                  medianLandPps != null
+                    ? `At or below median of ${formatPricePerSqm(medianLandPps)} per sqm.`
+                    : "Below suburb median $/sqm."
+                }
+                listings={landListings}
+                market={market}
+                landMarket={landMarket}
+              />
+            </>
+          ) : null}
         </section>
       ) : null}
 
       <footer className="suburb-report-section space-y-2 border-t border-border/80 pt-6 text-xs text-muted-foreground">
         <p>
           <strong className="font-medium text-foreground">Data confidence:</strong>{" "}
-          {market.confidence_score}% — based on rental and sale listing volume in this suburb.
+          {market.confidence_score}% — based on{" "}
+          {rentOnly ? "rental" : "rental and sale"} listing volume in this suburb.
           Green = strong coverage; lower scores indicate thinner markets.
         </p>
         <p>
-          <strong className="font-medium text-foreground">Methodology:</strong> Medians, yields, and
-          trends are computed from Propo&apos;s property market database — active listings from major
-          online portals, not closed transaction data. Fair-value badges compare listing price to
-          segment or suburb medians. Attributes like borehole, pool, or security are not captured in
-          the database and are not reflected in these figures.
+          <strong className="font-medium text-foreground">Methodology:</strong>{" "}
+          {rentOnly
+            ? "Median rent and trends are computed from active rental listings in Propo's property market database — not closed transaction data."
+            : "Medians, yields, and trends are computed from Propo's property market database — active listings from major online portals, not closed transaction data."}{" "}
+          Fair-value badges compare listing price to segment or suburb medians. Attributes like
+          borehole, pool, or security are not captured in the database and are not reflected in
+          these figures.
         </p>
         <p>
           Full methodology:{" "}

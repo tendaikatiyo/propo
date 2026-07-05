@@ -51,7 +51,7 @@ export function HomeMoversTeaser() {
           {data.rent_risers.map((item) => (
             <Link
               key={item.market_id}
-              href={suburbPath(item.city, item.suburb)}
+              href={suburbPath(item.city, item.suburb, { mode: "rent" })}
               className="flex items-center justify-between rounded-xl px-2 py-2 text-sm hover:bg-muted/50"
             >
               <span>

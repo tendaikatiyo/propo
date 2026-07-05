@@ -2,6 +2,7 @@ import Link from "next/link";
 import { FileDown } from "lucide-react";
 
 import { BackLink } from "@/components/layout/back-nav";
+import { SuburbLensBar } from "@/components/markets/suburb-lens-bar";
 import { DataFreshnessPill } from "@/components/layout/data-freshness-pill";
 import { SuburbActionBar } from "@/components/mobile/suburb-action-bar";
 import { PinButton } from "@/components/markets/pin-button";
@@ -9,7 +10,6 @@ import { SampleSizeBadge, ScopeLabel } from "@/components/markets/sample-size-ba
 import { SuburbValueListings } from "@/components/listings/suburb-value-listings";
 import { SuburbLandListings } from "@/components/listings/suburb-land-listings";
 import { SuburbLandMetrics } from "@/components/markets/suburb-land-metrics";
-// import { SuburbLandTrendsSection } from "@/components/markets/suburb-land-trends-section";
 import { PropertyMixBar } from "@/components/markets/property-mix-bar";
 import { SuburbTrendsSection } from "@/components/markets/suburb-trends-section";
 import { ConfidenceBadge } from "@/components/markets/confidence-badge";
@@ -17,6 +17,20 @@ import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MIN_SEGMENT_LISTINGS } from "@/lib/constants";
 import { formatCurrency, formatPercent, sanitizeLabel } from "@/lib/format";
+import {
+  relatedSuburbCaption,
+  relatedSuburbDetail,
+  showsLandOnProfile,
+  showsPropertyMix,
+  showsRentMetrics,
+  showsRentReportExport,
+  showsReportExport,
+  showsResidentialOnProfile,
+  showsSaleMetrics,
+  showsYieldMetrics,
+  sortRelatedSuburbs,
+  suburbProfileDescription,
+} from "@/lib/lens";
 import {
   hasActiveSegmentFilters,
   isUsingAggregateFallback,
@@ -26,7 +40,7 @@ import {
   segmentFilterLabel,
   segmentMedianLabel,
 } from "@/lib/segments";
-import type { LandMetric, MarketMetric, PropertyType } from "@/lib/types";
+import type { ExploreMode, LandMetric, MarketMetric, PropertyType } from "@/lib/types";
 import { cityPath, suburbPath, suburbReportPath } from "@/lib/slug";
 import { cn } from "@/lib/utils";
 
@@ -49,15 +63,16 @@ export function SuburbProfile({
   propertyType = null,
   bedroom = null,
   landMarket = null,
-  landMode = false,
+  lens,
 }: {
   market: MarketMetric;
   related: MarketMetric[];
   propertyType?: PropertyType | null;
   bedroom?: number | null;
   landMarket?: LandMetric | null;
-  landMode?: boolean;
+  lens: ExploreMode;
 }) {
+  const landMode = lens === "land";
   const segment = resolveSegmentStats(market, propertyType, bedroom);
   const specLabel = segmentFilterLabel(propertyType, bedroom);
   const hasSpecFilters = hasActiveSegmentFilters({ propertyType, bedroom });
@@ -77,155 +92,227 @@ export function SuburbProfile({
   const saleMin = segment?.minimum_sale_price ?? market.minimum_sale_price;
   const saleMax = segment?.maximum_sale_price ?? market.maximum_sale_price;
 
+  const segmentQuery = { type: propertyType, bedroom, mode: lens };
+  const sortedRelated = sortRelatedSuburbs(related, lens, { propertyType, bedroom });
+
+  const confidenceSample =
+    lens === "buy" ? saleSample : lens === "rent" ? rentSample : rentSample + saleSample;
+  const confidenceMode = lens === "buy" ? "buy" : "rent";
+
   return (
     <div className="space-y-8 pb-20 lg:pb-0">
-      <BackLink href={cityPath(market.city)} label={`Back to ${market.city}`} />
+      <BackLink href={cityPath(market.city, { mode: lens })} label={`Back to ${market.city}`} />
 
       <div className="flex flex-wrap items-start justify-between gap-4">
-        <div>
-          <p className="font-mono text-xs tracking-[0.08em] text-muted-foreground uppercase">
-            <Link href={cityPath(market.city)} className="hover:underline">
-              {market.city}
-            </Link>
-          </p>
-          <h1 className="font-heading text-3xl font-medium tracking-[-0.02em] sm:text-4xl">
-            {sanitizeLabel(market.suburb)}
-          </h1>
-          <p className="mt-2 text-sm text-muted-foreground">
-            {landMode
-              ? "Land stands for sale — prices per sqm, trends, and active listings."
-              : specLabel
-                ? `Houses to rent and property for sale — medians for ${specLabel}${
-                    rentFallback || saleFallback
-                      ? " (suburb-wide median shown where spec data is limited or missing)"
-                      : ""
-                  }.`
-                : "Houses to rent, homes to buy, and land stands — median prices and active listings."}
-          </p>
-          <div className="mt-3 flex flex-col gap-2">
-            <ScopeLabel propertyType={propertyType} bedroom={bedroom} />
-            <div className="flex flex-col gap-1 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-4">
-              <SampleSizeBadge count={rentSample} mode="rent" limited={rentLimited} />
-              <SampleSizeBadge count={saleSample} mode="buy" limited={saleLimited} />
+        <div className="min-w-0 flex-1 space-y-4">
+          <div>
+            <p className="font-mono text-xs tracking-[0.08em] text-muted-foreground uppercase">
+              <Link href={cityPath(market.city, { mode: lens })} className="hover:underline">
+                {market.city}
+              </Link>
+            </p>
+            <h1 className="font-heading text-3xl font-medium tracking-[-0.02em] sm:text-4xl">
+              {sanitizeLabel(market.suburb)}
+            </h1>
+            <p className="mt-2 text-sm text-muted-foreground">
+              {suburbProfileDescription(lens, specLabel, rentFallback, saleFallback)}
+            </p>
+            <div className="mt-3 flex flex-col gap-2">
+              <ScopeLabel propertyType={propertyType} bedroom={bedroom} />
+              <div className="flex flex-col gap-1 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-4">
+                {showsRentMetrics(lens) ? (
+                  <SampleSizeBadge count={rentSample} mode="rent" limited={rentLimited} />
+                ) : null}
+                {showsSaleMetrics(lens) ? (
+                  <SampleSizeBadge count={saleSample} mode="buy" limited={saleLimited} />
+                ) : null}
+              </div>
+              <DataFreshnessPill prefix="Market data" />
             </div>
-            <DataFreshnessPill prefix="Market data" />
+            {showsRentReportExport(lens) ? (
+              <p className="mt-3 print:hidden lg:hidden">
+                <Link
+                  href={suburbReportPath(market.city, market.suburb, {
+                    type: propertyType,
+                    bedroom,
+                    scope: "rent",
+                  })}
+                  className="inline-flex items-center gap-1.5 text-sm font-medium hover:underline"
+                >
+                  <FileDown className="size-4" />
+                  Export rent summary
+                </Link>
+              </p>
+            ) : null}
+            {showsReportExport(lens) ? (
+              <p className="mt-3 print:hidden lg:hidden">
+                <Link
+                  href={suburbReportPath(market.city, market.suburb, {
+                    type: propertyType,
+                    bedroom,
+                  })}
+                  className="inline-flex items-center gap-1.5 text-sm font-medium hover:underline"
+                >
+                  <FileDown className="size-4" />
+                  Export full report
+                </Link>
+              </p>
+            ) : null}
           </div>
-          <p className="mt-3 print:hidden lg:hidden">
+          <SuburbLensBar
+            city={market.city}
+            suburb={market.suburb}
+            lens={lens}
+            propertyType={propertyType}
+            bedroom={bedroom}
+          />
+        </div>
+        <div className="lg:hidden">
+          <ConfidenceBadge
+            score={market.confidence_score}
+            sampleCount={confidenceSample}
+            sampleMode={confidenceMode}
+          />
+        </div>
+        <div className="hidden flex-wrap items-center gap-2 lg:flex">
+          {showsRentReportExport(lens) ? (
+            <Link
+              href={suburbReportPath(market.city, market.suburb, {
+                type: propertyType,
+                bedroom,
+                scope: "rent",
+              })}
+              className={cn(buttonVariants({ variant: "outline", size: "sm" }), "print:hidden")}
+            >
+              <FileDown className="size-4" />
+              Export rent summary
+            </Link>
+          ) : null}
+          {showsReportExport(lens) ? (
             <Link
               href={suburbReportPath(market.city, market.suburb, {
                 type: propertyType,
                 bedroom,
               })}
-              className="inline-flex items-center gap-1.5 text-sm font-medium hover:underline"
+              className={cn(buttonVariants({ variant: "outline", size: "sm" }), "print:hidden")}
             >
               <FileDown className="size-4" />
-              Export report
+              Export full report
             </Link>
-          </p>
-        </div>
-        <div className="lg:hidden">
+          ) : null}
           <ConfidenceBadge
             score={market.confidence_score}
-            sampleCount={rentSample + saleSample}
-            sampleMode="rent"
+            sampleCount={confidenceSample}
+            sampleMode={confidenceMode}
           />
-        </div>
-        <div className="hidden flex-wrap items-center gap-2 lg:flex">
-          <Link
-            href={suburbReportPath(market.city, market.suburb, {
-              type: propertyType,
-              bedroom,
-            })}
-            className={cn(buttonVariants({ variant: "outline", size: "sm" }), "print:hidden")}
-          >
-            <FileDown className="size-4" />
-            Export report
-          </Link>
-          <ConfidenceBadge
-            score={market.confidence_score}
-            sampleCount={rentSample + saleSample}
-            sampleMode="rent"
-          />
-          <PinButton market={market} />
+          <PinButton market={market} fromMode={lens} />
         </div>
       </div>
 
-      {!landMode ? (
+      {showsResidentialOnProfile(lens) ? (
         <>
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        <MetricCard
-          label={segmentMedianLabel("rent", propertyType, bedroom)}
-          value={formatCurrency(medianRent)}
-        />
-        <MetricCard
-          label={segmentMedianLabel("buy", propertyType, bedroom)}
-          value={formatCurrency(medianSale)}
-        />
-        <MetricCard label="Gross yield" value={formatPercent(market.yield_percent)} />
-        <MetricCard label="Opportunity score" value={String(market.opportunity_score ?? "—")} />
-      </div>
-
-      <SuburbTrendsSection market={market} />
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Property mix</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <PropertyMixBar market={market} />
-        </CardContent>
-      </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Price context</CardTitle>
-        </CardHeader>
-        <CardContent className="grid gap-4 sm:grid-cols-2">
-          <div>
-            <p className="mb-2 text-sm font-medium">Rent</p>
-            <p className="text-sm text-muted-foreground">
-              Min {formatCurrency(rentMin)} · Median {formatCurrency(medianRent)} · Max{" "}
-              {formatCurrency(rentMax)}
-            </p>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {showsRentMetrics(lens) ? (
+              <MetricCard
+                label={segmentMedianLabel("rent", propertyType, bedroom)}
+                value={formatCurrency(medianRent)}
+              />
+            ) : null}
+            {showsSaleMetrics(lens) ? (
+              <MetricCard
+                label={segmentMedianLabel("buy", propertyType, bedroom)}
+                value={formatCurrency(medianSale)}
+              />
+            ) : null}
+            {showsYieldMetrics(lens) ? (
+              <>
+                <MetricCard label="Gross yield" value={formatPercent(market.yield_percent)} />
+                <MetricCard
+                  label="Opportunity score"
+                  value={String(market.opportunity_score ?? "—")}
+                />
+              </>
+            ) : null}
           </div>
-          <div>
-            <p className="mb-2 text-sm font-medium">Sale</p>
-            <p className="text-sm text-muted-foreground">
-              Min {formatCurrency(saleMin)} · Median {formatCurrency(medianSale)} · Max{" "}
-              {formatCurrency(saleMax)}
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+
+          <SuburbTrendsSection market={market} lens={lens} />
+
+          {showsPropertyMix(lens) ? (
+            <Card>
+              <CardHeader>
+                <CardTitle>Property mix</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <PropertyMixBar market={market} />
+              </CardContent>
+            </Card>
+          ) : null}
+
+          {(showsRentMetrics(lens) || showsSaleMetrics(lens)) && (
+            <Card>
+              <CardHeader>
+                <CardTitle>Price context</CardTitle>
+              </CardHeader>
+              <CardContent
+                className={cn(
+                  "grid gap-4",
+                  showsRentMetrics(lens) && showsSaleMetrics(lens)
+                    ? "sm:grid-cols-2"
+                    : "sm:grid-cols-1"
+                )}
+              >
+                {showsRentMetrics(lens) ? (
+                  <div>
+                    <p className="mb-2 text-sm font-medium">Rent</p>
+                    <p className="text-sm text-muted-foreground">
+                      Min {formatCurrency(rentMin)} · Median {formatCurrency(medianRent)} · Max{" "}
+                      {formatCurrency(rentMax)}
+                    </p>
+                  </div>
+                ) : null}
+                {showsSaleMetrics(lens) ? (
+                  <div>
+                    <p className="mb-2 text-sm font-medium">Sale</p>
+                    <p className="text-sm text-muted-foreground">
+                      Min {formatCurrency(saleMin)} · Median {formatCurrency(medianSale)} · Max{" "}
+                      {formatCurrency(saleMax)}
+                    </p>
+                  </div>
+                ) : null}
+              </CardContent>
+            </Card>
+          )}
         </>
       ) : null}
 
-      {landMarket ? (
-        <>
-          <SuburbLandMetrics landMarket={landMarket} landMode={landMode} />
-          {/* Land trends hidden until land_snapshots_daily has 2+ days of history */}
-          {/* <SuburbLandTrendsSection landMarket={landMarket} /> */}
-        </>
+      {showsLandOnProfile(lens) && landMarket ? (
+        <SuburbLandMetrics landMarket={landMarket} landMode={landMode} />
       ) : null}
 
       <div id="suburb-listings" className="space-y-8">
-        {!landMode ? <SuburbValueListings market={market} /> : null}
-        <SuburbLandListings marketId={market.market_id} />
+        {showsResidentialOnProfile(lens) ? (
+          <SuburbValueListings market={market} lens={lens} />
+        ) : null}
+        {showsLandOnProfile(lens) ? (
+          <SuburbLandListings marketId={market.market_id} />
+        ) : null}
       </div>
 
-      {related.length ? (
+      {sortedRelated.length ? (
         <section className="space-y-4">
-          <h2 className="font-heading text-lg font-medium">Similar suburbs in {market.city}</h2>
+          <h2 className="font-heading text-lg font-medium">
+            {relatedSuburbCaption(lens)} in {market.city}
+          </h2>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {related.map((item) => (
+            {sortedRelated.map((item) => (
               <Link
                 key={item.market_id}
-                href={suburbPath(item.city, item.suburb, { type: propertyType, bedroom })}
+                href={suburbPath(item.city, item.suburb, segmentQuery)}
                 className="rounded-2xl border border-border/80 bg-card p-4 transition-shadow hover:shadow-[var(--shadow-card)]"
               >
                 <p className="font-medium">{sanitizeLabel(item.suburb)}</p>
                 <p className="text-sm text-muted-foreground">
-                  Yield {formatPercent(item.yield_percent)} · Opp {item.opportunity_score}
+                  {relatedSuburbDetail(item, lens)}
                 </p>
               </Link>
             ))}
@@ -233,7 +320,7 @@ export function SuburbProfile({
         </section>
       ) : null}
 
-      <SuburbActionBar market={market} />
+      <SuburbActionBar market={market} lens={lens} />
     </div>
   );
 }

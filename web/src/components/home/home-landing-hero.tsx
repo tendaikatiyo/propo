@@ -18,7 +18,7 @@ import {
   DATASET_SCALE,
   DATASET_UPDATE_CADENCE,
 } from "@/lib/constants";
-import { isLandMode } from "@/lib/mode";
+import { isLandMode, isInvestMode } from "@/lib/mode";
 import type { ExploreMode, PropertyType } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
@@ -42,6 +42,7 @@ export function HomeLandingHero({
   onPropertyTypeChange: (type: PropertyType | null) => void;
 }) {
   const land = isLandMode(mode);
+  const invest = isInvestMode(mode);
 
   return (
     <section
@@ -86,7 +87,9 @@ export function HomeLandingHero({
             <p className="mx-auto max-w-lg text-sm leading-relaxed tracking-[0.15px] text-white/90 drop-shadow-[0_1px_10px_rgba(0,0,0,0.4)] sm:text-base lg:mx-0 lg:text-lg">
               {land
                 ? `Set your land budget per square metre — explore ${DATASET_SCALE.landSuburbMarketsLabel} updated ${DATASET_UPDATE_CADENCE}.`
-                : `Set your rent or buy budget — explore ${DATASET_SCALE.suburbMarketsLabel} from a database updated ${DATASET_UPDATE_CADENCE}.`}
+                : invest
+                  ? `Find suburbs with the strongest rental yield — ${DATASET_SCALE.suburbMarketsLabel} updated ${DATASET_UPDATE_CADENCE}.`
+                  : `Set your rent or buy budget — explore ${DATASET_SCALE.suburbMarketsLabel} from a database updated ${DATASET_UPDATE_CADENCE}.`}
             </p>
           </div>
 
@@ -125,7 +128,7 @@ export function HomeLandingHero({
               ) : null}
 
               <Link href={exploreHref} className={cn(buttonVariants({ size: "lg" }), "w-full")}>
-                See matching suburbs
+                {invest ? "Explore yield markets" : "See matching suburbs"}
               </Link>
             </div>
           </div>

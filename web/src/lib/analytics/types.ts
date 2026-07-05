@@ -1,5 +1,5 @@
 import type { AnalyticsEventName } from "@/lib/analytics/constants";
-import type { ExploreFilters } from "@/lib/types";
+import type { ExploreFilters, ExploreMode } from "@/lib/types";
 
 export type ExploreFilterPayload = Pick<
   ExploreFilters,
@@ -16,7 +16,7 @@ export type SuburbClickPayload = {
   city: string;
   suburb: string;
   source: "explore_card" | "explore_table" | "explore_list" | "home_card";
-  mode?: "rent" | "buy" | "land";
+  mode?: ExploreMode;
 };
 
 export type ListingClickPayload = {
@@ -28,11 +28,35 @@ export type ListingClickPayload = {
   listingType?: string | null;
 };
 
+export type LensChangePayload = {
+  lens: ExploreMode;
+  previousLens?: ExploreMode;
+  source: "home" | "explore" | "cities" | "rankings" | "city" | "suburb_profile" | "compare";
+};
+
+export type SuburbViewPayload = {
+  marketId: string;
+  city: string;
+  suburb: string;
+  lens: ExploreMode;
+};
+
+export type ReportExportPayload = {
+  marketId: string;
+  city: string;
+  suburb: string;
+  scope: "full" | "rent";
+  lens?: ExploreMode;
+};
+
 export type AnalyticsEventPayload = {
   explore_filter_change: ExploreFilterPayload;
   explore_zero_results: ExploreZeroResultsPayload;
   suburb_click: SuburbClickPayload;
   listing_click: ListingClickPayload;
+  lens_change: LensChangePayload;
+  suburb_view: SuburbViewPayload;
+  report_export: ReportExportPayload;
 };
 
 export type AnalyticsTrackBody<T extends AnalyticsEventName = AnalyticsEventName> = {

@@ -9,9 +9,11 @@ import { cn } from "@/lib/utils";
 export function CityRankingList({
   title,
   items,
+  lens = "invest",
 }: {
   title: string;
   items: { city: string; suburb: string; label: string }[];
+  lens?: string;
 }) {
   if (!items.length) return null;
 
@@ -24,7 +26,7 @@ export function CityRankingList({
         {items.map((item, i) => (
           <Link
             key={`${item.city}-${item.suburb}`}
-            href={suburbPath(item.city, item.suburb)}
+            href={suburbPath(item.city, item.suburb, { mode: lens })}
             className={cn(
               motionRow,
               "flex min-h-[44px] items-center gap-3 px-4 py-3 active:bg-muted/80"

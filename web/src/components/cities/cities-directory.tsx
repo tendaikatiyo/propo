@@ -4,15 +4,18 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { Search } from "lucide-react";
 
+import { LensSwitcher } from "@/components/filters/lens-switcher";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { CityListRow } from "@/components/mobile/city-list-row";
+import { cityCardSubtitle } from "@/components/mobile/city-stats-grid";
+import { useLens } from "@/hooks/use-lens";
 import { cityListingTotal, sortCitiesByMarketSize } from "@/lib/geo";
-import { formatCurrency, formatPercent } from "@/lib/format";
 import { cityPath } from "@/lib/slug";
 import type { CityMetric } from "@/lib/types";
 
 export function CitiesDirectoryClient({ cities }: { cities: CityMetric[] }) {
+  const { lens, setLens } = useLens("rent", { analyticsSource: "cities" });
   const [query, setQuery] = useState("");
 
   const sorted = useMemo(() => sortCitiesByMarketSize(cities), [cities]);
@@ -25,6 +28,8 @@ export function CitiesDirectoryClient({ cities }: { cities: CityMetric[] }) {
 
   return (
     <div className="space-y-6">
+      <LensSwitcher value={lens} onChange={setLens} label="Show" />
+
       <div className="relative max-w-md">
         <Search className="absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted-foreground" />
         <Input
@@ -36,9 +41,9 @@ export function CitiesDirectoryClient({ cities }: { cities: CityMetric[] }) {
         />
       </div>
 
-      <div className="lg:hidden overflow-hidden rounded-2xl border border-border/80 bg-card">
+      <div className="overflow-hidden rounded-2xl border border-border/80 bg-card lg:hidden">
         {filtered.map((city) => (
-          <CityListRow key={city.city} city={city} />
+          <CityListRow key={city.city} city={city} lens={lens} />
         ))}
       </div>
 
@@ -46,8 +51,10 @@ export function CitiesDirectoryClient({ cities }: { cities: CityMetric[] }) {
         {filtered.map((city) => {
           const total = cityListingTotal(city);
           const isLarge = total >= 100;
+          const subtitleLines = cityCardSubtitle(city, lens);
+
           return (
-            <Link key={city.city} href={cityPath(city.city)} className="group">
+            <Link key={city.city} href={cityPath(city.city, { mode: lens })} className="group">
               <Card
                 className={
                   isLarge
@@ -70,24 +77,11 @@ export function CitiesDirectoryClient({ cities }: { cities: CityMetric[] }) {
                     <span className="font-mono text-foreground">{city.suburb_count}</span>{" "}
                     suburbs
                   </p>
-                  <p>
-                    Median rent{" "}
-                    <span className="font-stat text-foreground">
-                      {formatCurrency(city.median_rent)}
-                    </span>
-                  </p>
-                  <p>
-                    Median sale{" "}
-                    <span className="font-stat text-foreground">
-                      {formatCurrency(city.median_sale_price)}
-                    </span>
-                  </p>
-                  <p>
-                    Avg yield{" "}
-                    <span className="font-stat text-foreground">
-                      {formatPercent(city.average_yield)}
-                    </span>
-                  </p>
+                  {subtitleLines.map((line) => (
+                    <p key={line}>
+                      <span className="font-stat text-foreground">{line}</span>
+                    </p>
+                  ))}
                 </CardContent>
               </Card>
             </Link>

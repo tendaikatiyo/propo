@@ -63,19 +63,27 @@ export function SuburbReportLandTrends({ landTrends }: { landTrends: MarketTrend
 export function SuburbReportTrends({
   rentTrends,
   saleTrends,
+  scope = "full",
 }: {
   rentTrends: MarketTrendsPayload;
   saleTrends: MarketTrendsPayload;
+  scope?: "full" | "rent";
 }) {
+  const rentOnly = scope === "rent";
+
   return (
     <section className="suburb-report-section space-y-3">
-      <h2 className="font-heading text-lg font-medium">90-day market trends</h2>
+      <h2 className="font-heading text-lg font-medium">
+        {rentOnly ? "90-day rent trends" : "90-day market trends"}
+      </h2>
       <p className="text-sm text-muted-foreground">
         Daily snapshot medians across all property types in this suburb.
       </p>
-      <div className="grid gap-4 lg:grid-cols-2">
+      <div className={rentOnly ? "space-y-4" : "grid gap-4 lg:grid-cols-2"}>
         <TrendBlock title="Rent" trends={rentTrends} chartId="report-rent" />
-        <TrendBlock title="Sale" trends={saleTrends} chartId="report-sale" />
+        {!rentOnly ? (
+          <TrendBlock title="Sale" trends={saleTrends} chartId="report-sale" />
+        ) : null}
       </div>
     </section>
   );

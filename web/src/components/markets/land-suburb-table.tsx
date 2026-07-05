@@ -89,7 +89,17 @@ function SortableHeader({
   );
 }
 
-export function LandSuburbTable({ markets }: { markets: LandMetric[] }) {
+export function LandSuburbTable({
+  markets,
+  layout = "explore",
+}: {
+  markets: LandMetric[];
+  layout?: "explore" | "city";
+}) {
+  const columns =
+    layout === "city"
+      ? (["suburb", "median_price_per_sqm", "land_count", "confidence_score"] as SortKey[])
+      : LAND_COLUMNS;
   const [sortKey, setSortKey] = useState<SortKey>("median_price_per_sqm");
   const [sortDirection, setSortDirection] = useState<SortDirection>("asc");
 
@@ -120,7 +130,7 @@ export function LandSuburbTable({ markets }: { markets: LandMetric[] }) {
       <Table>
         <TableHeader>
           <TableRow>
-            {LAND_COLUMNS.map((col) => (
+            {columns.map((col) => (
               <SortableHeader
                 key={col}
                 label={LAND_COLUMN_LABELS[col]}
@@ -139,7 +149,7 @@ export function LandSuburbTable({ markets }: { markets: LandMetric[] }) {
             <TableRow key={market.market_id}>
               <TableCell className="font-heading font-medium">
                 <TrackedSuburbLink
-                  href={suburbPath(market.city, market.suburb)}
+                  href={suburbPath(market.city, market.suburb, { mode: "land" })}
                   tracking={{
                     marketId: market.market_id,
                     city: market.city,
@@ -152,7 +162,9 @@ export function LandSuburbTable({ markets }: { markets: LandMetric[] }) {
                   {sanitizeLabel(market.suburb)}
                 </TrackedSuburbLink>
               </TableCell>
-              <TableCell className="font-heading text-muted-foreground">{market.city}</TableCell>
+              {layout === "explore" ? (
+                <TableCell className="font-heading text-muted-foreground">{market.city}</TableCell>
+              ) : null}
               <TableCell className="font-stat">
                 {formatPricePerSqm(market.median_price_per_sqm)}
               </TableCell>
@@ -162,10 +174,12 @@ export function LandSuburbTable({ markets }: { markets: LandMetric[] }) {
               </TableCell>
               <TableCell className="text-right">
                 <div className="flex items-center justify-end gap-2">
-                  <span className="font-stat hidden text-sm text-muted-foreground sm:inline">
-                    {formatPricePerSqm(market.median_price_per_sqm)}
-                  </span>
-                  <PinButton market={market} size="icon-sm" />
+                  {layout === "explore" ? (
+                    <span className="font-stat hidden text-sm text-muted-foreground sm:inline">
+                      {formatPricePerSqm(market.median_price_per_sqm)}
+                    </span>
+                  ) : null}
+                  <PinButton market={market} size="icon-sm" fromMode="land" />
                 </div>
               </TableCell>
             </TableRow>

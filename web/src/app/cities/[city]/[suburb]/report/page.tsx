@@ -20,6 +20,11 @@ import { findMarketBySlugs } from "@/lib/markets";
 import { priceForFilters } from "@/lib/segments";
 import { buildPageMetadata } from "@/lib/seo";
 import { suburbPath, suburbReportPath, toSlug } from "@/lib/slug";
+import type { ReportScope } from "@/lib/types";
+
+function parseReportScope(value: string | undefined): ReportScope {
+  return value === "rent" ? "rent" : "full";
+}
 
 export const revalidate = 3600;
 export const dynamicParams = true;
@@ -41,10 +46,11 @@ export async function generateMetadata({
   searchParams,
 }: {
   params: Promise<{ city: string; suburb: string }>;
-  searchParams: Promise<{ type?: string; bedroom?: string }>;
+  searchParams: Promise<{ type?: string; bedroom?: string; scope?: string }>;
 }): Promise<Metadata> {
   const { city: citySlug, suburb: suburbSlug } = await params;
   const sp = await searchParams;
+  const scope = parseReportScope(sp.scope);
   const { propertyType, bedroom } = parseSegmentFilters(sp);
   const markets = await fetchMarketMetrics();
   const market = findMarketBySlugs(markets, citySlug, suburbSlug);
@@ -57,14 +63,23 @@ export async function generateMetadata({
   const medianRent = priceForFilters(market, "rent", { propertyType, bedroom });
   const medianSale = priceForFilters(market, "buy", { propertyType, bedroom });
   const landLine =
-    landMarket?.median_price_per_sqm != null
+    scope === "full" && landMarket?.median_price_per_sqm != null
       ? ` Land from ${formatPricePerSqm(landMarket.median_price_per_sqm)}/sqm.`
       : "";
 
+  const titlePrefix = scope === "rent" ? "Rental summary" : "Market report";
+
   return buildPageMetadata({
-    title: `Market report — ${suburbLabel}, ${market.city}`,
-    description: `Printable suburb market report for ${suburbLabel}: median rent ${formatCurrency(medianRent)}, median sale ${formatCurrency(medianSale)}.${landLine} 90-day trends, and value listings.`,
-    path: suburbReportPath(market.city, market.suburb, { type: propertyType, bedroom }),
+    title: `${titlePrefix} — ${suburbLabel}, ${market.city}`,
+    description:
+      scope === "rent"
+        ? `Printable rental summary for ${suburbLabel}: median rent ${formatCurrency(medianRent)}, 90-day rent trends, and value listings.`
+        : `Printable suburb market report for ${suburbLabel}: median rent ${formatCurrency(medianRent)}, median sale ${formatCurrency(medianSale)}.${landLine} 90-day trends, and value listings.`,
+    path: suburbReportPath(market.city, market.suburb, {
+      type: propertyType,
+      bedroom,
+      scope,
+    }),
     ogImage: {
       alt: `${suburbLabel}, ${market.city} — market report on Propo`,
     },
@@ -76,10 +91,11 @@ export default async function SuburbReportPage({
   searchParams,
 }: {
   params: Promise<{ city: string; suburb: string }>;
-  searchParams: Promise<{ type?: string; bedroom?: string }>;
+  searchParams: Promise<{ type?: string; bedroom?: string; scope?: string }>;
 }) {
   const { city: citySlug, suburb: suburbSlug } = await params;
   const sp = await searchParams;
+  const scope = parseReportScope(sp.scope);
   const { propertyType, bedroom } = parseSegmentFilters(sp);
   const [markets, landMetrics] = await Promise.all([
     fetchMarketMetrics(),
@@ -94,6 +110,8 @@ export default async function SuburbReportPage({
   const medianLandPps = landMarket?.median_price_per_sqm ?? null;
   const hasLandData = landMarket != null && (landMarket.priced_land_count ?? 0) > 0;
 
+  const rentOnly = scope === "rent";
+
   const [
     updatedAt,
     rentTrends,
@@ -104,7 +122,9 @@ export default async function SuburbReportPage({
   ] = await Promise.all([
     getDataUpdatedAt(),
     fetchMarketTrends(market, "90d", "rent"),
-    fetchMarketTrends(market, "90d", "buy"),
+    rentOnly
+      ? Promise.resolve({ points: [], pct_change_median: null, pct_change_listings: null })
+      : fetchMarketTrends(market, "90d", "buy"),
     medianRent != null && medianRent > 0
       ? fetchListings({
           mode: "rent",
@@ -117,7 +137,7 @@ export default async function SuburbReportPage({
           limit: 4,
         })
       : Promise.resolve([]),
-    medianSale != null && medianSale > 0
+    !rentOnly && medianSale != null && medianSale > 0
       ? fetchListings({
           mode: "buy",
           budget: medianSale,
@@ -129,7 +149,7 @@ export default async function SuburbReportPage({
           limit: 4,
         })
       : Promise.resolve([]),
-    hasLandData && medianLandPps != null && medianLandPps > 0
+    !rentOnly && hasLandData && medianLandPps != null && medianLandPps > 0
       ? fetchListings({
           mode: "land",
           budget: medianLandPps,
@@ -143,7 +163,16 @@ export default async function SuburbReportPage({
       : Promise.resolve([]),
   ]);
 
-  const profilePath = suburbPath(market.city, market.suburb, { type: propertyType, bedroom });
+  const profilePath = suburbPath(market.city, market.suburb, {
+    type: propertyType,
+    bedroom,
+    mode: rentOnly ? "rent" : "invest",
+  });
+  const investProfilePath = suburbPath(market.city, market.suburb, {
+    type: propertyType,
+    bedroom,
+    mode: "invest",
+  });
 
   return (
     <SuburbReport
@@ -153,11 +182,13 @@ export default async function SuburbReportPage({
       updatedAt={updatedAt}
       rentTrends={rentTrends}
       saleTrends={saleTrends}
-      landMarket={landMarket}
+      landMarket={rentOnly ? null : landMarket}
       rentListings={rentListings}
       saleListings={saleListings}
       landListings={landListings}
       profilePath={profilePath}
+      investProfilePath={investProfilePath}
+      scope={scope}
     />
   );
 }

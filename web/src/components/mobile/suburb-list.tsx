@@ -9,6 +9,7 @@ import { PinButton } from "@/components/markets/pin-button";
 import { SegmentPriceNote } from "@/components/markets/segment-price-note";
 import { Button } from "@/components/ui/button";
 import { sortMarkets } from "@/lib/explore";
+import { budgetPriceMode } from "@/lib/lens";
 import { formatCurrency, formatPercent, sanitizeLabel } from "@/lib/format";
 import { priceForFilters } from "@/lib/segments";
 import { suburbPath } from "@/lib/slug";
@@ -17,9 +18,10 @@ import { motionRow } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
 const SORT_OPTIONS: { key: SortKey; label: string; modes?: ExploreMode[] }[] = [
-  { key: "median_rent", label: "Rent", modes: ["rent"] },
-  { key: "median_sale_price", label: "Sale", modes: ["buy"] },
-  { key: "yield_percent", label: "Yield", modes: ["buy"] },
+  { key: "median_rent", label: "Rent", modes: ["rent", "invest"] },
+  { key: "median_sale_price", label: "Sale", modes: ["buy", "invest"] },
+  { key: "yield_percent", label: "Yield", modes: ["invest"] },
+  { key: "opportunity_score", label: "Opp", modes: ["invest"] },
   { key: "confidence_score", label: "Confidence" },
 ];
 
@@ -33,7 +35,11 @@ export function SuburbList({
   filters?: Pick<ExploreFilters, "propertyType" | "bedroom">;
 }) {
   const [sortKey, setSortKey] = useState<SortKey>(
-    mode === "rent" ? "median_rent" : "median_sale_price"
+    mode === "rent"
+      ? "median_rent"
+      : mode === "invest"
+        ? "yield_percent"
+        : "median_sale_price"
   );
   const [sortDirection, setSortDirection] = useState<SortDirection>(
     mode === "rent" ? "asc" : "desc"
@@ -92,7 +98,7 @@ export function SuburbList({
       <div className="divide-y divide-border/80 overflow-hidden rounded-2xl border border-border/80 bg-card">
         {sorted.map((market) => {
           const segmentFilters = filters ?? { propertyType: null, bedroom: null };
-          const price = priceForFilters(market, mode, segmentFilters);
+          const price = priceForFilters(market, budgetPriceMode(mode), segmentFilters);
 
           return (
             <div
@@ -103,6 +109,7 @@ export function SuburbList({
                 href={suburbPath(market.city, market.suburb, {
                   type: filters?.propertyType,
                   bedroom: filters?.bedroom,
+                  mode,
                 })}
                 tracking={{
                   marketId: market.market_id,
@@ -124,7 +131,7 @@ export function SuburbList({
                     <span className="font-stat text-sm font-medium">
                       {formatCurrency(price)}
                     </span>
-                    {mode === "buy" && market.yield_percent != null ? (
+                    {mode === "invest" && market.yield_percent != null ? (
                       <span className="text-xs text-muted-foreground">
                         {formatPercent(market.yield_percent)} yield
                       </span>
@@ -142,7 +149,7 @@ export function SuburbList({
               </TrackedSuburbLink>
               <div className="flex shrink-0 flex-col items-end gap-2">
                 <ConfidenceBadge score={market.confidence_score} />
-                <PinButton market={market} size="icon-sm" />
+                <PinButton market={market} size="icon-sm" fromMode={mode} />
               </div>
             </div>
           );

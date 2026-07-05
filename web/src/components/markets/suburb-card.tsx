@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { SegmentPriceNote } from "@/components/markets/segment-price-note";
 import { formatCurrency, formatPercent, sanitizeLabel } from "@/lib/format";
 import { motionCard } from "@/lib/motion";
+import { budgetPriceMode } from "@/lib/lens";
 import { priceForFilters } from "@/lib/segments";
 import { suburbPath } from "@/lib/slug";
 import type { ExploreFilters, ExploreMode, MarketMetric } from "@/lib/types";
@@ -27,10 +28,11 @@ export function SuburbCard({
   clickSource?: SuburbClickPayload["source"];
 }) {
   const segmentFilters = filters ?? { propertyType: null, bedroom: null };
-  const price = priceForFilters(market, mode, segmentFilters);
+  const price = priceForFilters(market, budgetPriceMode(mode), segmentFilters);
   const href = suburbPath(market.city, market.suburb, {
     type: segmentFilters.propertyType,
     bedroom: segmentFilters.bedroom,
+    mode,
   });
 
   return (
@@ -61,10 +63,10 @@ export function SuburbCard({
         </div>
         <SegmentPriceNote market={market} mode={mode} filters={segmentFilters} />
         <div className="flex flex-wrap gap-3 text-sm text-muted-foreground">
-          {mode === "buy" && market.yield_percent != null ? (
+          {mode === "invest" && market.yield_percent != null ? (
             <span className="font-stat">Yield {formatPercent(market.yield_percent)}</span>
           ) : null}
-          {mode === "buy" && market.opportunity_score != null ? (
+          {mode === "invest" && market.opportunity_score != null ? (
             <span className="font-mono text-xs tracking-wide">
               Opp {market.opportunity_score}
             </span>
@@ -72,7 +74,7 @@ export function SuburbCard({
         </div>
       </CardContent>
       <div className="relative z-10 px-6 pb-6">
-        <PinButton market={market} />
+        <PinButton market={market} fromMode={mode} />
       </div>
     </Card>
   );

@@ -6,7 +6,10 @@ export type PropertyType =
   | "townhouse"
   | "commercial";
 
-export type ExploreMode = "rent" | "buy" | "land";
+export type ExploreMode = "rent" | "buy" | "land" | "invest";
+
+/** Residential listing/trend API mode (invest maps to buy for sale-side data). */
+export type ListingMode = "rent" | "buy" | "land";
 
 export interface LandMetric {
   market_id: string;
@@ -136,11 +139,15 @@ export interface Listing {
   price_per_sqm?: number | null;
 }
 
+export type ReportScope = "full" | "rent";
+
 export interface PinnedMarket {
   market_id: string;
   city: string;
   suburb: string;
   pinnedAt: string;
+  /** Lens active when the suburb was pinned — used for compare focus hints. */
+  pinnedFromMode?: ExploreMode;
 }
 
 export interface ExploreFilters {

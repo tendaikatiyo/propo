@@ -7,6 +7,9 @@ export const ANALYTICS_EVENT_NAMES = [
   "explore_zero_results",
   "suburb_click",
   "listing_click",
+  "lens_change",
+  "suburb_view",
+  "report_export",
 ] as const;
 
 export type AnalyticsEventName = (typeof ANALYTICS_EVENT_NAMES)[number];

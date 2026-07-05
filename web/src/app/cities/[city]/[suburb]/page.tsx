@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
+import { SuburbViewTracker } from "@/components/analytics/suburb-view-tracker";
 import { SuburbProfile } from "@/components/markets/suburb-profile";
 import { JsonLd } from "@/components/seo/json-ld";
 import {
@@ -10,6 +11,7 @@ import {
 } from "@/lib/constants";
 import { fetchLandMetrics, fetchMarketMetrics } from "@/lib/data-server";
 import { parseExploreMode } from "@/lib/mode";
+import { sortRelatedSuburbs } from "@/lib/lens";
 import { findMarketBySlugs } from "@/lib/markets";
 import { sanitizeLabel } from "@/lib/format";
 import { suburbPageJsonLd } from "@/lib/json-ld";
@@ -91,7 +93,7 @@ export default async function SuburbPage({
 }) {
   const { city: citySlug, suburb: suburbSlug } = await params;
   const sp = await searchParams;
-  const landMode = parseExploreMode(sp.mode ?? null) === "land";
+  const lens = parseExploreMode(sp.mode ?? null);
   const { propertyType, bedroom } = parseSegmentFilters(sp);
   const [markets, landMetrics] = await Promise.all([
     fetchMarketMetrics(),
@@ -102,10 +104,11 @@ export default async function SuburbPage({
 
   const landMarket = landMetrics.find((m) => m.market_id === market.market_id) ?? null;
 
-  const related = markets
-    .filter((m) => matchesSlug(m.city, citySlug) && m.market_id !== market.market_id)
-    .sort((a, b) => (b.opportunity_score ?? 0) - (a.opportunity_score ?? 0))
-    .slice(0, 6);
+  const related = sortRelatedSuburbs(
+    markets.filter((m) => matchesSlug(m.city, citySlug) && m.market_id !== market.market_id),
+    lens,
+    { propertyType, bedroom }
+  ).slice(0, 6);
 
   const suburbLabel = sanitizeLabel(market.suburb);
   const medianRent = priceForFilters(market, "rent", { propertyType, bedroom });
@@ -129,13 +132,19 @@ export default async function SuburbPage({
           description,
         })}
       />
+      <SuburbViewTracker
+        marketId={market.market_id}
+        city={market.city}
+        suburb={suburbLabel}
+        lens={lens}
+      />
       <SuburbProfile
         market={market}
         related={related}
         propertyType={propertyType}
         bedroom={bedroom}
         landMarket={landMarket}
-        landMode={landMode}
+        lens={lens}
       />
     </>
   );

@@ -7,7 +7,11 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { dedupeListingsByThumbnail } from "@/lib/listings";
 import { fetchListingsFromApi } from "@/lib/listings-client";
 import { formatCurrency } from "@/lib/format";
-import type { Listing, MarketMetric } from "@/lib/types";
+import {
+  showsRentListings,
+  showsSaleListings,
+} from "@/lib/lens";
+import type { ExploreMode, Listing, MarketMetric } from "@/lib/types";
 
 function ListingsBlock({
   title,
@@ -37,7 +41,15 @@ function ListingsBlock({
   );
 }
 
-export function SuburbValueListings({ market }: { market: MarketMetric }) {
+export function SuburbValueListings({
+  market,
+  lens,
+}: {
+  market: MarketMetric;
+  lens: ExploreMode;
+}) {
+  const showRent = showsRentListings(lens);
+  const showSale = showsSaleListings(lens);
   const rentMedian = market.median_rent;
   const saleMedian = market.median_sale_price;
 
@@ -54,7 +66,7 @@ export function SuburbValueListings({ market }: { market: MarketMetric }) {
         medianPrice: rentMedian,
         limit: 4,
       }),
-    enabled: rentMedian != null && rentMedian > 0,
+    enabled: showRent && rentMedian != null && rentMedian > 0,
     staleTime: 60_000,
   });
 
@@ -71,12 +83,15 @@ export function SuburbValueListings({ market }: { market: MarketMetric }) {
         medianPrice: saleMedian,
         limit: 4,
       }),
-    enabled: saleMedian != null && saleMedian > 0,
+    enabled: showSale && saleMedian != null && saleMedian > 0,
     staleTime: 60_000,
   });
 
-  const isLoading = loadingRent || loadingSale;
-  const hasAny = rentListings.length > 0 || saleListings.length > 0;
+  const isLoading = (showRent && loadingRent) || (showSale && loadingSale);
+  const hasAny =
+    (showRent && rentListings.length > 0) || (showSale && saleListings.length > 0);
+
+  if (!showRent && !showSale) return null;
 
   if (isLoading) {
     return (
@@ -103,27 +118,31 @@ export function SuburbValueListings({ market }: { market: MarketMetric }) {
         </p>
       </div>
 
-      <ListingsBlock
-        title="Rentals"
-        description={
-          rentMedian != null
-            ? `At or below median rent of ${formatCurrency(rentMedian)}.`
-            : "Below suburb median rent."
-        }
-        listings={rentListings}
-        market={market}
-      />
+      {showRent ? (
+        <ListingsBlock
+          title="Rentals"
+          description={
+            rentMedian != null
+              ? `At or below median rent of ${formatCurrency(rentMedian)}.`
+              : "Below suburb median rent."
+          }
+          listings={rentListings}
+          market={market}
+        />
+      ) : null}
 
-      <ListingsBlock
-        title="For sale"
-        description={
-          saleMedian != null
-            ? `At or below median sale of ${formatCurrency(saleMedian)}.`
-            : "Below suburb median sale price."
-        }
-        listings={saleListings}
-        market={market}
-      />
+      {showSale ? (
+        <ListingsBlock
+          title="For sale"
+          description={
+            saleMedian != null
+              ? `At or below median sale of ${formatCurrency(saleMedian)}.`
+              : "Below suburb median sale price."
+          }
+          listings={saleListings}
+          market={market}
+        />
+      ) : null}
     </section>
   );
 }

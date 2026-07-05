@@ -21,7 +21,13 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { COLUMN_TOOLTIPS, columnLabelForMode, columnsForCityDashboard, columnsForMode } from "@/lib/metric-tooltips";
+import { budgetPriceMode } from "@/lib/lens";
+import {
+  COLUMN_TOOLTIPS,
+  columnLabelForMode,
+  columnsForLens,
+  columnsForMode,
+} from "@/lib/metric-tooltips";
 import { formatCurrency, formatPercent, sanitizeLabel } from "@/lib/format";
 import { sortMarkets } from "@/lib/explore";
 import { priceForFilters } from "@/lib/segments";
@@ -39,6 +45,20 @@ const COLUMN_LABELS: Record<SortKey, string> = {
   opportunity_score: "Opportunity",
   confidence_score: "Confidence",
 };
+
+function defaultSortForMode(mode: ExploreMode, isCityLayout: boolean): SortKey {
+  if (mode === "rent") return "median_rent";
+  if (mode === "buy") return "median_sale_price";
+  if (mode === "invest") return "yield_percent";
+  return isCityLayout ? "median_rent" : "median_price_per_sqm";
+}
+
+function defaultDirectionForSort(key: SortKey): SortDirection {
+  if (key === "median_rent" || key === "median_sale_price" || key === "median_price_per_sqm") {
+    return "asc";
+  }
+  return "desc";
+}
 
 function SortableHeader({
   label,
@@ -87,6 +107,33 @@ function SortableHeader({
   );
 }
 
+function MetricCell({
+  column,
+  market,
+  filters,
+}: {
+  column: SortKey;
+  market: MarketMetric;
+  filters: Pick<ExploreFilters, "propertyType" | "bedroom">;
+}) {
+  if (column === "median_rent") {
+    return <SegmentPriceCell market={market} mode="rent" filters={filters} />;
+  }
+  if (column === "median_sale_price") {
+    return <SegmentPriceCell market={market} mode="buy" filters={filters} />;
+  }
+  if (column === "yield_percent") {
+    return <span className="font-stat">{formatPercent(market.yield_percent)}</span>;
+  }
+  if (column === "opportunity_score") {
+    return <span className="font-mono">{market.opportunity_score ?? "—"}</span>;
+  }
+  if (column === "confidence_score") {
+    return <ConfidenceBadge score={market.confidence_score} />;
+  }
+  return null;
+}
+
 export function SuburbTable({
   markets,
   mode,
@@ -99,15 +146,11 @@ export function SuburbTable({
   filters?: Pick<ExploreFilters, "propertyType" | "bedroom">;
 }) {
   const isCityLayout = layout === "city";
-  const columns = isCityLayout ? columnsForCityDashboard() : columnsForMode(mode);
-  const defaultSort: SortKey = isCityLayout
-    ? "opportunity_score"
-    : mode === "rent"
-      ? "median_rent"
-      : "opportunity_score";
+  const columns = isCityLayout ? columnsForLens(mode) : columnsForMode(mode);
+  const defaultSort = defaultSortForMode(mode, isCityLayout);
   const [sortKey, setSortKey] = useState<SortKey>(defaultSort);
   const [sortDirection, setSortDirection] = useState<SortDirection>(
-    isCityLayout ? "desc" : mode === "rent" ? "asc" : "desc"
+    defaultDirectionForSort(defaultSort)
   );
 
   const sorted = useMemo(
@@ -120,7 +163,7 @@ export function SuburbTable({
       setSortDirection((d) => (d === "asc" ? "desc" : "asc"));
     } else {
       setSortKey(key);
-      setSortDirection(key === "median_rent" ? "asc" : "desc");
+      setSortDirection(defaultDirectionForSort(key));
     }
   }
 
@@ -132,6 +175,9 @@ export function SuburbTable({
     );
   }
 
+  const segmentFilters = filters ?? { propertyType: null, bedroom: null };
+  const priceMode = mode === "land" ? "buy" : budgetPriceMode(mode);
+
   return (
     <div className="feature-card overflow-hidden p-0">
       <Table>
@@ -141,7 +187,7 @@ export function SuburbTable({
               <SortableHeader
                 key={col}
                 label={
-                  !isCityLayout && filters
+                  !isCityLayout && filters && col !== "suburb" && col !== "city"
                     ? columnLabelForMode(col, mode, filters.propertyType, filters.bedroom)
                     : COLUMN_LABELS[col]
                 }
@@ -157,51 +203,50 @@ export function SuburbTable({
         </TableHeader>
         <TableBody>
           {sorted.map((market) => {
-            const segmentFilters = filters ?? { propertyType: null, bedroom: null };
-            const price = priceForFilters(market, mode, segmentFilters);
+            const price = priceForFilters(market, priceMode, segmentFilters);
 
             return (
               <TableRow key={market.market_id}>
-                <TableCell className="font-heading font-medium">
-                  <TrackedSuburbLink
-                    href={suburbPath(market.city, market.suburb, {
-                      type: filters?.propertyType,
-                      bedroom: filters?.bedroom,
-                    })}
-                    tracking={{
-                      marketId: market.market_id,
-                      city: market.city,
-                      suburb: market.suburb,
-                      source: "explore_table",
-                      mode,
-                    }}
-                    className="hover:underline"
-                  >
-                    {sanitizeLabel(market.suburb)}
-                  </TrackedSuburbLink>
-                </TableCell>
-                {!isCityLayout ? (
-                  <TableCell className="font-heading text-muted-foreground">{market.city}</TableCell>
-                ) : null}
-                <TableCell>
-                  <SegmentPriceCell market={market} mode="rent" filters={segmentFilters} />
-                </TableCell>
-                {isCityLayout || mode === "buy" ? (
-                  <>
-                    <TableCell>
-                      <SegmentPriceCell market={market} mode="buy" filters={segmentFilters} />
+                {columns.map((col) => {
+                  if (col === "suburb") {
+                    return (
+                      <TableCell key={col} className="font-heading font-medium">
+                        <TrackedSuburbLink
+                          href={suburbPath(market.city, market.suburb, {
+                            type: filters?.propertyType,
+                            bedroom: filters?.bedroom,
+                            mode,
+                          })}
+                          tracking={{
+                            marketId: market.market_id,
+                            city: market.city,
+                            suburb: market.suburb,
+                            source: "explore_table",
+                            mode,
+                          }}
+                          className="hover:underline"
+                        >
+                          {sanitizeLabel(market.suburb)}
+                        </TrackedSuburbLink>
+                      </TableCell>
+                    );
+                  }
+                  if (col === "city") {
+                    return (
+                      <TableCell
+                        key={col}
+                        className="font-heading text-muted-foreground"
+                      >
+                        {market.city}
+                      </TableCell>
+                    );
+                  }
+                  return (
+                    <TableCell key={col}>
+                      <MetricCell column={col} market={market} filters={segmentFilters} />
                     </TableCell>
-                    <TableCell className="font-stat">
-                      {formatPercent(market.yield_percent)}
-                    </TableCell>
-                    <TableCell className="font-mono">
-                      {market.opportunity_score ?? "—"}
-                    </TableCell>
-                  </>
-                ) : null}
-                <TableCell>
-                  <ConfidenceBadge score={market.confidence_score} />
-                </TableCell>
+                  );
+                })}
                 <TableCell className="text-right">
                   <div className="flex items-center justify-end gap-2">
                     {!isCityLayout ? (
@@ -209,7 +254,7 @@ export function SuburbTable({
                         {formatCurrency(price)}
                       </span>
                     ) : null}
-                    <PinButton market={market} size="icon-sm" />
+                    <PinButton market={market} size="icon-sm" fromMode={mode} />
                   </div>
                 </TableCell>
               </TableRow>

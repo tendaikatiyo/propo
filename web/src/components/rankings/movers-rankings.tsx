@@ -8,7 +8,7 @@ import { formatCurrency, sanitizeLabel } from "@/lib/format";
 import { motionRow } from "@/lib/motion";
 import { formatPctChange, trendRangeLabel } from "@/lib/trends";
 import { suburbPath } from "@/lib/slug";
-import type { MarketMoversRankingsPayload, TrendMover } from "@/lib/types";
+import type { ExploreMode, MarketMoversRankingsPayload, TrendMover } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
 function moverDetail(mover: TrendMover, kind: MoverListKind): string {
@@ -26,11 +26,13 @@ function MoverList({
   items,
   kind = "price",
   emptyLabel,
+  lens,
 }: {
   title: string;
   items: TrendMover[];
   kind?: MoverListKind;
   emptyLabel?: string;
+  lens: ExploreMode;
 }) {
   return (
     <Card>
@@ -44,7 +46,10 @@ function MoverList({
               key={`${item.market_id}-${title}`}
               className={cn(motionRow, "flex items-center justify-between gap-2 rounded-xl px-2 py-2 hover:bg-muted/50")}
             >
-              <Link href={suburbPath(item.city, item.suburb)} className="min-w-0 flex-1">
+              <Link
+                href={suburbPath(item.city, item.suburb, { mode: lens })}
+                className="min-w-0 flex-1"
+              >
                 <p className="truncate font-heading font-medium">{sanitizeLabel(item.suburb)}</p>
                 <p className="truncate text-xs text-muted-foreground">{item.city}</p>
               </Link>
@@ -59,6 +64,7 @@ function MoverList({
                   suburb: item.suburb,
                 }}
                 size="icon-sm"
+                fromMode={lens}
               />
             </div>
           ))
@@ -74,29 +80,45 @@ function MoverList({
 
 export function MoversRankings({
   movers,
+  lens = "rent",
 }: {
   movers: MarketMoversRankingsPayload;
+  lens?: ExploreMode;
 }) {
   const rangeLabel = trendRangeLabel(movers.range);
+  const showRent = lens === "rent" || lens === "invest";
+  const showSale = lens === "buy" || lens === "invest";
 
   return (
     <div className="space-y-6">
       <p className="text-[15px] tracking-[0.15px] text-muted-foreground">
-        Suburbs with the largest changes in median rent, sale price, and listing supply over the
-        last {rangeLabel}. Based on daily listing snapshots.
+        Suburbs with the largest changes in median{" "}
+        {lens === "buy" ? "sale price" : lens === "rent" ? "rent" : "rent and sale price"} and
+        listing supply over the last {rangeLabel}. Based on daily listing snapshots.
       </p>
 
       <div className="grid gap-4 lg:grid-cols-2">
-        <MoverList title="Rent risers" items={movers.rent_risers} />
-        <MoverList title="Rent fallers" items={movers.rent_fallers} />
-        <MoverList title="Sale risers" items={movers.sale_risers} />
-        <MoverList title="Sale fallers" items={movers.sale_fallers} />
-        <MoverList
-          title="Supply surge"
-          items={movers.supply_surge}
-          kind="supply"
-          emptyLabel="No suburbs with rising listing counts in this period."
-        />
+        {showRent ? (
+          <>
+            <MoverList title="Rent risers" items={movers.rent_risers} lens={lens} />
+            <MoverList title="Rent fallers" items={movers.rent_fallers} lens={lens} />
+          </>
+        ) : null}
+        {showSale ? (
+          <>
+            <MoverList title="Sale risers" items={movers.sale_risers} lens={lens} />
+            <MoverList title="Sale fallers" items={movers.sale_fallers} lens={lens} />
+          </>
+        ) : null}
+        {lens === "invest" ? (
+          <MoverList
+            title="Supply surge"
+            items={movers.supply_surge}
+            kind="supply"
+            lens={lens}
+            emptyLabel="No suburbs with rising listing counts in this period."
+          />
+        ) : null}
       </div>
     </div>
   );

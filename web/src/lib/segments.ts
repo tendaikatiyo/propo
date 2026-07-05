@@ -98,14 +98,15 @@ export function resolvePriceForFilters(
   if (mode === "land") {
     return { price: null, usedAggregate: false, segmentCount: 0 };
   }
-  const aggregate = mode === "rent" ? market.median_rent : market.median_sale_price;
+  const priceMode = mode === "rent" ? "rent" : "buy";
+  const aggregate = priceMode === "rent" ? market.median_rent : market.median_sale_price;
   if (!hasActiveSegmentFilters(filters)) {
     return { price: aggregate, usedAggregate: false, segmentCount: 0 };
   }
 
   const segment = resolveSegmentStats(market, filters.propertyType, filters.bedroom);
-  const segmentPrice = segmentMedianForMode(segment, mode);
-  const count = segmentCountForMode(segment, mode);
+  const segmentPrice = segmentMedianForMode(segment, priceMode);
+  const count = segmentCountForMode(segment, priceMode);
 
   if (segmentPrice != null && segmentPrice > 0 && count >= MIN_SEGMENT_LISTINGS) {
     return { price: segmentPrice, usedAggregate: false, segmentCount: count };

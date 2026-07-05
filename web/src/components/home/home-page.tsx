@@ -1,9 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { Suspense, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 
 import { AffordabilityInsights } from "@/components/home/affordability-insights";
+import { HomeInvestTeaser } from "@/components/home/home-invest-teaser";
 import { HomeLandingHero } from "@/components/home/home-landing-hero";
 import { HomeMoversTeaser } from "@/components/home/home-movers-teaser";
 import { BudgetListingsPreview } from "@/components/listings/budget-listings";
@@ -14,11 +16,13 @@ import { SuburbCard } from "@/components/markets/suburb-card";
 import { buttonVariants } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useLandMetrics, useMarketMetrics } from "@/hooks/use-market-data";
+import { trackLensChange } from "@/lib/analytics/track";
 import { DEFAULT_CITY, ROOM_BEDROOM_COUNT } from "@/lib/constants";
 import { budgetForMode } from "@/lib/explore";
 import { filterLandMarkets, rankLandExploreResults } from "@/lib/land-explore";
 import { filterMarkets, rankExploreResults } from "@/lib/explore";
-import { defaultBudgetForMode, isLandMode } from "@/lib/mode";
+import { LENS_STORAGE_KEY } from "@/lib/lens";
+import { defaultBudgetForMode, isInvestMode, isLandMode, parseExploreMode } from "@/lib/mode";
 import type { ExploreMode, PropertyType } from "@/lib/types";
 
 function buildExploreHref(
@@ -38,11 +42,24 @@ function buildExploreHref(
 }
 
 function HomeContent() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
   const budgetSectionRef = useRef<HTMLElement>(null);
-  const [mode, setMode] = useState<ExploreMode>("rent");
-  const [budget, setBudget] = useState(defaultBudgetForMode("rent"));
+  const initialMode = parseExploreMode(searchParams.get("mode"));
+  const [mode, setMode] = useState<ExploreMode>(initialMode);
+  const [budget, setBudget] = useState(defaultBudgetForMode(initialMode));
   const [propertyType, setPropertyType] = useState<PropertyType | null>(null);
+
+  useEffect(() => {
+    const fromUrl = parseExploreMode(searchParams.get("mode"));
+    setMode(fromUrl);
+    setBudget((current) => budgetForMode(fromUrl, current));
+    if (typeof window !== "undefined" && searchParams.get("mode")) {
+      window.localStorage.setItem(LENS_STORAGE_KEY, fromUrl);
+    }
+  }, [searchParams]);
   const land = isLandMode(mode);
+  const invest = isInvestMode(mode);
   const { data: markets = [], isLoading: residentialLoading } = useMarketMetrics({
     enabled: !land,
   });
@@ -76,9 +93,26 @@ function HomeContent() {
   const hasPreview = land ? landPreview.length > 0 : residentialPreview.length > 0;
 
   function handleModeChange(nextMode: ExploreMode, defaultBudget: number) {
+    if (nextMode !== mode) {
+      trackLensChange({ lens: nextMode, previousLens: mode, source: "home" });
+      if (typeof window !== "undefined") {
+        window.localStorage.setItem(LENS_STORAGE_KEY, nextMode);
+      }
+      const params = new URLSearchParams(searchParams.toString());
+      if (nextMode === "rent") {
+        params.delete("mode");
+      } else {
+        params.set("mode", nextMode);
+      }
+      const qs = params.toString();
+      router.replace(qs ? `/?${qs}` : "/", { scroll: false });
+    }
     setMode(nextMode);
     setBudget(budgetForMode(nextMode, defaultBudget));
     if (nextMode === "buy" && propertyType === "room") {
+      setPropertyType(null);
+    }
+    if (nextMode === "invest" && propertyType === "room") {
       setPropertyType(null);
     }
     if (isLandMode(nextMode)) {
@@ -100,7 +134,7 @@ function HomeContent() {
       />
 
       <div className="mx-auto w-full max-w-6xl space-y-16 px-4 py-16 pb-24 sm:px-6 lg:px-8 lg:pb-10">
-        {!land ? (
+        {!land && !invest ? (
           <AffordabilityInsights
             markets={markets}
             isLoading={isLoading}
@@ -111,7 +145,13 @@ function HomeContent() {
         <section className="space-y-6">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <PageHeader
-              title={land ? "Top land matches in Harare" : "Top matches in Harare"}
+              title={
+                land
+                  ? "Top land matches in Harare"
+                  : invest
+                    ? "Top yield matches in Harare"
+                    : "Top matches in Harare"
+              }
             />
             <Link href={exploreHref} className={buttonVariants({ variant: "outline", size: "sm" })}>
               View all
@@ -157,14 +197,18 @@ function HomeContent() {
           )}
         </section>
 
-        {!land ? <HomeMoversTeaser /> : null}
+        {!land && !invest ? <HomeMoversTeaser /> : null}
 
-        <BudgetListingsPreview
-          mode={mode}
-          budget={budget}
-          city={DEFAULT_CITY}
-          propertyType={land ? null : propertyType}
-        />
+        {!invest ? (
+          <BudgetListingsPreview
+            mode={mode}
+            budget={budget}
+            city={DEFAULT_CITY}
+            propertyType={land ? null : propertyType}
+          />
+        ) : null}
+
+        {invest ? <HomeInvestTeaser /> : null}
       </div>
 
       <HomeBudgetBar

@@ -2,10 +2,16 @@
 
 import { PinButton } from "@/components/markets/pin-button";
 import { liquidGlassPillClass } from "@/lib/liquid-glass";
-import type { MarketMetric } from "@/lib/types";
+import type { ExploreMode, MarketMetric } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
-export function SuburbActionBar({ market }: { market: MarketMetric }) {
+export function SuburbActionBar({
+  market,
+  lens,
+}: {
+  market: MarketMetric;
+  lens: ExploreMode;
+}) {
   return (
     <div
       className="pointer-events-none fixed inset-x-0 z-30 flex justify-center px-4 print:hidden lg:hidden"
@@ -29,7 +35,7 @@ export function SuburbActionBar({ market }: { market: MarketMetric }) {
         >
           View listings
         </button>
-        <PinButton market={market} size="icon-sm" />
+        <PinButton market={market} size="icon-sm" fromMode={lens} />
       </div>
     </div>
   );

@@ -55,23 +55,39 @@ export function columnsForMode(mode: ExploreMode): SortKey[] {
   if (mode === "land") {
     return ["suburb", "city", "median_price_per_sqm", "land_count", "confidence_score"];
   }
-  const base: SortKey[] = ["suburb", "city", "median_rent"];
+  const base: SortKey[] = ["suburb", "city"];
   if (mode === "buy") {
-    base.push("median_sale_price", "yield_percent", "opportunity_score");
+    return [...base, "median_sale_price", "confidence_score"];
   }
-  base.push("confidence_score");
+  if (mode === "invest") {
+    return [...base, "median_rent", "median_sale_price", "yield_percent", "opportunity_score", "confidence_score"];
+  }
+  if (mode === "rent") {
+    return [...base, "median_rent", "confidence_score"];
+  }
   return base;
 }
 
+/** @deprecated Use columnsForMode(lens) — city dashboard should pass active lens. */
 export function columnsForCityDashboard(): SortKey[] {
-  return [
-    "suburb",
-    "median_rent",
-    "median_sale_price",
-    "yield_percent",
-    "opportunity_score",
-    "confidence_score",
-  ];
+  return columnsForMode("invest");
+}
+
+export function columnsForLens(lens: ExploreMode): SortKey[] {
+  if (lens === "land") {
+    return ["suburb", "median_price_per_sqm", "land_count", "confidence_score"];
+  }
+  const base: SortKey[] = ["suburb"];
+  if (lens === "rent") {
+    base.push("median_rent", "confidence_score");
+    return base;
+  }
+  if (lens === "buy") {
+    base.push("median_sale_price", "confidence_score");
+    return base;
+  }
+  // invest — city layout has no city column
+  return ["suburb", "median_rent", "median_sale_price", "yield_percent", "opportunity_score", "confidence_score"];
 }
 
 export function sampleSizeLabel(count: number, mode: "rent" | "buy"): string {
@@ -100,6 +116,9 @@ export function exploreScopeDescription(
   if (mode === "land") {
     return "Prices use suburb-wide median $/sqm from active residential land listings.";
   }
+  if (mode === "invest") {
+    return "Suburbs ranked by gross yield and opportunity score. Budget filters by median sale price.";
+  }
   if (!hasActiveSegmentFilters({ mode, propertyType, bedroom })) {
     return "Prices use suburb-wide medians across all property types in each suburb.";
   }
@@ -122,6 +141,9 @@ export function exploreBudgetDescription(
 ): string {
   if (mode === "land") {
     return `Suburbs with median land price at or below ${budgetLabel}.`;
+  }
+  if (mode === "invest") {
+    return `Suburbs with median sale price at or below ${budgetLabel}, ranked by yield.`;
   }
   const priceLabel = mode === "rent" ? "rent" : "sale price";
   const spec = segmentFilterLabel(propertyType, bedroom);

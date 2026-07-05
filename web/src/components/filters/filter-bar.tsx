@@ -73,9 +73,9 @@ export function ExploreFilterPanel({
   return (
     <div className="space-y-6">
       <section className="space-y-3">
-        <Label className="caption-label">I want to</Label>
+        <Label className="caption-label">Focus</Label>
         <ExploreModeToggle
-          variant="short"
+          variant="segmented"
           value={filters.mode}
           onChange={(mode, defaultBudget) =>
             apply({

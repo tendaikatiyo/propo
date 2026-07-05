@@ -23,16 +23,16 @@ function formatCompareValue(
   return formatNumber(value);
 }
 
-const MOBILE_METRIC_KEYS: Record<"rent" | "buy", string[]> = {
-  rent: ["median_rent", "median_sale_price", "yield_percent", "opportunity_score"],
-  buy: ["median_sale_price", "median_rent", "yield_percent", "opportunity_score"],
+const MOBILE_METRIC_KEYS: Record<"rent" | "buy" | "invest", string[]> = {
+  rent: ["median_rent", "confidence_score"],
+  buy: ["median_sale_price", "confidence_score"],
+  invest: ["median_rent", "median_sale_price", "yield_percent", "opportunity_score"],
 };
 
 function mobileCompareMetrics(filters: CompareFilters) {
-  const all = buildCompareMetrics(filters);
-  const keys = isResidentialExploreMode(filters.mode)
-    ? MOBILE_METRIC_KEYS[filters.mode]
-    : [];
+  const all = buildCompareMetrics(filters, filters.mode);
+  if (!isResidentialExploreMode(filters.mode)) return [];
+  const keys = MOBILE_METRIC_KEYS[filters.mode];
   return keys
     .map((key) => all.find((row) => row.key === key))
     .filter((row): row is (typeof all)[number] => row != null);
@@ -46,7 +46,11 @@ export function CompareCards({
   filters: CompareFilters;
 }) {
   const metrics = mobileCompareMetrics(filters);
-  const specQuery = { type: filters.propertyType, bedroom: filters.bedroom };
+  const specQuery = {
+    type: filters.propertyType,
+    bedroom: filters.bedroom,
+    mode: filters.mode,
+  };
 
   if (markets.length < 2) {
     return (
@@ -72,7 +76,7 @@ export function CompareCards({
               </CardTitle>
               <p className="text-sm text-muted-foreground">{market.city}</p>
             </div>
-            <PinButton market={market} size="icon-sm" />
+            <PinButton market={market} size="icon-sm" fromMode={filters.mode} />
           </CardHeader>
           <CardContent className="space-y-0 divide-y divide-border/60 p-0 px-6 pb-4">
             {metrics.map((row) => {

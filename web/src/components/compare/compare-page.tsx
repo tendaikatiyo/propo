@@ -3,6 +3,7 @@
 import { useMemo } from "react";
 
 import { CompareFilterBar } from "@/components/compare/compare-filter-bar";
+import { CompareLensHint } from "@/components/compare/compare-lens-hint";
 import { CompareTable } from "@/components/markets/compare-table";
 import { LandCompareTable } from "@/components/markets/land-compare-table";
 import { CompareCards } from "@/components/mobile/compare-cards";
@@ -55,6 +56,8 @@ export function ComparePageClient() {
       </div>
 
       <CompareFilterBar />
+
+      <CompareLensHint filters={filters} />
 
       <div className="lg:hidden">
         {land ? (

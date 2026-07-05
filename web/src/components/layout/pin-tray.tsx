@@ -5,6 +5,7 @@ import { X } from "lucide-react";
 
 import { buttonVariants } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { useStoredLens } from "@/hooks/use-lens";
 import { usePinnedMarkets } from "@/hooks/use-pinned-markets";
 import { MAX_PINNED_MARKETS } from "@/lib/constants";
 import { sanitizeLabel } from "@/lib/format";
@@ -12,6 +13,10 @@ import { suburbPath } from "@/lib/slug";
 
 export function PinTray() {
   const { pins, removePin } = usePinnedMarkets();
+  const lens = useStoredLens("rent");
+
+  const compareHref =
+    lens === "rent" ? "/compare" : `/compare?mode=${encodeURIComponent(lens)}`;
 
   return (
     <div data-tour="pin-tray" className="flex flex-wrap items-center gap-2">
@@ -22,7 +27,12 @@ export function PinTray() {
       ) : (
         pins.map((pin) => (
           <Badge key={pin.market_id} variant="secondary" className="gap-1 pr-1 normal-case tracking-normal">
-            <Link href={suburbPath(pin.city, pin.suburb)} className="hover:underline">
+            <Link
+              href={suburbPath(pin.city, pin.suburb, {
+                mode: pin.pinnedFromMode ?? lens,
+              })}
+              className="hover:underline"
+            >
               {sanitizeLabel(pin.suburb)}
             </Link>
             <button
@@ -37,7 +47,7 @@ export function PinTray() {
         ))
       )}
       <Link
-        href="/compare"
+        href={compareHref}
         aria-disabled={pins.length < 2}
         className={buttonVariants({
           size: "sm",

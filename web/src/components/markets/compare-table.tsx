@@ -76,8 +76,12 @@ export function CompareTable({
   markets: MarketMetric[];
   filters: CompareFilters;
 }) {
-  const metrics = buildCompareMetrics(filters);
-  const specQuery = { type: filters.propertyType, bedroom: filters.bedroom };
+  const metrics = buildCompareMetrics(filters, filters.mode);
+  const specQuery = {
+    type: filters.propertyType,
+    bedroom: filters.bedroom,
+    mode: filters.mode,
+  };
 
   if (markets.length < 2) {
     return (
@@ -105,7 +109,7 @@ export function CompareTable({
                   <p className="font-heading text-xs font-normal normal-case tracking-normal text-muted-foreground">
                     {market.city}
                   </p>
-                  <PinButton market={market} size="sm" />
+                  <PinButton market={market} size="sm" fromMode={filters.mode} />
                 </div>
               </TableHead>
             ))}

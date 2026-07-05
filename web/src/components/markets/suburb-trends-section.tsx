@@ -9,6 +9,11 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import {
+  defaultTrendTab,
+  showsRentTrends,
+  showsSaleTrends,
+} from "@/lib/lens";
 import { formatPctChange, parseTrendRange, trendRangeLabel } from "@/lib/trends";
 import { PRICE_TREND_TOOLTIP, SUPPLY_TREND_TOOLTIP } from "@/lib/metric-tooltips";
 import type { ExploreMode, MarketMetric, MarketTrendsPayload, TrendRange } from "@/lib/types";
@@ -16,7 +21,7 @@ import type { ExploreMode, MarketMetric, MarketTrendsPayload, TrendRange } from 
 async function fetchTrends(
   marketId: string,
   range: TrendRange,
-  mode: ExploreMode
+  mode: "rent" | "buy"
 ): Promise<MarketTrendsPayload> {
   const params = new URLSearchParams({ range, mode });
   const res = await fetch(`/api/markets/${encodeURIComponent(marketId)}/trends?${params}`);
@@ -47,7 +52,7 @@ function TrendPanel({
 }: {
   marketId: string;
   range: TrendRange;
-  mode: ExploreMode;
+  mode: "rent" | "buy";
 }) {
   const { data, isLoading, isError } = useQuery({
     queryKey: ["market-trends", marketId, range, mode],
@@ -100,9 +105,21 @@ function TrendPanel({
   );
 }
 
-export function SuburbTrendsSection({ market }: { market: MarketMetric }) {
+export function SuburbTrendsSection({
+  market,
+  lens,
+}: {
+  market: MarketMetric;
+  lens: ExploreMode;
+}) {
+  const showRent = showsRentTrends(lens);
+  const showSale = showsSaleTrends(lens);
   const [range, setRange] = useState<TrendRange>("90d");
-  const [mode, setMode] = useState<ExploreMode>("rent");
+  const [mode, setMode] = useState<"rent" | "buy">(defaultTrendTab(lens));
+
+  if (!showRent && !showSale) return null;
+
+  const singleMode = showRent && !showSale ? "rent" : !showRent && showSale ? "buy" : mode;
 
   return (
     <Card>
@@ -123,15 +140,20 @@ export function SuburbTrendsSection({ market }: { market: MarketMetric }) {
           </Tabs>
         </div>
 
-        <Tabs value={mode} onValueChange={(value) => setMode(value === "buy" ? "buy" : "rent")}>
-          <TabsList>
-            <TabsTrigger value="rent">Rent</TabsTrigger>
-            <TabsTrigger value="buy">Sale</TabsTrigger>
-          </TabsList>
-        </Tabs>
+        {showRent && showSale ? (
+          <Tabs
+            value={mode}
+            onValueChange={(value) => setMode(value === "buy" ? "buy" : "rent")}
+          >
+            <TabsList>
+              <TabsTrigger value="rent">Rent</TabsTrigger>
+              <TabsTrigger value="buy">Sale</TabsTrigger>
+            </TabsList>
+          </Tabs>
+        ) : null}
       </CardHeader>
       <CardContent>
-        <TrendPanel marketId={market.market_id} range={range} mode={mode} />
+        <TrendPanel marketId={market.market_id} range={range} mode={singleMode} />
       </CardContent>
     </Card>
   );

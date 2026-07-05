@@ -4,6 +4,15 @@ import path from "path";
 import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    return [
+      {
+        source: "/invest",
+        destination: "/?mode=invest",
+        permanent: false,
+      },
+    ];
+  },
   turbopack: {
     root: path.join(__dirname),
   },

@@ -16,7 +16,8 @@ export const PROPERTY_TYPES = PROPERTY_TYPES_RENT;
 
 export function propertyTypesForMode(mode: ExploreMode): PropertyType[] {
   if (mode === "land") return [];
-  return mode === "buy" ? PROPERTY_TYPES_BUY : PROPERTY_TYPES_RENT;
+  if (mode === "buy" || mode === "invest") return PROPERTY_TYPES_BUY;
+  return PROPERTY_TYPES_RENT;
 }
 
 export const ROOM_BEDROOM_COUNT = 1;
@@ -27,6 +28,9 @@ export function normalizeExploreFilters(filters: ExploreFilters): ExploreFilters
     return { ...filters, propertyType: null, bedroom: null };
   }
   if (filters.mode === "buy" && propertyType === "room") {
+    propertyType = null;
+  }
+  if (filters.mode === "invest" && propertyType === "room") {
     propertyType = null;
   }
   if (propertyType && !propertyTypesForMode(filters.mode).includes(propertyType)) {
@@ -46,6 +50,9 @@ export function normalizeCompareFilters(filters: CompareFilters): CompareFilters
     return { mode, propertyType: null, bedroom: null };
   }
   if (mode === "buy" && propertyType === "room") {
+    propertyType = null;
+  }
+  if (mode === "invest" && propertyType === "room") {
     propertyType = null;
   }
   if (propertyType && !propertyTypesForMode(mode).includes(propertyType)) {
@@ -106,7 +113,7 @@ export const LAND_BUDGET_RANGE = { min: 10, max: 200, step: 5 };
 
 export function budgetRangeForMode(mode: ExploreMode) {
   if (mode === "land") return LAND_BUDGET_RANGE;
-  if (mode === "buy") return BUY_BUDGET_RANGE;
+  if (mode === "buy" || mode === "invest") return BUY_BUDGET_RANGE;
   return RENT_BUDGET_RANGE;
 }
 

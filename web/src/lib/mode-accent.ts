@@ -20,4 +20,9 @@ export const MODE_ACCENT: Record<
     pillGlow:
       "shadow-[0_8px_32px_rgba(0,0,0,0.12),0_0_24px_rgba(122,155,118,0.4)]",
   },
+  invest: {
+    chip: "bg-[#C49B6B] text-white",
+    pillGlow:
+      "shadow-[0_8px_32px_rgba(0,0,0,0.12),0_0_24px_rgba(196,155,107,0.4)]",
+  },
 };

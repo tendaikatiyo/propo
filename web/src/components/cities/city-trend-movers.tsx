@@ -2,10 +2,8 @@
 
 import Link from "next/link";
 import { useQueries } from "@tanstack/react-query";
-import { useState } from "react";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { formatCurrency, sanitizeLabel } from "@/lib/format";
 import { motionRow } from "@/lib/motion";
 import { formatPctChange } from "@/lib/trends";
@@ -31,10 +29,12 @@ function MoverList({
   title,
   items,
   city,
+  lens,
 }: {
   title: string;
   items: CityTrendMoversPayload["risers"];
   city: string;
+  lens: ExploreMode;
 }) {
   if (!items.length) return null;
 
@@ -45,7 +45,7 @@ function MoverList({
         {items.map((item) => (
           <li key={item.market_id}>
             <Link
-              href={suburbPath(city, item.suburb)}
+              href={suburbPath(city, item.suburb, { mode: lens })}
               className={cn(
                 motionRow,
                 "flex items-center justify-between rounded-lg px-2 py-1.5 text-sm hover:bg-muted/50"
@@ -63,36 +63,69 @@ function MoverList({
   );
 }
 
-function moversDescription(mode: ExploreMode): string {
-  return mode === "rent"
-    ? "Suburbs with the largest median rent changes from daily snapshots."
-    : "Suburbs with the largest median sale price changes from daily snapshots.";
+function moversDescription(lens: ExploreMode): string {
+  if (lens === "rent") {
+    return "Suburbs with the largest median rent changes from daily snapshots.";
+  }
+  if (lens === "buy") {
+    return "Suburbs with the largest median sale price changes from daily snapshots.";
+  }
+  return "Suburbs with the largest median rent and sale price changes from daily snapshots.";
 }
 
-export function CityTrendMovers({ city }: { city: string }) {
+function MoversGrid({
+  data,
+  city,
+  lens,
+}: {
+  data: CityTrendMoversPayload | undefined;
+  city: string;
+  lens: ExploreMode;
+}) {
+  if (!hasMovers(data)) {
+    const label = lens === "buy" ? "sale" : "rent";
+    return (
+      <p className="text-sm text-muted-foreground">No {label} movers in this period.</p>
+    );
+  }
+
+  return (
+    <div className="grid gap-6 sm:grid-cols-2">
+      <MoverList title="Rising" items={data!.risers} city={city} lens={lens} />
+      <MoverList title="Falling" items={data!.fallers} city={city} lens={lens} />
+    </div>
+  );
+}
+
+export function CityTrendMovers({ city, lens }: { city: string; lens: ExploreMode }) {
   const citySlug = toSlug(city);
-  const [mode, setMode] = useState<ExploreMode>("rent");
+  const showRent = lens === "rent" || lens === "invest";
+  const showSale = lens === "buy" || lens === "invest";
 
   const [rentResult, saleResult] = useQueries({
     queries: [
       {
         queryKey: ["city-trend-movers", citySlug, "rent"],
         queryFn: () => fetchCityMovers(citySlug, "rent"),
+        enabled: showRent,
       },
       {
         queryKey: ["city-trend-movers", citySlug, "buy"],
         queryFn: () => fetchCityMovers(citySlug, "buy"),
+        enabled: showSale,
       },
     ],
   });
 
-  const isLoading = rentResult.isLoading || saleResult.isLoading;
-  const isError = rentResult.isError && saleResult.isError;
+  const isLoading =
+    (showRent && rentResult.isLoading) || (showSale && saleResult.isLoading);
   const rentData = rentResult.data;
   const saleData = saleResult.data;
-  const data = mode === "rent" ? rentData : saleData;
 
-  if (!isLoading && (isError || (!hasMovers(rentData) && !hasMovers(saleData)))) {
+  const hasVisibleMovers =
+    (showRent && hasMovers(rentData)) || (showSale && hasMovers(saleData));
+
+  if (!isLoading && !hasVisibleMovers) {
     return null;
   }
 
@@ -101,27 +134,33 @@ export function CityTrendMovers({ city }: { city: string }) {
       <CardHeader className="space-y-4 pb-2">
         <div>
           <CardTitle className="text-base">90-day movers</CardTitle>
-          <p className="mt-1 text-sm text-muted-foreground">{moversDescription(mode)}</p>
+          <p className="mt-1 text-sm text-muted-foreground">{moversDescription(lens)}</p>
         </div>
-        <Tabs value={mode} onValueChange={(value) => setMode(value === "buy" ? "buy" : "rent")}>
-          <TabsList>
-            <TabsTrigger value="rent">Rent</TabsTrigger>
-            <TabsTrigger value="buy">Sale</TabsTrigger>
-          </TabsList>
-        </Tabs>
       </CardHeader>
-      <CardContent>
+      <CardContent className="space-y-8">
         {isLoading ? (
           <p className="text-sm text-muted-foreground">Loading movers…</p>
-        ) : !hasMovers(data) ? (
-          <p className="text-sm text-muted-foreground">
-            No {mode === "rent" ? "rent" : "sale"} movers in this period.
-          </p>
+        ) : lens === "invest" ? (
+          <>
+            {showRent && hasMovers(rentData) ? (
+              <div className="space-y-4">
+                <p className="caption-label normal-case">Rent</p>
+                <MoversGrid data={rentData} city={city} lens="rent" />
+              </div>
+            ) : null}
+            {showSale && hasMovers(saleData) ? (
+              <div className="space-y-4">
+                <p className="caption-label normal-case">Sale</p>
+                <MoversGrid data={saleData} city={city} lens="buy" />
+              </div>
+            ) : null}
+          </>
         ) : (
-          <div className="grid gap-6 sm:grid-cols-2">
-            <MoverList title="Rising" items={data!.risers} city={city} />
-            <MoverList title="Falling" items={data!.fallers} city={city} />
-          </div>
+          <MoversGrid
+            data={lens === "buy" ? saleData : rentData}
+            city={city}
+            lens={lens}
+          />
         )}
       </CardContent>
     </Card>

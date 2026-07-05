@@ -72,6 +72,7 @@ export function AffordabilityInsights({
           const segmentQuery = {
             type: filters.propertyType,
             bedroom: filters.bedroom,
+            mode: filters.mode,
           };
           const href = suburbPath(insight.market.city, insight.market.suburb, segmentQuery);
 

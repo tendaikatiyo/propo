@@ -9,6 +9,7 @@ import {
   PROPERTY_TYPE_COUNT_KEY,
   STRETCH_BUDGET_MULTIPLIER,
 } from "@/lib/constants";
+import { budgetPriceMode } from "@/lib/lens";
 import { priceForFilters, hasActiveSegmentFilters, isUsingAggregateFallback, resolveSegmentStats, segmentCountForMode, segmentMedianLabel } from "@/lib/segments";
 import type {
   CompareFilters,
@@ -30,7 +31,8 @@ function getPriceForMode(
   mode: ExploreMode,
   filters: Pick<ExploreFilters, "propertyType" | "bedroom">
 ): number | null {
-  return priceForFilters(market, mode, filters);
+  if (mode === "land") return null;
+  return priceForFilters(market, budgetPriceMode(mode), filters);
 }
 
 /** Snap budget to the correct default when mode and amount disagree (e.g. $800 left on buy). */
@@ -42,7 +44,9 @@ export function budgetForMode(mode: ExploreMode, current: number): number {
     if (current > LAND_BUDGET_RANGE.max) return DEFAULT_LAND_BUDGET_PER_SQM;
     return current;
   }
-  if (mode === "buy" && current < BUY_BUDGET_RANGE.min) return DEFAULT_BUY_BUDGET;
+  if ((mode === "buy" || mode === "invest") && current < BUY_BUDGET_RANGE.min) {
+    return DEFAULT_BUY_BUDGET;
+  }
   if (mode === "rent" && current >= BUY_BUDGET_RANGE.min) return DEFAULT_RENT_BUDGET;
   return current;
 }
@@ -105,6 +109,9 @@ export function isSuburbMedianFallbackRow(
   filters: ExploreFilters
 ): boolean {
   if (!hasActiveSegmentFilters(filters)) return false;
+  if (filters.mode === "land" || filters.mode === "invest") {
+    return isUsingAggregateFallback(market, budgetPriceMode(filters.mode), filters);
+  }
   return isUsingAggregateFallback(market, filters.mode, filters);
 }
 
@@ -160,12 +167,19 @@ export function rankExploreResults(
       return rentA - rentB;
     });
   }
-  return sortMarkets(markets, "opportunity_score", "desc").sort((a, b) => {
-    const opp = (b.opportunity_score ?? 0) - (a.opportunity_score ?? 0);
-    if (opp !== 0) return opp;
-    const yieldDiff = (b.yield_percent ?? 0) - (a.yield_percent ?? 0);
-    if (yieldDiff !== 0) return yieldDiff;
-    return (b.confidence_score ?? 0) - (a.confidence_score ?? 0);
+  if (mode === "invest") {
+    return [...markets].sort((a, b) => {
+      const yieldDiff = (b.yield_percent ?? 0) - (a.yield_percent ?? 0);
+      if (yieldDiff !== 0) return yieldDiff;
+      const opp = (b.opportunity_score ?? 0) - (a.opportunity_score ?? 0);
+      if (opp !== 0) return opp;
+      return (b.confidence_score ?? 0) - (a.confidence_score ?? 0);
+    });
+  }
+  return sortMarkets(markets, "median_sale_price", "asc", filters).sort((a, b) => {
+    const saleA = priceForFilters(a, "buy", filters ?? { propertyType: null, bedroom: null }) ?? Infinity;
+    const saleB = priceForFilters(b, "buy", filters ?? { propertyType: null, bedroom: null }) ?? Infinity;
+    return saleA - saleB;
   });
 }
 
@@ -223,11 +237,12 @@ function segmentListingCount(
 }
 
 export function buildCompareMetrics(
-  filters: Pick<CompareFilters, "propertyType" | "bedroom">
+  filters: Pick<CompareFilters, "propertyType" | "bedroom">,
+  lens: ExploreMode = "invest"
 ): CompareMetricRow[] {
   const spec = segmentSpec(filters);
 
-  return [
+  const all: CompareMetricRow[] = [
     {
       key: "median_rent",
       label: segmentMedianLabel("rent", filters.propertyType, filters.bedroom),
@@ -300,13 +315,25 @@ export function buildCompareMetrics(
       getValue: (m) => segmentListingCount(m, filters, "buy"),
     },
   ];
+
+  const rentKeys = new Set(["median_rent", "minimum_rent", "maximum_rent", "rental_count"]);
+  const saleKeys = new Set(["median_sale_price", "sale_count"]);
+  const investKeys = new Set(["yield_percent", "opportunity_score"]);
+
+  return all.filter((row) => {
+    if (row.key === "confidence_score") return true;
+    if (lens === "rent") return rentKeys.has(row.key);
+    if (lens === "buy") return saleKeys.has(row.key) || row.key === "confidence_score";
+    if (lens === "invest") return true;
+    return true;
+  });
 }
 
 /** @deprecated Use buildCompareMetrics(filters) for spec-aware compare */
-export const COMPARE_METRICS: CompareMetricRow[] = buildCompareMetrics({
-  propertyType: null,
-  bedroom: null,
-});
+export const COMPARE_METRICS: CompareMetricRow[] = buildCompareMetrics(
+  { propertyType: null, bedroom: null },
+  "invest"
+);
 
 export function getBestMarketId(
   markets: MarketMetric[],

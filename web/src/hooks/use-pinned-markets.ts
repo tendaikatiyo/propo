@@ -5,11 +5,14 @@ import { persist } from "zustand/middleware";
 import { toast } from "sonner";
 
 import { MAX_PINNED_MARKETS } from "@/lib/constants";
-import type { MarketMetric, PinnedMarket } from "@/lib/types";
+import type { ExploreMode, MarketMetric, PinnedMarket } from "@/lib/types";
 
 interface PinnedMarketsState {
   pins: PinnedMarket[];
-  togglePin: (market: Pick<MarketMetric, "market_id" | "city" | "suburb">) => void;
+  togglePin: (
+    market: Pick<MarketMetric, "market_id" | "city" | "suburb">,
+    options?: { fromMode?: ExploreMode }
+  ) => void;
   removePin: (marketId: string) => void;
   clearPins: () => void;
   isPinned: (marketId: string) => boolean;
@@ -19,7 +22,7 @@ export const usePinnedMarkets = create<PinnedMarketsState>()(
   persist(
     (set, get) => ({
       pins: [],
-      togglePin: (market) => {
+      togglePin: (market, options) => {
         const existing = get().pins.find((p) => p.market_id === market.market_id);
         if (existing) {
           set({ pins: get().pins.filter((p) => p.market_id !== market.market_id) });
@@ -37,6 +40,7 @@ export const usePinnedMarkets = create<PinnedMarketsState>()(
               city: market.city,
               suburb: market.suburb,
               pinnedAt: new Date().toISOString(),
+              ...(options?.fromMode ? { pinnedFromMode: options.fromMode } : {}),
             },
           ],
         });
