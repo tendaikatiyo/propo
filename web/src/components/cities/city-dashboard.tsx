@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 
 import { CityTrendMovers } from "@/components/cities/city-trend-movers";
-import { LensSwitcher } from "@/components/filters/lens-switcher";
 import {
   filterMarketsBySuburbQuery,
   SuburbSearchInput,
@@ -18,7 +17,7 @@ import { SuburbList } from "@/components/mobile/suburb-list";
 import { LandSuburbTable } from "@/components/markets/land-suburb-table";
 import { SuburbTable } from "@/components/markets/suburb-table";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { useLens } from "@/hooks/use-lens";
+import { useGlobalLens } from "@/components/providers/lens-provider";
 import { useLandMetrics } from "@/hooks/use-market-data";
 import { formatCurrency, formatNumber, formatPercent } from "@/lib/format";
 import {
@@ -84,7 +83,7 @@ export function CityDashboard({
   markets: MarketMetric[];
   rankings: RankingsPayload | null;
 }) {
-  const { lens, setLens } = useLens("rent", { analyticsSource: "city" });
+  const { lens } = useGlobalLens();
   const [query, setQuery] = useState("");
   const cityRankings = rankings?.per_city?.[city.city];
   const isLand = lens === "land";
@@ -140,8 +139,6 @@ export function CityDashboard({
       <div className="flex flex-wrap items-start justify-between gap-4">
         <PageHeader title={city.city} description={cityDescription(city, lens)} />
       </div>
-
-      <LensSwitcher value={lens} onChange={setLens} label="Show" />
 
       <CityStatsGrid city={city} lens={lens} />
 

@@ -2,6 +2,7 @@
 
 **Date:** 2026-07-05  
 **Status:** Phases 1–4 complete (2026-07-05)  
+**Shipped handover:** [2026-07-05-user-lens-shipped.md](./2026-07-05-user-lens-shipped.md)  
 **Trigger:** User feedback that renters see investor metrics (median sale, gross yield, land) on suburb and city profiles despite choosing Rent on home/explore.  
 **Goal:** One coherent **lens** across home → explore → city → suburb → compare → rankings, with a dedicated **Invest** path for yield/opportunity and full reports.
 
@@ -20,11 +21,28 @@ Propo’s dataset stays unified (`market_metrics`, `land_metrics`, trends, listi
 
 **Product pitch (unchanged moat):** suburb-level intelligence from a continuously updated property database — but now through the right lens for each user.
 
-**Key insight:** Explore is already lens-aware. City pages, suburb profiles, and navigation are not. Land mode (`?mode=land`) is the precedent to extend.
+**Key insight:** One dataset; **lens** controls which metrics each surface shows. Land (`?mode=land`) was the precedent; invest extends residential depth.
 
 ---
 
-## Problem statement
+## Shipped state (2026-07-05)
+
+All rows in the original gap table are addressed. Highlights:
+
+| Surface | Shipped behaviour |
+| ------- | ----------------- |
+| **Home** | 4-mode hero (intent pills); invest `?mode=` sync; yield teaser **below** in-budget matches |
+| **Explore** | Segmented **Focus**; lens-aware columns/cards/links |
+| **Cities** | `LensSwitcher`; land uses `land_metrics` table; movers follow lens |
+| **Suburb** | Lens-gated sections; rent report `?scope=rent`; invest full report CTA |
+| **Compare** | Lens-filtered metrics; last lens from `propo_lens`; mixed-pin hint |
+| **Rankings** | Lens switcher; Leaderboards + Movers only; land via Land lens |
+
+**UI:** Segmented control (Rent·Buy·Invest + Land chip) on data surfaces; home keeps intent copy. See `web/DESIGN.md`.
+
+---
+
+## Problem statement (original)
 
 A renter who selects **Rent** on the home page gets a rent-only explore table, then clicks a suburb and lands on a profile showing:
 
@@ -40,7 +58,7 @@ Investors, conversely, need yield, opportunity, cross-market context, and printa
 
 ---
 
-## Current state vs gap
+## Current state vs gap (archived — pre-ship)
 
 | Surface | Rent lens today | Gap |
 | ------- | --------------- | --- |
@@ -252,7 +270,7 @@ Legend:
 | Listing counts (rent/sale) | rent only | sale only | land metrics | both |
 | Land compare table | — | — | ● | — |
 
-Today `buildCompareMetrics()` returns all residential rows regardless of compare `mode` — filter by lens.
+Today `buildCompareMetrics()` filters by compare lens — **shipped**.
 
 #### Rankings (`/rankings`)
 
@@ -265,7 +283,7 @@ Today `buildCompareMetrics()` returns all residential rows regardless of compare
 | Land $/sqm cheap/expensive | — | — | ● | — |
 | Movers (rent/sale) | ● / — | — / ● | — | ● both |
 
-Consider tabs or `?lens=` so renters landing on /rankings don’t see yield first.
+**Shipped:** Lens switcher on `/rankings`; land leaderboards under **Land** lens (no `?tab=land`).
 
 ---
 
@@ -413,7 +431,7 @@ Invest lens = everything today’s suburb profile shows for residential.
 
 - `prompts/handovers/2026-07-03-land-mode-plan.md` — precedent for mode-specific profile sections  
 - `prompts/PROOF_OF_WORK.md` — product positioning  
-- `web/DESIGN.md` — UI patterns for mode toggle
+- `web/DESIGN.md` — lens UI patterns (segmented control, accents, persistence)
 
 ---
 

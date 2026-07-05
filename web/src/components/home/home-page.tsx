@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { Suspense, useEffect, useRef, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
 
 import { AffordabilityInsights } from "@/components/home/affordability-insights";
 import { HomeInvestTeaser } from "@/components/home/home-invest-teaser";
@@ -15,14 +14,13 @@ import { LandSuburbCard } from "@/components/markets/land-suburb-card";
 import { SuburbCard } from "@/components/markets/suburb-card";
 import { buttonVariants } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
+import { useGlobalLens } from "@/components/providers/lens-provider";
 import { useLandMetrics, useMarketMetrics } from "@/hooks/use-market-data";
-import { trackLensChange } from "@/lib/analytics/track";
 import { DEFAULT_CITY, ROOM_BEDROOM_COUNT } from "@/lib/constants";
 import { budgetForMode } from "@/lib/explore";
 import { filterLandMarkets, rankLandExploreResults } from "@/lib/land-explore";
 import { filterMarkets, rankExploreResults } from "@/lib/explore";
-import { LENS_STORAGE_KEY } from "@/lib/lens";
-import { defaultBudgetForMode, isInvestMode, isLandMode, parseExploreMode } from "@/lib/mode";
+import { defaultBudgetForMode, isInvestMode, isLandMode } from "@/lib/mode";
 import type { ExploreMode, PropertyType } from "@/lib/types";
 
 function buildExploreHref(
@@ -42,22 +40,20 @@ function buildExploreHref(
 }
 
 function HomeContent() {
-  const router = useRouter();
-  const searchParams = useSearchParams();
+  const { lens: mode, setLens } = useGlobalLens();
   const budgetSectionRef = useRef<HTMLElement>(null);
-  const initialMode = parseExploreMode(searchParams.get("mode"));
-  const [mode, setMode] = useState<ExploreMode>(initialMode);
-  const [budget, setBudget] = useState(defaultBudgetForMode(initialMode));
+  const [budget, setBudget] = useState(() => defaultBudgetForMode(mode));
   const [propertyType, setPropertyType] = useState<PropertyType | null>(null);
 
   useEffect(() => {
-    const fromUrl = parseExploreMode(searchParams.get("mode"));
-    setMode(fromUrl);
-    setBudget((current) => budgetForMode(fromUrl, current));
-    if (typeof window !== "undefined" && searchParams.get("mode")) {
-      window.localStorage.setItem(LENS_STORAGE_KEY, fromUrl);
+    setBudget((current) => budgetForMode(mode, current));
+    if (mode === "buy" || mode === "invest") {
+      setPropertyType((current) => (current === "room" ? null : current));
     }
-  }, [searchParams]);
+    if (isLandMode(mode)) {
+      setPropertyType(null);
+    }
+  }, [mode]);
   const land = isLandMode(mode);
   const invest = isInvestMode(mode);
   const { data: markets = [], isLoading: residentialLoading } = useMarketMetrics({
@@ -93,21 +89,7 @@ function HomeContent() {
   const hasPreview = land ? landPreview.length > 0 : residentialPreview.length > 0;
 
   function handleModeChange(nextMode: ExploreMode, defaultBudget: number) {
-    if (nextMode !== mode) {
-      trackLensChange({ lens: nextMode, previousLens: mode, source: "home" });
-      if (typeof window !== "undefined") {
-        window.localStorage.setItem(LENS_STORAGE_KEY, nextMode);
-      }
-      const params = new URLSearchParams(searchParams.toString());
-      if (nextMode === "rent") {
-        params.delete("mode");
-      } else {
-        params.set("mode", nextMode);
-      }
-      const qs = params.toString();
-      router.replace(qs ? `/?${qs}` : "/", { scroll: false });
-    }
-    setMode(nextMode);
+    setLens(nextMode, { source: "home" });
     setBudget(budgetForMode(nextMode, defaultBudget));
     if (nextMode === "buy" && propertyType === "room") {
       setPropertyType(null);

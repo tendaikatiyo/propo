@@ -5,7 +5,7 @@ import { X } from "lucide-react";
 
 import { buttonVariants } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { useStoredLens } from "@/hooks/use-lens";
+import { useGlobalLens } from "@/components/providers/lens-provider";
 import { usePinnedMarkets } from "@/hooks/use-pinned-markets";
 import { MAX_PINNED_MARKETS } from "@/lib/constants";
 import { sanitizeLabel } from "@/lib/format";
@@ -13,7 +13,7 @@ import { suburbPath } from "@/lib/slug";
 
 export function PinTray() {
   const { pins, removePin } = usePinnedMarkets();
-  const lens = useStoredLens("rent");
+  const { lens } = useGlobalLens();
 
   const compareHref =
     lens === "rent" ? "/compare" : `/compare?mode=${encodeURIComponent(lens)}`;

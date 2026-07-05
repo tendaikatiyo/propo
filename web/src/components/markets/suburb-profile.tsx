@@ -2,7 +2,6 @@ import Link from "next/link";
 import { FileDown } from "lucide-react";
 
 import { BackLink } from "@/components/layout/back-nav";
-import { SuburbLensBar } from "@/components/markets/suburb-lens-bar";
 import { DataFreshnessPill } from "@/components/layout/data-freshness-pill";
 import { SuburbActionBar } from "@/components/mobile/suburb-action-bar";
 import { PinButton } from "@/components/markets/pin-button";
@@ -159,13 +158,6 @@ export function SuburbProfile({
               </p>
             ) : null}
           </div>
-          <SuburbLensBar
-            city={market.city}
-            suburb={market.suburb}
-            lens={lens}
-            propertyType={propertyType}
-            bedroom={bedroom}
-          />
         </div>
         <div className="lg:hidden">
           <ConfidenceBadge

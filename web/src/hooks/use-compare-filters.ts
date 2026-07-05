@@ -1,11 +1,10 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef } from "react";
+import { useCallback, useMemo } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
-import { useStoredLens } from "@/hooks/use-lens";
+import { useGlobalLens } from "@/components/providers/lens-provider";
 import { normalizeCompareFilters, normalizePropertyType } from "@/lib/constants";
-import { LENS_STORAGE_KEY } from "@/lib/lens";
 import { parseExploreMode } from "@/lib/mode";
 import type { CompareFilters, PropertyType } from "@/lib/types";
 
@@ -40,38 +39,22 @@ export function useCompareFilters() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
-  const storedLens = useStoredLens("rent");
-  const syncedStoredLens = useRef(false);
+  const { lens: globalLens } = useGlobalLens();
 
   const filters = useMemo<CompareFilters>(() => {
     const fromUrl = searchParams.get("mode");
-    const mode = fromUrl ? parseExploreMode(fromUrl) : storedLens;
+    const mode = fromUrl ? parseExploreMode(fromUrl) : globalLens;
     return normalizeCompareFilters({
       mode,
       propertyType: parsePropertyType(searchParams.get("type")),
       bedroom: searchParams.has("bedroom") ? Number(searchParams.get("bedroom")) : null,
     });
-  }, [searchParams, storedLens]);
-
-  useEffect(() => {
-    if (syncedStoredLens.current) return;
-    if (searchParams.get("mode")) return;
-    if (storedLens === "rent") return;
-
-    syncedStoredLens.current = true;
-    const params = buildCompareSearchParams({
-      ...DEFAULT_COMPARE_FILTERS,
-      mode: storedLens,
-    });
-    router.replace(`${pathname}?${params.toString()}`, { scroll: false });
-  }, [pathname, router, searchParams, storedLens]);
+  }, [searchParams, globalLens]);
 
   const setFilters = useCallback(
     (patch: Partial<CompareFilters>) => {
-      const next = normalizeCompareFilters({ ...filters, ...patch });
-      if (typeof window !== "undefined") {
-        window.localStorage.setItem(LENS_STORAGE_KEY, next.mode);
-      }
+      const { mode: _mode, ...rest } = patch;
+      const next = normalizeCompareFilters({ ...filters, ...rest });
       const params = buildCompareSearchParams(next);
       const qs = params.toString();
       router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
@@ -80,8 +63,14 @@ export function useCompareFilters() {
   );
 
   const resetFilters = useCallback(() => {
-    router.replace(pathname, { scroll: false });
-  }, [pathname, router]);
+    const params = buildCompareSearchParams({
+      mode: filters.mode,
+      propertyType: null,
+      bedroom: null,
+    });
+    const qs = params.toString();
+    router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
+  }, [filters.mode, pathname, router]);
 
   return { filters, setFilters, resetFilters, defaultFilters: DEFAULT_COMPARE_FILTERS };
 }

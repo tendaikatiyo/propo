@@ -23,7 +23,7 @@ Also fixed **city listing counts** on `/cities` and explore dropdowns: totals no
 | **2 — Types / filters** | `ExploreMode = "rent" \| "buy" \| "land"`; $/sqm budget; `land-explore.ts` |
 | **3 — Explore UI** | Mode toggle, land suburb table/cards/list, home + explore wired to land metrics |
 | **4 — Listings** | `GET /api/listings?mode=land`; listing cards with stand size + $/sqm |
-| **5 — Intelligence** | Compare land mode, land rankings tab, fair-value badges, suburb land metrics/trends, `?mode=land` suburb view |
+| **5 — Intelligence** | Compare land mode, land rankings (via Land lens), fair-value badges, suburb land metrics/trends, `?mode=land` suburb view |
 
 ### City listing counts (same session)
 
@@ -44,7 +44,7 @@ Also fixed **city listing counts** on `/cities` and explore dropdowns: totals no
 | Explore land | `/explore?mode=land&budget=50&city=Harare` |
 | Land listings API | `/api/listings?mode=land&budget=50&city=Harare&limit=4` |
 | Compare land | `/compare?mode=land` (pin 2+ suburbs) |
-| Land rankings | `/rankings?tab=land` |
+| Land rankings | `/rankings?mode=land` (Leaderboards tab) |
 | Suburb land view | `/cities/harare/borrowdale?mode=land` |
 | Cities directory | `/cities` — totals include land |
 
@@ -150,4 +150,5 @@ See [land-mode-plan § Open product decisions](./2026-07-03-land-mode-plan.md#op
 - [2026-06-14-scrapers-history-compounding.md](./2026-06-14-scrapers-history-compounding.md) — `clean_land.json` in pipeline
 - [2026-06-25-web-ux-listings-explore.md](./2026-06-25-web-ux-listings-explore.md) — rent/buy explore patterns
 - [2026-06-30-f4-f5-report-compare.md](./2026-06-30-f4-f5-report-compare.md) — compare page (extended for land)
-- [2026-07-01-f6-movers-rankings.md](./2026-07-01-f6-movers-rankings.md) — rankings (extended with land tab)
+- [2026-07-01-f6-movers-rankings.md](./2026-07-01-f6-movers-rankings.md) — rankings (land via lens since 2026-07-05)
+- [2026-07-05-user-lens-shipped.md](./2026-07-05-user-lens-shipped.md) — user lens + segmented UI

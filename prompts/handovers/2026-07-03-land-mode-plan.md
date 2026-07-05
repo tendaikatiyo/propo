@@ -1,5 +1,7 @@
 # Land mode plan — Rent | Buy | Land
 
+> **Note (2026-07-05):** Rankings land leaderboards moved from `?tab=land` to **Land lens** on `/rankings?mode=land`. Invest is a fourth lens — see [2026-07-05-user-lens-shipped.md](./2026-07-05-user-lens-shipped.md).
+
 **Date:** 2026-07-03  
 **Status:** Phase 5 done (2026-07-03) — land mode complete end-to-end  
 **Goal:** Add land/stands as a third top-level explore mode, standardized on **price per sqm**, alongside existing rent and buy flows.

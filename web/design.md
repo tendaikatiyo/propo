@@ -274,11 +274,35 @@ Pill shape, mono uppercase at 11px.
 
 | Control | Pattern |
 | --- | --- |
-| **Explore mode toggle** | Rent / Buy / Land pill group |
+| **User lens (segmented)** | Rent · Buy · Invest in one `bg-muted` track; **Land** as separate chip. Active segment uses `MODE_ACCENT` colours (`web/src/lib/mode-accent.ts`). Used on explore, city, suburb, rankings, compare via `LensSwitcher`. |
+| **Home hero focus** | **Intent** variant only — 2×2 glass pills (“I'm renting”, “I'm buying land”, etc.). Not segmented. |
+| **Explore mode toggle** | `ExploreModeToggle` variants: `segmented` (data surfaces), `intent` (home), `short` (legacy separate pills) |
+| **Lens persistence** | URL `?mode=rent\|buy\|land\|invest` (rent omits param); `localStorage` key `propo_lens`; bare suburb URLs default **rent** on server |
 | **Budget slider** | Mobile: +/- steppers; desktop: input + slider |
 | **Property type** | Toggle button group |
-| **City combobox** | Search with listing counts |
-| **Filter panel label** | `caption-label` — e.g. “Focus”, “Property type” |
+| **City combobox** | Search with listing counts (mode-aware via `cityListingTotal`) |
+| **Filter panel label** | `caption-label` — **Focus** on explore/city/suburb/rankings/compare; **Property type** below |
+
+### User lens (audience modes)
+
+Four lenses share one dataset; each surface shows metrics for the active lens only.
+
+| Lens | Audience | Primary metrics |
+| --- | --- | --- |
+| **Rent** | Tenants | Median rent, rent trends, rent listings, rent report summary |
+| **Buy** | Owner-occupiers | Median sale, sale trends (no rent column on buy tables) |
+| **Land** | Stand buyers | $/sqm, land count (`land_metrics` table — not residential `market_metrics`) |
+| **Invest** | Buy-to-rent / analysts | Rent + sale + yield + opportunity; full printable report CTA |
+
+**Accent colours (active segmented segment):** rent sky `#6B9FD4`, buy violet `#9B87C4`, land green `#7A9B76`, invest amber `#C49B6B`.
+
+**Invest entry:** `/?mode=invest` and `next.config` redirect `/invest` → home; sidebar Invest nav **commented out** (soft launch).
+
+**Compare:** inherits last lens from `propo_lens` when `/compare` has no `?mode=`. Pins store `pinnedFromMode`; hint when pins differ from active lens.
+
+**Rankings:** Leaderboards + Movers tabs only; land leaderboards via **Land** lens (not a separate Land tab).
+
+**City 90-day movers:** No inner Rent/Sale toggle — follows page lens; invest shows rent and sale blocks.
 
 ### Page header (`page-header.tsx`)
 
@@ -374,6 +398,9 @@ Avoid: “Find your dream home”, portal language, agency CTAs.
 | City / footer chrome | `src/components/layout/site-chrome.tsx` |
 | App shell | `src/components/layout/app-shell.tsx` |
 | Mobile chrome | `src/components/mobile/` |
+| User lens helpers | `src/lib/lens.ts`, `src/hooks/use-lens.ts` |
+| Lens UI | `src/components/filters/lens-switcher.tsx`, `explore-mode-toggle.tsx` |
+| Mode accents | `src/lib/mode-accent.ts` |
 | Footer orbs | `src/components/ui/footer-orbs.tsx` |
 | Photo credits | `PHOTO_CREDITS.md` |
 | SEO copy constants | `src/lib/constants.ts`, `src/lib/seo.ts` |

@@ -8,7 +8,7 @@ import {
   normalizeExploreFilters,
   normalizePropertyType,
 } from "@/lib/constants";
-import { trackExploreFilterChange, trackLensChange } from "@/lib/analytics/track";
+import { trackExploreFilterChange } from "@/lib/analytics/track";
 import { budgetForMode } from "@/lib/explore";
 import { defaultBudgetForMode, parseExploreMode } from "@/lib/mode";
 import type { ExploreFilters, PropertyType } from "@/lib/types";
@@ -58,13 +58,6 @@ export function useExploreFilters() {
       const next = normalizeExploreFilters({ ...filters, ...patch });
       if (patch.mode !== undefined && patch.mode !== filters.mode && patch.budget === undefined) {
         next.budget = budgetForMode(patch.mode, filters.budget);
-      }
-      if (patch.mode !== undefined && patch.mode !== filters.mode) {
-        trackLensChange({
-          lens: patch.mode,
-          previousLens: filters.mode,
-          source: "explore",
-        });
       }
       const params = new URLSearchParams();
 

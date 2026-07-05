@@ -124,9 +124,11 @@ After `build:cf`, confirm `.open-next/worker.js` and `.open-next/assets/` exist.
 
 ## Features
 
-- Home budget finder (rent / buy)
-- Explore with URL-synced filters (city, property type, budget)
-- Pin up to 3 suburbs (localStorage) and compare side by side
-- City directory and suburb profile pages
-- National rankings and methodology
+- Home budget finder — **Rent · Buy · Land · Invest** (hero uses intent copy; invest teaser below matches)
+- Explore with URL-synced filters and **segmented lens** control (`?mode=`, `propo_lens` in localStorage)
+- Pin up to 3 suburbs (localStorage) and compare side by side — **compare inherits last lens**
+- City directory and suburb profile pages — **lens-aware** stats, tables, trends, reports
+- National rankings (lens switcher; land leaderboards via Land lens) and methodology
 - Private admin ops dashboard at `/admin` (pipeline health, listing counts, ingest history)
+
+See `DESIGN.md` for lens UI patterns and `prompts/handovers/2026-07-05-user-lens-shipped.md` for implementation notes.

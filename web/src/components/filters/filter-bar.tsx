@@ -2,7 +2,6 @@
 
 import { BudgetSlider } from "@/components/filters/budget-slider";
 import { CitySearchCombobox } from "@/components/filters/city-search-combobox";
-import { ExploreModeToggle } from "@/components/filters/explore-mode-toggle";
 import { PropertyTypeButtons } from "@/components/filters/property-type-buttons";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -11,7 +10,6 @@ import { Separator } from "@/components/ui/separator";
 import { Switch } from "@/components/ui/switch";
 import { useCities } from "@/hooks/use-market-data";
 import { useExploreFilters } from "@/hooks/use-explore-filters";
-import { budgetForMode } from "@/lib/explore";
 import { isLandMode } from "@/lib/mode";
 import { hasActiveSegmentFilters } from "@/lib/segments";
 
@@ -72,29 +70,6 @@ export function ExploreFilterPanel({
 
   return (
     <div className="space-y-6">
-      <section className="space-y-3">
-        <Label className="caption-label">Focus</Label>
-        <ExploreModeToggle
-          variant="segmented"
-          value={filters.mode}
-          onChange={(mode, defaultBudget) =>
-            apply({
-              mode,
-              budget:
-                mode === filters.mode
-                  ? filters.budget
-                  : budgetForMode(mode, defaultBudget),
-              ...(mode === "land" ? { propertyType: null, bedroom: null } : {}),
-              ...(mode === "buy" && filters.propertyType === "room"
-                ? { propertyType: null }
-                : {}),
-            })
-          }
-        />
-      </section>
-
-      <Separator />
-
       <section className="space-y-3">
         <Label className="caption-label">City</Label>
         <CitySearchCombobox

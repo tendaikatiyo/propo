@@ -31,7 +31,15 @@ export type ListingClickPayload = {
 export type LensChangePayload = {
   lens: ExploreMode;
   previousLens?: ExploreMode;
-  source: "home" | "explore" | "cities" | "rankings" | "city" | "suburb_profile" | "compare";
+  source:
+    | "global"
+    | "home"
+    | "explore"
+    | "cities"
+    | "rankings"
+    | "city"
+    | "suburb_profile"
+    | "compare";
 };
 
 export type SuburbViewPayload = {

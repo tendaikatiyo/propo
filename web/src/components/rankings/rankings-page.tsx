@@ -4,14 +4,13 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
-import { LensSwitcher } from "@/components/filters/lens-switcher";
 import { PageHeader } from "@/components/layout/page-header";
 import { BackLink } from "@/components/layout/back-nav";
 import { PinButton } from "@/components/markets/pin-button";
 import { MoversRankings } from "@/components/rankings/movers-rankings";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { useLens } from "@/hooks/use-lens";
+import { useGlobalLens } from "@/components/providers/lens-provider";
 import {
   formatCurrency,
   formatNumber,
@@ -20,7 +19,6 @@ import {
   sanitizeLabel,
 } from "@/lib/format";
 import { LEADERBOARD_MIN_CONFIDENCE, RANKINGS_MIN_CONFIDENCE } from "@/lib/constants";
-import { parseExploreMode } from "@/lib/mode";
 import { suburbPath } from "@/lib/slug";
 import type { ExploreMode, MarketMoversRankingsPayload, RankingEntry } from "@/lib/types";
 
@@ -174,9 +172,7 @@ export function RankingsPageClient({
 }) {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const { lens, setLens } = useLens(parseExploreMode(searchParams.get("mode")), {
-    analyticsSource: "rankings",
-  });
+  const { lens } = useGlobalLens();
   const tabParam = searchParams.get("tab");
   const tab: RankingsTab = tabParam === "movers" ? "movers" : "leaderboards";
 
@@ -206,8 +202,6 @@ export function RankingsPageClient({
         title="Market rankings"
         description={`National leaderboards from Propo's property market database. Leaderboards prefer suburbs with at least ${LEADERBOARD_MIN_CONFIDENCE}% confidence; movers require ${RANKINGS_MIN_CONFIDENCE}%.`}
       />
-
-      <LensSwitcher value={lens} onChange={setLens} label="Show" />
 
       <Tabs
         value={tab}

@@ -126,4 +126,5 @@ Same session: segmented lens control, rankings/city/compare polish, invest home 
 
 - [2026-07-05-user-lens-plan.md](./2026-07-05-user-lens-plan.md) — full metric matrix and phased plan  
 - [2026-07-03-land-mode-shipped.md](./2026-07-03-land-mode-shipped.md) — land mode precedent  
-- [2026-07-04-brand-seo-design-doc.md](./2026-07-04-brand-seo-design-doc.md) — design system (`web/DESIGN.md`)
+- [2026-07-04-brand-seo-design-doc.md](./2026-07-04-brand-seo-design-doc.md) — design system entry point  
+- **`web/DESIGN.md`** — segmented lens control, accents, persistence (updated 2026-07-05)

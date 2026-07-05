@@ -12,6 +12,7 @@ import {
   // TrendingUp,
 } from "lucide-react";
 
+import { GlobalLensSwitcher } from "@/components/layout/global-lens-switcher";
 import { PinTray } from "@/components/layout/pin-tray";
 import { DataFreshnessPill } from "@/components/layout/data-freshness-pill";
 import { PropoLogomark } from "@/components/brand/propo-logomark";
@@ -45,6 +46,10 @@ export function AppSidebar() {
       </div>
 
       <AppSidebarNav />
+
+      <div className="border-t border-border/80 px-4 py-4">
+        <GlobalLensSwitcher />
+      </div>
 
       <div className="border-t border-border/80 p-4 space-y-3">
         <DataFreshnessPill className="w-full text-center text-[10px]" />

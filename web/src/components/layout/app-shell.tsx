@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation";
 
 import { AppSidebar } from "@/components/layout/app-sidebar";
+import { LensProvider } from "@/components/providers/lens-provider";
 import { AnalyticsConsentBanner } from "@/components/analytics/consent-banner";
 import { GoogleAnalytics } from "@/components/analytics/google-analytics";
 import { AppFooter, SiteHero } from "@/components/layout/site-chrome";
@@ -24,6 +25,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   const showCompactHero = citySlug != null;
 
   return (
+    <LensProvider>
     <div className="flex min-h-screen">
       <div className="print:hidden">
         <AppSidebar />
@@ -60,5 +62,6 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         </div>
       </div>
     </div>
+    </LensProvider>
   );
 }

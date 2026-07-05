@@ -4,18 +4,17 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { Search } from "lucide-react";
 
-import { LensSwitcher } from "@/components/filters/lens-switcher";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { CityListRow } from "@/components/mobile/city-list-row";
 import { cityCardSubtitle } from "@/components/mobile/city-stats-grid";
-import { useLens } from "@/hooks/use-lens";
+import { useGlobalLens } from "@/components/providers/lens-provider";
 import { cityListingTotal, sortCitiesByMarketSize } from "@/lib/geo";
 import { cityPath } from "@/lib/slug";
 import type { CityMetric } from "@/lib/types";
 
 export function CitiesDirectoryClient({ cities }: { cities: CityMetric[] }) {
-  const { lens, setLens } = useLens("rent", { analyticsSource: "cities" });
+  const { lens } = useGlobalLens();
   const [query, setQuery] = useState("");
 
   const sorted = useMemo(() => sortCitiesByMarketSize(cities), [cities]);
@@ -28,8 +27,6 @@ export function CitiesDirectoryClient({ cities }: { cities: CityMetric[] }) {
 
   return (
     <div className="space-y-6">
-      <LensSwitcher value={lens} onChange={setLens} label="Show" />
-
       <div className="relative max-w-md">
         <Search className="absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted-foreground" />
         <Input
