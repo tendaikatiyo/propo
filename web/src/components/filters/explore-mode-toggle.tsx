@@ -6,7 +6,6 @@ import {
   EXPLORE_MODES,
   modeIntentLabel,
   modeLabel,
-  RESIDENTIAL_EXPLORE_MODES,
 } from "@/lib/mode";
 import { MODE_ACCENT } from "@/lib/mode-accent";
 import type { ExploreMode } from "@/lib/types";
@@ -15,7 +14,7 @@ import { cn } from "@/lib/utils";
 type ExploreModeToggleProps = {
   value: ExploreMode;
   onChange: (mode: ExploreMode, defaultBudget: number) => void;
-  /** intent = home copy; short = separate pills; segmented = residential bar + land chip */
+  /** intent = home copy; short = separate pills; segmented = unified 4-way control */
   variant?: "intent" | "short" | "segmented";
   className?: string;
 };
@@ -26,45 +25,30 @@ function ExploreModeSegmented({
   className,
 }: Pick<ExploreModeToggleProps, "value" | "onChange" | "className">) {
   return (
-    <div className={cn("flex flex-wrap items-center gap-2", className)}>
-      <div
-        role="group"
-        aria-label="Residential focus"
-        className="inline-flex w-full gap-1 overflow-visible rounded-xl bg-muted p-1 sm:w-auto sm:min-w-[min(100%,18rem)]"
-      >
-        {RESIDENTIAL_EXPLORE_MODES.map((mode) => {
-          const active = value === mode;
-          return (
-            <button
-              key={mode}
-              type="button"
-              aria-pressed={active}
-              onClick={() => onChange(mode, defaultBudgetForMode(mode))}
-              className={cn(
-                "flex-1 rounded-lg px-3 py-2 text-sm font-medium whitespace-nowrap transition-colors",
-                active
-                  ? cn(MODE_ACCENT[mode].chip, "shadow-sm")
-                  : "text-muted-foreground hover:text-foreground"
-              )}
-            >
-              {modeLabel(mode)}
-            </button>
-          );
-        })}
-      </div>
-      <button
-        type="button"
-        aria-pressed={value === "land"}
-        onClick={() => onChange("land", defaultBudgetForMode("land"))}
-        className={cn(
-          "shrink-0 rounded-xl px-4 py-2 text-sm font-medium transition-colors",
-          value === "land"
-            ? cn(MODE_ACCENT.land.chip, "shadow-sm")
-            : "border border-border bg-card text-muted-foreground hover:border-foreground/20 hover:text-foreground"
-        )}
-      >
-        {modeLabel("land")}
-      </button>
+    <div
+      role="group"
+      aria-label="Focus"
+      className={cn("grid grid-cols-4 gap-1 rounded-xl bg-muted p-1", className)}
+    >
+      {EXPLORE_MODES.map((mode) => {
+        const active = value === mode;
+        return (
+          <button
+            key={mode}
+            type="button"
+            aria-pressed={active}
+            onClick={() => onChange(mode, defaultBudgetForMode(mode))}
+            className={cn(
+              "rounded-lg px-1.5 py-2 text-center text-xs font-medium transition-colors sm:px-2.5 sm:text-sm",
+              active
+                ? cn(MODE_ACCENT[mode].chip, "shadow-sm")
+                : "text-muted-foreground hover:text-foreground"
+            )}
+          >
+            {modeLabel(mode)}
+          </button>
+        );
+      })}
     </div>
   );
 }
