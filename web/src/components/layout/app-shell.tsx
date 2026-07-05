@@ -8,8 +8,10 @@ import { AnalyticsConsentBanner } from "@/components/analytics/consent-banner";
 import { GoogleAnalytics } from "@/components/analytics/google-analytics";
 import { AppFooter, SiteHero } from "@/components/layout/site-chrome";
 import { OnboardingTour } from "@/components/onboarding/onboarding-tour";
+import { MobileCompareBar } from "@/components/mobile/mobile-compare-bar";
 import { MobileTabBar } from "@/components/mobile/mobile-tab-bar";
 import { MobileTopBar } from "@/components/mobile/mobile-top-bar";
+import { ScrollToTopOnNavigate } from "@/components/layout/scroll-to-top-on-navigate";
 import { heroImageForCitySlug } from "@/lib/hero";
 import { cn } from "@/lib/utils";
 
@@ -31,6 +33,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         <AppSidebar />
       </div>
       <div className="flex min-h-screen flex-1 flex-col lg:pl-60 print:pl-0">
+        <ScrollToTopOnNavigate />
         <MobileTopBar />
         {showCompactHero ? (
           <div className="print:hidden">
@@ -51,6 +54,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           <AppFooter />
         </div>
         <div className="print:hidden">
+          <MobileCompareBar />
           <MobileTabBar />
         </div>
         <div className="print:hidden">

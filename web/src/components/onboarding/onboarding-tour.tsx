@@ -9,31 +9,36 @@ const MOBILE_STEPS: TourStepConfig[] = [
   {
     target: "hero",
     title: "Welcome to propo",
-    body: "Set your rent or buy budget to discover suburbs across Zimbabwe that match what you can afford.",
+    body: "Choose rent, buy, land, or invest — then set your budget to discover suburbs across Zimbabwe.",
     placement: "bottom",
   },
   {
     target: "nav-tabs",
     title: "Navigate the app",
-    body: "Use the tab bar to jump between Home, Explore, and Cities.",
+    body: "Use the tab bar to jump between Home, Explore, Cities, and Rankings.",
     placement: "top",
+  },
+  {
+    placement: "center",
+    title: "Change Focus",
+    body: "Tap the Focus chip in the top bar (Rent, Buy, Land, Invest) to switch what metrics you see everywhere.",
   },
   {
     target: "menu-button",
     title: "Compare suburbs",
-    body: "Open the menu to see pinned suburbs and compare up to 3 markets side by side.",
+    body: "Pin up to 3 suburbs from any table or card. With 2+ pins, use the Compare bar above the tab bar or open the menu.",
     placement: "bottom",
   },
   {
     target: "menu-button",
-    title: "Filters",
-    body: "In the menu, expand Filters to set budget, city, and property type — then jump straight to Explore.",
+    title: "Explore filters",
+    body: "In the menu, expand Explore filters to set budget, city, and property type — then jump to Explore.",
     placement: "bottom",
   },
   {
     placement: "center",
     title: "You're all set",
-    body: "Pin suburbs from Explore or city pages, compare them in the menu, and dig into listings on suburb profiles.",
+    body: "Browse cities, pin suburbs, compare markets, and check active listings on suburb profiles.",
   },
 ];
 
@@ -41,14 +46,19 @@ const DESKTOP_STEPS: TourStepConfig[] = [
   {
     target: "hero",
     title: "Welcome to propo",
-    body: "Set your rent or buy budget to discover suburbs across Zimbabwe that match what you can afford.",
+    body: "Choose rent, buy, land, or invest on the home hero — then set your budget to find affordable suburbs.",
     placement: "bottom",
   },
   {
     target: "nav-sidebar",
     title: "Navigate the app",
-    body: "Use the sidebar to move between Home, Explore, Cities, and more.",
+    body: "Use the sidebar to move between Home, Explore, Cities, Compare, and Rankings.",
     placement: "right",
+  },
+  {
+    placement: "center",
+    title: "Global Focus",
+    body: "On every page except Home, use Focus in the sidebar to switch between rent, buy, land, and invest views.",
   },
   {
     target: "pin-tray",
@@ -59,7 +69,7 @@ const DESKTOP_STEPS: TourStepConfig[] = [
   {
     placement: "center",
     title: "Filters on Explore",
-    body: "On the Explore page, use the left filter panel to narrow suburbs by budget, city, property type, and bedrooms.",
+    body: "On Explore, use the left filter panel for budget, city, property type, and data-quality options.",
   },
   {
     placement: "center",

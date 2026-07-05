@@ -99,7 +99,7 @@ export function SuburbProfile({
   const confidenceMode = lens === "buy" ? "buy" : "rent";
 
   return (
-    <div className="space-y-8 pb-20 lg:pb-0">
+    <div className="space-y-8 pb-28 lg:pb-0">
       <BackLink href={cityPath(market.city, { mode: lens })} label={`Back to ${market.city}`} />
 
       <div className="flex flex-wrap items-start justify-between gap-4">

@@ -75,7 +75,7 @@ export function LandSuburbList({ markets }: { markets: LandMetric[] }) {
             className="flex min-h-[68px] items-center gap-2 px-3 py-3"
           >
             <TrackedSuburbLink
-              href={suburbPath(market.city, market.suburb)}
+              href={suburbPath(market.city, market.suburb, { mode: "land" })}
               tracking={{
                 marketId: market.market_id,
                 city: market.city,

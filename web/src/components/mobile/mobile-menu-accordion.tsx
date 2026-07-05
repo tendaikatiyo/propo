@@ -8,10 +8,12 @@ import { motionRow } from "@/lib/motion";
 
 export function MobileMenuAccordion({
   title,
+  description,
   defaultOpen = false,
   children,
 }: {
   title: string;
+  description?: string;
   defaultOpen?: boolean;
   children: React.ReactNode;
 }) {
@@ -24,11 +26,18 @@ export function MobileMenuAccordion({
         onClick={() => setOpen((v) => !v)}
         className={cn(
           motionRow,
-          "flex w-full min-h-[44px] items-center justify-between px-4 py-3.5 text-left active:bg-muted/80"
+          "flex w-full min-h-[44px] items-center justify-between gap-3 px-4 py-3.5 text-left active:bg-muted/80"
         )}
         aria-expanded={open}
       >
-        <span className="font-heading text-[15px] font-medium">{title}</span>
+        <span className="min-w-0 flex-1">
+          <span className="block font-heading text-[15px] font-medium">{title}</span>
+          {description ? (
+            <span className="mt-0.5 block text-[12px] text-muted-foreground">
+              {description}
+            </span>
+          ) : null}
+        </span>
         <ChevronDown
           className={cn(
             "size-4 shrink-0 text-muted-foreground transition-transform duration-200",

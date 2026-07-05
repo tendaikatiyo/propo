@@ -7,6 +7,7 @@ import {
   useEffect,
   useMemo,
   useRef,
+  useState,
   useSyncExternalStore,
   Suspense,
 } from "react";
@@ -14,8 +15,9 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 import { trackLensChange } from "@/lib/analytics/track";
 import type { LensChangePayload } from "@/lib/analytics/types";
+import { budgetForMode } from "@/lib/explore";
 import { LENS_STORAGE_KEY } from "@/lib/lens";
-import { parseExploreMode } from "@/lib/mode";
+import { defaultBudgetForMode, parseExploreMode } from "@/lib/mode";
 import type { ExploreMode } from "@/lib/types";
 
 const LENS_STORAGE_EVENT = "propo-lens-storage";
@@ -57,7 +59,8 @@ const LensContext = createContext<LensContextValue | null>(null);
 function replaceLensInUrl(
   pathname: string,
   searchParams: URLSearchParams,
-  next: ExploreMode
+  next: ExploreMode,
+  previous: ExploreMode
 ): string {
   const params = new URLSearchParams(searchParams.toString());
   if (next === "rent") {
@@ -65,14 +68,71 @@ function replaceLensInUrl(
   } else {
     params.set("mode", next);
   }
+
+  if (pathname === "/explore" && next !== previous) {
+    const budgetParam = Number(params.get("budget"));
+    const rawBudget =
+      Number.isFinite(budgetParam) && budgetParam > 0
+        ? budgetParam
+        : defaultBudgetForMode(previous);
+    const newBudget = budgetForMode(next, rawBudget);
+    if (newBudget !== defaultBudgetForMode(next)) {
+      params.set("budget", String(newBudget));
+    } else {
+      params.delete("budget");
+    }
+    if (next === "land") {
+      params.delete("type");
+      params.delete("bedroom");
+    } else if (
+      (next === "buy" || next === "invest") &&
+      params.get("type") === "room"
+    ) {
+      params.delete("type");
+      params.delete("bedroom");
+    }
+  }
+
   const qs = params.toString();
   return qs ? `${pathname}?${qs}` : pathname;
 }
 
-function LensProviderInner({ children }: { children: React.ReactNode }) {
+type LensSearchParamsBridgeProps = {
+  onSerializedChange: (serialized: string) => void;
+};
+
+/** Isolated boundary — only this suspends; shell children keep rendering. */
+function LensSearchParamsBridge({ onSerializedChange }: LensSearchParamsBridgeProps) {
   const searchParams = useSearchParams();
+  const serialized = searchParams.toString();
+
+  useEffect(() => {
+    onSerializedChange(serialized);
+  }, [serialized, onSerializedChange]);
+
+  return null;
+}
+
+function useMounted(): boolean {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  return mounted;
+}
+
+function LensProviderCore({ children }: { children: React.ReactNode }) {
   const router = useRouter();
   const pathname = usePathname();
+  const mounted = useMounted();
+  const [paramsSerialized, setParamsSerialized] = useState("");
+  const searchParams = useMemo(
+    () => new URLSearchParams(paramsSerialized),
+    [paramsSerialized]
+  );
+  const onSerializedChange = useCallback((serialized: string) => {
+    setParamsSerialized((prev) => (prev === serialized ? prev : serialized));
+  }, []);
   const storedLens = useSyncExternalStore(
     subscribeToLensStorage,
     readStoredLens,
@@ -81,31 +141,38 @@ function LensProviderInner({ children }: { children: React.ReactNode }) {
   const lensRef = useRef<ExploreMode>("rent");
   const syncedStoredLens = useRef(false);
 
+  useEffect(() => {
+    syncedStoredLens.current = false;
+  }, [pathname]);
+
   const lens = useMemo(() => {
+    if (!mounted) return "rent";
     const fromUrl = searchParams.get("mode");
     if (fromUrl) return parseExploreMode(fromUrl);
     return storedLens ?? "rent";
-  }, [searchParams, storedLens]);
+  }, [mounted, searchParams, storedLens]);
 
   useEffect(() => {
     lensRef.current = lens;
   }, [lens]);
 
   useEffect(() => {
+    if (!mounted) return;
     writeStoredLens(lens);
-  }, [lens]);
+  }, [lens, mounted]);
 
   useEffect(() => {
+    if (!mounted) return;
     if (syncedStoredLens.current) return;
     if (searchParams.get("mode")) return;
     if (storedLens === "rent" || storedLens == null) return;
 
     syncedStoredLens.current = true;
     router.replace(
-      replaceLensInUrl(pathname, searchParams, storedLens),
+      replaceLensInUrl(pathname, searchParams, storedLens, lensRef.current),
       { scroll: false }
     );
-  }, [pathname, router, searchParams, storedLens]);
+  }, [mounted, pathname, router, searchParams, storedLens]);
 
   const setLens = useCallback(
     (next: ExploreMode, options?: { source?: LensChangePayload["source"] }) => {
@@ -115,29 +182,28 @@ function LensProviderInner({ children }: { children: React.ReactNode }) {
         trackLensChange({ lens: next, previousLens: previous, source });
       }
       writeStoredLens(next);
-      router.replace(replaceLensInUrl(pathname, searchParams, next), {
-        scroll: false,
-      });
+      router.replace(
+        replaceLensInUrl(pathname, searchParams, next, lensRef.current),
+        { scroll: false }
+      );
     },
     [pathname, router, searchParams]
   );
 
   const value = useMemo(() => ({ lens, setLens }), [lens, setLens]);
 
-  return <LensContext.Provider value={value}>{children}</LensContext.Provider>;
+  return (
+    <LensContext.Provider value={value}>
+      <Suspense fallback={null}>
+        <LensSearchParamsBridge onSerializedChange={onSerializedChange} />
+      </Suspense>
+      {children}
+    </LensContext.Provider>
+  );
 }
 
-const FALLBACK_LENS: LensContextValue = {
-  lens: "rent",
-  setLens: () => {},
-};
-
 export function LensProvider({ children }: { children: React.ReactNode }) {
-  return (
-    <Suspense fallback={<LensContext.Provider value={FALLBACK_LENS}>{children}</LensContext.Provider>}>
-      <LensProviderInner>{children}</LensProviderInner>
-    </Suspense>
-  );
+  return <LensProviderCore>{children}</LensProviderCore>;
 }
 
 export function useGlobalLens(): LensContextValue {
@@ -158,11 +224,13 @@ export function useLens(
 
 /** Read stored lens without URL — prefer useGlobalLens in app shell. */
 export function useStoredLens(defaultLens: ExploreMode = "rent"): ExploreMode {
+  const mounted = useMounted();
   const storedLens = useSyncExternalStore(
     subscribeToLensStorage,
     readStoredLens,
     () => null
   );
+  if (!mounted) return defaultLens;
   return storedLens ?? defaultLens;
 }
 

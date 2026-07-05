@@ -10,6 +10,7 @@ import { liquidGlassPillClass } from "@/lib/liquid-glass";
 import { motionPress } from "@/lib/motion";
 import { isLandMode, modeLabel } from "@/lib/mode";
 import { MODE_ACCENT } from "@/lib/mode-accent";
+import { mobileDockBottom } from "@/lib/mobile-dock";
 import type { ExploreMode, PropertyType } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
@@ -62,7 +63,7 @@ export function HomeBudgetBar({
         "pointer-events-none fixed inset-x-0 z-30 flex justify-center px-4 transition-all duration-300 ease-out lg:hidden",
         visible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
       )}
-      style={{ bottom: "calc(4.75rem + env(safe-area-inset-bottom))" }}
+      style={{ bottom: mobileDockBottom() }}
     >
       <Link
         href={buildExploreHref(mode, budget, propertyType)}

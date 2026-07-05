@@ -28,7 +28,7 @@ export function ExplorePageClient() {
       <BackLink href="/" label="Back to home" />
       <PageHeader
         title="Explore suburbs"
-        description="Filter by rent or buy budget, city, and property type to find markets that fit."
+        description="Filter by budget, city, and property type. Use Focus (sidebar or top bar) to switch between rent, buy, land, and invest."
       />
       <Suspense
         fallback={

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { X } from "lucide-react";
 
+import { useGlobalLens } from "@/components/providers/lens-provider";
 import { buttonVariants } from "@/components/ui/button";
 import { Button } from "@/components/ui/button";
 import { usePinnedMarkets } from "@/hooks/use-pinned-markets";
@@ -13,7 +14,11 @@ import { cn } from "@/lib/utils";
 
 export function MobileComparePanel({ onNavigate }: { onNavigate?: () => void }) {
   const { pins, removePin } = usePinnedMarkets();
+  const { lens } = useGlobalLens();
   const canCompare = pins.length >= 2;
+
+  const compareHref =
+    lens === "rent" ? "/compare" : `/compare?mode=${encodeURIComponent(lens)}`;
 
   return (
     <section className="space-y-3">
@@ -45,7 +50,9 @@ export function MobileComparePanel({ onNavigate }: { onNavigate?: () => void }) 
               className="flex items-center gap-2 border-b border-border/40 px-4 py-3 last:border-b-0"
             >
               <Link
-                href={suburbPath(pin.city, pin.suburb)}
+                href={suburbPath(pin.city, pin.suburb, {
+                  mode: pin.pinnedFromMode ?? lens,
+                })}
                 className="min-w-0 flex-1"
                 onClick={onNavigate}
               >
@@ -70,7 +77,7 @@ export function MobileComparePanel({ onNavigate }: { onNavigate?: () => void }) 
       )}
 
       <Link
-        href="/compare"
+        href={compareHref}
         onClick={onNavigate}
         aria-disabled={!canCompare}
         className={buttonVariants({

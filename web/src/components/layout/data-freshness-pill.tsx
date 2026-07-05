@@ -1,6 +1,6 @@
 "use client";
 
-import { useQuery } from "@tanstack/react-query";
+import { useEffect, useState } from "react";
 
 import { formatDataFreshness } from "@/lib/data-freshness";
 import { cn } from "@/lib/utils";
@@ -18,20 +18,27 @@ export function DataFreshnessPill({
   className?: string;
   prefix?: string;
 }) {
-  const { data } = useQuery({
-    queryKey: ["data-meta"],
-    queryFn: fetchMeta,
-    staleTime: 60 * 60 * 1000,
-  });
+  const [label, setLabel] = useState<string | null>(null);
 
-  if (!data?.updatedAt) return null;
+  useEffect(() => {
+    let cancelled = false;
+    fetchMeta()
+      .then((data) => {
+        if (cancelled || !data.updatedAt) return;
+        setLabel(formatDataFreshness(data.updatedAt));
+      })
+      .catch(() => {});
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
-  const freshness = formatDataFreshness(data.updatedAt);
+  if (!label) return null;
 
   return (
     <span className={cn("text-xs text-muted-foreground", className)}>
       {prefix ? `${prefix} · ` : null}
-      {freshness}
+      {label}
     </span>
   );
 }

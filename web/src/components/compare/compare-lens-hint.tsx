@@ -21,12 +21,12 @@ export function compareLensHint(
   if (!pinsPinnedFromOtherLens(pins, filters.mode)) return null;
 
   if (filters.mode === "rent") {
-    return "Some pinned suburbs were saved from another view. Switch Focus to Invest for yield and sale metrics.";
+    return "Some pinned suburbs were saved from another view. Switch Focus to Invest (sidebar or menu) for yield and sale metrics.";
   }
   if (filters.mode === "buy") {
-    return "Some pinned suburbs were saved from another view. Switch Focus to Invest for yield and rent metrics.";
+    return "Some pinned suburbs were saved from another view. Switch Focus to Invest (sidebar or menu) for yield and rent metrics.";
   }
-  return "Pinned suburbs may have been saved from another view — metrics follow the active Focus above.";
+  return "Pinned suburbs may have been saved from another view — metrics follow the active Focus in the sidebar or menu.";
 }
 
 export function CompareLensHint({ filters }: { filters: CompareFilters }) {

@@ -274,14 +274,14 @@ Pill shape, mono uppercase at 11px.
 
 | Control | Pattern |
 | --- | --- |
-| **User lens (segmented)** | Rent · Buy · Invest in one `bg-muted` track; **Land** as separate chip. Active segment uses `MODE_ACCENT` colours (`web/src/lib/mode-accent.ts`). Used on explore, city, suburb, rankings, compare via `LensSwitcher`. |
-| **Home hero focus** | **Intent** variant only — 2×2 glass pills (“I'm renting”, “I'm buying land”, etc.). Not segmented. |
-| **Explore mode toggle** | `ExploreModeToggle` variants: `segmented` (data surfaces), `intent` (home), `short` (legacy separate pills) |
-| **Lens persistence** | URL `?mode=rent\|buy\|land\|invest` (rent omits param); `localStorage` key `propo_lens`; bare suburb URLs default **rent** on server |
+| **Global Focus** | Rent · Buy · Invest in one `bg-muted` track; **Land** as separate chip. Active segment uses `MODE_ACCENT` colours (`web/src/lib/mode-accent.ts`). **Desktop:** sidebar (`GlobalLensSwitcher`, hidden on home). **Mobile:** top-bar chip + menu drawer. |
+| **Home hero focus** | **Intent** variant only — 2×2 glass pills (“I'm renting”, “I'm buying land”, etc.). Primary lens control on `/`; sidebar Focus hidden on home. |
+| **Explore mode toggle** | `ExploreModeToggle` variants: `segmented` (global Focus), `intent` (home), `short` (legacy) |
+| **Lens persistence** | URL `?mode=rent\|buy\|land\|invest` (rent omits param); `localStorage` key `propo_lens`; bare suburb URLs default **rent** on server; internal links should pass `?mode=` |
 | **Budget slider** | Mobile: +/- steppers; desktop: input + slider |
 | **Property type** | Toggle button group |
 | **City combobox** | Search with listing counts (mode-aware via `cityListingTotal`) |
-| **Filter panel label** | `caption-label` — **Focus** on explore/city/suburb/rankings/compare; **Property type** below |
+| **Filter panel label** | Explore sidebar: budget, city, property type (Focus is global, not in panel) |
 
 ### User lens (audience modes)
 
@@ -298,7 +298,9 @@ Four lenses share one dataset; each surface shows metrics for the active lens on
 
 **Invest entry:** `/?mode=invest` and `next.config` redirect `/invest` → home; sidebar Invest nav **commented out** (soft launch).
 
-**Compare:** inherits last lens from `propo_lens` when `/compare` has no `?mode=`. Pins store `pinnedFromMode`; hint when pins differ from active lens.
+**Compare:** inherits last lens from `propo_lens` when `/compare` has no `?mode=`. Pins store `pinnedFromMode`; hint when pins differ from active lens. Mobile: floating Compare CTA when ≥2 pins.
+
+**Mobile Focus:** `MobileFocusChip` in top bar opens bottom sheet; menu drawer also has `GlobalLensSwitcher`.
 
 **Rankings:** Leaderboards + Movers tabs only; land leaderboards via **Land** lens (not a separate Land tab).
 
@@ -398,8 +400,8 @@ Avoid: “Find your dream home”, portal language, agency CTAs.
 | City / footer chrome | `src/components/layout/site-chrome.tsx` |
 | App shell | `src/components/layout/app-shell.tsx` |
 | Mobile chrome | `src/components/mobile/` |
-| User lens helpers | `src/lib/lens.ts`, `src/hooks/use-lens.ts` |
-| Lens UI | `src/components/filters/lens-switcher.tsx`, `explore-mode-toggle.tsx` |
+| User lens helpers | `src/lib/lens.ts`, `src/components/providers/lens-provider.tsx` |
+| Lens UI | `src/components/layout/global-lens-switcher.tsx`, `src/components/mobile/mobile-focus-chip.tsx`, `explore-mode-toggle.tsx` |
 | Mode accents | `src/lib/mode-accent.ts` |
 | Footer orbs | `src/components/ui/footer-orbs.tsx` |
 | Photo credits | `PHOTO_CREDITS.md` |

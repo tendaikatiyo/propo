@@ -4,9 +4,12 @@ import { ExploreModeToggle } from "@/components/filters/explore-mode-toggle";
 import { useGlobalLens } from "@/components/providers/lens-provider";
 export function GlobalLensSwitcher({
   showLabel = true,
+  compact = false,
   className,
 }: {
   showLabel?: boolean;
+  /** Shorter helper for mobile sheets */
+  compact?: boolean;
   className?: string;
 }) {
   const { lens, setLens } = useGlobalLens();
@@ -20,7 +23,9 @@ export function GlobalLensSwitcher({
         onChange={(mode) => setLens(mode, { source: "global" })}
       />
       <p className="mt-2 text-xs text-muted-foreground">
-        Applies across explore, cities, compare, and rankings.
+        {compact
+          ? "Rent, buy, land, and invest views share this setting."
+          : "Applies across explore, cities, compare, and rankings."}
       </p>
     </div>
   );

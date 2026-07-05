@@ -57,7 +57,11 @@ export function MobileMenuDrawer({
           <MobileComparePanel onNavigate={close} />
 
           <div data-tour="filters">
-            <MobileMenuAccordion title="Filters" defaultOpen={false}>
+            <MobileMenuAccordion
+              title="Explore filters"
+              description="Opens Explore with budget, city, and property type."
+              defaultOpen={false}
+            >
               <ExploreFilterPanel targetPath="/explore" />
             </MobileMenuAccordion>
           </div>

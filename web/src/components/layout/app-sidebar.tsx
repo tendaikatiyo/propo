@@ -32,6 +32,9 @@ const NAV_ITEMS = [
 ];
 
 export function AppSidebar() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+
   return (
     <aside className="fixed inset-y-0 left-0 z-40 hidden w-60 flex-col border-r border-border/80 bg-card lg:flex">
       <div className="flex h-16 items-center border-b border-border/80 px-5">
@@ -47,9 +50,11 @@ export function AppSidebar() {
 
       <AppSidebarNav />
 
-      <div className="border-t border-border/80 px-4 py-4">
-        <GlobalLensSwitcher />
-      </div>
+      {!isHome ? (
+        <div className="border-t border-border/80 px-4 py-4">
+          <GlobalLensSwitcher />
+        </div>
+      ) : null}
 
       <div className="border-t border-border/80 p-4 space-y-3">
         <DataFreshnessPill className="w-full text-center text-[10px]" />
