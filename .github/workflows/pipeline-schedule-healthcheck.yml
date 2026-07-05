@@ -1,0 +1,90 @@
+name: Pipeline schedule healthcheck
+
+on:
+  schedule:
+    # 05:45 UTC (07:45 CAT) — after daily pipeline (02:17 UTC, max 180 min) should finish
+    - cron: "45 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  actions: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    environment: production
+    env:
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+
+    steps:
+      - name: Verify scheduled daily pipeline ran
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+
+          CUTOFF=$(date -u -d '28 hours ago' +%Y-%m-%dT%H:%M:%SZ)
+          RUNS_JSON=$(gh api \
+            "/repos/${GITHUB_REPOSITORY}/actions/workflows/daily-pipeline.yml/runs?event=schedule&created=>=${CUTOFF}&per_page=10")
+
+          TOTAL=$(echo "${RUNS_JSON}" | jq '.total_count')
+          echo "Scheduled daily pipeline runs since ${CUTOFF}: ${TOTAL}"
+
+          if [ "${TOTAL}" -eq 0 ]; then
+            MSG="propo daily pipeline MISSED — no scheduled run in the last 28 hours"
+            echo "::error::${MSG}"
+            ALERT=1
+          else
+            IN_FLIGHT=$(echo "${RUNS_JSON}" | jq '[.workflow_runs[] | select(.status == "in_progress" or .status == "queued" or .status == "waiting" or .status == "pending")] | length')
+            if [ "${IN_FLIGHT}" -gt 0 ]; then
+              echo "Scheduled pipeline still in progress; skipping alert."
+              exit 0
+            fi
+
+            LATEST_STATUS=$(echo "${RUNS_JSON}" | jq -r '.workflow_runs[0].status')
+            LATEST_CONCLUSION=$(echo "${RUNS_JSON}" | jq -r '.workflow_runs[0].conclusion // "none"')
+            LATEST_ID=$(echo "${RUNS_JSON}" | jq -r '.workflow_runs[0].id')
+            LATEST_CREATED=$(echo "${RUNS_JSON}" | jq -r '.workflow_runs[0].created_at')
+
+            echo "Latest scheduled run: id=${LATEST_ID} created=${LATEST_CREATED} status=${LATEST_STATUS} conclusion=${LATEST_CONCLUSION}"
+
+            if [ "${LATEST_CONCLUSION}" = "success" ]; then
+              echo "Scheduled daily pipeline completed successfully."
+              exit 0
+            fi
+
+            MSG="propo daily pipeline FAILED or incomplete (scheduled run ${LATEST_ID}, conclusion=${LATEST_CONCLUSION})"
+            echo "::error::${MSG}"
+            ALERT=1
+          fi
+
+          if [ "${ALERT:-0}" -ne 1 ]; then
+            exit 0
+          fi
+
+          RUN_URL="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/workflows/daily-pipeline.yml"
+          FULL_MSG="${MSG}
+
+          Check: ${RUN_URL}"
+
+          if [ -z "${TELEGRAM_BOT_TOKEN}" ] || [ -z "${TELEGRAM_CHAT_ID}" ]; then
+            echo "::warning::Telegram secrets not set; alert not sent."
+            exit 1
+          fi
+
+          RESPONSE=$(curl -sS -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -d "chat_id=${TELEGRAM_CHAT_ID}" \
+            --data-urlencode "text=${FULL_MSG}")
+
+          echo "Telegram API response: ${RESPONSE}"
+
+          OK=$(echo "${RESPONSE}" | jq -r '.ok')
+          if [ "${OK}" != "true" ]; then
+            DESC=$(echo "${RESPONSE}" | jq -r '.description // "Unknown error"')
+            echo "::error::Telegram sendMessage failed: ${DESC}"
+            exit 1
+          fi
+
+          exit 1
