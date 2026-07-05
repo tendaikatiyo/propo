@@ -1,8 +1,9 @@
 # User lens plan — Rent · Buy · Land · Invest
 
 **Date:** 2026-07-05  
-**Status:** Phases 1–4 complete (2026-07-05)  
+**Status:** Phases 1–4 complete; global Focus + user-flow fixes shipped same day  
 **Shipped handover:** [2026-07-05-user-lens-shipped.md](./2026-07-05-user-lens-shipped.md)  
+**Flow fixes:** [2026-07-05-user-flow-fixes.md](./2026-07-05-user-flow-fixes.md)  
 **Trigger:** User feedback that renters see investor metrics (median sale, gross yield, land) on suburb and city profiles despite choosing Rent on home/explore.  
 **Goal:** One coherent **lens** across home → explore → city → suburb → compare → rankings, with a dedicated **Invest** path for yield/opportunity and full reports.
 
@@ -27,18 +28,18 @@ Propo’s dataset stays unified (`market_metrics`, `land_metrics`, trends, listi
 
 ## Shipped state (2026-07-05)
 
-All rows in the original gap table are addressed. Highlights:
+All rows in the original gap table are addressed. **Post-ship:** per-page switchers replaced by **global Focus**; mobile dock, hydration, and scroll fixes — see [2026-07-05-user-flow-fixes.md](./2026-07-05-user-flow-fixes.md).
 
 | Surface | Shipped behaviour |
 | ------- | ----------------- |
-| **Home** | 4-mode hero (intent pills); invest `?mode=` sync; yield teaser **below** in-budget matches |
-| **Explore** | Segmented **Focus**; lens-aware columns/cards/links |
-| **Cities** | `LensSwitcher`; land uses `land_metrics` table; movers follow lens |
-| **Suburb** | Lens-gated sections; rent report `?scope=rent`; invest full report CTA |
-| **Compare** | Lens-filtered metrics; last lens from `propo_lens`; mixed-pin hint |
-| **Rankings** | Lens switcher; Leaderboards + Movers only; land via Land lens |
+| **Home** | 4-mode hero (intent pills); global `setLens`; yield teaser **below** in-budget matches |
+| **Explore** | Lens-aware columns/cards; Focus is **global** (not in filter panel) |
+| **Cities** | Stats/tables/movers follow global lens; land uses `land_metrics` |
+| **Suburb** | Lens-gated sections; rent report `?scope=rent`; unified mobile action dock |
+| **Compare** | Lens from provider; property-type filters only; mixed-pin hint |
+| **Rankings** | Leaderboards + Movers follow global lens; land via Land lens |
 
-**UI:** Segmented control (Rent·Buy·Invest + Land chip) on data surfaces; home keeps intent copy. See `web/DESIGN.md`.
+**UI:** `GlobalLensSwitcher` (sidebar, hidden on home) + `MobileFocusChip`. Home keeps intent copy. See `web/DESIGN.md`.
 
 ---
 
@@ -405,7 +406,7 @@ Invest lens = everything today’s suburb profile shows for residential.
 
 | Event | Notes |
 | ----- | ----- |
-| `lens_change` | home, explore, profile switcher |
+| `lens_change` | `global`, `home`, explore, profile, cities, rankings |
 | `suburb_view` | include `lens` dimension (already have `mode` on some clicks) |
 | `report_export` | expect concentration in invest lens |
 | Bounce on suburb from rent explore | should drop after Phase 1 |
@@ -431,7 +432,8 @@ Invest lens = everything today’s suburb profile shows for residential.
 
 - `prompts/handovers/2026-07-03-land-mode-plan.md` — precedent for mode-specific profile sections  
 - `prompts/PROOF_OF_WORK.md` — product positioning  
-- `web/DESIGN.md` — lens UI patterns (segmented control, accents, persistence)
+- `web/DESIGN.md` — global Focus, mobile dock, lens persistence
+- `prompts/handovers/2026-07-05-user-flow-fixes.md` — mobile UX + hydration fixes
 
 ---
 

@@ -298,9 +298,23 @@ Four lenses share one dataset; each surface shows metrics for the active lens on
 
 **Invest entry:** `/?mode=invest` and `next.config` redirect `/invest` → home; sidebar Invest nav **commented out** (soft launch).
 
-**Compare:** inherits last lens from `propo_lens` when `/compare` has no `?mode=`. Pins store `pinnedFromMode`; hint when pins differ from active lens. Mobile: floating Compare CTA when ≥2 pins.
+**Compare:** inherits last lens from `propo_lens` when `/compare` has no `?mode=`. Pins store `pinnedFromMode`; hint when pins differ from active lens.
+
+**Mobile dock** (`web/src/lib/mobile-dock.ts`): one row above tab bar at `mobileDockBottom()` (tab 3.25rem + 8px gap + safe-area).
+
+| Context | UI |
+| --- | --- |
+| Suburb profile | `SuburbActionBar` — View listings · Compare (n) · Pin (global compare bar hidden) |
+| Other pages, ≥2 pins | `MobileCompareBar` |
+| Home (hero scrolled away) | `HomeBudgetBar` |
 
 **Mobile Focus:** `MobileFocusChip` in top bar opens bottom sheet; menu drawer also has `GlobalLensSwitcher`.
+
+**Navigation:** `ScrollToTopOnNavigate` resets scroll on pathname change (not query-only lens updates).
+
+**Lens hydration:** `LensProvider` renders **rent** until client mount, then applies URL + `localStorage` (avoids SSR mismatch). `LensSearchParamsBridge` is the only Suspense boundary — shell children stay under `QueryClientProvider`.
+
+**DataFreshnessPill:** client `useEffect` fetch to `/api/meta` (not React Query in layout chrome).
 
 **Rankings:** Leaderboards + Movers tabs only; land leaderboards via **Land** lens (not a separate Land tab).
 
@@ -399,9 +413,11 @@ Avoid: “Find your dream home”, portal language, agency CTAs.
 | Home hero | `src/components/home/home-landing-hero.tsx` |
 | City / footer chrome | `src/components/layout/site-chrome.tsx` |
 | App shell | `src/components/layout/app-shell.tsx` |
-| Mobile chrome | `src/components/mobile/` |
+| Mobile chrome | `src/components/mobile/` (`mobile-dock.ts` offsets in `src/lib/mobile-dock.ts`) |
+| Scroll on nav | `src/components/layout/scroll-to-top-on-navigate.tsx` |
 | User lens helpers | `src/lib/lens.ts`, `src/components/providers/lens-provider.tsx` |
 | Lens UI | `src/components/layout/global-lens-switcher.tsx`, `src/components/mobile/mobile-focus-chip.tsx`, `explore-mode-toggle.tsx` |
+| Suburb mobile dock | `src/components/mobile/suburb-action-bar.tsx` |
 | Mode accents | `src/lib/mode-accent.ts` |
 | Footer orbs | `src/components/ui/footer-orbs.tsx` |
 | Photo credits | `PHOTO_CREDITS.md` |

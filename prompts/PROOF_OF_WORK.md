@@ -75,9 +75,9 @@ Explicitly **not** a chat/listings aggregator; competes on structured intelligen
 
 ### Web app (Next.js 16, App Router)
 
-- **Explore:** Rent · Buy · Land · **Invest** lenses; segmented focus control; budget + property-type filters; lens-aware suburb tables and cards.
-- **Suburb profiles:** lens-gated metrics (renters never see yield/sale by default); rent summary vs full invest report; `?scope=rent` printable report.
-- **Cities, Compare, Rankings:** lens switcher on each; compare inherits last lens; rankings land via lens not tab.
+- **Explore:** Rent · Buy · Land · **Invest** lenses; **global Focus** (sidebar / mobile chip); budget + property-type filters; lens-aware tables and cards.
+- **Suburb profiles:** lens-gated metrics; rent summary vs full invest report; unified mobile action dock (`View listings` · `Compare` · Pin).
+- **Cities, Compare, Rankings:** follow global Focus (no per-page switcher); compare inherits last lens; rankings land via lens not tab.
 - **Land mode:** $/sqm from `land_metrics`; city land table uses `LandSuburbTable` (not residential columns).
 - **SEO:** 800+ URLs in sitemap, JSON-LD, Open Graph.
 - **About:** founder story; **Developers:** future API interest.
@@ -101,8 +101,8 @@ Explicitly **not** a chat/listings aggregator; competes on structured intelligen
 | F8 | Transparency (sample size, scope labels, methodology) | ✅ |
 | F9 | `market_id` on listings for reliable joins | ✅ |
 | F10 | Product analytics (consent + events API + Google Analytics) | ✅ |
-| F11 | User lens (Rent · Buy · Land · Invest) across home → rankings | ✅ |
-| + | Land mode, admin ops, GHA automation, About | ✅ |
+| F11 | User lens (Rent · Buy · Land · Invest) + global Focus across home → rankings | ✅ |
+| + | Land mode, admin ops, GHA automation, About, mobile dock / hydration polish | ✅ |
 
 ---
 
@@ -150,7 +150,7 @@ Everything shipped should strengthen these four — UI is the lens; the dataset 
 - *"Fair value isn't ML — it's transparent rules: listing price vs suburb median for the same segment, with confidence badges when sample size is thin."*
 - *"Land is a separate metrics table so residential medians aren't polluted by $/sqm stands."*
 - *"Production runs on Cloudflare Workers with Supabase; the Python ETL runs on a GitHub Actions cron with Telegram alerts at each stage."*
-- *"Renters and investors see different columns on the same suburb data — one lens in the URL, persisted in localStorage, so the product promise stays 'where can you afford' per audience."*
+- *"Renters and investors see different columns on the same suburb data — one global Focus in the sidebar (or mobile chip), persisted in localStorage and URL, so the product promise stays 'where can you afford' per audience."*
 
 ---
 
@@ -199,4 +199,4 @@ propo/
 
 ## Agent instructions
 
-Use this as source of truth for Propo. **External copy:** emphasize *proprietary / continuously updated property dataset* — avoid leading with "scraper" language. **Internal/technical docs** may reference ingest modules in `scraper/`. Do not invent features beyond F0–F11 + land mode + admin/automation/About. Latest handover: `prompts/handovers/2026-07-05-user-lens-shipped.md`.
+Use this as source of truth for Propo. **External copy:** emphasize *proprietary / continuously updated property dataset* — avoid leading with "scraper" language. **Internal/technical docs** may reference ingest modules in `scraper/`. Do not invent features beyond F0–F11 + land mode + admin/automation/About. Latest handovers: `prompts/handovers/2026-07-05-user-lens-shipped.md`, `prompts/handovers/2026-07-05-user-flow-fixes.md`.

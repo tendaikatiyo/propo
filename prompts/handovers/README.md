@@ -29,5 +29,5 @@ Chronological notes for agent/developer continuity between sessions.
 | 2026-07-04 | [2026-07-04-pipeline-ops-polish-telegram.md](./2026-07-04-pipeline-ops-polish-telegram.md) | GHA daily pipeline live; Telegram stage alerts; admin ingest runtime; logomark/motion/hero; land trends hidden; freshness pill datetime; hero credit removed; `/about` page |
 | 2026-07-04 | [2026-07-04-brand-seo-design-doc.md](./2026-07-04-brand-seo-design-doc.md) | SEO/OG copy → affordability framing; red hamburger pin badge; `web/DESIGN.md` Propo design system |
 | 2026-07-05 | [2026-07-05-user-lens-plan.md](./2026-07-05-user-lens-plan.md) | User lens product plan (Rent \| Buy \| Land \| Invest); metric matrix; Phases 1–4 spec |
-| 2026-07-05 | [2026-07-05-user-lens-shipped.md](./2026-07-05-user-lens-shipped.md) | **User lens shipped** (Phases 1–4); segmented control; city land table; compare last-lens; invest UX polish |
-| 2026-07-05 | [2026-07-05-user-flow-fixes.md](./2026-07-05-user-flow-fixes.md) | Global Focus UX fixes: mobile Focus chip, explore budget sync, link audit, compare CTA, copy/onboarding |
+| 2026-07-05 | [2026-07-05-user-lens-shipped.md](./2026-07-05-user-lens-shipped.md) | **User lens shipped** (Phases 1–4); global Focus; city land table; compare last-lens |
+| 2026-07-05 | [2026-07-05-user-flow-fixes.md](./2026-07-05-user-flow-fixes.md) | Mobile Focus chip, explore budget sync, mobile dock, scroll-to-top, lens hydration/SSR fixes |
