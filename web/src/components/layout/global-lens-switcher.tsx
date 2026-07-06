@@ -2,27 +2,37 @@
 
 import { ExploreModeToggle } from "@/components/filters/explore-mode-toggle";
 import { useGlobalLens } from "@/components/providers/lens-provider";
+import { cn } from "@/lib/utils";
 export function GlobalLensSwitcher({
   showLabel = true,
   compact = false,
+  comfortable = false,
   className,
 }: {
   showLabel?: boolean;
   /** Shorter helper for mobile sheets */
   compact?: boolean;
+  /** Larger segmented control for mobile sheets */
+  comfortable?: boolean;
   className?: string;
 }) {
   const { lens, setLens } = useGlobalLens();
 
   return (
-    <div className={className}>
-      {showLabel ? <p className="caption-label mb-2">Focus</p> : null}
+    <div className={cn("space-y-3", comfortable && "space-y-4", className)}>
+      {showLabel ? <p className="caption-label">Focus</p> : null}
       <ExploreModeToggle
         variant="segmented"
+        comfortable={comfortable}
         value={lens}
         onChange={(mode) => setLens(mode, { source: "global" })}
       />
-      <p className="mt-2 text-xs text-muted-foreground">
+      <p
+        className={cn(
+          "text-xs leading-relaxed text-muted-foreground",
+          comfortable && "text-sm"
+        )}
+      >
         {compact
           ? "Rent, buy, land, and invest views share this setting."
           : "Applies across explore, cities, compare, and rankings."}
