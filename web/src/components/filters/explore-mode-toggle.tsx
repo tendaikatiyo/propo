@@ -16,19 +16,26 @@ type ExploreModeToggleProps = {
   onChange: (mode: ExploreMode, defaultBudget: number) => void;
   /** intent = home copy; short = separate pills; segmented = unified 4-way control */
   variant?: "intent" | "short" | "segmented";
+  /** Larger touch targets for mobile sheets */
+  comfortable?: boolean;
   className?: string;
 };
 
 function ExploreModeSegmented({
   value,
   onChange,
+  comfortable = false,
   className,
-}: Pick<ExploreModeToggleProps, "value" | "onChange" | "className">) {
+}: Pick<ExploreModeToggleProps, "value" | "onChange" | "comfortable" | "className">) {
   return (
     <div
       role="group"
       aria-label="Focus"
-      className={cn("grid grid-cols-4 gap-1 rounded-xl bg-muted p-1", className)}
+      className={cn(
+        "grid grid-cols-4 gap-1 rounded-xl bg-muted p-1",
+        comfortable && "gap-1.5 rounded-2xl p-1.5",
+        className
+      )}
     >
       {EXPLORE_MODES.map((mode) => {
         const active = value === mode;
@@ -40,6 +47,8 @@ function ExploreModeSegmented({
             onClick={() => onChange(mode, defaultBudgetForMode(mode))}
             className={cn(
               "rounded-lg px-1.5 py-2 text-center text-xs font-medium transition-colors sm:px-2.5 sm:text-sm",
+              comfortable &&
+                "min-h-11 rounded-xl px-2 py-3 text-sm font-semibold sm:min-h-12 sm:px-3 sm:text-[15px]",
               active
                 ? cn(MODE_ACCENT[mode].chip, "shadow-sm")
                 : "text-muted-foreground hover:text-foreground"
@@ -57,10 +66,18 @@ export function ExploreModeToggle({
   value,
   onChange,
   variant = "intent",
+  comfortable = false,
   className,
 }: ExploreModeToggleProps) {
   if (variant === "segmented") {
-    return <ExploreModeSegmented value={value} onChange={onChange} className={className} />;
+    return (
+      <ExploreModeSegmented
+        value={value}
+        onChange={onChange}
+        comfortable={comfortable}
+        className={className}
+      />
+    );
   }
 
   const layoutClass =
