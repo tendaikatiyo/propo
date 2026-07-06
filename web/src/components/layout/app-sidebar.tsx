@@ -51,8 +51,8 @@ export function AppSidebar() {
       <AppSidebarNav />
 
       {!isHome ? (
-        <div className="border-t border-border/80 px-4 py-4">
-          <GlobalLensSwitcher />
+        <div className="border-t border-border/80 px-3 py-4">
+          <GlobalLensSwitcher toggleClassName="-mx-1.5 w-[calc(100%+0.75rem)]" />
         </div>
       ) : null}
 

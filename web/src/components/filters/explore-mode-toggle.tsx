@@ -46,7 +46,7 @@ function ExploreModeSegmented({
             aria-pressed={active}
             onClick={() => onChange(mode, defaultBudgetForMode(mode))}
             className={cn(
-              "rounded-lg px-1.5 py-2 text-center text-xs font-medium transition-colors sm:px-2.5 sm:text-sm",
+              "rounded-lg px-1 py-2 text-center text-xs font-medium transition-colors sm:px-1.5 sm:text-sm",
               comfortable &&
                 "min-h-11 rounded-xl px-2 py-3 text-sm font-semibold sm:min-h-12 sm:px-3 sm:text-[15px]",
               active

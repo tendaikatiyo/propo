@@ -10,6 +10,7 @@ export function GlobalLensSwitcher({
   /** Geist Sans heading for sheet/drawer; default is caption label */
   labelVariant = "caption",
   className,
+  toggleClassName,
 }: {
   showLabel?: boolean;
   /** Shorter helper for mobile sheets */
@@ -18,6 +19,7 @@ export function GlobalLensSwitcher({
   comfortable?: boolean;
   labelVariant?: "caption" | "display";
   className?: string;
+  toggleClassName?: string;
 }) {
   const { lens, setLens } = useGlobalLens();
 
@@ -37,6 +39,7 @@ export function GlobalLensSwitcher({
       <ExploreModeToggle
         variant="segmented"
         comfortable={comfortable}
+        className={toggleClassName}
         value={lens}
         onChange={(mode) => setLens(mode, { source: "global" })}
       />

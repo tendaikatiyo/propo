@@ -27,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={fontClassNames}>
-      <body className="min-h-screen">
+      <body className="min-h-screen" suppressHydrationWarning>
         <JsonLd data={siteJsonLd()} />
         <QueryProvider>
           <TooltipProvider>
