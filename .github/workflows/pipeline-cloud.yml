@@ -1,5 +1,9 @@
 name: Pipeline (no scrape)
 
+# Job timezone for logs and shell date output (data timestamps remain UTC in analytics).
+env:
+  TZ: Africa/Harare
+
 # Re-run ingest + analytics + Supabase sync without scraping.
 # Use after a local scrape, credential fixes, or when scraper IPs are blocked.
 on:

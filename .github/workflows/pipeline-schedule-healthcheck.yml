@@ -1,9 +1,14 @@
 name: Pipeline schedule healthcheck
 
+# Job TZ aligns shell logs with Africa/Harare. Cron uses timezone below (not UTC).
+env:
+  TZ: Africa/Harare
+
 on:
   schedule:
-    # 05:45 UTC (07:45 CAT) — after daily pipeline (02:17 UTC, max 180 min) should finish
-    - cron: "45 5 * * *"
+    # 07:45 — after daily pipeline (04:17, max 180 min) should finish
+    - cron: "45 7 * * *"
+      timezone: "Africa/Harare"
   workflow_dispatch:
 
 permissions:
@@ -24,6 +29,10 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
+
+          echo "Workflow TZ: ${TZ}"
+          echo "Local: $(date '+%Y-%m-%d %H:%M:%S %Z')"
+          echo "UTC:   $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
 
           CUTOFF=$(date -u -d '28 hours ago' +%Y-%m-%dT%H:%M:%SZ)
           RUNS_JSON=$(gh api \

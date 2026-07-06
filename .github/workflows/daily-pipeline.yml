@@ -1,9 +1,14 @@
 name: Daily pipeline
 
+# Job TZ aligns shell logs with Africa/Harare. Cron uses timezone below (not UTC).
+env:
+  TZ: Africa/Harare
+
 on:
   schedule:
-    # 02:17 UTC daily (04:17 CAT) — off the hour to avoid GitHub schedule drops at :00
-    - cron: "17 2 * * *"
+    # 04:17 daily — off the hour to avoid GitHub schedule drops at :00
+    - cron: "17 4 * * *"
+      timezone: "Africa/Harare"
   workflow_dispatch:
 
 concurrency:
@@ -26,6 +31,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Log job time
+        run: |
+          echo "Workflow TZ: ${TZ}"
+          echo "Local: $(date '+%Y-%m-%d %H:%M:%S %Z')"
+          echo "UTC:   $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
 
       - name: Set up Python
         uses: actions/setup-python@v5

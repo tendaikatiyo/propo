@@ -52,7 +52,7 @@ export function MobileMenuDrawer({
         </div>
 
         <div className="flex flex-col gap-6 px-5 py-6 pb-[max(1.5rem,env(safe-area-inset-bottom))]">
-          <GlobalLensSwitcher />
+          <GlobalLensSwitcher labelVariant="display" />
 
           <MobileComparePanel onNavigate={close} />
 

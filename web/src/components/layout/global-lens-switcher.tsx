@@ -7,6 +7,8 @@ export function GlobalLensSwitcher({
   showLabel = true,
   compact = false,
   comfortable = false,
+  /** Geist Sans heading for sheet/drawer; default is caption label */
+  labelVariant = "caption",
   className,
 }: {
   showLabel?: boolean;
@@ -14,13 +16,24 @@ export function GlobalLensSwitcher({
   compact?: boolean;
   /** Larger segmented control for mobile sheets */
   comfortable?: boolean;
+  labelVariant?: "caption" | "display";
   className?: string;
 }) {
   const { lens, setLens } = useGlobalLens();
 
   return (
     <div className={cn("space-y-3", comfortable && "space-y-4", className)}>
-      {showLabel ? <p className="caption-label">Focus</p> : null}
+      {showLabel ? (
+        <p
+          className={cn(
+            labelVariant === "display"
+              ? "font-heading text-xl font-medium tracking-[-0.02em] text-foreground"
+              : "caption-label"
+          )}
+        >
+          Focus
+        </p>
+      ) : null}
       <ExploreModeToggle
         variant="segmented"
         comfortable={comfortable}

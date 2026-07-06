@@ -45,7 +45,7 @@ export function MobileFocusChip({ onDark = false }: { onDark?: boolean }) {
           </div>
 
           <div className="flex items-center justify-between gap-4 px-5 pb-1 pt-3">
-            <SheetTitle className="font-display text-lg font-semibold tracking-[-0.02em]">
+            <SheetTitle className="font-heading text-xl font-medium tracking-[-0.02em] text-foreground">
               Focus
             </SheetTitle>
             <SheetClose

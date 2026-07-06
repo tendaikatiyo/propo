@@ -1,5 +1,8 @@
 name: Pipeline ingest only
 
+env:
+  TZ: Africa/Harare
+
 on:
   workflow_dispatch:
     inputs:
