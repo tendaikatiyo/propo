@@ -18,6 +18,8 @@ type ExploreModeToggleProps = {
   variant?: "intent" | "short" | "segmented";
   /** Larger touch targets for mobile sheets */
   comfortable?: boolean;
+  /** Subset of modes to show — defaults to all explore modes */
+  modes?: readonly ExploreMode[];
   className?: string;
 };
 
@@ -25,19 +27,31 @@ function ExploreModeSegmented({
   value,
   onChange,
   comfortable = false,
+  modes = EXPLORE_MODES,
   className,
-}: Pick<ExploreModeToggleProps, "value" | "onChange" | "comfortable" | "className">) {
+}: Pick<
+  ExploreModeToggleProps,
+  "value" | "onChange" | "comfortable" | "modes" | "className"
+>) {
+  const columnClass =
+    modes.length === 3
+      ? "grid-cols-3"
+      : modes.length === 2
+        ? "grid-cols-2"
+        : "grid-cols-4";
+
   return (
     <div
       role="group"
       aria-label="Focus"
       className={cn(
-        "grid grid-cols-4 gap-1 rounded-xl bg-muted p-1",
+        "grid gap-1 rounded-xl bg-muted p-1",
+        columnClass,
         comfortable && "gap-1.5 rounded-2xl p-1.5",
         className
       )}
     >
-      {EXPLORE_MODES.map((mode) => {
+      {modes.map((mode) => {
         const active = value === mode;
         return (
           <button
@@ -67,6 +81,7 @@ export function ExploreModeToggle({
   onChange,
   variant = "intent",
   comfortable = false,
+  modes = EXPLORE_MODES,
   className,
 }: ExploreModeToggleProps) {
   if (variant === "segmented") {
@@ -75,6 +90,7 @@ export function ExploreModeToggle({
         value={value}
         onChange={onChange}
         comfortable={comfortable}
+        modes={modes}
         className={className}
       />
     );
@@ -83,11 +99,13 @@ export function ExploreModeToggle({
   const layoutClass =
     variant === "intent"
       ? "grid grid-cols-2 gap-2 sm:flex sm:flex-wrap"
-      : "grid grid-cols-2 gap-2 sm:grid-cols-4";
+      : modes.length === 3
+        ? "grid grid-cols-3 gap-2"
+        : "grid grid-cols-2 gap-2 sm:grid-cols-4";
 
   return (
     <div className={cn(layoutClass, className)}>
-      {EXPLORE_MODES.map((mode) => (
+      {modes.map((mode) => (
         <Button
           key={mode}
           type="button"

@@ -18,6 +18,7 @@ import type { LensChangePayload } from "@/lib/analytics/types";
 import { budgetForMode } from "@/lib/explore";
 import { LENS_STORAGE_KEY } from "@/lib/lens";
 import { defaultBudgetForMode, parseExploreMode } from "@/lib/mode";
+import { parseContributionMode } from "@/lib/rent-reports";
 import type { ExploreMode } from "@/lib/types";
 
 const LENS_STORAGE_EVENT = "propo-lens-storage";
@@ -56,36 +57,41 @@ type LensContextValue = {
 
 const LensContext = createContext<LensContextValue | null>(null);
 
+function contributionLens(mode: ExploreMode): ExploreMode {
+  return mode === "invest" ? "rent" : mode;
+}
+
 function replaceLensInUrl(
   pathname: string,
   searchParams: URLSearchParams,
   next: ExploreMode,
   previous: ExploreMode
 ): string {
+  const resolvedNext = pathname === "/contribute" ? contributionLens(next) : next;
   const params = new URLSearchParams(searchParams.toString());
-  if (next === "rent") {
+  if (resolvedNext === "rent") {
     params.delete("mode");
   } else {
-    params.set("mode", next);
+    params.set("mode", resolvedNext);
   }
 
-  if (pathname === "/explore" && next !== previous) {
+  if (pathname === "/explore" && resolvedNext !== previous) {
     const budgetParam = Number(params.get("budget"));
     const rawBudget =
       Number.isFinite(budgetParam) && budgetParam > 0
         ? budgetParam
         : defaultBudgetForMode(previous);
-    const newBudget = budgetForMode(next, rawBudget);
-    if (newBudget !== defaultBudgetForMode(next)) {
+    const newBudget = budgetForMode(resolvedNext, rawBudget);
+    if (newBudget !== defaultBudgetForMode(resolvedNext)) {
       params.set("budget", String(newBudget));
     } else {
       params.delete("budget");
     }
-    if (next === "land") {
+    if (resolvedNext === "land") {
       params.delete("type");
       params.delete("bedroom");
     } else if (
-      (next === "buy" || next === "invest") &&
+      (resolvedNext === "buy" || resolvedNext === "invest") &&
       params.get("type") === "room"
     ) {
       params.delete("type");
@@ -148,9 +154,13 @@ function LensProviderCore({ children }: { children: React.ReactNode }) {
   const lens = useMemo(() => {
     if (!mounted) return "rent";
     const fromUrl = searchParams.get("mode");
-    if (fromUrl) return parseExploreMode(fromUrl);
-    return storedLens ?? "rent";
-  }, [mounted, searchParams, storedLens]);
+    if (fromUrl) {
+      const parsed = parseExploreMode(fromUrl);
+      return pathname === "/contribute" ? parseContributionMode(parsed) : parsed;
+    }
+    const stored = storedLens ?? "rent";
+    return pathname === "/contribute" ? parseContributionMode(stored) : stored;
+  }, [mounted, pathname, searchParams, storedLens]);
 
   useEffect(() => {
     lensRef.current = lens;
@@ -176,14 +186,15 @@ function LensProviderCore({ children }: { children: React.ReactNode }) {
 
   const setLens = useCallback(
     (next: ExploreMode, options?: { source?: LensChangePayload["source"] }) => {
+      const resolvedNext = pathname === "/contribute" ? contributionLens(next) : next;
       const previous = lensRef.current;
       const source = options?.source ?? "global";
-      if (previous !== next) {
-        trackLensChange({ lens: next, previousLens: previous, source });
+      if (previous !== resolvedNext) {
+        trackLensChange({ lens: resolvedNext, previousLens: previous, source });
       }
-      writeStoredLens(next);
+      writeStoredLens(resolvedNext);
       router.replace(
-        replaceLensInUrl(pathname, searchParams, next, lensRef.current),
+        replaceLensInUrl(pathname, searchParams, resolvedNext, lensRef.current),
         { scroll: false }
       );
     },

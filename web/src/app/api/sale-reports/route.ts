@@ -5,12 +5,12 @@ import {
   checkContributionRateLimits,
   getContributionHashes,
 } from "@/lib/contribution-server";
-import { parseRentReportPayload } from "@/lib/rent-reports";
+import { parseSaleReportPayload } from "@/lib/sale-reports";
 import {
-  findDuplicateRentReport,
-  marketExists,
-  resolveMarketId,
-} from "@/lib/rent-reports-server";
+  findDuplicateSaleReport,
+  resolveSaleMarketId,
+} from "@/lib/sale-reports-server";
+import { marketExists } from "@/lib/rent-reports-server";
 import {
   createAdminSupabaseClient,
   isSupabaseAdminConfigured,
@@ -24,7 +24,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Invalid request body." }, { status: 400 });
   }
 
-  const parsed = parseRentReportPayload(body);
+  const parsed = parseSaleReportPayload(body);
   if (!parsed.ok) {
     return NextResponse.json({ error: parsed.error }, { status: 400 });
   }
@@ -50,7 +50,7 @@ export async function POST(request: Request) {
     );
   }
 
-  const marketId = resolveMarketId(parsed.data.city, parsed.data.suburb);
+  const marketId = resolveSaleMarketId(parsed.data.city, parsed.data.suburb);
   const marketOk = await marketExists(parsed.data.city, parsed.data.suburb, marketId);
   if (!marketOk) {
     return NextResponse.json(
@@ -65,10 +65,10 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: rateLimitError }, { status: 429 });
   }
 
-  const isDuplicate = await findDuplicateRentReport({
+  const isDuplicate = await findDuplicateSaleReport({
     ipHash,
     marketId,
-    monthlyRent: parsed.data.monthlyRent,
+    salePrice: parsed.data.salePrice,
     bedrooms: parsed.data.bedrooms,
   });
   if (isDuplicate) {
@@ -78,26 +78,23 @@ export async function POST(request: Request) {
     );
   }
 
-  const { error } = await supabase.from("rent_reports").insert({
+  const { error } = await supabase.from("sale_reports").insert({
     market_id: marketId,
     city: parsed.data.city,
     suburb: parsed.data.suburb,
     property_type: parsed.data.propertyType,
     bedrooms: parsed.data.bedrooms,
-    monthly_rent: parsed.data.monthlyRent,
+    sale_price: parsed.data.salePrice,
     currency: "USD",
-    is_current_lease: parsed.data.isCurrentLease,
-    lease_started_at: parsed.data.leaseStartedAt
-      ? `${parsed.data.leaseStartedAt}-01`
-      : null,
-    furnished: parsed.data.furnished ?? null,
+    is_completed_sale: parsed.data.isCompletedSale,
+    sale_date: parsed.data.saleDate ? `${parsed.data.saleDate}-01` : null,
     ip_hash: ipHash,
     session_hash: sessionHash,
     status: "pending",
   });
 
   if (error) {
-    console.error("[rent-reports] insert failed:", error.message);
+    console.error("[sale-reports] insert failed:", error.message);
     return NextResponse.json(
       { error: "Could not save your report. Please try again later." },
       { status: 500 }

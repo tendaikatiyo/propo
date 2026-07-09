@@ -1,5 +1,8 @@
 import type { ExploreMode, MarketMetric } from "@/lib/types";
 
+export const CONTRIBUTION_MODES = ["rent", "buy", "land"] as const;
+export type ContributionMode = (typeof CONTRIBUTION_MODES)[number];
+
 export const CONTRIBUTE_SESSION_COOKIE = "propo_contribute_sid";
 
 export const RENT_REPORT_MIN_USD = 50;
@@ -195,6 +198,16 @@ export function shouldShowContributeCta(lens: ExploreMode): boolean {
   return lens !== "invest";
 }
 
+export function parseContributionMode(value: string | null | undefined): ContributionMode {
+  if (value === "buy") return "buy";
+  if (value === "land") return "land";
+  return "rent";
+}
+
+export function isContributionMode(mode: ExploreMode): mode is ContributionMode {
+  return mode !== "invest";
+}
+
 export function contributeCtaCopy(lens: ExploreMode): {
   title: string;
   description: string;
@@ -221,6 +234,60 @@ export function contributeCtaCopy(lens: ExploreMode): {
     description:
       "Know what rent costs here? Share yours anonymously to help others searching.",
     button: "Share your rent",
+  };
+}
+
+export function contributeFormAvailable(lens: ExploreMode): boolean {
+  return lens === "rent" || lens === "buy" || lens === "land";
+}
+
+export function contributePageCopy(lens: ExploreMode): {
+  metadataTitle: string;
+  metadataDescription: string;
+  title: string;
+  description: string;
+  whyLead: string;
+  whyDetail: string;
+} {
+  if (lens === "buy") {
+    return {
+      metadataTitle: "Share a sale price",
+      metadataDescription:
+        "Help fill gaps in Zimbabwe suburb sale data — anonymously share what you paid or agreed.",
+      title: "Share a sale price",
+      description:
+        "Know what homes sell for in your suburb? Help others searching — share yours anonymously.",
+      whyLead:
+        "Propo tracks listings from major online portals, but many sales never appear there — especially in suburbs with thin coverage.",
+      whyDetail:
+        "Your report is reviewed before anything goes public. Approved submissions may show as a community sale range on suburb profiles — separate from portal medians.",
+    };
+  }
+  if (lens === "land") {
+    return {
+      metadataTitle: "Share a land price",
+      metadataDescription:
+        "Help fill gaps in Zimbabwe land data — anonymously share stand prices from your area.",
+      title: "Share a land price",
+      description:
+        "Know what stands cost in your area? Help others searching — share yours anonymously.",
+      whyLead:
+        "Propo tracks land listings from major portals, but many deals happen off-market — especially in fast-moving corridors.",
+      whyDetail:
+        "Your report is reviewed before anything goes public. Approved submissions with stand size may show as a community $/sqm range — separate from portal medians.",
+    };
+  }
+  return {
+    metadataTitle: "Share your rent",
+    metadataDescription:
+      "Help fill gaps in Zimbabwe suburb rent data — anonymously share what you currently pay so others searching can see community rent ranges.",
+    title: "Share your rent",
+    description:
+      "Know what rent actually costs where you live? Help others searching — share yours anonymously.",
+    whyLead:
+      "Propo tracks listings from major online portals, but many occupied homes never appear there — especially in suburbs with thin coverage.",
+    whyDetail:
+      "Your report is reviewed before anything goes public. Approved submissions may show as a community rent range on suburb profiles — separate from portal medians.",
   };
 }
 

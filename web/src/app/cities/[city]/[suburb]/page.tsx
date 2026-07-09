@@ -11,6 +11,8 @@ import {
 } from "@/lib/constants";
 import { fetchLandMetrics, fetchMarketMetrics } from "@/lib/data-server";
 import { fetchRentReportMetricsForMarket } from "@/lib/rent-reports-server";
+import { fetchLandReportMetricsForMarket } from "@/lib/land-reports-server";
+import { fetchSaleReportMetricsForMarket } from "@/lib/sale-reports-server";
 import { parseExploreMode } from "@/lib/mode";
 import { sortRelatedSuburbs } from "@/lib/lens";
 import { findMarketBySlugs } from "@/lib/markets";
@@ -104,7 +106,11 @@ export default async function SuburbPage({
   if (!market) notFound();
 
   const landMarket = landMetrics.find((m) => m.market_id === market.market_id) ?? null;
-  const rentReportMetrics = await fetchRentReportMetricsForMarket(market.market_id);
+  const [rentReportMetrics, saleReportMetrics, landReportMetrics] = await Promise.all([
+    fetchRentReportMetricsForMarket(market.market_id),
+    fetchSaleReportMetricsForMarket(market.market_id),
+    fetchLandReportMetricsForMarket(market.market_id),
+  ]);
 
   const related = sortRelatedSuburbs(
     markets.filter((m) => matchesSlug(m.city, citySlug) && m.market_id !== market.market_id),
@@ -148,6 +154,8 @@ export default async function SuburbPage({
         landMarket={landMarket}
         lens={lens}
         rentReportMetrics={rentReportMetrics}
+        saleReportMetrics={saleReportMetrics}
+        landReportMetrics={landReportMetrics}
       />
     </>
   );

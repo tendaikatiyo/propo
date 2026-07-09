@@ -13,7 +13,9 @@ import { PropertyMixBar } from "@/components/markets/property-mix-bar";
 import { SuburbTrendsSection } from "@/components/markets/suburb-trends-section";
 import { ConfidenceBadge } from "@/components/markets/confidence-badge";
 import {
+  CommunityLandReports,
   CommunityRentReports,
+  CommunitySaleReports,
   ContributePriceButton,
   RentReportCta,
 } from "@/components/rent-reports/community-rent-reports";
@@ -46,6 +48,8 @@ import {
 } from "@/lib/segments";
 import type { ExploreMode, LandMetric, MarketMetric, PropertyType } from "@/lib/types";
 import type { RentReportMetrics } from "@/lib/rent-reports";
+import type { SaleReportMetrics } from "@/lib/sale-reports";
+import type { LandReportMetrics } from "@/lib/land-reports";
 import { cityPath, suburbPath, suburbReportPath } from "@/lib/slug";
 import { cn } from "@/lib/utils";
 
@@ -70,6 +74,8 @@ export function SuburbProfile({
   landMarket = null,
   lens,
   rentReportMetrics = null,
+  saleReportMetrics = null,
+  landReportMetrics = null,
 }: {
   market: MarketMetric;
   related: MarketMetric[];
@@ -78,6 +84,8 @@ export function SuburbProfile({
   landMarket?: LandMetric | null;
   lens: ExploreMode;
   rentReportMetrics?: RentReportMetrics | null;
+  saleReportMetrics?: SaleReportMetrics | null;
+  landReportMetrics?: LandReportMetrics | null;
 }) {
   const landMode = lens === "land";
   const segment = resolveSegmentStats(market, propertyType, bedroom);
@@ -258,6 +266,12 @@ export function SuburbProfile({
             lens={lens}
           />
 
+          <CommunitySaleReports
+            market={market}
+            metrics={saleReportMetrics}
+            lens={lens}
+          />
+
           <SuburbTrendsSection market={market} lens={lens} />
 
           {showsPropertyMix(lens) ? (
@@ -309,7 +323,14 @@ export function SuburbProfile({
       ) : null}
 
       {showsLandOnProfile(lens) && landMarket ? (
-        <SuburbLandMetrics landMarket={landMarket} landMode={landMode} />
+        <>
+          <CommunityLandReports
+            landMarket={landMarket}
+            metrics={landReportMetrics}
+            lens={lens}
+          />
+          <SuburbLandMetrics landMarket={landMarket} landMode={landMode} />
+        </>
       ) : null}
 
       <div id="suburb-listings" className="space-y-8">

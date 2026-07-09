@@ -25,7 +25,9 @@ import {
 import type { AdminDashboardStats } from "@/lib/admin-stats";
 import { formatNumber } from "@/lib/format";
 import { cn } from "@/lib/utils";
+import { AdminLandReportsPanel } from "@/components/admin/admin-land-reports";
 import { AdminRentReportsPanel } from "@/components/admin/admin-rent-reports";
+import { AdminSaleReportsPanel } from "@/components/admin/admin-sale-reports";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 function formatDateTime(value: string | null | undefined): string {
@@ -297,7 +299,9 @@ export function AdminDashboard() {
         <Tabs defaultValue="pipeline" className="space-y-6">
           <TabsList>
             <TabsTrigger value="pipeline">Pipeline</TabsTrigger>
-            <TabsTrigger value="rent-reports">Rent reports</TabsTrigger>
+            <TabsTrigger value="rent-reports">Rent</TabsTrigger>
+            <TabsTrigger value="sale-reports">Sale</TabsTrigger>
+            <TabsTrigger value="land-reports">Land</TabsTrigger>
           </TabsList>
 
           <TabsContent value="pipeline" className="space-y-6">
@@ -656,6 +660,14 @@ export function AdminDashboard() {
 
           <TabsContent value="rent-reports">
             <AdminRentReportsPanel />
+          </TabsContent>
+
+          <TabsContent value="sale-reports">
+            <AdminSaleReportsPanel />
+          </TabsContent>
+
+          <TabsContent value="land-reports">
+            <AdminLandReportsPanel />
           </TabsContent>
         </Tabs>
       ) : null}

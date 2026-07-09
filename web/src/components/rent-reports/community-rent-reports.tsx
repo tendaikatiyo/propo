@@ -3,14 +3,22 @@ import { Users } from "lucide-react";
 
 import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { formatCurrency } from "@/lib/format";
+import { formatCurrency, formatPricePerSqm } from "@/lib/format";
+import {
+  shouldShowCommunityLandRange,
+  type LandReportMetrics,
+} from "@/lib/land-reports";
 import {
   contributeCtaCopy,
   shouldShowCommunityRentRange,
   shouldShowContributeCta,
   type RentReportMetrics,
 } from "@/lib/rent-reports";
-import type { ExploreMode, MarketMetric } from "@/lib/types";
+import {
+  shouldShowCommunitySaleRange,
+  type SaleReportMetrics,
+} from "@/lib/sale-reports";
+import type { ExploreMode, LandMetric, MarketMetric } from "@/lib/types";
 import { toSlug } from "@/lib/slug";
 import { cn } from "@/lib/utils";
 
@@ -80,6 +88,117 @@ export function RentReportCta({
         >
           {button}
         </Link>
+      </CardContent>
+    </Card>
+  );
+}
+
+export function CommunitySaleReports({
+  market,
+  metrics,
+  lens,
+}: {
+  market: MarketMetric;
+  metrics: SaleReportMetrics | null | undefined;
+  lens: ExploreMode;
+}) {
+  if (!shouldShowCommunitySaleRange(market, metrics, lens) || !metrics) return null;
+
+  const rangeLabel =
+    metrics.min_sale_price != null &&
+    metrics.max_sale_price != null &&
+    metrics.min_sale_price !== metrics.max_sale_price
+      ? `${formatCurrency(metrics.min_sale_price)}–${formatCurrency(metrics.max_sale_price)}`
+      : metrics.median_sale_price != null
+        ? formatCurrency(metrics.median_sale_price)
+        : "—";
+
+  return (
+    <Card className="border-primary/20 bg-muted/30">
+      <CardHeader className="pb-2">
+        <CardTitle className="flex items-center gap-2 text-base">
+          <Users className="size-4 text-primary" />
+          Community sale reports
+        </CardTitle>
+      </CardHeader>
+      <CardContent className="space-y-2 text-sm text-muted-foreground">
+        <p>
+          <span className="font-medium text-foreground">
+            {metrics.report_count} contributor{metrics.report_count === 1 ? "" : "s"}
+          </span>{" "}
+          reported{" "}
+          <span className="font-medium text-foreground">{rangeLabel}</span>
+          {metrics.median_sale_price != null ? (
+            <>
+              {" "}
+              (median{" "}
+              <span className="font-medium text-foreground">
+                {formatCurrency(metrics.median_sale_price)}
+              </span>
+              )
+            </>
+          ) : null}
+          .
+        </p>
+        <p className="text-xs">
+          Based on anonymous, admin-reviewed submissions — not portal listings.
+        </p>
+      </CardContent>
+    </Card>
+  );
+}
+
+export function CommunityLandReports({
+  landMarket,
+  metrics,
+  lens,
+}: {
+  landMarket: LandMetric | null | undefined;
+  metrics: LandReportMetrics | null | undefined;
+  lens: ExploreMode;
+}) {
+  if (!shouldShowCommunityLandRange(landMarket, metrics, lens) || !metrics) return null;
+
+  const rangeLabel =
+    metrics.min_price_per_sqm != null &&
+    metrics.max_price_per_sqm != null &&
+    metrics.min_price_per_sqm !== metrics.max_price_per_sqm
+      ? `${formatPricePerSqm(metrics.min_price_per_sqm)}–${formatPricePerSqm(metrics.max_price_per_sqm)}`
+      : metrics.median_price_per_sqm != null
+        ? formatPricePerSqm(metrics.median_price_per_sqm)
+        : "—";
+
+  return (
+    <Card className="border-primary/20 bg-muted/30">
+      <CardHeader className="pb-2">
+        <CardTitle className="flex items-center gap-2 text-base">
+          <Users className="size-4 text-primary" />
+          Community land reports
+        </CardTitle>
+      </CardHeader>
+      <CardContent className="space-y-2 text-sm text-muted-foreground">
+        <p>
+          <span className="font-medium text-foreground">
+            {metrics.report_count} contributor{metrics.report_count === 1 ? "" : "s"}
+          </span>{" "}
+          reported{" "}
+          <span className="font-medium text-foreground">{rangeLabel}</span>
+          /sqm
+          {metrics.median_price_per_sqm != null ? (
+            <>
+              {" "}
+              (median{" "}
+              <span className="font-medium text-foreground">
+                {formatPricePerSqm(metrics.median_price_per_sqm)}
+              </span>
+              )
+            </>
+          ) : null}
+          .
+        </p>
+        <p className="text-xs">
+          Based on anonymous, admin-reviewed submissions — not portal listings.
+        </p>
       </CardContent>
     </Card>
   );

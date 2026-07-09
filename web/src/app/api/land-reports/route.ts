@@ -4,13 +4,13 @@ import { CONTACT_EMAIL } from "@/lib/constants";
 import {
   checkContributionRateLimits,
   getContributionHashes,
+  landMarketExists,
 } from "@/lib/contribution-server";
-import { parseRentReportPayload } from "@/lib/rent-reports";
+import { computeLandPricePerSqm, parseLandReportPayload } from "@/lib/land-reports";
 import {
-  findDuplicateRentReport,
-  marketExists,
-  resolveMarketId,
-} from "@/lib/rent-reports-server";
+  findDuplicateLandReport,
+  resolveLandMarketId,
+} from "@/lib/land-reports-server";
 import {
   createAdminSupabaseClient,
   isSupabaseAdminConfigured,
@@ -24,7 +24,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Invalid request body." }, { status: 400 });
   }
 
-  const parsed = parseRentReportPayload(body);
+  const parsed = parseLandReportPayload(body);
   if (!parsed.ok) {
     return NextResponse.json({ error: parsed.error }, { status: 400 });
   }
@@ -50,8 +50,12 @@ export async function POST(request: Request) {
     );
   }
 
-  const marketId = resolveMarketId(parsed.data.city, parsed.data.suburb);
-  const marketOk = await marketExists(parsed.data.city, parsed.data.suburb, marketId);
+  const marketId = resolveLandMarketId(parsed.data.city, parsed.data.suburb);
+  const marketOk = await landMarketExists(
+    parsed.data.city,
+    parsed.data.suburb,
+    marketId
+  );
   if (!marketOk) {
     return NextResponse.json(
       { error: "Select a suburb from the list — we could not match that location." },
@@ -65,11 +69,11 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: rateLimitError }, { status: 429 });
   }
 
-  const isDuplicate = await findDuplicateRentReport({
+  const isDuplicate = await findDuplicateLandReport({
     ipHash,
     marketId,
-    monthlyRent: parsed.data.monthlyRent,
-    bedrooms: parsed.data.bedrooms,
+    totalPrice: parsed.data.totalPrice,
+    landSizeSqm: parsed.data.landSizeSqm,
   });
   if (isDuplicate) {
     return NextResponse.json(
@@ -78,26 +82,33 @@ export async function POST(request: Request) {
     );
   }
 
-  const { error } = await supabase.from("rent_reports").insert({
+  const pricePerSqm = computeLandPricePerSqm(
+    parsed.data.totalPrice,
+    parsed.data.landSizeSqm
+  );
+
+  const { error } = await supabase.from("land_reports").insert({
     market_id: marketId,
     city: parsed.data.city,
     suburb: parsed.data.suburb,
-    property_type: parsed.data.propertyType,
-    bedrooms: parsed.data.bedrooms,
-    monthly_rent: parsed.data.monthlyRent,
+    land_size: parsed.data.landSize ?? null,
+    land_size_unit: parsed.data.landSizeUnit ?? null,
+    land_size_sqm: parsed.data.landSizeSqm ?? null,
+    total_price: parsed.data.totalPrice,
+    price_per_sqm: pricePerSqm,
     currency: "USD",
-    is_current_lease: parsed.data.isCurrentLease,
-    lease_started_at: parsed.data.leaseStartedAt
-      ? `${parsed.data.leaseStartedAt}-01`
+    is_serviced: parsed.data.isServiced ?? null,
+    is_completed_purchase: parsed.data.isCompletedPurchase,
+    purchase_date: parsed.data.purchaseDate
+      ? `${parsed.data.purchaseDate}-01`
       : null,
-    furnished: parsed.data.furnished ?? null,
     ip_hash: ipHash,
     session_hash: sessionHash,
     status: "pending",
   });
 
   if (error) {
-    console.error("[rent-reports] insert failed:", error.message);
+    console.error("[land-reports] insert failed:", error.message);
     return NextResponse.json(
       { error: "Could not save your report. Please try again later." },
       { status: 500 }
