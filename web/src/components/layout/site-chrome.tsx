@@ -41,6 +41,9 @@ export function AppFooter() {
           <Link href="/about" className="hover:text-foreground">
             About
           </Link>
+          <Link href="/contribute" className="hover:text-foreground">
+            Share your rent
+          </Link>
           <Link href="/developers" className="hover:text-foreground">
             Developers
           </Link>

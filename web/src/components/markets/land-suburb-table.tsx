@@ -21,6 +21,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { COLUMN_TOOLTIPS } from "@/lib/metric-tooltips";
+import { DEFAULT_TABLE_SORT_KEY, defaultTableSortDirection } from "@/lib/explore";
 import { formatNumber, formatPricePerSqm, sanitizeLabel } from "@/lib/format";
 import { sortLandMarkets } from "@/lib/land-explore";
 import { suburbPath } from "@/lib/slug";
@@ -100,8 +101,10 @@ export function LandSuburbTable({
     layout === "city"
       ? (["suburb", "median_price_per_sqm", "land_count", "confidence_score"] as SortKey[])
       : LAND_COLUMNS;
-  const [sortKey, setSortKey] = useState<SortKey>("median_price_per_sqm");
-  const [sortDirection, setSortDirection] = useState<SortDirection>("asc");
+  const [sortKey, setSortKey] = useState<SortKey>(DEFAULT_TABLE_SORT_KEY);
+  const [sortDirection, setSortDirection] = useState<SortDirection>(
+    defaultTableSortDirection(DEFAULT_TABLE_SORT_KEY)
+  );
 
   const sorted = useMemo(
     () => sortLandMarkets(markets, sortKey, sortDirection),
@@ -113,7 +116,7 @@ export function LandSuburbTable({
       setSortDirection((d) => (d === "asc" ? "desc" : "asc"));
     } else {
       setSortKey(key);
-      setSortDirection(key === "median_price_per_sqm" ? "asc" : "desc");
+      setSortDirection(defaultTableSortDirection(key));
     }
   }
 

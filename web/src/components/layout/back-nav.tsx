@@ -7,17 +7,20 @@ export function BackLink({
   href,
   label,
   className,
+  showOnMobile = false,
 }: {
   href: string;
   label: string;
   className?: string;
+  /** Show on small screens (default: desktop only). */
+  showOnMobile?: boolean;
 }) {
   return (
     <Link
       href={href}
       className={cn(
         "inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground",
-        "hidden lg:inline-flex",
+        showOnMobile ? "inline-flex" : "hidden lg:inline-flex",
         className
       )}
     >

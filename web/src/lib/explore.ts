@@ -20,6 +20,21 @@ import type {
   SortKey,
 } from "@/lib/types";
 
+export const DEFAULT_TABLE_SORT_KEY: SortKey = "confidence_score";
+
+export function defaultTableSortDirection(key: SortKey): SortDirection {
+  if (
+    key === "median_rent" ||
+    key === "median_sale_price" ||
+    key === "median_price_per_sqm" ||
+    key === "suburb" ||
+    key === "city"
+  ) {
+    return "asc";
+  }
+  return "desc";
+}
+
 export interface ExploreResult {
   inBudget: MarketMetric[];
   stretch: MarketMetric[];

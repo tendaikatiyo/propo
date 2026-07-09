@@ -53,6 +53,15 @@ export function sanitizeLabel(value: string | null | undefined): string {
     .replace(/\b\w/g, (char) => char.toUpperCase());
 }
 
+/** Full location name for pickers — does not strip city tokens from suburb labels. */
+export function formatLocationLabel(value: string | null | undefined): string {
+  if (value == null) return "";
+  return String(value)
+    .replace(/_/g, " ")
+    .trim()
+    .replace(/\b\w/g, (char) => char.toUpperCase());
+}
+
 export function propertyTypeLabel(type: string): string {
   return type.charAt(0).toUpperCase() + type.slice(1);
 }

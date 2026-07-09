@@ -22,7 +22,7 @@ export default async function CitiesPage() {
       <BackLink href="/" label="Back to home" />
       <PageHeader
         title="Cities"
-        description="Browse property market data across Zimbabwe. Larger markets are listed first."
+        description="Browse property market data for Harare, Bulawayo, and Ruwa. Larger markets are listed first."
       />
       <CitiesDirectoryClient cities={cities} />
     </div>

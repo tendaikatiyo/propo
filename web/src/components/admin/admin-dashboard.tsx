@@ -25,6 +25,8 @@ import {
 import type { AdminDashboardStats } from "@/lib/admin-stats";
 import { formatNumber } from "@/lib/format";
 import { cn } from "@/lib/utils";
+import { AdminRentReportsPanel } from "@/components/admin/admin-rent-reports";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 function formatDateTime(value: string | null | undefined): string {
   if (!value) return "—";
@@ -292,7 +294,13 @@ export function AdminDashboard() {
       ) : null}
 
       {stats ? (
-        <>
+        <Tabs defaultValue="pipeline" className="space-y-6">
+          <TabsList>
+            <TabsTrigger value="pipeline">Pipeline</TabsTrigger>
+            <TabsTrigger value="rent-reports">Rent reports</TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="pipeline" className="space-y-6">
           <div className="flex flex-wrap gap-2">
             <StatusBadge ok={stats.supabaseAdminConfigured} label="Service role" />
             <StatusBadge ok={stats.rpcAvailable} label="RPC stats" />
@@ -644,7 +652,12 @@ export function AdminDashboard() {
             <code className="rounded bg-muted px-1 py-0.5">009_admin_dashboard.sql</code> on Supabase
             if RPC stats are missing.
           </p>
-        </>
+          </TabsContent>
+
+          <TabsContent value="rent-reports">
+            <AdminRentReportsPanel />
+          </TabsContent>
+        </Tabs>
       ) : null}
     </div>
   );

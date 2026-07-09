@@ -8,7 +8,11 @@ import { ConfidenceBadge } from "@/components/markets/confidence-badge";
 import { PinButton } from "@/components/markets/pin-button";
 import { SegmentPriceNote } from "@/components/markets/segment-price-note";
 import { Button } from "@/components/ui/button";
-import { sortMarkets } from "@/lib/explore";
+import {
+  DEFAULT_TABLE_SORT_KEY,
+  defaultTableSortDirection,
+  sortMarkets,
+} from "@/lib/explore";
 import { budgetPriceMode } from "@/lib/lens";
 import { formatCurrency, formatPercent, sanitizeLabel } from "@/lib/format";
 import { priceForFilters } from "@/lib/segments";
@@ -34,15 +38,9 @@ export function SuburbList({
   mode: ExploreMode;
   filters?: Pick<ExploreFilters, "propertyType" | "bedroom">;
 }) {
-  const [sortKey, setSortKey] = useState<SortKey>(
-    mode === "rent"
-      ? "median_rent"
-      : mode === "invest"
-        ? "yield_percent"
-        : "median_sale_price"
-  );
+  const [sortKey, setSortKey] = useState<SortKey>(DEFAULT_TABLE_SORT_KEY);
   const [sortDirection, setSortDirection] = useState<SortDirection>(
-    mode === "rent" ? "asc" : "desc"
+    defaultTableSortDirection(DEFAULT_TABLE_SORT_KEY)
   );
 
   const sortOptions = SORT_OPTIONS.filter(
@@ -54,7 +52,7 @@ export function SuburbList({
       setSortDirection((d) => (d === "asc" ? "desc" : "asc"));
     } else {
       setSortKey(key);
-      setSortDirection(key === "median_rent" ? "asc" : "desc");
+      setSortDirection(defaultTableSortDirection(key));
     }
   }
 

@@ -29,7 +29,11 @@ import {
   columnsForMode,
 } from "@/lib/metric-tooltips";
 import { formatCurrency, formatPercent, sanitizeLabel } from "@/lib/format";
-import { sortMarkets } from "@/lib/explore";
+import {
+  DEFAULT_TABLE_SORT_KEY,
+  defaultTableSortDirection,
+  sortMarkets,
+} from "@/lib/explore";
 import { priceForFilters } from "@/lib/segments";
 import { suburbPath } from "@/lib/slug";
 import type { ExploreFilters, ExploreMode, MarketMetric, SortDirection, SortKey } from "@/lib/types";
@@ -46,18 +50,12 @@ const COLUMN_LABELS: Record<SortKey, string> = {
   confidence_score: "Confidence",
 };
 
-function defaultSortForMode(mode: ExploreMode, isCityLayout: boolean): SortKey {
-  if (mode === "rent") return "median_rent";
-  if (mode === "buy") return "median_sale_price";
-  if (mode === "invest") return "yield_percent";
-  return isCityLayout ? "median_rent" : "median_price_per_sqm";
+function defaultSortForMode(_mode: ExploreMode, _isCityLayout: boolean): SortKey {
+  return DEFAULT_TABLE_SORT_KEY;
 }
 
 function defaultDirectionForSort(key: SortKey): SortDirection {
-  if (key === "median_rent" || key === "median_sale_price" || key === "median_price_per_sqm") {
-    return "asc";
-  }
-  return "desc";
+  return defaultTableSortDirection(key);
 }
 
 function SortableHeader({

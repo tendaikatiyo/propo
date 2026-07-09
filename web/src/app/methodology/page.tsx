@@ -106,6 +106,18 @@ export default function MethodologyPage() {
           </CardContent>
         </Card>
 
+        <Card>
+          <CardHeader>
+            <CardTitle>Community rent reports</CardTitle>
+          </CardHeader>
+          <CardContent className="text-[15px] leading-relaxed tracking-[0.15px] text-muted-foreground">
+            Users can anonymously share what they currently pay in rent. Submissions are reviewed
+            before publication. On suburbs with thin portal coverage, approved reports may appear as
+            a separate community range — they do not change headline portal medians or confidence
+            scores. At least three approved reports are required before a range is shown.
+          </CardContent>
+        </Card>
+
         <Card className="lg:col-span-2">
           <CardHeader>
             <CardTitle>Data limits</CardTitle>

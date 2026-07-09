@@ -12,6 +12,11 @@ import { SuburbLandMetrics } from "@/components/markets/suburb-land-metrics";
 import { PropertyMixBar } from "@/components/markets/property-mix-bar";
 import { SuburbTrendsSection } from "@/components/markets/suburb-trends-section";
 import { ConfidenceBadge } from "@/components/markets/confidence-badge";
+import {
+  CommunityRentReports,
+  ContributePriceButton,
+  RentReportCta,
+} from "@/components/rent-reports/community-rent-reports";
 import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MIN_SEGMENT_LISTINGS } from "@/lib/constants";
@@ -40,6 +45,7 @@ import {
   segmentMedianLabel,
 } from "@/lib/segments";
 import type { ExploreMode, LandMetric, MarketMetric, PropertyType } from "@/lib/types";
+import type { RentReportMetrics } from "@/lib/rent-reports";
 import { cityPath, suburbPath, suburbReportPath } from "@/lib/slug";
 import { cn } from "@/lib/utils";
 
@@ -63,6 +69,7 @@ export function SuburbProfile({
   bedroom = null,
   landMarket = null,
   lens,
+  rentReportMetrics = null,
 }: {
   market: MarketMetric;
   related: MarketMetric[];
@@ -70,6 +77,7 @@ export function SuburbProfile({
   bedroom?: number | null;
   landMarket?: LandMetric | null;
   lens: ExploreMode;
+  rentReportMetrics?: RentReportMetrics | null;
 }) {
   const landMode = lens === "land";
   const segment = resolveSegmentStats(market, propertyType, bedroom);
@@ -94,9 +102,18 @@ export function SuburbProfile({
   const segmentQuery = { type: propertyType, bedroom, mode: lens };
   const sortedRelated = sortRelatedSuburbs(related, lens, { propertyType, bedroom });
 
+  const confidenceScore =
+    landMode && landMarket ? landMarket.confidence_score : market.confidence_score;
   const confidenceSample =
-    lens === "buy" ? saleSample : lens === "rent" ? rentSample : rentSample + saleSample;
-  const confidenceMode = lens === "buy" ? "buy" : "rent";
+    landMode && landMarket
+      ? landMarket.land_count
+      : lens === "buy"
+        ? saleSample
+        : lens === "rent"
+          ? rentSample
+          : rentSample + saleSample;
+  const confidenceMode: "rent" | "buy" | "land" =
+    landMode && landMarket ? "land" : lens === "buy" ? "buy" : "rent";
 
   return (
     <div className="space-y-8 pb-28 lg:pb-0">
@@ -117,7 +134,9 @@ export function SuburbProfile({
               {suburbProfileDescription(lens, specLabel, rentFallback, saleFallback)}
             </p>
             <div className="mt-3 flex flex-col gap-2">
-              <ScopeLabel propertyType={propertyType} bedroom={bedroom} />
+              {showsResidentialOnProfile(lens) ? (
+                <ScopeLabel propertyType={propertyType} bedroom={bedroom} />
+              ) : null}
               <div className="flex flex-col gap-1 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-4">
                 {showsRentMetrics(lens) ? (
                   <SampleSizeBadge count={rentSample} mode="rent" limited={rentLimited} />
@@ -157,11 +176,14 @@ export function SuburbProfile({
                 </Link>
               </p>
             ) : null}
+            <p className="mt-3 print:hidden lg:hidden">
+              <ContributePriceButton market={market} lens={lens} className="w-full sm:w-auto" />
+            </p>
           </div>
         </div>
         <div className="lg:hidden">
           <ConfidenceBadge
-            score={market.confidence_score}
+            score={confidenceScore}
             sampleCount={confidenceSample}
             sampleMode={confidenceMode}
           />
@@ -192,14 +214,17 @@ export function SuburbProfile({
               Export full report
             </Link>
           ) : null}
+          <ContributePriceButton market={market} lens={lens} />
           <ConfidenceBadge
-            score={market.confidence_score}
+            score={confidenceScore}
             sampleCount={confidenceSample}
             sampleMode={confidenceMode}
           />
           <PinButton market={market} fromMode={lens} />
         </div>
       </div>
+
+      <RentReportCta market={market} lens={lens} />
 
       {showsResidentialOnProfile(lens) ? (
         <>
@@ -226,6 +251,12 @@ export function SuburbProfile({
               </>
             ) : null}
           </div>
+
+          <CommunityRentReports
+            market={market}
+            metrics={rentReportMetrics}
+            lens={lens}
+          />
 
           <SuburbTrendsSection market={market} lens={lens} />
 

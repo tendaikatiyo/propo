@@ -7,6 +7,7 @@ import { TrackedSuburbLink } from "@/components/analytics/tracked-suburb-link";
 import { ConfidenceBadge } from "@/components/markets/confidence-badge";
 import { PinButton } from "@/components/markets/pin-button";
 import { Button } from "@/components/ui/button";
+import { DEFAULT_TABLE_SORT_KEY, defaultTableSortDirection } from "@/lib/explore";
 import { formatNumber, formatPricePerSqm, sanitizeLabel } from "@/lib/format";
 import { sortLandMarkets } from "@/lib/land-explore";
 import { suburbPath } from "@/lib/slug";
@@ -21,15 +22,17 @@ const SORT_OPTIONS: { key: SortKey; label: string }[] = [
 ];
 
 export function LandSuburbList({ markets }: { markets: LandMetric[] }) {
-  const [sortKey, setSortKey] = useState<SortKey>("median_price_per_sqm");
-  const [sortDirection, setSortDirection] = useState<SortDirection>("asc");
+  const [sortKey, setSortKey] = useState<SortKey>(DEFAULT_TABLE_SORT_KEY);
+  const [sortDirection, setSortDirection] = useState<SortDirection>(
+    defaultTableSortDirection(DEFAULT_TABLE_SORT_KEY)
+  );
 
   function toggleSort(key: SortKey) {
     if (sortKey === key) {
       setSortDirection((d) => (d === "asc" ? "desc" : "asc"));
     } else {
       setSortKey(key);
-      setSortDirection(key === "median_price_per_sqm" ? "asc" : "desc");
+      setSortDirection(defaultTableSortDirection(key));
     }
   }
 

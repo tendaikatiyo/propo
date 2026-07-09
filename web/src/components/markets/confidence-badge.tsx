@@ -29,14 +29,19 @@ export function ConfidenceBadge({
 }: {
   score: number;
   sampleCount?: number;
-  sampleMode?: "rent" | "buy";
+  sampleMode?: "rent" | "buy" | "land";
 }) {
   const tooltipParts = [
-    "Based on rental and sale listing volume in this suburb. Green = strong coverage; red = thin data.",
+    sampleMode === "land"
+      ? "Based on land listing volume in this suburb. Green = strong coverage; red = thin data."
+      : "Based on rental and sale listing volume in this suburb. Green = strong coverage; red = thin data.",
   ];
   if (sampleCount != null) {
-    const modeLabel = sampleMode === "buy" ? "sale" : "rental";
-    tooltipParts.push(`This suburb has ${sampleCount} active ${modeLabel} listing${sampleCount === 1 ? "" : "s"} in our latest data.`);
+    const modeLabel =
+      sampleMode === "buy" ? "sale" : sampleMode === "land" ? "land" : "rental";
+    tooltipParts.push(
+      `This suburb has ${sampleCount} active ${modeLabel} listing${sampleCount === 1 ? "" : "s"} in our latest data.`
+    );
   }
 
   return (

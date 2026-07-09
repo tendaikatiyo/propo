@@ -8,7 +8,7 @@ export const metadata = buildPageMetadata({
   path: "/privacy",
 });
 
-const LAST_UPDATED = "1 July 2026";
+const LAST_UPDATED = "9 July 2026";
 
 export default function PrivacyPolicyPage() {
   return (
@@ -32,7 +32,10 @@ export default function PrivacyPolicyPage() {
           {SITE_NAME} does not require you to create an account to browse the site. If you join
           our developer or API interest list, we collect the email address you submit, your
           selected role, optional notes about your intended use case, and any data-product
-          preferences you choose. We do not ask for payment details to browse the site.
+          preferences you choose. If you submit a community rent report, we collect the suburb,
+          property type, bedroom count, monthly rent, and optional lease details you provide —
+          not your name, email, or address. We store a hashed identifier to limit duplicate
+          submissions. We do not ask for payment details to browse the site.
         </p>
         <p>
           <strong className="font-medium text-foreground">Information stored on your device.</strong>{" "}

@@ -31,3 +31,6 @@ Chronological notes for agent/developer continuity between sessions.
 | 2026-07-05 | [2026-07-05-user-lens-plan.md](./2026-07-05-user-lens-plan.md) | User lens product plan (Rent \| Buy \| Land \| Invest); metric matrix; Phases 1–4 spec |
 | 2026-07-05 | [2026-07-05-user-lens-shipped.md](./2026-07-05-user-lens-shipped.md) | **User lens shipped** (Phases 1–4); global Focus; city land table; compare last-lens |
 | 2026-07-05 | [2026-07-05-user-flow-fixes.md](./2026-07-05-user-flow-fixes.md) | Mobile Focus chip, explore budget sync, mobile dock, scroll-to-top, lens hydration/SSR fixes |
+| 2026-07-08 | [2026-07-08-zw-community-rent-reports-plan.md](./2026-07-08-zw-community-rent-reports-plan.md) | **Priority** — anonymous community rent reports on ZW; prerequisite before SA |
+| 2026-07-08 | [2026-07-08-sa-market-expansion-plan.md](./2026-07-08-sa-market-expansion-plan.md) | SA expansion plan — Property24/Private Property, separate Supabase, rent+buy only, OSM maps, SIA |
+| 2026-07-08 | [2026-07-08-sa-expansion-planning-handover.md](./2026-07-08-sa-expansion-planning-handover.md) | SA planning session handover; Property24 scrape recon; dual Vercel+CF hosting; propo.co.za taken |

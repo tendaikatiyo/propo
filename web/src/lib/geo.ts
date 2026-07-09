@@ -9,10 +9,19 @@ export const EXCLUDED_CITIES = new Set([
   "Vilanculos",
 ]);
 
+/** Cities shown across the site (all modes). */
+export const PUBLISHED_CITIES = ["Harare", "Bulawayo", "Ruwa"] as const;
+export const PUBLISHED_CITY_SET = new Set<string>(PUBLISHED_CITIES);
+
 export const DEFAULT_CITY = "Harare";
 
+export function isPublishedCity(city: string): boolean {
+  return PUBLISHED_CITY_SET.has(city);
+}
+
+/** @deprecated Prefer isPublishedCity — kept for existing call sites. */
 export function isZimbabweCity(city: string): boolean {
-  return !EXCLUDED_CITIES.has(city);
+  return isPublishedCity(city) && !EXCLUDED_CITIES.has(city);
 }
 
 export function cityListingTotal(city: CityMetric, mode?: ExploreMode): number {
@@ -34,11 +43,31 @@ export function filterZimbabweLandMarkets(markets: LandMetric[]): LandMetric[] {
   return markets.filter((m) => isZimbabweCity(m.city));
 }
 
-export function sortCitiesByMarketSize(cities: CityMetric[]): CityMetric[] {
+export function sortCitiesByMarketSize(
+  cities: CityMetric[],
+  mode?: ExploreMode
+): CityMetric[] {
   return [...filterZimbabweCities(cities)].sort((a, b) => {
-    const diff = cityListingTotal(b) - cityListingTotal(a);
+    const diff = cityListingTotal(b, mode) - cityListingTotal(a, mode);
     if (diff !== 0) return diff;
     return a.city.localeCompare(b.city);
+  });
+}
+
+export function marketActivityTotal(market: MarketMetric, mode?: ExploreMode): number {
+  if (mode === "rent") return market.rental_count ?? 0;
+  if (mode === "buy") return market.sale_count ?? 0;
+  return (market.rental_count ?? 0) + (market.sale_count ?? 0);
+}
+
+export function sortMarketsByActivity(
+  markets: MarketMetric[],
+  mode?: ExploreMode
+): MarketMetric[] {
+  return [...markets].sort((a, b) => {
+    const diff = marketActivityTotal(b, mode) - marketActivityTotal(a, mode);
+    if (diff !== 0) return diff;
+    return a.suburb.localeCompare(b.suburb);
   });
 }
 
