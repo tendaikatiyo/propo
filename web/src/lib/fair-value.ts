@@ -30,6 +30,7 @@ export function listingPropertyType(listing: Listing): PropertyType | null {
     "flat",
     "room",
     "townhouse",
+    "cottage",
     "commercial",
     "apartment",
   ];

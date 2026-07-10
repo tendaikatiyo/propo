@@ -4,6 +4,7 @@ export type PropertyType =
   | "flat"
   | "room"
   | "townhouse"
+  | "cottage"
   | "commercial";
 
 export type ExploreMode = "rent" | "buy" | "land" | "invest";
@@ -61,6 +62,7 @@ export interface MarketMetric {
   flat_count: number;
   room_count: number;
   townhouse_count: number;
+  cottage_count?: number;
   commercial_count: number;
   beds_1_count?: number;
   beds_2_count?: number;

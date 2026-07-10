@@ -1,6 +1,22 @@
 "use client";
 
+import { useState } from "react";
+import { ChevronsUpDownIcon } from "lucide-react";
+
 import { Label } from "@/components/ui/label";
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+} from "@/components/ui/command";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import {
   Select,
   SelectContent,
@@ -18,6 +34,84 @@ export const contributionSelectTriggerClassName = cn(
   "w-full border data-placeholder:text-muted-foreground"
 );
 
+type ContributionSelectOption = { value: string; label: string };
+
+function ContributionSearchableSelect({
+  id,
+  label,
+  value,
+  onValueChange,
+  placeholder,
+  disabled,
+  options,
+  searchPlaceholder,
+}: {
+  id: string;
+  label: string;
+  value: string | null;
+  onValueChange: (value: string | null) => void;
+  placeholder: string;
+  disabled?: boolean;
+  options: ContributionSelectOption[];
+  searchPlaceholder?: string;
+}) {
+  const [open, setOpen] = useState(false);
+  const selected = options.find((option) => option.value === value) ?? null;
+
+  return (
+    <div className="space-y-2">
+      <Label htmlFor={id}>{label}</Label>
+      <Popover open={open} onOpenChange={setOpen}>
+        <PopoverTrigger
+          id={id}
+          disabled={disabled}
+          className={cn(
+            contributionSelectTriggerClassName,
+            "flex items-center justify-between gap-2 text-left font-normal outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50"
+          )}
+        >
+          <span className={cn("truncate", !selected && "text-muted-foreground")}>
+            {selected?.label ?? placeholder}
+          </span>
+          <ChevronsUpDownIcon className="size-4 shrink-0 text-muted-foreground opacity-60" />
+        </PopoverTrigger>
+        <PopoverContent
+          align="start"
+          sideOffset={4}
+          className="w-[var(--anchor-width)] min-w-[var(--anchor-width)] p-0"
+        >
+          <Command>
+            <CommandInput
+              placeholder={searchPlaceholder ?? `Search ${label.toLowerCase()}…`}
+            />
+            <CommandList>
+              <CommandEmpty>No match.</CommandEmpty>
+              <CommandGroup>
+                {options.map((option) => {
+                  const checked = option.value === value;
+                  return (
+                    <CommandItem
+                      key={option.value}
+                      value={`${option.label} ${option.value}`}
+                      data-checked={checked ? "true" : undefined}
+                      onSelect={() => {
+                        onValueChange(option.value);
+                        setOpen(false);
+                      }}
+                    >
+                      <span className="truncate">{option.label}</span>
+                    </CommandItem>
+                  );
+                })}
+              </CommandGroup>
+            </CommandList>
+          </Command>
+        </PopoverContent>
+      </Popover>
+    </div>
+  );
+}
+
 export function ContributionFormSelect({
   id,
   label,
@@ -27,6 +121,8 @@ export function ContributionFormSelect({
   disabled,
   required,
   options,
+  searchable = false,
+  searchPlaceholder,
 }: {
   id: string;
   label: string;
@@ -35,8 +131,25 @@ export function ContributionFormSelect({
   placeholder: string;
   disabled?: boolean;
   required?: boolean;
-  options: Array<{ value: string; label: string }>;
+  options: ContributionSelectOption[];
+  searchable?: boolean;
+  searchPlaceholder?: string;
 }) {
+  if (searchable) {
+    return (
+      <ContributionSearchableSelect
+        id={id}
+        label={label}
+        value={value}
+        onValueChange={onValueChange}
+        placeholder={placeholder}
+        disabled={disabled}
+        options={options}
+        searchPlaceholder={searchPlaceholder}
+      />
+    );
+  }
+
   return (
     <div className="space-y-2">
       <Label htmlFor={id}>{label}</Label>

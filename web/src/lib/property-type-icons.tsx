@@ -4,6 +4,7 @@ import {
   Home,
   LayoutGrid,
   Rows3,
+  Trees,
   type LucideIcon,
 } from "lucide-react";
 
@@ -16,6 +17,7 @@ const PROPERTY_TYPE_ICONS: Record<PropertyType, LucideIcon> = {
   apartment: Building2,
   room: BedDouble,
   townhouse: Rows3,
+  cottage: Trees,
   commercial: Building2,
 };
 

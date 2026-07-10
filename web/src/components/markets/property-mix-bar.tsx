@@ -10,6 +10,7 @@ const TYPE_KEYS: Record<string, keyof MarketMetric> = {
   flat: "flat_count",
   room: "room_count",
   townhouse: "townhouse_count",
+  cottage: "cottage_count",
 };
 
 const COLORS = [
@@ -17,12 +18,13 @@ const COLORS = [
   "bg-[#a8c8e8]",
   "bg-[#f4c5a8]",
   "bg-[#e8b8c4]",
+  "bg-[#c4d4a8]",
 ];
 
 function mixCount(market: MarketMetric, type: string): number {
   if (type === "flat") return market.flat_count + market.apartment_count;
   const key = TYPE_KEYS[type];
-  return key ? (market[key] as number) : 0;
+  return key ? Number(market[key] ?? 0) : 0;
 }
 
 export function PropertyMixBar({ market }: { market: MarketMetric }) {

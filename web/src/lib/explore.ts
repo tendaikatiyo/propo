@@ -217,6 +217,7 @@ export function propertyMixTotal(market: MarketMetric): number {
     market.flat_count +
     market.room_count +
     market.townhouse_count +
+    (market.cottage_count ?? 0) +
     market.commercial_count
   );
 }

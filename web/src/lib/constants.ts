@@ -7,8 +7,10 @@ export const PROPERTY_TYPES_RENT: PropertyType[] = [
   "flat",
   "room",
   "townhouse",
+  "cottage",
 ];
 
+/** Cottages are rent-only — you rent a cottage, you don't buy one as a type. */
 export const PROPERTY_TYPES_BUY: PropertyType[] = ["house", "flat", "townhouse"];
 
 /** @deprecated Prefer propertyTypesForMode */
@@ -22,16 +24,18 @@ export function propertyTypesForMode(mode: ExploreMode): PropertyType[] {
 
 export const ROOM_BEDROOM_COUNT = 1;
 
+function clearBuyOnlyTypes(propertyType: PropertyType | null): PropertyType | null {
+  if (propertyType === "room" || propertyType === "cottage") return null;
+  return propertyType;
+}
+
 export function normalizeExploreFilters(filters: ExploreFilters): ExploreFilters {
   let { propertyType, bedroom } = filters;
   if (filters.mode === "land") {
     return { ...filters, propertyType: null, bedroom: null };
   }
-  if (filters.mode === "buy" && propertyType === "room") {
-    propertyType = null;
-  }
-  if (filters.mode === "invest" && propertyType === "room") {
-    propertyType = null;
+  if (filters.mode === "buy" || filters.mode === "invest") {
+    propertyType = clearBuyOnlyTypes(propertyType);
   }
   if (propertyType && !propertyTypesForMode(filters.mode).includes(propertyType)) {
     propertyType = null;
@@ -49,11 +53,8 @@ export function normalizeCompareFilters(filters: CompareFilters): CompareFilters
   if (mode === "land") {
     return { mode, propertyType: null, bedroom: null };
   }
-  if (mode === "buy" && propertyType === "room") {
-    propertyType = null;
-  }
-  if (mode === "invest" && propertyType === "room") {
-    propertyType = null;
+  if (mode === "buy" || mode === "invest") {
+    propertyType = clearBuyOnlyTypes(propertyType);
   }
   if (propertyType && !propertyTypesForMode(mode).includes(propertyType)) {
     propertyType = null;
@@ -79,6 +80,7 @@ export const PROPERTY_TYPE_COUNT_KEY: Record<PropertyType, keyof import("@/lib/t
   flat: "flat_count",
   room: "room_count",
   townhouse: "townhouse_count",
+  cottage: "cottage_count",
   commercial: "commercial_count",
 };
 

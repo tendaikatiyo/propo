@@ -92,7 +92,7 @@ function replaceLensInUrl(
       params.delete("bedroom");
     } else if (
       (resolvedNext === "buy" || resolvedNext === "invest") &&
-      params.get("type") === "room"
+      (params.get("type") === "room" || params.get("type") === "cottage")
     ) {
       params.delete("type");
       params.delete("bedroom");

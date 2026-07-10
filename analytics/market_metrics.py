@@ -53,7 +53,7 @@ def confidence_points(count: int) -> int:
 def segment_property_type(value: Any) -> Optional[str]:
     """Canonical type for segment keys; apartment rolls into flat."""
     ptype = normalize_property_type(value)
-    if ptype in ("unknown", "residential_land", "cottage"):
+    if ptype in ("unknown", "residential_land"):
         return None
     if ptype == "apartment":
         return "flat"
@@ -284,6 +284,7 @@ def build_market_metrics(sales: List[Dict[str, Any]], rentals: List[Dict[str, An
                 "flat_count": property_type_counter.get("flat", 0),
                 "room_count": property_type_counter.get("room", 0),
                 "townhouse_count": property_type_counter.get("townhouse", 0),
+                "cottage_count": property_type_counter.get("cottage", 0),
                 "commercial_count": property_type_counter.get("commercial", 0),
                 "beds_1_count": bedroom_counter.get("1", 0),
                 "beds_2_count": bedroom_counter.get("2", 0),

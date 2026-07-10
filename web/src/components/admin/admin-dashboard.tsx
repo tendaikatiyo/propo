@@ -28,6 +28,7 @@ import { cn } from "@/lib/utils";
 import { AdminLandReportsPanel } from "@/components/admin/admin-land-reports";
 import { AdminRentReportsPanel } from "@/components/admin/admin-rent-reports";
 import { AdminSaleReportsPanel } from "@/components/admin/admin-sale-reports";
+import { AdminSightedPriceForm } from "@/components/admin/admin-sighted-price-form";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 function formatDateTime(value: string | null | undefined): string {
@@ -299,6 +300,7 @@ export function AdminDashboard() {
         <Tabs defaultValue="pipeline" className="space-y-6">
           <TabsList>
             <TabsTrigger value="pipeline">Pipeline</TabsTrigger>
+            <TabsTrigger value="sighted">Add sighted</TabsTrigger>
             <TabsTrigger value="rent-reports">Rent</TabsTrigger>
             <TabsTrigger value="sale-reports">Sale</TabsTrigger>
             <TabsTrigger value="land-reports">Land</TabsTrigger>
@@ -656,6 +658,10 @@ export function AdminDashboard() {
             <code className="rounded bg-muted px-1 py-0.5">009_admin_dashboard.sql</code> on Supabase
             if RPC stats are missing.
           </p>
+          </TabsContent>
+
+          <TabsContent value="sighted">
+            <AdminSightedPriceForm />
           </TabsContent>
 
           <TabsContent value="rent-reports">

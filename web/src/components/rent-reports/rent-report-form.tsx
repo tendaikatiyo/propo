@@ -6,15 +6,12 @@ import { useEffect, useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import {
+  ContributionFormSelect,
+  contributionFieldClassName,
+} from "@/components/rent-reports/contribution-form-fields";
 import { MonthPickerField } from "@/components/rent-reports/month-picker-field";
 import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { useCities, useMarketMetrics } from "@/hooks/use-market-data";
 import { sortCitiesByMarketSize, sortMarketsByActivity } from "@/lib/geo";
 import { formatLocationLabel } from "@/lib/format";
@@ -25,62 +22,6 @@ import {
   type RentReportPropertyType,
 } from "@/lib/rent-reports";
 import { matchesSlug } from "@/lib/slug";
-import { cn } from "@/lib/utils";
-
-const fieldClassName =
-  "h-10 rounded-xl border-border/80 bg-background px-3 text-sm shadow-none";
-
-const selectTriggerClassName = cn(
-  fieldClassName,
-  "w-full border data-placeholder:text-muted-foreground"
-);
-
-function FormSelect({
-  id,
-  label,
-  value,
-  onValueChange,
-  placeholder,
-  disabled,
-  required,
-  options,
-}: {
-  id: string;
-  label: string;
-  value: string | null;
-  onValueChange: (value: string | null) => void;
-  placeholder: string;
-  disabled?: boolean;
-  required?: boolean;
-  options: Array<{ value: string; label: string }>;
-}) {
-  return (
-    <div className="space-y-2">
-      <Label htmlFor={id}>{label}</Label>
-      <Select
-        value={value}
-        onValueChange={(next) => onValueChange(next)}
-        disabled={disabled}
-        required={required}
-        items={options.map((option) => ({
-          value: option.value,
-          label: option.label,
-        }))}
-      >
-        <SelectTrigger id={id} className={selectTriggerClassName}>
-          <SelectValue placeholder={placeholder} />
-        </SelectTrigger>
-        <SelectContent className="max-h-72">
-          {options.map((option) => (
-            <SelectItem key={option.value} value={option.value}>
-              {option.label}
-            </SelectItem>
-          ))}
-        </SelectContent>
-      </Select>
-    </div>
-  );
-}
 
 export function RentReportForm({
   initialCitySlug,
@@ -282,7 +223,7 @@ export function RentReportForm({
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">
-            <FormSelect
+            <ContributionFormSelect
               id="city"
               label="City"
               value={city}
@@ -296,7 +237,7 @@ export function RentReportForm({
               options={cityOptions}
             />
 
-            <FormSelect
+            <ContributionFormSelect
               id="suburb"
               label="Suburb"
               value={suburb}
@@ -304,12 +245,14 @@ export function RentReportForm({
               placeholder={!city ? "Select a city first" : "Select suburb"}
               disabled={!city || isLoading}
               required
+              searchable
+              searchPlaceholder="Search suburbs…"
               options={suburbOptions}
             />
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">
-            <FormSelect
+            <ContributionFormSelect
               id="propertyType"
               label="Property type"
               value={propertyType}
@@ -319,7 +262,7 @@ export function RentReportForm({
               options={propertyTypeOptions}
             />
 
-            <FormSelect
+            <ContributionFormSelect
               id="bedrooms"
               label="Bedrooms"
               value={bedrooms}
@@ -345,7 +288,7 @@ export function RentReportForm({
               value={monthlyRent}
               onChange={(event) => setMonthlyRent(event.target.value)}
               placeholder="e.g. 800"
-              className={fieldClassName}
+              className={contributionFieldClassName}
             />
             <p className="text-xs text-muted-foreground">
               What you actually pay each month — not the advertised asking price.
@@ -361,14 +304,12 @@ export function RentReportForm({
               placeholder="Pick a month"
             />
 
-            <FormSelect
+            <ContributionFormSelect
               id="furnished"
               label="Furnished (optional)"
               value={furnished || "unspecified"}
               onValueChange={(next) =>
-                setFurnished(
-                  next === "yes" || next === "no" ? next : ""
-                )
+                setFurnished(next === "yes" || next === "no" ? next : "")
               }
               placeholder="Not specified"
               options={furnishedOptions}

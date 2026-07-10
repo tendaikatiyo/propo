@@ -17,6 +17,7 @@ export const RENT_REPORT_PROPERTY_TYPES = [
   { value: "house", label: "House" },
   { value: "flat", label: "Flat / apartment" },
   { value: "townhouse", label: "Townhouse" },
+  { value: "cottage", label: "Cottage / garden flat" },
   { value: "room", label: "Room" },
 ] as const;
 

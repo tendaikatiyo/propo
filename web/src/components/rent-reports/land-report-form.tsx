@@ -161,6 +161,8 @@ export function LandReportForm({
               placeholder={!city ? "Select a city first" : "Select suburb"}
               disabled={!city || isLoading}
               required
+              searchable
+              searchPlaceholder="Search suburbs…"
               options={suburbOptions}
             />
           </div>

@@ -48,7 +48,9 @@ function HomeContent() {
   useEffect(() => {
     setBudget((current) => budgetForMode(mode, current));
     if (mode === "buy" || mode === "invest") {
-      setPropertyType((current) => (current === "room" ? null : current));
+      setPropertyType((current) =>
+        current === "room" || current === "cottage" ? null : current
+      );
     }
     if (isLandMode(mode)) {
       setPropertyType(null);
@@ -91,10 +93,10 @@ function HomeContent() {
   function handleModeChange(nextMode: ExploreMode, defaultBudget: number) {
     setLens(nextMode, { source: "home" });
     setBudget(budgetForMode(nextMode, defaultBudget));
-    if (nextMode === "buy" && propertyType === "room") {
+    if (nextMode === "buy" && (propertyType === "room" || propertyType === "cottage")) {
       setPropertyType(null);
     }
-    if (nextMode === "invest" && propertyType === "room") {
+    if (nextMode === "invest" && (propertyType === "room" || propertyType === "cottage")) {
       setPropertyType(null);
     }
     if (isLandMode(nextMode)) {
