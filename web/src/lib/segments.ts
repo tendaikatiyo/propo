@@ -148,6 +148,7 @@ const TYPE_LABELS: Record<PropertyType, string> = {
   apartment: "flat",
   room: "room",
   townhouse: "townhouse",
+  cottage: "cottage",
   commercial: "commercial",
 };
 
@@ -157,6 +158,7 @@ const TYPE_PLURALS: Record<PropertyType, string> = {
   apartment: "flats",
   room: "rooms",
   townhouse: "townhouses",
+  cottage: "cottages",
   commercial: "commercial",
 };
 

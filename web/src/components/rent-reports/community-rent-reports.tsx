@@ -12,6 +12,7 @@ import {
   contributeCtaCopy,
   shouldShowCommunityRentRange,
   shouldShowContributeCta,
+  shouldShowProminentContributeCta,
   type RentReportMetrics,
 } from "@/lib/rent-reports";
 import {
@@ -64,11 +65,13 @@ export function ContributePriceButton({
 export function RentReportCta({
   market,
   lens,
+  landMarket = null,
 }: {
   market: MarketMetric;
   lens: ExploreMode;
+  landMarket?: LandMetric | null;
 }) {
-  if (!shouldShowContributeCta(lens)) return null;
+  if (!shouldShowProminentContributeCta(market, lens, landMarket)) return null;
 
   const { title, description, button } = contributeCtaCopy(lens);
 

@@ -10,7 +10,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { cn } from "@/lib/utils";
 
 const triggerClassName =
-  "flex h-10 w-full items-center justify-between gap-2 rounded-xl border border-border/80 bg-background px-3 text-sm font-normal shadow-none outline-none transition-colors hover:bg-background focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 data-placeholder:text-muted-foreground";
+  "flex h-11 min-h-11 w-full items-center justify-between gap-2 rounded-xl border border-border/80 bg-background px-3 text-base font-normal shadow-none outline-none transition-colors hover:bg-background focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 data-placeholder:text-muted-foreground md:text-sm";
 
 function parseMonthValue(value: string): Date | undefined {
   if (!value) return undefined;
@@ -52,7 +52,10 @@ export function MonthPickerField({
           </span>
           <CalendarIcon className="size-4 shrink-0 opacity-50" />
         </PopoverTrigger>
-        <PopoverContent className="w-auto p-0" align="start">
+        <PopoverContent
+          className="w-auto max-w-[calc(100vw-1.5rem)] p-0"
+          align="start"
+        >
           <Calendar
             mode="single"
             selected={selected}

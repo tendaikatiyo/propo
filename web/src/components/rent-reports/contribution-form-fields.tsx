@@ -26,8 +26,9 @@ import {
 } from "@/components/ui/select";
 import { cn } from "@/lib/utils";
 
+/** 16px on mobile avoids iOS zoom; 44px min height for touch. */
 export const contributionFieldClassName =
-  "h-10 rounded-xl border-border/80 bg-background px-3 text-sm shadow-none";
+  "h-11 min-h-11 rounded-xl border-border/80 bg-background px-3 text-base shadow-none md:text-sm";
 
 export const contributionSelectTriggerClassName = cn(
   contributionFieldClassName,
@@ -78,13 +79,14 @@ function ContributionSearchableSelect({
         <PopoverContent
           align="start"
           sideOffset={4}
-          className="w-[var(--anchor-width)] min-w-[var(--anchor-width)] p-0"
+          className="w-[var(--anchor-width)] max-w-[calc(100vw-1.5rem)] min-w-[min(100%,var(--anchor-width))] p-0"
         >
           <Command>
             <CommandInput
               placeholder={searchPlaceholder ?? `Search ${label.toLowerCase()}…`}
+              className="h-11 text-base md:text-sm"
             />
-            <CommandList>
+            <CommandList className="max-h-[min(50dvh,18rem)]">
               <CommandEmpty>No match.</CommandEmpty>
               <CommandGroup>
                 {options.map((option) => {
@@ -94,6 +96,7 @@ function ContributionSearchableSelect({
                       key={option.value}
                       value={`${option.label} ${option.value}`}
                       data-checked={checked ? "true" : undefined}
+                      className="min-h-11 py-2.5 text-base md:min-h-9 md:py-1.5 md:text-sm"
                       onSelect={() => {
                         onValueChange(option.value);
                         setOpen(false);
@@ -166,9 +169,13 @@ export function ContributionFormSelect({
         <SelectTrigger id={id} className={contributionSelectTriggerClassName}>
           <SelectValue placeholder={placeholder} />
         </SelectTrigger>
-        <SelectContent className="max-h-72">
+        <SelectContent className="max-h-[min(50dvh,18rem)]">
           {options.map((option) => (
-            <SelectItem key={option.value} value={option.value}>
+            <SelectItem
+              key={option.value}
+              value={option.value}
+              className="min-h-11 py-2.5 text-base md:min-h-9 md:py-1.5 md:text-sm"
+            >
               {option.label}
             </SelectItem>
           ))}

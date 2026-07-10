@@ -232,7 +232,7 @@ export function SuburbProfile({
         </div>
       </div>
 
-      <RentReportCta market={market} lens={lens} />
+      <RentReportCta market={market} lens={lens} landMarket={landMarket} />
 
       {showsResidentialOnProfile(lens) ? (
         <>

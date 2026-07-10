@@ -11,6 +11,16 @@ import {
   ContributionFormSelect,
   contributionFieldClassName,
 } from "@/components/rent-reports/contribution-form-fields";
+import {
+  ContributionFormError,
+  ContributionFormSuccess,
+  contributionCardContentClassName,
+  contributionCardHeaderClassName,
+  contributionCheckboxClassName,
+  contributionCheckboxLabelClassName,
+  contributionFormClassName,
+  contributionSubmitClassName,
+} from "@/components/rent-reports/contribution-form-feedback";
 import { MonthPickerField } from "@/components/rent-reports/month-picker-field";
 import { useContributionLocation } from "@/hooks/use-contribution-location";
 import {
@@ -108,24 +118,17 @@ export function LandReportForm({
 
   if (status === "success") {
     return (
-      <Card>
-        <CardContent className="space-y-3 pt-6 text-[15px] leading-relaxed text-muted-foreground">
-          <p className="font-medium text-foreground">{message}</p>
-          <Button type="button" variant="outline" onClick={() => setStatus("idle")}>
-            Submit another report
-          </Button>
-        </CardContent>
-      </Card>
+      <ContributionFormSuccess message={message} onReset={() => setStatus("idle")} />
     );
   }
 
   return (
     <Card>
-      <CardHeader>
-        <CardTitle>Share a land price</CardTitle>
+      <CardHeader className={contributionCardHeaderClassName}>
+        <CardTitle className="text-xl sm:text-2xl">Share a land price</CardTitle>
       </CardHeader>
-      <CardContent>
-        <form className="space-y-5" onSubmit={handleSubmit} noValidate>
+      <CardContent className={contributionCardContentClassName}>
+        <form className={contributionFormClassName} onSubmit={handleSubmit} noValidate>
           <div className="absolute -left-[9999px] top-auto h-px w-px overflow-hidden" aria-hidden>
             <label htmlFor="land-website">Website</label>
             <input
@@ -179,7 +182,13 @@ export function LandReportForm({
                 step="any"
                 value={landSize}
                 onChange={(event) => setLandSize(event.target.value)}
-                placeholder={landSizeUnit === "sqm" ? "e.g. 300" : landSizeUnit === "acres" ? "e.g. 0.5" : "e.g. 0.2"}
+                placeholder={
+                  landSizeUnit === "sqm"
+                    ? "e.g. 300"
+                    : landSizeUnit === "acres"
+                      ? "e.g. 0.5"
+                      : "e.g. 0.2"
+                }
                 className={contributionFieldClassName}
               />
             </div>
@@ -196,7 +205,7 @@ export function LandReportForm({
             />
           </div>
 
-          <p className="text-xs text-muted-foreground -mt-2">
+          <p className="-mt-2 text-xs text-muted-foreground">
             Optional but helps us show $/sqm ranges. Acres and hectares are converted to sqm
             automatically.
           </p>
@@ -240,20 +249,20 @@ export function LandReportForm({
             />
           </div>
 
-          <label className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground">
+          <label className={contributionCheckboxLabelClassName}>
             <input
               type="checkbox"
-              className="mt-0.5 size-4 shrink-0 accent-foreground"
+              className={contributionCheckboxClassName}
               checked={isCompletedPurchase}
               onChange={(event) => setIsCompletedPurchase(event.target.checked)}
             />
             <span>This was a completed purchase (not just an offer or listing I saw).</span>
           </label>
 
-          <label className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground">
+          <label className={contributionCheckboxLabelClassName}>
             <input
               type="checkbox"
-              className="mt-0.5 size-4 shrink-0 accent-foreground"
+              className={contributionCheckboxClassName}
               checked={consent}
               onChange={(event) => setConsent(event.target.checked)}
               required
@@ -268,15 +277,17 @@ export function LandReportForm({
             </span>
           </label>
 
-          {status === "error" && message ? (
-            <p className="text-sm text-destructive" role="alert">
-              {message}
-            </p>
-          ) : null}
+          {status === "error" ? <ContributionFormError message={message} /> : null}
 
-          <Button type="submit" disabled={status === "loading" || isLoading} className="w-full sm:w-auto">
-            {status === "loading" ? "Submitting…" : "Submit land report"}
-          </Button>
+          <div className="sticky bottom-0 -mx-4 border-t border-border/60 bg-card/95 px-4 pt-4 pb-[max(0.5rem,env(safe-area-inset-bottom))] backdrop-blur-sm sm:static sm:mx-0 sm:border-0 sm:bg-transparent sm:p-0 sm:backdrop-blur-none">
+            <Button
+              type="submit"
+              disabled={status === "loading" || isLoading}
+              className={contributionSubmitClassName}
+            >
+              {status === "loading" ? "Submitting…" : "Submit land report"}
+            </Button>
+          </div>
         </form>
       </CardContent>
     </Card>

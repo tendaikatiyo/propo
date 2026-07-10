@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { SlidingTabs } from "@/components/ui/sliding-tabs";
 import {
   defaultBudgetForMode,
   EXPLORE_MODES,
@@ -33,46 +34,18 @@ function ExploreModeSegmented({
   ExploreModeToggleProps,
   "value" | "onChange" | "comfortable" | "modes" | "className"
 >) {
-  const columnClass =
-    modes.length === 3
-      ? "grid-cols-3"
-      : modes.length === 2
-        ? "grid-cols-2"
-        : "grid-cols-4";
-
   return (
-    <div
-      role="group"
+    <SlidingTabs
       aria-label="Focus"
-      className={cn(
-        "grid gap-1 rounded-xl bg-muted p-1",
-        columnClass,
-        comfortable && "gap-1.5 rounded-2xl p-1.5",
-        className
-      )}
-    >
-      {modes.map((mode) => {
-        const active = value === mode;
-        return (
-          <button
-            key={mode}
-            type="button"
-            aria-pressed={active}
-            onClick={() => onChange(mode, defaultBudgetForMode(mode))}
-            className={cn(
-              "rounded-lg px-1 py-2 text-center text-xs font-medium transition-colors sm:px-1.5 sm:text-sm",
-              comfortable &&
-                "min-h-11 rounded-xl px-2 py-3 text-sm font-semibold sm:min-h-12 sm:px-3 sm:text-[15px]",
-              active
-                ? cn(MODE_ACCENT[mode].chip, "shadow-sm")
-                : "text-muted-foreground hover:text-foreground"
-            )}
-          >
-            {modeLabel(mode)}
-          </button>
-        );
-      })}
-    </div>
+      value={value}
+      options={modes.map((mode) => ({
+        value: mode,
+        label: modeLabel(mode),
+      }))}
+      onChange={(mode) => onChange(mode, defaultBudgetForMode(mode))}
+      pillColor={MODE_ACCENT[value].color}
+      className={cn(comfortable && "gap-1.5 rounded-2xl p-1.5 [&_.t-tab]:min-h-11 [&_.t-tab]:px-2 [&_.t-tab]:text-sm [&_.t-tab]:tracking-normal", className)}
+    />
   );
 }
 
@@ -109,8 +82,9 @@ export function ExploreModeToggle({
         <Button
           key={mode}
           type="button"
-          size="sm"
+          size={comfortable ? "lg" : "sm"}
           variant={value === mode ? "default" : "outline"}
+          className={comfortable ? "min-h-11" : undefined}
           onClick={() => onChange(mode, defaultBudgetForMode(mode))}
         >
           {variant === "intent" ? modeIntentLabel(mode) : modeLabel(mode)}

@@ -12,10 +12,18 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { SlidingTabs } from "@/components/ui/sliding-tabs";
 import {
   ContributionFormSelect,
   contributionFieldClassName,
 } from "@/components/rent-reports/contribution-form-fields";
+import {
+  ContributionFormError,
+  contributionCardContentClassName,
+  contributionCardHeaderClassName,
+  contributionFormClassName,
+  contributionSubmitClassName,
+} from "@/components/rent-reports/contribution-form-feedback";
 import { MonthPickerField } from "@/components/rent-reports/month-picker-field";
 import { useContributionLocation } from "@/hooks/use-contribution-location";
 import {
@@ -24,6 +32,7 @@ import {
   LAND_REPORT_SIZE_UNITS,
   type LandReportSizeUnit,
 } from "@/lib/land-reports";
+import { MODE_ACCENT } from "@/lib/mode-accent";
 import {
   RENT_REPORT_MAX_USD,
   RENT_REPORT_MIN_USD,
@@ -38,10 +47,10 @@ import type { SightedPriceMode } from "@/lib/sighted-prices";
 import type { ExploreMode } from "@/lib/types";
 
 const MODE_OPTIONS = [
-  { value: "rent", label: "Rent" },
-  { value: "buy", label: "Sale" },
-  { value: "land", label: "Land" },
-] as const;
+  { value: "rent" as const, label: "Rent" },
+  { value: "buy" as const, label: "Sale" },
+  { value: "land" as const, label: "Land" },
+];
 
 const BEDROOM_OPTIONS = [
   { value: "0", label: "0 (bachelor)" },
@@ -68,6 +77,7 @@ export function AdminSightedPriceForm() {
   const [notes, setNotes] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
+  const [successKey, setSuccessKey] = useState(0);
 
   const propertyTypeOptions = useMemo(() => {
     const list = mode === "buy" ? SALE_REPORT_PROPERTY_TYPES : RENT_REPORT_PROPERTY_TYPES;
@@ -141,6 +151,7 @@ export function AdminSightedPriceForm() {
 
       setStatus("success");
       setMessage(`Saved approved ${mode} sighting for ${suburb}, ${city}.`);
+      setSuccessKey((key) => key + 1);
       resetForm();
     } catch {
       setStatus("error");
@@ -148,32 +159,35 @@ export function AdminSightedPriceForm() {
     }
   }
 
+  const accentMode: ExploreMode = mode === "buy" ? "buy" : mode === "land" ? "land" : "rent";
+
   return (
     <Card>
-      <CardHeader>
-        <CardTitle>Add sighted price</CardTitle>
+      <CardHeader className={contributionCardHeaderClassName}>
+        <CardTitle className="text-xl sm:text-2xl">Add sighted price</CardTitle>
         <CardDescription>
           Manually log a rent, sale, or land price you saw. Saved as an approved community report
           and rolled into suburb ranges immediately.
         </CardDescription>
       </CardHeader>
-      <CardContent>
-        <form className="space-y-5" onSubmit={handleSubmit} noValidate>
-          <ContributionFormSelect
-            id="sighted-mode"
-            label="Type"
-            value={mode}
-            onValueChange={(next) => {
-              setMode((next as SightedPriceMode | null) ?? "rent");
-              setPropertyType(null);
-              setSuburb(null);
-              setStatus("idle");
-              setMessage("");
-            }}
-            placeholder="Select type"
-            required
-            options={[...MODE_OPTIONS]}
-          />
+      <CardContent className={contributionCardContentClassName}>
+        <form className={contributionFormClassName} onSubmit={handleSubmit} noValidate>
+          <div className="space-y-2">
+            <Label>Type</Label>
+            <SlidingTabs
+              aria-label="Sighted price type"
+              value={mode}
+              options={MODE_OPTIONS}
+              onChange={(next) => {
+                setMode(next);
+                setPropertyType(null);
+                setSuburb(null);
+                setStatus("idle");
+                setMessage("");
+              }}
+              pillColor={MODE_ACCENT[accentMode].color}
+            />
+          </div>
 
           <div className="grid gap-4 sm:grid-cols-2">
             <ContributionFormSelect
@@ -324,6 +338,7 @@ export function AdminSightedPriceForm() {
             <Input
               id="sighted-url"
               type="url"
+              inputMode="url"
               value={listingUrl}
               onChange={(event) => setListingUrl(event.target.value)}
               placeholder="https://…"
@@ -342,20 +357,38 @@ export function AdminSightedPriceForm() {
             />
           </div>
 
-          {status === "error" && message ? (
-            <p className="text-sm text-destructive" role="alert">
-              {message}
-            </p>
-          ) : null}
+          {status === "error" ? <ContributionFormError message={message} /> : null}
           {status === "success" && message ? (
-            <p className="text-sm text-emerald-700" role="status">
-              {message}
-            </p>
+            <div className="flex items-center gap-3 rounded-xl border border-emerald-200 bg-emerald-50 px-3 py-2.5 text-[15px] text-emerald-800">
+              <span
+                key={successKey}
+                className="t-success-check shrink-0"
+                data-state="in"
+                aria-hidden
+              >
+                <svg viewBox="0 0 48 48" fill="none" className="size-7">
+                  <path
+                    d="M14 24.5 21 31.5 34 17"
+                    stroke="currentColor"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </span>
+              <p role="status">{message}</p>
+            </div>
           ) : null}
 
-          <Button type="submit" disabled={status === "loading" || isLoading}>
-            {status === "loading" ? "Saving…" : "Save sighted price"}
-          </Button>
+          <div className="sticky bottom-0 -mx-4 border-t border-border/60 bg-card/95 px-4 pt-4 pb-[max(0.5rem,env(safe-area-inset-bottom))] backdrop-blur-sm sm:static sm:mx-0 sm:border-0 sm:bg-transparent sm:p-0 sm:backdrop-blur-none">
+            <Button
+              type="submit"
+              disabled={status === "loading" || isLoading}
+              className={contributionSubmitClassName}
+            >
+              {status === "loading" ? "Saving…" : "Save sighted price"}
+            </Button>
+          </div>
         </form>
       </CardContent>
     </Card>

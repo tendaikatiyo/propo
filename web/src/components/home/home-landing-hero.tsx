@@ -128,7 +128,12 @@ export function HomeLandingHero({
               ) : null}
 
               <Link href={exploreHref} className={cn(buttonVariants({ size: "lg" }), "w-full")}>
-                {invest ? "Explore yield markets" : "See matching suburbs"}
+                <span
+                  className="t-shimmer t-shimmer-on-dark"
+                  data-text={invest ? "Explore yield markets" : "See matching suburbs"}
+                >
+                  {invest ? "Explore yield markets" : "See matching suburbs"}
+                </span>
               </Link>
             </div>
           </div>

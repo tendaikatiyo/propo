@@ -10,6 +10,17 @@ import {
   ContributionFormSelect,
   contributionFieldClassName,
 } from "@/components/rent-reports/contribution-form-fields";
+import {
+  ContributionFormError,
+  ContributionFormSuccess,
+  ContributionMethodologyNote,
+  contributionCardContentClassName,
+  contributionCardHeaderClassName,
+  contributionCheckboxClassName,
+  contributionCheckboxLabelClassName,
+  contributionFormClassName,
+  contributionSubmitClassName,
+} from "@/components/rent-reports/contribution-form-feedback";
 import { MonthPickerField } from "@/components/rent-reports/month-picker-field";
 import { Label } from "@/components/ui/label";
 import { useCities, useMarketMetrics } from "@/hooks/use-market-data";
@@ -183,32 +194,19 @@ export function RentReportForm({
 
   if (status === "success") {
     return (
-      <Card>
-        <CardContent className="space-y-3 pt-6 text-[15px] leading-relaxed text-muted-foreground">
-          <p className="font-medium text-foreground">{message}</p>
-          <p>
-            Explore suburb medians and trends while you wait, or read how we combine portal data
-            with community reports on the{" "}
-            <Link href="/methodology" className="text-foreground underline-offset-4 hover:underline">
-              methodology page
-            </Link>
-            .
-          </p>
-          <Button type="button" variant="outline" onClick={() => setStatus("idle")}>
-            Submit another report
-          </Button>
-        </CardContent>
-      </Card>
+      <ContributionFormSuccess message={message} onReset={() => setStatus("idle")}>
+        <ContributionMethodologyNote />
+      </ContributionFormSuccess>
     );
   }
 
   return (
     <Card>
-      <CardHeader>
-        <CardTitle>Share your current rent</CardTitle>
+      <CardHeader className={contributionCardHeaderClassName}>
+        <CardTitle className="text-xl sm:text-2xl">Share your current rent</CardTitle>
       </CardHeader>
-      <CardContent>
-        <form className="space-y-5" onSubmit={handleSubmit} noValidate>
+      <CardContent className={contributionCardContentClassName}>
+        <form className={contributionFormClassName} onSubmit={handleSubmit} noValidate>
           <div className="absolute -left-[9999px] top-auto h-px w-px overflow-hidden" aria-hidden>
             <label htmlFor="website">Website</label>
             <input
@@ -316,20 +314,20 @@ export function RentReportForm({
             />
           </div>
 
-          <label className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground">
+          <label className={contributionCheckboxLabelClassName}>
             <input
               type="checkbox"
-              className="mt-0.5 size-4 shrink-0 accent-foreground"
+              className={contributionCheckboxClassName}
               checked={isCurrentLease}
               onChange={(event) => setIsCurrentLease(event.target.checked)}
             />
             <span>This is my current lease (not a past place or an offer I saw).</span>
           </label>
 
-          <label className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground">
+          <label className={contributionCheckboxLabelClassName}>
             <input
               type="checkbox"
-              className="mt-0.5 size-4 shrink-0 accent-foreground"
+              className={contributionCheckboxClassName}
               checked={consent}
               onChange={(event) => setConsent(event.target.checked)}
               required
@@ -344,15 +342,17 @@ export function RentReportForm({
             </span>
           </label>
 
-          {status === "error" && message ? (
-            <p className="text-sm text-destructive" role="alert">
-              {message}
-            </p>
-          ) : null}
+          {status === "error" ? <ContributionFormError message={message} /> : null}
 
-          <Button type="submit" disabled={status === "loading" || isLoading} className="w-full sm:w-auto">
-            {status === "loading" ? "Submitting…" : "Submit rent report"}
-          </Button>
+          <div className="sticky bottom-0 -mx-4 border-t border-border/60 bg-card/95 px-4 pt-4 pb-[max(0.5rem,env(safe-area-inset-bottom))] backdrop-blur-sm sm:static sm:mx-0 sm:border-0 sm:bg-transparent sm:p-0 sm:backdrop-blur-none">
+            <Button
+              type="submit"
+              disabled={status === "loading" || isLoading}
+              className={contributionSubmitClassName}
+            >
+              {status === "loading" ? "Submitting…" : "Submit rent report"}
+            </Button>
+          </div>
         </form>
       </CardContent>
     </Card>

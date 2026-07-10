@@ -88,18 +88,24 @@ export default async function ContributePage({
   });
 
   return (
-    <div className="mx-auto max-w-2xl space-y-8">
+    <div className="mx-auto max-w-2xl space-y-6 px-1 sm:space-y-8 sm:px-0">
       <BackLink href={back.href} label={back.label} showOnMobile />
 
       <PageHeader title={copy.title} description={copy.description} />
 
       <Card>
-        <CardHeader>
-          <CardTitle>Why contribute?</CardTitle>
+        <CardHeader className="px-4 pt-5 sm:px-6 sm:pt-6">
+          <CardTitle className="text-lg sm:text-xl">Why contribute?</CardTitle>
         </CardHeader>
-        <CardContent className="space-y-3 text-[15px] leading-relaxed text-muted-foreground">
+        <CardContent className="space-y-3 px-4 pb-5 text-[15px] leading-relaxed text-muted-foreground sm:px-6 sm:pb-6">
           <p>{copy.whyLead}</p>
-          <p>{copy.whyDetail}</p>
+          <p className="hidden sm:block">{copy.whyDetail}</p>
+          <details className="sm:hidden">
+            <summary className="cursor-pointer text-foreground underline-offset-4 hover:underline">
+              More about how we use this
+            </summary>
+            <p className="mt-2">{copy.whyDetail}</p>
+          </details>
         </CardContent>
       </Card>
 

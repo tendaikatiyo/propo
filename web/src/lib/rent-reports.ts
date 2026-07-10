@@ -199,6 +199,20 @@ export function shouldShowContributeCta(lens: ExploreMode): boolean {
   return lens !== "invest";
 }
 
+/** Prominent dashed contribute card — only on thin / low-confidence suburbs. */
+export function shouldShowProminentContributeCta(
+  market: MarketMetric,
+  lens: ExploreMode,
+  landMarket?: { confidence_score?: number | null } | null
+): boolean {
+  if (!shouldShowContributeCta(lens)) return false;
+  const score =
+    lens === "land"
+      ? (landMarket?.confidence_score ?? market.confidence_score ?? 0)
+      : (market.confidence_score ?? 0);
+  return score < RENT_REPORT_CTA_CONFIDENCE;
+}
+
 export function parseContributionMode(value: string | null | undefined): ContributionMode {
   if (value === "buy") return "buy";
   if (value === "land") return "land";
