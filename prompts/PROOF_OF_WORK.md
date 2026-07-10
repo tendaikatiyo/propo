@@ -2,7 +2,7 @@
 
 **Product:** [Propo](https://propo.fyi) — Zimbabwe property market intelligence platform  
 **Tagline:** *Where can you afford?* — suburb-level rent, sale, and land insights backed by a **continuously updated property market database**.  
-**Status:** Production v1 live at propo.fyi; dataset refreshed every 24 hours via GitHub Actions; ~85–90% complete with known ops/test gaps.
+**Status:** Production v1 live at propo.fyi; dataset refreshed every 24 hours via GitHub Actions (`daily-pipeline.yml` reliable since 2026-07-05); Supabase migrations **001–017** applied; ~85–90% complete with known test/copy gaps.
 
 ---
 
@@ -57,7 +57,7 @@ Explicitly **not** a chat/listings aggregator; competes on structured intelligen
          Cloudflare Workers (OpenNext)
 ```
 
-**Pipeline automation:** GitHub Actions cron (02:00 UTC) → Telegram stage alerts (collect / analytics / ingest + data-quality stats).
+**Pipeline automation:** GitHub Actions `daily-pipeline.yml` — **live and reliable since 2026-07-05**. Cron `04:17` Africa/Harare (`timezone:` on schedule) → Telegram stage alerts (collect / analytics / ingest + data-quality stats). Healthcheck ~`07:45` Harare.
 
 ---
 
@@ -103,6 +103,7 @@ Explicitly **not** a chat/listings aggregator; competes on structured intelligen
 | F10 | Product analytics (consent + events API + Google Analytics) | ✅ |
 | F11 | User lens (Rent · Buy · Land · Invest) + global Focus across home → rankings | ✅ |
 | + | Land mode, admin ops, GHA automation, About, mobile dock / hydration polish | ✅ |
+| + | Community price reports (rent/sale/land) + cottage + admin sighted prices | ✅ |
 
 ---
 
@@ -156,7 +157,7 @@ Everything shipped should strengthen these four — UI is the lens; the dataset 
 
 ## Honest limitations (shows judgment)
 
-- No automated test suite yet; web CI runs `npm run build` only; pipeline verification is manual + admin + Telegram.
+- No automated test suite yet; web CI runs `npm run build` only; pipeline is monitored via `/admin` + Telegram + schedule healthcheck (daily GHA itself is reliable since 2026-07-05).
 - Portal source fragility (HTML changes, IP blocking) — highest operational risk to refresh cadence.
 - Land trend charts temporarily hidden until `land_snapshots_daily` accumulates 2+ snapshot dates.
 - Photo licensing on Flickr hero assets needs confirmation before long-term commercial use.
@@ -173,9 +174,9 @@ propo/
 ├── analytics/          # ETL, metrics, rankings, land, sync_dashboard
 ├── .github/workflows/  # daily-pipeline, ingest-only, web-ci
 ├── data/               # JSON outputs + clean datasets
-├── supabase/           # migrations 001–013
+├── supabase/           # migrations 001–017 (incl. community reports)
 ├── web/                # Next.js app (Cloudflare deploy)
-└── prompts/handovers/  # 25+ continuity docs
+└── prompts/handovers/  # 30+ continuity docs
 ```
 
 ---
@@ -199,4 +200,4 @@ propo/
 
 ## Agent instructions
 
-Use this as source of truth for Propo. **External copy:** emphasize *proprietary / continuously updated property dataset* — avoid leading with "scraper" language. **Internal/technical docs** may reference ingest modules in `scraper/`. Do not invent features beyond F0–F11 + land mode + admin/automation/About. Latest handovers: `prompts/handovers/2026-07-05-user-lens-shipped.md`, `prompts/handovers/2026-07-05-user-flow-fixes.md`.
+Use this as source of truth for Propo. **External copy:** emphasize *proprietary / continuously updated property dataset* — avoid leading with "scraper" language. **Internal/technical docs** may reference ingest modules in `scraper/`. Do not invent features beyond F0–F11 + land mode + community price reports + admin/automation/About. **Agents:** read root `AGENTS.md` and `.github/copilot-instructions.md` first. Latest handovers: `prompts/handovers/2026-07-10-community-price-reports-shipped.md`, `prompts/handovers/2026-07-05-user-lens-shipped.md`, `prompts/handovers/2026-07-05-user-flow-fixes.md`.
