@@ -187,9 +187,9 @@ export function computeRentRollup(rents: number[]): {
 }
 
 export function isLeaseRecentEnough(leaseStartedAt: string | null | undefined): boolean {
-  if (!leaseStartedAt) return true;
+  if (!leaseStartedAt) return false;
   const started = new Date(leaseStartedAt);
-  if (Number.isNaN(started.getTime())) return true;
+  if (Number.isNaN(started.getTime())) return false;
   const cutoff = new Date();
   cutoff.setMonth(cutoff.getMonth() - RENT_REPORT_MAX_LEASE_AGE_MONTHS);
   return started >= cutoff;

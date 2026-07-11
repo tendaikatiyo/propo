@@ -22,6 +22,7 @@ import {
   type TrendRange,
 } from "@/lib/trends";
 import { buildMoverMarketLookup } from "@/lib/rankings";
+import { parseExploreMode } from "@/lib/mode";
 import type {
   CityMetric,
   CityTrendMoversPayload,
@@ -37,6 +38,11 @@ import type {
 
 const DATA_DIR = path.join(process.cwd(), "..", "data");
 const REVALIDATE_SECONDS = 3600;
+const NATIONAL_SNAPSHOT_PAGE_SIZE = 1000;
+
+function stretchPriceCap(budget: number): number {
+  return Math.round(budget * STRETCH_BUDGET_MULTIPLIER);
+}
 
 async function readLocalJson<T>(filename: string): Promise<T> {
   const filePath = path.join(DATA_DIR, filename);
@@ -158,7 +164,7 @@ function matchesLandListingQuery(listing: Listing, query: ListingQuery): boolean
   if (tier === "in") {
     if (pps > query.budget) return false;
   } else if (tier === "stretch") {
-    const max = query.budget * STRETCH_BUDGET_MULTIPLIER;
+    const max = stretchPriceCap(query.budget);
     if (pps <= query.budget || pps > max) return false;
   } else if (tier === "value") {
     const median = query.medianPrice;
@@ -199,7 +205,7 @@ function matchesListingQuery(listing: Listing, query: ListingQuery): boolean {
   if (tier === "in") {
     if (price > query.budget) return false;
   } else if (tier === "stretch") {
-    const max = Math.round(query.budget * STRETCH_BUDGET_MULTIPLIER);
+    const max = stretchPriceCap(query.budget);
     if (price <= query.budget || price > max) return false;
   } else if (tier === "value") {
     const median = query.medianPrice;
@@ -405,7 +411,7 @@ export async function fetchListings(query: ListingQuery): Promise<Listing[]> {
   const client = createServerSupabaseClient();
   if (client) {
     const tier = query.tier ?? "in";
-    const stretchMax = Math.round(query.budget * STRETCH_BUDGET_MULTIPLIER);
+    const stretchMax = stretchPriceCap(query.budget);
     const priceCap =
       tier === "stretch"
         ? stretchMax
@@ -815,16 +821,42 @@ export async function fetchNationalTrendMovers(
 
   const client = createServerSupabaseClient();
   if (client) {
-    const { data, error } = await client
-      .from("market_snapshots_daily")
-      .select(
-        "snapshot_date, city, suburb, median_price, listing_count, min_price, max_price, listing_type, median_days_on_market"
-      )
-      .gte("snapshot_date", startDate)
-      .order("snapshot_date", { ascending: true });
+    const lookupKeys = new Set(marketLookup.keys());
+    const cities = [
+      ...new Set([...marketLookup.values()].map((entry) => entry.city)),
+    ];
+    const rows: SnapshotRow[] = [];
+    let fetchError: string | null = null;
 
-    if (!error && data?.length) {
-      const rows = data as SnapshotRow[];
+    if (cities.length > 0) {
+      for (let from = 0; ; from += NATIONAL_SNAPSHOT_PAGE_SIZE) {
+        const to = from + NATIONAL_SNAPSHOT_PAGE_SIZE - 1;
+        const { data, error } = await client
+          .from("market_snapshots_daily")
+          .select(
+            "snapshot_date, city, suburb, median_price, listing_count, min_price, max_price, listing_type, median_days_on_market"
+          )
+          .gte("snapshot_date", startDate)
+          .in("city", cities)
+          .order("snapshot_date", { ascending: true })
+          .range(from, to);
+
+        if (error) {
+          fetchError = error.message;
+          break;
+        }
+
+        const page = (data ?? []) as SnapshotRow[];
+        for (const row of page) {
+          const key = marketSeriesKey(row.city ?? "", row.suburb ?? "");
+          if (lookupKeys.has(key)) rows.push(row);
+        }
+
+        if (page.length < NATIONAL_SNAPSHOT_PAGE_SIZE) break;
+      }
+    }
+
+    if (!fetchError && rows.length) {
       const rentRows = rows.filter((row) => row.listing_type === "rent");
       const saleRows = rows.filter((row) => row.listing_type === "sale");
       return buildMoversRankingsPayload(
@@ -836,8 +868,8 @@ export async function fetchNationalTrendMovers(
       );
     }
 
-    if (error) {
-      console.error("[data-server] national trend movers:", error.message);
+    if (fetchError) {
+      console.error("[data-server] national trend movers:", fetchError);
     }
   }
 
@@ -857,7 +889,6 @@ export function parseTrendQuery(rangeParam: string | null, modeParam: string | n
 } {
   return {
     range: parseTrendRange(rangeParam),
-    mode:
-      modeParam === "buy" ? "buy" : modeParam === "land" ? "land" : "rent",
+    mode: parseExploreMode(modeParam),
   };
 }

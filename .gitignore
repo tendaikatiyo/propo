@@ -4,3 +4,4 @@ node_modules/
 data/easishop.db
 data/easishop.db-journal
 logs/
+**/tempCodeRunnerFile.*

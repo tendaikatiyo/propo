@@ -7,6 +7,7 @@ import {
 } from "@/lib/contribution-server";
 import { parseRentReportPayload } from "@/lib/rent-reports";
 import {
+  contributionHashingUnavailableMessage,
   findDuplicateRentReport,
   marketExists,
   resolveMarketId,
@@ -42,6 +43,11 @@ export async function POST(request: Request) {
     );
   }
 
+  const hashingError = contributionHashingUnavailableMessage();
+  if (hashingError) {
+    return NextResponse.json({ error: hashingError }, { status: 503 });
+  }
+
   const supabase = createAdminSupabaseClient();
   if (!supabase) {
     return NextResponse.json(
@@ -60,9 +66,9 @@ export async function POST(request: Request) {
   }
 
   const { ipHash, sessionHash } = await getContributionHashes();
-  const rateLimitError = await checkContributionRateLimits(ipHash, sessionHash);
-  if (rateLimitError) {
-    return NextResponse.json({ error: rateLimitError }, { status: 429 });
+  const rateLimit = await checkContributionRateLimits(ipHash, sessionHash);
+  if (!rateLimit.ok) {
+    return NextResponse.json({ error: rateLimit.error }, { status: rateLimit.status });
   }
 
   const isDuplicate = await findDuplicateRentReport({
@@ -71,6 +77,12 @@ export async function POST(request: Request) {
     monthlyRent: parsed.data.monthlyRent,
     bedrooms: parsed.data.bedrooms,
   });
+  if (isDuplicate === null) {
+    return NextResponse.json(
+      { error: "Submissions are temporarily unavailable. Try again later." },
+      { status: 503 }
+    );
+  }
   if (isDuplicate) {
     return NextResponse.json(
       { error: "You already submitted a similar report for this suburb recently." },

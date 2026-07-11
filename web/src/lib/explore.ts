@@ -6,6 +6,7 @@ import {
   DEFAULT_RENT_BUDGET,
   LAND_BUDGET_RANGE,
   MIN_CONFIDENCE_THRESHOLD,
+  RENT_BUDGET_RANGE,
   PROPERTY_TYPE_COUNT_KEY,
   STRETCH_BUDGET_MULTIPLIER,
 } from "@/lib/constants";
@@ -62,7 +63,12 @@ export function budgetForMode(mode: ExploreMode, current: number): number {
   if ((mode === "buy" || mode === "invest") && current < BUY_BUDGET_RANGE.min) {
     return DEFAULT_BUY_BUDGET;
   }
-  if (mode === "rent" && current >= BUY_BUDGET_RANGE.min) return DEFAULT_RENT_BUDGET;
+  if (
+    mode === "rent" &&
+    (current >= BUY_BUDGET_RANGE.min || current < RENT_BUDGET_RANGE.min)
+  ) {
+    return DEFAULT_RENT_BUDGET;
+  }
   return current;
 }
 
@@ -212,13 +218,13 @@ export function totalListings(market: MarketMetric): number {
 
 export function propertyMixTotal(market: MarketMetric): number {
   return (
-    market.house_count +
-    market.apartment_count +
-    market.flat_count +
-    market.room_count +
-    market.townhouse_count +
+    (market.house_count ?? 0) +
+    (market.apartment_count ?? 0) +
+    (market.flat_count ?? 0) +
+    (market.room_count ?? 0) +
+    (market.townhouse_count ?? 0) +
     (market.cottage_count ?? 0) +
-    market.commercial_count
+    (market.commercial_count ?? 0)
   );
 }
 

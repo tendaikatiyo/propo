@@ -99,6 +99,8 @@ export const BEDROOM_COUNT_KEY: Record<number, keyof import("@/lib/types").Marke
 };
 
 export const MAX_PINNED_MARKETS = 3;
+/** Cap for device-local suburb browse history (home “Recently viewed”). */
+export const MAX_RECENTLY_VIEWED_MARKETS = 6;
 export const STRETCH_BUDGET_MULTIPLIER = 1.15;
 export const MIN_CONFIDENCE_THRESHOLD = 20;
 export const MIN_SEGMENT_LISTINGS = 3;

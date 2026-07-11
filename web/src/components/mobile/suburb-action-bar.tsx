@@ -6,7 +6,6 @@ import { GitCompare } from "lucide-react";
 import { contributeProfileHref } from "@/components/rent-reports/community-rent-reports";
 import { contributeCtaCopy, shouldShowContributeCta } from "@/lib/rent-reports";
 import { PinButton } from "@/components/markets/pin-button";
-import { useGlobalLens } from "@/components/providers/lens-provider";
 import { usePinnedMarkets } from "@/hooks/use-pinned-markets";
 import { liquidGlassPillClass } from "@/lib/liquid-glass";
 import { mobileDockBottom } from "@/lib/mobile-dock";
@@ -21,12 +20,9 @@ export function SuburbActionBar({
   lens: ExploreMode;
 }) {
   const { pins } = usePinnedMarkets();
-  const { lens: globalLens } = useGlobalLens();
   const canCompare = pins.length >= 2;
   const compareHref =
-    globalLens === "rent"
-      ? "/compare"
-      : `/compare?mode=${encodeURIComponent(globalLens)}`;
+    lens === "rent" ? "/compare" : `/compare?mode=${encodeURIComponent(lens)}`;
 
   return (
     <div

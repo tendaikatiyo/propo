@@ -225,7 +225,7 @@ function ResidentialExploreResults({ preview = false }: { preview?: boolean }) {
     () => filterMarketsBySuburbQuery(rankedStretch, suburbQuery),
     [rankedStretch, suburbQuery]
   );
-  const avgYield = filters.mode === "buy" ? averageYield(inBudget) : null;
+  const avgYield = filters.mode === "invest" ? averageYield(inBudget) : null;
   const zeroResultsKeyRef = useRef<string | null>(null);
 
   useEffect(() => {

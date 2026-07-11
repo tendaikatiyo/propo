@@ -6,15 +6,33 @@ import {
   buildMarketId,
   computeRentRollup,
   isLeaseRecentEnough,
+  isRentReportOutlier,
   type RentReportMetrics,
   type RentReportRow,
 } from "@/lib/rent-reports";
 import { createAdminSupabaseClient } from "@/lib/supabase-admin";
 
-const HASH_SALT = process.env.CONTRIBUTION_HASH_SALT?.trim() || "propo-contribute";
+const DEV_HASH_SALT = "propo-contribute-dev";
+
+/** Null when production is missing CONTRIBUTION_HASH_SALT (fail closed on submit). */
+export function resolveContributionHashSalt(): string | null {
+  const salt = process.env.CONTRIBUTION_HASH_SALT?.trim();
+  if (salt) return salt;
+  if (process.env.NODE_ENV !== "production") return DEV_HASH_SALT;
+  return null;
+}
+
+export function contributionHashingUnavailableMessage(): string | null {
+  if (resolveContributionHashSalt()) return null;
+  return "Submissions are temporarily unavailable. Try again later.";
+}
 
 export function hashContributionValue(value: string): string {
-  return createHash("sha256").update(`${value}|${HASH_SALT}`).digest("hex");
+  const salt = resolveContributionHashSalt();
+  if (!salt) {
+    throw new Error("CONTRIBUTION_HASH_SALT is not configured");
+  }
+  return createHash("sha256").update(`${value}|${salt}`).digest("hex");
 }
 
 export async function getContributionHashes(): Promise<{
@@ -35,51 +53,15 @@ export async function getContributionHashes(): Promise<{
   };
 }
 
-export async function checkRentReportRateLimits(
-  ipHash: string,
-  sessionHash: string
-): Promise<string | null> {
-  const supabase = createAdminSupabaseClient();
-  if (!supabase) return null;
-
-  const dayAgo = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString();
-  const weekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
-
-  const { count: sessionCount, error: sessionError } = await supabase
-    .from("rent_reports")
-    .select("id", { count: "exact", head: true })
-    .eq("session_hash", sessionHash)
-    .gte("created_at", dayAgo);
-
-  if (sessionError) {
-    console.error("[rent-reports] session rate limit:", sessionError.message);
-  } else if ((sessionCount ?? 0) >= 1) {
-    return "You can submit one rent report per day. Try again tomorrow.";
-  }
-
-  const { count: ipCount, error: ipError } = await supabase
-    .from("rent_reports")
-    .select("id", { count: "exact", head: true })
-    .eq("ip_hash", ipHash)
-    .gte("created_at", weekAgo);
-
-  if (ipError) {
-    console.error("[rent-reports] ip rate limit:", ipError.message);
-  } else if ((ipCount ?? 0) >= 3) {
-    return "Too many submissions from your network this week. Try again later.";
-  }
-
-  return null;
-}
-
+/** `null` = lookup failed (fail closed); do not treat as unique. */
 export async function findDuplicateRentReport(input: {
   ipHash: string;
   marketId: string;
   monthlyRent: number;
   bedrooms: number;
-}): Promise<boolean> {
+}): Promise<boolean | null> {
   const supabase = createAdminSupabaseClient();
-  if (!supabase) return false;
+  if (!supabase) return null;
 
   const weekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
   const { data, error } = await supabase
@@ -94,7 +76,7 @@ export async function findDuplicateRentReport(input: {
 
   if (error) {
     console.error("[rent-reports] duplicate check:", error.message);
-    return false;
+    return null;
   }
 
   return Boolean(data?.length);
@@ -106,7 +88,7 @@ export async function marketExists(
   marketId: string
 ): Promise<boolean> {
   const supabase = createAdminSupabaseClient();
-  if (!supabase) return true;
+  if (!supabase) return false;
 
   const { data, error } = await supabase
     .from("market_metrics")
@@ -118,7 +100,7 @@ export async function marketExists(
 
   if (error) {
     console.error("[rent-reports] market lookup:", error.message);
-    return true;
+    return false;
   }
 
   return Boolean(data);
@@ -139,9 +121,19 @@ export async function syncRentReportMetrics(marketId: string): Promise<void> {
     return;
   }
 
+  const { data: scraped } = await supabase
+    .from("market_metrics")
+    .select("median_rent")
+    .eq("market_id", marketId)
+    .maybeSingle();
+  const scrapedMedian =
+    typeof scraped?.median_rent === "number" ? scraped.median_rent : null;
+
   const eligible = (reports ?? []).filter((row) => {
     if (!row.is_current_lease) return false;
-    return isLeaseRecentEnough(row.lease_started_at);
+    if (!isLeaseRecentEnough(row.lease_started_at as string | null)) return false;
+    if (isRentReportOutlier(Number(row.monthly_rent), scrapedMedian)) return false;
+    return true;
   });
 
   if (!eligible.length) {

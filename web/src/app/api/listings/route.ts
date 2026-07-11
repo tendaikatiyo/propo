@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 import { fetchListings } from "@/lib/data-server";
 import { budgetForMode } from "@/lib/explore";
-import { normalizePropertyType } from "@/lib/constants";
+import { normalizeExploreFilters, normalizePropertyType } from "@/lib/constants";
 import { defaultBudgetForMode, parseExploreMode } from "@/lib/mode";
 
 export const revalidate = 3600;
@@ -21,8 +21,16 @@ export async function GET(request: NextRequest) {
   const suburb = params.get("suburb") || null;
   const marketId = params.get("market_id") || null;
   const typeParam = params.get("type");
-  const propertyType =
-    mode === "land" || !typeParam ? null : normalizePropertyType(typeParam);
+  const normalized = normalizeExploreFilters({
+    mode,
+    budget,
+    city,
+    propertyType: mode === "land" || !typeParam ? null : normalizePropertyType(typeParam),
+    bedroom: null,
+    includeLowConfidence: false,
+    hideSuburbMedianFallback: true,
+  });
+  const propertyType = normalized.propertyType;
   const limitParam = Number(params.get("limit"));
   const limit = Number.isFinite(limitParam) && limitParam > 0 ? Math.min(limitParam, 12) : 4;
   const tierParam = params.get("tier");
@@ -32,8 +40,8 @@ export async function GET(request: NextRequest) {
   const medianPrice = Number.isFinite(medianParam) && medianParam > 0 ? medianParam : null;
 
   const listings = await fetchListings({
-    mode,
-    budget,
+    mode: normalized.mode,
+    budget: normalized.budget,
     city,
     suburb,
     marketId,

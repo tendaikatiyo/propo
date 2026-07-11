@@ -152,6 +152,15 @@ export interface PinnedMarket {
   pinnedFromMode?: ExploreMode;
 }
 
+export interface RecentlyViewedMarket {
+  market_id: string;
+  city: string;
+  suburb: string;
+  viewedAt: string;
+  /** Lens active when the suburb was opened. */
+  viewedFromMode?: ExploreMode;
+}
+
 export interface ExploreFilters {
   mode: ExploreMode;
   budget: number;

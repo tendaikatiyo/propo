@@ -11,6 +11,7 @@ import {
   findDuplicateLandReport,
   resolveLandMarketId,
 } from "@/lib/land-reports-server";
+import { contributionHashingUnavailableMessage } from "@/lib/rent-reports-server";
 import {
   createAdminSupabaseClient,
   isSupabaseAdminConfigured,
@@ -42,6 +43,11 @@ export async function POST(request: Request) {
     );
   }
 
+  const hashingError = contributionHashingUnavailableMessage();
+  if (hashingError) {
+    return NextResponse.json({ error: hashingError }, { status: 503 });
+  }
+
   const supabase = createAdminSupabaseClient();
   if (!supabase) {
     return NextResponse.json(
@@ -64,9 +70,9 @@ export async function POST(request: Request) {
   }
 
   const { ipHash, sessionHash } = await getContributionHashes();
-  const rateLimitError = await checkContributionRateLimits(ipHash, sessionHash);
-  if (rateLimitError) {
-    return NextResponse.json({ error: rateLimitError }, { status: 429 });
+  const rateLimit = await checkContributionRateLimits(ipHash, sessionHash);
+  if (!rateLimit.ok) {
+    return NextResponse.json({ error: rateLimit.error }, { status: rateLimit.status });
   }
 
   const isDuplicate = await findDuplicateLandReport({
@@ -75,6 +81,12 @@ export async function POST(request: Request) {
     totalPrice: parsed.data.totalPrice,
     landSizeSqm: parsed.data.landSizeSqm,
   });
+  if (isDuplicate === null) {
+    return NextResponse.json(
+      { error: "Submissions are temporarily unavailable. Try again later." },
+      { status: 503 }
+    );
+  }
   if (isDuplicate) {
     return NextResponse.json(
       { error: "You already submitted a similar report for this suburb recently." },

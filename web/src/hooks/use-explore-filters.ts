@@ -3,6 +3,7 @@
 import { useCallback, useMemo } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
+import { useGlobalLens } from "@/components/providers/lens-provider";
 import {
   DEFAULT_CITY,
   normalizeExploreFilters,
@@ -32,9 +33,11 @@ export function useExploreFilters() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
+  const { lens: globalLens } = useGlobalLens();
 
   const filters = useMemo<ExploreFilters>(() => {
-    const mode = parseExploreMode(searchParams.get("mode"));
+    const fromUrl = searchParams.get("mode");
+    const mode = fromUrl ? parseExploreMode(fromUrl) : globalLens;
     const budgetParam = Number(searchParams.get("budget"));
     const defaultBudget = defaultBudgetForMode(mode);
     const cityParam = searchParams.get("city");
@@ -50,7 +53,7 @@ export function useExploreFilters() {
       includeLowConfidence: searchParams.get("lowconf") === "1",
       hideSuburbMedianFallback: searchParams.get("showfallback") !== "1",
     });
-  }, [searchParams]);
+  }, [searchParams, globalLens]);
 
   const setFilters = useCallback(
     (patch: Partial<ExploreFilters>, options?: { targetPath?: string }) => {

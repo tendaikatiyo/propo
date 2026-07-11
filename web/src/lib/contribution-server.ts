@@ -5,12 +5,21 @@ export { getContributionHashes };
 
 const CONTRIBUTION_TABLES = ["rent_reports", "sale_reports", "land_reports"] as const;
 
+const UNAVAILABLE =
+  "Submissions are temporarily unavailable. Try again later.";
+
+export type ContributionRateLimitResult =
+  | { ok: true }
+  | { ok: false; status: 429 | 503; error: string };
+
 export async function checkContributionRateLimits(
   ipHash: string,
   sessionHash: string
-): Promise<string | null> {
+): Promise<ContributionRateLimitResult> {
   const supabase = createAdminSupabaseClient();
-  if (!supabase) return null;
+  if (!supabase) {
+    return { ok: false, status: 503, error: UNAVAILABLE };
+  }
 
   const dayAgo = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString();
   const weekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
@@ -25,13 +34,17 @@ export async function checkContributionRateLimits(
 
     if (error) {
       console.error(`[contributions] session rate limit (${table}):`, error.message);
-      continue;
+      return { ok: false, status: 503, error: UNAVAILABLE };
     }
     sessionTotal += count ?? 0;
   }
 
   if (sessionTotal >= 1) {
-    return "You can submit one price report per day. Try again tomorrow.";
+    return {
+      ok: false,
+      status: 429,
+      error: "You can submit one price report per day. Try again tomorrow.",
+    };
   }
 
   let ipTotal = 0;
@@ -44,16 +57,20 @@ export async function checkContributionRateLimits(
 
     if (error) {
       console.error(`[contributions] ip rate limit (${table}):`, error.message);
-      continue;
+      return { ok: false, status: 503, error: UNAVAILABLE };
     }
     ipTotal += count ?? 0;
   }
 
   if (ipTotal >= 3) {
-    return "Too many submissions from your network this week. Try again later.";
+    return {
+      ok: false,
+      status: 429,
+      error: "Too many submissions from your network this week. Try again later.",
+    };
   }
 
-  return null;
+  return { ok: true };
 }
 
 export async function landMarketExists(
@@ -62,7 +79,7 @@ export async function landMarketExists(
   marketId: string
 ): Promise<boolean> {
   const supabase = createAdminSupabaseClient();
-  if (!supabase) return true;
+  if (!supabase) return false;
 
   const { data, error } = await supabase
     .from("land_metrics")
@@ -74,7 +91,7 @@ export async function landMarketExists(
 
   if (error) {
     console.error("[land-reports] market lookup:", error.message);
-    return true;
+    return false;
   }
 
   return Boolean(data);

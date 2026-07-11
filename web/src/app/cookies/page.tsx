@@ -8,7 +8,7 @@ export const metadata = buildPageMetadata({
   path: "/cookies",
 });
 
-const LAST_UPDATED = "1 July 2026";
+const LAST_UPDATED = "11 July 2026";
 
 export default function CookiePolicyPage() {
   return (
@@ -35,6 +35,10 @@ export default function CookiePolicyPage() {
           <li>
             <strong className="font-medium text-foreground">Pinned suburbs</strong> — remembers
             up to three suburbs you have pinned for comparison
+          </li>
+          <li>
+            <strong className="font-medium text-foreground">Recently viewed suburbs</strong> —
+            remembers up to six suburbs you have opened on this device (local storage)
           </li>
           <li>
             <strong className="font-medium text-foreground">Onboarding state</strong> — records

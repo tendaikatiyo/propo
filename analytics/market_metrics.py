@@ -5,6 +5,7 @@ from statistics import mean, median
 from typing import Any, Dict, Iterable, List, Optional
 
 from analytics.listing_utils import normalize_property_type
+from analytics.price_utils import parse_price_amount
 
 DATA_DIR = Path(__file__).resolve().parents[1] / "data"
 CLEAN_SALES_PATH = DATA_DIR / "clean_sales.json"
@@ -74,9 +75,12 @@ def add_listing_to_segments(
     listing: Dict[str, Any],
     listing_kind: str,
 ) -> None:
+    price = parse_price_amount(listing.get("price"))
+    if price is None or price <= 0:
+        return
+
     ptype = segment_property_type(listing.get("property_type", "unknown"))
     bed = normalize_bedroom_bucket(listing.get("bedrooms"))
-    price = int(listing["price"])
     dom = listing.get("days_on_market")
 
     def append(key: str) -> None:
@@ -200,8 +204,11 @@ def build_market_metrics(sales: List[Dict[str, Any]], rentals: List[Dict[str, An
         return markets[market_id]
 
     for rent in rentals:
+        price = parse_price_amount(rent.get("price"))
+        if price is None or price <= 0:
+            continue
         market = ensure_market(rent)
-        market["rental_prices"].append(int(rent["price"]))
+        market["rental_prices"].append(price)
         market["property_types"].append(normalize_property_type(rent.get("property_type", "unknown")))
         bedroom_bucket = normalize_bedroom_bucket(rent.get("bedrooms"))
         if bedroom_bucket:
@@ -213,8 +220,11 @@ def build_market_metrics(sales: List[Dict[str, Any]], rentals: List[Dict[str, An
         add_listing_to_segments(market["segment_prices"], rent, "rent")
 
     for sale in sales:
+        price = parse_price_amount(sale.get("price"))
+        if price is None or price <= 0:
+            continue
         market = ensure_market(sale)
-        market["sale_prices"].append(int(sale["price"]))
+        market["sale_prices"].append(price)
         market["property_types"].append(normalize_property_type(sale.get("property_type", "unknown")))
         bedroom_bucket = normalize_bedroom_bucket(sale.get("bedrooms"))
         if bedroom_bucket:

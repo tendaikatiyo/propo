@@ -143,7 +143,7 @@ export default async function SuburbPage({
       <SuburbViewTracker
         marketId={market.market_id}
         city={market.city}
-        suburb={suburbLabel}
+        suburb={market.suburb}
         lens={lens}
       />
       <SuburbProfile

@@ -13,8 +13,12 @@ import {
 export const dynamic = "force-dynamic";
 
 export async function POST(request: Request) {
-  const consent = request.headers.get("cookie")?.includes(`${ANALYTICS_CONSENT_COOKIE}=granted`);
-  if (!consent) {
+  const cookieHeader = request.headers.get("cookie") ?? "";
+  const consentMatch = cookieHeader.match(
+    new RegExp(`(?:^|;\\s*)${ANALYTICS_CONSENT_COOKIE}=([^;]*)`)
+  );
+  const consentValue = consentMatch ? decodeURIComponent(consentMatch[1]) : null;
+  if (consentValue !== "granted") {
     return new NextResponse(null, { status: 204 });
   }
 

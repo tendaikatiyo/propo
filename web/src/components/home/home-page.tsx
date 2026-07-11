@@ -7,6 +7,7 @@ import { AffordabilityInsights } from "@/components/home/affordability-insights"
 import { HomeInvestTeaser } from "@/components/home/home-invest-teaser";
 import { HomeLandingHero } from "@/components/home/home-landing-hero";
 import { HomeMoversTeaser } from "@/components/home/home-movers-teaser";
+import { HomeRecentlyViewed } from "@/components/home/home-recently-viewed";
 import { BudgetListingsPreview } from "@/components/listings/budget-listings";
 import { HomeBudgetBar } from "@/components/mobile/home-budget-bar";
 import { PageHeader } from "@/components/layout/page-header";
@@ -180,6 +181,8 @@ function HomeContent() {
             </p>
           )}
         </section>
+
+        <HomeRecentlyViewed />
 
         {!land && !invest ? <HomeMoversTeaser /> : null}
 

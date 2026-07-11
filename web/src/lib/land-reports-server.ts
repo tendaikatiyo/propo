@@ -7,14 +7,15 @@ import {
 import { createAdminSupabaseClient } from "@/lib/supabase-admin";
 import { buildMarketId } from "@/lib/rent-reports";
 
+/** `null` = lookup failed (fail closed); do not treat as unique. */
 export async function findDuplicateLandReport(input: {
   ipHash: string;
   marketId: string;
   totalPrice: number;
   landSizeSqm?: number;
-}): Promise<boolean> {
+}): Promise<boolean | null> {
   const supabase = createAdminSupabaseClient();
-  if (!supabase) return false;
+  if (!supabase) return null;
 
   const weekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
   let query = supabase
@@ -33,7 +34,7 @@ export async function findDuplicateLandReport(input: {
 
   if (error) {
     console.error("[land-reports] duplicate check:", error.message);
-    return false;
+    return null;
   }
 
   return Boolean(data?.length);

@@ -37,3 +37,4 @@ Chronological notes for agent/developer continuity between sessions.
 | 2026-07-08 | [2026-07-08-sa-market-expansion-plan.md](./2026-07-08-sa-market-expansion-plan.md) | SA expansion plan — Property24/Private Property, separate Supabase, rent+buy only, OSM maps, SIA |
 | 2026-07-08 | [2026-07-08-sa-expansion-planning-handover.md](./2026-07-08-sa-expansion-planning-handover.md) | SA planning session handover; Property24 scrape recon; dual Vercel+CF hosting; propo.co.za taken |
 | 2026-07-10 | [2026-07-10-community-price-reports-shipped.md](./2026-07-10-community-price-reports-shipped.md) | **Community rent/sale/land reports shipped**; cottage; admin sighted prices; mobile forms; transitions.dev |
+| 2026-07-11 | [2026-07-11-bug-audit-recently-viewed.md](./2026-07-11-bug-audit-recently-viewed.md) | **Bug audit #1–18 fixed**; contribute fail-closed; `CONTRIBUTION_HASH_SALT`; home Recently viewed (localStorage) |

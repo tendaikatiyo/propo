@@ -171,9 +171,9 @@ export function computeSaleRollup(prices: number[]): {
 }
 
 export function isSaleRecentEnough(saleDate: string | null | undefined): boolean {
-  if (!saleDate) return true;
+  if (!saleDate) return false;
   const sold = new Date(saleDate);
-  if (Number.isNaN(sold.getTime())) return true;
+  if (Number.isNaN(sold.getTime())) return false;
   const cutoff = new Date();
   cutoff.setMonth(cutoff.getMonth() - SALE_REPORT_MAX_AGE_MONTHS);
   return sold >= cutoff;

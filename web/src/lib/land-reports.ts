@@ -268,9 +268,9 @@ export function computeLandRollup(pricePerSqmValues: number[]): {
 export function isLandPurchaseRecentEnough(
   purchaseDate: string | null | undefined
 ): boolean {
-  if (!purchaseDate) return true;
+  if (!purchaseDate) return false;
   const purchased = new Date(purchaseDate);
-  if (Number.isNaN(purchased.getTime())) return true;
+  if (Number.isNaN(purchased.getTime())) return false;
   const cutoff = new Date();
   cutoff.setMonth(cutoff.getMonth() - LAND_REPORT_MAX_AGE_MONTHS);
   return purchased >= cutoff;

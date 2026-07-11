@@ -86,6 +86,10 @@ For the private **admin ops dashboard** at `/admin`, also set (runtime + local `
 - `SUPABASE_URL` — same project URL as above
 - `SUPABASE_SERVICE_ROLE_KEY` — used only on server routes; never prefix with `NEXT_PUBLIC_`
 
+For **community price reports** (`/contribute`), also set:
+
+- `CONTRIBUTION_HASH_SALT` — long random secret used to hash IP/session for rate limits (required in production; submissions return 503 if missing)
+
 Apply `supabase/migrations/009_admin_dashboard.sql` on Supabase so the stats RPC is available.
 
 ### Sync data to Supabase
