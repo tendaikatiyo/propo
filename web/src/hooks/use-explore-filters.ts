@@ -11,12 +11,17 @@ import {
 } from "@/lib/constants";
 import { trackExploreFilterChange } from "@/lib/analytics/track";
 import { budgetForMode } from "@/lib/explore";
-import { defaultBudgetForMode, parseExploreMode } from "@/lib/mode";
+import {
+  DEFAULT_LENS,
+  defaultBudgetForMode,
+  modeSearchParam,
+  parseExploreMode,
+} from "@/lib/mode";
 import type { ExploreFilters, PropertyType } from "@/lib/types";
 
 const DEFAULT_FILTERS: ExploreFilters = {
-  mode: "rent",
-  budget: defaultBudgetForMode("rent"),
+  mode: DEFAULT_LENS,
+  budget: defaultBudgetForMode(DEFAULT_LENS),
   city: DEFAULT_CITY,
   propertyType: null,
   bedroom: null,
@@ -64,7 +69,8 @@ export function useExploreFilters() {
       }
       const params = new URLSearchParams();
 
-      if (next.mode !== "rent") params.set("mode", next.mode);
+      const modeParam = modeSearchParam(next.mode);
+      if (modeParam) params.set("mode", modeParam);
       if (next.budget !== defaultBudgetForMode(next.mode)) {
         params.set("budget", String(next.budget));
       }

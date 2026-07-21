@@ -2,7 +2,6 @@
 
 import { X } from "lucide-react";
 
-import { GlobalLensSwitcher } from "@/components/layout/global-lens-switcher";
 import { ExploreFilterPanel } from "@/components/filters/filter-bar";
 import { PropoLogomark } from "@/components/brand/propo-logomark";
 import { BetaBadge } from "@/components/brand/beta-badge";
@@ -52,8 +51,6 @@ export function MobileMenuDrawer({
         </div>
 
         <div className="flex flex-col gap-6 px-5 py-6 pb-[max(1.5rem,env(safe-area-inset-bottom))]">
-          <GlobalLensSwitcher labelVariant="display" />
-
           <MobileComparePanel onNavigate={close} />
 
           <div data-tour="filters">

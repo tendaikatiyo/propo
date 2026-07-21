@@ -7,6 +7,7 @@ import { PinButton } from "@/components/markets/pin-button";
 import { usePinnedMarkets } from "@/hooks/use-pinned-markets";
 import { liquidGlassPillClass } from "@/lib/liquid-glass";
 import { mobileDockBottom } from "@/lib/mobile-dock";
+import { comparePath } from "@/lib/slug";
 import type { ExploreMode, MarketMetric } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
@@ -19,9 +20,7 @@ export function SuburbActionBar({
 }) {
   const { pins } = usePinnedMarkets();
   const canCompare = pins.length >= 2;
-  const compareHref =
-    lens === "rent" ? "/compare" : `/compare?mode=${encodeURIComponent(lens)}`;
-
+  const compareHref = comparePath(lens);
   return (
     <div
       className="pointer-events-none fixed inset-x-0 z-40 flex justify-center px-4 print:hidden lg:hidden"

@@ -50,8 +50,8 @@ propo/
 
 | Rule | Detail |
 | ---- | ------ |
-| **Global Focus only** | One lens control (sidebar desktop; top-bar chip + menu mobile). Do **not** reintroduce per-page `LensSwitcher` bars. Home uses hero intent only. |
-| **Lens hydration** | Server + first client paint = **rent**. Apply `localStorage` / URL after mount. Brief Rent flash is intentional. |
+| **Invest-first Focus** | Product default lens is **invest**. Focus switcher UI is hidden (investor-first cut). Do **not** reintroduce per-page `LensSwitcher` bars or the global Focus control without an explicit product decision. Explicit `?mode=` deep links (rent/buy/land) still work. Home is invest-only (no 4-intent hero). |
+| **Lens hydration** | Server + first client paint = **invest**. No-`?mode=` URLs resolve to invest (stale `propo_lens` rent/buy/land ignored on product surfaces). `/contribute` stays rent/buy/land only. |
 | **Community ≠ scraped medians** | Rent/sale/land **reports** are a parallel signal. Do **not** fold them into headline `market_metrics` without an explicit product decision. |
 | **Cottage = rent-only** | `RENT_ONLY_PROPERTY_TYPES` — never on buy/invest filters. |
 | **Contribute + Invest** | `/contribute` is rent/buy/land only; invest is blocked. |
@@ -89,7 +89,7 @@ Portals → Python scrape → SQLite warehouse → analytics rollups → Supabas
 - **shadcn/ui + Tailwind** — reuse components; don’t add new UI kits.
 - **TanStack Query** — client data fetching where existing pages use it; don’t put QueryClient usage in Suspense fallbacks that SSR.
 - **Supabase** — live dashboard; without env, APIs fall back to `../data/*.json`.
-- **Focus persistence:** URL `?mode=` + `localStorage` key `propo_lens`.
+- **Focus persistence:** URL `?mode=` + `localStorage` key `propo_lens`. Product default is **invest** (omitted from URLs). Explicit `?mode=rent|buy|land` still honored.
 
 ---
 
@@ -129,6 +129,7 @@ Warm editorial neutrals; affordability-first copy; photographic heroes. Fonts: S
 
 | Doc | Topic |
 | --- | ----- |
+| [`2026-07-21-investor-first-landing-cut.md`](prompts/handovers/2026-07-21-investor-first-landing-cut.md) | Investor-first cut: invest default, home invest-only, Focus UI hidden |
 | [`2026-07-11-bug-audit-recently-viewed.md`](prompts/handovers/2026-07-11-bug-audit-recently-viewed.md) | Bug audit fixes, contribute fail-closed, Recently viewed |
 | [`2026-07-10-community-price-reports-shipped.md`](prompts/handovers/2026-07-10-community-price-reports-shipped.md) | Community reports, cottage, sighted prices, GHA timezone |
 | [`2026-07-05-user-lens-shipped.md`](prompts/handovers/2026-07-05-user-lens-shipped.md) | User lens + global Focus |

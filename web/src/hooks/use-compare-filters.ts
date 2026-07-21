@@ -5,11 +5,11 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 import { useGlobalLens } from "@/components/providers/lens-provider";
 import { normalizeCompareFilters, normalizePropertyType } from "@/lib/constants";
-import { parseExploreMode } from "@/lib/mode";
+import { DEFAULT_LENS, modeSearchParam, parseExploreMode } from "@/lib/mode";
 import type { CompareFilters, PropertyType } from "@/lib/types";
 
 const DEFAULT_COMPARE_FILTERS: CompareFilters = {
-  mode: "rent",
+  mode: DEFAULT_LENS,
   propertyType: null,
   bedroom: null,
 };
@@ -28,7 +28,8 @@ function buildCompareSearchParams(
   params.delete("type");
   params.delete("bedroom");
 
-  if (filters.mode !== "rent") params.set("mode", filters.mode);
+  const modeParam = modeSearchParam(filters.mode);
+  if (modeParam) params.set("mode", modeParam);
   if (filters.propertyType) params.set("type", filters.propertyType);
   if (filters.bedroom != null) params.set("bedroom", String(filters.bedroom));
 

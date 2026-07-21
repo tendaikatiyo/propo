@@ -9,15 +9,13 @@ import { useGlobalLens } from "@/components/providers/lens-provider";
 import { usePinnedMarkets } from "@/hooks/use-pinned-markets";
 import { MAX_PINNED_MARKETS } from "@/lib/constants";
 import { sanitizeLabel } from "@/lib/format";
-import { suburbPath } from "@/lib/slug";
+import { comparePath, suburbPath } from "@/lib/slug";
 
 export function PinTray() {
   const { pins, removePin } = usePinnedMarkets();
   const { lens } = useGlobalLens();
 
-  const compareHref =
-    lens === "rent" ? "/compare" : `/compare?mode=${encodeURIComponent(lens)}`;
-
+  const compareHref = comparePath(lens);
   return (
     <div data-tour="pin-tray" className="flex flex-wrap items-center gap-2">
       {pins.length === 0 ? (
