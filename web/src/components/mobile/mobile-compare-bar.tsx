@@ -8,6 +8,7 @@ import { useGlobalLens } from "@/components/providers/lens-provider";
 import { buttonVariants } from "@/components/ui/button";
 import { usePinnedMarkets } from "@/hooks/use-pinned-markets";
 import { isSuburbProfilePath, mobileDockBottom } from "@/lib/mobile-dock";
+import { comparePath } from "@/lib/slug";
 import { cn } from "@/lib/utils";
 
 export function MobileCompareBar() {
@@ -17,9 +18,7 @@ export function MobileCompareBar() {
 
   if (pins.length < 2 || isSuburbProfilePath(pathname)) return null;
 
-  const href =
-    lens === "rent" ? "/compare" : `/compare?mode=${encodeURIComponent(lens)}`;
-
+  const href = comparePath(lens);
   return (
     <div
       className="pointer-events-none fixed inset-x-0 z-40 flex justify-center px-4 print:hidden lg:hidden"

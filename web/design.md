@@ -277,7 +277,7 @@ Pill shape, mono uppercase at 11px.
 | **Global Focus** | Rent · Buy · Invest in one `bg-muted` track; **Land** as separate chip. Active segment uses `MODE_ACCENT` colours (`web/src/lib/mode-accent.ts`). **Desktop:** sidebar (`GlobalLensSwitcher`, hidden on home). **Mobile:** top-bar chip + menu drawer. |
 | **Home hero focus** | **Intent** variant only — 2×2 glass pills (“I'm renting”, “I'm buying land”, etc.). Primary lens control on `/`; sidebar Focus hidden on home. |
 | **Explore mode toggle** | `ExploreModeToggle` variants: `segmented` (global Focus), `intent` (home), `short` (legacy) |
-| **Lens persistence** | URL `?mode=rent\|buy\|land\|invest` (rent omits param); `localStorage` key `propo_lens`; bare suburb URLs default **rent** on server; internal links should pass `?mode=` |
+| **Lens persistence** | URL `?mode=rent\|buy\|land\|invest` (**invest** omits param); `localStorage` key `propo_lens`; bare URLs default **invest** on server; Focus switcher UI currently hidden (investor-first); internal links should pass `?mode=` for non-invest |
 | **Budget slider** | Mobile: +/- steppers; desktop: input + slider |
 | **Property type** | Toggle button group |
 | **City combobox** | Search with listing counts (mode-aware via `cityListingTotal`) |

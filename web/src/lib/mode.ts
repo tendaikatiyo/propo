@@ -9,11 +9,24 @@ export const EXPLORE_MODES = ["rent", "buy", "land", "invest"] as const;
 
 export const RESIDENTIAL_EXPLORE_MODES = ["rent", "buy", "invest"] as const;
 
+/** Product default lens — omitted from URLs; SSR + no-`?mode=` hydration. */
+export const DEFAULT_LENS: ExploreMode = "invest";
+
+export function isDefaultLens(mode: ExploreMode): boolean {
+  return mode === DEFAULT_LENS;
+}
+
+/** `?mode=` value to write, or null when the lens is the product default. */
+export function modeSearchParam(mode: ExploreMode): string | null {
+  return isDefaultLens(mode) ? null : mode;
+}
+
 export function parseExploreMode(value: string | null): ExploreMode {
   if (value === "buy") return "buy";
   if (value === "land") return "land";
+  if (value === "rent") return "rent";
   if (value === "invest") return "invest";
-  return "rent";
+  return DEFAULT_LENS;
 }
 
 export function isLandMode(mode: ExploreMode): boolean {

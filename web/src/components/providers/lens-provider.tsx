@@ -17,7 +17,12 @@ import { trackLensChange } from "@/lib/analytics/track";
 import type { LensChangePayload } from "@/lib/analytics/types";
 import { budgetForMode } from "@/lib/explore";
 import { LENS_STORAGE_KEY } from "@/lib/lens";
-import { defaultBudgetForMode, parseExploreMode } from "@/lib/mode";
+import {
+  DEFAULT_LENS,
+  defaultBudgetForMode,
+  modeSearchParam,
+  parseExploreMode,
+} from "@/lib/mode";
 import { parseContributionMode } from "@/lib/rent-reports";
 import type { ExploreMode } from "@/lib/types";
 
@@ -69,10 +74,11 @@ function replaceLensInUrl(
 ): string {
   const resolvedNext = pathname === "/contribute" ? contributionLens(next) : next;
   const params = new URLSearchParams(searchParams.toString());
-  if (resolvedNext === "rent") {
-    params.delete("mode");
+  const modeParam = modeSearchParam(resolvedNext);
+  if (modeParam) {
+    params.set("mode", modeParam);
   } else {
-    params.set("mode", resolvedNext);
+    params.delete("mode");
   }
 
   if (pathname === "/explore" && resolvedNext !== previous) {
@@ -144,7 +150,7 @@ function LensProviderCore({ children }: { children: React.ReactNode }) {
     readStoredLens,
     () => null
   );
-  const lensRef = useRef<ExploreMode>("rent");
+  const lensRef = useRef<ExploreMode>(DEFAULT_LENS);
   const syncedStoredLens = useRef(false);
 
   useEffect(() => {
@@ -152,14 +158,18 @@ function LensProviderCore({ children }: { children: React.ReactNode }) {
   }, [pathname]);
 
   const lens = useMemo(() => {
-    if (!mounted) return "rent";
+    // Investor-first: SSR + first paint = invest. Explicit ?mode= still honored.
+    if (!mounted) return DEFAULT_LENS;
     const fromUrl = searchParams.get("mode");
     if (fromUrl) {
       const parsed = parseExploreMode(fromUrl);
       return pathname === "/contribute" ? parseContributionMode(parsed) : parsed;
     }
-    const stored = storedLens ?? "rent";
-    return pathname === "/contribute" ? parseContributionMode(stored) : stored;
+    // No URL mode → locked product default (ignore stale rent/buy/land storage).
+    if (pathname === "/contribute") {
+      return parseContributionMode(storedLens ?? "rent");
+    }
+    return DEFAULT_LENS;
   }, [mounted, pathname, searchParams, storedLens]);
 
   useEffect(() => {
@@ -175,13 +185,20 @@ function LensProviderCore({ children }: { children: React.ReactNode }) {
     if (!mounted) return;
     if (syncedStoredLens.current) return;
     if (searchParams.get("mode")) return;
-    if (storedLens === "rent" || storedLens == null) return;
-
+    // Product surfaces lock to invest when URL has no mode (ignore stale storage).
+    // Contribute may still need buy/land from storage written into the URL.
+    if (pathname === "/contribute") {
+      const contributeLens = parseContributionMode(storedLens ?? "rent");
+      if (contributeLens !== "rent") {
+        syncedStoredLens.current = true;
+        router.replace(
+          replaceLensInUrl(pathname, searchParams, contributeLens, lensRef.current),
+          { scroll: false }
+        );
+        return;
+      }
+    }
     syncedStoredLens.current = true;
-    router.replace(
-      replaceLensInUrl(pathname, searchParams, storedLens, lensRef.current),
-      { scroll: false }
-    );
   }, [mounted, pathname, router, searchParams, storedLens]);
 
   const setLens = useCallback(
@@ -227,14 +244,14 @@ export function useGlobalLens(): LensContextValue {
 
 /** @deprecated Use useGlobalLens */
 export function useLens(
-  _defaultLens: ExploreMode = "rent",
+  _defaultLens: ExploreMode = DEFAULT_LENS,
   _options?: { analyticsSource?: LensChangePayload["source"] }
 ): LensContextValue {
   return useGlobalLens();
 }
 
 /** Read stored lens without URL — prefer useGlobalLens in app shell. */
-export function useStoredLens(defaultLens: ExploreMode = "rent"): ExploreMode {
+export function useStoredLens(defaultLens: ExploreMode = DEFAULT_LENS): ExploreMode {
   const mounted = useMounted();
   const storedLens = useSyncExternalStore(
     subscribeToLensStorage,
@@ -246,5 +263,5 @@ export function useStoredLens(defaultLens: ExploreMode = "rent"): ExploreMode {
 }
 
 export function readLensFromStorage(): ExploreMode {
-  return readStoredLens() ?? "rent";
+  return readStoredLens() ?? DEFAULT_LENS;
 }

@@ -1,3 +1,6 @@
+import { modeSearchParam } from "@/lib/mode";
+import type { ExploreMode } from "@/lib/types";
+
 export function toSlug(value: string): string {
   return value
     .toLowerCase()
@@ -19,11 +22,13 @@ function segmentQueryString(query?: {
   bedroom?: number | null;
   mode?: string | null;
 }): string {
-  if (!query?.type && query?.bedroom == null && !query?.mode) return "";
+  const modeParam =
+    query?.mode != null ? modeSearchParam(query.mode as ExploreMode) : null;
+  if (!query?.type && query?.bedroom == null && !modeParam) return "";
   const params = new URLSearchParams();
   if (query.type) params.set("type", query.type);
   if (query.bedroom != null) params.set("bedroom", String(query.bedroom));
-  if (query.mode && query.mode !== "rent") params.set("mode", query.mode);
+  if (modeParam) params.set("mode", modeParam);
   return params.toString();
 }
 
@@ -69,10 +74,24 @@ export function cityPath(
   query?: { mode?: string | null }
 ): string {
   const base = `/cities/${toSlug(city)}`;
-  if (!query?.mode || query.mode === "rent") return base;
-  return `${base}?mode=${encodeURIComponent(query.mode)}`;
+  const modeParam =
+    query?.mode != null ? modeSearchParam(query.mode as ExploreMode) : null;
+  if (!modeParam) return base;
+  return `${base}?mode=${encodeURIComponent(modeParam)}`;
 }
 
 export function matchesSlug(actual: string, slug: string): boolean {
   return toSlug(actual) === slug;
+}
+
+/** Compare index — omit `mode` when it is the product default (invest). */
+export function comparePath(mode?: ExploreMode | null): string {
+  const modeParam = mode != null ? modeSearchParam(mode) : null;
+  return modeParam ? `/compare?mode=${encodeURIComponent(modeParam)}` : "/compare";
+}
+
+/** Cities index — omit `mode` when it is the product default (invest). */
+export function citiesIndexPath(mode?: ExploreMode | null): string {
+  const modeParam = mode != null ? modeSearchParam(mode) : null;
+  return modeParam ? `/cities?mode=${encodeURIComponent(modeParam)}` : "/cities";
 }

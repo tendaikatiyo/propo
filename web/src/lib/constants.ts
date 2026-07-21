@@ -146,4 +146,4 @@ export const SITE_FOOTER_LINE =
   "Continuously updated property market database for Zimbabwe";
 
 export const SITE_DESCRIPTION =
-  "Where can you afford in Zimbabwe? Explore 378 suburb markets from a property database updated every 24 hours — median rents, sale prices, and land per sqm.";
+  "Zimbabwe property market intelligence for investors — suburb yields, fair value, and opportunity scores from a database updated every 24 hours.";

@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { usePinnedMarkets } from "@/hooks/use-pinned-markets";
 import { MAX_PINNED_MARKETS } from "@/lib/constants";
 import { sanitizeLabel } from "@/lib/format";
-import { suburbPath } from "@/lib/slug";
+import { comparePath, suburbPath } from "@/lib/slug";
 import { cn } from "@/lib/utils";
 
 export function MobileComparePanel({ onNavigate }: { onNavigate?: () => void }) {
@@ -17,9 +17,7 @@ export function MobileComparePanel({ onNavigate }: { onNavigate?: () => void }) 
   const { lens } = useGlobalLens();
   const canCompare = pins.length >= 2;
 
-  const compareHref =
-    lens === "rent" ? "/compare" : `/compare?mode=${encodeURIComponent(lens)}`;
-
+  const compareHref = comparePath(lens);
   return (
     <section className="space-y-3">
       <div className="px-1">
