@@ -22,9 +22,10 @@ function segmentQueryString(query?: {
   bedroom?: number | null;
   mode?: string | null;
 }): string {
+  if (!query) return "";
   const modeParam =
-    query?.mode != null ? modeSearchParam(query.mode as ExploreMode) : null;
-  if (!query?.type && query?.bedroom == null && !modeParam) return "";
+    query.mode != null ? modeSearchParam(query.mode as ExploreMode) : null;
+  if (!query.type && query.bedroom == null && !modeParam) return "";
   const params = new URLSearchParams();
   if (query.type) params.set("type", query.type);
   if (query.bedroom != null) params.set("bedroom", String(query.bedroom));
