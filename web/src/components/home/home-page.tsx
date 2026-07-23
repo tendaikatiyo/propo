@@ -32,7 +32,7 @@ function buildExploreHref(
   const params = new URLSearchParams();
   params.set("mode", mode);
   params.set("budget", String(budget));
-  params.set("city", DEFAULT_CITY);
+  params.set("city", "all");
   if (propertyType && !isLandMode(mode)) {
     params.set("type", propertyType);
     if (propertyType === "room") params.set("bedroom", String(ROOM_BEDROOM_COUNT));

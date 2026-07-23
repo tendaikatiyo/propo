@@ -129,8 +129,8 @@ Warm editorial neutrals; affordability-first copy; photographic heroes. Fonts: S
 
 | Doc | Topic |
 | --- | ----- |
+| [`2026-07-23-explore-suburb-search.md`](prompts/handovers/2026-07-23-explore-suburb-search.md) | Explore all-cities default, suburb search + suggestions |
 | [`2026-07-11-bug-audit-recently-viewed.md`](prompts/handovers/2026-07-11-bug-audit-recently-viewed.md) | Bug audit fixes, contribute fail-closed, Recently viewed |
 | [`2026-07-10-community-price-reports-shipped.md`](prompts/handovers/2026-07-10-community-price-reports-shipped.md) | Community reports, cottage, sighted prices, GHA timezone |
-| [`2026-07-05-user-lens-shipped.md`](prompts/handovers/2026-07-05-user-lens-shipped.md) | User lens + global Focus |
 
 Full index: [`prompts/handovers/README.md`](prompts/handovers/README.md).

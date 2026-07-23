@@ -104,6 +104,11 @@ export function CityDashboard({
     return filterMarketsBySuburbQuery(cityLand, query);
   }, [isLand, allLandMarkets, city.city, query]);
 
+  const searchSuggestions = useMemo(() => {
+    if (!isLand) return markets;
+    return allLandMarkets.filter((m) => matchesSlug(m.city, toSlug(city.city)));
+  }, [isLand, markets, allLandMarkets, city.city]);
+
   const yieldItems =
     cityRankings?.highest_yield_suburbs?.slice(0, 5).map((r) => ({
       city: r.city,
@@ -211,7 +216,11 @@ export function CityDashboard({
           <h2 className="font-heading text-lg font-semibold tracking-tight lg:text-lg lg:font-medium">
             All suburbs
           </h2>
-          <SuburbSearchInput value={query} onChange={setQuery} />
+          <SuburbSearchInput
+            value={query}
+            onChange={setQuery}
+            suggestions={searchSuggestions}
+          />
         </div>
 
         {isLand ? (

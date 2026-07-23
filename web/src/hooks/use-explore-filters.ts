@@ -5,7 +5,6 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 import { useGlobalLens } from "@/components/providers/lens-provider";
 import {
-  DEFAULT_CITY,
   normalizeExploreFilters,
   normalizePropertyType,
 } from "@/lib/constants";
@@ -17,7 +16,7 @@ import type { ExploreFilters, PropertyType } from "@/lib/types";
 const DEFAULT_FILTERS: ExploreFilters = {
   mode: "rent",
   budget: defaultBudgetForMode("rent"),
-  city: DEFAULT_CITY,
+  city: null,
   propertyType: null,
   bedroom: null,
   includeLowConfidence: false,
@@ -47,7 +46,8 @@ export function useExploreFilters() {
     return normalizeExploreFilters({
       mode,
       budget: budgetForMode(mode, rawBudget),
-      city: cityParam === "all" ? null : cityParam || DEFAULT_CITY,
+      // Missing city → all cities (discovery). Explicit `city=Harare` still scopes.
+      city: cityParam === "all" || !cityParam ? null : cityParam,
       propertyType: parsePropertyType(searchParams.get("type")),
       bedroom: searchParams.has("bedroom") ? Number(searchParams.get("bedroom")) : null,
       includeLowConfidence: searchParams.get("lowconf") === "1",
@@ -90,11 +90,8 @@ export function useExploreFilters() {
   const resetFilters = useCallback(
     (options?: { targetPath?: string }) => {
       const target = options?.targetPath ?? pathname;
-      const next = normalizeExploreFilters({
-        ...DEFAULT_FILTERS,
-        city: DEFAULT_CITY,
-      });
-      router.replace(`${target}?city=${DEFAULT_CITY}`, { scroll: false });
+      const next = normalizeExploreFilters({ ...DEFAULT_FILTERS });
+      router.replace(`${target}?city=all`, { scroll: false });
       if (target === "/explore" || target.endsWith("/explore")) {
         trackExploreFilterChange(next);
       }

@@ -47,10 +47,17 @@ function LandExploreResults({
   const { filters } = useExploreFilters();
   const { data: markets = [], isLoading, isError } = useLandMetrics();
   const [suburbQuery, setSuburbQuery] = useState("");
+  const hasSuburbSearch = suburbQuery.trim().length > 0;
+
+  // While searching, ignore city so names outside the selected city still match.
+  const resultFilters = useMemo(
+    () => (hasSuburbSearch ? { ...filters, city: null } : filters),
+    [filters, hasSuburbSearch]
+  );
 
   const { inBudget, stretch } = useMemo(
-    () => filterLandMarkets(markets, filters),
-    [markets, filters]
+    () => filterLandMarkets(markets, resultFilters),
+    [markets, resultFilters]
   );
 
   const rankedInBudget = useMemo(
@@ -116,12 +123,22 @@ function LandExploreResults({
     );
   }
 
-  const hasSuburbSearch = suburbQuery.trim().length > 0;
+  const searchExpandsCity = hasSuburbSearch && Boolean(filters.city);
 
   return (
     <div className="space-y-8">
-      <div className="lg:hidden">
-        <SuburbSearchInput value={suburbQuery} onChange={setSuburbQuery} />
+      <div className="space-y-2">
+        <SuburbSearchInput
+          value={suburbQuery}
+          onChange={setSuburbQuery}
+          placeholder="Search suburbs or cities…"
+          suggestions={markets}
+        />
+        {searchExpandsCity ? (
+          <p className="text-xs text-muted-foreground">
+            Searching all cities while you type — city filter pauses until you clear search.
+          </p>
+        ) : null}
       </div>
 
       <section className="space-y-4">
@@ -142,13 +159,13 @@ function LandExploreResults({
               <LandSuburbList markets={filteredInBudget} />
             </div>
             <div className="hidden lg:block">
-              <LandSuburbTable markets={rankedInBudget} />
+              <LandSuburbTable markets={filteredInBudget} />
             </div>
           </>
         )}
       </section>
 
-      {rankedStretch.length ? (
+      {filteredStretch.length || (!hasSuburbSearch && rankedStretch.length) ? (
         <section className="space-y-4">
           <div>
             <h2 className="font-heading text-xl font-medium tracking-[-0.01em]">Stretch</h2>
@@ -175,15 +192,11 @@ function LandExploreResults({
         <CardContent className="grid gap-3 text-sm sm:grid-cols-2">
           <p>
             <span className="text-muted-foreground">In budget: </span>
-            <span className="font-mono font-medium">
-              {hasSuburbSearch ? filteredInBudget.length : rankedInBudget.length}
-            </span>
+            <span className="font-mono font-medium">{filteredInBudget.length}</span>
           </p>
           <p>
             <span className="text-muted-foreground">Stretch: </span>
-            <span className="font-mono font-medium">
-              {hasSuburbSearch ? filteredStretch.length : rankedStretch.length}
-            </span>
+            <span className="font-mono font-medium">{filteredStretch.length}</span>
           </p>
         </CardContent>
       </Card>
@@ -195,27 +208,34 @@ function ResidentialExploreResults({ preview = false }: { preview?: boolean }) {
   const { filters } = useExploreFilters();
   const { data: markets = [], isLoading, isError } = useMarketMetrics();
   const [suburbQuery, setSuburbQuery] = useState("");
+  const hasSuburbSearch = suburbQuery.trim().length > 0;
+
+  // While searching, ignore city so names outside the selected city still match.
+  const resultFilters = useMemo(
+    () => (hasSuburbSearch ? { ...filters, city: null } : filters),
+    [filters, hasSuburbSearch]
+  );
 
   const { inBudget, stretch } = useMemo(
-    () => filterMarkets(markets, filters),
-    [markets, filters]
+    () => filterMarkets(markets, resultFilters),
+    [markets, resultFilters]
   );
 
   const rankedInBudget = useMemo(
     () =>
       applySuburbMedianVisibility(
-        rankExploreResults(inBudget, filters.mode, filters),
-        filters
+        rankExploreResults(inBudget, filters.mode, resultFilters),
+        resultFilters
       ),
-    [inBudget, filters]
+    [inBudget, filters.mode, resultFilters]
   );
   const rankedStretch = useMemo(
     () =>
       applySuburbMedianVisibility(
-        rankExploreResults(stretch, filters.mode, filters),
-        filters
+        rankExploreResults(stretch, filters.mode, resultFilters),
+        resultFilters
       ),
-    [stretch, filters]
+    [stretch, filters.mode, resultFilters]
   );
   const filteredInBudget = useMemo(
     () => filterMarketsBySuburbQuery(rankedInBudget, suburbQuery),
@@ -225,7 +245,7 @@ function ResidentialExploreResults({ preview = false }: { preview?: boolean }) {
     () => filterMarketsBySuburbQuery(rankedStretch, suburbQuery),
     [rankedStretch, suburbQuery]
   );
-  const avgYield = filters.mode === "invest" ? averageYield(inBudget) : null;
+  const avgYield = filters.mode === "invest" ? averageYield(filteredInBudget) : null;
   const zeroResultsKeyRef = useRef<string | null>(null);
 
   useEffect(() => {
@@ -289,12 +309,22 @@ function ResidentialExploreResults({ preview = false }: { preview?: boolean }) {
     );
   }
 
-  const hasSuburbSearch = suburbQuery.trim().length > 0;
+  const searchExpandsCity = hasSuburbSearch && Boolean(filters.city);
 
   return (
     <div className="space-y-8">
-      <div className="lg:hidden">
-        <SuburbSearchInput value={suburbQuery} onChange={setSuburbQuery} />
+      <div className="space-y-2">
+        <SuburbSearchInput
+          value={suburbQuery}
+          onChange={setSuburbQuery}
+          placeholder="Search suburbs or cities…"
+          suggestions={markets}
+        />
+        {searchExpandsCity ? (
+          <p className="text-xs text-muted-foreground">
+            Searching all cities while you type — city filter pauses until you clear search.
+          </p>
+        ) : null}
       </div>
 
       <section className="space-y-4">
@@ -330,13 +360,13 @@ function ResidentialExploreResults({ preview = false }: { preview?: boolean }) {
               <SuburbList markets={filteredInBudget} mode={filters.mode} filters={filters} />
             </div>
             <div className="hidden lg:block">
-              <SuburbTable markets={rankedInBudget} mode={filters.mode} filters={filters} />
+              <SuburbTable markets={filteredInBudget} mode={filters.mode} filters={filters} />
             </div>
           </>
         )}
       </section>
 
-      {rankedStretch.length ? (
+      {filteredStretch.length || (!hasSuburbSearch && rankedStretch.length) ? (
         <section className="space-y-4">
           <div>
             <h2 className="font-heading text-xl font-medium tracking-[-0.01em]">Stretch</h2>
@@ -369,15 +399,11 @@ function ResidentialExploreResults({ preview = false }: { preview?: boolean }) {
         <CardContent className="grid gap-3 text-sm sm:grid-cols-3">
           <p>
             <span className="text-muted-foreground">In budget: </span>
-            <span className="font-mono font-medium">
-              {hasSuburbSearch ? filteredInBudget.length : rankedInBudget.length}
-            </span>
+            <span className="font-mono font-medium">{filteredInBudget.length}</span>
           </p>
           <p>
             <span className="text-muted-foreground">Stretch: </span>
-            <span className="font-mono font-medium">
-              {hasSuburbSearch ? filteredStretch.length : rankedStretch.length}
-            </span>
+            <span className="font-mono font-medium">{filteredStretch.length}</span>
           </p>
           {avgYield != null ? (
             <p>

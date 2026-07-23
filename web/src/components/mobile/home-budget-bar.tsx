@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Compass } from "lucide-react";
 
-import { DEFAULT_CITY, ROOM_BEDROOM_COUNT } from "@/lib/constants";
+import { ROOM_BEDROOM_COUNT } from "@/lib/constants";
 import { formatCurrency, formatPricePerSqm } from "@/lib/format";
 import { liquidGlassPillClass } from "@/lib/liquid-glass";
 import { motionPress } from "@/lib/motion";
@@ -22,7 +22,7 @@ function buildExploreHref(
   const params = new URLSearchParams();
   params.set("mode", mode);
   params.set("budget", String(budget));
-  params.set("city", DEFAULT_CITY);
+  params.set("city", "all");
   if (propertyType && !isLandMode(mode)) {
     params.set("type", propertyType);
     if (propertyType === "room") params.set("bedroom", String(ROOM_BEDROOM_COUNT));
