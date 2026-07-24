@@ -12,7 +12,6 @@ import {
   // TrendingUp,
 } from "lucide-react";
 
-import { GlobalLensSwitcher } from "@/components/layout/global-lens-switcher";
 import { PinTray } from "@/components/layout/pin-tray";
 import { DataFreshnessPill } from "@/components/layout/data-freshness-pill";
 import { PropoLogomark } from "@/components/brand/propo-logomark";
@@ -32,9 +31,6 @@ const NAV_ITEMS = [
 ];
 
 export function AppSidebar() {
-  const pathname = usePathname();
-  const isHome = pathname === "/";
-
   return (
     <aside className="fixed inset-y-0 left-0 z-40 hidden w-60 flex-col border-r border-border/80 bg-card lg:flex">
       <div className="flex h-16 items-center border-b border-border/80 px-5">
@@ -49,12 +45,6 @@ export function AppSidebar() {
       </div>
 
       <AppSidebarNav />
-
-      {!isHome ? (
-        <div className="border-t border-border/80 px-3 py-4">
-          <GlobalLensSwitcher toggleClassName="-mx-1.5 w-[calc(100%+0.75rem)]" />
-        </div>
-      ) : null}
 
       <div className="border-t border-border/80 p-4 space-y-3">
         <DataFreshnessPill className="w-full text-center text-[10px]" />

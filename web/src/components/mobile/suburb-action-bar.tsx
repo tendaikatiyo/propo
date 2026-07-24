@@ -3,12 +3,11 @@
 import Link from "next/link";
 import { GitCompare } from "lucide-react";
 
-import { contributeProfileHref } from "@/components/rent-reports/community-rent-reports";
-import { contributeCtaCopy, shouldShowContributeCta } from "@/lib/rent-reports";
 import { PinButton } from "@/components/markets/pin-button";
 import { usePinnedMarkets } from "@/hooks/use-pinned-markets";
 import { liquidGlassPillClass } from "@/lib/liquid-glass";
 import { mobileDockBottom } from "@/lib/mobile-dock";
+import { comparePath } from "@/lib/slug";
 import type { ExploreMode, MarketMetric } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
@@ -21,9 +20,7 @@ export function SuburbActionBar({
 }) {
   const { pins } = usePinnedMarkets();
   const canCompare = pins.length >= 2;
-  const compareHref =
-    lens === "rent" ? "/compare" : `/compare?mode=${encodeURIComponent(lens)}`;
-
+  const compareHref = comparePath(lens);
   return (
     <div
       className="pointer-events-none fixed inset-x-0 z-40 flex justify-center px-4 print:hidden lg:hidden"
@@ -47,14 +44,6 @@ export function SuburbActionBar({
         >
           View listings
         </button>
-        {shouldShowContributeCta(lens) ? (
-          <Link
-            href={contributeProfileHref(market, lens)}
-            className="min-h-9 rounded-full px-3 text-sm font-medium text-foreground transition-colors hover:bg-white/20 active:bg-white/30"
-          >
-            {contributeCtaCopy(lens).button}
-          </Link>
-        ) : null}
         {canCompare ? (
           <Link
             href={compareHref}

@@ -10,7 +10,7 @@ export const SITE_URL =
 
 /** Open Graph / Twitter Card share image. */
 export const OG_IMAGE_PATH = "/og_tag_image.webp";
-export const OG_IMAGE_ALT = `${SITE_NAME} — Where can you afford in Zimbabwe? Compare house prices by suburb`;
+export const OG_IMAGE_ALT = `${SITE_NAME} — Zimbabwe property market intelligence: yield, fair value, and suburb medians`;
 export const OG_IMAGE_WIDTH = 1200;
 export const OG_IMAGE_HEIGHT = 630;
 
@@ -87,15 +87,15 @@ export function buildPageMetadata(options: PageSeoOptions = {}): Metadata {
 }
 
 export const HOME_PAGE_TITLE =
-  "Where can you afford in Zimbabwe? — compare house prices by suburb";
+  "Find yield and fair value in Zimbabwe — suburb market intelligence";
 
 export const HOME_PAGE_DESCRIPTION =
-  "Set your rent or buy budget and compare suburb prices across Zimbabwe. Median rents, sale prices, and land $/sqm — see which neighbourhoods fit your wallet.";
+  "Explore rental yield, opportunity scores, and fair-value signals across Zimbabwe suburbs. Continuously updated property market database for investors.";
 
-export const EXPLORE_PAGE_TITLE = "Where can you afford? — compare suburbs by budget";
+export const EXPLORE_PAGE_TITLE = "Explore yield markets — compare suburbs by budget";
 
 export const EXPLORE_PAGE_DESCRIPTION =
-  "Compare house prices across Zimbabwe suburbs against your budget. Filter by median rent, sale price, property type, and city.";
+  "Compare Zimbabwe suburbs by purchase budget, yield, and opportunity. Filter by property type and city.";
 
 export function suburbPageTitle(suburb: string, city: string): string {
   return `${suburb}, ${city} — house prices & affordability`;

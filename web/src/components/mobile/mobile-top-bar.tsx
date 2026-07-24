@@ -5,7 +5,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ChevronLeft, Menu, X } from "lucide-react";
 
-import { MobileFocusChip } from "@/components/mobile/mobile-focus-chip";
 import { MobileMenuDrawer } from "@/components/mobile/mobile-menu-drawer";
 import { PropoLogomark } from "@/components/brand/propo-logomark";
 import { BetaBadge } from "@/components/brand/beta-badge";
@@ -58,8 +57,6 @@ export function MobileTopBar() {
         </Link>
 
         <div className="flex-1" />
-
-        <MobileFocusChip onDark={isHome} />
 
         <button
           type="button"

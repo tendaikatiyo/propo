@@ -90,7 +90,7 @@ Users tried to find a suburb on Explore but results were empty because:
 
 ## Note on remote
 
-`origin/main` advanced with unrelated PRs (investor-first landing, bug-audit doc update, share-rent widget removal). This session’s commit was rebased/merged onto that tip during sync.
+Merged with `origin/main` which included the **investor-first landing cut** (invest default lens, home invest-only). Explore discovery changes kept: `city=all` default, search + suggestions. `DEFAULT_FILTERS` uses `DEFAULT_LENS` (invest) with `city: null`.
 
 ---
 

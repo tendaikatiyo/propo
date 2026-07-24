@@ -8,7 +8,7 @@ import { ROOM_BEDROOM_COUNT } from "@/lib/constants";
 import { formatCurrency, formatPricePerSqm } from "@/lib/format";
 import { liquidGlassPillClass } from "@/lib/liquid-glass";
 import { motionPress } from "@/lib/motion";
-import { isLandMode, modeLabel } from "@/lib/mode";
+import { isLandMode, modeLabel, modeSearchParam } from "@/lib/mode";
 import { MODE_ACCENT } from "@/lib/mode-accent";
 import { mobileDockBottom } from "@/lib/mobile-dock";
 import type { ExploreMode, PropertyType } from "@/lib/types";
@@ -20,7 +20,8 @@ function buildExploreHref(
   propertyType: PropertyType | null
 ): string {
   const params = new URLSearchParams();
-  params.set("mode", mode);
+  const modeParam = modeSearchParam(mode);
+  if (modeParam) params.set("mode", modeParam);
   params.set("budget", String(budget));
   params.set("city", "all");
   if (propertyType && !isLandMode(mode)) {

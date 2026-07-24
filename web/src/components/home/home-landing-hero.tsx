@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { BudgetSlider } from "@/components/filters/budget-slider";
-import { ExploreModeToggle } from "@/components/filters/explore-mode-toggle";
 import { PropertyTypeButtons } from "@/components/filters/property-type-buttons";
 import { buttonVariants } from "@/components/ui/button";
 import { HOME_LANDING_PHOTO } from "@/lib/hero";
@@ -13,37 +12,30 @@ import {
   liquidGlassPillClass,
   liquidGlassPillShadow,
 } from "@/lib/liquid-glass";
-import { budgetForMode } from "@/lib/explore";
 import {
   DATASET_SCALE,
   DATASET_UPDATE_CADENCE,
 } from "@/lib/constants";
-import { isLandMode, isInvestMode } from "@/lib/mode";
 import type { ExploreMode, PropertyType } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
+const INVEST_MODE: ExploreMode = "invest";
+
 export function HomeLandingHero({
   sectionRef,
-  mode,
   budget,
   propertyType,
   exploreHref,
-  onModeChange,
   onBudgetChange,
   onPropertyTypeChange,
 }: {
   sectionRef?: React.RefObject<HTMLElement | null>;
-  mode: ExploreMode;
   budget: number;
   propertyType: PropertyType | null;
   exploreHref: string;
-  onModeChange: (mode: ExploreMode, defaultBudget: number) => void;
   onBudgetChange: (budget: number) => void;
   onPropertyTypeChange: (type: PropertyType | null) => void;
 }) {
-  const land = isLandMode(mode);
-  const invest = isInvestMode(mode);
-
   return (
     <section
       ref={sectionRef}
@@ -79,17 +71,14 @@ export function HomeLandingHero({
                 "inline-flex items-center px-4 py-1.5 text-[11px] font-medium tracking-[0.14em] text-white uppercase"
               )}
             >
-              Zimbabwe property market database
+              Zimbabwe property market intelligence
             </span>
             <h1 className="font-display text-[1.75rem] font-medium leading-[1.08] tracking-[-0.03em] text-white drop-shadow-[0_2px_16px_rgba(0,0,0,0.5)] sm:text-4xl lg:text-[4rem] lg:leading-[1.02]">
-              Where can you afford in Zimbabwe?
+              Find yield and fair value in Zimbabwe
             </h1>
             <p className="mx-auto max-w-lg text-sm leading-relaxed tracking-[0.15px] text-white/90 drop-shadow-[0_1px_10px_rgba(0,0,0,0.4)] sm:text-base lg:mx-0 lg:text-lg">
-              {land
-                ? `Set your land budget per square metre — explore ${DATASET_SCALE.landSuburbMarketsLabel} updated ${DATASET_UPDATE_CADENCE}.`
-                : invest
-                  ? `Find suburbs with the strongest rental yield — ${DATASET_SCALE.suburbMarketsLabel} updated ${DATASET_UPDATE_CADENCE}.`
-                  : `Set your rent or buy budget — explore ${DATASET_SCALE.suburbMarketsLabel} from a database updated ${DATASET_UPDATE_CADENCE}.`}
+              Suburb medians, rental yield, and opportunity scores across{" "}
+              {DATASET_SCALE.suburbMarketsLabel} — updated {DATASET_UPDATE_CADENCE}.
             </p>
           </div>
 
@@ -101,38 +90,30 @@ export function HomeLandingHero({
           >
             <div className="space-y-5 lg:space-y-7">
               <div>
-                <p className="caption-label">Focus</p>
+                <p className="caption-label">Purchase budget</p>
                 <p className="mt-1.5 hidden text-sm text-muted-foreground sm:block">
-                  Adjust filters — results update as you scroll.
+                  Filter suburbs by buy budget — results update as you scroll.
                 </p>
               </div>
 
-              <ExploreModeToggle
-                value={mode}
-                onChange={(nextMode, defaultBudget) => {
-                  onModeChange(nextMode, budgetForMode(nextMode, defaultBudget));
-                }}
+              <BudgetSlider
+                mode={INVEST_MODE}
+                value={budget}
+                onChange={onBudgetChange}
               />
 
-              <BudgetSlider mode={mode} value={budget} onChange={onBudgetChange} />
-
-              {!land ? (
-                <div className="space-y-3">
-                  <p className="caption-label">Property type</p>
-                  <PropertyTypeButtons
-                    mode={mode}
-                    value={propertyType}
-                    onChange={onPropertyTypeChange}
-                  />
-                </div>
-              ) : null}
+              <div className="space-y-3">
+                <p className="caption-label">Property type</p>
+                <PropertyTypeButtons
+                  mode={INVEST_MODE}
+                  value={propertyType}
+                  onChange={onPropertyTypeChange}
+                />
+              </div>
 
               <Link href={exploreHref} className={cn(buttonVariants({ size: "lg" }), "w-full")}>
-                <span
-                  className="t-shimmer t-shimmer-on-dark"
-                  data-text={invest ? "Explore yield markets" : "See matching suburbs"}
-                >
-                  {invest ? "Explore yield markets" : "See matching suburbs"}
+                <span className="t-shimmer t-shimmer-on-dark" data-text="Explore yield markets">
+                  Explore yield markets
                 </span>
               </Link>
             </div>
