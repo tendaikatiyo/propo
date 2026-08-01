@@ -17,6 +17,7 @@ USER_AGENT = (
 )
 REQUEST_DELAY = 2.0
 MAX_PAGES = 200
+MAX_PAGE_ATTEMPTS = 3
 SAVE_EVERY_PAGE = True
 
 
@@ -285,17 +286,29 @@ def main() -> None:
     seen_urls = set()
     collected: List[Dict] = []
     page = 1
+    consecutive_failures = 0
 
     while page <= MAX_PAGES:
         print(f"Scraping page {page}...")
         try:
             html = fetch_page(session, page)
         except requests.RequestException as error:
-            print(f"Request failed for page {page}: {error}")
+            consecutive_failures += 1
+            print(
+                f"Request failed for page {page} "
+                f"(attempt {consecutive_failures}/{MAX_PAGE_ATTEMPTS}): {error}"
+            )
+            if consecutive_failures >= MAX_PAGE_ATTEMPTS:
+                print(
+                    f"Giving up after {MAX_PAGE_ATTEMPTS} consecutive failures "
+                    f"on page {page}. Keeping {len(collected)} listings."
+                )
+                break
             print(f"Waiting {REQUEST_DELAY} seconds before retrying...")
             time.sleep(REQUEST_DELAY)
             continue
 
+        consecutive_failures = 0
         soup = BeautifulSoup(html, "html.parser")
         new_listings = []
         containers = soup.select("div.listingDetails")

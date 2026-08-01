@@ -29,6 +29,9 @@ USER_AGENT = (
     "Chrome/124.0.0.0 Safari/537.36"
 )
 REQUEST_DELAY = 2.0
+# Outer attempts per page after urllib3 session retries are exhausted.
+# Without a cap, a sticky ReadTimeout loops forever until the GHA job timeout.
+MAX_PAGE_ATTEMPTS = 3
 
 
 def build_session() -> requests.Session:
@@ -367,16 +370,28 @@ def scrape_feed(
 ) -> List[Dict]:
     collected: List[Dict] = []
     page = 1
+    consecutive_failures = 0
 
     while page <= max_pages:
         print(f"Scraping {feed_type} page {page} ({base_url})...")
         try:
             html_text = fetch_page(session, base_url, page)
         except requests.RequestException as error:
-            print(f"Request failed for {base_url} page {page}: {error}")
+            consecutive_failures += 1
+            print(
+                f"Request failed for {base_url} page {page} "
+                f"(attempt {consecutive_failures}/{MAX_PAGE_ATTEMPTS}): {error}"
+            )
+            if consecutive_failures >= MAX_PAGE_ATTEMPTS:
+                print(
+                    f"Giving up on {feed_type} after {MAX_PAGE_ATTEMPTS} consecutive "
+                    f"failures on page {page}. Keeping {len(collected)} listings."
+                )
+                break
             time.sleep(REQUEST_DELAY)
             continue
 
+        consecutive_failures = 0
         soup = BeautifulSoup(html_text, "html.parser")
         new_listings = []
 
