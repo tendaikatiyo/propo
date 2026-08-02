@@ -18,7 +18,8 @@ concurrency:
 jobs:
   pipeline:
     runs-on: ubuntu-latest
-    timeout-minutes: 180
+    # Slow portal days: scrape ~100m + ingest ~70m. Keep headroom past 180.
+    timeout-minutes: 300
     # Secrets live under Settings → Environments → production (not repository secrets).
     environment: production
     env:
@@ -81,11 +82,18 @@ jobs:
             exit 1
           fi
 
-      - name: Scrape, ingest, and sync Supabase
-        run: python -m analytics.run_daily
+      # Stage caps + 300m job headroom: ~107m scrape + ~70m ingest still fits.
+      - name: Scrape portals
+        timeout-minutes: 150
+        run: python -m analytics.run_daily scrape
 
+      - name: Ingest, analytics, and sync Supabase
+        timeout-minutes: 120
+        run: python -m analytics.run_daily cloud
+
+      # Job timeout / cancel is conclusion=cancelled, not failure — still notify.
       - name: Notify Telegram on failure
-        if: failure()
+        if: failure() || cancelled()
         continue-on-error: true
         run: |
           curl -sS -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
