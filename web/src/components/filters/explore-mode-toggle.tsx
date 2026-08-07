@@ -36,7 +36,7 @@ function ExploreModeSegmented({
 >) {
   return (
     <SlidingTabs
-      aria-label="Focus"
+      aria-label="Browse mode"
       value={value}
       options={modes.map((mode) => ({
         value: mode,

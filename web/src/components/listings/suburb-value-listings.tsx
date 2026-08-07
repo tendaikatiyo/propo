@@ -3,14 +3,12 @@
 import { useQuery } from "@tanstack/react-query";
 
 import { ListingCard } from "@/components/listings/listing-card";
+import { Disclosure } from "@/components/ui/disclosure";
 import { Skeleton } from "@/components/ui/skeleton";
 import { dedupeListingsByThumbnail } from "@/lib/listings";
 import { fetchListingsFromApi } from "@/lib/listings-client";
-import { formatCurrency } from "@/lib/format";
-import {
-  showsRentListings,
-  showsSaleListings,
-} from "@/lib/lens";
+import { formatCurrency, sanitizeLabel } from "@/lib/format";
+import { showsRentListings, showsSaleListings } from "@/lib/lens";
 import type { ExploreMode, Listing, MarketMetric } from "@/lib/types";
 
 function ListingsBlock({
@@ -92,57 +90,51 @@ export function SuburbValueListings({
     (showRent && rentListings.length > 0) || (showSale && saleListings.length > 0);
 
   if (!showRent && !showSale) return null;
+  if (!isLoading && !hasAny) return null;
 
-  if (isLoading) {
-    return (
-      <section className="space-y-4">
-        <Skeleton className="skeleton-stagger h-6 w-64" />
-        <div className="grid gap-3 sm:grid-cols-2">
-          {Array.from({ length: 2 }).map((_, i) => (
-            <Skeleton key={i} className="skeleton-stagger h-28 rounded-2xl" />
-          ))}
-        </div>
-      </section>
-    );
-  }
-
-  if (!hasAny) return null;
+  const suburbLabel = sanitizeLabel(market.suburb);
+  const description = `Active properties in ${suburbLabel} at or below the suburb median — sorted cheapest first.`;
 
   return (
-    <section className="space-y-6">
-      <div>
-        <h2 className="font-heading text-lg font-medium">Good value listings</h2>
-        <p className="text-sm text-muted-foreground">
-          Active properties in {market.suburb} at or below the suburb median — sorted
-          cheapest first.
-        </p>
-      </div>
+    <Disclosure title="Good value listings" description={description} defaultOpen>
+      {isLoading ? (
+        <div className="space-y-4">
+          <Skeleton className="skeleton-stagger h-6 w-40" />
+          <div className="grid gap-3 sm:grid-cols-2">
+            {Array.from({ length: 2 }).map((_, i) => (
+              <Skeleton key={i} className="skeleton-stagger h-28 rounded-2xl" />
+            ))}
+          </div>
+        </div>
+      ) : (
+        <>
+          {showRent ? (
+            <ListingsBlock
+              title="Rentals"
+              description={
+                rentMedian != null
+                  ? `At or below median rent of ${formatCurrency(rentMedian)}.`
+                  : "Below suburb median rent."
+              }
+              listings={rentListings}
+              market={market}
+            />
+          ) : null}
 
-      {showRent ? (
-        <ListingsBlock
-          title="Rentals"
-          description={
-            rentMedian != null
-              ? `At or below median rent of ${formatCurrency(rentMedian)}.`
-              : "Below suburb median rent."
-          }
-          listings={rentListings}
-          market={market}
-        />
-      ) : null}
-
-      {showSale ? (
-        <ListingsBlock
-          title="For sale"
-          description={
-            saleMedian != null
-              ? `At or below median sale of ${formatCurrency(saleMedian)}.`
-              : "Below suburb median sale price."
-          }
-          listings={saleListings}
-          market={market}
-        />
-      ) : null}
-    </section>
+          {showSale ? (
+            <ListingsBlock
+              title="For sale"
+              description={
+                saleMedian != null
+                  ? `At or below median sale of ${formatCurrency(saleMedian)}.`
+                  : "Below suburb median sale price."
+              }
+              listings={saleListings}
+              market={market}
+            />
+          ) : null}
+        </>
+      )}
+    </Disclosure>
   );
 }

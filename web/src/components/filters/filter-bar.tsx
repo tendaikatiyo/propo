@@ -2,16 +2,14 @@
 
 import { BudgetSlider } from "@/components/filters/budget-slider";
 import { CitySearchCombobox } from "@/components/filters/city-search-combobox";
-import { PropertyTypeButtons } from "@/components/filters/property-type-buttons";
+import { Disclosure } from "@/components/ui/disclosure";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { Switch } from "@/components/ui/switch";
 import { useCities } from "@/hooks/use-market-data";
 import { useExploreFilters } from "@/hooks/use-explore-filters";
-import { isLandMode } from "@/lib/mode";
-import { hasActiveSegmentFilters } from "@/lib/segments";
+import { defaultBudgetForMode, isLandMode } from "@/lib/mode";
 
 function FilterSwitchRow({
   id,
@@ -55,7 +53,6 @@ export function ExploreFilterPanel({
   const { data: cities = [] } = useCities();
 
   const filterOptions = targetPath ? { targetPath } : undefined;
-  const isRoom = filters.propertyType === "room";
   const land = isLandMode(filters.mode);
 
   const apply = (patch: Parameters<typeof setFilters>[0]) => {
@@ -70,6 +67,16 @@ export function ExploreFilterPanel({
 
   return (
     <div className="space-y-6">
+      {land ? (
+        <p className="text-sm text-muted-foreground">
+          Optional filters — by default every priced land market is listed.
+        </p>
+      ) : (
+        <p className="text-sm text-muted-foreground">
+          Optional filters — by default every suburb is listed. Open a profile for full stats.
+        </p>
+      )}
+
       <section className="space-y-3">
         <Label className="caption-label">City</Label>
         <CitySearchCombobox
@@ -80,43 +87,36 @@ export function ExploreFilterPanel({
         />
       </section>
 
-      <section className="space-y-3">
-        <BudgetSlider
-          mode={filters.mode}
-          value={filters.budget}
-          onChange={(budget) => apply({ budget })}
-        />
-      </section>
-
-      {!land ? (
-        <>
-          <Separator />
-
-          <section className="space-y-3">
-            <Label className="caption-label">Property type</Label>
-            <PropertyTypeButtons
-              mode={filters.mode}
-              value={filters.propertyType}
-              onChange={(propertyType) => apply({ propertyType })}
-            />
-          </section>
-
-          {isRoom ? (
+      {land ? (
+        <section className="space-y-3">
+          <div className="flex items-end justify-between gap-2">
+            <Label className="caption-label">$/sqm budget</Label>
+            {filters.budgetFilterActive ? (
+              <button
+                type="button"
+                className="text-xs font-medium text-muted-foreground hover:text-foreground hover:underline"
+                onClick={() =>
+                  apply({
+                    budgetFilterActive: false,
+                    budget: defaultBudgetForMode("land"),
+                  })
+                }
+              >
+                Clear
+              </button>
+            ) : null}
+          </div>
+          {!filters.budgetFilterActive ? (
             <p className="text-xs text-muted-foreground">
-              Rooms are listed as single occupancy (1 bed).
+              Off — move the slider to filter by budget.
             </p>
           ) : null}
-
-          {hasActiveSegmentFilters(filters) ? (
-            <FilterSwitchRow
-              id="include-suburb-medians"
-              label="Include suburb medians"
-              description="When on, we also show suburbs where we only have a suburb-wide average — not enough listings for your property type."
-              checked={!filters.hideSuburbMedianFallback}
-              onCheckedChange={(checked) => apply({ hideSuburbMedianFallback: !checked })}
-            />
-          ) : null}
-        </>
+          <BudgetSlider
+            mode={filters.mode}
+            value={filters.budget}
+            onChange={(budget) => apply({ budget, budgetFilterActive: true })}
+          />
+        </section>
       ) : null}
 
       <Separator />
@@ -125,7 +125,7 @@ export function ExploreFilterPanel({
         <FilterSwitchRow
           id="include-thin-markets"
           label="Show suburbs with less data"
-          description="When on, we also include suburbs where we have fewer listings to work with. Helpful if you want more options, but prices may be less reliable."
+          description="On by default. Turn off to hide low-confidence suburbs."
           checked={filters.includeLowConfidence}
           onCheckedChange={(checked) => apply({ includeLowConfidence: checked })}
         />
@@ -139,14 +139,15 @@ export function ExploreFilterPanel({
 
 export function ExploreFilterSidebar() {
   return (
-    <Card data-tour="filters" className="sticky top-24 hidden lg:block">
-      <CardHeader className="pb-3">
-        <CardTitle className="text-base">Filters</CardTitle>
-      </CardHeader>
-      <CardContent>
+    <div data-tour="filters" className="sticky top-24 hidden lg:block">
+      <Disclosure
+        title="Filters"
+        description="Optional — off by default"
+        defaultOpen={false}
+      >
         <ExploreFilterPanel />
-      </CardContent>
-    </Card>
+      </Disclosure>
+    </div>
   );
 }
 

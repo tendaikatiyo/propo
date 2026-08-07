@@ -123,6 +123,18 @@
   --shimmer-highlight: #0d0d0d;
   --shimmer-band: 400%;
   --shimmer-ease: linear;
+
+  /* transitions.dev — text states swap */
+  --text-swap-dur: 180ms;
+  --text-swap-translate-y: 6px;
+  --text-swap-blur: 2px;
+  --text-swap-ease: ease-in-out;
+
+  /* transitions.dev — accordion */
+  --acc-expand: 250ms;
+  --acc-collapse: 250ms;
+  --acc-chevron: 250ms;
+  --acc-ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @layer base {
@@ -486,6 +498,76 @@
     --shimmer-highlight: #ffffff;
   }
 
+  /* transitions.dev — text states swap (rolling placeholder) */
+  .t-text-swap {
+    display: inline-block;
+    transform: translateY(0);
+    filter: blur(0);
+    opacity: 1;
+    transition:
+      transform var(--text-swap-dur) var(--text-swap-ease),
+      filter var(--text-swap-dur) var(--text-swap-ease),
+      opacity var(--text-swap-dur) var(--text-swap-ease);
+    will-change: transform, filter, opacity;
+  }
+
+  .t-text-swap.is-exit {
+    transform: translateY(calc(var(--text-swap-translate-y) * -1));
+    filter: blur(var(--text-swap-blur));
+    opacity: 0;
+  }
+
+  .t-text-swap.is-enter-start {
+    transform: translateY(var(--text-swap-translate-y));
+    filter: blur(var(--text-swap-blur));
+    opacity: 0;
+    transition: none;
+  }
+
+  /* transitions.dev — accordion expand */
+  .t-acc-panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows var(--acc-collapse) var(--acc-ease);
+  }
+
+  .t-acc[data-open="true"] .t-acc-panel {
+    grid-template-rows: 1fr;
+    transition: grid-template-rows var(--acc-expand) var(--acc-ease);
+  }
+
+  .t-acc-panel-inner {
+    overflow: hidden;
+    opacity: 0;
+    filter: blur(2px);
+    transition:
+      opacity var(--acc-collapse) var(--acc-ease),
+      filter var(--acc-collapse) var(--acc-ease);
+  }
+
+  .t-acc[data-open="true"] .t-acc-panel-inner {
+    opacity: 1;
+    filter: blur(0);
+    transition:
+      opacity var(--acc-expand) var(--acc-ease),
+      filter var(--acc-expand) var(--acc-ease);
+  }
+
+  .t-acc-chevron {
+    display: inline-flex;
+    transform: scaleY(1);
+    transform-origin: center;
+    transition: transform var(--acc-chevron) var(--acc-ease);
+  }
+
+  .t-acc-chevron path {
+    vector-effect: non-scaling-stroke;
+  }
+
+  .t-acc[data-open="true"] .t-acc-chevron {
+    transform: scaleY(-1);
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .t-success-check {
       animation: none !important;
@@ -509,6 +591,16 @@
 
     .t-shimmer::before {
       animation: none !important;
+    }
+
+    .t-text-swap {
+      transition: none !important;
+    }
+
+    .t-acc-panel,
+    .t-acc-panel-inner,
+    .t-acc-chevron {
+      transition: none !important;
     }
   }
 

@@ -2,9 +2,14 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useMemo, useState } from "react";
 
-import { BudgetSlider } from "@/components/filters/budget-slider";
-import { PropertyTypeButtons } from "@/components/filters/property-type-buttons";
+import {
+  SuburbSearchInput,
+  type SuburbSearchSuggestion,
+} from "@/components/filters/suburb-search-input";
+import { RollingSuburbPlaceholder } from "@/components/home/rolling-suburb-placeholder";
 import { buttonVariants } from "@/components/ui/button";
 import { HOME_LANDING_PHOTO } from "@/lib/hero";
 import {
@@ -16,29 +21,64 @@ import {
   DATASET_SCALE,
   DATASET_UPDATE_CADENCE,
 } from "@/lib/constants";
-import type { ExploreMode, PropertyType } from "@/lib/types";
+import { sanitizeLabel } from "@/lib/format";
+import { suburbPath } from "@/lib/slug";
 import { cn } from "@/lib/utils";
 
-const INVEST_MODE: ExploreMode = "invest";
+/** Well-known suburbs for suggested searches + rolling placeholder. */
+const SUGGESTED_SUBURB_NAMES = [
+  "Borrowdale",
+  "Mount Pleasant",
+  "Avondale",
+  "Highlands",
+  "Chisipite",
+  "Greendale",
+  "Hillside",
+  "Burnside",
+  "Belvedere",
+  "Waterfalls",
+] as const;
+
+const FALLBACK_SHUTTER_NAMES: string[] = [...SUGGESTED_SUBURB_NAMES];
+
+function resolveSuggested(
+  suggestions: SuburbSearchSuggestion[]
+): SuburbSearchSuggestion[] {
+  const bySuburb = new Map(
+    suggestions.map((market) => [market.suburb.trim().toLowerCase(), market])
+  );
+  const resolved: SuburbSearchSuggestion[] = [];
+  for (const name of SUGGESTED_SUBURB_NAMES) {
+    const match = bySuburb.get(name.toLowerCase());
+    if (match) resolved.push(match);
+  }
+  return resolved;
+}
 
 export function HomeLandingHero({
-  sectionRef,
-  budget,
-  propertyType,
-  exploreHref,
-  onBudgetChange,
-  onPropertyTypeChange,
+  suggestions = [],
 }: {
-  sectionRef?: React.RefObject<HTMLElement | null>;
-  budget: number;
-  propertyType: PropertyType | null;
-  exploreHref: string;
-  onBudgetChange: (budget: number) => void;
-  onPropertyTypeChange: (type: PropertyType | null) => void;
+  suggestions?: SuburbSearchSuggestion[];
 }) {
+  const router = useRouter();
+  const [query, setQuery] = useState("");
+
+  const suggested = useMemo(() => resolveSuggested(suggestions), [suggestions]);
+  const shutterNames = useMemo(
+    () =>
+      suggested.length > 0
+        ? suggested.map((market) => market.suburb)
+        : FALLBACK_SHUTTER_NAMES,
+    [suggested]
+  );
+  const chipMarkets = suggested.slice(0, 6);
+
+  function goToSuburb(market: SuburbSearchSuggestion) {
+    router.push(suburbPath(market.city, market.suburb));
+  }
+
   return (
     <section
-      ref={sectionRef}
       data-tour="hero"
       className="relative -mt-[52px] min-h-[100dvh] w-full overflow-hidden lg:mt-0 lg:min-h-[100dvh]"
     >
@@ -74,11 +114,11 @@ export function HomeLandingHero({
               Zimbabwe property market intelligence
             </span>
             <h1 className="font-display text-[1.75rem] font-medium leading-[1.08] tracking-[-0.03em] text-white drop-shadow-[0_2px_16px_rgba(0,0,0,0.5)] sm:text-4xl lg:text-[4rem] lg:leading-[1.02]">
-              Find yield and fair value in Zimbabwe
+              Look up a suburb
             </h1>
             <p className="mx-auto max-w-lg text-sm leading-relaxed tracking-[0.15px] text-white/90 drop-shadow-[0_1px_10px_rgba(0,0,0,0.4)] sm:text-base lg:mx-0 lg:text-lg">
-              Suburb medians, rental yield, and opportunity scores across{" "}
-              {DATASET_SCALE.suburbMarketsLabel} — updated {DATASET_UPDATE_CADENCE}.
+              Rent, sale, and land medians across {DATASET_SCALE.suburbMarketsLabel} — updated{" "}
+              {DATASET_UPDATE_CADENCE}.
             </p>
           </div>
 
@@ -88,33 +128,53 @@ export function HomeLandingHero({
               "hero-glass-panel w-full max-w-lg shrink-0 p-5 sm:p-6 lg:p-8"
             )}
           >
-            <div className="space-y-5 lg:space-y-7">
+            <div className="space-y-5 lg:space-y-6">
               <div>
-                <p className="caption-label">Purchase budget</p>
-                <p className="mt-1.5 hidden text-sm text-muted-foreground sm:block">
-                  Filter suburbs by buy budget — results update as you scroll.
+                <p className="caption-label">Search</p>
+                <p className="mt-1.5 text-sm text-muted-foreground">
+                  Type a suburb to open its market profile — rent, sales, and land.
                 </p>
               </div>
 
-              <BudgetSlider
-                mode={INVEST_MODE}
-                value={budget}
-                onChange={onBudgetChange}
-              />
-
-              <div className="space-y-3">
-                <p className="caption-label">Property type</p>
-                <PropertyTypeButtons
-                  mode={INVEST_MODE}
-                  value={propertyType}
-                  onChange={onPropertyTypeChange}
+              <div className="relative">
+                <SuburbSearchInput
+                  value={query}
+                  onChange={setQuery}
+                  suggestions={suggestions}
+                  suggestionsDesktopOnly={false}
+                  onSelectSuggestion={goToSuburb}
+                  placeholder=""
+                  inputClassName="h-12 bg-white/80 text-base"
+                />
+                <RollingSuburbPlaceholder
+                  names={shutterNames}
+                  visible={query.trim().length === 0}
                 />
               </div>
 
-              <Link href={exploreHref} className={cn(buttonVariants({ size: "lg" }), "w-full")}>
-                <span className="t-shimmer t-shimmer-on-dark" data-text="Explore yield markets">
-                  Explore yield markets
-                </span>
+              {chipMarkets.length > 0 ? (
+                <div className="space-y-2">
+                  <p className="caption-label">Suggested</p>
+                  <div className="flex flex-wrap gap-2">
+                    {chipMarkets.map((market) => (
+                      <button
+                        key={market.market_id}
+                        type="button"
+                        onClick={() => goToSuburb(market)}
+                        className="rounded-full border border-border/70 bg-white/55 px-3 py-1.5 text-sm text-foreground transition-colors hover:bg-white/80"
+                      >
+                        {sanitizeLabel(market.suburb)}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              ) : null}
+
+              <Link
+                href="/explore?city=all"
+                className={cn(buttonVariants({ variant: "outline", size: "lg" }), "w-full")}
+              >
+                Browse all suburbs
               </Link>
             </div>
           </div>

@@ -33,6 +33,7 @@ function parseSegmentFilters(sp: { type?: string; bedroom?: string }) {
   return normalizeExploreFilters({
     mode: "rent",
     budget: DEFAULT_RENT_BUDGET,
+    budgetFilterActive: false,
     city: null,
     propertyType: sp.type ? normalizePropertyType(sp.type) : null,
     bedroom: sp.bedroom ? Number(sp.bedroom) : null,

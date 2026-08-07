@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-import { useGlobalLens } from "@/components/providers/lens-provider";
 import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useRecentlyViewedMarkets } from "@/hooks/use-recently-viewed-markets";
@@ -12,7 +11,6 @@ import { suburbPath } from "@/lib/slug";
 
 export function HomeRecentlyViewed() {
   const { recent, clearRecent } = useRecentlyViewedMarkets();
-  const { lens } = useGlobalLens();
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
@@ -46,9 +44,7 @@ export function HomeRecentlyViewed() {
           {recent.map((item) => (
             <Link
               key={item.market_id}
-              href={suburbPath(item.city, item.suburb, {
-                mode: item.viewedFromMode ?? lens,
-              })}
+              href={suburbPath(item.city, item.suburb)}
               className="flex items-center justify-between rounded-xl px-2 py-2 text-sm hover:bg-muted/50"
             >
               <span>

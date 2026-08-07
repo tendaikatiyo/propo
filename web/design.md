@@ -188,7 +188,7 @@ Propo’s signature over photography. Frosted translucency with backdrop blur �
 | Token | Opacity / blur | Use |
 | --- | --- | --- |
 | `liquidGlassPillClass` | `bg-white/25`, `blur-xl` | Eyebrow pills on photo |
-| `liquidGlassHeroPanelClass` | `bg-white/58`, `blur-2xl`, milky | Home filter panel (“Focus”) |
+| `liquidGlassHeroPanelClass` | `bg-white/58`, `blur-2xl`, milky | Home search prompt panel |
 | `liquidGlassPanelClass` | `bg-white/18` | General frosted panels |
 | `liquidGlassButtonDefault` | `bg-primary/80` on glass | Primary CTA on heroes |
 
@@ -274,31 +274,28 @@ Pill shape, mono uppercase at 11px.
 
 | Control | Pattern |
 | --- | --- |
-| **Global Focus** | Rent · Buy · Invest in one `bg-muted` track; **Land** as separate chip. Active segment uses `MODE_ACCENT` colours (`web/src/lib/mode-accent.ts`). **Desktop:** sidebar (`GlobalLensSwitcher`, hidden on home). **Mobile:** top-bar chip + menu drawer. |
-| **Home hero focus** | **Intent** variant only — 2×2 glass pills (“I'm renting”, “I'm buying land”, etc.). Primary lens control on `/`; sidebar Focus hidden on home. |
-| **Explore mode toggle** | `ExploreModeToggle` variants: `segmented` (global Focus), `intent` (home), `short` (legacy) |
-| **Lens persistence** | URL `?mode=rent\|buy\|land\|invest` (**invest** omits param); `localStorage` key `propo_lens`; bare URLs default **invest** on server; Focus switcher UI currently hidden (investor-first); internal links should pass `?mode=` for non-invest |
-| **Budget slider** | Mobile: +/- steppers; desktop: input + slider |
-| **Property type** | Toggle button group |
-| **City combobox** | Search with listing counts (mode-aware via `cityListingTotal`) |
-| **Filter panel label** | Explore sidebar: budget, city, property type (Focus is global, not in panel) |
+| **Global Focus** | **Parked.** Switcher UI stays hidden. |
+| **Home hero** | Suburb **search prompt** (rolling name shutter + suggested chips → profile). Secondary CTA to Explore. |
+| **Explore surfaces** | Page tabs **Suburbs \| Land** (`ExploreSurfaceTabs`). |
+| **Explore filters** | Collapsed by default. Optional city / thin-markets / land `$/sqm` budget. No Browse as / property type on Suburbs. |
+| **Lens persistence** | Legacy: URL `?mode=` + `localStorage` `propo_lens`; default **invest**. Suburb profiles are full dossiers (not mode-gated). Land explore uses `?mode=land`. |
 
 ### User lens (audience modes)
 
-Four lenses share one dataset; each surface shows metrics for the active lens only.
+**Parked for product UX (suburb-first cut).** Suburb profiles always show rent + sale + land + yield. Explore **Suburbs** is a directory (no intent stack). Explore **Land** is a land directory with optional $/sqm budget. `/contribute` remains rent/buy/land only.
 
-| Lens | Audience | Primary metrics |
-| --- | --- | --- |
-| **Rent** | Tenants | Median rent, rent trends, rent listings, rent report summary |
-| **Buy** | Owner-occupiers | Median sale, sale trends (no rent column on buy tables) |
-| **Land** | Stand buyers | $/sqm, land count (`land_metrics` table — not residential `market_metrics`) |
-| **Invest** | Buy-to-rent / analysts | Rent + sale + yield + opportunity; full printable report CTA |
+| Mode | Where it still matters |
+| --- | --- |
+| **Rent / Buy / Land** | Contribute, some deep links, rankings/compare legacy |
+| **Invest** | Soft default for Explore/legacy hydration; table columns on suburb directory |
 
 **Accent colours (active segmented segment):** rent sky `#6B9FD4`, buy violet `#9B87C4`, land green `#7A9B76`, invest amber `#C49B6B`.
 
-**Invest entry:** `/?mode=invest` and `next.config` redirect `/invest` → home; sidebar Invest nav **commented out** (soft launch).
+**Home:** suburb search prompt → profile; secondary CTA to Explore.
 
-**Compare:** inherits last lens from `propo_lens` when `/compare` has no `?mode=`. Pins store `pinnedFromMode`; hint when pins differ from active lens.
+**Explore:** Suburbs \| Land tabs; filters accordion **closed by default**.
+
+**Compare:** inherits last lens from `propo_lens` when `/compare` has no `?mode=`. Pins store `pinnedFromMode`.
 
 **Mobile dock** (`web/src/lib/mobile-dock.ts`): one row above tab bar at `mobileDockBottom()` (tab 3.25rem + 8px gap + safe-area).
 
@@ -306,19 +303,18 @@ Four lenses share one dataset; each surface shows metrics for the active lens on
 | --- | --- |
 | Suburb profile | `SuburbActionBar` — View listings · Compare (n) · Pin (global compare bar hidden) |
 | Other pages, ≥2 pins | `MobileCompareBar` |
-| Home (hero scrolled away) | `HomeBudgetBar` |
 
-**Mobile Focus:** `MobileFocusChip` in top bar opens bottom sheet; menu drawer also has `GlobalLensSwitcher`.
+**Focus UI:** global switcher / mobile chip stay **hidden**.
 
-**Navigation:** `ScrollToTopOnNavigate` resets scroll on pathname change (not query-only lens updates).
+**Navigation:** `ScrollToTopOnNavigate` resets scroll on pathname change (not query-only updates).
 
-**Lens hydration:** `LensProvider` renders **rent** until client mount, then applies URL + `localStorage` (avoids SSR mismatch). `LensSearchParamsBridge` is the only Suspense boundary — shell children stay under `QueryClientProvider`.
+**Lens hydration:** Explore/legacy still use `LensProvider` + `?mode=` / `propo_lens` (default invest). Suburb dossiers ignore Focus for section visibility.
 
 **DataFreshnessPill:** client `useEffect` fetch to `/api/meta` (not React Query in layout chrome).
 
-**Rankings:** Leaderboards + Movers tabs only; land leaderboards via **Land** lens (not a separate Land tab).
+**Rankings:** Leaderboards + Movers tabs; land leaderboards via Explore land mode when used.
 
-**City 90-day movers:** No inner Rent/Sale toggle — follows page lens; invest shows rent and sale blocks.
+**City 90-day movers:** May still follow page `?mode=`; invest shows rent and sale blocks.
 
 ### Page header (`page-header.tsx`)
 

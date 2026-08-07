@@ -31,8 +31,10 @@ function clearBuyOnlyTypes(propertyType: PropertyType | null): PropertyType | nu
 
 export function normalizeExploreFilters(filters: ExploreFilters): ExploreFilters {
   let { propertyType, bedroom } = filters;
+  const budgetFilterActive =
+    filters.mode === "land" ? Boolean(filters.budgetFilterActive) : false;
   if (filters.mode === "land") {
-    return { ...filters, propertyType: null, bedroom: null };
+    return { ...filters, propertyType: null, bedroom: null, budgetFilterActive };
   }
   if (filters.mode === "buy" || filters.mode === "invest") {
     propertyType = clearBuyOnlyTypes(propertyType);
@@ -45,7 +47,7 @@ export function normalizeExploreFilters(filters: ExploreFilters): ExploreFilters
   } else {
     bedroom = null;
   }
-  return { ...filters, propertyType, bedroom };
+  return { ...filters, propertyType, bedroom, budgetFilterActive };
 }
 
 export function normalizeCompareFilters(filters: CompareFilters): CompareFilters {
@@ -146,4 +148,4 @@ export const SITE_FOOTER_LINE =
   "Continuously updated property market database for Zimbabwe";
 
 export const SITE_DESCRIPTION =
-  "Zimbabwe property market intelligence for investors — suburb yields, fair value, and opportunity scores from a database updated every 24 hours.";
+  "Zimbabwe property market intelligence — suburb rent, sale, and land medians from a database updated every 24 hours.";

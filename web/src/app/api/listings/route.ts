@@ -24,6 +24,7 @@ export async function GET(request: NextRequest) {
   const normalized = normalizeExploreFilters({
     mode,
     budget,
+    budgetFilterActive: false,
     city,
     propertyType: mode === "land" || !typeParam ? null : normalizePropertyType(typeParam),
     bedroom: null,

@@ -125,6 +125,25 @@ export function filterMarkets(markets: MarketMetric[], filters: ExploreFilters):
   return { inBudget, stretch, filtered };
 }
 
+/** Suburb directory — city + confidence only (no budget / intent / property type). */
+export function filterDirectoryMarkets(
+  markets: MarketMetric[],
+  filters: Pick<ExploreFilters, "city" | "includeLowConfidence">
+): MarketMetric[] {
+  return markets.filter((market) => {
+    if (filters.city && market.city !== filters.city) return false;
+    if (!passesConfidence(market, filters.includeLowConfidence)) return false;
+    return true;
+  });
+}
+
+/** Stable directory order: city, then suburb name. */
+export function rankDirectoryResults(markets: MarketMetric[]): MarketMetric[] {
+  return [...markets].sort(
+    (a, b) => a.city.localeCompare(b.city) || a.suburb.localeCompare(b.suburb)
+  );
+}
+
 export function isSuburbMedianFallbackRow(
   market: MarketMetric,
   filters: ExploreFilters

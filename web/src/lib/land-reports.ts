@@ -279,9 +279,8 @@ export function isLandPurchaseRecentEnough(
 export function shouldShowCommunityLandRange(
   landMarket: LandMetric | null | undefined,
   metrics: LandReportMetrics | null | undefined,
-  lens: string
+  _lens?: string
 ): boolean {
-  if (lens !== "land") return false;
   if (!metrics || metrics.report_count < LAND_REPORT_DISPLAY_MIN_COUNT) return false;
   const thinListings = (landMarket?.land_count ?? 0) < LAND_REPORT_GAP_LAND_COUNT;
   const lowConfidence = (landMarket?.confidence_score ?? 0) < 40;

@@ -182,9 +182,8 @@ export function isSaleRecentEnough(saleDate: string | null | undefined): boolean
 export function shouldShowCommunitySaleRange(
   market: MarketMetric,
   metrics: SaleReportMetrics | null | undefined,
-  lens: string
+  _lens?: string
 ): boolean {
-  if (lens !== "buy" && lens !== "invest") return false;
   if (!metrics || metrics.report_count < SALE_REPORT_DISPLAY_MIN_COUNT) return false;
   const thinListings = (market.sale_count ?? 0) < SALE_REPORT_GAP_SALE_COUNT;
   const lowConfidence = (market.confidence_score ?? 0) < 40;

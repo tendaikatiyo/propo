@@ -1,6 +1,6 @@
 # Propo — GitHub Copilot instructions
 
-You are working in **Propo**, a Zimbabwe property **market intelligence** app (suburb medians, affordability, fair value) — **not** a listings portal.
+You are working in **Propo**, a Zimbabwe property **market intelligence** app (suburb medians, fair value, land $/sqm) — **not** a listings portal.
 
 **Canonical agent map:** read [`AGENTS.md`](../AGENTS.md) at the repo root before large changes. Continuity: [`prompts/handovers/README.md`](../prompts/handovers/README.md). Product brief: [`prompts/PROOF_OF_WORK.md`](../prompts/PROOF_OF_WORK.md). Design: [`web/DESIGN.md`](../web/DESIGN.md).
 
@@ -17,8 +17,10 @@ You are working in **Propo**, a Zimbabwe property **market intelligence** app (s
 
 ## Non-negotiables
 
-- **Global Focus** (Rent · Buy · Land · Invest) only — sidebar / mobile chip. Do not add per-page lens switchers. Home = hero intent only.
-- **Hydration:** first paint lens = **rent**; apply `localStorage` (`propo_lens`) / `?mode=` after mount.
+- **Suburb-first:** Home = suburb search → full profile. Do **not** reintroduce home budget/type stacks or global Focus UI without an explicit product decision.
+- **Explore:** tabs **Suburbs \| Land** (directories). Filters **off by default** (collapsed; all cities; thin markets shown; land budget only when set).
+- **Profiles** show rent + sale + land + yield together (Focus does not gate sections).
+- **Hydration:** Explore/legacy default lens = **invest**; `?mode=` / `propo_lens` still exist for deep links.
 - **Community reports** (migrations 014–017) stay **parallel** to scraped medians — never merge into headline metrics without an explicit product decision.
 - **Cottage** is rent-only. **Invest** is blocked on `/contribute`.
 - **Land** metrics stay separate from residential medians.
@@ -32,6 +34,6 @@ You are working in **Propo**, a Zimbabwe property **market intelligence** app (s
 
 ## When unsure
 
-1. Open the latest file in `prompts/handovers/`.
+1. Open the latest file in `prompts/handovers/` (start with `2026-08-07-suburb-first-raw-info.md`).
 2. Mirror patterns in neighbouring files under `web/src/` or `analytics/`.
 3. Prefer `web/DESIGN.md` tokens over new colours/fonts/layouts.

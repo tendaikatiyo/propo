@@ -9,6 +9,7 @@ import { SampleSizeBadge, ScopeLabel } from "@/components/markets/sample-size-ba
 import { SuburbValueListings } from "@/components/listings/suburb-value-listings";
 import { SuburbLandListings } from "@/components/listings/suburb-land-listings";
 import { SuburbLandMetrics } from "@/components/markets/suburb-land-metrics";
+import { SuburbLandTrendsSection } from "@/components/markets/suburb-land-trends-section";
 import { PropertyMixBar } from "@/components/markets/property-mix-bar";
 import { SuburbTrendsSection } from "@/components/markets/suburb-trends-section";
 import { ConfidenceBadge } from "@/components/markets/confidence-badge";
@@ -26,14 +27,6 @@ import { formatCurrency, formatPercent, sanitizeLabel } from "@/lib/format";
 import {
   relatedSuburbCaption,
   relatedSuburbDetail,
-  showsLandOnProfile,
-  showsPropertyMix,
-  showsRentMetrics,
-  showsRentReportExport,
-  showsReportExport,
-  showsResidentialOnProfile,
-  showsSaleMetrics,
-  showsYieldMetrics,
   sortRelatedSuburbs,
   suburbProfileDescription,
 } from "@/lib/lens";
@@ -87,7 +80,6 @@ export function SuburbProfile({
   saleReportMetrics?: SaleReportMetrics | null;
   landReportMetrics?: LandReportMetrics | null;
 }) {
-  const landMode = lens === "land";
   const segment = resolveSegmentStats(market, propertyType, bedroom);
   const specLabel = segmentFilterLabel(propertyType, bedroom);
   const hasSpecFilters = hasActiveSegmentFilters({ propertyType, bedroom });
@@ -107,31 +99,21 @@ export function SuburbProfile({
   const saleMin = segment?.minimum_sale_price ?? market.minimum_sale_price;
   const saleMax = segment?.maximum_sale_price ?? market.maximum_sale_price;
 
-  const segmentQuery = { type: propertyType, bedroom, mode: lens };
-  const sortedRelated = sortRelatedSuburbs(related, lens, { propertyType, bedroom });
+  const segmentQuery = { type: propertyType, bedroom };
+  const sortedRelated = sortRelatedSuburbs(related, "invest", { propertyType, bedroom });
 
-  const confidenceScore =
-    landMode && landMarket ? landMarket.confidence_score : market.confidence_score;
-  const confidenceSample =
-    landMode && landMarket
-      ? landMarket.land_count
-      : lens === "buy"
-        ? saleSample
-        : lens === "rent"
-          ? rentSample
-          : rentSample + saleSample;
-  const confidenceMode: "rent" | "buy" | "land" =
-    landMode && landMarket ? "land" : lens === "buy" ? "buy" : "rent";
+  const confidenceScore = market.confidence_score;
+  const confidenceSample = rentSample + saleSample;
 
   return (
     <div className="space-y-8 pb-28 lg:pb-0">
-      <BackLink href={cityPath(market.city, { mode: lens })} label={`Back to ${market.city}`} />
+      <BackLink href={cityPath(market.city)} label={`Back to ${market.city}`} />
 
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div className="min-w-0 flex-1 space-y-4">
           <div>
             <p className="font-mono text-xs tracking-[0.08em] text-muted-foreground uppercase">
-              <Link href={cityPath(market.city, { mode: lens })} className="hover:underline">
+              <Link href={cityPath(market.city)} className="hover:underline">
                 {market.city}
               </Link>
             </p>
@@ -142,48 +124,31 @@ export function SuburbProfile({
               {suburbProfileDescription(lens, specLabel, rentFallback, saleFallback)}
             </p>
             <div className="mt-3 flex flex-col gap-2">
-              {showsResidentialOnProfile(lens) ? (
-                <ScopeLabel propertyType={propertyType} bedroom={bedroom} />
-              ) : null}
+              <ScopeLabel propertyType={propertyType} bedroom={bedroom} />
               <div className="flex flex-col gap-1 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-4">
-                {showsRentMetrics(lens) ? (
-                  <SampleSizeBadge count={rentSample} mode="rent" limited={rentLimited} />
-                ) : null}
-                {showsSaleMetrics(lens) ? (
-                  <SampleSizeBadge count={saleSample} mode="buy" limited={saleLimited} />
+                <SampleSizeBadge count={rentSample} mode="rent" limited={rentLimited} />
+                <SampleSizeBadge count={saleSample} mode="buy" limited={saleLimited} />
+                {landMarket && (landMarket.land_count ?? 0) > 0 ? (
+                  <span className="text-sm text-muted-foreground">
+                    Based on {landMarket.land_count} land listing
+                    {landMarket.land_count === 1 ? "" : "s"}
+                  </span>
                 ) : null}
               </div>
               <DataFreshnessPill prefix="Market data" />
             </div>
-            {showsRentReportExport(lens) ? (
-              <p className="mt-3 print:hidden lg:hidden">
-                <Link
-                  href={suburbReportPath(market.city, market.suburb, {
-                    type: propertyType,
-                    bedroom,
-                    scope: "rent",
-                  })}
-                  className="inline-flex items-center gap-1.5 text-sm font-medium hover:underline"
-                >
-                  <FileDown className="size-4" />
-                  Export rent summary
-                </Link>
-              </p>
-            ) : null}
-            {showsReportExport(lens) ? (
-              <p className="mt-3 print:hidden lg:hidden">
-                <Link
-                  href={suburbReportPath(market.city, market.suburb, {
-                    type: propertyType,
-                    bedroom,
-                  })}
-                  className="inline-flex items-center gap-1.5 text-sm font-medium hover:underline"
-                >
-                  <FileDown className="size-4" />
-                  Export full report
-                </Link>
-              </p>
-            ) : null}
+            <p className="mt-3 print:hidden lg:hidden">
+              <Link
+                href={suburbReportPath(market.city, market.suburb, {
+                  type: propertyType,
+                  bedroom,
+                })}
+                className="inline-flex items-center gap-1.5 text-sm font-medium hover:underline"
+              >
+                <FileDown className="size-4" />
+                Export full report
+              </Link>
+            </p>
             <p className="mt-3 print:hidden lg:hidden">
               <ContributePriceButton market={market} lens={lens} className="w-full sm:w-auto" />
             </p>
@@ -193,40 +158,25 @@ export function SuburbProfile({
           <ConfidenceBadge
             score={confidenceScore}
             sampleCount={confidenceSample}
-            sampleMode={confidenceMode}
+            sampleMode="rent"
           />
         </div>
         <div className="hidden flex-wrap items-center gap-2 lg:flex">
-          {showsRentReportExport(lens) ? (
-            <Link
-              href={suburbReportPath(market.city, market.suburb, {
-                type: propertyType,
-                bedroom,
-                scope: "rent",
-              })}
-              className={cn(buttonVariants({ variant: "outline", size: "sm" }), "print:hidden")}
-            >
-              <FileDown className="size-4" />
-              Export rent summary
-            </Link>
-          ) : null}
-          {showsReportExport(lens) ? (
-            <Link
-              href={suburbReportPath(market.city, market.suburb, {
-                type: propertyType,
-                bedroom,
-              })}
-              className={cn(buttonVariants({ variant: "outline", size: "sm" }), "print:hidden")}
-            >
-              <FileDown className="size-4" />
-              Export full report
-            </Link>
-          ) : null}
+          <Link
+            href={suburbReportPath(market.city, market.suburb, {
+              type: propertyType,
+              bedroom,
+            })}
+            className={cn(buttonVariants({ variant: "outline", size: "sm" }), "print:hidden")}
+          >
+            <FileDown className="size-4" />
+            Export full report
+          </Link>
           <ContributePriceButton market={market} lens={lens} />
           <ConfidenceBadge
             score={confidenceScore}
             sampleCount={confidenceSample}
-            sampleMode={confidenceMode}
+            sampleMode="rent"
           />
           <PinButton market={market} fromMode={lens} />
         </div>
@@ -234,118 +184,80 @@ export function SuburbProfile({
 
       <RentReportCta market={market} lens={lens} landMarket={landMarket} />
 
-      {showsResidentialOnProfile(lens) ? (
-        <>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {showsRentMetrics(lens) ? (
-              <MetricCard
-                label={segmentMedianLabel("rent", propertyType, bedroom)}
-                value={formatCurrency(medianRent)}
-              />
-            ) : null}
-            {showsSaleMetrics(lens) ? (
-              <MetricCard
-                label={segmentMedianLabel("buy", propertyType, bedroom)}
-                value={formatCurrency(medianSale)}
-              />
-            ) : null}
-            {showsYieldMetrics(lens) ? (
-              <>
-                <MetricCard label="Gross yield" value={formatPercent(market.yield_percent)} />
-                <MetricCard
-                  label="Opportunity score"
-                  value={String(market.opportunity_score ?? "—")}
-                />
-              </>
-            ) : null}
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <MetricCard
+          label={segmentMedianLabel("rent", propertyType, bedroom)}
+          value={formatCurrency(medianRent)}
+        />
+        <MetricCard
+          label={segmentMedianLabel("buy", propertyType, bedroom)}
+          value={formatCurrency(medianSale)}
+        />
+        <MetricCard label="Gross yield" value={formatPercent(market.yield_percent)} />
+        <MetricCard
+          label="Opportunity score"
+          value={String(market.opportunity_score ?? "—")}
+        />
+      </div>
+
+      <CommunityRentReports market={market} metrics={rentReportMetrics} lens={lens} />
+
+      <CommunitySaleReports market={market} metrics={saleReportMetrics} lens={lens} />
+
+      {landMarket ? (
+        <CommunityLandReports
+          landMarket={landMarket}
+          metrics={landReportMetrics}
+          lens={lens}
+        />
+      ) : null}
+
+      <SuburbTrendsSection market={market} lens={lens} />
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Property mix</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <PropertyMixBar market={market} />
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Price context</CardTitle>
+        </CardHeader>
+        <CardContent className="grid gap-4 sm:grid-cols-2">
+          <div>
+            <p className="mb-2 text-sm font-medium">Rent</p>
+            <p className="text-sm text-muted-foreground">
+              Min {formatCurrency(rentMin)} · Median {formatCurrency(medianRent)} · Max{" "}
+              {formatCurrency(rentMax)}
+            </p>
           </div>
+          <div>
+            <p className="mb-2 text-sm font-medium">Sale</p>
+            <p className="text-sm text-muted-foreground">
+              Min {formatCurrency(saleMin)} · Median {formatCurrency(medianSale)} · Max{" "}
+              {formatCurrency(saleMax)}
+            </p>
+          </div>
+        </CardContent>
+      </Card>
 
-          <CommunityRentReports
-            market={market}
-            metrics={rentReportMetrics}
-            lens={lens}
-          />
+      {landMarket ? <SuburbLandMetrics landMarket={landMarket} /> : null}
 
-          <CommunitySaleReports
-            market={market}
-            metrics={saleReportMetrics}
-            lens={lens}
-          />
-
-          <SuburbTrendsSection market={market} lens={lens} />
-
-          {showsPropertyMix(lens) ? (
-            <Card>
-              <CardHeader>
-                <CardTitle>Property mix</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <PropertyMixBar market={market} />
-              </CardContent>
-            </Card>
-          ) : null}
-
-          {(showsRentMetrics(lens) || showsSaleMetrics(lens)) && (
-            <Card>
-              <CardHeader>
-                <CardTitle>Price context</CardTitle>
-              </CardHeader>
-              <CardContent
-                className={cn(
-                  "grid gap-4",
-                  showsRentMetrics(lens) && showsSaleMetrics(lens)
-                    ? "sm:grid-cols-2"
-                    : "sm:grid-cols-1"
-                )}
-              >
-                {showsRentMetrics(lens) ? (
-                  <div>
-                    <p className="mb-2 text-sm font-medium">Rent</p>
-                    <p className="text-sm text-muted-foreground">
-                      Min {formatCurrency(rentMin)} · Median {formatCurrency(medianRent)} · Max{" "}
-                      {formatCurrency(rentMax)}
-                    </p>
-                  </div>
-                ) : null}
-                {showsSaleMetrics(lens) ? (
-                  <div>
-                    <p className="mb-2 text-sm font-medium">Sale</p>
-                    <p className="text-sm text-muted-foreground">
-                      Min {formatCurrency(saleMin)} · Median {formatCurrency(medianSale)} · Max{" "}
-                      {formatCurrency(saleMax)}
-                    </p>
-                  </div>
-                ) : null}
-              </CardContent>
-            </Card>
-          )}
-        </>
-      ) : null}
-
-      {showsLandOnProfile(lens) && landMarket ? (
-        <>
-          <CommunityLandReports
-            landMarket={landMarket}
-            metrics={landReportMetrics}
-            lens={lens}
-          />
-          <SuburbLandMetrics landMarket={landMarket} landMode={landMode} />
-        </>
-      ) : null}
+      {landMarket ? <SuburbLandTrendsSection landMarket={landMarket} /> : null}
 
       <div id="suburb-listings" className="space-y-8">
-        {showsResidentialOnProfile(lens) ? (
-          <SuburbValueListings market={market} lens={lens} />
-        ) : null}
-        {showsLandOnProfile(lens) ? (
-          <SuburbLandListings marketId={market.market_id} />
-        ) : null}
+        <SuburbValueListings market={market} lens={lens} />
+        {landMarket ? <SuburbLandListings marketId={market.market_id} /> : null}
       </div>
 
       {sortedRelated.length ? (
         <section className="space-y-4">
           <h2 className="font-heading text-lg font-medium">
-            {relatedSuburbCaption(lens)} in {market.city}
+            {relatedSuburbCaption()} in {market.city}
           </h2>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {sortedRelated.map((item) => (
@@ -355,9 +267,7 @@ export function SuburbProfile({
                 className="rounded-2xl border border-border/80 bg-card p-4 transition-shadow hover:shadow-[var(--shadow-card)]"
               >
                 <p className="font-medium">{sanitizeLabel(item.suburb)}</p>
-                <p className="text-sm text-muted-foreground">
-                  {relatedSuburbDetail(item, lens)}
-                </p>
+                <p className="text-sm text-muted-foreground">{relatedSuburbDetail(item)}</p>
               </Link>
             ))}
           </div>

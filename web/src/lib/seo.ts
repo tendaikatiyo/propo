@@ -10,7 +10,7 @@ export const SITE_URL =
 
 /** Open Graph / Twitter Card share image. */
 export const OG_IMAGE_PATH = "/og_tag_image.webp";
-export const OG_IMAGE_ALT = `${SITE_NAME} — Zimbabwe property market intelligence: yield, fair value, and suburb medians`;
+export const OG_IMAGE_ALT = `${SITE_NAME} — Zimbabwe property market intelligence: suburb rent, sale & land medians`;
 export const OG_IMAGE_WIDTH = 1200;
 export const OG_IMAGE_HEIGHT = 630;
 
@@ -87,15 +87,15 @@ export function buildPageMetadata(options: PageSeoOptions = {}): Metadata {
 }
 
 export const HOME_PAGE_TITLE =
-  "Find yield and fair value in Zimbabwe — suburb market intelligence";
+  "Look up a suburb — Zimbabwe property market intelligence";
 
 export const HOME_PAGE_DESCRIPTION =
-  "Explore rental yield, opportunity scores, and fair-value signals across Zimbabwe suburbs. Continuously updated property market database for investors.";
+  "Search any Zimbabwe suburb for rent, sale, and land medians, yields, and trends. Continuously updated property market database.";
 
-export const EXPLORE_PAGE_TITLE = "Explore yield markets — compare suburbs by budget";
+export const EXPLORE_PAGE_TITLE = "Explore suburbs & land — Zimbabwe property directory";
 
 export const EXPLORE_PAGE_DESCRIPTION =
-  "Compare Zimbabwe suburbs by purchase budget, yield, and opportunity. Filter by property type and city.";
+  "Browse Zimbabwe suburbs by city, or filter land stands by $/sqm. Open a suburb profile for rent, sale, land, and yield.";
 
 export function suburbPageTitle(suburb: string, city: string): string {
   return `${suburb}, ${city} — house prices & affordability`;

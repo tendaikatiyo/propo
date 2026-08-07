@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { DEFAULT_LAND_BUDGET_PER_SQM } from "@/lib/constants";
 import { formatNumber, formatPricePerSqm } from "@/lib/format";
 import type { LandMetric } from "@/lib/types";
 
@@ -39,7 +38,7 @@ export function SuburbLandMetrics({
         </div>
         {!landMode ? (
           <Link
-            href={`/explore?mode=land&city=${encodeURIComponent(landMarket.city)}&budget=${DEFAULT_LAND_BUDGET_PER_SQM}`}
+            href={`/explore?mode=land&city=${encodeURIComponent(landMarket.city)}`}
             className="text-sm font-medium hover:underline"
           >
             Explore land in {landMarket.city}

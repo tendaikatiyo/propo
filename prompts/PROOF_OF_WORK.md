@@ -1,8 +1,8 @@
 # Propo — Proof of Work Brief
 
 **Product:** [Propo](https://propo.fyi) — Zimbabwe property market intelligence platform  
-**Tagline:** *Where can you afford?* — suburb-level rent, sale, and land insights backed by a **continuously updated property market database**.  
-**Status:** Production v1 live at propo.fyi; dataset refreshed every 24 hours via GitHub Actions (`daily-pipeline.yml` reliable since 2026-07-05); Supabase migrations **001–017** applied; ~85–90% complete with known test/copy gaps.
+**Tagline:** *Look up a suburb* — rent, sale, and land insights backed by a **continuously updated property market database**.  
+**Status:** Production v1 live at propo.fyi; dataset refreshed every 24 hours via GitHub Actions (`daily-pipeline.yml` reliable since 2026-07-05); Supabase migrations **001–017** applied; suburb-first UX cut (home search → full dossiers; Explore Suburbs|Land directories).
 
 ---
 
@@ -29,9 +29,11 @@ Solo-built full-stack data product: a **proprietary, continuously updated Zimbab
 
 Zimbabwe property search is fragmented across major online portals. Users see individual listings but lack **suburb context**: median rent, sale prices, land $/sqm, whether a listing is fair value, and how a market is moving over time.
 
-**Propo's wedge:** answer *"where can I afford?"* and *"is this price normal for this suburb?"* — not *"show me every house for rent."*
+**Propo's wedge:** answer *"what's happening in this suburb?"* — medians, yield, land $/sqm, fair value, and trends — not *"show me every house for rent."*
 
-Explicitly **not** a chat/listings aggregator; competes on structured intelligence (budget filters, segment medians, movers, printable suburb reports, compare tool).
+Explicitly **not** a chat/listings aggregator; competes on structured intelligence (suburb dossiers, Explore directories, movers, printable suburb reports, compare tool).
+
+**Primary flow:** search or browse a suburb → full rent + sale + land profile. Explore filters are optional.
 
 **What buyers care about:** the **dataset** — history, normalization, coverage, and analytics — not how it is collected.
 

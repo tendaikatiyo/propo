@@ -28,52 +28,53 @@ export function budgetPriceMode(lens: ExploreMode): "rent" | "buy" {
   return lens === "rent" ? "rent" : "buy";
 }
 
-export function showsRentMetrics(lens: ExploreMode): boolean {
-  return lens === "rent" || lens === "invest";
+export function showsRentMetrics(_lens?: ExploreMode): boolean {
+  return true;
 }
 
-export function showsSaleMetrics(lens: ExploreMode): boolean {
-  return lens === "buy" || lens === "invest";
+export function showsSaleMetrics(_lens?: ExploreMode): boolean {
+  return true;
 }
 
-export function showsYieldMetrics(lens: ExploreMode): boolean {
-  return lens === "invest";
+export function showsYieldMetrics(_lens?: ExploreMode): boolean {
+  return true;
 }
 
-export function showsLandOnProfile(lens: ExploreMode): boolean {
-  return lens === "land";
+/** Focus parked — suburb profiles always include land alongside rent/sale. */
+export function showsLandOnProfile(_lens?: ExploreMode): boolean {
+  return true;
 }
 
-export function showsResidentialOnProfile(lens: ExploreMode): boolean {
-  return lens !== "land";
+export function showsResidentialOnProfile(_lens?: ExploreMode): boolean {
+  return true;
 }
 
-export function showsPropertyMix(lens: ExploreMode): boolean {
-  return lens === "rent" || lens === "buy" || lens === "invest";
+export function showsPropertyMix(_lens?: ExploreMode): boolean {
+  return true;
 }
 
-export function showsReportExport(lens: ExploreMode): boolean {
-  return lens === "invest";
+export function showsReportExport(_lens?: ExploreMode): boolean {
+  return true;
 }
 
-export function showsRentReportExport(lens: ExploreMode): boolean {
-  return lens === "rent";
+export function showsRentReportExport(_lens?: ExploreMode): boolean {
+  return false;
 }
 
-export function showsRentListings(lens: ExploreMode): boolean {
-  return lens === "rent" || lens === "invest";
+export function showsRentListings(_lens?: ExploreMode): boolean {
+  return true;
 }
 
-export function showsSaleListings(lens: ExploreMode): boolean {
-  return lens === "buy" || lens === "invest";
+export function showsSaleListings(_lens?: ExploreMode): boolean {
+  return true;
 }
 
-export function showsRentTrends(lens: ExploreMode): boolean {
-  return lens === "rent" || lens === "invest";
+export function showsRentTrends(_lens?: ExploreMode): boolean {
+  return true;
 }
 
-export function showsSaleTrends(lens: ExploreMode): boolean {
-  return lens === "buy" || lens === "invest";
+export function showsSaleTrends(_lens?: ExploreMode): boolean {
+  return true;
 }
 
 export function showsInvestSideRankings(lens: ExploreMode): boolean {
@@ -119,48 +120,32 @@ export function sortRelatedSuburbs(
   });
 }
 
-export function relatedSuburbCaption(lens: ExploreMode): string {
-  if (lens === "rent") return "Similar affordable suburbs";
-  if (lens === "buy") return "Similar suburbs by sale price";
-  if (lens === "invest") return "Similar suburbs by yield";
-  return "Similar suburbs";
+export function relatedSuburbCaption(_lens?: ExploreMode): string {
+  return "Nearby suburbs";
 }
 
-export function relatedSuburbDetail(market: MarketMetric, lens: ExploreMode): string {
-  if (lens === "rent") {
-    return `Median rent ${formatCurrency(market.median_rent)}`;
+export function relatedSuburbDetail(market: MarketMetric, _lens?: ExploreMode): string {
+  const parts: string[] = [];
+  if (market.median_rent != null) parts.push(`Rent ${formatCurrency(market.median_rent)}`);
+  if (market.median_sale_price != null) {
+    parts.push(`Sale ${formatCurrency(market.median_sale_price)}`);
   }
-  if (lens === "buy") {
-    return `Median sale ${formatCurrency(market.median_sale_price)}`;
-  }
-  return `Yield ${market.yield_percent != null ? `${market.yield_percent.toFixed(1)}%` : "—"} · Opp ${market.opportunity_score ?? "—"}`;
+  if (market.yield_percent != null) parts.push(`Yield ${market.yield_percent.toFixed(1)}%`);
+  return parts.length ? parts.join(" · ") : "Market snapshot";
 }
 
 export function suburbProfileDescription(
-  lens: ExploreMode,
+  _lens: ExploreMode,
   specLabel: string | null,
   rentFallback: boolean,
   saleFallback: boolean
 ): string {
-  if (lens === "land") {
-    return "Land stands for sale — prices per sqm, trends, and active listings.";
-  }
-  if (lens === "rent") {
-    return specLabel
-      ? `Rental market for ${specLabel}${
-          rentFallback ? " (suburb-wide median where spec data is limited)" : ""
-        }.`
-      : "Median rent, trends, and active rental listings in this suburb.";
-  }
-  if (lens === "buy") {
-    return specLabel
-      ? `Homes for sale — ${specLabel} medians${
-          saleFallback ? " (suburb-wide median where spec data is limited)" : ""
-        }.`
-      : "Median sale prices, trends, and active listings in this suburb.";
-  }
+  const fallbackNote =
+    rentFallback || saleFallback
+      ? " Spec-limited figures fall back to suburb-wide medians where sample is thin."
+      : "";
   if (specLabel) {
-    return `Full market snapshot for ${specLabel} — rent, sale, yield, and trends.`;
+    return `Rent, sale, land, and yield for ${specLabel}.${fallbackNote}`;
   }
-  return "Rent, sale, yield, opportunity, trends, and active listings — full market intelligence.";
+  return `Rent, sale, land, yield, trends, and listings — full suburb market snapshot.${fallbackNote}`;
 }

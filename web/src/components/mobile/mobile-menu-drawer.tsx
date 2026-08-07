@@ -56,7 +56,7 @@ export function MobileMenuDrawer({
           <div data-tour="filters">
             <MobileMenuAccordion
               title="Explore filters"
-              description="Opens Explore with budget, city, and property type."
+              description="Optional — city, land budget, data coverage."
               defaultOpen={false}
             >
               <ExploreFilterPanel targetPath="/explore" />

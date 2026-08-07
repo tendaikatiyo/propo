@@ -79,6 +79,7 @@ function parseSegmentFilters(sp: { type?: string; bedroom?: string }) {
   return normalizeExploreFilters({
     mode: "rent",
     budget: DEFAULT_RENT_BUDGET,
+    budgetFilterActive: false,
     city: null,
     propertyType: sp.type ? normalizePropertyType(sp.type) : null,
     bedroom: sp.bedroom ? Number(sp.bedroom) : null,
@@ -114,7 +115,7 @@ export default async function SuburbPage({
 
   const related = sortRelatedSuburbs(
     markets.filter((m) => matchesSlug(m.city, citySlug) && m.market_id !== market.market_id),
-    lens,
+    "invest",
     { propertyType, bedroom }
   ).slice(0, 6);
 

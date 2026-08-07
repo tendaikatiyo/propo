@@ -195,21 +195,20 @@ export function isLeaseRecentEnough(leaseStartedAt: string | null | undefined): 
   return started >= cutoff;
 }
 
-export function shouldShowContributeCta(lens: ExploreMode): boolean {
-  return lens !== "invest";
+export function shouldShowContributeCta(_lens?: ExploreMode): boolean {
+  return true;
 }
 
 /** Prominent dashed contribute card — only on thin / low-confidence suburbs. */
 export function shouldShowProminentContributeCta(
   market: MarketMetric,
-  lens: ExploreMode,
+  _lens: ExploreMode,
   landMarket?: { confidence_score?: number | null } | null
 ): boolean {
-  if (!shouldShowContributeCta(lens)) return false;
-  const score =
-    lens === "land"
-      ? (landMarket?.confidence_score ?? market.confidence_score ?? 0)
-      : (market.confidence_score ?? 0);
+  const score = Math.min(
+    market.confidence_score ?? 100,
+    landMarket?.confidence_score ?? 100
+  );
   return score < RENT_REPORT_CTA_CONFIDENCE;
 }
 
@@ -242,6 +241,14 @@ export function contributeCtaCopy(lens: ExploreMode): {
       description:
         "Know land or rental prices in this area? Share yours anonymously to help fill gaps.",
       button: "Share your price",
+    };
+  }
+  if (lens === "invest") {
+    return {
+      title: "Contribute to this suburb",
+      description:
+        "Know what rent, sales, or land cost here? Share anonymously to help fill gaps.",
+      button: "Share a price",
     };
   }
   return {
@@ -317,9 +324,8 @@ export function shouldShowRentReportCta(market: MarketMetric, lens: string): boo
 export function shouldShowCommunityRentRange(
   market: MarketMetric,
   metrics: RentReportMetrics | null | undefined,
-  lens: string
+  _lens?: string
 ): boolean {
-  if (lens !== "rent" && lens !== "invest") return false;
   if (!metrics || metrics.report_count < RENT_REPORT_DISPLAY_MIN_COUNT) return false;
   const thinListings = (market.rental_count ?? 0) < RENT_REPORT_GAP_RENTAL_COUNT;
   const lowConfidence = (market.confidence_score ?? 0) < RENT_REPORT_CTA_CONFIDENCE;

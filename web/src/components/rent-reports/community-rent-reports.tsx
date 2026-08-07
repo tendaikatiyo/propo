@@ -31,7 +31,7 @@ export function contributeProfileHref(
     city: toSlug(market.city),
     suburb: toSlug(market.suburb),
   });
-  if (lens !== "rent") {
+  if (lens === "buy" || lens === "land") {
     params.set("mode", lens);
   }
   return `/contribute?${params.toString()}`;

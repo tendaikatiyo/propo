@@ -164,6 +164,8 @@ export interface RecentlyViewedMarket {
 export interface ExploreFilters {
   mode: ExploreMode;
   budget: number;
+  /** Land only — when false, budget is not applied (show all priced stands). */
+  budgetFilterActive: boolean;
   city: string | null;
   propertyType: PropertyType | null;
   bedroom: number | null;

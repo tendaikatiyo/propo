@@ -39,6 +39,10 @@ export function filterLandMarkets(
 
   for (const market of filtered) {
     const price = landPrice(market)!;
+    if (!filters.budgetFilterActive) {
+      inBudget.push(market);
+      continue;
+    }
     if (price <= filters.budget) {
       inBudget.push(market);
     } else if (price <= filters.budget * STRETCH_BUDGET_MULTIPLIER) {

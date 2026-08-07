@@ -2,9 +2,9 @@
 
 Read this first. It is the map for any coding agent (Copilot, Cursor, Claude, etc.). Prefer these docs over inventing architecture.
 
-**Product:** [propo.fyi](https://propo.fyi) — Zimbabwe property **market intelligence** (suburb medians, affordability, fair value). **Not** a listings portal or chat bot.
+**Product:** [propo.fyi](https://propo.fyi) — Zimbabwe property **market intelligence** (suburb medians, fair value, land $/sqm). **Not** a listings portal or chat bot.
 
-**Tagline:** *Where can you afford?*
+**Tagline:** *Look up a suburb* — rent, sale, and land in one place.
 
 ---
 
@@ -37,8 +37,8 @@ propo/
 
 | Concern | Where |
 | ------- | ----- |
-| Focus / lens (Rent·Buy·Land·Invest) | `web/src/components/providers/lens-provider.tsx`, `web/src/lib/lens.ts`, `web/src/lib/mode.ts` |
-| Explore filters / segments | `web/src/lib/explore.ts`, `web/src/lib/segments.ts` |
+| Focus / lens (mostly parked) | `web/src/components/providers/lens-provider.tsx`, `web/src/lib/lens.ts`, `web/src/lib/mode.ts` |
+| Explore (Suburbs \| Land directories) | `web/src/components/explore/`, `web/src/hooks/use-explore-filters.ts`, `web/src/lib/explore.ts`, `web/src/lib/land-explore.ts` |
 | Community price reports | `web/src/lib/*-reports*.ts`, `web/src/components/rent-reports/`, migrations `014`–`017` |
 | Admin ops | `web/src/app/admin/`, `web/src/components/admin/` |
 | Design tokens / motion | `web/src/app/globals.css`, `web/DESIGN.md` |
@@ -50,8 +50,8 @@ propo/
 
 | Rule | Detail |
 | ---- | ------ |
-| **Invest-first Focus** | Product default lens is **invest**. Focus switcher UI is hidden (investor-first cut). Do **not** reintroduce per-page `LensSwitcher` bars or the global Focus control without an explicit product decision. Explicit `?mode=` deep links (rent/buy/land) still work. Home is invest-only (no 4-intent hero). |
-| **Lens hydration** | Server + first client paint = **invest**. No-`?mode=` URLs resolve to invest (stale `propo_lens` rent/buy/land ignored on product surfaces). `/contribute` stays rent/buy/land only. |
+| **Suburb-first (Focus parked)** | Home is a suburb search prompt → full suburb profile. Focus switcher UI stays hidden. Explore tabs: **Suburbs** = directory; **Land** = land directory (optional $/sqm budget). Explore filters are **off by default** (collapsed panel; all cities; show thin markets; no land budget until set). |
+| **Lens hydration** | Server + first client paint = **invest** default for Explore/legacy. No-`?mode=` product URLs resolve to invest. Suburb profiles ignore Focus and show rent + sale + land + yield together. `/contribute` stays rent/buy/land only. |
 | **Community ≠ scraped medians** | Rent/sale/land **reports** are a parallel signal. Do **not** fold them into headline `market_metrics` without an explicit product decision. |
 | **Cottage = rent-only** | `RENT_ONLY_PROPERTY_TYPES` — never on buy/invest filters. |
 | **Contribute + Invest** | `/contribute` is rent/buy/land only; invest is blocked. |
@@ -89,7 +89,7 @@ Portals → Python scrape → SQLite warehouse → analytics rollups → Supabas
 - **shadcn/ui + Tailwind** — reuse components; don’t add new UI kits.
 - **TanStack Query** — client data fetching where existing pages use it; don’t put QueryClient usage in Suspense fallbacks that SSR.
 - **Supabase** — live dashboard; without env, APIs fall back to `../data/*.json`.
-- **Focus persistence:** URL `?mode=` + `localStorage` key `propo_lens`. Product default is **invest** (omitted from URLs). Explicit `?mode=rent|buy|land` still honored.
+- **Focus persistence:** URL `?mode=` + `localStorage` key `propo_lens`. Explore still uses mode as a local filter. Product default remains **invest** (omitted from URLs). Suburb profiles are full dossiers (not mode-gated). Home is suburb search, not Focus.
 
 ---
 
@@ -129,6 +129,7 @@ Warm editorial neutrals; affordability-first copy; photographic heroes. Fonts: S
 
 | Doc | Topic |
 | --- | ----- |
+| [`2026-08-07-suburb-first-raw-info.md`](prompts/handovers/2026-08-07-suburb-first-raw-info.md) | **Suburb-first cut** — home search, full dossiers, Explore Suburbs\|Land, filters off by default |
 | [`2026-07-23-explore-suburb-search.md`](prompts/handovers/2026-07-23-explore-suburb-search.md) | Explore all-cities default, suburb search + suggestions |
 | [`2026-07-21-investor-first-landing-cut.md`](prompts/handovers/2026-07-21-investor-first-landing-cut.md) | Investor-first cut: invest default, home invest-only, Focus UI hidden |
 | [`2026-07-11-bug-audit-recently-viewed.md`](prompts/handovers/2026-07-11-bug-audit-recently-viewed.md) | Bug audit fixes, contribute fail-closed, Recently viewed |

@@ -76,6 +76,9 @@ export function SuburbSearchInput({
   suggestions,
   /** Desktop-only suggestion panel (default when suggestions are passed). */
   suggestionsDesktopOnly = true,
+  /** When set, selecting a suggestion (click / Enter) navigates instead of only filling the input. */
+  onSelectSuggestion,
+  inputClassName,
 }: {
   value: string;
   onChange: (value: string) => void;
@@ -83,6 +86,8 @@ export function SuburbSearchInput({
   placeholder?: string;
   suggestions?: SuburbSearchSuggestion[];
   suggestionsDesktopOnly?: boolean;
+  onSelectSuggestion?: (market: SuburbSearchSuggestion) => void;
+  inputClassName?: string;
 }) {
   const listId = useId();
   const rootRef = useRef<HTMLDivElement>(null);
@@ -112,7 +117,11 @@ export function SuburbSearchInput({
   }, [showPanel]);
 
   function selectSuggestion(market: SuburbSearchSuggestion) {
-    onChange(market.suburb);
+    if (onSelectSuggestion) {
+      onSelectSuggestion(market);
+    } else {
+      onChange(market.suburb);
+    }
     setOpen(false);
     setActiveIndex(-1);
   }
@@ -132,9 +141,13 @@ export function SuburbSearchInput({
       setActiveIndex((index) => (index <= 0 ? ranked.length - 1 : index - 1));
       return;
     }
-    if (event.key === "Enter" && activeIndex >= 0 && ranked[activeIndex]) {
-      event.preventDefault();
-      selectSuggestion(ranked[activeIndex]);
+    if (event.key === "Enter") {
+      const pick =
+        activeIndex >= 0 && ranked[activeIndex] ? ranked[activeIndex] : ranked[0];
+      if (pick && (onSelectSuggestion || activeIndex >= 0)) {
+        event.preventDefault();
+        selectSuggestion(pick);
+      }
       return;
     }
     if (event.key === "Escape") {
@@ -167,7 +180,10 @@ export function SuburbSearchInput({
         }
         role="combobox"
         autoComplete="off"
-        className="h-11 rounded-xl border-0 bg-muted/50 pr-3 pl-9 text-left text-[15px] shadow-none focus-visible:ring-1"
+        className={cn(
+          "h-11 rounded-xl border-0 bg-muted/50 pr-3 pl-9 text-left text-[15px] shadow-none focus-visible:ring-1",
+          inputClassName
+        )}
       />
 
       {showPanel ? (

@@ -51,11 +51,11 @@ export function HomeInvestTeaser() {
             Top yield markets
           </h2>
           <p className="mt-1 text-[15px] tracking-[0.15px] text-muted-foreground">
-            National yield leaders — useful context after you&apos;ve reviewed in-budget suburbs.
+            National yield leaders — another way into suburb profiles.
           </p>
         </div>
         <Link
-          href="/rankings?mode=invest"
+          href="/rankings"
           className={buttonVariants({ variant: "outline", size: "sm" })}
         >
           All rankings
@@ -66,7 +66,7 @@ export function HomeInvestTeaser() {
         {yieldMarkets.map((item) => (
           <Link
             key={item.market_id}
-            href={suburbPath(item.city, item.suburb, { mode: "invest" })}
+            href={suburbPath(item.city, item.suburb)}
             className="rounded-2xl border border-border/80 bg-card p-4 transition-shadow hover:shadow-[var(--shadow-card)]"
           >
             <p className="font-heading font-medium">{sanitizeLabel(item.suburb)}</p>

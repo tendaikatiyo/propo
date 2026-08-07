@@ -146,6 +146,7 @@ export function exploreHrefForFilters(
   const next = normalizeExploreFilters({
     mode: filters.mode,
     budget: filters.budget,
+    budgetFilterActive: false,
     city: filters.city ?? DEFAULT_CITY,
     propertyType: filters.propertyType,
     bedroom: filters.bedroom,
