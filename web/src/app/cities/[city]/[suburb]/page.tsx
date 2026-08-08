@@ -49,7 +49,7 @@ export async function generateMetadata({
   const { propertyType, bedroom } = parseSegmentFilters(sp);
   const markets = await fetchMarketMetrics();
   const market = findMarketBySlugs(markets, citySlug, suburbSlug);
-  if (!market) return { title: "Suburb not found" };
+  if (!market) notFound();
 
   const landMetrics = await fetchLandMetrics();
   const landMarket = landMetrics.find((m) => m.market_id === market.market_id) ?? null;

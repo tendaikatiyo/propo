@@ -25,7 +25,7 @@ export async function generateMetadata({
   const { city: citySlug } = await params;
   const cities = await fetchCities();
   const city = cities.find((c) => matchesSlug(c.city, citySlug));
-  if (!city) return { title: "City not found" };
+  if (!city) notFound();
 
   const rent = formatCurrency(city.median_rent);
   const sale = formatCurrency(city.median_sale_price);
