@@ -8,13 +8,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { CityListRow } from "@/components/mobile/city-list-row";
 import { cityCardSubtitle } from "@/components/mobile/city-stats-grid";
-import { useGlobalLens } from "@/components/providers/lens-provider";
 import { cityListingTotal, sortCitiesByMarketSize } from "@/lib/geo";
+import { productSurfaceLens } from "@/lib/lens";
 import { cityPath } from "@/lib/slug";
 import type { CityMetric } from "@/lib/types";
 
 export function CitiesDirectoryClient({ cities }: { cities: CityMetric[] }) {
-  const { lens } = useGlobalLens();
+  const lens = productSurfaceLens();
   const [query, setQuery] = useState("");
 
   const sorted = useMemo(() => sortCitiesByMarketSize(cities), [cities]);
@@ -51,7 +51,7 @@ export function CitiesDirectoryClient({ cities }: { cities: CityMetric[] }) {
           const subtitleLines = cityCardSubtitle(city, lens);
 
           return (
-            <Link key={city.city} href={cityPath(city.city, { mode: lens })} className="group">
+            <Link key={city.city} href={cityPath(city.city)} className="group">
               <Card
                 className={
                   isLarge

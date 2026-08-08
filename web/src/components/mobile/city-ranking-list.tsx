@@ -9,10 +9,10 @@ import { cn } from "@/lib/utils";
 export function CityRankingList({
   title,
   items,
-  lens = "invest",
 }: {
   title: string;
   items: { city: string; suburb: string; label: string }[];
+  /** @deprecated Focus parked — ignored; profiles open without mode. */
   lens?: string;
 }) {
   if (!items.length) return null;
@@ -26,7 +26,7 @@ export function CityRankingList({
         {items.map((item, i) => (
           <Link
             key={`${item.city}-${item.suburb}`}
-            href={suburbPath(item.city, item.suburb, { mode: lens })}
+            href={suburbPath(item.city, item.suburb)}
             className={cn(
               motionRow,
               "flex min-h-[44px] items-center gap-3 px-4 py-3 active:bg-muted/80"
@@ -38,10 +38,8 @@ export function CityRankingList({
             <span className="min-w-0 flex-1 truncate font-heading text-[15px] font-medium">
               {sanitizeLabel(item.suburb)}
             </span>
-            <span className="shrink-0 font-mono text-sm text-muted-foreground">
-              {item.label}
-            </span>
-            <ChevronRight className="size-4 shrink-0 text-muted-foreground/60" />
+            <span className="shrink-0 font-mono text-xs text-muted-foreground">{item.label}</span>
+            <ChevronRight className="size-4 shrink-0 text-muted-foreground/50" aria-hidden />
           </Link>
         ))}
       </div>

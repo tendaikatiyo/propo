@@ -17,8 +17,6 @@ import {
   CommunityLandReports,
   CommunityRentReports,
   CommunitySaleReports,
-  ContributePriceButton,
-  RentReportCta,
 } from "@/components/rent-reports/community-rent-reports";
 import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -149,9 +147,6 @@ export function SuburbProfile({
                 Export full report
               </Link>
             </p>
-            <p className="mt-3 print:hidden lg:hidden">
-              <ContributePriceButton market={market} lens={lens} className="w-full sm:w-auto" />
-            </p>
           </div>
         </div>
         <div className="lg:hidden">
@@ -172,7 +167,6 @@ export function SuburbProfile({
             <FileDown className="size-4" />
             Export full report
           </Link>
-          <ContributePriceButton market={market} lens={lens} />
           <ConfidenceBadge
             score={confidenceScore}
             sampleCount={confidenceSample}
@@ -181,8 +175,6 @@ export function SuburbProfile({
           <PinButton market={market} fromMode={lens} />
         </div>
       </div>
-
-      <RentReportCta market={market} lens={lens} landMarket={landMarket} />
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <MetricCard

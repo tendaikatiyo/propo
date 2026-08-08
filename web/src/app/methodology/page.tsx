@@ -10,7 +10,7 @@ import { buildPageMetadata } from "@/lib/seo";
 export const metadata = buildPageMetadata({
   title: "Methodology",
   description:
-    "How Propo calculates rental yields, opportunity scores, segment medians, and price trends from its continuously updated property market database.",
+    "How Propo builds suburb market dossiers — rent, sale, and land medians, yields, trends, and confidence from a continuously updated property database.",
   path: "/methodology",
 });
 
@@ -19,8 +19,21 @@ export default function MethodologyPage() {
     <div className="space-y-10">
       <PageHeader
         title="Methodology"
-        description="How Propo calculates market signals and what each score means."
+        description="How Propo turns listing history into suburb market intelligence."
       />
+
+      <Card>
+        <CardHeader>
+          <CardTitle>How to use Propo</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-3 text-[15px] leading-relaxed tracking-[0.15px] text-muted-foreground">
+          <p>
+            Propo is a suburb-first market intelligence site — not a listings portal. Look up a
+            suburb to see rent, sale, land, yield, and trends together. Explore is a directory of
+            suburbs and land markets; optional filters refine the list when you want them.
+          </p>
+        </CardContent>
+      </Card>
 
       <Card>
         <CardHeader>
@@ -44,6 +57,28 @@ export default function MethodologyPage() {
       <div className="grid gap-4 lg:grid-cols-2">
         <Card>
           <CardHeader>
+            <CardTitle>Suburb medians</CardTitle>
+          </CardHeader>
+          <CardContent className="text-[15px] leading-relaxed tracking-[0.15px] text-muted-foreground">
+            Each suburb profile shows median asking rent and median asking sale price from active
+            portal listings in that market. Figures are statistical summaries of what is advertised
+            — not closed transaction prices or valuations of individual homes.
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>Land metrics</CardTitle>
+          </CardHeader>
+          <CardContent className="text-[15px] leading-relaxed tracking-[0.15px] text-muted-foreground">
+            Land uses a separate table from residential medians. Where stand size is available, we
+            report median asking price per square metre and listing counts. Land trends use daily
+            land snapshots the same way residential trends use daily suburb snapshots.
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
             <CardTitle>Yield calculation</CardTitle>
           </CardHeader>
           <CardContent className="text-[15px] leading-relaxed tracking-[0.15px] text-muted-foreground">
@@ -58,7 +93,8 @@ export default function MethodologyPage() {
           </CardHeader>
           <CardContent className="text-[15px] leading-relaxed tracking-[0.15px] text-muted-foreground">
             Confidence reflects listing volume — rental and sale counts contribute separately.
-            Higher scores mean more data supports the suburb medians shown.
+            Higher scores mean more data supports the suburb medians shown. Explore can optionally
+            hide low-confidence suburbs; by default the directory includes them.
           </CardContent>
         </Card>
 
@@ -68,29 +104,21 @@ export default function MethodologyPage() {
           </CardHeader>
           <CardContent className="text-[15px] leading-relaxed tracking-[0.15px] text-muted-foreground">
             Opportunity combines yield, listing volume, and market balance (rent + sale coverage)
-            to highlight suburbs that may be attractive for investment research.
+            to highlight suburbs that may be useful for investment research alongside other
+            signals on the profile.
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader>
-            <CardTitle>Budget matching</CardTitle>
+            <CardTitle>Explore directories</CardTitle>
           </CardHeader>
           <CardContent className="text-[15px] leading-relaxed tracking-[0.15px] text-muted-foreground">
-            In-budget suburbs have a median rent or sale price at or below your budget. Stretch
-            suburbs are within 15% above your budget. Matching uses suburb medians, not
-            individual listings.
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>Property type filters</CardTitle>
-          </CardHeader>
-          <CardContent className="text-[15px] leading-relaxed tracking-[0.15px] text-muted-foreground">
-            Explore filters suburbs by property type (house, flat, room, and so on). Medians prefer
-            type-matched listings in each suburb. Bedroom-level detail remains available on suburb
-            profiles when opened with a bedroom filter in the URL.
+            Explore has two tabs. <strong className="font-medium text-foreground">Suburbs</strong>{" "}
+            lists residential markets with rent, sale, and yield at a glance.{" "}
+            <strong className="font-medium text-foreground">Land</strong> lists priced stand markets
+            by $/sqm. Filters (city, data coverage, optional land budget) start off — open them
+            when you want to narrow the list.
           </CardContent>
         </Card>
 
@@ -100,21 +128,22 @@ export default function MethodologyPage() {
           </CardHeader>
           <CardContent className="text-[15px] leading-relaxed tracking-[0.15px] text-muted-foreground">
             Trend charts use daily snapshots of active listings. Each point is the median price and
-            listing count for that suburb on that date, aggregated across property types. Percent
-            change compares the first and last available snapshot in the selected window (30, 90,
-            or 180 days). Trends reflect what was on the market each day, not closed transactions.
+            listing count for that suburb on that date. Percent change compares the first and last
+            available snapshot in the selected window (30, 90, or 180 days). Trends reflect what was
+            on the market each day, not closed transactions. Land trends use the same approach on
+            median $/sqm.
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader>
-            <CardTitle>Community rent reports</CardTitle>
+            <CardTitle>Community price reports</CardTitle>
           </CardHeader>
           <CardContent className="text-[15px] leading-relaxed tracking-[0.15px] text-muted-foreground">
-            Users can anonymously share what they currently pay in rent. Submissions are reviewed
-            before publication. On suburbs with thin portal coverage, approved reports may appear as
-            a separate community range — they do not change headline portal medians or confidence
-            scores. At least three approved reports are required before a range is shown.
+            Anonymous community rent, sale, or land price reports may appear as a separate range on
+            suburbs with thin portal coverage or low confidence — they do not change headline portal
+            medians or confidence scores. A minimum number of approved reports is required before a
+            range is shown. Contribution entry points may be limited while the feature is in beta.
           </CardContent>
         </Card>
 
@@ -134,9 +163,9 @@ export default function MethodologyPage() {
               similar features — even when agents mention them in ad copy.
             </p>
             <p>
-              Type-level segment medians require at least three matching active listings. Below that
-              threshold we show suburb-wide medians with a limited-data warning, or hide the suburb
-              from filtered Explore results.
+              Type-level segment medians (when opened with a property-type URL filter) require at
+              least three matching active listings. Below that threshold we show suburb-wide
+              medians with a limited-data warning.
             </p>
             <p>
               Fair-value badges compare a listing to the best available median and appear only when

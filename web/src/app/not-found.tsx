@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 export const metadata = buildPageMetadata({
   title: "Page not found",
   description:
-    "This page doesn't exist or may have moved. Explore suburbs by budget or browse cities across Zimbabwe.",
+    "This page doesn't exist or may have moved. Look up a suburb or browse the Explore directory across Zimbabwe.",
   noIndex: true,
 });
 
@@ -27,8 +27,8 @@ export default function NotFound() {
         Page not found
       </h1>
       <p className="mt-4 text-[15px] leading-relaxed tracking-[0.15px] text-muted-foreground">
-        The link may be broken, or this suburb or page no longer exists. Try exploring
-        markets in your budget instead.
+        The link may be broken, or this suburb or page no longer exists. Try searching for a suburb
+        from home, or browse Explore instead.
       </p>
 
       <div className="mt-10 flex flex-wrap items-center justify-center gap-3">

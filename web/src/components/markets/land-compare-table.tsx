@@ -51,7 +51,7 @@ export function LandCompareTable({ markets }: { markets: LandMetric[] }) {
               <TableHead key={market.market_id}>
                 <div className="space-y-2 py-1">
                   <Link
-                    href={suburbPath(market.city, market.suburb, { mode: "land" })}
+                    href={suburbPath(market.city, market.suburb)}
                     className="font-heading text-sm font-medium normal-case tracking-normal hover:underline"
                   >
                     {sanitizeLabel(market.suburb)}

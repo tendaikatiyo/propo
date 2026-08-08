@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
+import { Suspense } from "react";
 
 import { PageHeader } from "@/components/layout/page-header";
 import { BackLink } from "@/components/layout/back-nav";
+import { ContributionModeTabs } from "@/components/rent-reports/contribution-mode-tabs";
 import { LandReportForm } from "@/components/rent-reports/land-report-form";
 import { RentReportForm } from "@/components/rent-reports/rent-report-form";
 import { SaleReportForm } from "@/components/rent-reports/sale-report-form";
 import { contributeBackNav } from "@/lib/contribute-nav";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
+  contributeHubCopy,
   contributePageCopy,
   parseContributionMode,
   type ContributionMode,
@@ -21,8 +24,9 @@ export async function generateMetadata({
   searchParams: Promise<{ mode?: string }>;
 }): Promise<Metadata> {
   const sp = await searchParams;
+  const hub = contributeHubCopy();
   const lens = parseContributionMode(sp.mode);
-  const copy = contributePageCopy(lens);
+  const copy = sp.mode ? contributePageCopy(lens) : hub;
 
   return buildPageMetadata({
     title: copy.metadataTitle,
@@ -80,6 +84,7 @@ export default async function ContributePage({
   }
 
   const lens = parseContributionMode(sp.mode);
+  const hub = contributeHubCopy();
   const copy = contributePageCopy(lens);
   const back = contributeBackNav({
     citySlug: sp.city,
@@ -91,7 +96,11 @@ export default async function ContributePage({
     <div className="mx-auto max-w-2xl space-y-6 px-1 sm:space-y-8 sm:px-0">
       <BackLink href={back.href} label={back.label} showOnMobile />
 
-      <PageHeader title={copy.title} description={copy.description} />
+      <PageHeader title={hub.title} description={hub.description} />
+
+      <Suspense fallback={<div className="h-11 w-full max-w-md rounded-xl bg-muted/60" />}>
+        <ContributionModeTabs value={lens} />
+      </Suspense>
 
       <Card>
         <CardHeader className="px-4 pt-5 sm:px-6 sm:pt-6">

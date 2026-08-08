@@ -21,12 +21,12 @@ export function compareLensHint(
   if (!pinsPinnedFromOtherLens(pins, filters.mode)) return null;
 
   if (filters.mode === "rent") {
-    return "Some pinned suburbs were saved from another view. Yield and sale metrics follow the active Invest focus.";
+    return "Some pinned suburbs were saved from another view. Yield and sale metrics follow the full suburb profile.";
   }
   if (filters.mode === "buy") {
-    return "Some pinned suburbs were saved from another view. Yield and rent metrics follow the active Invest focus.";
+    return "Some pinned suburbs were saved from another view. Yield and rent metrics follow the full suburb profile.";
   }
-  return "Pinned suburbs may have been saved from another view — metrics follow the active Invest focus.";
+  return "Pinned suburbs may have been saved from another view — metrics follow the full suburb profile.";
 }
 
 export function CompareLensHint({ filters }: { filters: CompareFilters }) {

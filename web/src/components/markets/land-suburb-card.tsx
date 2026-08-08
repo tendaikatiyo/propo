@@ -20,7 +20,7 @@ export function LandSuburbCard({
   badge?: string;
   clickSource?: SuburbClickPayload["source"];
 }) {
-  const href = suburbPath(market.city, market.suburb, { mode: "land" });
+  const href = suburbPath(market.city, market.suburb);
 
   return (
     <Card className={cn("relative h-full hover:bg-muted/30", motionCard)}>

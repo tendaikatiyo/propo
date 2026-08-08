@@ -47,7 +47,7 @@ function MoverList({
               className={cn(motionRow, "flex items-center justify-between gap-2 rounded-xl px-2 py-2 hover:bg-muted/50")}
             >
               <Link
-                href={suburbPath(item.city, item.suburb, { mode: lens })}
+                href={suburbPath(item.city, item.suburb)}
                 className="min-w-0 flex-1"
               >
                 <p className="truncate font-heading font-medium">{sanitizeLabel(item.suburb)}</p>

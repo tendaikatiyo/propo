@@ -1,6 +1,6 @@
 # Propo — Design System
 
-**Propo** is a Zimbabwe property data index. The product helps people answer one question: **where can you afford?** The UI compares suburb prices, medians, and market signals — it is not a listings portal.
+**Propo** is a Zimbabwe property data index. Look up a suburb for rent, sale, and land market signals — it is not a listings portal.
 
 This document describes the design system as implemented in `web/`. It supersedes the early ElevenLabs borrow (`eleven labs DESIGN.md`). Tokens live in `src/app/globals.css`, `src/lib/liquid-glass.ts`, and `src/lib/fonts.ts`.
 
@@ -10,17 +10,17 @@ This document describes the design system as implemented in `web/`. It supersede
 
 | Principle | In practice |
 | --- | --- |
-| **Affordability first** | Lead with budget, medians, and suburb comparison — not “find listings”. |
+| **Suburb first** | Lead with place — medians, yield, land, and trends on one profile — not “configure a budget”. |
 | **Data index, not agency** | Copy positions Propo as aggregated market intelligence from public listings. |
 | **Zimbabwe-specific** | Harare/Bulawayo photography, flag-accent footer orbs, `en_ZW` locale in metadata. |
 | **Editorial calm** | Warm off-white canvas, near-black ink, restrained colour. Data carries the drama. |
 | **Photographic heroes** | Real skyline photography on home; illustrated or city-specific heroes elsewhere. |
 
-**Tagline:** *Where can you afford in Zimbabwe?*
+**Tagline:** *Look up a suburb*
 
 **Wordmark:** lowercase `propo` in **Stack Sans Notch** — no icon, no capital P mark.
 
-**Eyebrow pill:** `Zimbabwe property index` — uppercase, tracked, on glass over heroes.
+**Eyebrow pill:** `Zimbabwe property market intelligence` — uppercase, tracked, on glass over heroes.
 
 ---
 
@@ -340,11 +340,11 @@ Listing cards exist on suburb profiles and explore previews. They support fair-v
 
 | Context | Tone |
 | --- | --- |
-| SEO / OG | Affordability & price comparison |
-| Hero subtitle | Budget + suburb matching |
+| SEO / OG | Suburb lookup; rent, sale, land medians |
+| Hero subtitle | Search a suburb → full market profile |
 | Empty states | Plain, helpful — “No suburbs pinned yet” |
 | Tooltips | Explain methodology, sample sizes, confidence |
-| Legal | “Property data index for Zimbabwe” |
+| Legal | “Property market intelligence for Zimbabwe” |
 
 Avoid: “Find your dream home”, portal language, agency CTAs.
 
@@ -356,8 +356,8 @@ Avoid: “Find your dream home”, portal language, agency CTAs.
 | --- | --- |
 | `< lg` (1024px) | Sidebar hidden; mobile top bar + bottom tabs; hamburger menu |
 | `≥ lg` | Sidebar fixed; footer visible; pin tray in sidebar |
-| Home mobile | Hero under nav (`-mt-[52px]`); filter panel stacks below headline |
-| Home desktop | Split layout: copy left, glass panel right |
+| Home mobile | Hero under nav (`-mt-[52px]`); search panel below headline |
+| Home desktop | Split layout: copy left, glass search panel right |
 
 ### Touch targets
 
@@ -382,7 +382,7 @@ Avoid: “Find your dream home”, portal language, agency CTAs.
 - Use liquid glass **only over photography** — not on plain canvas pages.
 - Apply `.hero-glass-panel` whenever glass sits on a photo with form controls.
 - Credit photographers when `creditUrl` is set.
-- Lead product copy with **affordability and comparison**.
+- Lead product copy with **suburb lookup and market dossiers** (rent + sale + land).
 
 ### Don't
 

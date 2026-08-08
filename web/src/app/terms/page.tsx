@@ -4,11 +4,11 @@ import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
   title: "Terms of Service",
-  description: `Terms and conditions for using the ${SITE_NAME} property data index.`,
+  description: `Terms and conditions for using ${SITE_NAME} — Zimbabwe property market intelligence.`,
   path: "/terms",
 });
 
-const LAST_UPDATED = "28 June 2026";
+const LAST_UPDATED = "8 August 2026";
 
 export default function TermsOfServicePage() {
   return (
@@ -27,9 +27,9 @@ export default function TermsOfServicePage() {
 
       <LegalSection title="About the Service">
         <p>
-          {SITE_NAME} is a property market intelligence tool for Zimbabwe. It presents suburb,
-          rental and sale medians, yields, and related market signals from its continuously updated
-          property market database.
+          {SITE_NAME} is a property market intelligence site for Zimbabwe. It lets you look up
+          suburbs for rent, sale, and land medians, yields, trends, and related market signals from
+          a continuously updated property market database, and browse suburb and land directories.
         </p>
         <p>
           {SITE_NAME} is an informational platform. We are not a real estate agency, broker,
@@ -39,10 +39,11 @@ export default function TermsOfServicePage() {
 
       <LegalSection title="No professional advice">
         <p>
-          Content on {SITE_NAME} — including medians, scores, rankings, and listings — is provided
-          for general research and informational purposes only. It does not constitute legal,
-          financial, investment, or property advice. You should independently verify any
-          information and consult qualified professionals before making property decisions.
+          Content on {SITE_NAME} — including medians, scores, rankings, listings, and community
+          price ranges — is provided for general research and informational purposes only. It does
+          not constitute legal, financial, investment, or property advice. You should independently
+          verify any information and consult qualified professionals before making property
+          decisions.
         </p>
       </LegalSection>
 
@@ -50,11 +51,25 @@ export default function TermsOfServicePage() {
         <p>
           Market data is compiled from third-party sources and automated processing. While we
           aim to keep information current and accurate, we do not guarantee completeness,
-          correctness, or timeliness. Suburb medians, yields, and scores are statistical
-          summaries and may not reflect individual properties or current market conditions.
+          correctness, or timeliness. Suburb medians, land $/sqm figures, yields, and scores are
+          statistical summaries and may not reflect individual properties or current market
+          conditions.
+        </p>
+        <p>
+          Community price reports are user-submitted and reviewed before display. They are a
+          parallel signal and are not merged into portal-derived headline medians.
         </p>
         <p>
           The Service may be modified, suspended, or discontinued at any time without notice.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="Community contributions">
+        <p>
+          If you submit a community price report, you confirm that the information is accurate to
+          the best of your knowledge and that you have the right to share it. We may review,
+          approve, reject, or remove submissions at our discretion. Do not submit personal
+          identifiers, payment details, or unlawful content.
         </p>
       </LegalSection>
 
@@ -66,6 +81,7 @@ export default function TermsOfServicePage() {
           <li>Crawl or harvest data from the Service at scale without permission</li>
           <li>Interfere with or disrupt the Service or its infrastructure</li>
           <li>Misrepresent {SITE_NAME} data as official valuations or guaranteed forecasts</li>
+          <li>Abuse community contribution forms (spam, false reports, or automated abuse)</li>
         </ul>
       </LegalSection>
 

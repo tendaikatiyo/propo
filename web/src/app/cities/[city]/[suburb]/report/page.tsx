@@ -167,12 +167,10 @@ export default async function SuburbReportPage({
   const profilePath = suburbPath(market.city, market.suburb, {
     type: propertyType,
     bedroom,
-    mode: rentOnly ? "rent" : "invest",
   });
   const investProfilePath = suburbPath(market.city, market.suburb, {
     type: propertyType,
     bedroom,
-    mode: "invest",
   });
 
   return (

@@ -6,6 +6,7 @@ Chronological notes for agent/developer continuity between sessions.
 
 | Date | File | Topics |
 |---|---|---|
+| 2026-08-08 | [2026-08-08-suburb-first-copy-and-focus-cleanup.md](./2026-08-08-suburb-first-copy-and-focus-cleanup.md) | **Policies + Focus residue** — methodology/legal copy; no `?mode=` on profiles; cities/rankings invest surface; contribute CTAs hidden |
 | 2026-08-07 | [2026-08-07-suburb-first-raw-info.md](./2026-08-07-suburb-first-raw-info.md) | **Suburb-first cut** — home search, full dossiers, Explore Suburbs\|Land directories, filters off by default |
 | 2026-07-21 | [2026-07-21-investor-first-landing-cut.md](./2026-07-21-investor-first-landing-cut.md) | **Investor-first cut** — invest default lens, home invest-only, Focus UI hidden |
 | 2026-06-11 | `../handover.md` | Frontend dashboard, Investment Finder label fix |

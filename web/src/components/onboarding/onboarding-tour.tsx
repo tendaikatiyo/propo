@@ -9,7 +9,7 @@ const MOBILE_STEPS: TourStepConfig[] = [
   {
     target: "hero",
     title: "Welcome to propo",
-    body: "Choose rent, buy, land, or invest — then set your budget to discover suburbs across Zimbabwe.",
+    body: "Search any suburb to open its market profile — rent, sale, and land medians in one place.",
     placement: "bottom",
   },
   {
@@ -20,8 +20,8 @@ const MOBILE_STEPS: TourStepConfig[] = [
   },
   {
     placement: "center",
-    title: "Change Focus",
-    body: "Tap the Focus chip in the top bar (Rent, Buy, Land, Invest) to switch what metrics you see everywhere.",
+    title: "Explore directories",
+    body: "Explore lists suburbs and land markets. Filters start off — open them when you want to narrow by city or data coverage.",
   },
   {
     target: "menu-button",
@@ -30,15 +30,9 @@ const MOBILE_STEPS: TourStepConfig[] = [
     placement: "bottom",
   },
   {
-    target: "menu-button",
-    title: "Explore filters",
-    body: "In the menu, expand Explore filters to set budget, city, and property type — then jump to Explore.",
-    placement: "bottom",
-  },
-  {
     placement: "center",
     title: "You're all set",
-    body: "Browse cities, pin suburbs, compare markets, and check active listings on suburb profiles.",
+    body: "Look up suburbs from home, browse Explore, pin markets to compare, and dig into trends on each profile.",
   },
 ];
 
@@ -46,7 +40,7 @@ const DESKTOP_STEPS: TourStepConfig[] = [
   {
     target: "hero",
     title: "Welcome to propo",
-    body: "Choose rent, buy, land, or invest on the home hero — then set your budget to find affordable suburbs.",
+    body: "Search any suburb to open its market profile — rent, sale, and land medians in one place.",
     placement: "bottom",
   },
   {
@@ -57,8 +51,8 @@ const DESKTOP_STEPS: TourStepConfig[] = [
   },
   {
     placement: "center",
-    title: "Global Focus",
-    body: "On every page except Home, use Focus in the sidebar to switch between rent, buy, land, and invest views.",
+    title: "Explore directories",
+    body: "Explore has Suburbs and Land tabs. Filters are optional and off by default — open them when you want to refine the list.",
   },
   {
     target: "pin-tray",
@@ -68,13 +62,8 @@ const DESKTOP_STEPS: TourStepConfig[] = [
   },
   {
     placement: "center",
-    title: "Filters on Explore",
-    body: "On Explore, use the left filter panel for budget, city, property type, and data-quality options.",
-  },
-  {
-    placement: "center",
     title: "You're all set",
-    body: "Browse cities, pin suburbs, compare markets, and check active listings on suburb profiles.",
+    body: "Look up suburbs from home, browse Explore, pin markets to compare, and dig into trends on each profile.",
   },
 ];
 

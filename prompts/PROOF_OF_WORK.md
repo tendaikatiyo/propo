@@ -153,7 +153,7 @@ Everything shipped should strengthen these four — UI is the lens; the dataset 
 - *"Fair value isn't ML — it's transparent rules: listing price vs suburb median for the same segment, with confidence badges when sample size is thin."*
 - *"Land is a separate metrics table so residential medians aren't polluted by $/sqm stands."*
 - *"Production runs on Cloudflare Workers with Supabase; the Python ETL runs on a GitHub Actions cron with Telegram alerts at each stage."*
-- *"Renters and investors see different columns on the same suburb data — one global Focus in the sidebar (or mobile chip), persisted in localStorage and URL, so the product promise stays 'where can you afford' per audience."*
+- *"Suburb profiles show rent, sale, land, and yield together — look up a place once instead of switching Focus modes for each signal."*
 
 ---
 

@@ -77,12 +77,21 @@ export function showsSaleTrends(_lens?: ExploreMode): boolean {
   return true;
 }
 
-export function showsInvestSideRankings(lens: ExploreMode): boolean {
-  return lens === "invest";
+/** Focus parked — city side rankings always use the full (invest) dossier view. */
+export function showsInvestSideRankings(_lens?: ExploreMode): boolean {
+  return true;
 }
 
-export function showsRentSideRankings(lens: ExploreMode): boolean {
-  return lens === "rent";
+export function showsRentSideRankings(_lens?: ExploreMode): boolean {
+  return false;
+}
+
+/**
+ * Effective lens for Cities / Rankings / Compare chrome while Focus UI is parked.
+ * Explore Land still uses `?mode=land` for its own directory surface.
+ */
+export function productSurfaceLens(_lens?: ExploreMode): ExploreMode {
+  return "invest";
 }
 
 export function defaultTrendTab(lens: ExploreMode): "rent" | "buy" {

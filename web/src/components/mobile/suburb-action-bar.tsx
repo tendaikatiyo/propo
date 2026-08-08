@@ -20,7 +20,7 @@ export function SuburbActionBar({
 }) {
   const { pins } = usePinnedMarkets();
   const canCompare = pins.length >= 2;
-  const compareHref = comparePath(lens);
+  const compareHref = comparePath();
   return (
     <div
       className="pointer-events-none fixed inset-x-0 z-40 flex justify-center px-4 print:hidden lg:hidden"

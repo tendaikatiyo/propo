@@ -1,7 +1,5 @@
-import Link from "next/link";
 import { Users } from "lucide-react";
 
-import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { formatCurrency, formatPricePerSqm } from "@/lib/format";
 import {
@@ -9,10 +7,7 @@ import {
   type LandReportMetrics,
 } from "@/lib/land-reports";
 import {
-  contributeCtaCopy,
   shouldShowCommunityRentRange,
-  shouldShowContributeCta,
-  shouldShowProminentContributeCta,
   type RentReportMetrics,
 } from "@/lib/rent-reports";
 import {
@@ -21,7 +16,6 @@ import {
 } from "@/lib/sale-reports";
 import type { ExploreMode, LandMetric, MarketMetric } from "@/lib/types";
 import { toSlug } from "@/lib/slug";
-import { cn } from "@/lib/utils";
 
 export function contributeProfileHref(
   market: MarketMetric,
@@ -38,62 +32,31 @@ export function contributeProfileHref(
 }
 
 export function ContributePriceButton({
-  market,
-  lens,
-  className,
-  size = "sm",
+  market: _market,
+  lens: _lens,
+  className: _className,
+  size: _size = "sm",
 }: {
   market: MarketMetric;
   lens: ExploreMode;
   className?: string;
   size?: "sm" | "default";
 }) {
-  if (!shouldShowContributeCta(lens)) return null;
-
-  const { button } = contributeCtaCopy(lens);
-
-  return (
-    <Link
-      href={contributeProfileHref(market, lens)}
-      className={cn(buttonVariants({ variant: "outline", size }), "print:hidden", className)}
-    >
-      {button}
-    </Link>
-  );
+  // Temporarily hidden — re-enable when community contribute is pushed again
+  return null;
 }
 
 export function RentReportCta({
-  market,
-  lens,
-  landMarket = null,
+  market: _market,
+  lens: _lens,
+  landMarket: _landMarket = null,
 }: {
   market: MarketMetric;
   lens: ExploreMode;
   landMarket?: LandMetric | null;
 }) {
-  if (!shouldShowProminentContributeCta(market, lens, landMarket)) return null;
-
-  const { title, description, button } = contributeCtaCopy(lens);
-
-  return (
-    <Card className="border-dashed border-primary/25 bg-primary/5 print:hidden">
-      <CardContent className="flex flex-col gap-3 pt-6 sm:flex-row sm:items-center sm:justify-between">
-        <div className="space-y-1">
-          <p className="text-sm font-medium">{title}</p>
-          <p className="text-sm text-muted-foreground">{description}</p>
-        </div>
-        <Link
-          href={contributeProfileHref(market, lens)}
-          className={cn(
-            buttonVariants({ variant: "outline", size: "sm" }),
-            "shrink-0 bg-background"
-          )}
-        >
-          {button}
-        </Link>
-      </CardContent>
-    </Card>
-  );
+  // Temporarily hidden — re-enable when community contribute is pushed again
+  return null;
 }
 
 export function CommunitySaleReports({

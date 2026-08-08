@@ -231,16 +231,16 @@ export function contributeCtaCopy(lens: ExploreMode): {
     return {
       title: "Contribute to this suburb",
       description:
-        "Know what properties cost here? Share what you pay anonymously to help others searching.",
-      button: "Share your price",
+        "Know what properties cost here? Share what you paid anonymously to help others searching.",
+      button: "Share a sale price",
     };
   }
   if (lens === "land") {
     return {
       title: "Contribute to this suburb",
       description:
-        "Know land or rental prices in this area? Share yours anonymously to help fill gaps.",
-      button: "Share your price",
+        "Know land prices in this area? Share yours anonymously to help fill gaps.",
+      button: "Share a land price",
     };
   }
   if (lens === "invest") {
@@ -261,6 +261,23 @@ export function contributeCtaCopy(lens: ExploreMode): {
 
 export function contributeFormAvailable(lens: ExploreMode): boolean {
   return lens === "rent" || lens === "buy" || lens === "land";
+}
+
+/** Hub chrome for /contribute — mode-agnostic entry. */
+export function contributeHubCopy(): {
+  metadataTitle: string;
+  metadataDescription: string;
+  title: string;
+  description: string;
+} {
+  return {
+    metadataTitle: "Share a price",
+    metadataDescription:
+      "Anonymously share rent, sale, or land prices to help fill gaps in Zimbabwe suburb market data.",
+    title: "Share a price",
+    description:
+      "Choose rent, a sale, or land — reports are anonymous and reviewed before they appear on suburb profiles.",
+  };
 }
 
 export function contributePageCopy(lens: ExploreMode): {

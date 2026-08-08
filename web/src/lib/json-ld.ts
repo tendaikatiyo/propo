@@ -23,14 +23,6 @@ export function siteJsonLd(): Record<string, unknown>[] {
         name: SITE_NAME,
         url: SITE_URL,
       },
-      potentialAction: {
-        "@type": "SearchAction",
-        target: {
-          "@type": "EntryPoint",
-          urlTemplate: `${absoluteUrl("/explore")}?city={search_term_string}`,
-        },
-        "query-input": "required name=search_term_string",
-      },
     },
   ];
 }
@@ -49,7 +41,7 @@ export function suburbPageJsonLd({
   description: string;
 }): Record<string, unknown>[] {
   const pageUrl = absoluteUrl(`/cities/${citySlug}/${suburbSlug}`);
-  const pageName = `${suburb}, ${city} — house prices & affordability`;
+  const pageName = `${suburb}, ${city} — rent, sale & land prices`;
 
   return [
     {

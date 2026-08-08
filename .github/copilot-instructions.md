@@ -19,10 +19,11 @@ You are working in **Propo**, a Zimbabwe property **market intelligence** app (s
 
 - **Suburb-first:** Home = suburb search → full profile. Do **not** reintroduce home budget/type stacks or global Focus UI without an explicit product decision.
 - **Explore:** tabs **Suburbs \| Land** (directories). Filters **off by default** (collapsed; all cities; thin markets shown; land budget only when set).
-- **Profiles** show rent + sale + land + yield together (Focus does not gate sections).
-- **Hydration:** Explore/legacy default lens = **invest**; `?mode=` / `propo_lens` still exist for deep links.
+- **Profiles** show rent + sale + land + yield together (Focus does not gate sections). Do **not** stamp `?mode=` onto suburb profile links.
+- **Cities / Rankings / Compare** use invest-style surface (`productSurfaceLens`) while Focus UI is parked.
+- **Hydration:** Explore/legacy default lens = **invest**; `?mode=` / `propo_lens` still exist for Explore Land + deep links.
 - **Community reports** (migrations 014–017) stay **parallel** to scraped medians — never merge into headline metrics without an explicit product decision.
-- **Cottage** is rent-only. **Invest** is blocked on `/contribute`.
+- **Cottage** is rent-only. **Invest** is blocked on `/contribute`. Contribute nav/profile CTAs may be hidden; `/contribute` still works by URL.
 - **Land** metrics stay separate from residential medians.
 - Match existing code style; no unrelated refactors; no secrets in commits.
 
@@ -34,6 +35,6 @@ You are working in **Propo**, a Zimbabwe property **market intelligence** app (s
 
 ## When unsure
 
-1. Open the latest file in `prompts/handovers/` (start with `2026-08-07-suburb-first-raw-info.md`).
+1. Open the latest file in `prompts/handovers/` (start with `2026-08-08-suburb-first-copy-and-focus-cleanup.md`).
 2. Mirror patterns in neighbouring files under `web/src/` or `analytics/`.
 3. Prefer `web/DESIGN.md` tokens over new colours/fonts/layouts.

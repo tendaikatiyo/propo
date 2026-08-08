@@ -98,7 +98,7 @@ export const EXPLORE_PAGE_DESCRIPTION =
   "Browse Zimbabwe suburbs by city, or filter land stands by $/sqm. Open a suburb profile for rent, sale, land, and yield.";
 
 export function suburbPageTitle(suburb: string, city: string): string {
-  return `${suburb}, ${city} — house prices & affordability`;
+  return `${suburb}, ${city} — rent, sale & land prices`;
 }
 
 export function suburbPageDescription(
@@ -114,9 +114,9 @@ export function suburbPageDescription(
       : "";
 
   return (
-    `Compare house prices in ${suburbLabel}, ${market.city}. ` +
+    `Market profile for ${suburbLabel}, ${market.city}. ` +
     `Median rent ${formatCurrency(medianRent)}, median sale ${formatCurrency(medianSale)}.${landLine} ` +
-    `Yields, price trends, and affordability signals.`
+    `Yields, price trends, and listing signals.`
   );
 }
 

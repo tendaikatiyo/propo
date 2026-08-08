@@ -37,18 +37,18 @@ export function SuburbReportActions({
     <div className="space-y-3 print:hidden">
       {scope === "full" && investProfilePath ? (
         <p className="text-sm text-muted-foreground">
-          Full investor market brief — shareable and printable. For live yield and opportunity
+          Full market brief — shareable and printable. For live yield, opportunity, and listing
           metrics,{" "}
           <Link href={investProfilePath} className="font-medium text-foreground hover:underline">
-            view the invest lens
+            open the suburb profile
           </Link>
           .
         </p>
       ) : null}
       {scope === "rent" ? (
         <p className="text-sm text-muted-foreground">
-          Rental market summary for tenants. For sale, yield, and land data, use the invest lens on
-          the suburb profile.
+          Rental market summary for tenants. For sale, yield, and land data, open the full suburb
+          profile.
         </p>
       ) : null}
       <div className="flex flex-wrap gap-2">

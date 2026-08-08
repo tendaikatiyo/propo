@@ -8,21 +8,23 @@ export const metadata = buildPageMetadata({
   path: "/privacy",
 });
 
-const LAST_UPDATED = "9 July 2026";
+const LAST_UPDATED = "8 August 2026";
 
 export default function PrivacyPolicyPage() {
   return (
     <LegalPage
       title="Privacy Policy"
-      description={`This policy explains how ${SITE_NAME} handles information when you use our property data index for Zimbabwe.`}
+      description={`This policy explains how ${SITE_NAME} handles information when you use our Zimbabwe property market intelligence site.`}
       lastUpdated={LAST_UPDATED}
     >
       <LegalSection title="Overview">
         <p>
           {SITE_NAME} (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) operates a property
-          market intelligence website. We are committed to handling personal information
-          responsibly and transparently. This policy describes what we collect, why we collect
-          it, and the choices available to you.
+          market intelligence website. You can look up suburbs for rent, sale, and land signals and
+          browse market directories. Community price reports may also be submitted when contribution
+          is available. We are committed to handling personal information responsibly and
+          transparently. This policy describes what we collect, why we collect it, and the choices
+          available to you.
         </p>
       </LegalSection>
 
@@ -32,16 +34,18 @@ export default function PrivacyPolicyPage() {
           {SITE_NAME} does not require you to create an account to browse the site. If you join
           our developer or API interest list, we collect the email address you submit, your
           selected role, optional notes about your intended use case, and any data-product
-          preferences you choose. If you submit a community rent report, we collect the suburb,
-          property type, bedroom count, monthly rent, and optional lease details you provide —
-          not your name, email, or address. We store a hashed identifier to limit duplicate
+          preferences you choose. If you submit a community price report (rent, sale, or land), we
+          collect the market details and price fields you provide for that report type — not your
+          name, email, or street address. We store a hashed identifier to limit duplicate
           submissions. We do not ask for payment details to browse the site.
         </p>
         <p>
           <strong className="font-medium text-foreground">Information stored on your device.</strong>{" "}
           We use your browser&apos;s local storage to remember preferences such as pinned
-          suburbs, onboarding progress, and display settings. This data stays on your device
-          unless you clear it.
+          suburbs, recently viewed suburbs, onboarding progress, a legacy mode preference for deep
+          links and compare (local storage key{" "}
+          <span className="font-mono text-[13px]">propo_lens</span>
+          ), and display settings. This data stays on your device unless you clear it.
         </p>
         <p>
           <strong className="font-medium text-foreground">Automatically collected information.</strong>{" "}
@@ -62,6 +66,7 @@ export default function PrivacyPolicyPage() {
         <ul className="list-disc space-y-2 pl-5">
           <li>Provide and maintain the website and its features</li>
           <li>Remember your preferences across visits</li>
+          <li>Review and display approved community price reports as a parallel market signal</li>
           <li>Monitor performance, diagnose errors, and protect against abuse</li>
           <li>Improve our data products and user experience</li>
           <li>
@@ -92,9 +97,11 @@ export default function PrivacyPolicyPage() {
         <p>
           Information stored in your browser remains until you delete it or clear site data.
           Server logs are retained only as long as needed for security, troubleshooting, and
-          operational purposes, then deleted or aggregated. API interest signups are retained
-          until you ask us to delete them or they are no longer needed for product planning and
-          related follow-up.
+          operational purposes, then deleted or aggregated. Community price report submissions are
+          retained for review and, if approved, for display as aggregated community ranges.
+          Rejected or withdrawn submissions are handled according to our moderation process. API
+          interest signups are retained until you ask us to delete them or they are no longer
+          needed for product planning and related follow-up.
         </p>
       </LegalSection>
 

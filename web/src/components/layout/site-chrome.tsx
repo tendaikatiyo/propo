@@ -41,9 +41,11 @@ export function AppFooter() {
           <Link href="/about" className="hover:text-foreground">
             About
           </Link>
+          {/* Temporarily hidden — re-enable when community contribute is pushed again
           <Link href="/contribute" className="hover:text-foreground">
-            Share your rent
+            Share a price
           </Link>
+          */}
           <Link href="/developers" className="hover:text-foreground">
             Developers
           </Link>
@@ -102,12 +104,12 @@ export function SiteHero({
         <div className="absolute inset-x-0 bottom-0 mx-auto max-w-6xl px-4 pb-8 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center rounded-full border border-white/35 bg-white/25 px-4 py-1.5 text-[11px] font-medium tracking-[0.14em] text-foreground uppercase shadow-[0_8px_32px_rgba(0,0,0,0.12)] backdrop-blur-xl backdrop-saturate-150">
-              Zimbabwe property market database
+              Zimbabwe property market intelligence
             </span>
             {showFreshness ? <DataFreshnessPill /> : null}
           </div>
           <h1 className="font-display mt-3 max-w-2xl text-2xl font-medium leading-tight tracking-[-0.03em] text-foreground sm:mt-4 sm:text-4xl md:text-5xl">
-            Where can you afford in Zimbabwe?
+            Look up a suburb
           </h1>
         </div>
       ) : null}

@@ -152,7 +152,7 @@ export function LandSuburbTable({
             <TableRow key={market.market_id}>
               <TableCell className="font-heading font-medium">
                 <TrackedSuburbLink
-                  href={suburbPath(market.city, market.suburb, { mode: "land" })}
+                  href={suburbPath(market.city, market.suburb)}
                   tracking={{
                     marketId: market.market_id,
                     city: market.city,

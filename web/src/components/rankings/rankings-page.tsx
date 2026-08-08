@@ -10,7 +10,6 @@ import { PinButton } from "@/components/markets/pin-button";
 import { MoversRankings } from "@/components/rankings/movers-rankings";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { useGlobalLens } from "@/components/providers/lens-provider";
 import {
   formatCurrency,
   formatNumber,
@@ -19,22 +18,19 @@ import {
   sanitizeLabel,
 } from "@/lib/format";
 import { LEADERBOARD_MIN_CONFIDENCE, RANKINGS_MIN_CONFIDENCE } from "@/lib/constants";
+import { productSurfaceLens } from "@/lib/lens";
 import { suburbPath } from "@/lib/slug";
-import type { ExploreMode, MarketMoversRankingsPayload, RankingEntry } from "@/lib/types";
+import type { MarketMoversRankingsPayload, RankingEntry } from "@/lib/types";
 
 function RankingList({
   title,
   items,
   value,
-  suburbQuery,
-  pinFromMode,
   emptyLabel = "Not enough data for this leaderboard yet.",
 }: {
   title: string;
   items: RankingEntry[];
   value: (item: RankingEntry) => string;
-  suburbQuery?: { mode?: string };
-  pinFromMode?: ExploreMode;
   emptyLabel?: string;
 }) {
   return (
@@ -50,7 +46,7 @@ function RankingList({
               className="flex items-center justify-between gap-2 rounded-xl px-2 py-2 hover:bg-muted/50"
             >
               <Link
-                href={suburbPath(item.city, item.suburb, suburbQuery)}
+                href={suburbPath(item.city, item.suburb)}
                 className="min-w-0 flex-1"
               >
                 <p className="truncate font-heading font-medium">{sanitizeLabel(item.suburb)}</p>
@@ -59,7 +55,7 @@ function RankingList({
               <span className="shrink-0 font-mono text-sm text-muted-foreground">
                 {value(item)}
               </span>
-              <PinButton market={item} size="icon-sm" fromMode={pinFromMode} />
+              <PinButton market={item} size="icon-sm" />
             </div>
           ))
         ) : (
@@ -70,90 +66,50 @@ function RankingList({
   );
 }
 
-function LensRankings({
-  lens,
-  national,
-  land,
-}: {
-  lens: ExploreMode;
-  national: Record<string, RankingEntry[]>;
-  land: Record<string, RankingEntry[]>;
-}) {
-  if (lens === "land") {
-    return <LandRankings land={land} />;
-  }
-
-  const suburbQuery = { mode: lens };
-
-  if (lens === "rent") {
-    return (
-      <RankingList
-        title="Cheapest markets (rent)"
-        items={national.cheapest_markets ?? []}
-        value={(item) => formatCurrency(item.median_rent ?? null)}
-        suburbQuery={suburbQuery}
-        pinFromMode={lens}
-      />
-    );
-  }
-
-  if (lens === "buy") {
-    return (
-      <RankingList
-        title="Most expensive markets (sale)"
-        items={national.most_expensive_markets ?? []}
-        value={(item) => formatCurrency(item.median_sale_price ?? null)}
-        suburbQuery={suburbQuery}
-        pinFromMode={lens}
-      />
-    );
-  }
-
+function ResidentialRankings({ national }: { national: Record<string, RankingEntry[]> }) {
   return (
     <div className="grid gap-4 lg:grid-cols-2">
       <RankingList
         title="Top yield markets"
         items={national.top_yield_markets ?? []}
         value={(item) => formatPercent(item.yield_percent ?? null)}
-        suburbQuery={suburbQuery}
-        pinFromMode={lens}
       />
       <RankingList
         title="Top opportunity markets"
         items={national.top_opportunity_markets ?? []}
         value={(item) => String(item.opportunity_score ?? "—")}
-        suburbQuery={suburbQuery}
-        pinFromMode={lens}
+      />
+      <RankingList
+        title="Cheapest markets (rent)"
+        items={national.cheapest_markets ?? []}
+        value={(item) => formatCurrency(item.median_rent ?? null)}
+      />
+      <RankingList
+        title="Most expensive markets (sale)"
+        items={national.most_expensive_markets ?? []}
+        value={(item) => formatCurrency(item.median_sale_price ?? null)}
       />
     </div>
   );
 }
 
 function LandRankings({ land }: { land: Record<string, RankingEntry[]> }) {
-  const landQuery = { mode: "land" };
-
   return (
     <div className="grid gap-4 lg:grid-cols-2">
       <RankingList
         title="Cheapest land per sqm"
         items={land.cheapest_land_per_sqm ?? []}
         value={(item) => formatPricePerSqm(item.median_price_per_sqm ?? null)}
-        suburbQuery={landQuery}
-        pinFromMode="land"
       />
       <RankingList
         title="Most expensive land per sqm"
         items={land.most_expensive_land_per_sqm ?? []}
         value={(item) => formatPricePerSqm(item.median_price_per_sqm ?? null)}
-        suburbQuery={landQuery}
-        pinFromMode="land"
       />
       <RankingList
         title="Most land listings"
         items={land.most_land_listings ?? []}
         value={(item) => formatNumber(item.land_count ?? null)}
-        suburbQuery={landQuery}
-        pinFromMode="land"
       />
     </div>
   );
@@ -172,13 +128,14 @@ export function RankingsPageClient({
 }) {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const { lens } = useGlobalLens();
+  const lens = productSurfaceLens();
   const tabParam = searchParams.get("tab");
   const tab: RankingsTab = tabParam === "movers" ? "movers" : "leaderboards";
 
   const setTab = (next: RankingsTab) => {
     const params = new URLSearchParams(searchParams.toString());
     params.delete("tab");
+    params.delete("mode");
     if (next === "movers") {
       params.set("tab", "movers");
     }
@@ -186,13 +143,14 @@ export function RankingsPageClient({
     router.replace(query ? `/rankings?${query}` : "/rankings", { scroll: false });
   };
 
-  // Redirect legacy ?tab=land to leaderboards with land lens
+  // Legacy ?tab=land / ?mode=* — Focus is parked; show full leaderboards without mode.
   useEffect(() => {
-    if (tabParam !== "land") return;
+    if (tabParam !== "land" && !searchParams.get("mode")) return;
     const params = new URLSearchParams(searchParams.toString());
     params.delete("tab");
-    params.set("mode", "land");
-    router.replace(`/rankings?${params.toString()}`, { scroll: false });
+    params.delete("mode");
+    const query = params.toString();
+    router.replace(query ? `/rankings?${query}` : "/rankings", { scroll: false });
   }, [tabParam, searchParams, router]);
 
   return (
@@ -211,18 +169,18 @@ export function RankingsPageClient({
           <TabsTrigger value="leaderboards">Leaderboards</TabsTrigger>
           <TabsTrigger value="movers">Movers</TabsTrigger>
         </TabsList>
-        <TabsContent value="leaderboards" className="mt-6">
-          <LensRankings lens={lens} national={national} land={land} />
+        <TabsContent value="leaderboards" className="mt-6 space-y-8">
+          <section className="space-y-4">
+            <h2 className="font-heading text-lg font-medium tracking-tight">Suburbs</h2>
+            <ResidentialRankings national={national} />
+          </section>
+          <section className="space-y-4">
+            <h2 className="font-heading text-lg font-medium tracking-tight">Land</h2>
+            <LandRankings land={land} />
+          </section>
         </TabsContent>
         <TabsContent value="movers" className="mt-6">
-          {lens === "land" ? (
-            <p className="text-[15px] tracking-[0.15px] text-muted-foreground">
-              Land price movers aren&apos;t available yet — we need more daily land snapshot history.
-              Use Leaderboards with the Land lens for $/sqm rankings.
-            </p>
-          ) : (
-            <MoversRankings movers={movers} lens={lens} />
-          )}
+          <MoversRankings movers={movers} lens={lens} />
         </TabsContent>
       </Tabs>
     </div>

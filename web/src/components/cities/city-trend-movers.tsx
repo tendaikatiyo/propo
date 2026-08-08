@@ -45,7 +45,7 @@ function MoverList({
         {items.map((item) => (
           <li key={item.market_id}>
             <Link
-              href={suburbPath(city, item.suburb, { mode: lens })}
+              href={suburbPath(city, item.suburb)}
               className={cn(
                 motionRow,
                 "flex items-center justify-between rounded-lg px-2 py-1.5 text-sm hover:bg-muted/50"

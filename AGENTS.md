@@ -51,10 +51,10 @@ propo/
 | Rule | Detail |
 | ---- | ------ |
 | **Suburb-first (Focus parked)** | Home is a suburb search prompt → full suburb profile. Focus switcher UI stays hidden. Explore tabs: **Suburbs** = directory; **Land** = land directory (optional $/sqm budget). Explore filters are **off by default** (collapsed panel; all cities; show thin markets; no land budget until set). |
-| **Lens hydration** | Server + first client paint = **invest** default for Explore/legacy. No-`?mode=` product URLs resolve to invest. Suburb profiles ignore Focus and show rent + sale + land + yield together. `/contribute` stays rent/buy/land only. |
+| **Lens hydration** | Server + first client paint = **invest** default for Explore/legacy. No-`?mode=` product URLs resolve to invest. Suburb profiles ignore Focus and show rent + sale + land + yield together. Cities / Rankings / Compare chrome use `productSurfaceLens()` (invest) — do not stamp `?mode=` onto profile links. `/contribute` stays rent/buy/land only. |
 | **Community ≠ scraped medians** | Rent/sale/land **reports** are a parallel signal. Do **not** fold them into headline `market_metrics` without an explicit product decision. |
 | **Cottage = rent-only** | `RENT_ONLY_PROPERTY_TYPES` — never on buy/invest filters. |
-| **Contribute + Invest** | `/contribute` is rent/buy/land only; invest is blocked. |
+| **Contribute + Invest** | `/contribute` is rent/buy/land only; invest is blocked. Profile/nav contribute CTAs are **hidden** for now; page still works by direct URL. |
 | **Land metrics separate** | Land uses `land_metrics` / land tables — do not pollute residential medians with $/sqm. |
 | **Buy tables** | Sale-focused columns — no median rent on buy tables. |
 
@@ -103,7 +103,7 @@ For **new** schema changes: add the next numbered file under `supabase/migration
 
 ## Design (short)
 
-Warm editorial neutrals; affordability-first copy; photographic heroes. Fonts: Stack Sans Notch (display/wordmark), Geist Sans (headings/stats), Inter (body), Geist Mono (labels/data). Full rules: `web/DESIGN.md`. Prefer existing motion tokens / transitions.dev patterns in `globals.css` over ad-hoc animation.
+Warm editorial neutrals; suburb-first copy; photographic heroes. Fonts: Stack Sans Notch (display/wordmark), Geist Sans (headings/stats), Inter (body), Geist Mono (labels/data). Full rules: `web/DESIGN.md`. Prefer existing motion tokens / transitions.dev patterns in `globals.css` over ad-hoc animation.
 
 ---
 
@@ -118,7 +118,7 @@ Warm editorial neutrals; affordability-first copy; photographic heroes. Fonts: S
 
 ## Priority backlog (context only)
 
-1. Community reports methodology/privacy copy polish + contribute/admin smoke-tests.
+1. Re-enable contribute CTAs when community push resumes; contribute/admin smoke-tests.
 2. SA expansion **deferred** until ZW community model proves out — see `prompts/handovers/2026-07-08-sa-market-expansion-plan.md`.
 
 **Done (ops):** migrations **001–017** on production; daily GHA pipeline reliable since **2026-07-05**.
@@ -129,6 +129,7 @@ Warm editorial neutrals; affordability-first copy; photographic heroes. Fonts: S
 
 | Doc | Topic |
 | --- | ----- |
+| [`2026-08-08-suburb-first-copy-and-focus-cleanup.md`](prompts/handovers/2026-08-08-suburb-first-copy-and-focus-cleanup.md) | **Policies + Focus residue** — copy aligned; no `?mode=` on profiles; cities/rankings invest surface |
 | [`2026-08-07-suburb-first-raw-info.md`](prompts/handovers/2026-08-07-suburb-first-raw-info.md) | **Suburb-first cut** — home search, full dossiers, Explore Suburbs\|Land, filters off by default |
 | [`2026-07-23-explore-suburb-search.md`](prompts/handovers/2026-07-23-explore-suburb-search.md) | Explore all-cities default, suburb search + suggestions |
 | [`2026-07-21-investor-first-landing-cut.md`](prompts/handovers/2026-07-21-investor-first-landing-cut.md) | Investor-first cut: invest default, home invest-only, Focus UI hidden |

@@ -6,7 +6,7 @@ import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
   title: "About",
-  description: `Why ${SITE_NAME} exists — a continuously updated property market database for Zimbabwe, built to explore suburb-level detail.`,
+  description: `Why ${SITE_NAME} exists — look up any Zimbabwe suburb for rent, sale, and land market intelligence from a continuously updated property database.`,
   path: "/about",
 });
 
@@ -28,15 +28,14 @@ export default function AboutPage() {
         <p>
           I&apos;m Tendai. I&apos;ve always been fascinated by the Zimbabwe property market, but I
           couldn&apos;t find data that let me explore it at a granular level — the kind of detail
-          that helps you appreciate all the miniature differences between suburbs, price bands, and
-          market segments.
+          that helps you see what a suburb is actually doing across rent, sales, and land.
         </p>
         <p>
           I know there are others like me. Maybe not huge crowds, but enough of you that it felt
           worth building something.
         </p>
         <p>
-          {`${SITE_NAME} is my attempt to pull that picture together: a property market database updated ${DATASET_UPDATE_CADENCE} — covering ${DATASET_SCALE.suburbMarketsLabel} across ${DATASET_SCALE.citiesLabel} — with medians, trends, fair-value context, and land metrics. It's a way to browse the market with more nuance than a flat list of ads allows.`}
+          {`${SITE_NAME} is my attempt to pull that picture together: a property market database updated ${DATASET_UPDATE_CADENCE} — covering ${DATASET_SCALE.suburbMarketsLabel} across ${DATASET_SCALE.citiesLabel}. Look up a suburb for medians, yield, land $/sqm, and trends — more nuance than a flat list of ads allows.`}
         </p>
         <p>
           Questions, ideas, or corrections?{" "}

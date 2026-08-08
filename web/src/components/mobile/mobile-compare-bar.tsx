@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { GitCompare } from "lucide-react";
 
-import { useGlobalLens } from "@/components/providers/lens-provider";
 import { buttonVariants } from "@/components/ui/button";
 import { usePinnedMarkets } from "@/hooks/use-pinned-markets";
 import { isSuburbProfilePath, mobileDockBottom } from "@/lib/mobile-dock";
@@ -14,11 +13,10 @@ import { cn } from "@/lib/utils";
 export function MobileCompareBar() {
   const pathname = usePathname();
   const { pins } = usePinnedMarkets();
-  const { lens } = useGlobalLens();
 
   if (pins.length < 2 || isSuburbProfilePath(pathname)) return null;
 
-  const href = comparePath(lens);
+  const href = comparePath();
   return (
     <div
       className="pointer-events-none fixed inset-x-0 z-40 flex justify-center px-4 print:hidden lg:hidden"

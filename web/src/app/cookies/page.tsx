@@ -8,7 +8,7 @@ export const metadata = buildPageMetadata({
   path: "/cookies",
 });
 
-const LAST_UPDATED = "11 July 2026";
+const LAST_UPDATED = "8 August 2026";
 
 export default function CookiePolicyPage() {
   return (
@@ -45,6 +45,11 @@ export default function CookiePolicyPage() {
             whether you have completed the introductory tour
           </li>
           <li>
+            <strong className="font-medium text-foreground">Mode preference</strong> — may remember
+            a last-used browse mode for legacy deep links and compare (local storage key{" "}
+            <span className="font-mono text-[13px]">propo_lens</span>)
+          </li>
+          <li>
             <strong className="font-medium text-foreground">Display preferences</strong> — stores
             minor UI preferences such as hero image rotation
           </li>
@@ -75,9 +80,9 @@ export default function CookiePolicyPage() {
       <LegalSection title="Analytics">
         <p>
           If you accept analytics in the site banner, we collect anonymous feature-usage events
-          (for example explore filter changes, suburb clicks, and listing link clicks) to improve
-          {SITE_NAME}. Events are stored on our database with a random session id — no account, no
-          third-party ad trackers, and no cross-site profiling.
+          (for example suburb searches, explore navigation, suburb clicks, and listing link
+          clicks) to improve {SITE_NAME}. Events are stored on our database with a random session
+          id — no account, no third-party ad trackers, and no cross-site profiling.
         </p>
         <p>
           If you decline, no analytics cookies are set and no usage events are recorded. You can
@@ -92,8 +97,9 @@ export default function CookiePolicyPage() {
           website.
         </p>
         <p>
-          If you disable or clear storage, some {SITE_NAME} features — such as pinned suburbs or
-          saved tour progress — may not work as expected until you use them again.
+          If you disable or clear storage, some {SITE_NAME} features — such as pinned suburbs,
+          recently viewed suburbs, or saved tour progress — may not work as expected until you use
+          them again.
         </p>
       </LegalSection>
 

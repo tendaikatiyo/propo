@@ -28,7 +28,7 @@ export function CompareFilterBar() {
           </p>
         ) : (
           <p className="text-sm text-muted-foreground">
-            Optional: filter medians by property type (same as Explore).
+            Optional: filter compared medians by property type where enough listings exist.
           </p>
         )}
       </CardHeader>

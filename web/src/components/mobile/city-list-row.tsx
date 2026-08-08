@@ -20,7 +20,7 @@ export function CityListRow({
 
   return (
     <Link
-      href={cityPath(city.city, { mode: lens })}
+      href={cityPath(city.city)}
       className={cn(
         motionRow,
         "flex min-h-[68px] items-center gap-3 border-b border-border/80 px-4 py-3 last:border-b-0 active:bg-muted/50"

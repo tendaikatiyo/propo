@@ -40,6 +40,7 @@
 
 ## Next (if pivot sticks)
 
-- City pages as dossiers (rent + sale + land summary)
-- Rankings copy / defaults for directory framing
+- City pages as richer dossiers (land summary on city, not only residential table)
 - Measure home search → suburb conversion vs old budget path
+- Re-enable contribute CTAs when community push resumes
+- Delete dead budget-home modules when safe

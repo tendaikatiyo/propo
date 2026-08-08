@@ -51,7 +51,7 @@ export function LandCompareCards({ markets }: { markets: LandMetric[] }) {
             <div className="min-w-0">
               <CardTitle className="text-base">
                 <Link
-                  href={suburbPath(market.city, market.suburb, { mode: "land" })}
+                  href={suburbPath(market.city, market.suburb)}
                   className="hover:underline"
                 >
                   {sanitizeLabel(market.suburb)}
