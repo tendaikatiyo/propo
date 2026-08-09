@@ -1,11 +1,12 @@
-import type { Metadata } from "next";
-
 import { AdminDashboard } from "@/components/admin/admin-dashboard";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Admin — Propo",
-  robots: { index: false, follow: false },
-};
+export const metadata = buildPageMetadata({
+  title: "Admin",
+  description: "Internal Propo operations dashboard.",
+  path: "/admin",
+  noIndex: true,
+});
 
 export default function AdminPage() {
   return <AdminDashboard />;

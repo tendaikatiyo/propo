@@ -80,9 +80,10 @@ export function buildPageMetadata(options: PageSeoOptions = {}): Metadata {
       description,
       images: images.map((image) => image.url),
     },
-    robots: options.noIndex
-      ? { index: false, follow: false }
-      : { index: true, follow: true, googleBot: { index: true, follow: true } },
+    // Only emit robots when restricting indexing. Explicit `index, follow` on the
+    // root layout conflicts with Next.js `notFound()` / 404 `noindex` tags
+    // (duplicate meta → Search Console "Excluded by noindex" on soft-404 URLs).
+    ...(options.noIndex ? { robots: { index: false, follow: false } } : {}),
   };
 }
 
