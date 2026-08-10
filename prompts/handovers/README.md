@@ -6,6 +6,7 @@ Chronological notes for agent/developer continuity between sessions.
 
 | Date | File | Topics |
 |---|---|---|
+| 2026-08-11 | [2026-08-11-llm-readable-suburb-pages.md](./2026-08-11-llm-readable-suburb-pages.md) | **LLM-readable suburb pages** — richer JSON-LD, hidden semantic facts block, clearer structured summaries |
 | 2026-08-10 | [2026-08-10-zw-mapping-data-opportunities.md](./2026-08-10-zw-mapping-data-opportunities.md) | **ZW last-mile maps** — B2B opportunities, OSM vs Google, Contribute + GMCP contribution paths |
 | 2026-08-10 | [2026-08-10-publish-all-zimbabwe-cities.md](./2026-08-10-publish-all-zimbabwe-cities.md) | **All ZW cities** — drop Harare/Bulawayo/Ruwa whitelist; ~65 cities; exclude foreign scrapes only |
 | 2026-08-08 | [2026-08-08-suburb-first-copy-and-focus-cleanup.md](./2026-08-08-suburb-first-copy-and-focus-cleanup.md) | **Policies + Focus residue** — methodology/legal copy; no `?mode=` on profiles; cities/rankings invest surface; contribute CTAs hidden |

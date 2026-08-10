@@ -139,6 +139,10 @@ export default async function SuburbPage({
           citySlug,
           suburbSlug,
           description,
+          medianRent,
+          medianSale,
+          grossYield: market.yield_percent,
+          landPricePerSqm: landMarket?.median_price_per_sqm ?? null,
         })}
       />
       <SuburbViewTracker

@@ -134,16 +134,9 @@ export function SuburbProfile({
             <p className="mt-2 text-sm text-muted-foreground">
               {suburbProfileDescription(lens, specLabel, rentFallback, saleFallback)}
             </p>
-            <section aria-labelledby="market-snapshot-heading" className="mt-4">
-              <h2
-                id="market-snapshot-heading"
-                className="font-heading text-base font-medium tracking-[-0.01em] text-foreground"
-              >
-                Market snapshot
-              </h2>
-              <p className="mt-2 text-[15px] leading-relaxed tracking-[0.15px] text-muted-foreground">
-                {marketSnapshot}
-              </p>
+            <section className="sr-only" aria-label="Machine-readable suburb facts" data-llm-facts="true">
+              <h2 className="sr-only">Machine-readable suburb facts</h2>
+              <p>{marketSnapshot}</p>
             </section>
             <div className="mt-3 flex flex-col gap-2">
               <ScopeLabel propertyType={propertyType} bedroom={bedroom} />

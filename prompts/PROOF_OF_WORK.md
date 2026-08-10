@@ -81,7 +81,7 @@ Explicitly **not** a chat/listings aggregator; competes on structured intelligen
 - **Suburb profiles:** lens-gated metrics; rent summary vs full invest report; unified mobile action dock (`View listings` · `Compare` · Pin).
 - **Cities, Compare, Rankings:** follow global Focus (no per-page switcher); compare inherits last lens; rankings land via lens not tab.
 - **Land mode:** $/sqm from `land_metrics`; city land table uses `LandSuburbTable` (not residential columns).
-- **SEO:** 800+ URLs in sitemap, JSON-LD, Open Graph.
+- **SEO:** 800+ URLs in sitemap, JSON-LD, Open Graph, and structured suburb summaries for search engines and LLM-oriented parsing.
 - **About:** founder story; **Developers:** future API interest.
 - **Analytics:** consent-gated first-party events + Google Analytics after cookie accept.
 - **Deploy:** Cloudflare Workers + Supabase; local JSON fallback for dev.

@@ -108,16 +108,27 @@ export function suburbPageDescription(
   medianSale: number | null,
   landMarket: LandMetric | null
 ): string {
+  const rentLine = medianRent != null ? `Median asking rent is ${formatCurrency(medianRent)}.` : "";
+  const saleLine = medianSale != null ? `Median asking sale price is ${formatCurrency(medianSale)}.` : "";
+  const yieldLine =
+    market.yield_percent != null && !Number.isNaN(market.yield_percent)
+      ? `Estimated gross rental yield is ${formatPercent(market.yield_percent)}.`
+      : "";
   const landLine =
     landMarket?.median_price_per_sqm != null
-      ? ` Land stands from ${formatPricePerSqm(landMarket.median_price_per_sqm)} per sqm.`
+      ? `Land stands average ${formatPricePerSqm(landMarket.median_price_per_sqm)} per sqm.`
       : "";
 
-  return (
-    `Market profile for ${suburbLabel}, ${market.city}. ` +
-    `Median rent ${formatCurrency(medianRent)}, median sale ${formatCurrency(medianSale)}.${landLine} ` +
-    `Yields, price trends, and listing signals.`
-  );
+  return [
+    `Market profile for ${suburbLabel}, ${market.city}.`,
+    rentLine,
+    saleLine,
+    yieldLine,
+    landLine,
+    "Figures are statistical summaries of active asking prices from major Zimbabwe property portals, refreshed from daily snapshots.",
+  ]
+    .filter(Boolean)
+    .join(" ");
 }
 
 /** Plain-language suburb summary for crawlers, LLMs, and accessibility (SSR on profile pages). */

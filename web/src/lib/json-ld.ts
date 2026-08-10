@@ -92,15 +92,78 @@ export function suburbPageJsonLd({
   citySlug,
   suburbSlug,
   description,
+  medianRent,
+  medianSale,
+  grossYield,
+  landPricePerSqm,
 }: {
   city: string;
   suburb: string;
   citySlug: string;
   suburbSlug: string;
   description: string;
+  medianRent: number | null;
+  medianSale: number | null;
+  grossYield: number | null | undefined;
+  landPricePerSqm: number | null | undefined;
 }): Record<string, unknown>[] {
   const pageUrl = absoluteUrl(`/cities/${citySlug}/${suburbSlug}`);
   const pageName = `${suburb}, ${city} — rent, sale & land prices`;
+  const placeEntity = {
+    "@context": "https://schema.org",
+    "@type": "Place",
+    name: suburb,
+    containedInPlace: {
+      "@type": "City",
+      name: city,
+      containedInPlace: {
+        "@type": "Country",
+        name: "Zimbabwe",
+      },
+    },
+    additionalProperty: [
+      ...(medianRent != null
+        ? [
+            {
+              "@type": "PropertyValue",
+              name: "Median asking rent",
+              value: medianRent,
+              unitText: "USD",
+            },
+          ]
+        : []),
+      ...(medianSale != null
+        ? [
+            {
+              "@type": "PropertyValue",
+              name: "Median asking sale price",
+              value: medianSale,
+              unitText: "USD",
+            },
+          ]
+        : []),
+      ...(grossYield != null && !Number.isNaN(grossYield)
+        ? [
+            {
+              "@type": "PropertyValue",
+              name: "Estimated gross rental yield",
+              value: grossYield,
+              unitText: "percent",
+            },
+          ]
+        : []),
+      ...(landPricePerSqm != null && !Number.isNaN(landPricePerSqm)
+        ? [
+            {
+              "@type": "PropertyValue",
+              name: "Median land price per square metre",
+              value: landPricePerSqm,
+              unitText: "USD/sqm",
+            },
+          ]
+        : []),
+    ],
+  };
 
   return [
     {
@@ -145,18 +208,8 @@ export function suburbPageJsonLd({
         name: SITE_NAME,
         url: SITE_URL,
       },
-      about: {
-        "@type": "Place",
-        name: suburb,
-        containedInPlace: {
-          "@type": "City",
-          name: city,
-          containedInPlace: {
-            "@type": "Country",
-            name: "Zimbabwe",
-          },
-        },
-      },
+      about: placeEntity,
+      mainEntity: placeEntity,
     },
   ];
 }
