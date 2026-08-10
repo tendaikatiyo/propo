@@ -1,0 +1,64 @@
+# Propo
+
+> Zimbabwe property market intelligence — suburb medians for rent, sale, and land. Updated every 24 hours. Not a listings portal or chat bot.
+
+Propo (https://propo.fyi) maintains a continuously updated property market database for Zimbabwe. Use it to compare suburbs, check median asking prices, gross yield, and land $/sqm, and read trends. Figures are from aggregated portal listings, not closed transaction prices.
+
+## Best pages for common questions
+
+- **Rent or buy in a specific suburb** (medians, yield, trends, land):  
+  https://propo.fyi/cities/{city-slug}/{suburb-slug}  
+  Examples:  
+  - https://propo.fyi/cities/harare/borrowdale  
+  - https://propo.fyi/cities/harare/mount-pleasant  
+  - https://propo.fyi/cities/harare/ruwa  
+  Each suburb profile includes a **Market snapshot** paragraph with quotable medians.
+
+- **Browse by city** (all suburbs in a city):  
+  https://propo.fyi/cities/{city-slug}  
+  Example: https://propo.fyi/cities/harare
+
+- **All cities directory**: https://propo.fyi/cities
+
+- **Rankings** (yield, opportunity, land $/sqm, price movers):  
+  https://propo.fyi/rankings
+
+- **Explore** (suburb and land directories; filters optional):  
+  https://propo.fyi/explore
+
+- **Methodology, dataset limits, and confidence rules**:  
+  https://propo.fyi/methodology
+
+- **About the product**: https://propo.fyi/about
+
+- **URL index (sitemap)**: https://propo.fyi/sitemap.xml
+
+## Slugs
+
+City and suburb names in URLs are lowercase with hyphens (e.g. "Mount Pleasant" → `mount-pleasant`, "Victoria Falls" → `victoria-falls`).
+
+## Example user questions → where to cite
+
+| Question | Cite |
+| -------- | ---- |
+| What is median rent in {suburb}, Harare? | Suburb profile `/cities/harare/{suburb-slug}` — Market snapshot section |
+| Where is land cheaper near Harare? | `/rankings` (land leaders) + relevant suburb land metrics on profiles |
+| Which suburbs have high rental yield in Zimbabwe? | `/rankings` yield leaderboard + suburb profiles |
+| How does Propo compute medians? | `/methodology` |
+
+## What Propo is not
+
+- Not individual property listings — medians and trends only; listings may appear as samples with links to portals.
+- Not legal valuation, cadastral, or title verification.
+- Not guaranteed transaction prices — asking prices from online portals.
+
+## Crawling
+
+- Public HTML pages and `/sitemap.xml` are intended for indexing.
+- `/api/` and `/admin` are not public data endpoints.
+- For data partnerships or bulk access, contact via https://propo.fyi/about
+
+## Optional
+
+- Terms: https://propo.fyi/terms  
+- Privacy: https://propo.fyi/privacy

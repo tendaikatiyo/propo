@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import { SITE_DESCRIPTION, SITE_NAME } from "@/lib/constants";
-import { formatCurrency, formatPricePerSqm } from "@/lib/format";
+import { formatCurrency, formatPercent, formatPricePerSqm } from "@/lib/format";
 import type { LandMetric, MarketMetric } from "@/lib/types";
 
 /** Public site URL — set in production via NEXT_PUBLIC_SITE_URL (e.g. https://propo.fyi). */
@@ -118,6 +118,60 @@ export function suburbPageDescription(
     `Median rent ${formatCurrency(medianRent)}, median sale ${formatCurrency(medianSale)}.${landLine} ` +
     `Yields, price trends, and listing signals.`
   );
+}
+
+/** Plain-language suburb summary for crawlers, LLMs, and accessibility (SSR on profile pages). */
+export function suburbMarketSnapshotText({
+  suburbLabel,
+  city,
+  medianRent,
+  medianSale,
+  yieldPercent,
+  landMarket,
+  rentListingCount,
+  saleListingCount,
+  specLabel,
+}: {
+  suburbLabel: string;
+  city: string;
+  medianRent: number | null;
+  medianSale: number | null;
+  yieldPercent: number | null | undefined;
+  landMarket: LandMetric | null;
+  rentListingCount: number;
+  saleListingCount: number;
+  specLabel?: string | null;
+}): string {
+  const parts: string[] = [
+    `Market snapshot for ${suburbLabel}, ${city}, Zimbabwe from Propo (${SITE_DESCRIPTION}).`,
+  ];
+
+  if (specLabel) {
+    parts.push(`Segment: ${specLabel} (portal listing filters).`);
+  }
+
+  parts.push(
+    `Median asking rent is ${formatCurrency(medianRent)} (${rentListingCount} rental listing${rentListingCount === 1 ? "" : "s"} in sample). ` +
+      `Median asking sale price is ${formatCurrency(medianSale)} (${saleListingCount} sale listing${saleListingCount === 1 ? "" : "s"} in sample).`
+  );
+
+  if (yieldPercent != null && !Number.isNaN(yieldPercent)) {
+    parts.push(`Estimated gross rental yield is ${formatPercent(yieldPercent)}.`);
+  }
+
+  const landSqm = landMarket?.median_price_per_sqm;
+  const landCount = landMarket?.land_count ?? 0;
+  if (landSqm != null && landCount > 0) {
+    parts.push(
+      `Land stands: median ${formatPricePerSqm(landSqm)} per sqm (${landCount} land listing${landCount === 1 ? "" : "s"}).`
+    );
+  }
+
+  parts.push(
+    "Figures are statistical summaries of advertised asking prices on major Zimbabwe property portals—not closed transaction prices or formal valuations. See /methodology for limits and update cadence."
+  );
+
+  return parts.join(" ");
 }
 
 /** Root layout defaults — merge with `title.template` in layout.tsx. */

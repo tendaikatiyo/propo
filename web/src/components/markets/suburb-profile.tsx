@@ -41,6 +41,7 @@ import type { ExploreMode, LandMetric, MarketMetric, PropertyType } from "@/lib/
 import type { RentReportMetrics } from "@/lib/rent-reports";
 import type { SaleReportMetrics } from "@/lib/sale-reports";
 import type { LandReportMetrics } from "@/lib/land-reports";
+import { suburbMarketSnapshotText } from "@/lib/seo";
 import { cityPath, suburbPath, suburbReportPath } from "@/lib/slug";
 import { cn } from "@/lib/utils";
 
@@ -103,6 +104,18 @@ export function SuburbProfile({
   const confidenceScore = market.confidence_score;
   const confidenceSample = rentSample + saleSample;
 
+  const marketSnapshot = suburbMarketSnapshotText({
+    suburbLabel: sanitizeLabel(market.suburb),
+    city: market.city,
+    medianRent,
+    medianSale,
+    yieldPercent: market.yield_percent,
+    landMarket: landMarket ?? null,
+    rentListingCount: rentSample,
+    saleListingCount: saleSample,
+    specLabel: hasSpecFilters ? specLabel : null,
+  });
+
   return (
     <div className="space-y-8 pb-28 lg:pb-0">
       <BackLink href={cityPath(market.city)} label={`Back to ${market.city}`} />
@@ -121,6 +134,17 @@ export function SuburbProfile({
             <p className="mt-2 text-sm text-muted-foreground">
               {suburbProfileDescription(lens, specLabel, rentFallback, saleFallback)}
             </p>
+            <section aria-labelledby="market-snapshot-heading" className="mt-4">
+              <h2
+                id="market-snapshot-heading"
+                className="font-heading text-base font-medium tracking-[-0.01em] text-foreground"
+              >
+                Market snapshot
+              </h2>
+              <p className="mt-2 text-[15px] leading-relaxed tracking-[0.15px] text-muted-foreground">
+                {marketSnapshot}
+              </p>
+            </section>
             <div className="mt-3 flex flex-col gap-2">
               <ScopeLabel propertyType={propertyType} bedroom={bedroom} />
               <div className="flex flex-col gap-1 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-4">

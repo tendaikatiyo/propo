@@ -1,4 +1,4 @@
-import { SITE_DESCRIPTION, SITE_NAME } from "@/lib/constants";
+import { DATASET_SCALE, DATASET_UPDATE_CADENCE, SITE_DESCRIPTION, SITE_NAME } from "@/lib/constants";
 import { absoluteUrl, LOGOMARK_PATH, SITE_URL } from "@/lib/seo";
 
 export function siteJsonLd(): Record<string, unknown>[] {
@@ -23,8 +23,67 @@ export function siteJsonLd(): Record<string, unknown>[] {
         name: SITE_NAME,
         url: SITE_URL,
       },
+      potentialAction: {
+        "@type": "SearchAction",
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate: `${SITE_URL}/explore`,
+        },
+        description:
+          "Browse Zimbabwe suburb and land directories; open a suburb profile for rent, sale, and land medians.",
+      },
     },
   ];
+}
+
+/** schema.org Dataset for methodology — helps crawlers treat Propo as a maintained market dataset. */
+export function methodologyDatasetJsonLd(): Record<string, unknown> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    name: "Propo Zimbabwe property market database",
+    description:
+      "Suburb-level median asking rent, median asking sale price, gross yield, land price per square metre, " +
+      "and listing trends for Zimbabwe, refreshed from major online property portals.",
+    url: absoluteUrl("/methodology"),
+    inLanguage: "en-ZW",
+    isAccessibleForFree: true,
+    creator: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+    spatialCoverage: {
+      "@type": "Country",
+      name: "Zimbabwe",
+    },
+    keywords: [
+      "Zimbabwe property",
+      "suburb medians",
+      "rent",
+      "sale",
+      "land",
+      "rental yield",
+      "Harare",
+      "Bulawayo",
+    ],
+    variableMeasured: [
+      { "@type": "PropertyValue", name: "Median asking rent (USD)" },
+      { "@type": "PropertyValue", name: "Median asking sale price (USD)" },
+      { "@type": "PropertyValue", name: "Gross rental yield" },
+      { "@type": "PropertyValue", name: "Median land price per square metre (USD)" },
+    ],
+    size: DATASET_SCALE.suburbMarketsLabel,
+    distribution: {
+      "@type": "DataDownload",
+      encodingFormat: "text/html",
+      contentUrl: absoluteUrl("/sitemap.xml"),
+      description: "Sitemap of suburb and city market profile pages.",
+    },
+    license: absoluteUrl("/terms"),
+    temporalCoverage: "2024/..",
+    measurementTechnique: `Daily pipeline aggregation of normalized portal listings; refreshed ${DATASET_UPDATE_CADENCE}.`,
+  };
 }
 
 export function suburbPageJsonLd({

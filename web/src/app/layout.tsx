@@ -26,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={fontClassNames}>
+    <html lang="en-ZW" className={fontClassNames}>
       <body className="min-h-screen" suppressHydrationWarning>
         <JsonLd data={siteJsonLd()} />
         <QueryProvider>

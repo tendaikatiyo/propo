@@ -1,6 +1,6 @@
 import type { CityMetric, ExploreMode, LandMetric, MarketMetric, RankingEntry, RankingsPayload } from "@/lib/types";
 
-/** Cities outside Zimbabwe that appear in scraped data. */
+/** Cities outside Zimbabwe that appear in scraped data — never show on the site. */
 export const EXCLUDED_CITIES = new Set([
   "Johannesburg",
   "Port Shepston",
@@ -9,19 +9,20 @@ export const EXCLUDED_CITIES = new Set([
   "Vilanculos",
 ]);
 
-/** Cities shown across the site (all modes). */
+/** @deprecated Prefer full Zimbabwe coverage — kept for call sites that want a short featured list. */
 export const PUBLISHED_CITIES = ["Harare", "Bulawayo", "Ruwa"] as const;
 export const PUBLISHED_CITY_SET = new Set<string>(PUBLISHED_CITIES);
 
 export const DEFAULT_CITY = "Harare";
 
+/** True when a city may appear on the site (all Zimbabwe cities; excludes foreign scrapes). */
 export function isPublishedCity(city: string): boolean {
-  return PUBLISHED_CITY_SET.has(city);
+  return Boolean(city?.trim()) && !EXCLUDED_CITIES.has(city);
 }
 
 /** @deprecated Prefer isPublishedCity — kept for existing call sites. */
 export function isZimbabweCity(city: string): boolean {
-  return isPublishedCity(city) && !EXCLUDED_CITIES.has(city);
+  return isPublishedCity(city);
 }
 
 export function cityListingTotal(city: CityMetric, mode?: ExploreMode): number {

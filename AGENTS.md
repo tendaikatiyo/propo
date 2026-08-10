@@ -57,6 +57,7 @@ propo/
 | **Contribute + Invest** | `/contribute` is rent/buy/land only; invest is blocked. Profile/nav contribute CTAs are **hidden** for now; page still works by direct URL. |
 | **Land metrics separate** | Land uses `land_metrics` / land tables — do not pollute residential medians with $/sqm. |
 | **Buy tables** | Sale-focused columns — no median rent on buy tables. |
+| **All ZW cities** | Publish every Zimbabwe city in the dataset (~65). Filter only `EXCLUDED_CITIES` (foreign scrapes). Do not reintroduce a Harare/Bulawayo/Ruwa-only whitelist. |
 
 ---
 
@@ -129,6 +130,8 @@ Warm editorial neutrals; suburb-first copy; photographic heroes. Fonts: Stack Sa
 
 | Doc | Topic |
 | --- | ----- |
+| [`2026-08-10-zw-mapping-data-opportunities.md`](prompts/handovers/2026-08-10-zw-mapping-data-opportunities.md) | **ZW last-mile maps** — startup/data opportunities; Google Contribute + GMCP; OSM |
+| [`2026-08-10-publish-all-zimbabwe-cities.md`](prompts/handovers/2026-08-10-publish-all-zimbabwe-cities.md) | **All ZW cities** — drop 3-city whitelist; ~65 cities via `EXCLUDED_CITIES` only |
 | [`2026-08-08-suburb-first-copy-and-focus-cleanup.md`](prompts/handovers/2026-08-08-suburb-first-copy-and-focus-cleanup.md) | **Policies + Focus residue** — copy aligned; no `?mode=` on profiles; cities/rankings invest surface |
 | [`2026-08-07-suburb-first-raw-info.md`](prompts/handovers/2026-08-07-suburb-first-raw-info.md) | **Suburb-first cut** — home search, full dossiers, Explore Suburbs\|Land, filters off by default |
 | [`2026-07-23-explore-suburb-search.md`](prompts/handovers/2026-07-23-explore-suburb-search.md) | Explore all-cities default, suburb search + suggestions |

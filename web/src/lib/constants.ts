@@ -131,8 +131,8 @@ export const CONTACT_EMAIL = "carteayo@gmail.com";
 export const DATASET_SCALE = {
   activeListings: "~14,000",
   historicalObservations: "400k+",
-  cities: 3,
-  citiesLabel: "Harare, Bulawayo, and Ruwa",
+  cities: 65,
+  citiesLabel: "65 cities",
   suburbMarkets: 378,
   suburbMarketsLabel: "378 suburb markets",
   landSuburbMarkets: 310,

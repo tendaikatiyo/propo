@@ -44,3 +44,4 @@
 - Measure home search â†’ suburb conversion vs old budget path
 - Re-enable contribute CTAs when community push resumes
 - Delete dead budget-home modules when safe
+**Follow-up shipped 2026-08-10:** all Zimbabwe cities published — see `2026-08-10-publish-all-zimbabwe-cities.md`.

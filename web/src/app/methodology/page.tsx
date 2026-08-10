@@ -1,3 +1,4 @@
+import { JsonLd } from "@/components/seo/json-ld";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PageHeader } from "@/components/layout/page-header";
 import {
@@ -5,6 +6,7 @@ import {
   DATASET_SOURCE_LINE,
   DATASET_UPDATE_CADENCE,
 } from "@/lib/constants";
+import { methodologyDatasetJsonLd } from "@/lib/json-ld";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
@@ -17,6 +19,7 @@ export const metadata = buildPageMetadata({
 export default function MethodologyPage() {
   return (
     <div className="space-y-10">
+      <JsonLd data={methodologyDatasetJsonLd()} />
       <PageHeader
         title="Methodology"
         description="How Propo turns listing history into suburb market intelligence."
