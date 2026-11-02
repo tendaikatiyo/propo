@@ -250,11 +250,15 @@ export async function fetchAdminDashboardStats(): Promise<AdminDashboardStats> {
 
   const { data, error } = await client.rpc("admin_dashboard_stats");
   if (error) {
+    const message = error.message;
+    const timedOut = /statement timeout/i.test(message);
     return {
       ...base,
-      error: error.message.includes("admin_dashboard_stats")
-        ? "Migration 009_admin_dashboard.sql is not applied on Supabase yet."
-        : error.message,
+      error: timedOut
+        ? "Admin stats timed out. Apply supabase/migrations/018_admin_dashboard_stats.sql in the Supabase SQL editor, then refresh."
+        : message.includes("admin_dashboard_stats")
+          ? "Migration 009_admin_dashboard.sql is not applied on Supabase yet."
+          : message,
     };
   }
 

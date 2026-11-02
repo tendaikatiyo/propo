@@ -1,3 +1,5 @@
+import math
+import os
 from contextlib import contextmanager
 from datetime import datetime, timezone
 from typing import Any, Dict, Iterator, List, Optional
@@ -5,7 +7,18 @@ from typing import Any, Dict, Iterator, List, Optional
 import psycopg2
 import psycopg2.extras
 
+from analytics.clean_data import fits_postgres_int
 from analytics.supabase_config import get_db_url
+
+
+def sync_listing_snapshots_to_supabase() -> bool:
+    """Per-listing snapshot history belongs in SQLite. Cloud copies blew the 500MB free cap."""
+    return os.environ.get("SUPABASE_SYNC_LISTING_SNAPSHOTS", "").strip().lower() in {
+        "1",
+        "true",
+        "yes",
+        "on",
+    }
 
 
 def utc_now_iso() -> str:
@@ -16,6 +29,41 @@ def utc_date_iso() -> str:
     return datetime.now(timezone.utc).date().isoformat()
 
 
+def _as_postgres_int(value: Any) -> Optional[int]:
+    """Return value when it fits int4. None means drop or null the field."""
+    if value is None or isinstance(value, bool):
+        return None
+    try:
+        if isinstance(value, float) and not math.isfinite(value):
+            return None
+        number = int(value)
+    except (TypeError, ValueError, OverflowError):
+        return None
+    if not fits_postgres_int(number):
+        return None
+    return number
+
+
+def _null_overflow_ints(row: Dict[str, Any], fields: tuple, label: str) -> Dict[str, Any]:
+    cleaned = dict(row)
+    for field in fields:
+        value = cleaned.get(field)
+        if value is None or isinstance(value, bool):
+            continue
+        try:
+            if isinstance(value, float) and not math.isfinite(value):
+                print(f"Nulling {label}.{field}={value} (outside integer range)")
+                cleaned[field] = None
+                continue
+            number = int(value)
+        except (TypeError, ValueError, OverflowError):
+            continue
+        if not fits_postgres_int(number):
+            print(f"Nulling {label}.{field}={value} (outside integer range)")
+            cleaned[field] = None
+    return cleaned
+
+
 LISTING_UPSERT_SQL = """
 INSERT INTO listings (
     listing_url, source, listing_type, property_type, market_id,
@@ -24,7 +72,7 @@ INSERT INTO listings (
     agency_name, agency_logo, image_url, first_seen_at, last_seen_at, is_active
 ) VALUES (
     %(listing_url)s, %(source)s, %(listing_type)s, %(property_type)s, %(market_id)s,
-    %(title)s, %(price)s, %(price_raw)s, %(city)s, %(suburb)s, %(location)s, %(description)s,
+    %(title)s, %(price)s, %(price_raw)s, %(city)s, %(suburb)s, %(location)s, NULL,
     %(bedrooms)s, %(bathrooms)s, %(lounges)s, %(land_size)s, %(land_size_unit)s,
     %(agency_name)s, %(agency_logo)s, %(image_url)s, %(first_seen_at)s::timestamptz, %(last_seen_at)s::timestamptz, true
 )
@@ -39,7 +87,7 @@ ON CONFLICT (listing_url) DO UPDATE SET
     city = EXCLUDED.city,
     suburb = EXCLUDED.suburb,
     location = EXCLUDED.location,
-    description = EXCLUDED.description,
+    description = NULL,
     bedrooms = EXCLUDED.bedrooms,
     bathrooms = EXCLUDED.bathrooms,
     lounges = EXCLUDED.lounges,
@@ -182,8 +230,31 @@ class SupabaseHistoryDatabase:
             "first_seen_at": seen_at,
             "last_seen_at": seen_at,
         }
+        listing_url = payload.get("listing_url")
+        if _as_postgres_int(payload.get("price")) is None:
+            print(
+                f"Supabase skip, price {payload.get('price')} outside integer range: "
+                f"{listing_url}"
+            )
+            return
+        for field in ("bedrooms", "bathrooms", "lounges"):
+            value = payload.get(field)
+            if value is not None and _as_postgres_int(value) is None:
+                print(f"Supabase nulling {field}={value} outside integer range: {listing_url}")
+                payload[field] = None
         with conn.cursor() as cur:
-            cur.execute(LISTING_UPSERT_SQL, payload)
+            try:
+                cur.execute(LISTING_UPSERT_SQL, payload)
+            except psycopg2.Error:
+                print(
+                    "Listing upsert failed for "
+                    f"{listing_url} price={payload.get('price')} "
+                    f"bedrooms={payload.get('bedrooms')} "
+                    f"bathrooms={payload.get('bathrooms')} "
+                    f"lounges={payload.get('lounges')} "
+                    f"land_size={payload.get('land_size')}"
+                )
+                raise
 
     def insert_snapshot(
         self,
@@ -191,15 +262,21 @@ class SupabaseHistoryDatabase:
         record: Dict[str, Any],
         scraped_at: str,
     ) -> bool:
+        if _as_postgres_int(record.get("price")) is None:
+            print(
+                f"Supabase snapshot skip, price {record.get('price')} outside integer range: "
+                f"{record.get('listing_url')}"
+            )
+            return False
         payload = {
             "listing_url": record["listing_url"],
             "scraped_at": scraped_at,
             "price": record.get("price"),
             "price_raw": record.get("price_raw"),
             "property_type": record.get("property_type"),
-            "bedrooms": record.get("bedrooms"),
-            "bathrooms": record.get("bathrooms"),
-            "lounges": record.get("lounges"),
+            "bedrooms": _as_postgres_int(record.get("bedrooms")),
+            "bathrooms": _as_postgres_int(record.get("bathrooms")),
+            "lounges": _as_postgres_int(record.get("lounges")),
             "land_size": record.get("land_size"),
             "land_size_unit": record.get("land_size_unit"),
         }
@@ -231,8 +308,21 @@ class SupabaseHistoryDatabase:
         conn: psycopg2.extensions.connection,
         row: Dict[str, Any],
     ) -> None:
+        payload = _null_overflow_ints(
+            row,
+            (
+                "listing_count",
+                "median_price",
+                "avg_price",
+                "min_price",
+                "max_price",
+                "median_days_on_market",
+                "avg_days_on_market",
+            ),
+            "market_snapshot",
+        )
         with conn.cursor() as cur:
-            cur.execute(MARKET_SNAPSHOT_UPSERT_SQL, row)
+            cur.execute(MARKET_SNAPSHOT_UPSERT_SQL, payload)
 
     def insert_land_snapshot(
         self,

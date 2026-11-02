@@ -1,4 +1,5 @@
 import json
+import math
 import re
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional
@@ -91,13 +92,40 @@ def normalize_property_type(value: Any) -> str:
     return "unknown"
 
 
-def optional_int(value: Any) -> Optional[int]:
-    if value is None:
+# listings.price / bedrooms / bathrooms / lounges are Postgres int4.
+# A ZiG amount or a stray phone/area above this aborts the whole cloud ingest.
+POSTGRES_INT_MIN = -2_147_483_648
+POSTGRES_INT_MAX = 2_147_483_647
+
+
+def fits_postgres_int(value: int) -> bool:
+    return POSTGRES_INT_MIN <= value <= POSTGRES_INT_MAX
+
+
+def _parse_int(value: Any) -> Optional[int]:
+    if value is None or isinstance(value, bool):
         return None
     try:
+        if isinstance(value, float) and not math.isfinite(value):
+            return None
         return int(value)
-    except (TypeError, ValueError):
+    except (TypeError, ValueError, OverflowError):
         return None
+
+
+def optional_int(value: Any) -> Optional[int]:
+    parsed = _parse_int(value)
+    if parsed is not None and not fits_postgres_int(parsed):
+        return None
+    return parsed
+
+
+def room_count(value: Any, field: str, listing_url: str) -> Optional[int]:
+    parsed = _parse_int(value)
+    if parsed is not None and not fits_postgres_int(parsed):
+        print(f"Ignoring {field}={parsed} outside integer range: {listing_url}")
+        return None
+    return parsed
 
 
 def optional_float(value: Any) -> Optional[float]:
@@ -110,17 +138,19 @@ def optional_float(value: Any) -> Optional[float]:
 
 
 def parse_price(value: Any) -> Optional[int]:
-    if value is None:
-        return None
-    if isinstance(value, (int, float)):
-        return int(value)
-    text = str(value)
-    digits = re.findall(r"[0-9]+(?:[.,][0-9]+)?", text.replace(",", ""))
-    if not digits:
+    if value is None or isinstance(value, bool):
         return None
     try:
+        if isinstance(value, (int, float)):
+            if isinstance(value, float) and not math.isfinite(value):
+                return None
+            return int(value)
+        text = str(value)
+        digits = re.findall(r"[0-9]+(?:[.,][0-9]+)?", text.replace(",", ""))
+        if not digits:
+            return None
         return int(float(digits[0]))
-    except ValueError:
+    except (TypeError, ValueError, OverflowError):
         return None
 
 
@@ -159,6 +189,12 @@ def normalize_listing_record(
 
     if not suburb or not city:
         return None
+    if price is not None and not fits_postgres_int(price):
+        print(
+            f"Skipping {source}/{listing_type} listing, price {price} exceeds "
+            f"integer range: {listing_url}"
+        )
+        return None
     if price is None or price <= 0:
         return None
 
@@ -195,9 +231,9 @@ def normalize_listing_record(
         "location": location,
         "property_type": property_type,
         "description": description,
-        "bedrooms": optional_int(record.get("bedrooms")),
-        "bathrooms": optional_int(record.get("bathrooms")),
-        "lounges": optional_int(record.get("lounges")),
+        "bedrooms": room_count(record.get("bedrooms"), "bedrooms", listing_url),
+        "bathrooms": room_count(record.get("bathrooms"), "bathrooms", listing_url),
+        "lounges": room_count(record.get("lounges"), "lounges", listing_url),
         "land_size": optional_float(record.get("land_size")),
         "land_size_unit": str(record.get("land_size_unit") or "").strip() or None,
         "agency_name": str(record.get("agency_name") or "").strip(),

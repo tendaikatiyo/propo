@@ -130,6 +130,7 @@ Warm editorial neutrals; suburb-first copy; photographic heroes. Fonts: Stack Sa
 
 | Doc | Topic |
 | --- | ----- |
+| [`2026-11-02-supabase-int-overflow-ingest.md`](prompts/handovers/2026-11-02-supabase-int-overflow-ingest.md) | **Cloud ingest int4 overflow** — skip/null guard; SQLite OK / Supabase fail pattern |
 | [`2026-08-10-zw-mapping-data-opportunities.md`](prompts/handovers/2026-08-10-zw-mapping-data-opportunities.md) | **ZW last-mile maps** — startup/data opportunities; Google Contribute + GMCP; OSM |
 | [`2026-08-10-publish-all-zimbabwe-cities.md`](prompts/handovers/2026-08-10-publish-all-zimbabwe-cities.md) | **All ZW cities** — drop 3-city whitelist; ~65 cities via `EXCLUDED_CITIES` only |
 | [`2026-08-08-suburb-first-copy-and-focus-cleanup.md`](prompts/handovers/2026-08-08-suburb-first-copy-and-focus-cleanup.md) | **Policies + Focus residue** — copy aligned; no `?mode=` on profiles; cities/rankings invest surface |

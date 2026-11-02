@@ -655,8 +655,8 @@ export function AdminDashboard() {
 
           <p className="break-words text-xs text-muted-foreground">
             Generated {formatDateTime(stats.generatedAt)} · apply migration{" "}
-            <code className="rounded bg-muted px-1 py-0.5">009_admin_dashboard.sql</code> on Supabase
-            if RPC stats are missing.
+            <code className="rounded bg-muted px-1 py-0.5">018_admin_dashboard_stats.sql</code> on
+            Supabase if stats time out.
           </p>
           </TabsContent>
 

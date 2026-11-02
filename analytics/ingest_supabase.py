@@ -6,7 +6,11 @@ from analytics.daily_metrics import build_daily_market_rows
 from analytics.land_daily_metrics import build_land_daily_rows
 from analytics.history_db import utc_date_iso
 from analytics.ingest import load_source_records
-from analytics.supabase_db import SupabaseHistoryDatabase, utc_now_iso
+from analytics.supabase_db import (
+    SupabaseHistoryDatabase,
+    sync_listing_snapshots_to_supabase,
+    utc_now_iso,
+)
 
 INGEST_COMMIT_BATCH_SIZE = 100
 
@@ -20,6 +24,12 @@ def ingest_all_supabase(db: Optional[SupabaseHistoryDatabase] = None) -> Dict[st
 
     listings_processed = 0
     snapshots_added = 0
+    write_listing_snapshots = sync_listing_snapshots_to_supabase()
+    if not write_listing_snapshots:
+        print(
+            "Supabase ingest: skipping listing_snapshots "
+            "(set SUPABASE_SYNC_LISTING_SNAPSHOTS=1 to mirror SQLite history)."
+        )
 
     with database.connect() as conn:
         for path, source, listing_type in SOURCE_FILES:
@@ -37,7 +47,9 @@ def ingest_all_supabase(db: Optional[SupabaseHistoryDatabase] = None) -> Dict[st
                     continue
 
                 database.upsert_listing(conn, normalized, run_started_at)
-                if database.insert_snapshot(conn, normalized, run_started_at):
+                if write_listing_snapshots and database.insert_snapshot(
+                    conn, normalized, run_started_at
+                ):
                     snapshots_added += 1
                 listings_processed += 1
                 if listings_processed % INGEST_COMMIT_BATCH_SIZE == 0:
@@ -64,7 +76,9 @@ def ingest_all_supabase(db: Optional[SupabaseHistoryDatabase] = None) -> Dict[st
         "snapshots_added": snapshots_added,
         "listings_deactivated": deactivated,
         "active_listings": database.count_listings(active_only=True),
-        "total_snapshots": database.count_snapshots(),
+        "total_snapshots": (
+            database.count_snapshots() if write_listing_snapshots else 0
+        ),
         "daily_market_rows": len(daily_rows),
         "daily_land_rows": len(land_rows),
     }
@@ -72,10 +86,10 @@ def ingest_all_supabase(db: Optional[SupabaseHistoryDatabase] = None) -> Dict[st
     print(
         "Supabase ingest complete: "
         f"{stats['listings_processed']} processed, "
-        f"{stats['snapshots_added']} snapshots added, "
+        f"{stats['snapshots_added']} cloud listing snapshots added, "
         f"{stats['listings_deactivated']} deactivated, "
         f"{stats['active_listings']} active listings, "
-        f"{stats['total_snapshots']} total snapshots, "
+        f"{stats['total_snapshots']} cloud listing snapshots, "
         f"{stats['daily_market_rows']} daily market rows, "
         f"{stats['daily_land_rows']} daily land rows"
     )

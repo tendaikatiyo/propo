@@ -90,7 +90,7 @@ For **community price reports** (`/contribute`), also set:
 
 - `CONTRIBUTION_HASH_SALT` — long random secret used to hash IP/session for rate limits (required in production; submissions return 503 if missing)
 
-Apply `supabase/migrations/009_admin_dashboard.sql` on Supabase so the stats RPC is available.
+Apply `supabase/migrations/009_admin_dashboard.sql` (and `018_admin_dashboard_stats.sql` if `/admin` stats time out) on Supabase so the stats RPC is available.
 
 ### Sync data to Supabase
 

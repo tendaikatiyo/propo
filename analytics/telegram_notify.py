@@ -51,7 +51,7 @@ def format_ingest_stats(
     lines = [
         "propo ingest complete",
         f"• Listings processed: {stats.get('listings_processed', 0):,}",
-        f"• Snapshots added: {stats.get('snapshots_added', 0):,}",
+        f"• Cloud listing snapshots added: {stats.get('snapshots_added', 0):,}",
         f"• Deactivated: {stats.get('listings_deactivated', 0):,}",
         f"• Active listings: {stats.get('active_listings', 0):,}",
         f"• Daily market rows: {stats.get('daily_market_rows', 0):,}",
